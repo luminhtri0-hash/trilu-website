@@ -3,1019 +3,198 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trí Lữ Nihongo — Chinh phục tiếng Nhật, mở cửa tương lai</title>
-<meta name="description" content="Học viện tiếng Nhật Trí Lữ — JLPT N5-N1, Kaiwa, EJU, ôn thi và việc làm Nhật.">
+<title>Trí Lữ Nihongo — Một học viện tiếng Nhật cho người Việt nghiêm túc.</title>
+<meta name="description" content="Học viện tiếng Nhật Trí Lữ — JLPT, Kaiwa, EJU, ôn thi và định hướng việc làm Nhật.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,100..900&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,100..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter+Tight:wght@300;400;500;600&family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
 <style>
-:root {
-  --cream: #FFF8E7;
-  --cream-soft: #F5EBD4;
-  --sakura: #C9A089;
-  --sakura-glow: #FFB8C0;
-  --gold: #FFD78A;
-  --indigo: #3a5a9a;
-  --indigo-deep: #1a2660;
-  --moon: #FFF1C9;
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
-  background: #050818;
-  color: var(--cream);
-  overflow-x: hidden;
-  position: relative;
-  min-height: 100vh;
-  cursor: default;
-}
-
-/* === HOKUSAI CANVAS === */
-.hokusai-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -10;
-  display: block;
-}
-
-/* === CURSOR GLOW (Apple Vision Pro style) === */
-.cursor-glow {
-  position: fixed;
-  pointer-events: none;
-  width: 700px;
-  height: 700px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(255,200,210,0.13) 0%, rgba(180,200,255,0.06) 40%, transparent 70%);
-  z-index: 1;
-  filter: blur(50px);
-  transform: translate(-50%, -50%);
-  transition: opacity 0.4s;
-  mix-blend-mode: screen;
-  opacity: 0;
-}
-.cursor-glow.active { opacity: 1; }
-
-/* === FLOATING PARTICLES === */
-.particles {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-  overflow: hidden;
-}
-
-.particle {
-  position: absolute;
-  top: -30px;
-  opacity: 0;
-  animation: drift linear infinite;
-}
-
-.particle.petal {
-  width: 14px;
-  height: 14px;
-}
-
-.particle.spark {
-  width: 4px;
-  height: 4px;
-  background: radial-gradient(circle, #FFE9A8, transparent);
-  border-radius: 50%;
-  box-shadow: 0 0 8px #FFE9A8;
-}
-
-@keyframes drift {
-  0% { transform: translateY(-30px) translateX(0) rotate(0deg); opacity: 0; }
-  10% { opacity: 0.85; }
-  90% { opacity: 0.6; }
-  100% { transform: translateY(108vh) translateX(120px) rotate(540deg); opacity: 0; }
-}
-
-/* === ULTRA LIQUID GLASS === */
-.ultra-glass {
-  position: relative;
-  background: rgba(255, 255, 255, 0.035);
-  backdrop-filter: blur(60px) saturate(200%) brightness(1.15);
-  -webkit-backdrop-filter: blur(60px) saturate(200%) brightness(1.15);
-  border-radius: 24px;
-  border: 1px solid transparent;
-  box-shadow:
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.32),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
-    inset 1px 0 0 rgba(255, 255, 255, 0.08),
-    inset -1px 0 0 rgba(255, 255, 255, 0.08),
-    0 30px 70px -20px rgba(0, 0, 0, 0.55),
-    0 12px 32px -12px rgba(0, 0, 0, 0.35);
-  overflow: hidden;
-  isolation: isolate;
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s, box-shadow 0.4s;
-}
-
-/* Gradient iridescent border (Apple Vision Pro signature) */
-.ultra-glass::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  padding: 1px;
-  border-radius: inherit;
-  background: linear-gradient(135deg,
-    rgba(255, 255, 255, 0.5) 0%,
-    rgba(255, 255, 255, 0.1) 25%,
-    transparent 50%,
-    rgba(241, 181, 188, 0.18) 75%,
-    rgba(255, 215, 138, 0.3) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Specular shine on top */
-.ultra-glass::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 45%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, transparent 100%);
-  pointer-events: none;
-  border-radius: 24px 24px 0 0;
-  z-index: 0;
-}
-
-.ultra-glass:hover {
-  background: rgba(255, 255, 255, 0.07);
-  box-shadow:
-    inset 0 1.5px 0 rgba(255, 255, 255, 0.5),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
-    0 40px 100px -20px rgba(0, 0, 0, 0.7),
-    0 16px 40px -12px rgba(0, 0, 0, 0.45),
-    0 0 80px rgba(241, 181, 188, 0.15);
-}
-
-/* === HEADER === */
-header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  padding: 14px 5vw;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: rgba(10, 16, 36, 0.25);
-  backdrop-filter: blur(40px) saturate(200%);
-  -webkit-backdrop-filter: blur(40px) saturate(200%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
-  transition: padding 0.3s, background 0.3s;
-}
-
-header.scrolled {
-  padding: 10px 5vw;
-  background: rgba(10, 16, 36, 0.55);
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: var(--cream);
-}
-
-.logo-mark {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04));
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.28);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--cream);
-  font-family: 'Shippori Mincho', serif;
-  font-size: 24px;
-  font-weight: 700;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.logo-text .brand {
-  font-family: 'Imbue', serif;
-  font-style: italic;
-  font-weight: 600;
-  font-size: 22px;
-  color: var(--cream);
-  letter-spacing: -0.01em;
-}
-
-.logo-text .sub {
-  font-family: 'Shippori Mincho', serif;
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--gold);
-  margin-top: 4px;
-  text-transform: uppercase;
-  opacity: 0.85;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 32px;
-  align-items: center;
-}
-
-nav a {
-  color: rgba(255, 248, 231, 0.88);
-  text-decoration: none;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.2s;
-  position: relative;
-}
-
-nav a::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 0;
-  width: 0;
-  height: 1.5px;
-  background: linear-gradient(90deg, var(--gold), var(--sakura));
-  transition: width 0.3s;
-  border-radius: 2px;
-}
-
-nav a:hover { color: var(--gold); }
-nav a:hover::after { width: 100%; }
-
-.cta-header {
-  background: rgba(255, 255, 255, 0.1);
-  color: var(--cream);
-  padding: 10px 22px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 600;
-  transition: all 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  backdrop-filter: blur(30px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 14px rgba(0, 0, 0, 0.3);
-}
-
-.cta-header:hover {
-  background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 8px 22px rgba(0, 0, 0, 0.4), 0 0 30px rgba(241, 181, 188, 0.25);
-}
-
-.menu-toggle { display: none; background: none; border: none; cursor: pointer; width: 32px; height: 32px; }
-
-/* === HERO === */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 140px 5vw 80px;
-  position: relative;
-  text-align: center;
-  z-index: 5;
-}
-
-.hero-eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px 22px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(40px) saturate(180%);
-  -webkit-backdrop-filter: blur(40px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 999px;
-  font-family: 'Shippori Mincho', serif;
-  font-size: 13px;
-  color: var(--cream);
-  letter-spacing: 2px;
-  margin-bottom: 32px;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 8px 24px rgba(0, 0, 0, 0.3);
-  opacity: 0;
-  animation: fadeUp 0.8s ease 0.2s forwards;
-}
-
-.hero-eyebrow .dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--sakura);
-  box-shadow: 0 0 16px var(--sakura);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.4); }
-}
-
-.hero h1 {
-  font-family: 'Shippori Mincho', serif;
-  font-size: clamp(40px, 7vw, 96px);
-  line-height: 1.05;
-  color: var(--cream);
-  font-weight: 700;
-  max-width: 1100px;
-  margin-bottom: 16px;
-  letter-spacing: -0.02em;
-  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.5), 0 0 80px rgba(58, 90, 154, 0.4);
-  opacity: 0;
-  animation: fadeUp 1s ease 0.4s forwards;
-}
-
-.hero h1 .italic {
-  font-family: 'Imbue', serif;
-  font-style: italic;
-  font-weight: 500;
-  background: linear-gradient(135deg, #F5D0A0 0%, #E8B084 50%, #C9A961 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 4px 20px rgba(241, 181, 188, 0.4));
-}
-
-.hero h1 .stroke {
-  position: relative;
-  display: inline-block;
-}
-
-.hero h1 .stroke::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 12'%3E%3Cpath d='M2 8 Q 80 2, 150 6 T 298 7' stroke='%23E6CB85' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
-  filter: drop-shadow(0 0 8px rgba(255, 215, 138, 0.5));
-}
-
-.hero-sub {
-  font-family: 'Imbue', serif;
-  font-style: italic;
-  font-size: clamp(18px, 2.5vw, 26px);
-  color: rgba(255, 248, 231, 0.92);
-  max-width: 720px;
-  margin: 24px auto 8px;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
-  opacity: 0;
-  animation: fadeUp 1s ease 0.6s forwards;
-}
-
-.hero-jp {
-  font-family: 'Noto Serif JP', serif;
-  font-size: 14px;
-  color: var(--gold);
-  letter-spacing: 4px;
-  margin-bottom: 40px;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.7s forwards;
-  text-shadow: 0 0 20px rgba(255, 215, 138, 0.4);
-}
-
-.hero-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-  opacity: 0;
-  animation: fadeUp 1s ease 0.8s forwards;
-}
-
-.btn-primary {
-  background: rgba(255, 255, 255, 0.12);
-  color: var(--cream);
-  padding: 16px 36px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(40px) saturate(180%);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 10px 30px rgba(0, 0, 0, 0.4);
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-primary::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 999px;
-  background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.btn-primary:hover {
-  transform: translateY(-3px);
-  background: rgba(255, 255, 255, 0.22);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(241, 181, 188, 0.3);
-}
-
-.btn-primary:hover::before { opacity: 1; }
-
-.btn-ghost {
-  background: rgba(10, 16, 36, 0.25);
-  color: var(--cream);
-  padding: 16px 36px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 15px;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(30px);
-  transition: all 0.4s;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
-}
-
-.btn-ghost:hover {
-  background: rgba(10, 16, 36, 0.5);
-  transform: translateY(-3px);
-  border-color: rgba(255, 255, 255, 0.25);
-}
-
-.scroll-cue {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  font-family: 'Shippori Mincho', serif;
-  font-size: 10px;
-  letter-spacing: 4px;
-  color: rgba(255, 248, 231, 0.6);
-  animation: bob 2s ease-in-out infinite;
-}
-
-@keyframes bob {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
-}
-
-.scroll-cue::after {
-  content: '';
-  width: 1px;
-  height: 40px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent);
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* === SECTION === */
-section {
-  padding: 100px 5vw;
-  position: relative;
-  z-index: 5;
-}
-
-.section-head { text-align: center; margin-bottom: 70px; }
-
-.section-eyebrow {
-  display: inline-block;
-  font-family: 'Shippori Mincho', serif;
-  font-size: 12px;
-  letter-spacing: 5px;
-  color: var(--gold);
-  margin-bottom: 16px;
-  text-transform: uppercase;
-  opacity: 0.9;
-  text-shadow: 0 0 16px rgba(255, 215, 138, 0.5);
-}
-
-.section-title {
-  font-family: 'Shippori Mincho', serif;
-  font-size: clamp(32px, 5vw, 60px);
-  color: var(--cream);
-  line-height: 1.1;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 16px;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-
-.section-title .italic {
-  font-family: 'Imbue', serif;
-  font-style: italic;
-  font-weight: 500;
-  background: linear-gradient(135deg, var(--gold), var(--sakura));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 12px rgba(255, 215, 138, 0.3));
-}
-
-.section-sub {
-  font-family: 'Imbue', serif;
-  font-style: italic;
-  font-size: 18px;
-  color: rgba(255, 248, 231, 0.78);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* === COURSE GRID === */
-.courses { max-width: 1280px; margin: 0 auto; }
-
-.course-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 24px;
-}
-
-.course-card {
-  position: relative;
-  padding: 28px 26px;
-  cursor: pointer;
-  will-change: transform;
-  transform-style: preserve-3d;
-}
-
-.course-card > * { position: relative; z-index: 2; }
-
-.course-emblem {
-  width: 32px;
-  height: 32px;
-  margin-bottom: 16px;
-  opacity: 0.92;
-  filter: drop-shadow(0 0 10px rgba(255, 215, 138, 0.4));
-}
-
-.course-card .level {
-  font-family: 'Shippori Mincho', serif;
-  font-size: 32px;
-  color: var(--cream);
-  font-weight: 700;
-  margin-bottom: 4px;
-  display: flex;
-  align-items: baseline;
-  gap: 10px;
-  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
-}
-
-.course-card .level .tag {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--gold);
-  background: rgba(255, 215, 138, 0.13);
-  border: 1px solid rgba(255, 215, 138, 0.32);
-  padding: 4px 12px;
-  border-radius: 999px;
-  letter-spacing: 0.3px;
-  backdrop-filter: blur(10px);
-}
-
-.course-card .divider {
-  width: 40px;
-  height: 1px;
-  background: linear-gradient(90deg, var(--gold), transparent);
-  margin: 16px 0;
-}
-
-.course-card .schedule {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  font-size: 14px;
-  color: rgba(255, 248, 231, 0.92);
-  margin-bottom: 6px;
-  font-weight: 500;
-}
-
-.course-card .schedule .sep { color: var(--gold); margin: 0 8px; }
-
-.course-card .open {
-  font-family: 'Be Vietnam Pro', sans-serif;
-  font-size: 13px;
-  color: rgba(255, 248, 231, 0.78);
-  margin-top: 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.course-card .open-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #6FE5A8;
-  box-shadow: 0 0 0 4px rgba(111, 229, 168, 0.2), 0 0 14px rgba(111, 229, 168, 0.7);
-  animation: pulse 2s ease-in-out infinite;
-}
-
-.course-card .arrow {
-  position: absolute;
-  bottom: 22px;
-  right: 22px;
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(20px);
-  color: var(--cream);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  font-size: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 12px rgba(0, 0, 0, 0.3);
-  text-decoration: none;
-  z-index: 3;
-}
-
-.course-card:hover .arrow {
-  transform: translate(4px, -4px) rotate(-5deg);
-  background: rgba(255, 255, 255, 0.22);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 6px 18px rgba(241, 181, 188, 0.35);
-}
-
-/* === FEATURES === */
-.features { max-width: 1280px; margin: 0 auto; }
-
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.feature {
-  padding: 36px 28px;
-  text-align: center;
-  position: relative;
-  will-change: transform;
-}
-
-.feature > * { position: relative; z-index: 2; }
-
-.feature-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 20px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.06));
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--cream);
-  font-family: 'Shippori Mincho', serif;
-  font-size: 26px;
-  font-weight: 700;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 24px rgba(241, 181, 188, 0.12);
-}
-
-.feature h3 {
-  font-family: 'Shippori Mincho', serif;
-  font-size: 20px;
-  color: var(--cream);
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.feature p {
-  font-size: 14px;
-  color: rgba(255, 248, 231, 0.78);
-  line-height: 1.65;
-}
-
-/* === JOURNEY === */
-.journey { max-width: 1280px; margin: 0 auto; }
-
-.journey-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-  gap: 24px;
-  margin-top: 40px;
-}
-
-.journey-card {
-  padding: 32px 28px;
-  position: relative;
-  will-change: transform;
-}
-
-.journey-card > * { position: relative; z-index: 2; }
-
-.journey-kanji {
-  position: absolute;
-  top: 18px;
-  right: 22px;
-  font-family: 'Noto Serif JP', serif;
-  font-size: 64px;
-  color: rgba(255, 255, 255, 0.1);
-  font-weight: 700;
-  line-height: 1;
-  z-index: 2;
-}
-
-.journey-card h3 {
-  font-family: 'Shippori Mincho', serif;
-  font-size: 24px;
-  color: var(--cream);
-  font-weight: 700;
-  margin-bottom: 4px;
-}
-
-.journey-card .sub {
-  font-family: 'Imbue', serif;
-  font-style: italic;
-  font-size: 14px;
-  color: var(--gold);
-  margin-bottom: 20px;
-}
-
-.journey-card ul { list-style: none; margin-top: 16px; }
-
-.journey-card li {
-  padding: 8px 0;
-  font-size: 14px;
-  color: rgba(255, 248, 231, 0.88);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.journey-card li::before {
-  content: '✦';
-  color: var(--gold);
-  font-size: 12px;
-  margin-top: 3px;
-  text-shadow: 0 0 8px rgba(255, 215, 138, 0.6);
-}
-
-.journey-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 24px;
-  color: var(--cream);
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 14px;
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 4px;
-  transition: gap 0.3s, color 0.3s;
-}
-
-.journey-link:hover { gap: 14px; color: var(--gold); }
-
-/* === CTA === */
-.cta-section {
-  max-width: 980px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 60px 40px;
-  position: relative;
-}
-
-.cta-section > * { position: relative; z-index: 2; }
-
-.cta-section .kanji-deco {
-  position: absolute;
-  top: -50px;
-  right: -40px;
-  font-family: 'Noto Serif JP', serif;
-  font-size: 260px;
-  color: rgba(255, 255, 255, 0.06);
-  font-weight: 700;
-  line-height: 1;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.cta-section h2 {
-  font-family: 'Shippori Mincho', serif;
-  font-size: clamp(28px, 4vw, 44px);
-  color: var(--cream);
-  margin-bottom: 16px;
-  font-weight: 700;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-}
-
-.cta-section h2 .italic {
-  font-family: 'Imbue', serif;
-  font-style: italic;
-  background: linear-gradient(135deg, var(--gold), var(--sakura));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.cta-section p {
-  font-family: 'Imbue', serif;
-  font-style: italic;
-  font-size: 18px;
-  color: rgba(255, 248, 231, 0.85);
-  margin-bottom: 32px;
-}
-
-.cta-buttons {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* === FOOTER === */
-footer {
-  padding: 80px 5vw 30px;
-  position: relative;
-  z-index: 5;
-  margin-top: 80px;
-  background: linear-gradient(180deg, rgba(5, 8, 24, 0.4), rgba(5, 8, 24, 0.85));
-  backdrop-filter: blur(40px) saturate(180%);
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.footer-grid {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 40px;
-  margin-bottom: 40px;
-}
-
-.footer-brand p {
-  margin-top: 18px;
-  color: rgba(255, 248, 231, 0.7);
-  font-size: 14px;
-  line-height: 1.7;
-  max-width: 320px;
-}
-
-footer h4 {
-  font-family: 'Shippori Mincho', serif;
-  font-size: 13px;
-  margin-bottom: 18px;
-  color: var(--gold);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-footer ul { list-style: none; }
-footer li { margin-bottom: 10px; }
-
-footer a {
-  color: rgba(255, 248, 231, 0.78);
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.2s;
-}
-
-footer a:hover { color: var(--gold); }
-
-.footer-bottom {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-
-.footer-bottom p {
-  font-family: 'Imbue', serif;
-  font-style: italic;
-  font-size: 14px;
-  color: rgba(255, 248, 231, 0.6);
-}
-
-/* === FLOATING CONTACT === */
-.floating-contact {
-  position: fixed;
-  right: 20px;
-  bottom: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 50;
-}
-
-.fc-btn {
-  width: 54px;
-  height: 54px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 18px;
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 8px 24px rgba(0, 0, 0, 0.5);
-  transition: all 0.3s;
-}
-
-.fc-btn:hover {
-  transform: translateY(-4px) scale(1.05);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 14px 32px rgba(0, 0, 0, 0.6), 0 0 24px currentColor;
-}
-
-.fc-zalo { background: rgba(0, 104, 255, 0.85); }
-.fc-fb { background: rgba(24, 119, 242, 0.85); }
-.fc-phone { background: rgba(37, 211, 102, 0.85); }
-
-/* === MOBILE === */
-@media (max-width: 900px) {
-  nav { display: none; }
-  nav.open {
-    display: flex;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: rgba(10, 16, 36, 0.92);
-    backdrop-filter: blur(30px);
-    padding: 24px;
-    flex-direction: column;
-  }
-  nav.open ul { flex-direction: column; gap: 20px; align-items: flex-start; }
-  .menu-toggle { display: flex; align-items: center; justify-content: center; }
-  .cta-header { display: none; }
-  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
-  .footer-brand { grid-column: 1 / -1; }
-  .cursor-glow { display: none; }
-}
-
-@media (max-width: 600px) {
-  .footer-grid { grid-template-columns: 1fr; }
-  .cta-section { padding: 40px 24px; }
-  .hero { padding-top: 120px; }
-  .course-card { padding: 24px 20px; }
-  section { padding: 70px 5vw; }
-}
-
-/* Reduce motion */
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-  }
-}
+:root{
+  --ink:#08090F;--ink-2:#0F1119;--ink-3:#15181F;
+  --bone:#F5F1E8;--bone-soft:#E8E1D0;--bone-mute:#C9C2B0;
+  --gold:#B89568;--gold-light:#D4B98C;--gold-deep:#8A6E47;
+  --sumi:#8B3A2E;
+  --glass-bg:rgba(255,252,240,0.025);
+  --glass-bg-hover:rgba(255,252,240,0.045);
+  --glass-border:rgba(245,241,232,0.10);
+  --glass-border-bright:rgba(245,241,232,0.22);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+::selection{background:rgba(184,149,104,.35);color:var(--bone)}
+html{scroll-behavior:smooth;font-feature-settings:'kern','liga','frac','tnum'}
+body{font-family:'Inter Tight',system-ui,sans-serif;font-weight:400;background:var(--ink);color:var(--bone);overflow-x:hidden;position:relative;min-height:100vh;line-height:1.55;letter-spacing:-0.005em;font-size:15px;cursor:none}
+.bg-layer{position:fixed;inset:0;z-index:-10;background:radial-gradient(ellipse 70% 50% at 80% 25%,rgba(184,149,104,.10),transparent 65%),radial-gradient(ellipse 80% 60% at 15% 85%,rgba(139,58,46,.07),transparent 60%),radial-gradient(ellipse 90% 70% at 50% 50%,rgba(20,30,60,.4),transparent 70%),linear-gradient(180deg,#060810 0%,#0a0d18 35%,#0e1220 65%,#080a14 100%)}
+.bg-grain{position:fixed;inset:0;z-index:-9;pointer-events:none;opacity:.4;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.961 0 0 0 0 0.945 0 0 0 0 0.910 0 0 0 0.06 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");mix-blend-mode:overlay}
+.bg-sumi{position:fixed;inset:0;z-index:-8;pointer-events:none;opacity:.18}
+.bg-sumi svg{width:100%;height:100%;display:block}
+.bg-particles{position:fixed;inset:0;z-index:-7;pointer-events:none}
+.cursor{position:fixed;pointer-events:none;z-index:9999;width:8px;height:8px;background:var(--bone);border-radius:50%;transform:translate(-50%,-50%);mix-blend-mode:difference;transition:width .2s,height .2s,opacity .3s;opacity:0}
+.cursor.active{opacity:1}
+.cursor.hover{width:40px;height:40px;background:transparent;border:1px solid var(--bone)}
+@media (hover:none),(max-width:900px){body{cursor:auto}.cursor{display:none}}
+header{position:fixed;top:0;left:0;right:0;z-index:100;padding:24px 5vw;display:flex;align-items:center;justify-content:space-between;background:rgba(8,9,15,.4);backdrop-filter:blur(20px) saturate(150%);-webkit-backdrop-filter:blur(20px) saturate(150%);border-bottom:1px solid rgba(245,241,232,.05);transition:padding .4s cubic-bezier(.16,1,.3,1),background .4s}
+header.scrolled{padding:16px 5vw;background:rgba(8,9,15,.72)}
+.logo{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--bone)}
+.logo-seal{width:38px;height:38px;border-radius:4px;background:var(--sumi);border:1px solid rgba(184,149,104,.45);display:flex;align-items:center;justify-content:center;color:var(--bone);font-family:'Noto Serif JP',serif;font-size:18px;font-weight:600;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-text .brand{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--bone);letter-spacing:.01em}
+.logo-text .sub{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.35em;color:var(--gold);margin-top:6px;text-transform:uppercase}
+nav ul{display:flex;list-style:none;gap:40px;align-items:center}
+nav a{color:var(--bone);text-decoration:none;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:400;letter-spacing:.04em;transition:color .25s;opacity:.78}
+nav a:hover{color:var(--gold-light);opacity:1}
+.cta-header{background:transparent;color:var(--bone);padding:11px 22px;text-decoration:none;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:all .3s;border:1px solid var(--gold);position:relative;overflow:hidden;font-family:'Inter Tight',sans-serif}
+.cta-header::before{content:'';position:absolute;inset:0;background:var(--gold);transform:translateY(100%);transition:transform .3s cubic-bezier(.16,1,.3,1);z-index:-1}
+.cta-header:hover{color:var(--ink)}
+.cta-header:hover::before{transform:translateY(0)}
+.menu-toggle{display:none;background:none;border:none;cursor:none;width:32px;height:32px;color:var(--bone)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr;align-items:center;padding:140px 6vw 80px;position:relative}
+.hero-inner{max-width:1280px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:end}
+@media (max-width:1024px){.hero-inner{grid-template-columns:1fr;gap:40px}}
+.hero-marker{display:flex;align-items:center;gap:16px;margin-bottom:40px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase}
+.hero-marker .line{width:60px;height:1px;background:var(--gold)}
+.hero h1{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(60px,9vw,132px);line-height:.95;color:var(--bone);letter-spacing:-0.025em;margin-bottom:8px}
+.hero h1 em{font-style:italic;font-weight:300;color:var(--gold-light);font-family:'Cormorant Garamond',serif}
+.hero h1 .jp{font-family:'Shippori Mincho',serif;font-weight:500;font-size:.45em;color:var(--gold);letter-spacing:.05em;display:block;margin-top:24px;opacity:.85}
+.hero-right{padding-bottom:40px}
+.hero-lede{font-family:'Cormorant Garamond',serif;font-weight:400;font-style:italic;font-size:clamp(20px,1.8vw,26px);line-height:1.5;color:var(--bone-soft);letter-spacing:-0.005em;margin-bottom:36px;max-width:460px}
+.hero-body{font-family:'Inter Tight',sans-serif;font-weight:300;font-size:15px;line-height:1.75;color:var(--bone-mute);max-width:440px;margin-bottom:48px}
+.hero-cta-group{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.cta-edit{background:transparent;color:var(--bone);padding:18px 0;text-decoration:none;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;display:inline-flex;align-items:center;gap:16px;transition:gap .3s,color .3s;border-bottom:1px solid var(--gold)}
+.cta-edit::after{content:'→';color:var(--gold);font-size:16px;transition:transform .3s}
+.cta-edit:hover{gap:22px;color:var(--gold-light)}
+.cta-edit:hover::after{transform:translateX(4px)}
+.cta-secondary{font-family:'Inter Tight',sans-serif;font-size:13px;letter-spacing:.05em;color:var(--bone-mute);text-decoration:none;transition:color .2s}
+.cta-secondary:hover{color:var(--bone)}
+.hero-footer{position:absolute;bottom:40px;left:6vw;right:6vw;display:flex;justify-content:space-between;align-items:flex-end;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bone-mute);letter-spacing:.15em;text-transform:uppercase}
+.hero-footer .scroll-cue{display:flex;align-items:center;gap:12px}
+.hero-footer .scroll-cue .line{width:1px;height:32px;background:linear-gradient(180deg,var(--gold),transparent);animation:descend 2.4s ease-in-out infinite;transform-origin:top}
+@keyframes descend{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.4)}}
+.section{padding:200px 6vw;position:relative}
+@media (max-width:768px){.section{padding:120px 6vw}}
+.section-inner{max-width:1280px;margin:0 auto}
+.section-header{display:grid;grid-template-columns:1fr 2fr;gap:80px;margin-bottom:100px}
+@media (max-width:1024px){.section-header{grid-template-columns:1fr;gap:32px;margin-bottom:60px}}
+.section-marker{display:flex;flex-direction:column;gap:16px}
+.section-marker .num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:64px;color:var(--gold);line-height:1}
+.section-marker .label{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase}
+.section-marker .divider{width:60px;height:1px;background:var(--gold);margin-top:16px}
+.section-title{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(40px,5.5vw,76px);line-height:1.05;letter-spacing:-0.02em;color:var(--bone);margin-bottom:32px}
+.section-title em{font-style:italic;font-weight:300;color:var(--gold-light)}
+.section-lede{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:19px;line-height:1.55;color:var(--bone-soft);max-width:620px}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(220px,auto);gap:16px}
+@media (max-width:1024px){.bento{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.bento{grid-template-columns:1fr}}
+.bento-item{position:relative;padding:32px 30px;background:var(--glass-bg);backdrop-filter:blur(40px) saturate(180%);-webkit-backdrop-filter:blur(40px) saturate(180%);border:1px solid var(--glass-border);border-radius:2px;overflow:hidden;transition:all .5s cubic-bezier(.16,1,.3,1);text-decoration:none;color:var(--bone);display:flex;flex-direction:column;justify-content:space-between;isolation:isolate}
+.bento-item::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,252,240,.04) 0%,transparent 40%,transparent 60%,rgba(184,149,104,.06) 100%);pointer-events:none;opacity:0;transition:opacity .4s}
+.bento-item::after{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);opacity:0;transition:opacity .4s}
+.bento-item:hover{border-color:var(--glass-border-bright);background:var(--glass-bg-hover);transform:translateY(-4px)}
+.bento-item:hover::before,.bento-item:hover::after{opacity:1}
+.b-2x2{grid-column:span 2;grid-row:span 2}
+.b-2x1{grid-column:span 2}
+.b-3x1{grid-column:span 3}
+.b-4x1{grid-column:span 4}
+@media (max-width:1024px){.b-2x2,.b-2x1,.b-3x1,.b-4x1{grid-column:span 2;grid-row:auto}}
+@media (max-width:600px){.b-2x2,.b-2x1,.b-3x1,.b-4x1{grid-column:span 1}}
+.bento-num{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--gold);letter-spacing:.3em;margin-bottom:auto;text-transform:uppercase}
+.bento-level{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:clamp(36px,4vw,56px);line-height:1;color:var(--bone);margin:20px 0 8px;letter-spacing:-0.02em}
+.bento-level em{font-style:italic;font-weight:300;color:var(--gold-light)}
+.b-2x2 .bento-level{font-size:clamp(48px,5vw,72px)}
+.bento-subtitle{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:400;font-size:17px;color:var(--bone-mute);margin-bottom:20px}
+.bento-meta{display:flex;flex-direction:column;gap:8px;margin-top:auto;padding-top:24px;border-top:1px solid rgba(245,241,232,.08)}
+.bento-meta-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.bento-meta-label{font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--bone-mute);letter-spacing:.2em;text-transform:uppercase;opacity:.7}
+.bento-meta-value{font-family:'Inter Tight',sans-serif;font-size:13px;color:var(--bone);font-weight:400;text-align:right}
+.bento-meta-value.gold{color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:500}
+.bento-arrow{position:absolute;top:30px;right:30px;width:30px;height:30px;display:flex;align-items:center;justify-content:center;color:var(--bone-mute);font-size:16px;transition:all .3s;opacity:.5}
+.bento-item:hover .bento-arrow{color:var(--gold-light);opacity:1;transform:translate(2px,-2px)}
+.philosophy{padding:200px 6vw;position:relative}
+.philosophy-inner{max-width:980px;margin:0 auto;text-align:center}
+.philosophy-quote{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:clamp(32px,4.5vw,56px);line-height:1.25;color:var(--bone);letter-spacing:-0.015em;margin-bottom:40px}
+.philosophy-quote em{color:var(--gold-light);font-weight:400}
+.philosophy-attribution{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase}
+.philosophy-attribution::before{content:'— ';margin-right:4px}
+.approach-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(245,241,232,.08)}
+@media (max-width:768px){.approach-grid{grid-template-columns:1fr}}
+.approach-item{padding:60px 50px;background:var(--ink);position:relative;transition:background .4s}
+.approach-item:hover{background:var(--ink-2)}
+.approach-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:48px;color:var(--gold);line-height:1;margin-bottom:28px}
+.approach-title{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:32px;color:var(--bone);margin-bottom:14px;letter-spacing:-0.015em;line-height:1.15}
+.approach-title em{font-style:italic;color:var(--gold-light);font-weight:300}
+.approach-desc{font-family:'Inter Tight',sans-serif;font-weight:300;font-size:15px;line-height:1.7;color:var(--bone-mute);max-width:440px}
+.journey-list{display:flex;flex-direction:column}
+.journey-row{display:grid;grid-template-columns:80px 1fr 240px 60px;gap:40px;padding:48px 0;border-top:1px solid rgba(245,241,232,.08);align-items:center;text-decoration:none;color:var(--bone);transition:background .3s;cursor:none}
+.journey-row:last-child{border-bottom:1px solid rgba(245,241,232,.08)}
+.journey-row:hover{background:rgba(245,241,232,.015)}
+.journey-row:hover .journey-arrow{transform:translateX(8px);color:var(--gold-light)}
+@media (max-width:768px){.journey-row{grid-template-columns:1fr;gap:16px;padding:32px 0}}
+.journey-num{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:300;font-size:40px;color:var(--gold);line-height:1}
+.journey-title{font-family:'Cormorant Garamond',serif;font-weight:400;font-size:32px;color:var(--bone);letter-spacing:-0.015em;line-height:1.15;margin-bottom:6px}
+.journey-jp{font-family:'Shippori Mincho',serif;font-size:13px;color:var(--gold);letter-spacing:.05em;margin-bottom:12px}
+.journey-desc{font-family:'Inter Tight',sans-serif;font-weight:300;font-size:14px;line-height:1.65;color:var(--bone-mute);max-width:540px}
+.journey-stats{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bone-mute);letter-spacing:.15em;text-transform:uppercase;line-height:1.8}
+.journey-stats strong{color:var(--gold-light);font-weight:400}
+.journey-arrow{color:var(--bone-mute);font-size:18px;transition:transform .3s,color .3s;justify-self:end}
+.closing{padding:220px 6vw;text-align:center}
+.closing-marker{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--gold);letter-spacing:.4em;text-transform:uppercase;margin-bottom:48px}
+.closing h2{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(56px,8vw,128px);line-height:.95;letter-spacing:-0.025em;color:var(--bone);margin-bottom:48px;max-width:1100px;margin-left:auto;margin-right:auto}
+.closing h2 strong{font-style:normal;font-weight:400;color:var(--bone)}
+.closing p{font-family:'Cormorant Garamond',serif;font-style:italic;font-size:20px;color:var(--bone-mute);max-width:560px;margin:0 auto 56px;line-height:1.5}
+.closing-cta{display:inline-flex;align-items:center;gap:16px;padding:22px 44px;background:var(--gold);color:var(--ink);text-decoration:none;font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:500;letter-spacing:.15em;text-transform:uppercase;transition:all .3s;border:1px solid var(--gold)}
+.closing-cta:hover{background:transparent;color:var(--gold);gap:22px}
+footer{padding:100px 6vw 40px;border-top:1px solid rgba(245,241,232,.06);position:relative}
+.footer-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:60px;margin-bottom:80px}
+@media (max-width:768px){.footer-grid{grid-template-columns:1fr 1fr;gap:40px}.footer-brand{grid-column:1/-1}}
+.footer-brand p{margin-top:24px;color:var(--bone-mute);font-size:14px;line-height:1.7;max-width:380px;font-weight:300}
+footer h4{font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:24px;color:var(--gold);letter-spacing:.3em;text-transform:uppercase;font-weight:400}
+footer ul{list-style:none}
+footer li{margin-bottom:14px}
+footer a{color:var(--bone);text-decoration:none;font-size:14px;font-weight:300;transition:color .2s,padding-left .3s;opacity:.82;display:inline-block}
+footer a:hover{color:var(--gold-light);opacity:1;padding-left:6px}
+.footer-bottom{max-width:1280px;margin:0 auto;padding-top:32px;border-top:1px solid rgba(245,241,232,.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-bottom p{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--bone-mute);letter-spacing:.15em;text-transform:uppercase;opacity:.7}
+.floating-contact{position:fixed;right:28px;bottom:28px;display:flex;flex-direction:column;gap:10px;z-index:50}
+.fc-btn{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--bone);text-decoration:none;font-weight:500;font-size:13px;font-family:'Inter Tight',sans-serif;background:rgba(8,9,15,.85);backdrop-filter:blur(20px);border:1px solid rgba(245,241,232,.18);transition:all .3s;cursor:none}
+.fc-btn:hover{background:var(--gold);color:var(--ink);border-color:var(--gold);transform:translateY(-3px)}
+@media (max-width:900px){body{cursor:auto}nav{display:none}nav.open{display:flex;position:absolute;top:100%;left:0;right:0;background:rgba(8,9,15,.95);backdrop-filter:blur(30px);padding:32px 5vw;flex-direction:column}nav.open ul{flex-direction:column;gap:24px;align-items:flex-start}.menu-toggle{display:flex;align-items:center;justify-content:center;cursor:pointer}.cta-header{display:none}}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 1s cubic-bezier(.16,1,.3,1),transform 1s cubic-bezier(.16,1,.3,1)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important}}
 </style>
 </head>
 <body>
 
-<!-- HOKUSAI CANVAS WAVES -->
-<canvas class="hokusai-canvas" id="hokusai"></canvas>
+<div class="bg-layer"></div>
+<div class="bg-grain"></div>
 
-<!-- CURSOR GLOW -->
-<div class="cursor-glow" id="cursorGlow"></div>
+<svg class="bg-sumi" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="brushG" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0%" stop-color="rgba(184,149,104,0)"/>
+      <stop offset="30%" stop-color="rgba(184,149,104,0.85)"/>
+      <stop offset="70%" stop-color="rgba(184,149,104,0.65)"/>
+      <stop offset="100%" stop-color="rgba(184,149,104,0)"/>
+    </linearGradient>
+    <linearGradient id="brushG2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="rgba(245,241,232,0)"/>
+      <stop offset="50%" stop-color="rgba(245,241,232,0.45)"/>
+      <stop offset="100%" stop-color="rgba(245,241,232,0)"/>
+    </linearGradient>
+  </defs>
+  <path d="M -100 750 Q 400 580 900 660 T 1600 700" stroke="url(#brushG)" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M 1500 100 Q 1100 200 800 180 T 100 220" stroke="url(#brushG)" stroke-width="1.5" fill="none" opacity="0.4"/>
+  <line x1="1380" y1="100" x2="1380" y2="800" stroke="url(#brushG2)" stroke-width="0.5" opacity="0.5"/>
+  <line x1="60" y1="200" x2="60" y2="700" stroke="url(#brushG2)" stroke-width="0.5" opacity="0.3"/>
+</svg>
 
-<!-- PARTICLES -->
-<div class="particles" id="particles"></div>
+<canvas class="bg-particles" id="particles"></canvas>
+<div class="cursor" id="cursor"></div>
 
-<!-- HEADER -->
 <header id="header">
   <a href="/" class="logo">
-    <div class="logo-mark">智</div>
+    <div class="logo-seal">智</div>
     <div class="logo-text">
       <div class="brand">Trí Lữ Nihongo</div>
-      <div class="sub">日本語 ACADEMY</div>
+      <div class="sub">EST · 2018 · 日本語</div>
     </div>
   </a>
   <nav id="nav">
@@ -1025,631 +204,292 @@ footer a:hover { color: var(--gold); }
       <li><a href="kaiwa.html">Kaiwa</a></li>
       <li><a href="eju.html">EJU</a></li>
       <li><a href="thi-thu.html">Thi thử</a></li>
-      <li><a href="viec-lam.html">Việc làm Nhật</a></li>
-      <li><a href="blog.html">Blog</a></li>
+      <li><a href="viec-lam.html">Việc làm</a></li>
+      <li><a href="blog.html">Tư liệu</a></li>
     </ul>
   </nav>
-  <a href="lien-he.html" class="cta-header">Đăng ký tư vấn</a>
+  <a href="lien-he.html" class="cta-header">Đăng ký</a>
   <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8E7" stroke-width="2" stroke-linecap="round">
-      <line x1="3" y1="6" x2="21" y2="6"/>
-      <line x1="3" y1="12" x2="21" y2="12"/>
-      <line x1="3" y1="18" x2="21" y2="18"/>
-    </svg>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><line x1="3" y1="8" x2="21" y2="8"/><line x1="3" y1="16" x2="21" y2="16"/></svg>
   </button>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <div class="hero-eyebrow">
-    <span class="dot"></span>
-    <span>日本語で未来を拓く</span>
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-marker reveal">
+        <span class="line"></span>
+        <span>No. 001 · Vision</span>
+      </div>
+      <h1 class="reveal">
+        Một học viện<br>
+        <em>tiếng Nhật</em><br>
+        cho người Việt<br>
+        nghiêm túc.
+        <span class="jp">真剣な日本語</span>
+      </h1>
+    </div>
+    <div class="hero-right">
+      <p class="hero-lede reveal">Không phải khoá học đại trà. Một chương trình được thiết kế cho người Việt đang chuẩn bị nghiêm túc cho hành trình Nhật Bản — học tập, làm việc, hay định cư.</p>
+      <p class="hero-body reveal">JLPT N5 đến N1, Kaiwa với giáo viên Nhật bản xứ, EJU, và định hướng việc làm tại Tokyo, Osaka, Nagoya. Mở năm 2018.</p>
+      <div class="hero-cta-group reveal">
+        <a href="#approach" class="cta-edit">Tìm hiểu cách tiếp cận</a>
+        <a href="lien-he.html" class="cta-secondary">— Hoặc đăng ký tư vấn</a>
+      </div>
+    </div>
   </div>
-  <h1>
-    Chinh phục <span class="italic">tiếng Nhật</span>,<br>
-    mở cửa <span class="stroke">tương lai</span>.
-  </h1>
-  <p class="hero-sub">
-    Lộ trình bài bản từ N5 đến công việc tại Nhật — JLPT, Kaiwa, EJU, ôn thi và việc làm.
-  </p>
-  <div class="hero-jp">学びの旅 · TRÍ LỮ NIHONGO</div>
-  <div class="hero-actions">
-    <a href="lien-he.html" class="btn-primary">
-      Đăng ký học thử miễn phí
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-    <a href="#courses" class="btn-ghost">Xem các khoá học</a>
-  </div>
-  <div class="scroll-cue">CUỘN XUỐNG</div>
-</section>
-
-<!-- COURSES -->
-<section id="courses" class="courses">
-  <div class="section-head">
-    <div class="section-eyebrow">TUYỂN SINH · 募集中</div>
-    <h2 class="section-title">Học viên <span class="italic">tiếng Nhật</span> mới</h2>
-    <p class="section-sub">Đăng ký ngay hôm nay — chọn khoá phù hợp với lộ trình của bạn.</p>
-  </div>
-  <div class="course-grid">
-    <article class="course-card ultra-glass tilt" data-tilt>
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#FFD78A" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
-      <div class="level">N5 <span class="tag">Cơ bản</span></div>
-      <div class="divider"></div>
-      <p class="schedule">T2-4-6 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
-      <p class="open"><span class="open-dot"></span>Khai giảng 13/5</p>
-      <a href="jlpt.html#n5" class="arrow">→</a>
-    </article>
-
-    <article class="course-card ultra-glass tilt" data-tilt>
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#FFD78A" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
-      <div class="level">N4</div>
-      <div class="divider"></div>
-      <p class="schedule">T3-5-7 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
-      <p class="open"><span class="open-dot"></span>Khai giảng 19/5</p>
-      <a href="jlpt.html#n4" class="arrow">→</a>
-    </article>
-
-    <article class="course-card ultra-glass tilt" data-tilt>
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#FFD78A" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
-      <div class="level">N3</div>
-      <div class="divider"></div>
-      <p class="schedule">T2-4-6 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
-      <p class="open"><span class="open-dot"></span>Khai giảng 25/5</p>
-      <a href="jlpt.html#n3" class="arrow">→</a>
-    </article>
-
-    <article class="course-card ultra-glass tilt" data-tilt>
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#FFD78A" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
-      <div class="level">N3 <span class="tag">Cuối tuần</span></div>
-      <div class="divider"></div>
-      <p class="schedule">T7-CN <span class="sep">·</span> 11h00 VN (13h00 NB)</p>
-      <p class="open"><span class="open-dot"></span>Đang nhận học viên</p>
-      <a href="jlpt.html#n3" class="arrow">→</a>
-    </article>
-
-    <article class="course-card ultra-glass tilt" data-tilt>
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#FFD78A" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
-      <div class="level">N1 <span class="tag">Cuối tuần</span></div>
-      <div class="divider"></div>
-      <p class="schedule">T7-CN <span class="sep">·</span> 13h00 VN (15h00 NB)</p>
-      <p class="open"><span class="open-dot"></span>Đang nhận học viên</p>
-      <a href="jlpt.html#n1" class="arrow">→</a>
-    </article>
-
-    <article class="course-card ultra-glass tilt" data-tilt>
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M16 4 L19 12 L28 13 L21 19 L23 28 L16 23 L9 28 L11 19 L4 13 L13 12 Z" fill="#F1B5BC" stroke="#FFD78A" stroke-width="1"/></svg>
-      <div class="level">Ôn thi N3 <span class="tag">Thi T7</span></div>
-      <div class="divider"></div>
-      <p class="schedule">T2-4-6 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
-      <p class="open"><span class="open-dot"></span>Còn 6 suất</p>
-      <a href="thi-thu.html" class="arrow">→</a>
-    </article>
-
-    <article class="course-card ultra-glass tilt" data-tilt>
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M16 4 L19 12 L28 13 L21 19 L23 28 L16 23 L9 28 L11 19 L4 13 L13 12 Z" fill="#F1B5BC" stroke="#FFD78A" stroke-width="1"/></svg>
-      <div class="level">Ôn thi N2 <span class="tag">Thi T7</span></div>
-      <div class="divider"></div>
-      <p class="schedule">T3-5-7 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
-      <p class="open"><span class="open-dot"></span>Đang nhận học viên</p>
-      <a href="thi-thu.html" class="arrow">→</a>
-    </article>
-
-    <article class="course-card ultra-glass tilt" data-tilt>
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M6 18 Q10 8 16 8 Q22 8 26 18 Q22 22 16 22 Q10 22 6 18 Z" fill="#F1B5BC" stroke="#FFD78A" stroke-width="1"/><circle cx="16" cy="16" r="2.5" fill="#FFF8E7"/></svg>
-      <div class="level">Kaiwa N5-N4</div>
-      <div class="divider"></div>
-      <p class="schedule">T2-4-6 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
-      <p class="open"><span class="open-dot"></span>Khai giảng 18/5</p>
-      <a href="kaiwa.html" class="arrow">→</a>
-    </article>
-
-    <article class="course-card ultra-glass tilt" data-tilt>
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M6 18 Q10 8 16 8 Q22 8 26 18 Q22 22 16 22 Q10 22 6 18 Z" fill="#F1B5BC" stroke="#FFD78A" stroke-width="1"/><circle cx="16" cy="16" r="2.5" fill="#FFF8E7"/></svg>
-      <div class="level">Kaiwa N3</div>
-      <div class="divider"></div>
-      <p class="schedule">T3-5-7 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
-      <p class="open"><span class="open-dot"></span>Khai giảng 19/5</p>
-      <a href="kaiwa.html" class="arrow">→</a>
-    </article>
+  <div class="hero-footer">
+    <span>TRÍ LỮ NIHONGO — HÀ NỘI · TOKYO</span>
+    <div class="scroll-cue"><span>Cuộn xuống</span><span class="line"></span></div>
+    <span>2026 · 八年目</span>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="section-head">
-    <div class="section-eyebrow">VÌ SAO CHỌN TRÍ LỮ · なぜ</div>
-    <h2 class="section-title">Đường dài có <span class="italic">người đồng hành</span></h2>
-    <p class="section-sub">Không chỉ học chữ — học cách dùng tiếng Nhật để mở cánh cửa nghề nghiệp.</p>
-  </div>
-  <div class="feature-grid">
-    <div class="feature ultra-glass tilt" data-tilt>
-      <div class="feature-icon">智</div>
-      <h3>Giáo án chi tiết</h3>
-      <p>Mỗi cấp độ có giáo án in màu, bài tập chia mức — không lo "học cho có".</p>
+<section class="section" id="courses">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-marker reveal">
+        <span class="num">002</span>
+        <span class="label">Khoá học · 募集</span>
+        <span class="divider"></span>
+      </div>
+      <div class="reveal">
+        <h2 class="section-title">Một chương trình, <em>năm cấp độ</em>, mười phương án học.</h2>
+        <p class="section-lede">JLPT, Kaiwa, EJU và ôn thi — chọn cấp phù hợp năng lực hôm nay, chọn cách học phù hợp lịch trình của bạn.</p>
+      </div>
     </div>
-    <div class="feature ultra-glass tilt" data-tilt>
-      <div class="feature-icon">話</div>
-      <h3>Kaiwa 1-1</h3>
-      <p>Luyện nói trực tiếp với giáo viên người Nhật và sempai Việt đang sống tại Nhật.</p>
-    </div>
-    <div class="feature ultra-glass tilt" data-tilt>
-      <div class="feature-icon">道</div>
-      <h3>Lộ trình rõ ràng</h3>
-      <p>Từ "konnichiwa" đến phỏng vấn xin việc — biết hôm nay học gì, mai học gì.</p>
-    </div>
-    <div class="feature ultra-glass tilt" data-tilt>
-      <div class="feature-icon">縁</div>
-      <h3>Cộng đồng sempai</h3>
-      <p>Kết nối với sempai đang du học, làm việc tại Tokyo, Osaka, Nagoya, Fukuoka.</p>
-    </div>
-  </div>
-</section>
-
-<!-- JOURNEY -->
-<section class="journey">
-  <div class="section-head">
-    <div class="section-eyebrow">VIỆC LÀM NHẬT · 仕事</div>
-    <h2 class="section-title">Ba con đường — <span class="italic">một đích đến</span></h2>
-    <p class="section-sub">Chọn hệ phù hợp với năng lực, mục tiêu và kế hoạch dài hạn của bạn.</p>
-  </div>
-  <div class="journey-grid">
-    <article class="journey-card ultra-glass tilt" data-tilt>
-      <div class="journey-kanji">研</div>
-      <h3>Thực tập sinh</h3>
-      <p class="sub">Kenshūsei · 3-5 năm</p>
-      <ul>
-        <li>Yêu cầu tối thiểu N5-N4</li>
-        <li>Chi phí xuất cảnh thấp</li>
-        <li>Lương 28-35 triệu/tháng</li>
-        <li>Ngành: Cơ khí, may, nông nghiệp, chế biến</li>
-      </ul>
-      <a href="viec-lam.html#thuc-tap-sinh" class="journey-link">Tìm hiểu thêm →</a>
-    </article>
-
-    <article class="journey-card ultra-glass tilt" data-tilt>
-      <div class="journey-kanji">特</div>
-      <h3>Tokutei (Kỹ năng đặc định)</h3>
-      <p class="sub">Tokutei Ginō · 5+ năm</p>
-      <ul>
-        <li>Yêu cầu N4 + tay nghề</li>
-        <li>Lương 35-50 triệu/tháng</li>
-        <li>Bảo lãnh người thân</li>
-        <li>14 ngành nghề được mở</li>
-      </ul>
-      <a href="viec-lam.html#tokutei" class="journey-link">Tìm hiểu thêm →</a>
-    </article>
-
-    <article class="journey-card ultra-glass tilt" data-tilt>
-      <div class="journey-kanji">技</div>
-      <h3>Kỹ sư · Phiên dịch</h3>
-      <p class="sub">Gijutsu/Tsūyaku · Visa dài hạn</p>
-      <ul>
-        <li>Yêu cầu N2-N1 + bằng đại học</li>
-        <li>Lương 50-100+ triệu/tháng</li>
-        <li>Định cư, đổi visa vĩnh trú</li>
-        <li>IT, kỹ thuật, biên-phiên dịch</li>
-      </ul>
-      <a href="viec-lam.html#ky-su" class="journey-link">Tìm hiểu thêm →</a>
-    </article>
-  </div>
-</section>
-
-<!-- CTA -->
-<section>
-  <div class="cta-section ultra-glass">
-    <div class="kanji-deco">智</div>
-    <h2>Bắt đầu hành trình — <span class="italic">hôm nay.</span></h2>
-    <p>Đăng ký tư vấn miễn phí. Em sẽ giúp bạn chọn khoá học phù hợp trong 15 phút.</p>
-    <div class="cta-buttons">
-      <a href="lien-he.html" class="btn-primary">
-        Đăng ký tư vấn
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    <div class="bento">
+      <a href="jlpt.html#n5" class="bento-item b-2x2 reveal">
+        <span class="bento-num">JLPT / 001</span>
+        <span class="bento-arrow">→</span>
+        <div>
+          <div class="bento-level">N<em>5</em></div>
+          <div class="bento-subtitle">Cơ bản — bước đầu tiên</div>
+        </div>
+        <div class="bento-meta">
+          <div class="bento-meta-row"><span class="bento-meta-label">Thời lượng</span><span class="bento-meta-value">3 tháng</span></div>
+          <div class="bento-meta-row"><span class="bento-meta-label">Lịch học</span><span class="bento-meta-value">T2-4-6 · 19:00</span></div>
+          <div class="bento-meta-row"><span class="bento-meta-label">Khai giảng</span><span class="bento-meta-value">13 · 05</span></div>
+          <div class="bento-meta-row"><span class="bento-meta-label">Học phí</span><span class="bento-meta-value gold">1.800.000 ₫</span></div>
+        </div>
       </a>
-      <a href="https://zalo.me/0342390667" class="btn-ghost" target="_blank">Nhắn Zalo: 0342390667</a>
+      <a href="jlpt.html#n4" class="bento-item b-2x1 reveal">
+        <span class="bento-num">JLPT / 002</span>
+        <span class="bento-arrow">→</span>
+        <div class="bento-level">N<em>4</em></div>
+        <div class="bento-subtitle">Sơ trung · 19 · 05</div>
+      </a>
+      <a href="jlpt.html#n3" class="bento-item b-2x1 reveal">
+        <span class="bento-num">JLPT / 003</span>
+        <span class="bento-arrow">→</span>
+        <div class="bento-level">N<em>3</em></div>
+        <div class="bento-subtitle">Trung cấp · 25 · 05</div>
+      </a>
+      <a href="jlpt.html#n2" class="bento-item b-2x1 reveal">
+        <span class="bento-num">JLPT / 004</span>
+        <span class="bento-arrow">→</span>
+        <div class="bento-level">N<em>2</em></div>
+        <div class="bento-subtitle">Cao cấp · Business</div>
+      </a>
+      <a href="jlpt.html#n1" class="bento-item b-2x1 reveal">
+        <span class="bento-num">JLPT / 005</span>
+        <span class="bento-arrow">→</span>
+        <div class="bento-level">N<em>1</em></div>
+        <div class="bento-subtitle">Thượng đẳng · Cuối tuần</div>
+      </a>
+      <a href="kaiwa.html" class="bento-item b-3x1 reveal">
+        <span class="bento-num">KAIWA · 会話</span>
+        <span class="bento-arrow">→</span>
+        <div class="bento-level"><em>Kaiwa</em></div>
+        <div class="bento-subtitle">Luyện nói 1-1 với giáo viên Nhật bản xứ. Từ N5 đến N1.</div>
+      </a>
+      <a href="eju.html" class="bento-item b-3x1 reveal">
+        <span class="bento-num">EJU · 留学試験</span>
+        <span class="bento-arrow">→</span>
+        <div class="bento-level"><em>EJU</em></div>
+        <div class="bento-subtitle">Lộ trình 12 tháng vào đại học Nhật — đủ 4 môn.</div>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- FOOTER -->
+<section class="philosophy">
+  <div class="philosophy-inner">
+    <p class="philosophy-quote reveal">"Một ngôn ngữ không phải chỉ là từ vựng và ngữ pháp. Đó là cách <em>nghĩ</em>, cách <em>cảm nhận</em>, và cuối cùng — cách <em>sống</em> trong một nền văn hoá."</p>
+    <p class="philosophy-attribution reveal">Triết lý giảng dạy Trí Lữ</p>
+  </div>
+</section>
+
+<section class="section" id="approach">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-marker reveal">
+        <span class="num">003</span>
+        <span class="label">Cách tiếp cận · 方法</span>
+        <span class="divider"></span>
+      </div>
+      <div class="reveal">
+        <h2 class="section-title">Bốn nguyên tắc — <em>một lộ trình</em>.</h2>
+        <p class="section-lede">Cách chúng tôi dạy khác với hầu hết các trung tâm tiếng Nhật khác. Đây là lý do.</p>
+      </div>
+    </div>
+    <div class="approach-grid">
+      <div class="approach-item reveal">
+        <div class="approach-num">01</div>
+        <h3 class="approach-title">Giáo án <em>biên soạn riêng</em>.</h3>
+        <p class="approach-desc">Không dùng giáo trình đại trà. Mỗi cấp độ có giáo án in màu, biên soạn bởi giáo viên Nhật + sempai Việt — căn cứ vào người Việt thật sự cần gì khi sang Nhật.</p>
+      </div>
+      <div class="approach-item reveal">
+        <div class="approach-num">02</div>
+        <h3 class="approach-title">Lớp nhỏ — <em>nói thật</em>.</h3>
+        <p class="approach-desc">Kaiwa 1-1 hoặc nhóm 3-4 người tối đa. Giáo viên Nhật bản xứ, không phải video bài giảng. Mỗi tuần ghi âm tiến độ, sửa từng câu.</p>
+      </div>
+      <div class="approach-item reveal">
+        <div class="approach-num">03</div>
+        <h3 class="approach-title">Văn hoá <em>không tách rời</em> ngôn ngữ.</h3>
+        <p class="approach-desc">Học keigo cùng văn hoá doanh nghiệp. Học từ vựng đời sống cùng cách sinh hoạt. Khi sang Nhật, bạn không sốc văn hoá.</p>
+      </div>
+      <div class="approach-item reveal">
+        <div class="approach-num">04</div>
+        <h3 class="approach-title">Sempai <em>thật</em>, đang sống tại Nhật.</h3>
+        <p class="approach-desc">Network của sempai Trí Lữ tại Tokyo, Osaka, Nagoya, Fukuoka. Hỏi gì cũng được — từ chuyện học, chuyện làm việc, đến chuyện tìm chỗ ở.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="careers">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-marker reveal">
+        <span class="num">004</span>
+        <span class="label">Việc làm Nhật · 仕事</span>
+        <span class="divider"></span>
+      </div>
+      <div class="reveal">
+        <h2 class="section-title">Ba con đường — <em>một đích đến</em>.</h2>
+        <p class="section-lede">Chọn đúng hệ ngay từ đầu để không lãng phí thời gian và tiền bạc. Đây là khác biệt thật giữa ba con đường.</p>
+      </div>
+    </div>
+    <div class="journey-list">
+      <a href="viec-lam.html#thuc-tap-sinh" class="journey-row reveal">
+        <div class="journey-num">I</div>
+        <div>
+          <div class="journey-jp">研修 · KENSHŪSEI</div>
+          <div class="journey-title">Thực tập sinh<em>.</em></div>
+          <p class="journey-desc">Đi Nhật học nghề 3-5 năm. Chi phí xuất cảnh thấp nhất, yêu cầu tiếng cơ bản N5-N4. Phù hợp người trẻ muốn tiết kiệm vốn và học nghề.</p>
+        </div>
+        <div class="journey-stats">Yêu cầu&nbsp;<strong>N5-N4</strong><br>Lương&nbsp;<strong>28-35tr</strong><br>Thời gian&nbsp;<strong>3-5 năm</strong></div>
+        <div class="journey-arrow">→</div>
+      </a>
+      <a href="viec-lam.html#tokutei" class="journey-row reveal">
+        <div class="journey-num">II</div>
+        <div>
+          <div class="journey-jp">特定技能 · TOKUTEI GINŌ</div>
+          <div class="journey-title">Kỹ năng đặc định<em>.</em></div>
+          <p class="journey-desc">Visa kỹ năng đặc định — có tay nghề chuyên môn. Đãi ngộ tốt hơn Thực tập sinh, có thể bảo lãnh người thân và gia hạn vô hạn ở Tokutei 2.</p>
+        </div>
+        <div class="journey-stats">Yêu cầu&nbsp;<strong>N4 + skill</strong><br>Lương&nbsp;<strong>35-50tr</strong><br>Thời gian&nbsp;<strong>5+ năm</strong></div>
+        <div class="journey-arrow">→</div>
+      </a>
+      <a href="viec-lam.html#ky-su" class="journey-row reveal">
+        <div class="journey-num">III</div>
+        <div>
+          <div class="journey-jp">技術 · 人文 · GIJUTSU</div>
+          <div class="journey-title">Kỹ sư &amp; Phiên dịch<em>.</em></div>
+          <p class="journey-desc">Đỉnh cao việc làm Nhật. Yêu cầu bằng đại học và tiếng Nhật N2-N1. Đãi ngộ cao, được tôn trọng, định cư dài hạn và đổi quốc tịch.</p>
+        </div>
+        <div class="journey-stats">Yêu cầu&nbsp;<strong>N2-N1 + ĐH</strong><br>Lương&nbsp;<strong>50-100tr+</strong><br>Visa&nbsp;<strong>Dài hạn</strong></div>
+        <div class="journey-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="closing-marker reveal">No. 005 · 始まり · Begin</div>
+  <h2 class="reveal">Bắt đầu một <strong>hành trình</strong> — hôm nay.</h2>
+  <p class="reveal">Tư vấn miễn phí trong 30 phút. Em sẽ giúp bạn xác định trình độ hiện tại và xây lộ trình phù hợp với mục tiêu.</p>
+  <a href="lien-he.html" class="closing-cta reveal">Đăng ký tư vấn <span>→</span></a>
+</section>
+
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
       <a href="/" class="logo">
-        <div class="logo-mark">智</div>
+        <div class="logo-seal">智</div>
         <div class="logo-text">
           <div class="brand">Trí Lữ Nihongo</div>
-          <div class="sub">日本語 ACADEMY</div>
+          <div class="sub">EST · 2018 · 日本語</div>
         </div>
       </a>
-      <p>Học viện tiếng Nhật đào tạo từ JLPT N5 đến N1, Kaiwa, EJU và định hướng việc làm tại Nhật Bản.</p>
+      <p>Một học viện tiếng Nhật cho người Việt nghiêm túc với hành trình Nhật Bản. JLPT N5 đến N1, Kaiwa, EJU và định hướng việc làm.</p>
     </div>
     <div>
       <h4>Khoá học</h4>
       <ul>
-        <li><a href="jlpt.html">JLPT N5-N1</a></li>
+        <li><a href="jlpt.html">JLPT N5 — N1</a></li>
         <li><a href="kaiwa.html">Kaiwa</a></li>
-        <li><a href="eju.html">EJU du học</a></li>
+        <li><a href="eju.html">EJU</a></li>
         <li><a href="thi-thu.html">Thi thử</a></li>
       </ul>
     </div>
     <div>
-      <h4>Việc làm Nhật</h4>
+      <h4>Việc làm</h4>
       <ul>
         <li><a href="viec-lam.html#thuc-tap-sinh">Thực tập sinh</a></li>
         <li><a href="viec-lam.html#tokutei">Tokutei</a></li>
-        <li><a href="viec-lam.html#ky-su">Kỹ sư · Phiên dịch</a></li>
-        <li><a href="blog.html">Blog</a></li>
+        <li><a href="viec-lam.html#ky-su">Kỹ sư</a></li>
+        <li><a href="blog.html">Tư liệu</a></li>
       </ul>
     </div>
     <div>
       <h4>Liên hệ</h4>
       <ul>
-        <li><a href="https://zalo.me/0342390667">Zalo: 0342390667</a></li>
-        <li><a href="https://www.facebook.com/" target="_blank">Facebook: Trí Lữ Nihongo</a></li>
+        <li><a href="https://zalo.me/0342390667">Zalo · 0342 390 667</a></li>
+        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
         <li><a href="mailto:hello@trilu.edu.vn">hello@trilu.edu.vn</a></li>
+        <li><a href="lien-he.html">Đăng ký tư vấn</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2026 Trí Lữ Nihongo · ⛩ <em>Crafted with care — Tokyo & Hà Nội.</em></p>
-    <p style="opacity:0.5;font-size:12px;">www.trilu.edu.vn</p>
+    <p>© MMXXVI · Trí Lữ Nihongo · Tokyo & Hà Nội</p>
+    <p>www · trilu · edu · vn</p>
   </div>
 </footer>
 
-<!-- FLOATING CONTACT -->
 <div class="floating-contact">
-  <a href="https://zalo.me/0342390667" class="fc-btn fc-zalo" target="_blank" aria-label="Zalo">Z</a>
-  <a href="https://m.me/" class="fc-btn fc-fb" target="_blank" aria-label="Messenger">M</a>
-  <a href="tel:+84342390667" class="fc-btn fc-phone" aria-label="Gọi điện">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-  </a>
+  <a href="https://zalo.me/0342390667" class="fc-btn" target="_blank" aria-label="Zalo">Z</a>
+  <a href="https://m.me/" class="fc-btn" target="_blank" aria-label="Messenger">M</a>
+  <a href="tel:+84342390667" class="fc-btn" aria-label="Gọi"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></a>
 </div>
 
 <script>
-const canvas = document.getElementById('hokusai');
-const ctx = canvas.getContext('2d', { alpha: false });
-let W, H, DPR, t = 0, mouseX = 0.5, mouseY = 0.5, stars = [], foamP = [], dust = [];
-function resize() {
-  DPR = Math.min(window.devicePixelRatio||1, 2); W = innerWidth; H = innerHeight;
-  canvas.width = W*DPR; canvas.height = H*DPR; canvas.style.width = W+'px'; canvas.style.height = H+'px';
-  ctx.setTransform(DPR,0,0,DPR,0,0);
-  stars = Array.from({length:55}, () => ({x: Math.random()*W, y: Math.random()*H*0.5, r: Math.random()*0.9+0.2, twinkle: Math.random()*Math.PI*2, speed: Math.random()*0.015+0.004}));
-  dust = Array.from({length:35}, () => ({x: Math.random()*W, y: Math.random()*H*0.85, r: Math.random()*0.8+0.3, vx: (Math.random()-0.5)*0.15, vy: -Math.random()*0.08-0.02, alpha: Math.random()*0.4+0.15}));
-}
-resize(); addEventListener('resize', resize);
-addEventListener('mousemove', e => { mouseX = e.clientX/W; mouseY = e.clientY/H; });
-function spawnFoam(x, y) { for (let i=0;i<3;i++) foamP.push({x:x+(Math.random()-0.5)*30, y:y+(Math.random()-0.5)*10, vx:(Math.random()-0.5)*1.8, vy:-Math.random()*2.5-0.8, life:1, size:Math.random()*2.2+0.8}); }
+const cursor=document.getElementById('cursor');
+let cx=0,cy=0,tx=0,ty=0,hasMoved=false;
+addEventListener('mousemove',e=>{tx=e.clientX;ty=e.clientY;if(!hasMoved){hasMoved=true;cursor.classList.add('active')}});
+function lerp(){cx+=(tx-cx)*.18;cy+=(ty-cy)*.18;cursor.style.left=cx+'px';cursor.style.top=cy+'px';requestAnimationFrame(lerp)}
+lerp();
+document.querySelectorAll('a, button').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('hover'))});
 
-function drawSky() {
-  // Premium midnight gradient — deep, sophisticated, less purple
-  const g = ctx.createLinearGradient(0,0,0,H);
-  g.addColorStop(0, '#040614');
-  g.addColorStop(0.25, '#0a0e28');
-  g.addColorStop(0.5, '#0f1638');
-  g.addColorStop(0.75, '#152045');
-  g.addColorStop(1, '#1a2a55');
-  ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+const canvas=document.getElementById('particles');
+const ctx=canvas.getContext('2d');
+let W,H,DPR,dust=[];
+function resizeCanvas(){DPR=Math.min(devicePixelRatio||1,2);W=innerWidth;H=innerHeight;canvas.width=W*DPR;canvas.height=H*DPR;canvas.style.width=W+'px';canvas.style.height=H+'px';ctx.setTransform(DPR,0,0,DPR,0,0);dust=Array.from({length:50},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*.7+.2,vx:(Math.random()-.5)*.12,vy:-Math.random()*.06-.015,alpha:Math.random()*.4+.15,phase:Math.random()*Math.PI*2}))}
+resizeCanvas();
+addEventListener('resize',resizeCanvas);
+let t=0;
+function animateDust(){ctx.clearRect(0,0,W,H);for(const d of dust){d.x+=d.vx;d.y+=d.vy;if(d.y<-10){d.y=H+10;d.x=Math.random()*W}if(d.x<-10)d.x=W+10;if(d.x>W+10)d.x=-10;const a=d.alpha*(.55+.45*Math.sin(t*.5+d.phase));ctx.fillStyle=`rgba(212,185,140,${a})`;ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill()}t+=.018;requestAnimationFrame(animateDust)}
+animateDust();
 
-  // Subtle warm ambient glow (single)
-  const a1 = ctx.createRadialGradient(W*0.78, H*0.18, 0, W*0.78, H*0.18, W*0.55);
-  a1.addColorStop(0, 'rgba(220, 175, 120, 0.16)');
-  a1.addColorStop(0.4, 'rgba(180, 140, 90, 0.08)');
-  a1.addColorStop(1, 'transparent');
-  ctx.fillStyle = a1; ctx.fillRect(0,0,W,H);
-}
+const header=document.getElementById('header');
+addEventListener('scroll',()=>{header.classList.toggle('scrolled',scrollY>30)},{passive:true});
 
-function drawSeigahaPattern() {
-  // Very faint Japanese seigaiha (wave) pattern in sky — luxury detail
-  ctx.save();
-  ctx.globalAlpha = 0.025;
-  ctx.strokeStyle = '#D4B98C';
-  ctx.lineWidth = 0.6;
-  const r = 28;
-  for (let y = 30; y < H * 0.45; y += r * 0.75) {
-    for (let x = 0; x < W + r; x += r * 1.8) {
-      const ox = (Math.floor(y / (r*0.75)) % 2) * r * 0.9;
-      ctx.beginPath();
-      ctx.arc(x + ox, y, r, Math.PI, 2*Math.PI);
-      ctx.stroke();
-    }
-  }
-  ctx.restore();
-}
+document.getElementById('menuToggle').addEventListener('click',()=>{document.getElementById('nav').classList.toggle('open')});
 
-function drawStars() {
-  for (const s of stars) {
-    const a = 0.5 + 0.5*Math.sin(t*s.speed+s.twinkle);
-    ctx.fillStyle = `rgba(245, 230, 200, ${a*0.7})`;
-    ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fill();
-  }
-  // A few golden glints
-  for (let i = 0; i < 3; i++) {
-    const sx = W * (0.15 + i * 0.3 + Math.sin(t*0.1 + i)*0.02);
-    const sy = H * (0.12 + Math.cos(t*0.08 + i*2)*0.02);
-    const sa = 0.5 + 0.5 * Math.sin(t*0.5 + i*3);
-    ctx.fillStyle = `rgba(255, 215, 138, ${sa*0.5})`;
-    ctx.beginPath(); ctx.arc(sx, sy, 1.2, 0, Math.PI*2); ctx.fill();
-  }
-}
-
-function drawSun() {
-  // Sophisticated red-gold sun (Hi no Maru inspired, but soft)
-  const mx = W*(0.78-(mouseX-0.5)*0.012);
-  const my = H*(0.20-(mouseY-0.5)*0.01);
-  const r = 56;
-  // Outer halo
-  const halo = ctx.createRadialGradient(mx,my,r*0.7,mx,my,r*4);
-  halo.addColorStop(0, 'rgba(232, 162, 100, 0.32)');
-  halo.addColorStop(0.3, 'rgba(180, 110, 70, 0.14)');
-  halo.addColorStop(1, 'transparent');
-  ctx.fillStyle = halo; ctx.fillRect(mx-r*4, my-r*4, r*8, r*8);
-  // Sun disc — burnished copper/red
-  const sun = ctx.createRadialGradient(mx-r*0.25, my-r*0.25, 0, mx, my, r);
-  sun.addColorStop(0, '#F5C19A');
-  sun.addColorStop(0.4, '#D88B5C');
-  sun.addColorStop(0.85, '#A85838');
-  sun.addColorStop(1, '#7A3E26');
-  ctx.fillStyle = sun;
-  ctx.beginPath(); ctx.arc(mx, my, r, 0, Math.PI*2); ctx.fill();
-  // Subtle inner glow
-  const inner = ctx.createRadialGradient(mx-r*0.35, my-r*0.35, 0, mx-r*0.35, my-r*0.35, r*0.5);
-  inner.addColorStop(0, 'rgba(255, 230, 200, 0.45)');
-  inner.addColorStop(1, 'transparent');
-  ctx.fillStyle = inner;
-  ctx.beginPath(); ctx.arc(mx, my, r, 0, Math.PI*2); ctx.fill();
-  // Outer ring (subtle)
-  ctx.strokeStyle = 'rgba(255, 180, 130, 0.18)';
-  ctx.lineWidth = 1.2;
-  ctx.beginPath(); ctx.arc(mx, my, r+5, 0, Math.PI*2); ctx.stroke();
-}
-
-function drawMtFuji() {
-  // Dramatic dark Fuji silhouette — hero element
-  const fx = W*0.40 + (mouseX-0.5)*15;
-  const fbase = H*0.78;
-  const fh = H*0.48;
-  ctx.save();
-  // Main Fuji body
-  ctx.beginPath();
-  ctx.moveTo(fx-fh*1.5, fbase);
-  ctx.bezierCurveTo(fx-fh*0.8, fbase-fh*0.5, fx-50, fbase-fh+25, fx-25, fbase-fh+8);
-  ctx.quadraticCurveTo(fx, fbase-fh-12, fx+25, fbase-fh+8);
-  ctx.bezierCurveTo(fx+50, fbase-fh+25, fx+fh*0.8, fbase-fh*0.5, fx+fh*1.5, fbase);
-  ctx.closePath();
-  const g = ctx.createLinearGradient(0, fbase-fh, 0, fbase);
-  g.addColorStop(0, 'rgba(35, 45, 90, 0.88)');
-  g.addColorStop(0.6, 'rgba(20, 30, 65, 0.95)');
-  g.addColorStop(1, 'rgba(10, 18, 45, 1)');
-  ctx.fillStyle = g; ctx.fill();
-  // Subtle ridge highlight (left side, like dawn light)
-  ctx.beginPath();
-  ctx.moveTo(fx-fh*1.5, fbase);
-  ctx.bezierCurveTo(fx-fh*0.8, fbase-fh*0.5, fx-50, fbase-fh+25, fx-25, fbase-fh+8);
-  ctx.lineTo(fx-25, fbase-fh+8);
-  ctx.strokeStyle = 'rgba(140, 110, 90, 0.18)';
-  ctx.lineWidth = 1.4;
-  ctx.stroke();
-  // Snowcap — refined, asymmetric like real Fuji
-  ctx.beginPath();
-  ctx.moveTo(fx-25, fbase-fh+8);
-  ctx.quadraticCurveTo(fx-22, fbase-fh+24, fx-12, fbase-fh+20);
-  ctx.quadraticCurveTo(fx-5, fbase-fh+30, fx+5, fbase-fh+22);
-  ctx.quadraticCurveTo(fx+14, fbase-fh+32, fx+22, fbase-fh+26);
-  ctx.quadraticCurveTo(fx+26, fbase-fh+18, fx+25, fbase-fh+8);
-  ctx.quadraticCurveTo(fx, fbase-fh-12, fx-25, fbase-fh+8);
-  const snowG = ctx.createLinearGradient(fx, fbase-fh, fx, fbase-fh+35);
-  snowG.addColorStop(0, 'rgba(245, 235, 215, 0.55)');
-  snowG.addColorStop(1, 'rgba(180, 175, 165, 0.3)');
-  ctx.fillStyle = snowG; ctx.fill();
-  // Snow crack line
-  ctx.beginPath();
-  ctx.moveTo(fx-12, fbase-fh+20);
-  ctx.quadraticCurveTo(fx-5, fbase-fh+28, fx-3, fbase-fh+38);
-  ctx.strokeStyle = 'rgba(220, 210, 190, 0.3)';
-  ctx.lineWidth = 0.8;
-  ctx.stroke();
-  ctx.restore();
-}
-
-// Generate elegant Hokusai-style wave path
-function wavePath(y, amp, freq, sp, ph) {
-  ctx.beginPath();
-  ctx.moveTo(0, H);
-  ctx.lineTo(0, y);
-  for (let x=0; x<=W; x+=5) {
-    const yy = y + Math.sin(x*freq + t*sp + ph)*amp
-                  + Math.sin(x*freq*2.7 + t*sp*1.4 + ph)*amp*0.25
-                  + Math.sin(x*freq*0.5 + t*sp*0.7)*amp*0.4;
-    ctx.lineTo(x, yy);
-  }
-  ctx.lineTo(W, H); ctx.closePath();
-}
-
-function drawWave(y, amp, freq, sp, ph, cT, cB, op, addStroke) {
-  wavePath(y, amp, freq, sp, ph);
-  const g = ctx.createLinearGradient(0, y-amp, 0, H);
-  g.addColorStop(0, cT); g.addColorStop(1, cB);
-  ctx.fillStyle = g; ctx.globalAlpha = op; ctx.fill();
-  if (addStroke) {
-    ctx.strokeStyle = 'rgba(220, 235, 250, 0.45)';
-    ctx.lineWidth = 0.6;
-    ctx.beginPath();
-    ctx.moveTo(0, y);
-    for (let x=0; x<=W; x+=5) {
-      const yy = y + Math.sin(x*freq + t*sp + ph)*amp
-                    + Math.sin(x*freq*2.7 + t*sp*1.4 + ph)*amp*0.25
-                    + Math.sin(x*freq*0.5 + t*sp*0.7)*amp*0.4;
-      ctx.lineTo(x, yy);
-    }
-    ctx.stroke();
-  }
-  ctx.globalAlpha = 1;
-}
-
-// Refined Hokusai-style crest with proper finger curls
-function drawHokusaiCrest(cx, cy, scale, flip) {
-  ctx.save();
-  ctx.translate(cx, cy);
-  ctx.scale(flip ? -scale : scale, scale);
-
-  // Main wave swell — refined Hokusai curve
-  ctx.beginPath();
-  ctx.moveTo(-200, 60);
-  ctx.bezierCurveTo(-170, -50, -80, -110, 10, -100);
-  ctx.bezierCurveTo(90, -92, 130, -50, 115, -10);
-  ctx.bezierCurveTo(100, 20, 60, 35, 20, 32);
-  ctx.bezierCurveTo(-40, 28, -120, 55, -200, 60);
-  ctx.closePath();
-  const wg = ctx.createLinearGradient(0, -110, 0, 60);
-  wg.addColorStop(0, 'rgba(225, 240, 250, 0.92)');
-  wg.addColorStop(0.35, 'rgba(140, 175, 215, 0.85)');
-  wg.addColorStop(0.8, 'rgba(50, 90, 145, 0.95)');
-  wg.addColorStop(1, 'rgba(20, 45, 95, 1)');
-  ctx.fillStyle = wg; ctx.fill();
-
-  // Inner curl shadow line
-  ctx.beginPath();
-  ctx.moveTo(-150, 20);
-  ctx.bezierCurveTo(-100, -40, -20, -75, 50, -70);
-  ctx.bezierCurveTo(90, -65, 105, -35, 85, -10);
-  ctx.strokeStyle = 'rgba(20, 40, 80, 0.5)';
-  ctx.lineWidth = 1.2;
-  ctx.stroke();
-
-  // Refined foam fingers — Hokusai signature
-  for (let i = 0; i < 7; i++) {
-    const fx = -110 + i * 24;
-    const fy = -100 - i * 2 - Math.sin(t*0.5 + i)*1.5;
-    const fingerH = 22 + i * 2;
-    ctx.beginPath();
-    ctx.moveTo(fx, fy);
-    ctx.bezierCurveTo(fx - 5, fy - fingerH*0.5, fx + 7, fy - fingerH, fx + 10, fy - fingerH*0.85);
-    ctx.bezierCurveTo(fx + 14, fy - fingerH*0.5, fx + 7, fy + 2, fx + 2, fy + 1);
-    ctx.closePath();
-    const fg = ctx.createLinearGradient(fx, fy - fingerH, fx, fy);
-    fg.addColorStop(0, 'rgba(255, 252, 240, 0.95)');
-    fg.addColorStop(1, 'rgba(200, 220, 240, 0.75)');
-    ctx.fillStyle = fg;
-    ctx.fill();
-    // Subtle stroke
-    ctx.strokeStyle = 'rgba(40, 70, 120, 0.18)';
-    ctx.lineWidth = 0.5;
-    ctx.stroke();
-    // Tiny droplet
-    if (i % 2 === 0) {
-      ctx.beginPath();
-      ctx.arc(fx + 13, fy - fingerH - 4, 1.4, 0, Math.PI*2);
-      ctx.fillStyle = 'rgba(255, 252, 240, 0.75)';
-      ctx.fill();
-    }
-  }
-  ctx.restore();
-}
-
-function drawFoam() {
-  for (let i=foamP.length-1;i>=0;i--) {
-    const p = foamP[i]; p.x+=p.vx; p.y+=p.vy; p.vy+=0.05; p.life-=0.014;
-    if (p.life<=0) { foamP.splice(i,1); continue; }
-    ctx.beginPath();
-    ctx.arc(p.x, p.y, p.size*p.life, 0, Math.PI*2);
-    ctx.fillStyle = `rgba(245, 250, 255, ${p.life*0.65})`;
-    ctx.fill();
-  }
-}
-
-function drawDust() {
-  // Floating gold dust particles in air
-  for (const d of dust) {
-    d.x += d.vx; d.y += d.vy;
-    if (d.y < -10) { d.y = H + 10; d.x = Math.random()*W; }
-    if (d.x < -10) d.x = W + 10;
-    if (d.x > W + 10) d.x = -10;
-    const a = d.alpha * (0.6 + 0.4*Math.sin(t*0.5 + d.x*0.01));
-    ctx.fillStyle = `rgba(220, 180, 120, ${a})`;
-    ctx.beginPath(); ctx.arc(d.x, d.y, d.r, 0, Math.PI*2); ctx.fill();
-  }
-}
-
-function animate() {
-  drawSky();
-  drawSeigahaPattern();
-  drawStars();
-  drawSun();
-  drawDust();
-  drawMtFuji();
-
-  const py = (mouseY-0.5)*15;
-  // Layered waves — darker, deeper, more sophisticated
-  drawWave(H*0.62+py*0.2, 20, 0.0058, 0.4, 0,    'rgba(45, 70, 120, 0.55)', 'rgba(15, 30, 70, 0.92)', 0.6);
-  drawWave(H*0.71+py*0.4, 28, 0.0085, 0.7, 1.2,  'rgba(60, 95, 150, 0.7)',  'rgba(20, 40, 85, 0.95)', 0.75);
-  drawWave(H*0.80+py*0.6, 36, 0.011, 1.0, 2.5,   'rgba(85, 125, 175, 0.85)','rgba(30, 55, 110, 0.98)', 0.9, true);
-
-  // Crests positioned smartly
-  drawHokusaiCrest(W*0.20 + Math.sin(t*0.25)*60, H*0.79 + Math.sin(t*0.4)*6, 1.2 + Math.sin(t*0.35)*0.08, false);
-  drawHokusaiCrest(W*0.78 + Math.cos(t*0.22)*50, H*0.85 + Math.cos(t*0.38)*5, 0.95 + Math.cos(t*0.3)*0.07, true);
-
-  drawWave(H*0.89+py*0.8, 44, 0.013, 1.3, 3.5, 'rgba(135, 175, 215, 0.95)','rgba(45, 85, 145, 1)', 1, true);
-  drawWave(H*0.97+py*1,   30, 0.016, 1.7, 4.5, 'rgba(200, 225, 245, 1)',   'rgba(75, 120, 175, 1)', 1);
-
-  // Spawn foam from crest tops
-  if (Math.random() < 0.35) spawnFoam(W*0.20 + Math.sin(t*0.25)*60, H*0.79 + Math.sin(t*0.4)*6 - 90);
-  if (Math.random() < 0.3) spawnFoam(W*0.78 + Math.cos(t*0.22)*50, H*0.85 + Math.cos(t*0.38)*5 - 70);
-  drawFoam();
-
-  t += 0.014;
-  requestAnimationFrame(animate);
-}
-animate();
-
-const cg = document.getElementById('cursorGlow'); let mm = false;
-addEventListener('mousemove', e => { cg.style.left = e.clientX+'px'; cg.style.top = e.clientY+'px'; if (!mm) { mm = true; cg.classList.add('active'); } });
-
-document.querySelectorAll('[data-tilt]').forEach(card => {
-  let rect = null;
-  card.addEventListener('mouseenter', () => { rect = card.getBoundingClientRect(); });
-  card.addEventListener('mousemove', e => {
-    if (!rect) rect = card.getBoundingClientRect();
-    const x = (e.clientX-rect.left)/rect.width-0.5, y = (e.clientY-rect.top)/rect.height-0.5;
-    card.style.transform = `perspective(900px) rotateY(${x*5}deg) rotateX(${-y*5}deg) translateY(-6px)`;
-    card.style.background = `radial-gradient(circle at ${(x+0.5)*100}% ${(y+0.5)*100}%, rgba(255,255,255,0.07), rgba(255,255,255,0.03) 60%)`;
-  });
-  card.addEventListener('mouseleave', () => { card.style.transform = ''; card.style.background = ''; rect = null; });
-});
-
-// Fewer, smaller, more subtle petals — luxury minimalism
-const pp = document.getElementById('particles');
-const petalSVG = '<svg viewBox="0 0 20 20"><path d="M10 2 Q14 5 13 10 Q12 14 10 17 Q8 14 7 10 Q6 5 10 2 Z" fill="#D4A1A8" opacity="0.7"/></svg>';
-for (let i=0; i<8; i++) {
-  const p = document.createElement('div'); p.className='particle petal'; p.innerHTML=petalSVG;
-  p.style.left = Math.random()*100+'vw';
-  p.style.animationDuration = (14+Math.random()*16)+'s';
-  p.style.animationDelay = -(Math.random()*30)+'s';
-  const sz = 8 + Math.random()*8;
-  p.style.width = sz+'px'; p.style.height = sz+'px';
-  pp.appendChild(p);
-}
-// Just a few subtle gold sparks
-for (let i=0; i<5; i++) {
-  const p = document.createElement('div'); p.className='particle spark';
-  p.style.left = Math.random()*100+'vw';
-  p.style.animationDuration = (25+Math.random()*20)+'s';
-  p.style.animationDelay = -(Math.random()*30)+'s';
-  pp.appendChild(p);
-}
-
-const hdr = document.getElementById('header');
-addEventListener('scroll', () => { if (scrollY > 30) hdr.classList.add('scrolled'); else hdr.classList.remove('scrolled'); }, { passive: true });
-document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('nav').classList.toggle('open'));
-
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'translateY(0)'; } });
-}, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
-document.querySelectorAll('.fade-in, .course-card, .feature, .journey-card, .cta-section').forEach((el, i) => {
-  el.style.opacity = 0; el.style.transform = 'translateY(30px)';
-  el.style.transition = `opacity 0.8s cubic-bezier(0.16,1,0.3,1) ${i*0.04}s, transform 0.8s cubic-bezier(0.16,1,0.3,1) ${i*0.04}s`;
-  obs.observe(el);
-});
+const obs=new IntersectionObserver(entries=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*40);obs.unobserve(e.target)}})},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
-
