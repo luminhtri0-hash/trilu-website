@@ -4,33 +4,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Trí Lữ Nihongo — Chinh phục tiếng Nhật, mở cửa tương lai</title>
-<meta name="description" content="Học viện tiếng Nhật Trí Lữ — JLPT N5-N1, Kaiwa, EJU, ôn thi và việc làm Nhật. Lộ trình bài bản từ cơ bản đến công việc tại Nhật.">
+<meta name="description" content="Học viện tiếng Nhật Trí Lữ — JLPT N5-N1, Kaiwa, EJU, ôn thi và việc làm Nhật.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,100..900&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy: #1B3A6B;
-  --navy-dark: #0F2547;
-  --navy-deep: #061534;
-  --navy-light: #4A7AB8;
-  --cream: #F5EBD4;
-  --cream-light: #FFFBF0;
+  --cream: #FFF8E7;
+  --cream-soft: #F5EBD4;
   --sakura: #F1B5BC;
-  --sakura-dark: #E89AA3;
-  --gold: #E6CB85;
-  --gold-light: #F4DEA8;
-  --ink: #1A2440;
-
-  /* Apple-style liquid glass */
-  --glass-bg: rgba(255, 255, 255, 0.07);
-  --glass-bg-strong: rgba(255, 255, 255, 0.12);
-  --glass-bg-dark: rgba(15, 37, 71, 0.25);
-  --glass-border: rgba(255, 255, 255, 0.18);
-  --glass-border-bright: rgba(255, 255, 255, 0.35);
-  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
-  --glass-shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.28);
-  --glass-inset: inset 0 1px 0 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 0 rgba(255, 255, 255, 0.06);
+  --sakura-glow: #FFB8C0;
+  --gold: #FFD78A;
+  --indigo: #3a5a9a;
+  --indigo-deep: #1a2660;
+  --moon: #FFF1C9;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,115 +26,140 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
-  background: #0a1024;
-  color: var(--cream-light);
+  background: #050818;
+  color: var(--cream);
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
+  cursor: default;
 }
 
-/* === VIDEO BACKGROUND === */
-.bg-video {
+/* === HOKUSAI CANVAS === */
+.hokusai-canvas {
   position: fixed;
   inset: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: cover;
   z-index: -10;
-  filter: saturate(115%) brightness(0.78);
+  display: block;
 }
 
-.bg-fallback {
+/* === CURSOR GLOW (Apple Vision Pro style) === */
+.cursor-glow {
   position: fixed;
-  inset: 0;
-  z-index: -11;
-  background:
-    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(232, 154, 163, 0.55), transparent 70%),
-    radial-gradient(ellipse 70% 50% at 80% 60%, rgba(74, 122, 184, 0.5), transparent 65%),
-    radial-gradient(ellipse 90% 70% at 50% 100%, rgba(27, 58, 107, 0.85), transparent 75%),
-    linear-gradient(135deg, #2a1638 0%, #1a2660 40%, #0f2547 100%);
-  background-size: 200% 200%;
-  animation: bgShift 30s ease infinite;
-}
-
-@keyframes bgShift {
-  0%, 100% { background-position: 0% 0%; }
-  50% { background-position: 100% 100%; }
-}
-
-/* Dark overlay for legibility */
-.video-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: -8;
-  background:
-    radial-gradient(ellipse at top, rgba(6, 21, 52, 0.15), transparent 60%),
-    radial-gradient(ellipse at bottom, rgba(15, 37, 71, 0.55), transparent 60%),
-    linear-gradient(180deg, rgba(15, 37, 71, 0.3) 0%, rgba(6, 21, 52, 0.55) 100%);
   pointer-events: none;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,200,210,0.13) 0%, rgba(180,200,255,0.06) 40%, transparent 70%);
+  z-index: 1;
+  filter: blur(50px);
+  transform: translate(-50%, -50%);
+  transition: opacity 0.4s;
+  mix-blend-mode: screen;
+  opacity: 0;
 }
+.cursor-glow.active { opacity: 1; }
 
-/* Color mesh accent */
-.color-mesh {
-  position: fixed;
-  inset: 0;
-  z-index: -7;
-  pointer-events: none;
-  background:
-    radial-gradient(circle 600px at 15% 25%, rgba(232, 154, 163, 0.15), transparent),
-    radial-gradient(circle 700px at 85% 75%, rgba(230, 203, 133, 0.12), transparent),
-    radial-gradient(circle 500px at 50% 50%, rgba(74, 122, 184, 0.1), transparent);
-  animation: meshFloat 25s ease-in-out infinite;
-}
-
-@keyframes meshFloat {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(2%, -1%) scale(1.05); }
-  66% { transform: translate(-1%, 2%) scale(0.98); }
-}
-
-/* === FLOATING PETALS === */
-.petals {
+/* === FLOATING PARTICLES === */
+.particles {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 3;
+  z-index: 2;
   overflow: hidden;
 }
 
-.petal {
+.particle {
   position: absolute;
-  top: -40px;
-  width: 16px;
-  height: 16px;
-  opacity: 0.85;
-  animation: fall linear infinite;
-  filter: drop-shadow(0 2px 4px rgba(232, 154, 163, 0.4));
+  top: -30px;
+  opacity: 0;
+  animation: drift linear infinite;
 }
 
-.petal svg { width: 100%; height: 100%; }
+.particle.petal {
+  width: 14px;
+  height: 14px;
+}
 
-@keyframes fall {
-  0% { transform: translateY(-40px) translateX(0) rotate(0deg); opacity: 0; }
+.particle.spark {
+  width: 4px;
+  height: 4px;
+  background: radial-gradient(circle, #FFE9A8, transparent);
+  border-radius: 50%;
+  box-shadow: 0 0 8px #FFE9A8;
+}
+
+@keyframes drift {
+  0% { transform: translateY(-30px) translateX(0) rotate(0deg); opacity: 0; }
   10% { opacity: 0.85; }
-  90% { opacity: 0.7; }
-  100% { transform: translateY(105vh) translateX(140px) rotate(720deg); opacity: 0; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(108vh) translateX(120px) rotate(540deg); opacity: 0; }
 }
 
-/* === MT FUJI silhouette decor === */
-.fuji-decor {
-  position: fixed;
-  bottom: 0;
+/* === ULTRA LIQUID GLASS === */
+.ultra-glass {
+  position: relative;
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(60px) saturate(200%) brightness(1.15);
+  -webkit-backdrop-filter: blur(60px) saturate(200%) brightness(1.15);
+  border-radius: 24px;
+  border: 1px solid transparent;
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.32),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    inset 1px 0 0 rgba(255, 255, 255, 0.08),
+    inset -1px 0 0 rgba(255, 255, 255, 0.08),
+    0 30px 70px -20px rgba(0, 0, 0, 0.55),
+    0 12px 32px -12px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  isolation: isolate;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.4s, box-shadow 0.4s;
+}
+
+/* Gradient iridescent border (Apple Vision Pro signature) */
+.ultra-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg,
+    rgba(255, 255, 255, 0.5) 0%,
+    rgba(255, 255, 255, 0.1) 25%,
+    transparent 50%,
+    rgba(241, 181, 188, 0.18) 75%,
+    rgba(255, 215, 138, 0.3) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Specular shine on top */
+.ultra-glass::after {
+  content: '';
+  position: absolute;
+  top: 0;
   left: 0;
   right: 0;
-  width: 100%;
-  height: 38vh;
-  z-index: -6;
+  height: 45%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.07) 0%, transparent 100%);
   pointer-events: none;
-  opacity: 0.35;
+  border-radius: 24px 24px 0 0;
+  z-index: 0;
 }
 
-.fuji-decor svg { width: 100%; height: 100%; display: block; }
+.ultra-glass:hover {
+  background: rgba(255, 255, 255, 0.07);
+  box-shadow:
+    inset 0 1.5px 0 rgba(255, 255, 255, 0.5),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.08),
+    0 40px 100px -20px rgba(0, 0, 0, 0.7),
+    0 16px 40px -12px rgba(0, 0, 0, 0.45),
+    0 0 80px rgba(241, 181, 188, 0.15);
+}
 
 /* === HEADER === */
 header {
@@ -160,17 +172,17 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(15, 37, 71, 0.35);
-  backdrop-filter: blur(30px) saturate(180%);
-  -webkit-backdrop-filter: blur(30px) saturate(180%);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: var(--glass-inset);
-  transition: padding 0.3s ease, background 0.3s ease;
+  background: rgba(10, 16, 36, 0.25);
+  backdrop-filter: blur(40px) saturate(200%);
+  -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transition: padding 0.3s, background 0.3s;
 }
 
 header.scrolled {
   padding: 10px 5vw;
-  background: rgba(15, 37, 71, 0.55);
+  background: rgba(10, 16, 36, 0.55);
 }
 
 .logo {
@@ -178,24 +190,24 @@ header.scrolled {
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  color: var(--cream-light);
+  color: var(--cream);
 }
 
 .logo-mark {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0.04));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--cream-light);
+  color: var(--cream);
   font-family: 'Shippori Mincho', serif;
   font-size: 24px;
   font-weight: 700;
-  box-shadow: var(--glass-inset);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .logo-text {
@@ -209,7 +221,7 @@ header.scrolled {
   font-style: italic;
   font-weight: 600;
   font-size: 22px;
-  color: var(--cream-light);
+  color: var(--cream);
   letter-spacing: -0.01em;
 }
 
@@ -217,7 +229,7 @@ header.scrolled {
   font-family: 'Shippori Mincho', serif;
   font-size: 10px;
   letter-spacing: 3px;
-  color: var(--gold-light);
+  color: var(--gold);
   margin-top: 4px;
   text-transform: uppercase;
   opacity: 0.85;
@@ -231,7 +243,7 @@ nav ul {
 }
 
 nav a {
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 248, 231, 0.88);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -245,42 +257,36 @@ nav a::after {
   bottom: -6px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: var(--gold);
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--gold), var(--sakura));
   transition: width 0.3s;
+  border-radius: 2px;
 }
 
-nav a:hover { color: var(--gold-light); }
+nav a:hover { color: var(--gold); }
 nav a:hover::after { width: 100%; }
 
 .cta-header {
-  background: rgba(255, 255, 255, 0.15);
-  color: var(--cream-light);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--cream);
   padding: 10px 22px;
   border-radius: 999px;
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;
   transition: all 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(20px);
-  box-shadow: var(--glass-inset);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(30px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 14px rgba(0, 0, 0, 0.3);
 }
 
 .cta-header:hover {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
-  box-shadow: var(--glass-inset), 0 8px 22px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 8px 22px rgba(0, 0, 0, 0.4), 0 0 30px rgba(241, 181, 188, 0.25);
 }
 
-.menu-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  width: 32px;
-  height: 32px;
-}
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; width: 32px; height: 32px; }
 
 /* === HERO === */
 .hero {
@@ -292,24 +298,25 @@ nav a:hover::after { width: 100%; }
   padding: 140px 5vw 80px;
   position: relative;
   text-align: center;
+  z-index: 5;
 }
 
 .hero-eyebrow {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 10px 20px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(30px) saturate(180%);
-  -webkit-backdrop-filter: blur(30px) saturate(180%);
-  border: 1px solid var(--glass-border);
+  padding: 10px 22px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 999px;
   font-family: 'Shippori Mincho', serif;
   font-size: 13px;
-  color: var(--cream-light);
+  color: var(--cream);
   letter-spacing: 2px;
   margin-bottom: 32px;
-  box-shadow: var(--glass-inset), 0 8px 24px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 8px 24px rgba(0, 0, 0, 0.3);
   opacity: 0;
   animation: fadeUp 0.8s ease 0.2s forwards;
 }
@@ -319,25 +326,25 @@ nav a:hover::after { width: 100%; }
   height: 7px;
   border-radius: 50%;
   background: var(--sakura);
-  box-shadow: 0 0 12px var(--sakura);
+  box-shadow: 0 0 16px var(--sakura);
   animation: pulse 2s ease-in-out infinite;
 }
 
 @keyframes pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.5; transform: scale(1.3); }
+  50% { opacity: 0.5; transform: scale(1.4); }
 }
 
 .hero h1 {
   font-family: 'Shippori Mincho', serif;
-  font-size: clamp(40px, 7vw, 92px);
+  font-size: clamp(40px, 7vw, 96px);
   line-height: 1.05;
-  color: var(--cream-light);
+  color: var(--cream);
   font-weight: 700;
   max-width: 1100px;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 4px 40px rgba(0, 0, 0, 0.5), 0 0 80px rgba(58, 90, 154, 0.4);
   opacity: 0;
   animation: fadeUp 1s ease 0.4s forwards;
 }
@@ -346,11 +353,11 @@ nav a:hover::after { width: 100%; }
   font-family: 'Imbue', serif;
   font-style: italic;
   font-weight: 500;
-  background: linear-gradient(135deg, #F4DEA8 0%, #F1B5BC 50%, #B8D4FF 100%);
+  background: linear-gradient(135deg, #FFE0A8 0%, #FFB8C0 45%, #B8D4FF 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 2px 12px rgba(241, 181, 188, 0.3));
+  filter: drop-shadow(0 4px 20px rgba(241, 181, 188, 0.4));
 }
 
 .hero h1 .stroke {
@@ -365,17 +372,18 @@ nav a:hover::after { width: 100%; }
   left: 0;
   width: 100%;
   height: 8px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 12'%3E%3Cpath d='M2 8 Q 80 2, 150 6 T 298 7' stroke='%23F4DEA8' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 12'%3E%3Cpath d='M2 8 Q 80 2, 150 6 T 298 7' stroke='%23FFD78A' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  filter: drop-shadow(0 0 8px rgba(255, 215, 138, 0.5));
 }
 
 .hero-sub {
   font-family: 'Imbue', serif;
   font-style: italic;
   font-size: clamp(18px, 2.5vw, 26px);
-  color: rgba(255, 251, 240, 0.92);
+  color: rgba(255, 248, 231, 0.92);
   max-width: 720px;
   margin: 24px auto 8px;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
   opacity: 0;
   animation: fadeUp 1s ease 0.6s forwards;
 }
@@ -383,11 +391,12 @@ nav a:hover::after { width: 100%; }
 .hero-jp {
   font-family: 'Noto Serif JP', serif;
   font-size: 14px;
-  color: var(--gold-light);
+  color: var(--gold);
   letter-spacing: 4px;
   margin-bottom: 40px;
   opacity: 0;
   animation: fadeUp 1s ease 0.7s forwards;
+  text-shadow: 0 0 20px rgba(255, 215, 138, 0.4);
 }
 
 .hero-actions {
@@ -400,8 +409,8 @@ nav a:hover::after { width: 100%; }
 }
 
 .btn-primary {
-  background: rgba(255, 255, 255, 0.18);
-  color: var(--cream-light);
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--cream);
   padding: 16px 36px;
   border-radius: 999px;
   text-decoration: none;
@@ -410,36 +419,50 @@ nav a:hover::after { width: 100%; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  transition: all 0.3s;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(30px) saturate(180%);
-  -webkit-backdrop-filter: blur(30px) saturate(180%);
-  box-shadow: var(--glass-inset), 0 8px 24px rgba(0, 0, 0, 0.25);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(40px) saturate(180%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 10px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .btn-primary:hover {
-  background: rgba(255, 255, 255, 0.28);
   transform: translateY(-3px);
-  box-shadow: var(--glass-inset), 0 14px 32px rgba(0, 0, 0, 0.35);
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 14px 40px rgba(0, 0, 0, 0.5), 0 0 40px rgba(241, 181, 188, 0.3);
 }
 
+.btn-primary:hover::before { opacity: 1; }
+
 .btn-ghost {
-  background: rgba(15, 37, 71, 0.3);
-  color: var(--cream-light);
+  background: rgba(10, 16, 36, 0.25);
+  color: var(--cream);
   padding: 16px 36px;
   border-radius: 999px;
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  transition: all 0.3s;
-  box-shadow: var(--glass-inset);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(30px);
+  transition: all 0.4s;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15);
 }
 
 .btn-ghost:hover {
-  background: rgba(15, 37, 71, 0.5);
+  background: rgba(10, 16, 36, 0.5);
   transform: translateY(-3px);
+  border-color: rgba(255, 255, 255, 0.25);
 }
 
 .scroll-cue {
@@ -454,7 +477,7 @@ nav a:hover::after { width: 100%; }
   font-family: 'Shippori Mincho', serif;
   font-size: 10px;
   letter-spacing: 4px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 248, 231, 0.6);
   animation: bob 2s ease-in-out infinite;
 }
 
@@ -467,7 +490,7 @@ nav a:hover::after { width: 100%; }
   content: '';
   width: 1px;
   height: 40px;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.5), transparent);
 }
 
 @keyframes fadeUp {
@@ -482,81 +505,53 @@ section {
   z-index: 5;
 }
 
-.section-head {
-  text-align: center;
-  margin-bottom: 70px;
-}
+.section-head { text-align: center; margin-bottom: 70px; }
 
 .section-eyebrow {
   display: inline-block;
   font-family: 'Shippori Mincho', serif;
   font-size: 12px;
   letter-spacing: 5px;
-  color: var(--gold-light);
+  color: var(--gold);
   margin-bottom: 16px;
   text-transform: uppercase;
   opacity: 0.9;
+  text-shadow: 0 0 16px rgba(255, 215, 138, 0.5);
 }
 
 .section-title {
   font-family: 'Shippori Mincho', serif;
-  font-size: clamp(32px, 5vw, 56px);
-  color: var(--cream-light);
+  font-size: clamp(32px, 5vw, 60px);
+  color: var(--cream);
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
-  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .section-title .italic {
   font-family: 'Imbue', serif;
   font-style: italic;
   font-weight: 500;
-  background: linear-gradient(135deg, var(--gold-light), var(--sakura));
+  background: linear-gradient(135deg, var(--gold), var(--sakura));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 12px rgba(255, 215, 138, 0.3));
 }
 
 .section-sub {
   font-family: 'Imbue', serif;
   font-style: italic;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 248, 231, 0.78);
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* === LIQUID GLASS CARD (Apple style) === */
-.glass {
-  background: var(--glass-bg);
-  backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
-  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
-  border: 1px solid var(--glass-border);
-  border-radius: 24px;
-  box-shadow: var(--glass-inset), var(--glass-shadow);
-  position: relative;
-  overflow: hidden;
-}
-
-.glass::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
-  pointer-events: none;
-  border-radius: 24px 24px 0 0;
-}
-
 /* === COURSE GRID === */
-.courses {
-  max-width: 1280px;
-  margin: 0 auto;
-}
+.courses { max-width: 1280px; margin: 0 auto; }
 
 .course-grid {
   display: grid;
@@ -565,82 +560,46 @@ section {
 }
 
 .course-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
-  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
-  border: 1px solid var(--glass-border);
-  border-radius: 22px;
-  padding: 28px 26px;
   position: relative;
-  overflow: hidden;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: var(--glass-inset), var(--glass-shadow);
+  padding: 28px 26px;
   cursor: pointer;
+  will-change: transform;
+  transform-style: preserve-3d;
 }
 
-.course-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 60%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
-  pointer-events: none;
-  border-radius: 22px 22px 0 0;
-}
-
-.course-card::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 22px;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent 40%, transparent 60%, rgba(241, 181, 188, 0.3));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.4s;
-}
-
-.course-card:hover {
-  transform: translateY(-10px) scale(1.01);
-  background: var(--glass-bg-strong);
-  box-shadow: var(--glass-inset), var(--glass-shadow-lg);
-}
-
-.course-card:hover::after { opacity: 1; }
+.course-card > * { position: relative; z-index: 2; }
 
 .course-emblem {
   width: 32px;
   height: 32px;
   margin-bottom: 16px;
-  opacity: 0.9;
+  opacity: 0.92;
+  filter: drop-shadow(0 0 10px rgba(255, 215, 138, 0.4));
 }
 
 .course-card .level {
   font-family: 'Shippori Mincho', serif;
-  font-size: 30px;
-  color: var(--cream-light);
+  font-size: 32px;
+  color: var(--cream);
   font-weight: 700;
   margin-bottom: 4px;
   display: flex;
   align-items: baseline;
   gap: 10px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .course-card .level .tag {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: var(--gold-light);
-  background: rgba(230, 203, 133, 0.18);
-  border: 1px solid rgba(230, 203, 133, 0.3);
+  color: var(--gold);
+  background: rgba(255, 215, 138, 0.13);
+  border: 1px solid rgba(255, 215, 138, 0.32);
   padding: 4px 12px;
   border-radius: 999px;
   letter-spacing: 0.3px;
+  backdrop-filter: blur(10px);
 }
 
 .course-card .divider {
@@ -653,20 +612,17 @@ section {
 .course-card .schedule {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.92);
+  color: rgba(255, 248, 231, 0.92);
   margin-bottom: 6px;
   font-weight: 500;
 }
 
-.course-card .schedule .sep {
-  color: var(--gold);
-  margin: 0 8px;
-}
+.course-card .schedule .sep { color: var(--gold); margin: 0 8px; }
 
 .course-card .open {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 248, 231, 0.78);
   margin-top: 14px;
   display: flex;
   align-items: center;
@@ -678,7 +634,7 @@ section {
   height: 7px;
   border-radius: 50%;
   background: #6FE5A8;
-  box-shadow: 0 0 0 4px rgba(111, 229, 168, 0.2), 0 0 10px rgba(111, 229, 168, 0.6);
+  box-shadow: 0 0 0 4px rgba(111, 229, 168, 0.2), 0 0 14px rgba(111, 229, 168, 0.7);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -686,32 +642,31 @@ section {
   position: absolute;
   bottom: 22px;
   right: 22px;
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(20px);
-  color: var(--cream-light);
+  color: var(--cream);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s;
-  font-size: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: var(--glass-inset);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), 0 4px 12px rgba(0, 0, 0, 0.3);
   text-decoration: none;
+  z-index: 3;
 }
 
 .course-card:hover .arrow {
-  transform: translate(4px, -4px);
-  background: rgba(255, 255, 255, 0.3);
+  transform: translate(4px, -4px) rotate(-5deg);
+  background: rgba(255, 255, 255, 0.22);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 6px 18px rgba(241, 181, 188, 0.35);
 }
 
-/* === FEATURES SECTION === */
-.features {
-  max-width: 1280px;
-  margin: 0 auto;
-}
+/* === FEATURES === */
+.features { max-width: 1280px; margin: 0 auto; }
 
 .feature-grid {
   display: grid;
@@ -721,74 +676,48 @@ section {
 }
 
 .feature {
-  background: var(--glass-bg);
-  backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
-  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
-  border: 1px solid var(--glass-border);
-  border-radius: 22px;
   padding: 36px 28px;
   text-align: center;
-  transition: all 0.4s;
-  box-shadow: var(--glass-inset), var(--glass-shadow);
   position: relative;
-  overflow: hidden;
+  will-change: transform;
 }
 
-.feature::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
-  pointer-events: none;
-  border-radius: 22px 22px 0 0;
-}
-
-.feature:hover {
-  transform: translateY(-8px);
-  background: var(--glass-bg-strong);
-  box-shadow: var(--glass-inset), var(--glass-shadow-lg);
-}
+.feature > * { position: relative; z-index: 2; }
 
 .feature-icon {
-  width: 58px;
-  height: 58px;
+  width: 60px;
+  height: 60px;
   margin: 0 auto 20px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.06));
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--cream-light);
+  color: var(--cream);
   font-family: 'Shippori Mincho', serif;
   font-size: 26px;
   font-weight: 700;
-  box-shadow: var(--glass-inset), 0 6px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 8px 24px rgba(0, 0, 0, 0.3), 0 0 24px rgba(241, 181, 188, 0.12);
 }
 
 .feature h3 {
   font-family: 'Shippori Mincho', serif;
   font-size: 20px;
-  color: var(--cream-light);
+  color: var(--cream);
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .feature p {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.78);
-  line-height: 1.6;
+  color: rgba(255, 248, 231, 0.78);
+  line-height: 1.65;
 }
 
 /* === JOURNEY === */
-.journey {
-  max-width: 1280px;
-  margin: 0 auto;
-}
+.journey { max-width: 1280px; margin: 0 auto; }
 
 .journey-grid {
   display: grid;
@@ -798,51 +727,29 @@ section {
 }
 
 .journey-card {
-  background: var(--glass-bg);
-  backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
-  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
-  border: 1px solid var(--glass-border);
-  border-radius: 24px;
   padding: 32px 28px;
   position: relative;
-  overflow: hidden;
-  transition: all 0.4s;
-  box-shadow: var(--glass-inset), var(--glass-shadow);
+  will-change: transform;
 }
 
-.journey-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
-  pointer-events: none;
-  border-radius: 24px 24px 0 0;
-}
-
-.journey-card:hover {
-  transform: translateY(-8px);
-  background: var(--glass-bg-strong);
-  box-shadow: var(--glass-inset), var(--glass-shadow-lg);
-}
+.journey-card > * { position: relative; z-index: 2; }
 
 .journey-kanji {
   position: absolute;
   top: 18px;
   right: 22px;
   font-family: 'Noto Serif JP', serif;
-  font-size: 60px;
-  color: rgba(255, 255, 255, 0.12);
+  font-size: 64px;
+  color: rgba(255, 255, 255, 0.1);
   font-weight: 700;
   line-height: 1;
+  z-index: 2;
 }
 
 .journey-card h3 {
   font-family: 'Shippori Mincho', serif;
   font-size: 24px;
-  color: var(--cream-light);
+  color: var(--cream);
   font-weight: 700;
   margin-bottom: 4px;
 }
@@ -851,19 +758,16 @@ section {
   font-family: 'Imbue', serif;
   font-style: italic;
   font-size: 14px;
-  color: var(--gold-light);
+  color: var(--gold);
   margin-bottom: 20px;
 }
 
-.journey-card ul {
-  list-style: none;
-  margin-top: 16px;
-}
+.journey-card ul { list-style: none; margin-top: 16px; }
 
 .journey-card li {
   padding: 8px 0;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.88);
+  color: rgba(255, 248, 231, 0.88);
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -871,9 +775,10 @@ section {
 
 .journey-card li::before {
   content: '✦';
-  color: var(--gold-light);
+  color: var(--gold);
   font-size: 12px;
   margin-top: 3px;
+  text-shadow: 0 0 8px rgba(255, 215, 138, 0.6);
 }
 
 .journey-link {
@@ -881,7 +786,7 @@ section {
   align-items: center;
   gap: 8px;
   margin-top: 24px;
-  color: var(--cream-light);
+  color: var(--cream);
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
@@ -890,64 +795,45 @@ section {
   transition: gap 0.3s, color 0.3s;
 }
 
-.journey-link:hover {
-  gap: 14px;
-  color: var(--gold-light);
-}
+.journey-link:hover { gap: 14px; color: var(--gold); }
 
-/* === CTA SECTION === */
+/* === CTA === */
 .cta-section {
   max-width: 980px;
   margin: 0 auto;
   text-align: center;
-  background: var(--glass-bg-strong);
-  backdrop-filter: blur(50px) saturate(180%) brightness(1.05);
-  -webkit-backdrop-filter: blur(50px) saturate(180%) brightness(1.05);
-  border: 1px solid var(--glass-border-bright);
-  border-radius: 32px;
   padding: 60px 40px;
-  box-shadow: var(--glass-inset), var(--glass-shadow-lg);
   position: relative;
-  overflow: hidden;
 }
 
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 50%;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent);
-  pointer-events: none;
-  border-radius: 32px 32px 0 0;
-}
+.cta-section > * { position: relative; z-index: 2; }
 
 .cta-section .kanji-deco {
   position: absolute;
-  top: -40px;
-  right: -30px;
+  top: -50px;
+  right: -40px;
   font-family: 'Noto Serif JP', serif;
-  font-size: 240px;
-  color: rgba(255, 255, 255, 0.08);
+  font-size: 260px;
+  color: rgba(255, 255, 255, 0.06);
   font-weight: 700;
   line-height: 1;
   pointer-events: none;
+  z-index: 1;
 }
 
 .cta-section h2 {
   font-family: 'Shippori Mincho', serif;
-  font-size: clamp(28px, 4vw, 42px);
-  color: var(--cream-light);
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--cream);
   margin-bottom: 16px;
   font-weight: 700;
-  position: relative;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
 }
 
 .cta-section h2 .italic {
   font-family: 'Imbue', serif;
   font-style: italic;
-  background: linear-gradient(135deg, var(--gold-light), var(--sakura));
+  background: linear-gradient(135deg, var(--gold), var(--sakura));
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -957,9 +843,8 @@ section {
   font-family: 'Imbue', serif;
   font-style: italic;
   font-size: 18px;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 248, 231, 0.85);
   margin-bottom: 32px;
-  position: relative;
 }
 
 .cta-buttons {
@@ -967,7 +852,6 @@ section {
   gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
-  position: relative;
 }
 
 /* === FOOTER === */
@@ -976,9 +860,9 @@ footer {
   position: relative;
   z-index: 5;
   margin-top: 80px;
-  background: linear-gradient(180deg, rgba(6, 21, 52, 0.4) 0%, rgba(6, 21, 52, 0.75) 100%);
-  backdrop-filter: blur(30px) saturate(180%);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(5, 8, 24, 0.4), rgba(5, 8, 24, 0.85));
+  backdrop-filter: blur(40px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .footer-grid {
@@ -992,7 +876,7 @@ footer {
 
 .footer-brand p {
   margin-top: 18px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 248, 231, 0.7);
   font-size: 14px;
   line-height: 1.7;
   max-width: 320px;
@@ -1002,7 +886,7 @@ footer h4 {
   font-family: 'Shippori Mincho', serif;
   font-size: 13px;
   margin-bottom: 18px;
-  color: var(--gold-light);
+  color: var(--gold);
   letter-spacing: 2px;
   text-transform: uppercase;
 }
@@ -1011,19 +895,19 @@ footer ul { list-style: none; }
 footer li { margin-bottom: 10px; }
 
 footer a {
-  color: rgba(255, 255, 255, 0.78);
+  color: rgba(255, 248, 231, 0.78);
   text-decoration: none;
   font-size: 14px;
   transition: color 0.2s;
 }
 
-footer a:hover { color: var(--gold-light); }
+footer a:hover { color: var(--gold); }
 
 .footer-bottom {
   max-width: 1280px;
   margin: 0 auto;
   padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -1035,7 +919,7 @@ footer a:hover { color: var(--gold-light); }
   font-family: 'Imbue', serif;
   font-style: italic;
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 248, 231, 0.6);
 }
 
 /* === FLOATING CONTACT === */
@@ -1062,13 +946,13 @@ footer a:hover { color: var(--gold-light); }
   font-size: 18px;
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.3);
-  box-shadow: var(--glass-inset), 0 8px 24px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 8px 24px rgba(0, 0, 0, 0.5);
   transition: all 0.3s;
 }
 
 .fc-btn:hover {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: var(--glass-inset), 0 14px 32px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 14px 32px rgba(0, 0, 0, 0.6), 0 0 24px currentColor;
 }
 
 .fc-zalo { background: rgba(0, 104, 255, 0.85); }
@@ -1084,7 +968,7 @@ footer a:hover { color: var(--gold-light); }
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(15, 37, 71, 0.85);
+    background: rgba(10, 16, 36, 0.92);
     backdrop-filter: blur(30px);
     padding: 24px;
     flex-direction: column;
@@ -1094,6 +978,7 @@ footer a:hover { color: var(--gold-light); }
   .cta-header { display: none; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
   .footer-brand { grid-column: 1 / -1; }
+  .cursor-glow { display: none; }
 }
 
 @media (max-width: 600px) {
@@ -1103,48 +988,26 @@ footer a:hover { color: var(--gold-light); }
   .course-card { padding: 24px 20px; }
   section { padding: 70px 5vw; }
 }
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
 </style>
 </head>
 <body>
 
-<!-- FALLBACK ANIMATED BG (always visible) -->
-<div class="bg-fallback"></div>
+<!-- HOKUSAI CANVAS WAVES -->
+<canvas class="hokusai-canvas" id="hokusai"></canvas>
 
-<!-- VIDEO BACKGROUND -->
-<video class="bg-video" autoplay muted loop playsinline preload="auto">
-  <source src="https://videos.pexels.com/video-files/11721736/11721736-hd_1920_1080_30fps.mp4" type="video/mp4">
-  <source src="https://videos.pexels.com/video-files/8012361/8012361-hd_1920_1080_24fps.mp4" type="video/mp4">
-  <source src="https://videos.pexels.com/video-files/2575219/2575219-hd_1920_1080_24fps.mp4" type="video/mp4">
-</video>
+<!-- CURSOR GLOW -->
+<div class="cursor-glow" id="cursorGlow"></div>
 
-<!-- OVERLAYS -->
-<div class="video-overlay"></div>
-<div class="color-mesh"></div>
-
-<!-- Mt Fuji silhouette at bottom -->
-<div class="fuji-decor">
-  <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="fujiG" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#1B3A6B" stop-opacity="0.6"/>
-        <stop offset="100%" stop-color="#0a1024" stop-opacity="0.9"/>
-      </linearGradient>
-      <linearGradient id="fujiG2" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#2C5491" stop-opacity="0.4"/>
-        <stop offset="100%" stop-color="#0F2547" stop-opacity="0.85"/>
-      </linearGradient>
-    </defs>
-    <!-- Distant mountains -->
-    <path d="M 0 400 L 200 250 L 350 280 L 500 220 L 700 260 L 900 200 L 1100 250 L 1300 220 L 1440 270 L 1440 400 Z" fill="url(#fujiG2)"/>
-    <!-- Fuji -->
-    <path d="M 400 400 L 660 180 Q 680 165, 720 165 Q 760 165, 780 180 L 1040 400 Z" fill="url(#fujiG)"/>
-    <!-- Snow cap on Fuji -->
-    <path d="M 645 210 Q 660 195, 690 192 Q 710 190, 730 195 Q 760 200, 790 215 Q 805 230, 795 232 L 780 226 Q 750 218, 720 222 Q 690 225, 660 235 Q 640 230, 645 210 Z" fill="#F5EBD4" opacity="0.5"/>
-  </svg>
-</div>
-
-<!-- Floating sakura petals -->
-<div class="petals" id="petals"></div>
+<!-- PARTICLES -->
+<div class="particles" id="particles"></div>
 
 <!-- HEADER -->
 <header id="header">
@@ -1168,7 +1031,7 @@ footer a:hover { color: var(--gold-light); }
   </nav>
   <a href="lien-he.html" class="cta-header">Đăng ký tư vấn</a>
   <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFBF0" stroke-width="2" stroke-linecap="round">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8E7" stroke-width="2" stroke-linecap="round">
       <line x1="3" y1="6" x2="21" y2="6"/>
       <line x1="3" y1="12" x2="21" y2="12"/>
       <line x1="3" y1="18" x2="21" y2="18"/>
@@ -1208,8 +1071,8 @@ footer a:hover { color: var(--gold-light); }
     <p class="section-sub">Đăng ký ngay hôm nay — chọn khoá phù hợp với lộ trình của bạn.</p>
   </div>
   <div class="course-grid">
-    <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#E6CB85" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
+    <article class="course-card ultra-glass tilt" data-tilt>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#FFD78A" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
       <div class="level">N5 <span class="tag">Cơ bản</span></div>
       <div class="divider"></div>
       <p class="schedule">T2-4-6 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1217,8 +1080,8 @@ footer a:hover { color: var(--gold-light); }
       <a href="jlpt.html#n5" class="arrow">→</a>
     </article>
 
-    <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#E6CB85" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
+    <article class="course-card ultra-glass tilt" data-tilt>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#FFD78A" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
       <div class="level">N4</div>
       <div class="divider"></div>
       <p class="schedule">T3-5-7 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1226,8 +1089,8 @@ footer a:hover { color: var(--gold-light); }
       <a href="jlpt.html#n4" class="arrow">→</a>
     </article>
 
-    <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#E6CB85" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
+    <article class="course-card ultra-glass tilt" data-tilt>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#FFD78A" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
       <div class="level">N3</div>
       <div class="divider"></div>
       <p class="schedule">T2-4-6 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1235,8 +1098,8 @@ footer a:hover { color: var(--gold-light); }
       <a href="jlpt.html#n3" class="arrow">→</a>
     </article>
 
-    <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#E6CB85" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
+    <article class="course-card ultra-glass tilt" data-tilt>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#FFD78A" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
       <div class="level">N3 <span class="tag">Cuối tuần</span></div>
       <div class="divider"></div>
       <p class="schedule">T7-CN <span class="sep">·</span> 11h00 VN (13h00 NB)</p>
@@ -1244,8 +1107,8 @@ footer a:hover { color: var(--gold-light); }
       <a href="jlpt.html#n3" class="arrow">→</a>
     </article>
 
-    <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#E6CB85" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
+    <article class="course-card ultra-glass tilt" data-tilt>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#FFD78A" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
       <div class="level">N1 <span class="tag">Cuối tuần</span></div>
       <div class="divider"></div>
       <p class="schedule">T7-CN <span class="sep">·</span> 13h00 VN (15h00 NB)</p>
@@ -1253,8 +1116,8 @@ footer a:hover { color: var(--gold-light); }
       <a href="jlpt.html#n1" class="arrow">→</a>
     </article>
 
-    <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M16 4 L19 12 L28 13 L21 19 L23 28 L16 23 L9 28 L11 19 L4 13 L13 12 Z" fill="#F1B5BC" stroke="#E6CB85" stroke-width="1"/></svg>
+    <article class="course-card ultra-glass tilt" data-tilt>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M16 4 L19 12 L28 13 L21 19 L23 28 L16 23 L9 28 L11 19 L4 13 L13 12 Z" fill="#F1B5BC" stroke="#FFD78A" stroke-width="1"/></svg>
       <div class="level">Ôn thi N3 <span class="tag">Thi T7</span></div>
       <div class="divider"></div>
       <p class="schedule">T2-4-6 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1262,8 +1125,8 @@ footer a:hover { color: var(--gold-light); }
       <a href="thi-thu.html" class="arrow">→</a>
     </article>
 
-    <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M16 4 L19 12 L28 13 L21 19 L23 28 L16 23 L9 28 L11 19 L4 13 L13 12 Z" fill="#F1B5BC" stroke="#E6CB85" stroke-width="1"/></svg>
+    <article class="course-card ultra-glass tilt" data-tilt>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M16 4 L19 12 L28 13 L21 19 L23 28 L16 23 L9 28 L11 19 L4 13 L13 12 Z" fill="#F1B5BC" stroke="#FFD78A" stroke-width="1"/></svg>
       <div class="level">Ôn thi N2 <span class="tag">Thi T7</span></div>
       <div class="divider"></div>
       <p class="schedule">T3-5-7 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1271,8 +1134,8 @@ footer a:hover { color: var(--gold-light); }
       <a href="thi-thu.html" class="arrow">→</a>
     </article>
 
-    <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M6 18 Q10 8 16 8 Q22 8 26 18 Q22 22 16 22 Q10 22 6 18 Z" fill="#F1B5BC" stroke="#E6CB85" stroke-width="1"/><circle cx="16" cy="16" r="2.5" fill="#FFFBF0"/></svg>
+    <article class="course-card ultra-glass tilt" data-tilt>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M6 18 Q10 8 16 8 Q22 8 26 18 Q22 22 16 22 Q10 22 6 18 Z" fill="#F1B5BC" stroke="#FFD78A" stroke-width="1"/><circle cx="16" cy="16" r="2.5" fill="#FFF8E7"/></svg>
       <div class="level">Kaiwa N5-N4</div>
       <div class="divider"></div>
       <p class="schedule">T2-4-6 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1280,8 +1143,8 @@ footer a:hover { color: var(--gold-light); }
       <a href="kaiwa.html" class="arrow">→</a>
     </article>
 
-    <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M6 18 Q10 8 16 8 Q22 8 26 18 Q22 22 16 22 Q10 22 6 18 Z" fill="#F1B5BC" stroke="#E6CB85" stroke-width="1"/><circle cx="16" cy="16" r="2.5" fill="#FFFBF0"/></svg>
+    <article class="course-card ultra-glass tilt" data-tilt>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M6 18 Q10 8 16 8 Q22 8 26 18 Q22 22 16 22 Q10 22 6 18 Z" fill="#F1B5BC" stroke="#FFD78A" stroke-width="1"/><circle cx="16" cy="16" r="2.5" fill="#FFF8E7"/></svg>
       <div class="level">Kaiwa N3</div>
       <div class="divider"></div>
       <p class="schedule">T3-5-7 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1299,22 +1162,22 @@ footer a:hover { color: var(--gold-light); }
     <p class="section-sub">Không chỉ học chữ — học cách dùng tiếng Nhật để mở cánh cửa nghề nghiệp.</p>
   </div>
   <div class="feature-grid">
-    <div class="feature">
+    <div class="feature ultra-glass tilt" data-tilt>
       <div class="feature-icon">智</div>
       <h3>Giáo án chi tiết</h3>
       <p>Mỗi cấp độ có giáo án in màu, bài tập chia mức — không lo "học cho có".</p>
     </div>
-    <div class="feature">
+    <div class="feature ultra-glass tilt" data-tilt>
       <div class="feature-icon">話</div>
       <h3>Kaiwa 1-1</h3>
       <p>Luyện nói trực tiếp với giáo viên người Nhật và sempai Việt đang sống tại Nhật.</p>
     </div>
-    <div class="feature">
+    <div class="feature ultra-glass tilt" data-tilt>
       <div class="feature-icon">道</div>
       <h3>Lộ trình rõ ràng</h3>
       <p>Từ "konnichiwa" đến phỏng vấn xin việc — biết hôm nay học gì, mai học gì.</p>
     </div>
-    <div class="feature">
+    <div class="feature ultra-glass tilt" data-tilt>
       <div class="feature-icon">縁</div>
       <h3>Cộng đồng sempai</h3>
       <p>Kết nối với sempai đang du học, làm việc tại Tokyo, Osaka, Nagoya, Fukuoka.</p>
@@ -1330,7 +1193,7 @@ footer a:hover { color: var(--gold-light); }
     <p class="section-sub">Chọn hệ phù hợp với năng lực, mục tiêu và kế hoạch dài hạn của bạn.</p>
   </div>
   <div class="journey-grid">
-    <article class="journey-card">
+    <article class="journey-card ultra-glass tilt" data-tilt>
       <div class="journey-kanji">研</div>
       <h3>Thực tập sinh</h3>
       <p class="sub">Kenshūsei · 3-5 năm</p>
@@ -1343,7 +1206,7 @@ footer a:hover { color: var(--gold-light); }
       <a href="viec-lam.html#thuc-tap-sinh" class="journey-link">Tìm hiểu thêm →</a>
     </article>
 
-    <article class="journey-card">
+    <article class="journey-card ultra-glass tilt" data-tilt>
       <div class="journey-kanji">特</div>
       <h3>Tokutei (Kỹ năng đặc định)</h3>
       <p class="sub">Tokutei Ginō · 5+ năm</p>
@@ -1356,7 +1219,7 @@ footer a:hover { color: var(--gold-light); }
       <a href="viec-lam.html#tokutei" class="journey-link">Tìm hiểu thêm →</a>
     </article>
 
-    <article class="journey-card">
+    <article class="journey-card ultra-glass tilt" data-tilt>
       <div class="journey-kanji">技</div>
       <h3>Kỹ sư · Phiên dịch</h3>
       <p class="sub">Gijutsu/Tsūyaku · Visa dài hạn</p>
@@ -1373,7 +1236,7 @@ footer a:hover { color: var(--gold-light); }
 
 <!-- CTA -->
 <section>
-  <div class="cta-section">
+  <div class="cta-section ultra-glass">
     <div class="kanji-deco">智</div>
     <h2>Bắt đầu hành trình — <span class="italic">hôm nay.</span></h2>
     <p>Đăng ký tư vấn miễn phí. Em sẽ giúp bạn chọn khoá học phù hợp trong 15 phút.</p>
@@ -1400,7 +1263,6 @@ footer a:hover { color: var(--gold-light); }
       </a>
       <p>Học viện tiếng Nhật đào tạo từ JLPT N5 đến N1, Kaiwa, EJU và định hướng việc làm tại Nhật Bản.</p>
     </div>
-
     <div>
       <h4>Khoá học</h4>
       <ul>
@@ -1410,7 +1272,6 @@ footer a:hover { color: var(--gold-light); }
         <li><a href="thi-thu.html">Thi thử</a></li>
       </ul>
     </div>
-
     <div>
       <h4>Việc làm Nhật</h4>
       <ul>
@@ -1420,7 +1281,6 @@ footer a:hover { color: var(--gold-light); }
         <li><a href="blog.html">Blog</a></li>
       </ul>
     </div>
-
     <div>
       <h4>Liên hệ</h4>
       <ul>
@@ -1430,7 +1290,6 @@ footer a:hover { color: var(--gold-light); }
       </ul>
     </div>
   </div>
-
   <div class="footer-bottom">
     <p>© 2026 Trí Lữ Nihongo · ⛩ <em>Crafted with care — Tokyo & Hà Nội.</em></p>
     <p style="opacity:0.5;font-size:12px;">www.trilu.edu.vn</p>
@@ -1447,35 +1306,396 @@ footer a:hover { color: var(--gold-light); }
 </div>
 
 <script>
-// Floating sakura petals
-const petalsContainer = document.getElementById('petals');
-const petalSVG = `<svg viewBox="0 0 20 20"><path d="M10 2 Q14 5 13 10 Q12 14 10 17 Q8 14 7 10 Q6 5 10 2 Z" fill="#F1B5BC" opacity="0.9"/></svg>`;
-for (let i = 0; i < 25; i++) {
-  const p = document.createElement('div');
-  p.className = 'petal';
-  p.innerHTML = petalSVG;
-  p.style.left = Math.random() * 100 + 'vw';
-  p.style.animationDuration = (9 + Math.random() * 14) + 's';
-  p.style.animationDelay = -(Math.random() * 20) + 's';
-  const sz = (10 + Math.random() * 14);
-  p.style.width = sz + 'px';
-  p.style.height = sz + 'px';
-  petalsContainer.appendChild(p);
+// ============================================
+// HOKUSAI WAVES — Canvas animated background
+// ============================================
+const canvas = document.getElementById('hokusai');
+const ctx = canvas.getContext('2d', { alpha: false });
+let W, H, DPR, t = 0;
+let mouseX = 0.5, mouseY = 0.5;
+let stars = [];
+let foamParticles = [];
+
+function resize() {
+  DPR = Math.min(window.devicePixelRatio || 1, 2);
+  W = innerWidth;
+  H = innerHeight;
+  canvas.width = W * DPR;
+  canvas.height = H * DPR;
+  canvas.style.width = W + 'px';
+  canvas.style.height = H + 'px';
+  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+  // Regenerate stars
+  stars = Array.from({length: 80}, () => ({
+    x: Math.random() * W,
+    y: Math.random() * H * 0.55,
+    r: Math.random() * 1.3 + 0.3,
+    twinkle: Math.random() * Math.PI * 2,
+    speed: Math.random() * 0.02 + 0.005
+  }));
+}
+resize();
+addEventListener('resize', resize);
+
+// Track mouse for parallax
+addEventListener('mousemove', e => {
+  mouseX = e.clientX / W;
+  mouseY = e.clientY / H;
+});
+
+// Foam particles
+function spawnFoam(x, y) {
+  for (let i = 0; i < 2; i++) {
+    foamParticles.push({
+      x, y,
+      vx: (Math.random() - 0.5) * 1.5,
+      vy: -Math.random() * 2 - 1,
+      life: 1,
+      size: Math.random() * 3 + 1
+    });
+  }
 }
 
-// Header scroll
+function drawSky() {
+  // Deep ethereal night sky
+  const sky = ctx.createLinearGradient(0, 0, 0, H);
+  sky.addColorStop(0, '#0a0820');
+  sky.addColorStop(0.3, '#1a1042');
+  sky.addColorStop(0.55, '#2d1b5e');
+  sky.addColorStop(0.75, '#3a2a7a');
+  sky.addColorStop(1, '#1a3a6b');
+  ctx.fillStyle = sky;
+  ctx.fillRect(0, 0, W, H);
+
+  // Aurora glow (subtle)
+  const aurora = ctx.createRadialGradient(W * 0.3, H * 0.15, 0, W * 0.3, H * 0.15, W * 0.5);
+  aurora.addColorStop(0, 'rgba(241, 181, 188, 0.18)');
+  aurora.addColorStop(0.5, 'rgba(180, 200, 255, 0.08)');
+  aurora.addColorStop(1, 'transparent');
+  ctx.fillStyle = aurora;
+  ctx.fillRect(0, 0, W, H);
+
+  const aurora2 = ctx.createRadialGradient(W * 0.85, H * 0.4, 0, W * 0.85, H * 0.4, W * 0.4);
+  aurora2.addColorStop(0, 'rgba(255, 215, 138, 0.12)');
+  aurora2.addColorStop(0.5, 'rgba(241, 181, 188, 0.05)');
+  aurora2.addColorStop(1, 'transparent');
+  ctx.fillStyle = aurora2;
+  ctx.fillRect(0, 0, W, H);
+}
+
+function drawStars() {
+  ctx.save();
+  for (const s of stars) {
+    const a = 0.5 + 0.5 * Math.sin(t * s.speed + s.twinkle);
+    ctx.fillStyle = `rgba(255, 248, 231, ${a * 0.85})`;
+    ctx.beginPath();
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.fill();
+    if (a > 0.8 && s.r > 0.9) {
+      // sparkle cross
+      ctx.strokeStyle = `rgba(255, 248, 231, ${a * 0.4})`;
+      ctx.lineWidth = 0.5;
+      ctx.beginPath();
+      ctx.moveTo(s.x - 3, s.y); ctx.lineTo(s.x + 3, s.y);
+      ctx.moveTo(s.x, s.y - 3); ctx.lineTo(s.x, s.y + 3);
+      ctx.stroke();
+    }
+  }
+  ctx.restore();
+}
+
+function drawMoon() {
+  const mx = W * (0.75 - (mouseX - 0.5) * 0.02);
+  const my = H * (0.18 - (mouseY - 0.5) * 0.015);
+  const r = 70;
+  // Halo
+  const halo = ctx.createRadialGradient(mx, my, r * 0.5, mx, my, r * 3);
+  halo.addColorStop(0, 'rgba(255, 248, 231, 0.4)');
+  halo.addColorStop(0.4, 'rgba(255, 220, 170, 0.15)');
+  halo.addColorStop(1, 'transparent');
+  ctx.fillStyle = halo;
+  ctx.fillRect(mx - r * 3, my - r * 3, r * 6, r * 6);
+  // Moon body
+  const moon = ctx.createRadialGradient(mx - r * 0.3, my - r * 0.3, 0, mx, my, r);
+  moon.addColorStop(0, '#FFFAEC');
+  moon.addColorStop(0.7, '#F5E8C8');
+  moon.addColorStop(1, '#D4B98C');
+  ctx.fillStyle = moon;
+  ctx.beginPath();
+  ctx.arc(mx, my, r, 0, Math.PI * 2);
+  ctx.fill();
+  // Subtle craters
+  ctx.fillStyle = 'rgba(180, 150, 100, 0.18)';
+  ctx.beginPath(); ctx.arc(mx - 18, my - 12, 8, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.arc(mx + 22, my + 8, 6, 0, Math.PI * 2); ctx.fill();
+  ctx.beginPath(); ctx.arc(mx - 5, my + 20, 4, 0, Math.PI * 2); ctx.fill();
+}
+
+function drawMtFuji() {
+  // Mt Fuji silhouette behind waves
+  const fx = W * 0.55 + (mouseX - 0.5) * 20;
+  const fbase = H * 0.78;
+  const fheight = H * 0.32;
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(fx - fheight * 1.4, fbase);
+  ctx.lineTo(fx - 30, fbase - fheight + 15);
+  ctx.quadraticCurveTo(fx, fbase - fheight - 10, fx + 30, fbase - fheight + 15);
+  ctx.lineTo(fx + fheight * 1.4, fbase);
+  ctx.closePath();
+  const fujiG = ctx.createLinearGradient(0, fbase - fheight, 0, fbase);
+  fujiG.addColorStop(0, 'rgba(45, 60, 120, 0.65)');
+  fujiG.addColorStop(1, 'rgba(15, 25, 60, 0.85)');
+  ctx.fillStyle = fujiG;
+  ctx.fill();
+  // Snow cap
+  ctx.beginPath();
+  ctx.moveTo(fx - 30, fbase - fheight + 15);
+  ctx.quadraticCurveTo(fx - 24, fbase - fheight + 30, fx - 10, fbase - fheight + 22);
+  ctx.quadraticCurveTo(fx, fbase - fheight + 35, fx + 15, fbase - fheight + 25);
+  ctx.quadraticCurveTo(fx + 28, fbase - fheight + 32, fx + 30, fbase - fheight + 15);
+  ctx.quadraticCurveTo(fx, fbase - fheight - 10, fx - 30, fbase - fheight + 15);
+  ctx.fillStyle = 'rgba(255, 248, 231, 0.42)';
+  ctx.fill();
+  ctx.restore();
+}
+
+function wavePath(yBase, amp, freq, speed, phase) {
+  ctx.beginPath();
+  ctx.moveTo(0, H);
+  ctx.lineTo(0, yBase);
+  for (let x = 0; x <= W; x += 5) {
+    const y = yBase
+      + Math.sin(x * freq + t * speed + phase) * amp
+      + Math.sin(x * freq * 2.7 + t * speed * 1.5 + phase) * amp * 0.28
+      + Math.sin(x * freq * 0.5 + t * speed * 0.7) * amp * 0.45;
+    ctx.lineTo(x, y);
+  }
+  ctx.lineTo(W, H);
+  ctx.closePath();
+}
+
+function drawWaveLayer(yBase, amp, freq, speed, phase, colorTop, colorBot, opacity, foamY) {
+  wavePath(yBase, amp, freq, speed, phase);
+  const g = ctx.createLinearGradient(0, yBase - amp, 0, H);
+  g.addColorStop(0, colorTop);
+  g.addColorStop(1, colorBot);
+  ctx.fillStyle = g;
+  ctx.globalAlpha = opacity;
+  ctx.fill();
+  ctx.globalAlpha = 1;
+}
+
+function drawHokusaiCrest() {
+  // Iconic Hokusai wave finger crests at random positions
+  const crestX = W * 0.32 + Math.sin(t * 0.3) * 80;
+  const crestY = H * 0.78 + Math.sin(t * 0.5) * 8;
+  const scale = 1.4 + Math.sin(t * 0.4) * 0.1;
+
+  ctx.save();
+  ctx.translate(crestX, crestY);
+  ctx.scale(scale, scale);
+  // Big wave body
+  ctx.beginPath();
+  ctx.moveTo(-180, 50);
+  ctx.bezierCurveTo(-150, -80, -50, -120, 50, -90);
+  ctx.bezierCurveTo(120, -65, 140, -10, 100, 30);
+  ctx.bezierCurveTo(60, 65, -100, 80, -180, 50);
+  ctx.closePath();
+  const wg = ctx.createLinearGradient(0, -120, 0, 80);
+  wg.addColorStop(0, 'rgba(255, 248, 231, 0.95)');
+  wg.addColorStop(0.4, 'rgba(180, 210, 240, 0.7)');
+  wg.addColorStop(1, 'rgba(40, 80, 140, 0.85)');
+  ctx.fillStyle = wg;
+  ctx.fill();
+  ctx.strokeStyle = 'rgba(255, 248, 231, 0.5)';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+
+  // Foam fingers (signature Hokusai)
+  for (let i = 0; i < 6; i++) {
+    const fx = -80 + i * 32;
+    const fy = -85 - i * 4;
+    ctx.beginPath();
+    ctx.moveTo(fx, fy);
+    ctx.bezierCurveTo(fx - 6, fy - 20, fx + 8, fy - 35, fx + 14, fy - 25);
+    ctx.bezierCurveTo(fx + 20, fy - 15, fx + 10, fy + 5, fx + 4, fy + 2);
+    ctx.closePath();
+    ctx.fillStyle = `rgba(255, 248, 231, ${0.85 - i * 0.08})`;
+    ctx.fill();
+    // tiny foam droplets
+    ctx.beginPath();
+    ctx.arc(fx + 18, fy - 30, 2, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255, 248, 231, 0.7)';
+    ctx.fill();
+  }
+  ctx.restore();
+
+  // Second crest on the right
+  const cx2 = W * 0.72 + Math.cos(t * 0.25) * 60;
+  const cy2 = H * 0.85 + Math.cos(t * 0.4) * 6;
+  const sc2 = 1 + Math.cos(t * 0.35) * 0.08;
+
+  ctx.save();
+  ctx.translate(cx2, cy2);
+  ctx.scale(-sc2, sc2);  // mirrored
+  ctx.beginPath();
+  ctx.moveTo(-140, 40);
+  ctx.bezierCurveTo(-110, -60, -30, -90, 50, -70);
+  ctx.bezierCurveTo(100, -55, 110, -10, 80, 25);
+  ctx.bezierCurveTo(40, 55, -80, 65, -140, 40);
+  ctx.closePath();
+  const wg2 = ctx.createLinearGradient(0, -90, 0, 60);
+  wg2.addColorStop(0, 'rgba(255, 248, 231, 0.85)');
+  wg2.addColorStop(0.5, 'rgba(150, 180, 220, 0.6)');
+  wg2.addColorStop(1, 'rgba(30, 60, 110, 0.85)');
+  ctx.fillStyle = wg2;
+  ctx.fill();
+
+  for (let i = 0; i < 5; i++) {
+    const fx = -60 + i * 28;
+    const fy = -65 - i * 3;
+    ctx.beginPath();
+    ctx.moveTo(fx, fy);
+    ctx.bezierCurveTo(fx - 5, fy - 16, fx + 7, fy - 28, fx + 12, fy - 20);
+    ctx.bezierCurveTo(fx + 16, fy - 12, fx + 8, fy + 4, fx + 3, fy + 1);
+    ctx.closePath();
+    ctx.fillStyle = `rgba(255, 248, 231, ${0.8 - i * 0.1})`;
+    ctx.fill();
+  }
+  ctx.restore();
+}
+
+function drawFoam() {
+  // Update + draw foam particles
+  for (let i = foamParticles.length - 1; i >= 0; i--) {
+    const p = foamParticles[i];
+    p.x += p.vx;
+    p.y += p.vy;
+    p.vy += 0.04;
+    p.life -= 0.012;
+    if (p.life <= 0) { foamParticles.splice(i, 1); continue; }
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size * p.life, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(255, 248, 231, ${p.life * 0.7})`;
+    ctx.fill();
+  }
+}
+
+function animate() {
+  drawSky();
+  drawStars();
+  drawMoon();
+  drawMtFuji();
+
+  // 5 layered waves from back to front (parallax)
+  const py = (mouseY - 0.5) * 20;
+  drawWaveLayer(H * 0.58 + py * 0.2, 22, 0.0065, 0.4, 0, 'rgba(60, 90, 160, 0.5)', 'rgba(20, 40, 90, 0.85)', 0.5);
+  drawWaveLayer(H * 0.68 + py * 0.4, 30, 0.009, 0.7, 1.2, 'rgba(80, 120, 190, 0.7)', 'rgba(30, 55, 110, 0.9)', 0.7);
+  drawWaveLayer(H * 0.78 + py * 0.6, 40, 0.011, 1.0, 2.5, 'rgba(110, 160, 220, 0.85)', 'rgba(40, 75, 140, 0.95)', 0.85);
+
+  drawHokusaiCrest();
+
+  drawWaveLayer(H * 0.88 + py * 0.8, 50, 0.013, 1.3, 3.5, 'rgba(160, 200, 240, 0.95)', 'rgba(50, 95, 160, 1)', 1);
+  drawWaveLayer(H * 0.97 + py * 1, 35, 0.016, 1.8, 4.5, 'rgba(220, 240, 255, 1)', 'rgba(80, 130, 190, 1)', 1);
+
+  // Spawn foam occasionally
+  if (Math.random() < 0.3) {
+    spawnFoam(W * 0.32 + Math.sin(t * 0.3) * 80, H * 0.78 + Math.sin(t * 0.5) * 8 - 80);
+  }
+  if (Math.random() < 0.25) {
+    spawnFoam(W * 0.72 + Math.cos(t * 0.25) * 60, H * 0.85 + Math.cos(t * 0.4) * 6 - 60);
+  }
+  drawFoam();
+
+  t += 0.016;
+  requestAnimationFrame(animate);
+}
+animate();
+
+// ============================================
+// CURSOR GLOW
+// ============================================
+const cursorGlow = document.getElementById('cursorGlow');
+let mouseHasMoved = false;
+window.addEventListener('mousemove', e => {
+  cursorGlow.style.left = e.clientX + 'px';
+  cursorGlow.style.top = e.clientY + 'px';
+  if (!mouseHasMoved) {
+    mouseHasMoved = true;
+    cursorGlow.classList.add('active');
+  }
+});
+
+// ============================================
+// 3D TILT ON CARDS (mouse-following)
+// ============================================
+const tiltCards = document.querySelectorAll('[data-tilt]');
+tiltCards.forEach(card => {
+  let rect = null;
+  card.addEventListener('mouseenter', () => {
+    rect = card.getBoundingClientRect();
+  });
+  card.addEventListener('mousemove', e => {
+    if (!rect) rect = card.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    card.style.transform = `perspective(900px) rotateY(${x * 6}deg) rotateX(${-y * 6}deg) translateY(-6px) translateZ(0)`;
+    // Highlight following cursor
+    card.style.background = `radial-gradient(circle at ${(x + 0.5) * 100}% ${(y + 0.5) * 100}%, rgba(255,255,255,0.09), rgba(255,255,255,0.035) 60%)`;
+  });
+  card.addEventListener('mouseleave', () => {
+    card.style.transform = '';
+    card.style.background = '';
+    rect = null;
+  });
+});
+
+// ============================================
+// FLOATING PARTICLES (petals + sparks)
+// ============================================
+const petalsEl = document.getElementById('particles');
+const petalSVG = `<svg viewBox="0 0 20 20"><path d="M10 2 Q14 5 13 10 Q12 14 10 17 Q8 14 7 10 Q6 5 10 2 Z" fill="#F1B5BC" opacity="0.9"/></svg>`;
+for (let i = 0; i < 20; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle petal';
+  p.innerHTML = petalSVG;
+  p.style.left = Math.random() * 100 + 'vw';
+  p.style.animationDuration = (10 + Math.random() * 15) + 's';
+  p.style.animationDelay = -(Math.random() * 25) + 's';
+  const sz = (10 + Math.random() * 12);
+  p.style.width = sz + 'px';
+  p.style.height = sz + 'px';
+  petalsEl.appendChild(p);
+}
+for (let i = 0; i < 12; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle spark';
+  p.style.left = Math.random() * 100 + 'vw';
+  p.style.animationDuration = (18 + Math.random() * 20) + 's';
+  p.style.animationDelay = -(Math.random() * 30) + 's';
+  petalsEl.appendChild(p);
+}
+
+// ============================================
+// HEADER SCROLL
+// ============================================
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 30) header.classList.add('scrolled');
   else header.classList.remove('scrolled');
 }, { passive: true });
 
-// Mobile menu
-const toggle = document.getElementById('menuToggle');
-const nav = document.getElementById('nav');
-toggle.addEventListener('click', () => nav.classList.toggle('open'));
+// ============================================
+// MOBILE MENU
+// ============================================
+document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('nav').classList.toggle('open');
+});
 
-// Fade-in on scroll
+// ============================================
+// FADE-IN ON SCROLL
+// ============================================
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -1488,14 +1708,9 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('.course-card, .feature, .journey-card, .cta-section').forEach((el, i) => {
   el.style.opacity = 0;
   el.style.transform = 'translateY(30px)';
-  el.style.transition = `opacity 0.7s ease ${i * 0.04}s, transform 0.7s ease ${i * 0.04}s, background 0.4s, box-shadow 0.4s`;
+  el.style.transition = `opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.04}s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${i * 0.04}s`;
   observer.observe(el);
 });
-
-// Video error handling — keep animated fallback if video fails
-const video = document.querySelector('.bg-video');
-video.addEventListener('error', () => video.style.display = 'none');
-video.addEventListener('stalled', () => console.warn('Video stalled'));
 </script>
 
 </body>
