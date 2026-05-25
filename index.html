@@ -12,20 +12,25 @@
 :root {
   --navy: #1B3A6B;
   --navy-dark: #0F2547;
-  --navy-light: #2C5491;
+  --navy-deep: #061534;
+  --navy-light: #4A7AB8;
   --cream: #F5EBD4;
-  --cream-light: #FAF3E0;
-  --cream-dark: #E8D9B5;
+  --cream-light: #FFFBF0;
   --sakura: #F1B5BC;
   --sakura-dark: #E89AA3;
-  --gold: #C9A961;
-  --gold-light: #E6CB85;
+  --gold: #E6CB85;
+  --gold-light: #F4DEA8;
   --ink: #1A2440;
-  --paper: #FBF6E8;
-  --glass: rgba(255, 251, 235, 0.45);
-  --glass-strong: rgba(255, 251, 235, 0.7);
-  --glass-border: rgba(27, 58, 107, 0.18);
-  --glass-shadow: rgba(27, 58, 107, 0.12);
+
+  /* Apple-style liquid glass */
+  --glass-bg: rgba(255, 255, 255, 0.07);
+  --glass-bg-strong: rgba(255, 255, 255, 0.12);
+  --glass-bg-dark: rgba(15, 37, 71, 0.25);
+  --glass-border: rgba(255, 255, 255, 0.18);
+  --glass-border-bright: rgba(255, 255, 255, 0.35);
+  --glass-shadow: 0 16px 40px rgba(0, 0, 0, 0.18);
+  --glass-shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.28);
+  --glass-inset: inset 0 1px 0 0 rgba(255, 255, 255, 0.32), inset 0 -1px 0 0 rgba(255, 255, 255, 0.06);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -34,115 +39,115 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
-  background: var(--paper);
-  color: var(--ink);
+  background: #0a1024;
+  color: var(--cream-light);
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
 }
 
-/* === PAPER TEXTURE BACKGROUND === */
-body::before {
-  content: '';
+/* === VIDEO BACKGROUND === */
+.bg-video {
   position: fixed;
   inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -10;
+  filter: saturate(115%) brightness(0.78);
+}
+
+.bg-fallback {
+  position: fixed;
+  inset: 0;
+  z-index: -11;
   background:
-    radial-gradient(ellipse at 20% 15%, rgba(241, 181, 188, 0.12), transparent 45%),
-    radial-gradient(ellipse at 85% 20%, rgba(44, 84, 145, 0.08), transparent 50%),
-    radial-gradient(ellipse at 50% 100%, rgba(27, 58, 107, 0.18), transparent 60%),
-    linear-gradient(180deg, var(--cream-light) 0%, var(--cream) 50%, var(--cream-dark) 100%);
-  z-index: -3;
+    radial-gradient(ellipse 80% 60% at 20% 30%, rgba(232, 154, 163, 0.55), transparent 70%),
+    radial-gradient(ellipse 70% 50% at 80% 60%, rgba(74, 122, 184, 0.5), transparent 65%),
+    radial-gradient(ellipse 90% 70% at 50% 100%, rgba(27, 58, 107, 0.85), transparent 75%),
+    linear-gradient(135deg, #2a1638 0%, #1a2660 40%, #0f2547 100%);
+  background-size: 200% 200%;
+  animation: bgShift 30s ease infinite;
 }
 
-body::after {
-  content: '';
+@keyframes bgShift {
+  0%, 100% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+}
+
+/* Dark overlay for legibility */
+.video-overlay {
   position: fixed;
   inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.106 0 0 0 0 0.227 0 0 0 0 0.420 0 0 0 0.04 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  opacity: 0.6;
-  z-index: -2;
+  z-index: -8;
+  background:
+    radial-gradient(ellipse at top, rgba(6, 21, 52, 0.15), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(15, 37, 71, 0.55), transparent 60%),
+    linear-gradient(180deg, rgba(15, 37, 71, 0.3) 0%, rgba(6, 21, 52, 0.55) 100%);
   pointer-events: none;
 }
 
-/* === HOKUSAI WAVE BG === */
-.wave-bg {
+/* Color mesh accent */
+.color-mesh {
   position: fixed;
-  bottom: -10px;
-  left: 0;
-  width: 100%;
-  height: 45vh;
-  z-index: -1;
+  inset: 0;
+  z-index: -7;
   pointer-events: none;
-  opacity: 0.85;
+  background:
+    radial-gradient(circle 600px at 15% 25%, rgba(232, 154, 163, 0.15), transparent),
+    radial-gradient(circle 700px at 85% 75%, rgba(230, 203, 133, 0.12), transparent),
+    radial-gradient(circle 500px at 50% 50%, rgba(74, 122, 184, 0.1), transparent);
+  animation: meshFloat 25s ease-in-out infinite;
 }
 
-.wave-bg svg {
-  width: 100%;
-  height: 100%;
-  display: block;
+@keyframes meshFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(2%, -1%) scale(1.05); }
+  66% { transform: translate(-1%, 2%) scale(0.98); }
 }
 
-/* === MT FUJI === */
-.fuji {
-  position: fixed;
-  top: 60px;
-  right: 0;
-  width: min(580px, 55vw);
-  height: auto;
-  z-index: -1;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-/* === SAKURA BRANCH === */
-.sakura-branch {
-  position: fixed;
-  top: -30px;
-  left: -30px;
-  width: min(360px, 38vw);
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.92;
-  filter: drop-shadow(0 4px 12px rgba(232, 154, 163, 0.3));
-}
-
-.sakura-branch-right {
-  position: fixed;
-  top: 100px;
-  right: -40px;
-  width: min(280px, 32vw);
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.85;
-  transform: scaleX(-1);
-}
-
-/* === FLOATING SAKURA PETALS === */
+/* === FLOATING PETALS === */
 .petals {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
   overflow: hidden;
 }
 
 .petal {
   position: absolute;
-  top: -30px;
-  width: 14px;
-  height: 14px;
-  opacity: 0.7;
+  top: -40px;
+  width: 16px;
+  height: 16px;
+  opacity: 0.85;
   animation: fall linear infinite;
+  filter: drop-shadow(0 2px 4px rgba(232, 154, 163, 0.4));
 }
 
 .petal svg { width: 100%; height: 100%; }
 
 @keyframes fall {
-  0% { transform: translateY(-30px) translateX(0) rotate(0deg); opacity: 0; }
-  10% { opacity: 0.8; }
-  90% { opacity: 0.6; }
-  100% { transform: translateY(105vh) translateX(120px) rotate(720deg); opacity: 0; }
+  0% { transform: translateY(-40px) translateX(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.85; }
+  90% { opacity: 0.7; }
+  100% { transform: translateY(105vh) translateX(140px) rotate(720deg); opacity: 0; }
 }
+
+/* === MT FUJI silhouette decor === */
+.fuji-decor {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 38vh;
+  z-index: -6;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+.fuji-decor svg { width: 100%; height: 100%; display: block; }
 
 /* === HEADER === */
 header {
@@ -151,20 +156,21 @@ header {
   left: 0;
   right: 0;
   z-index: 100;
-  padding: 18px 5vw;
+  padding: 14px 5vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(251, 246, 232, 0.78);
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
-  border-bottom: 1px solid rgba(27, 58, 107, 0.12);
-  transition: padding 0.3s ease;
+  background: rgba(15, 37, 71, 0.35);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: var(--glass-inset);
+  transition: padding 0.3s ease, background 0.3s ease;
 }
 
 header.scrolled {
-  padding: 12px 5vw;
-  background: rgba(251, 246, 232, 0.92);
+  padding: 10px 5vw;
+  background: rgba(15, 37, 71, 0.55);
 }
 
 .logo {
@@ -172,14 +178,16 @@ header.scrolled {
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  color: var(--navy);
+  color: var(--cream-light);
 }
 
 .logo-mark {
   width: 44px;
   height: 44px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, var(--navy), var(--navy-light));
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.05));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -187,7 +195,7 @@ header.scrolled {
   font-family: 'Shippori Mincho', serif;
   font-size: 24px;
   font-weight: 700;
-  box-shadow: 0 4px 12px rgba(27, 58, 107, 0.25);
+  box-shadow: var(--glass-inset);
 }
 
 .logo-text {
@@ -201,16 +209,18 @@ header.scrolled {
   font-style: italic;
   font-weight: 600;
   font-size: 22px;
-  color: var(--navy);
+  color: var(--cream-light);
+  letter-spacing: -0.01em;
 }
 
 .logo-text .sub {
   font-family: 'Shippori Mincho', serif;
   font-size: 10px;
   letter-spacing: 3px;
-  color: var(--navy-light);
+  color: var(--gold-light);
   margin-top: 4px;
   text-transform: uppercase;
+  opacity: 0.85;
 }
 
 nav ul {
@@ -221,7 +231,7 @@ nav ul {
 }
 
 nav a {
-  color: var(--navy);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -240,25 +250,27 @@ nav a::after {
   transition: width 0.3s;
 }
 
-nav a:hover { color: var(--navy-dark); }
+nav a:hover { color: var(--gold-light); }
 nav a:hover::after { width: 100%; }
 
 .cta-header {
-  background: var(--navy);
+  background: rgba(255, 255, 255, 0.15);
   color: var(--cream-light);
   padding: 10px 22px;
   border-radius: 999px;
   text-decoration: none;
   font-size: 13px;
   font-weight: 600;
-  transition: transform 0.2s, box-shadow 0.2s;
-  box-shadow: 0 4px 14px rgba(27, 58, 107, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  box-shadow: var(--glass-inset);
 }
 
 .cta-header:hover {
+  background: rgba(255, 255, 255, 0.25);
   transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(27, 58, 107, 0.4);
+  box-shadow: var(--glass-inset), 0 8px 22px rgba(0, 0, 0, 0.25);
 }
 
 .menu-toggle {
@@ -286,26 +298,28 @@ nav a:hover::after { width: 100%; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 18px;
-  background: var(--glass-strong);
-  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
   border: 1px solid var(--glass-border);
   border-radius: 999px;
   font-family: 'Shippori Mincho', serif;
-  font-size: 12px;
-  color: var(--navy);
+  font-size: 13px;
+  color: var(--cream-light);
   letter-spacing: 2px;
   margin-bottom: 32px;
-  box-shadow: 0 4px 16px var(--glass-shadow);
+  box-shadow: var(--glass-inset), 0 8px 24px rgba(0, 0, 0, 0.2);
   opacity: 0;
   animation: fadeUp 0.8s ease 0.2s forwards;
 }
 
 .hero-eyebrow .dot {
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: var(--sakura-dark);
+  background: var(--sakura);
+  box-shadow: 0 0 12px var(--sakura);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -318,11 +332,12 @@ nav a:hover::after { width: 100%; }
   font-family: 'Shippori Mincho', serif;
   font-size: clamp(40px, 7vw, 92px);
   line-height: 1.05;
-  color: var(--navy);
+  color: var(--cream-light);
   font-weight: 700;
   max-width: 1100px;
   margin-bottom: 16px;
   letter-spacing: -0.02em;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.35);
   opacity: 0;
   animation: fadeUp 1s ease 0.4s forwards;
 }
@@ -331,10 +346,11 @@ nav a:hover::after { width: 100%; }
   font-family: 'Imbue', serif;
   font-style: italic;
   font-weight: 500;
-  background: linear-gradient(135deg, var(--gold), var(--sakura-dark) 50%, var(--navy-light));
+  background: linear-gradient(135deg, #F4DEA8 0%, #F1B5BC 50%, #B8D4FF 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 12px rgba(241, 181, 188, 0.3));
 }
 
 .hero h1 .stroke {
@@ -349,16 +365,17 @@ nav a:hover::after { width: 100%; }
   left: 0;
   width: 100%;
   height: 8px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 12'%3E%3Cpath d='M2 8 Q 80 2, 150 6 T 298 7' stroke='%23C9A961' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 12'%3E%3Cpath d='M2 8 Q 80 2, 150 6 T 298 7' stroke='%23F4DEA8' stroke-width='3' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center / 100% 100%;
 }
 
 .hero-sub {
   font-family: 'Imbue', serif;
   font-style: italic;
   font-size: clamp(18px, 2.5vw, 26px);
-  color: var(--navy-light);
+  color: rgba(255, 251, 240, 0.92);
   max-width: 720px;
   margin: 24px auto 8px;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
   opacity: 0;
   animation: fadeUp 1s ease 0.6s forwards;
 }
@@ -366,12 +383,11 @@ nav a:hover::after { width: 100%; }
 .hero-jp {
   font-family: 'Noto Serif JP', serif;
   font-size: 14px;
-  color: var(--navy);
-  opacity: 0.6;
+  color: var(--gold-light);
   letter-spacing: 4px;
   margin-bottom: 40px;
-  animation: fadeUp 1s ease 0.7s forwards;
   opacity: 0;
+  animation: fadeUp 1s ease 0.7s forwards;
 }
 
 .hero-actions {
@@ -384,7 +400,7 @@ nav a:hover::after { width: 100%; }
 }
 
 .btn-primary {
-  background: var(--navy);
+  background: rgba(255, 255, 255, 0.18);
   color: var(--cream-light);
   padding: 16px 36px;
   border-radius: 999px;
@@ -395,33 +411,35 @@ nav a:hover::after { width: 100%; }
   align-items: center;
   gap: 10px;
   transition: all 0.3s;
-  box-shadow: 0 6px 20px rgba(27, 58, 107, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(30px) saturate(180%);
+  -webkit-backdrop-filter: blur(30px) saturate(180%);
+  box-shadow: var(--glass-inset), 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .btn-primary:hover {
+  background: rgba(255, 255, 255, 0.28);
   transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(27, 58, 107, 0.45);
-  background: var(--navy-dark);
+  box-shadow: var(--glass-inset), 0 14px 32px rgba(0, 0, 0, 0.35);
 }
 
 .btn-ghost {
-  background: var(--glass);
-  color: var(--navy);
+  background: rgba(15, 37, 71, 0.3);
+  color: var(--cream-light);
   padding: 16px 36px;
   border-radius: 999px;
   text-decoration: none;
   font-size: 15px;
   font-weight: 600;
-  border: 1px solid var(--glass-border);
-  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
   transition: all 0.3s;
+  box-shadow: var(--glass-inset);
 }
 
 .btn-ghost:hover {
-  background: var(--glass-strong);
+  background: rgba(15, 37, 71, 0.5);
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px var(--glass-shadow);
 }
 
 .scroll-cue {
@@ -436,8 +454,7 @@ nav a:hover::after { width: 100%; }
   font-family: 'Shippori Mincho', serif;
   font-size: 10px;
   letter-spacing: 4px;
-  color: var(--navy);
-  opacity: 0.6;
+  color: rgba(255, 255, 255, 0.7);
   animation: bob 2s ease-in-out infinite;
 }
 
@@ -450,7 +467,7 @@ nav a:hover::after { width: 100%; }
   content: '';
   width: 1px;
   height: 40px;
-  background: linear-gradient(180deg, var(--navy), transparent);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.6), transparent);
 }
 
 @keyframes fadeUp {
@@ -475,36 +492,64 @@ section {
   font-family: 'Shippori Mincho', serif;
   font-size: 12px;
   letter-spacing: 5px;
-  color: var(--gold);
+  color: var(--gold-light);
   margin-bottom: 16px;
   text-transform: uppercase;
+  opacity: 0.9;
 }
 
 .section-title {
   font-family: 'Shippori Mincho', serif;
   font-size: clamp(32px, 5vw, 56px);
-  color: var(--navy);
+  color: var(--cream-light);
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 16px;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
 }
 
 .section-title .italic {
   font-family: 'Imbue', serif;
   font-style: italic;
   font-weight: 500;
-  color: var(--navy-light);
+  background: linear-gradient(135deg, var(--gold-light), var(--sakura));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .section-sub {
   font-family: 'Imbue', serif;
   font-style: italic;
   font-size: 18px;
-  color: var(--navy);
-  opacity: 0.75;
+  color: rgba(255, 255, 255, 0.8);
   max-width: 600px;
   margin: 0 auto;
+}
+
+/* === LIQUID GLASS CARD (Apple style) === */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  box-shadow: var(--glass-inset), var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+  border-radius: 24px 24px 0 0;
 }
 
 /* === COURSE GRID === */
@@ -515,21 +560,21 @@ section {
 
 .course-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
   gap: 24px;
 }
 
 .course-card {
-  background: var(--glass);
-  backdrop-filter: blur(20px) saturate(140%);
-  -webkit-backdrop-filter: blur(20px) saturate(140%);
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
   border: 1px solid var(--glass-border);
-  border-radius: 20px;
+  border-radius: 22px;
   padding: 28px 26px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s, background 0.3s;
-  box-shadow: 0 8px 32px var(--glass-shadow);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--glass-inset), var(--glass-shadow);
   cursor: pointer;
 }
 
@@ -539,31 +584,46 @@ section {
   top: 0;
   left: 0;
   right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--gold), var(--sakura-dark), var(--navy-light));
+  height: 60%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+  border-radius: 22px 22px 0 0;
+}
+
+.course-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.4), transparent 40%, transparent 60%, rgba(241, 181, 188, 0.3));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
   opacity: 0;
-  transition: opacity 0.3s;
+  transition: opacity 0.4s;
 }
 
 .course-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 50px rgba(27, 58, 107, 0.22);
-  background: var(--glass-strong);
+  transform: translateY(-10px) scale(1.01);
+  background: var(--glass-bg-strong);
+  box-shadow: var(--glass-inset), var(--glass-shadow-lg);
 }
 
-.course-card:hover::before { opacity: 1; }
+.course-card:hover::after { opacity: 1; }
 
 .course-emblem {
   width: 32px;
   height: 32px;
   margin-bottom: 16px;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .course-card .level {
   font-family: 'Shippori Mincho', serif;
   font-size: 30px;
-  color: var(--navy);
+  color: var(--cream-light);
   font-weight: 700;
   margin-bottom: 4px;
   display: flex;
@@ -573,10 +633,11 @@ section {
 
 .course-card .level .tag {
   font-family: 'Be Vietnam Pro', sans-serif;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
-  color: var(--navy-light);
-  background: rgba(44, 84, 145, 0.1);
+  color: var(--gold-light);
+  background: rgba(230, 203, 133, 0.18);
+  border: 1px solid rgba(230, 203, 133, 0.3);
   padding: 4px 12px;
   border-radius: 999px;
   letter-spacing: 0.3px;
@@ -585,15 +646,14 @@ section {
 .course-card .divider {
   width: 40px;
   height: 1px;
-  background: var(--gold);
+  background: linear-gradient(90deg, var(--gold), transparent);
   margin: 16px 0;
-  opacity: 0.7;
 }
 
 .course-card .schedule {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 14px;
-  color: var(--navy);
+  color: rgba(255, 255, 255, 0.92);
   margin-bottom: 6px;
   font-weight: 500;
 }
@@ -606,7 +666,7 @@ section {
 .course-card .open {
   font-family: 'Be Vietnam Pro', sans-serif;
   font-size: 13px;
-  color: var(--navy-light);
+  color: rgba(255, 255, 255, 0.78);
   margin-top: 14px;
   display: flex;
   align-items: center;
@@ -617,8 +677,8 @@ section {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #38a169;
-  box-shadow: 0 0 0 4px rgba(56, 161, 105, 0.18);
+  background: #6FE5A8;
+  box-shadow: 0 0 0 4px rgba(111, 229, 168, 0.2), 0 0 10px rgba(111, 229, 168, 0.6);
   animation: pulse 2s ease-in-out infinite;
 }
 
@@ -626,19 +686,26 @@ section {
   position: absolute;
   bottom: 22px;
   right: 22px;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: var(--navy);
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(20px);
   color: var(--cream-light);
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.3s;
-  font-size: 14px;
+  transition: all 0.3s;
+  font-size: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: var(--glass-inset);
+  text-decoration: none;
 }
 
-.course-card:hover .arrow { transform: translate(4px, -4px); }
+.course-card:hover .arrow {
+  transform: translate(4px, -4px);
+  background: rgba(255, 255, 255, 0.3);
+}
 
 /* === FEATURES SECTION === */
 .features {
@@ -649,56 +716,75 @@ section {
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
+  gap: 24px;
   margin-top: 40px;
 }
 
 .feature {
-  background: var(--glass);
-  backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
   border: 1px solid var(--glass-border);
-  border-radius: 20px;
+  border-radius: 22px;
   padding: 36px 28px;
   text-align: center;
-  transition: transform 0.3s, box-shadow 0.3s;
-  box-shadow: 0 8px 24px var(--glass-shadow);
+  transition: all 0.4s;
+  box-shadow: var(--glass-inset), var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.feature::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+  border-radius: 22px 22px 0 0;
 }
 
 .feature:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 40px var(--glass-shadow);
+  transform: translateY(-8px);
+  background: var(--glass-bg-strong);
+  box-shadow: var(--glass-inset), var(--glass-shadow-lg);
 }
 
 .feature-icon {
-  width: 56px;
-  height: 56px;
+  width: 58px;
+  height: 58px;
   margin: 0 auto 20px;
-  background: linear-gradient(135deg, var(--navy), var(--navy-light));
-  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.08));
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 18px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--cream-light);
-  font-size: 24px;
-  box-shadow: 0 6px 18px rgba(27, 58, 107, 0.3);
+  font-family: 'Shippori Mincho', serif;
+  font-size: 26px;
+  font-weight: 700;
+  box-shadow: var(--glass-inset), 0 6px 18px rgba(0, 0, 0, 0.2);
 }
 
 .feature h3 {
   font-family: 'Shippori Mincho', serif;
   font-size: 20px;
-  color: var(--navy);
+  color: var(--cream-light);
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .feature p {
   font-size: 14px;
-  color: var(--navy);
-  opacity: 0.75;
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.6;
 }
 
-/* === JOURNEY (3 hệ việc làm) === */
+/* === JOURNEY === */
 .journey {
   max-width: 1280px;
   margin: 0 auto;
@@ -712,20 +798,34 @@ section {
 }
 
 .journey-card {
-  background: var(--glass);
-  backdrop-filter: blur(20px);
+  background: var(--glass-bg);
+  backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
+  -webkit-backdrop-filter: blur(40px) saturate(180%) brightness(1.05);
   border: 1px solid var(--glass-border);
   border-radius: 24px;
   padding: 32px 28px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.4s, box-shadow 0.4s;
-  box-shadow: 0 10px 30px var(--glass-shadow);
+  transition: all 0.4s;
+  box-shadow: var(--glass-inset), var(--glass-shadow);
+}
+
+.journey-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent);
+  pointer-events: none;
+  border-radius: 24px 24px 0 0;
 }
 
 .journey-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 50px rgba(27, 58, 107, 0.2);
+  transform: translateY(-8px);
+  background: var(--glass-bg-strong);
+  box-shadow: var(--glass-inset), var(--glass-shadow-lg);
 }
 
 .journey-kanji {
@@ -734,8 +834,7 @@ section {
   right: 22px;
   font-family: 'Noto Serif JP', serif;
   font-size: 60px;
-  color: var(--navy);
-  opacity: 0.07;
+  color: rgba(255, 255, 255, 0.12);
   font-weight: 700;
   line-height: 1;
 }
@@ -743,7 +842,7 @@ section {
 .journey-card h3 {
   font-family: 'Shippori Mincho', serif;
   font-size: 24px;
-  color: var(--navy);
+  color: var(--cream-light);
   font-weight: 700;
   margin-bottom: 4px;
 }
@@ -752,7 +851,7 @@ section {
   font-family: 'Imbue', serif;
   font-style: italic;
   font-size: 14px;
-  color: var(--navy-light);
+  color: var(--gold-light);
   margin-bottom: 20px;
 }
 
@@ -764,7 +863,7 @@ section {
 .journey-card li {
   padding: 8px 0;
   font-size: 14px;
-  color: var(--navy);
+  color: rgba(255, 255, 255, 0.88);
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -772,7 +871,7 @@ section {
 
 .journey-card li::before {
   content: '✦';
-  color: var(--gold);
+  color: var(--gold-light);
   font-size: 12px;
   margin-top: 3px;
 }
@@ -782,65 +881,85 @@ section {
   align-items: center;
   gap: 8px;
   margin-top: 24px;
-  color: var(--navy);
+  color: var(--cream-light);
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
   border-bottom: 1px solid var(--gold);
   padding-bottom: 4px;
-  transition: gap 0.3s;
+  transition: gap 0.3s, color 0.3s;
 }
 
-.journey-link:hover { gap: 14px; }
+.journey-link:hover {
+  gap: 14px;
+  color: var(--gold-light);
+}
 
 /* === CTA SECTION === */
 .cta-section {
   max-width: 980px;
   margin: 0 auto;
   text-align: center;
-  background: var(--glass-strong);
-  backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
+  background: var(--glass-bg-strong);
+  backdrop-filter: blur(50px) saturate(180%) brightness(1.05);
+  -webkit-backdrop-filter: blur(50px) saturate(180%) brightness(1.05);
+  border: 1px solid var(--glass-border-bright);
   border-radius: 32px;
   padding: 60px 40px;
-  box-shadow: 0 16px 50px var(--glass-shadow);
+  box-shadow: var(--glass-inset), var(--glass-shadow-lg);
   position: relative;
   overflow: hidden;
 }
 
 .cta-section::before {
-  content: '智';
+  content: '';
   position: absolute;
-  top: -30px;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.12), transparent);
+  pointer-events: none;
+  border-radius: 32px 32px 0 0;
+}
+
+.cta-section .kanji-deco {
+  position: absolute;
+  top: -40px;
   right: -30px;
   font-family: 'Noto Serif JP', serif;
-  font-size: 220px;
-  color: var(--navy);
-  opacity: 0.05;
+  font-size: 240px;
+  color: rgba(255, 255, 255, 0.08);
   font-weight: 700;
+  line-height: 1;
+  pointer-events: none;
 }
 
 .cta-section h2 {
   font-family: 'Shippori Mincho', serif;
   font-size: clamp(28px, 4vw, 42px);
-  color: var(--navy);
+  color: var(--cream-light);
   margin-bottom: 16px;
   font-weight: 700;
+  position: relative;
 }
 
 .cta-section h2 .italic {
   font-family: 'Imbue', serif;
   font-style: italic;
-  color: var(--navy-light);
+  background: linear-gradient(135deg, var(--gold-light), var(--sakura));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .cta-section p {
   font-family: 'Imbue', serif;
   font-style: italic;
   font-size: 18px;
-  color: var(--navy);
-  opacity: 0.8;
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: 32px;
+  position: relative;
 }
 
 .cta-buttons {
@@ -848,26 +967,18 @@ section {
   gap: 14px;
   justify-content: center;
   flex-wrap: wrap;
+  position: relative;
 }
 
 /* === FOOTER === */
 footer {
-  background: linear-gradient(180deg, var(--navy) 0%, var(--navy-dark) 100%);
-  color: var(--cream-light);
-  padding: 70px 5vw 30px;
+  padding: 80px 5vw 30px;
   position: relative;
   z-index: 5;
   margin-top: 80px;
-}
-
-footer::before {
-  content: '';
-  position: absolute;
-  top: -1px;
-  left: 0;
-  right: 0;
-  height: 60px;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 60' preserveAspectRatio='none'%3E%3Cpath d='M0,30 Q120,5 240,30 T480,30 T720,30 T960,30 T1200,30 T1440,30 L1440,0 L0,0 Z' fill='%23FBF6E8'/%3E%3C/svg%3E") no-repeat center top / 100% 100%;
+  background: linear-gradient(180deg, rgba(6, 21, 52, 0.4) 0%, rgba(6, 21, 52, 0.75) 100%);
+  backdrop-filter: blur(30px) saturate(180%);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer-grid {
@@ -879,12 +990,9 @@ footer::before {
   margin-bottom: 40px;
 }
 
-.footer-brand .logo-text .brand,
-.footer-brand .logo-text .sub { color: var(--cream-light); }
-
 .footer-brand p {
   margin-top: 18px;
-  opacity: 0.75;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 14px;
   line-height: 1.7;
   max-width: 320px;
@@ -892,7 +1000,7 @@ footer::before {
 
 footer h4 {
   font-family: 'Shippori Mincho', serif;
-  font-size: 14px;
+  font-size: 13px;
   margin-bottom: 18px;
   color: var(--gold-light);
   letter-spacing: 2px;
@@ -900,26 +1008,22 @@ footer h4 {
 }
 
 footer ul { list-style: none; }
-
-footer li {
-  margin-bottom: 10px;
-}
+footer li { margin-bottom: 10px; }
 
 footer a {
-  color: var(--cream-light);
+  color: rgba(255, 255, 255, 0.78);
   text-decoration: none;
-  opacity: 0.78;
   font-size: 14px;
-  transition: opacity 0.2s, color 0.2s;
+  transition: color 0.2s;
 }
 
-footer a:hover { opacity: 1; color: var(--gold-light); }
+footer a:hover { color: var(--gold-light); }
 
 .footer-bottom {
   max-width: 1280px;
   margin: 0 auto;
   padding-top: 30px;
-  border-top: 1px solid rgba(255, 251, 235, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -931,10 +1035,8 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
   font-family: 'Imbue', serif;
   font-style: italic;
   font-size: 14px;
-  opacity: 0.7;
+  color: rgba(255, 255, 255, 0.6);
 }
-
-.footer-bottom .torii { font-size: 16px; }
 
 /* === FLOATING CONTACT === */
 .floating-contact {
@@ -948,8 +1050,8 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
 }
 
 .fc-btn {
-  width: 52px;
-  height: 52px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -958,19 +1060,20 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
   text-decoration: none;
   font-weight: 700;
   font-size: 18px;
-  box-shadow: 0 6px 20px rgba(27, 58, 107, 0.35);
-  transition: transform 0.3s, box-shadow 0.3s;
-  border: 2px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: var(--glass-inset), 0 8px 24px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s;
 }
 
 .fc-btn:hover {
   transform: translateY(-4px) scale(1.05);
-  box-shadow: 0 10px 28px rgba(27, 58, 107, 0.5);
+  box-shadow: var(--glass-inset), 0 14px 32px rgba(0, 0, 0, 0.5);
 }
 
-.fc-zalo { background: linear-gradient(135deg, #0068FF, #0052CC); }
-.fc-fb { background: linear-gradient(135deg, #1877F2, #0E5EC4); }
-.fc-phone { background: linear-gradient(135deg, #25D366, #128C7E); }
+.fc-zalo { background: rgba(0, 104, 255, 0.85); }
+.fc-fb { background: rgba(24, 119, 242, 0.85); }
+.fc-phone { background: rgba(37, 211, 102, 0.85); }
 
 /* === MOBILE === */
 @media (max-width: 900px) {
@@ -981,25 +1084,16 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
     top: 100%;
     left: 0;
     right: 0;
-    background: rgba(251, 246, 232, 0.97);
-    backdrop-filter: blur(20px);
+    background: rgba(15, 37, 71, 0.85);
+    backdrop-filter: blur(30px);
     padding: 24px;
     flex-direction: column;
   }
-  nav.open ul {
-    flex-direction: column;
-    gap: 20px;
-    align-items: flex-start;
-  }
+  nav.open ul { flex-direction: column; gap: 20px; align-items: flex-start; }
   .menu-toggle { display: flex; align-items: center; justify-content: center; }
   .cta-header { display: none; }
-
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
   .footer-brand { grid-column: 1 / -1; }
-
-  .fuji { width: 70vw; opacity: 0.35; top: 80px; }
-  .sakura-branch { width: 50vw; opacity: 0.8; }
-  .sakura-branch-right { display: none; }
 }
 
 @media (max-width: 600px) {
@@ -1013,117 +1107,39 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
 </head>
 <body>
 
-<!-- BACKGROUND DECOR -->
-<svg class="fuji" viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="fujiGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#7A98C4"/>
-      <stop offset="60%" stop-color="#2C5491"/>
-      <stop offset="100%" stop-color="#1B3A6B"/>
-    </linearGradient>
-    <linearGradient id="snowGrad" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#F5EBD4"/>
-      <stop offset="100%" stop-color="#E8D9B5"/>
-    </linearGradient>
-  </defs>
-  <!-- Distant clouds -->
-  <ellipse cx="120" cy="160" rx="100" ry="14" fill="#F5EBD4" opacity="0.55"/>
-  <ellipse cx="480" cy="200" rx="120" ry="12" fill="#F5EBD4" opacity="0.45"/>
-  <!-- Fuji mountain -->
-  <path d="M 50 380 L 230 90 Q 245 70, 270 70 Q 295 70, 310 90 L 510 380 Z" fill="url(#fujiGrad)"/>
-  <!-- Snow cap -->
-  <path d="M 215 110 Q 220 95, 240 92 L 250 90 Q 270 65, 280 92 L 315 110 Q 325 130, 310 135 L 295 130 Q 280 125, 265 132 L 245 128 Q 230 125, 220 135 Z" fill="url(#snowGrad)"/>
-  <!-- Sun -->
-  <circle cx="430" cy="120" r="55" fill="#F1B5BC" opacity="0.7"/>
-  <circle cx="430" cy="120" r="40" fill="#E89AA3" opacity="0.5"/>
-</svg>
+<!-- FALLBACK ANIMATED BG (always visible) -->
+<div class="bg-fallback"></div>
 
-<svg class="sakura-branch" viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="petal" cx="0.3" cy="0.3" r="0.8">
-      <stop offset="0%" stop-color="#FBE5E8"/>
-      <stop offset="60%" stop-color="#F1B5BC"/>
-      <stop offset="100%" stop-color="#E89AA3"/>
-    </radialGradient>
-  </defs>
-  <!-- Branch -->
-  <path d="M 0 30 Q 80 50, 140 90 T 260 150 Q 300 170, 340 200" stroke="#4A2818" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M 60 50 Q 90 30, 130 25" stroke="#4A2818" stroke-width="2" fill="none" stroke-linecap="round"/>
-  <path d="M 180 110 Q 200 80, 240 75" stroke="#4A2818" stroke-width="2" fill="none" stroke-linecap="round"/>
-  <path d="M 240 145 Q 280 130, 320 110" stroke="#4A2818" stroke-width="2" fill="none" stroke-linecap="round"/>
-  <!-- Sakura flowers (5 petals each) -->
-  <g id="sakura1" transform="translate(130,25)">
-    <circle cx="0" cy="-9" r="7" fill="url(#petal)"/>
-    <circle cx="8.6" cy="-2.8" r="7" fill="url(#petal)"/>
-    <circle cx="5.3" cy="7.3" r="7" fill="url(#petal)"/>
-    <circle cx="-5.3" cy="7.3" r="7" fill="url(#petal)"/>
-    <circle cx="-8.6" cy="-2.8" r="7" fill="url(#petal)"/>
-    <circle cx="0" cy="0" r="2.5" fill="#C9A961"/>
-  </g>
-  <use href="#sakura1" x="110" y="50"/>
-  <use href="#sakura1" x="-20" y="40"/>
-  <use href="#sakura1" x="65" y="15" transform="scale(0.85)"/>
-  <use href="#sakura1" x="200" y="125"/>
-  <use href="#sakura1" x="280" y="160"/>
-  <use href="#sakura1" x="320" y="100" transform="scale(0.7)"/>
-  <use href="#sakura1" x="160" y="90" transform="scale(0.6)"/>
-</svg>
+<!-- VIDEO BACKGROUND -->
+<video class="bg-video" autoplay muted loop playsinline preload="auto">
+  <source src="https://videos.pexels.com/video-files/11721736/11721736-hd_1920_1080_30fps.mp4" type="video/mp4">
+  <source src="https://videos.pexels.com/video-files/8012361/8012361-hd_1920_1080_24fps.mp4" type="video/mp4">
+  <source src="https://videos.pexels.com/video-files/2575219/2575219-hd_1920_1080_24fps.mp4" type="video/mp4">
+</video>
 
-<svg class="sakura-branch sakura-branch-right" viewBox="0 0 280 200" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <radialGradient id="petal2" cx="0.3" cy="0.3" r="0.8">
-      <stop offset="0%" stop-color="#FBE5E8"/>
-      <stop offset="60%" stop-color="#F1B5BC"/>
-      <stop offset="100%" stop-color="#E89AA3"/>
-    </radialGradient>
-  </defs>
-  <path d="M 0 50 Q 60 70, 120 100 T 240 160" stroke="#4A2818" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-  <g id="sakura2">
-    <circle cx="0" cy="-8" r="6" fill="url(#petal2)"/>
-    <circle cx="7.6" cy="-2.5" r="6" fill="url(#petal2)"/>
-    <circle cx="4.7" cy="6.5" r="6" fill="url(#petal2)"/>
-    <circle cx="-4.7" cy="6.5" r="6" fill="url(#petal2)"/>
-    <circle cx="-7.6" cy="-2.5" r="6" fill="url(#petal2)"/>
-    <circle cx="0" cy="0" r="2" fill="#C9A961"/>
-  </g>
-  <use href="#sakura2" x="40" y="55"/>
-  <use href="#sakura2" x="100" y="80"/>
-  <use href="#sakura2" x="170" y="125"/>
-  <use href="#sakura2" x="220" y="155"/>
-  <use href="#sakura2" x="140" y="110" transform="scale(0.75)"/>
-</svg>
+<!-- OVERLAYS -->
+<div class="video-overlay"></div>
+<div class="color-mesh"></div>
 
-<!-- Hokusai Wave at bottom -->
-<div class="wave-bg">
+<!-- Mt Fuji silhouette at bottom -->
+<div class="fuji-decor">
   <svg viewBox="0 0 1440 400" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <linearGradient id="waveGrad1" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#2C5491"/>
-        <stop offset="100%" stop-color="#1B3A6B"/>
+      <linearGradient id="fujiG" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#1B3A6B" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#0a1024" stop-opacity="0.9"/>
       </linearGradient>
-      <linearGradient id="waveGrad2" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#3A6FB5"/>
-        <stop offset="100%" stop-color="#2C5491"/>
-      </linearGradient>
-      <linearGradient id="foam" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#FAF3E0"/>
-        <stop offset="100%" stop-color="#E8D9B5"/>
+      <linearGradient id="fujiG2" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#2C5491" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#0F2547" stop-opacity="0.85"/>
       </linearGradient>
     </defs>
-    <!-- Back wave -->
-    <path d="M0,200 Q200,140 360,180 T720,170 T1080,180 T1440,160 L1440,400 L0,400 Z" fill="url(#waveGrad1)" opacity="0.55"/>
-    <!-- Middle wave -->
-    <path d="M0,260 Q160,200 320,240 Q480,280 640,230 Q800,180 960,240 Q1120,300 1280,250 Q1380,220 1440,240 L1440,400 L0,400 Z" fill="url(#waveGrad2)" opacity="0.7"/>
-    <!-- Front big wave (Hokusai-style) -->
-    <path d="M0,320 Q120,260 240,290 Q360,320 480,280 Q540,260 580,290 Q620,320 640,300 Q700,250 760,290 Q820,330 880,310 Q940,290 1000,310 Q1100,340 1200,320 Q1340,290 1440,310 L1440,400 L0,400 Z" fill="url(#waveGrad1)"/>
-    <!-- Foam crests -->
-    <circle cx="600" cy="282" r="6" fill="url(#foam)" opacity="0.85"/>
-    <circle cx="615" cy="278" r="4" fill="url(#foam)" opacity="0.7"/>
-    <circle cx="585" cy="280" r="3" fill="url(#foam)" opacity="0.7"/>
-    <circle cx="870" cy="305" r="5" fill="url(#foam)" opacity="0.8"/>
-    <circle cx="885" cy="300" r="3" fill="url(#foam)" opacity="0.7"/>
-    <circle cx="240" cy="288" r="4" fill="url(#foam)" opacity="0.75"/>
-    <circle cx="1200" cy="318" r="4" fill="url(#foam)" opacity="0.75"/>
+    <!-- Distant mountains -->
+    <path d="M 0 400 L 200 250 L 350 280 L 500 220 L 700 260 L 900 200 L 1100 250 L 1300 220 L 1440 270 L 1440 400 Z" fill="url(#fujiG2)"/>
+    <!-- Fuji -->
+    <path d="M 400 400 L 660 180 Q 680 165, 720 165 Q 760 165, 780 180 L 1040 400 Z" fill="url(#fujiG)"/>
+    <!-- Snow cap on Fuji -->
+    <path d="M 645 210 Q 660 195, 690 192 Q 710 190, 730 195 Q 760 200, 790 215 Q 805 230, 795 232 L 780 226 Q 750 218, 720 222 Q 690 225, 660 235 Q 640 230, 645 210 Z" fill="#F5EBD4" opacity="0.5"/>
   </svg>
 </div>
 
@@ -1152,7 +1168,7 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
   </nav>
   <a href="lien-he.html" class="cta-header">Đăng ký tư vấn</a>
   <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B3A6B" stroke-width="2" stroke-linecap="round">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFBF0" stroke-width="2" stroke-linecap="round">
       <line x1="3" y1="6" x2="21" y2="6"/>
       <line x1="3" y1="12" x2="21" y2="12"/>
       <line x1="3" y1="18" x2="21" y2="18"/>
@@ -1193,7 +1209,7 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
   </div>
   <div class="course-grid">
     <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#C9A961" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#E6CB85" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
       <div class="level">N5 <span class="tag">Cơ bản</span></div>
       <div class="divider"></div>
       <p class="schedule">T2-4-6 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1202,7 +1218,7 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
     </article>
 
     <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#C9A961" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#E6CB85" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
       <div class="level">N4</div>
       <div class="divider"></div>
       <p class="schedule">T3-5-7 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1211,7 +1227,7 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
     </article>
 
     <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#C9A961" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#E6CB85" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
       <div class="level">N3</div>
       <div class="divider"></div>
       <p class="schedule">T2-4-6 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1220,7 +1236,7 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
     </article>
 
     <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#C9A961" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#E6CB85" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
       <div class="level">N3 <span class="tag">Cuối tuần</span></div>
       <div class="divider"></div>
       <p class="schedule">T7-CN <span class="sep">·</span> 11h00 VN (13h00 NB)</p>
@@ -1229,7 +1245,7 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
     </article>
 
     <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#C9A961" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="3" fill="#F1B5BC"/><g stroke="#E6CB85" stroke-width="1.4" fill="none"><circle cx="16" cy="6" r="3"/><circle cx="24.7" cy="11" r="3"/><circle cx="24.7" cy="21" r="3"/><circle cx="16" cy="26" r="3"/><circle cx="7.3" cy="21" r="3"/><circle cx="7.3" cy="11" r="3"/></g></svg>
       <div class="level">N1 <span class="tag">Cuối tuần</span></div>
       <div class="divider"></div>
       <p class="schedule">T7-CN <span class="sep">·</span> 13h00 VN (15h00 NB)</p>
@@ -1238,7 +1254,7 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
     </article>
 
     <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M16 4 L19 12 L28 13 L21 19 L23 28 L16 23 L9 28 L11 19 L4 13 L13 12 Z" fill="#F1B5BC" stroke="#C9A961" stroke-width="1"/></svg>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M16 4 L19 12 L28 13 L21 19 L23 28 L16 23 L9 28 L11 19 L4 13 L13 12 Z" fill="#F1B5BC" stroke="#E6CB85" stroke-width="1"/></svg>
       <div class="level">Ôn thi N3 <span class="tag">Thi T7</span></div>
       <div class="divider"></div>
       <p class="schedule">T2-4-6 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1247,7 +1263,7 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
     </article>
 
     <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M16 4 L19 12 L28 13 L21 19 L23 28 L16 23 L9 28 L11 19 L4 13 L13 12 Z" fill="#F1B5BC" stroke="#C9A961" stroke-width="1"/></svg>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M16 4 L19 12 L28 13 L21 19 L23 28 L16 23 L9 28 L11 19 L4 13 L13 12 Z" fill="#F1B5BC" stroke="#E6CB85" stroke-width="1"/></svg>
       <div class="level">Ôn thi N2 <span class="tag">Thi T7</span></div>
       <div class="divider"></div>
       <p class="schedule">T3-5-7 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1256,7 +1272,7 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
     </article>
 
     <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M6 18 Q10 8 16 8 Q22 8 26 18 Q22 22 16 22 Q10 22 6 18 Z" fill="#F1B5BC" stroke="#C9A961" stroke-width="1"/><circle cx="16" cy="16" r="2.5" fill="#1B3A6B"/></svg>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M6 18 Q10 8 16 8 Q22 8 26 18 Q22 22 16 22 Q10 22 6 18 Z" fill="#F1B5BC" stroke="#E6CB85" stroke-width="1"/><circle cx="16" cy="16" r="2.5" fill="#FFFBF0"/></svg>
       <div class="level">Kaiwa N5-N4</div>
       <div class="divider"></div>
       <p class="schedule">T2-4-6 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1265,7 +1281,7 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
     </article>
 
     <article class="course-card">
-      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M6 18 Q10 8 16 8 Q22 8 26 18 Q22 22 16 22 Q10 22 6 18 Z" fill="#F1B5BC" stroke="#C9A961" stroke-width="1"/><circle cx="16" cy="16" r="2.5" fill="#1B3A6B"/></svg>
+      <svg class="course-emblem" viewBox="0 0 32 32" fill="none"><path d="M6 18 Q10 8 16 8 Q22 8 26 18 Q22 22 16 22 Q10 22 6 18 Z" fill="#F1B5BC" stroke="#E6CB85" stroke-width="1"/><circle cx="16" cy="16" r="2.5" fill="#FFFBF0"/></svg>
       <div class="level">Kaiwa N3</div>
       <div class="divider"></div>
       <p class="schedule">T3-5-7 <span class="sep">·</span> 19h00 VN (21h00 NB)</p>
@@ -1358,6 +1374,7 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
 <!-- CTA -->
 <section>
   <div class="cta-section">
+    <div class="kanji-deco">智</div>
     <h2>Bắt đầu hành trình — <span class="italic">hôm nay.</span></h2>
     <p>Đăng ký tư vấn miễn phí. Em sẽ giúp bạn chọn khoá học phù hợp trong 15 phút.</p>
     <div class="cta-buttons">
@@ -1415,7 +1432,7 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
   </div>
 
   <div class="footer-bottom">
-    <p>© 2026 Trí Lữ Nihongo. <span class="torii">⛩</span> <em>Crafted with care — Tokyo & Hà Nội.</em></p>
+    <p>© 2026 Trí Lữ Nihongo · ⛩ <em>Crafted with care — Tokyo & Hà Nội.</em></p>
     <p style="opacity:0.5;font-size:12px;">www.trilu.edu.vn</p>
   </div>
 </footer>
@@ -1432,16 +1449,17 @@ footer a:hover { opacity: 1; color: var(--gold-light); }
 <script>
 // Floating sakura petals
 const petalsContainer = document.getElementById('petals');
-const petalSVG = `<svg viewBox="0 0 20 20"><path d="M10 2 Q14 5 13 10 Q12 14 10 17 Q8 14 7 10 Q6 5 10 2 Z" fill="#F1B5BC" opacity="0.85"/></svg>`;
-for (let i = 0; i < 18; i++) {
+const petalSVG = `<svg viewBox="0 0 20 20"><path d="M10 2 Q14 5 13 10 Q12 14 10 17 Q8 14 7 10 Q6 5 10 2 Z" fill="#F1B5BC" opacity="0.9"/></svg>`;
+for (let i = 0; i < 25; i++) {
   const p = document.createElement('div');
   p.className = 'petal';
   p.innerHTML = petalSVG;
   p.style.left = Math.random() * 100 + 'vw';
-  p.style.animationDuration = (8 + Math.random() * 12) + 's';
-  p.style.animationDelay = -(Math.random() * 15) + 's';
-  p.style.width = (10 + Math.random() * 10) + 'px';
-  p.style.height = p.style.width;
+  p.style.animationDuration = (9 + Math.random() * 14) + 's';
+  p.style.animationDelay = -(Math.random() * 20) + 's';
+  const sz = (10 + Math.random() * 14);
+  p.style.width = sz + 'px';
+  p.style.height = sz + 'px';
   petalsContainer.appendChild(p);
 }
 
@@ -1457,7 +1475,7 @@ const toggle = document.getElementById('menuToggle');
 const nav = document.getElementById('nav');
 toggle.addEventListener('click', () => nav.classList.toggle('open'));
 
-// Intersection observer for fade-in on scroll
+// Fade-in on scroll
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
     if (e.isIntersecting) {
@@ -1465,14 +1483,19 @@ const observer = new IntersectionObserver(entries => {
       e.target.style.transform = 'translateY(0)';
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.course-card, .feature, .journey-card, .cta-section').forEach((el, i) => {
   el.style.opacity = 0;
   el.style.transform = 'translateY(30px)';
-  el.style.transition = `opacity 0.7s ease ${i * 0.05}s, transform 0.7s ease ${i * 0.05}s`;
+  el.style.transition = `opacity 0.7s ease ${i * 0.04}s, transform 0.7s ease ${i * 0.04}s, background 0.4s, box-shadow 0.4s`;
   observer.observe(el);
 });
+
+// Video error handling — keep animated fallback if video fails
+const video = document.querySelector('.bg-video');
+video.addEventListener('error', () => video.style.display = 'none');
+video.addEventListener('stalled', () => console.warn('Video stalled'));
 </script>
 
 </body>
