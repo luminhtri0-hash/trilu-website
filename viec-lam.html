@@ -1,456 +1,596 @@
 <!DOCTYPE html>
-<html lang="vi"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
-<style>/* ===========================================================
-   TRÍ LỮ NIHONGO — Glassmorphism + Cinematic Edition
-   Brand: Wine (#6e1831) + Gold (#9b7a38 / #c7ab70)
-   =========================================================== */
-
-:root{
-  --paper:#fffdfa; --ink:#1e2430; --muted:#5f6470;
-  --accent:#6e1831; --accent-dark:#4f0f24;
-  --accent-2:#9b7a38; --accent-3:#c7ab70;
-  --line:#dfcfbb; --line-2:#eadfce;
-  --glass:rgba(255,253,250,0.55);
-  --glass-strong:rgba(255,253,250,0.78);
-  --glass-dark:rgba(20,8,14,0.42);
-  --glass-border:rgba(255,255,255,0.35);
-  --glass-border-dark:rgba(199,171,112,0.32);
-  --shadow:0 18px 46px rgba(60,38,19,0.08);
-  --shadow-glass:0 12px 40px rgba(60,38,19,0.18);
-  --shadow-lg:0 30px 70px rgba(60,38,19,0.22);
-  --radius:18px; --radius-lg:28px;
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Việc làm Nhật Bản — Trí Lữ Nihongo</title>
+<meta name="description" content="3 con đường: Thực tập sinh, Tokutei, Kỹ sư - Phiên dịch. Lương 28 triệu đến 100+ triệu/tháng.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Imbue:opsz,wght@10..100,100..900&family=Be+Vietnam+Pro:wght@300;400;500;600;700&family=Shippori+Mincho:wght@400;500;600;700&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #FFF8E7;
+  --cream-soft: #F5EBD4;
+  --sakura: #F1B5BC;
+  --gold: #FFD78A;
+  --indigo: #3a5a9a;
 }
-*{box-sizing:border-box;-webkit-font-smoothing:antialiased}
-html{scroll-behavior:smooth}
-body{
-  margin:0;color:var(--ink);
-  background:
-    radial-gradient(circle at top left,rgba(155,122,56,0.08),transparent 26%),
-    radial-gradient(circle at 85% 14%,rgba(110,24,49,0.08),transparent 22%),
-    linear-gradient(180deg,#f6efe8 0%,#f1ebe4 100%);
-  font-family:Inter,"Noto Sans JP","Segoe UI",sans-serif;
-  line-height:1.7;font-size:15px;min-height:100vh;
-  overflow-x:hidden;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Be Vietnam Pro', system-ui, -apple-system, sans-serif;
+  background: #050818; color: var(--cream); overflow-x: hidden; min-height: 100vh;
 }
-img{max-width:100%;display:block}
-a{color:var(--accent);text-decoration:none;transition:color .2s}
-a:hover{color:var(--accent-dark)}
-
-/* ============== ANIMATIONS ============== */
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeIn{from{opacity:0}to{opacity:1}}
-@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-@keyframes pulseDot{0%,100%{box-shadow:0 0 0 0 rgba(199,171,112,0.6)}50%{box-shadow:0 0 0 10px rgba(199,171,112,0)}}
-@keyframes shimmer{0%{background-position:-200% 0}100%{background-position:200% 0}}
-@keyframes bgPan{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-@keyframes blob{0%,100%{border-radius:42% 58% 70% 30% / 45% 50% 50% 55%;transform:translate(0,0) rotate(0)}33%{border-radius:65% 35% 50% 50% / 60% 30% 70% 40%;transform:translate(20px,-15px) rotate(120deg)}66%{border-radius:30% 70% 40% 60% / 55% 70% 30% 45%;transform:translate(-25px,15px) rotate(240deg)}}
-
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
-.reveal.show{opacity:1;transform:translateY(0)}
-.reveal-delay-1{transition-delay:.1s}
-.reveal-delay-2{transition-delay:.22s}
-.reveal-delay-3{transition-delay:.34s}
-.reveal-delay-4{transition-delay:.46s}
-
-/* ============== HEADER / NAV (glass) ============== */
-.site-header{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  background:rgba(255,253,250,0.55);
-  backdrop-filter:saturate(180%) blur(20px);
-  -webkit-backdrop-filter:saturate(180%) blur(20px);
-  border-bottom:1px solid rgba(255,255,255,0.35);
-  box-shadow:0 4px 30px rgba(60,38,19,0.06);
-  transition:background .3s, box-shadow .3s;
+.hokusai-canvas { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: -10; display: block; }
+.cursor-glow {
+  position: fixed; pointer-events: none; width: 700px; height: 700px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,200,210,0.13), rgba(180,200,255,0.06) 40%, transparent 70%);
+  z-index: 1; filter: blur(50px); transform: translate(-50%, -50%); mix-blend-mode: screen; opacity: 0;
+  transition: opacity 0.4s;
 }
-.site-header.scrolled{background:rgba(255,253,250,0.82);box-shadow:0 8px 30px rgba(60,38,19,0.12)}
-.nav-wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 24px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--accent)}
-.brand-logo{width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,#4f0f24,#6e1831 60%,#9b7a38);color:#fff;display:flex;align-items:center;justify-content:center;font-family:"Noto Serif JP",serif;font-size:22px;font-weight:700;box-shadow:0 4px 14px rgba(110,24,49,0.25)}
-.brand-name{display:flex;flex-direction:column;line-height:1.1}
-.brand-name strong{font-family:"EB Garamond",serif;font-size:20px}
-.brand-name span{font-size:11px;color:var(--accent-2);letter-spacing:.16em;text-transform:uppercase;font-weight:700}
-.nav-menu{display:flex;align-items:center;gap:4px;list-style:none;margin:0;padding:0}
-.nav-menu a{display:block;padding:10px 14px;border-radius:10px;color:var(--ink);font-weight:600;font-size:14px;transition:all .2s}
-.nav-menu a:hover,.nav-menu a.active{background:rgba(252,245,234,0.8);color:var(--accent)}
-.nav-cta{margin-left:8px;background:linear-gradient(135deg,var(--accent),var(--accent-dark));color:#fff !important;padding:10px 18px !important;border-radius:999px !important;box-shadow:0 6px 16px rgba(110,24,49,0.22)}
-.nav-cta:hover{transform:translateY(-1px);color:#fff !important;background:linear-gradient(135deg,var(--accent-dark),#3a0f1b);box-shadow:0 10px 22px rgba(110,24,49,0.32)}
-.nav-toggle{display:none;background:rgba(255,255,255,0.5);border:1px solid var(--line);width:44px;height:44px;border-radius:12px;cursor:pointer;align-items:center;justify-content:center;backdrop-filter:blur(8px)}
-.nav-toggle span,.nav-toggle span::before,.nav-toggle span::after{display:block;width:20px;height:2px;background:var(--accent);position:relative}
-.nav-toggle span::before,.nav-toggle span::after{content:"";position:absolute;left:0}
-.nav-toggle span::before{top:-6px}
-.nav-toggle span::after{top:6px}
-@media (max-width:880px){
-  .nav-toggle{display:flex}
-  .nav-menu{display:none;position:absolute;top:72px;left:12px;right:12px;flex-direction:column;align-items:stretch;background:rgba(255,253,250,0.92);backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:20px;padding:14px;gap:2px;box-shadow:var(--shadow-glass)}
-  .nav-menu.open{display:flex}
-  .nav-menu a{padding:14px 16px}
-  .nav-cta{margin:8px 0 0;text-align:center}
+.cursor-glow.active { opacity: 1; }
+.particles { position: fixed; inset: 0; pointer-events: none; z-index: 2; overflow: hidden; }
+.particle { position: absolute; top: -30px; opacity: 0; animation: drift linear infinite; }
+.particle.petal { width: 14px; height: 14px; }
+.particle.spark { width: 4px; height: 4px; background: radial-gradient(circle, #FFE9A8, transparent); border-radius: 50%; box-shadow: 0 0 8px #FFE9A8; }
+@keyframes drift {
+  0% { transform: translateY(-30px) translateX(0) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.85; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(108vh) translateX(120px) rotate(540deg); opacity: 0; }
 }
-
-/* ============== CONTAINERS ============== */
-.container{max-width:1180px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
-.section{padding:96px 0;position:relative}
-.section-narrow{max-width:880px;margin:0 auto;padding:0 24px}
-.section-overline{display:inline-block;padding:6px 14px;border-radius:999px;background:rgba(252,245,234,0.85);backdrop-filter:blur(8px);border:1px solid rgba(199,171,112,0.3);color:var(--accent-2);font-size:11px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}
-.section-title{font-family:"EB Garamond","Noto Serif JP",serif;font-size:46px;line-height:1.05;color:var(--accent);margin:18px 0 14px;font-weight:700;letter-spacing:-.015em}
-.section-subtitle{font-size:16px;color:var(--muted);max-width:720px;margin:0 0 44px}
-
-/* ============== HERO with VIDEO BACKGROUND ============== */
-.hero{
-  position:relative;overflow:hidden;
-  min-height:100vh;display:flex;align-items:center;
-  padding:120px 0 80px;
-  color:#fff;
+.ultra-glass {
+  position: relative;
+  background: rgba(255,255,255,0.035);
+  backdrop-filter: blur(60px) saturate(200%) brightness(1.15);
+  -webkit-backdrop-filter: blur(60px) saturate(200%) brightness(1.15);
+  border-radius: 24px; border: 1px solid transparent;
+  box-shadow:
+    inset 0 1.5px 0 rgba(255,255,255,0.32),
+    inset 0 -1px 0 rgba(255,255,255,0.05),
+    inset 1px 0 0 rgba(255,255,255,0.08),
+    inset -1px 0 0 rgba(255,255,255,0.08),
+    0 30px 70px -20px rgba(0,0,0,0.55),
+    0 12px 32px -12px rgba(0,0,0,0.35);
+  overflow: hidden; isolation: isolate;
+  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1), background 0.4s, box-shadow 0.4s;
 }
-.hero-video{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:cover;z-index:0;
+.ultra-glass::before {
+  content: ''; position: absolute; inset: 0; padding: 1px; border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.1) 25%, transparent 50%, rgba(241,181,188,0.18) 75%, rgba(255,215,138,0.3) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; z-index: 1;
 }
-.hero-overlay{
-  position:absolute;inset:0;z-index:1;
-  background:
-    radial-gradient(circle at 18% 18%,rgba(155,122,56,0.20),transparent 35%),
-    radial-gradient(circle at 86% 22%,rgba(199,171,112,0.18),transparent 32%),
-    linear-gradient(135deg,rgba(79,15,36,0.78) 0%,rgba(110,24,49,0.68) 40%,rgba(34,8,18,0.85) 100%);
+.ultra-glass::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 45%;
+  background: linear-gradient(180deg, rgba(255,255,255,0.07), transparent);
+  pointer-events: none; border-radius: 24px 24px 0 0; z-index: 0;
 }
-/* Floating decorative blobs */
-.hero-blob{
-  position:absolute;width:380px;height:380px;
-  background:radial-gradient(circle,rgba(199,171,112,0.35),rgba(199,171,112,0) 70%);
-  filter:blur(20px);z-index:1;
-  animation:blob 18s ease-in-out infinite;
+.ultra-glass:hover {
+  background: rgba(255,255,255,0.07);
+  box-shadow: inset 0 1.5px 0 rgba(255,255,255,0.5), inset 0 -1px 0 rgba(255,255,255,0.08),
+    0 40px 100px -20px rgba(0,0,0,0.7), 0 16px 40px -12px rgba(0,0,0,0.45), 0 0 80px rgba(241,181,188,0.15);
 }
-.hero-blob.b1{top:-80px;right:-40px}
-.hero-blob.b2{bottom:-100px;left:-80px;background:radial-gradient(circle,rgba(110,24,49,0.5),rgba(110,24,49,0) 70%);animation-delay:-6s;animation-duration:22s}
-.hero-inner{position:relative;z-index:2;max-width:900px;animation:fadeUp 1.1s cubic-bezier(.2,.7,.2,1) both}
-.hero-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,0.22);background:rgba(255,255,255,0.08);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);letter-spacing:.16em;text-transform:uppercase;font-size:11px;font-weight:700}
-.hero-badge .dot{width:9px;height:9px;border-radius:50%;background:var(--accent-3);animation:pulseDot 2s infinite}
-.hero h1{font-family:"EB Garamond","Noto Serif JP",serif;font-size:64px;line-height:1.04;letter-spacing:-.022em;margin:24px 0 18px;max-width:18ch;color:#fff;text-shadow:0 4px 30px rgba(0,0,0,0.25)}
-.hero h1 .gold{background:linear-gradient(120deg,#f7e3a8 0%,#c7ab70 50%,#f7e3a8 100%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shimmer 6s linear infinite}
-.hero p.lead{font-size:18px;color:rgba(255,255,255,0.92);max-width:680px;margin:0 0 32px;text-shadow:0 2px 14px rgba(0,0,0,0.25)}
-.hero-stats{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 38px}
-.hero-stats .chip{padding:10px 18px;border-radius:999px;border:1px solid rgba(255,255,255,0.22);background:rgba(255,255,255,0.10);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);font-size:13px;font-weight:600;transition:all .25s}
-.hero-stats .chip:hover{background:rgba(255,255,255,0.18);transform:translateY(-2px)}
-.scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:2;color:rgba(255,255,255,0.7);font-size:11px;letter-spacing:.2em;text-transform:uppercase;animation:floatY 2.4s ease-in-out infinite;text-align:center}
-.scroll-cue::after{content:"";display:block;margin:8px auto 0;width:1px;height:32px;background:linear-gradient(180deg,rgba(255,255,255,0.7),transparent)}
-@media (max-width:680px){.hero{min-height:auto;padding:100px 0 60px}.hero h1{font-size:42px}.hero p.lead{font-size:16px}}
-
-/* ============== BUTTONS ============== */
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;font-weight:700;font-size:14px;letter-spacing:.02em;border:none;cursor:pointer;text-decoration:none;transition:transform .15s, box-shadow .25s, background .25s;position:relative;overflow:hidden}
-.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,0.4) 50%,transparent 70%);background-size:200% 100%;background-position:-100% 0;transition:background-position .6s}
-.btn:hover::after{background-position:100% 0}
-.btn-primary{background:linear-gradient(135deg,var(--accent-3) 0%,var(--accent-2) 100%);color:#3a2510;box-shadow:0 10px 28px rgba(155,122,56,0.4)}
-.btn-primary:hover{transform:translateY(-2px);color:#3a2510;box-shadow:0 16px 36px rgba(155,122,56,0.5)}
-.btn-glass{background:rgba(255,255,255,0.12);color:#fff;border:1px solid rgba(255,255,255,0.32);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
-.btn-glass:hover{background:rgba(255,255,255,0.22);color:#fff}
-.btn-outline{background:transparent;color:var(--accent);border:1.5px solid var(--accent)}
-.btn-outline:hover{background:var(--accent);color:#fff}
-
-/* ============== GRID / GLASS CARDS ============== */
-.grid{display:grid;gap:22px}
-.grid-2{grid-template-columns:repeat(2,minmax(0,1fr))}
-.grid-3{grid-template-columns:repeat(3,minmax(0,1fr))}
-.grid-4{grid-template-columns:repeat(4,minmax(0,1fr))}
-@media (max-width:980px){.grid-3,.grid-4{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media (max-width:620px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
-
-.card{
-  background:var(--glass-strong);
-  backdrop-filter:saturate(160%) blur(18px);
-  -webkit-backdrop-filter:saturate(160%) blur(18px);
-  border:1px solid var(--glass-border);
-  border-radius:var(--radius-lg);padding:32px 28px;
-  box-shadow:var(--shadow-glass);
-  transition:transform .28s, box-shadow .28s, border-color .25s;
-  position:relative;overflow:hidden;
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 14px 5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(10,16,36,0.25); backdrop-filter: blur(40px) saturate(200%); -webkit-backdrop-filter: blur(40px) saturate(200%);
+  border-bottom: 1px solid rgba(255,255,255,0.08); transition: padding 0.3s, background 0.3s;
 }
-.card::before{content:"";position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.7),transparent)}
-.card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--accent-3)}
-.card .card-icon{width:58px;height:58px;border-radius:16px;background:linear-gradient(135deg,rgba(252,245,234,0.95),rgba(242,227,207,0.95));color:var(--accent);display:flex;align-items:center;justify-content:center;font-family:"Noto Serif JP",serif;font-size:26px;font-weight:700;margin-bottom:18px;box-shadow:inset 0 0 0 1px rgba(199,171,112,0.3),0 8px 18px rgba(155,122,56,0.18)}
-.card h3{font-family:"EB Garamond","Noto Serif JP",serif;font-size:22px;color:var(--accent);margin:0 0 8px;font-weight:700}
-.card p{margin:0 0 14px;color:#4a5160;font-size:14.5px}
-.card .card-link{font-size:13px;font-weight:700;color:var(--accent-2);letter-spacing:.04em}
-.card .card-link::after{content:" →";transition:margin-left .2s}
-.card:hover .card-link::after{margin-left:6px}
-
-/* Course card */
-.course-card{background:rgba(255,253,250,0.85);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border:1px solid var(--glass-border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-glass);display:flex;flex-direction:column;transition:transform .28s, box-shadow .28s}
-.course-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
-.course-card .course-head{padding:24px 24px 18px;background:linear-gradient(135deg,#57132a 0%,#6e1831 60%,#7f3b52 100%);color:#fff;position:relative;overflow:hidden}
-.course-card .course-head::after{content:"";position:absolute;top:-40px;right:-40px;width:140px;height:140px;background:radial-gradient(circle,rgba(199,171,112,0.32),transparent 70%)}
-.course-card .course-head .level{display:inline-block;padding:4px 12px;border-radius:999px;background:rgba(199,171,112,0.25);font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;position:relative;z-index:1}
-.course-card .course-head h3{font-family:"EB Garamond","Noto Serif JP",serif;font-size:24px;margin:10px 0 4px;color:#fff;position:relative;z-index:1}
-.course-card .course-head .duration{font-size:13px;color:rgba(255,255,255,0.78);position:relative;z-index:1}
-.course-card .course-body{padding:22px 24px;flex:1}
-.course-card .course-body ul{margin:0;padding-left:18px}
-.course-card .course-body li{margin-bottom:6px;font-size:14px;color:#3b4250}
-.course-card .course-body li::marker{color:var(--accent-2)}
-.course-card .course-foot{padding:18px 24px;border-top:1px solid var(--line-2);display:flex;align-items:center;justify-content:space-between;gap:14px;background:rgba(255,255,255,0.6)}
-.course-card .price{font-family:"EB Garamond",serif;font-size:22px;color:var(--accent);font-weight:700}
-.course-card .price small{font-size:12px;color:var(--muted);font-weight:500}
-
-/* Feature row */
-.feature-row{display:grid;grid-template-columns:80px 1fr;gap:18px;align-items:start;padding:18px 0;border-bottom:1px dashed var(--line-2)}
-.feature-row:last-child{border-bottom:none}
-.feature-row .num{font-family:"EB Garamond",serif;font-size:42px;color:var(--accent-3);line-height:1;font-weight:700}
-.feature-row h4{margin:0 0 6px;color:var(--accent);font-size:18px;font-weight:800}
-.feature-row p{margin:0;color:var(--muted);font-size:14.5px}
-
-/* Testimonial (glass) */
-.testimonial{background:var(--glass-strong);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--glass-border);border-radius:var(--radius-lg);padding:30px;position:relative;box-shadow:var(--shadow-glass)}
-.testimonial::before{content:"C";position:absolute;top:-10px;left:18px;font-family:"EB Garamond",serif;font-size:80px;color:var(--accent-3);line-height:1;opacity:.8}
-.testimonial p{font-style:italic;margin:14px 0 18px;color:#3b4250;font-size:15px}
-.testimonial .who{display:flex;align-items:center;gap:12px}
-.testimonial .who .avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}
-.testimonial .who b{display:block;color:var(--accent)}
-.testimonial .who small{color:var(--muted);font-size:12px}
-
-/* CTA band */
-.cta-band{margin:40px auto 0;max-width:1180px;border-radius:var(--radius-lg);background:radial-gradient(circle at 88% 20%,rgba(199,171,112,0.28),transparent 28%),linear-gradient(135deg,#4f0f24 0%,#6e1831 60%,#3a0f1b 100%);color:#fff;padding:54px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;box-shadow:var(--shadow);position:relative;overflow:hidden}
-.cta-band::before{content:"";position:absolute;inset:0;background:linear-gradient(45deg,transparent 30%,rgba(199,171,112,0.06) 50%,transparent 70%);background-size:200% 200%;animation:bgPan 8s ease infinite}
-.cta-band > *{position:relative;z-index:1}
-.cta-band h2{font-family:"EB Garamond",serif;font-size:32px;margin:0 0 6px;color:#fff}
-.cta-band p{margin:0;color:rgba(255,255,255,0.86);max-width:520px}
-
-/* Timeline */
-.timeline{position:relative;padding:20px 0 20px 26px;border-left:2px solid var(--line)}
-.timeline-item{position:relative;margin-bottom:28px;padding-left:18px}
-.timeline-item::before{content:"";position:absolute;left:-33px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent-3);box-shadow:0 0 0 4px #fcf5ea}
-.timeline-item h4{margin:0 0 6px;color:var(--accent);font-size:17px;font-weight:800}
-.timeline-item .meta{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--accent-2);font-weight:700;margin-bottom:4px}
-.timeline-item p{margin:0;color:var(--muted);font-size:14.5px}
-
-/* Form */
-.form-row{margin-bottom:18px}
-.form-row label{display:block;font-weight:700;font-size:13px;color:var(--accent);margin-bottom:6px;letter-spacing:.04em}
-.form-row input,.form-row select,.form-row textarea{width:100%;padding:13px 16px;font-size:14.5px;font-family:inherit;background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:14px;color:var(--ink);transition:border-color .15s, box-shadow .15s}
-.form-row input:focus,.form-row select:focus,.form-row textarea:focus{outline:none;border-color:var(--accent-3);box-shadow:0 0 0 4px rgba(199,171,112,0.18);background:#fff}
-.form-row textarea{min-height:120px;resize:vertical}
-
-/* Footer */
-.site-footer{margin-top:80px;background:linear-gradient(180deg,#1f0d12,#150709);color:#e6d7c3;padding:64px 0 24px;position:relative;overflow:hidden}
-.site-footer::before{content:"";position:absolute;top:0;left:50%;transform:translateX(-50%);width:600px;height:160px;background:radial-gradient(ellipse at center,rgba(199,171,112,0.18),transparent 70%);pointer-events:none}
-.footer-grid{max-width:1180px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:36px;position:relative}
-@media (max-width:880px){.footer-grid{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.footer-grid{grid-template-columns:1fr}}
-.site-footer h5{font-family:"EB Garamond",serif;color:var(--accent-3);font-size:15px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;font-weight:700}
-.site-footer a{color:#e6d7c3;display:block;padding:4px 0;font-size:14px}
-.site-footer a:hover{color:var(--accent-3)}
-.site-footer p{font-size:14px;color:#c2ad95;margin:0 0 10px}
-.footer-bottom{max-width:1180px;margin:36px auto 0;padding:20px 24px 0;border-top:1px solid rgba(199,171,112,0.18);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:13px;color:#9c8b76;position:relative}
-
-/* Section with animated gradient bg */
-.section-soft{background:linear-gradient(180deg,rgba(255,253,250,0.6) 0%,rgba(246,239,232,0.4) 100%);position:relative}
-.section-soft::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 0%,rgba(199,171,112,0.08),transparent 35%),radial-gradient(circle at 0% 100%,rgba(110,24,49,0.06),transparent 40%);pointer-events:none}
-
-/* Breadcrumb */
-.breadcrumb{font-size:13px;color:var(--muted);margin:0 0 14px;padding-top:100px}
-.breadcrumb a{color:var(--accent-2);font-weight:600}
-.breadcrumb span{margin:0 8px;color:var(--line)}
-
-/* Utilities */
-.text-center{text-align:center}
-.mt-0{margin-top:0}.mt-2{margin-top:14px}.mt-4{margin-top:28px}.mt-6{margin-top:46px}
-.flex{display:flex;gap:12px;flex-wrap:wrap}
-.hide-mobile{display:initial}
-@media (max-width:680px){.hide-mobile{display:none}}
-
-/* Floating contact button */
-.float-contact{position:fixed;bottom:24px;right:24px;z-index:40;display:flex;flex-direction:column;gap:10px}
-.float-btn{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;color:#fff;background:#0084ff;box-shadow:0 8px 22px rgba(0,132,255,0.4);transition:transform .2s;text-decoration:none}
-.float-btn:hover{transform:scale(1.1)}
-.float-btn.zalo{background:#0068ff}
-.float-btn.tel{background:linear-gradient(135deg,var(--accent),var(--accent-dark));box-shadow:0 8px 22px rgba(110,24,49,0.4)}
+header.scrolled { padding: 10px 5vw; background: rgba(10,16,36,0.55); }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--cream); }
+.logo-mark {
+  width: 44px; height: 44px; border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.04));
+  backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.28);
+  display: flex; align-items: center; justify-content: center; color: var(--cream);
+  font-family: 'Shippori Mincho', serif; font-size: 24px; font-weight: 700;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.35), 0 4px 12px rgba(0,0,0,0.3);
+}
+.logo-text { display: flex; flex-direction: column; line-height: 1; }
+.logo-text .brand { font-family: 'Imbue', serif; font-style: italic; font-weight: 600; font-size: 22px; color: var(--cream); }
+.logo-text .sub { font-family: 'Shippori Mincho', serif; font-size: 10px; letter-spacing: 3px; color: var(--gold); margin-top: 4px; text-transform: uppercase; opacity: 0.85; }
+nav ul { display: flex; list-style: none; gap: 32px; align-items: center; }
+nav a { color: rgba(255,248,231,0.88); text-decoration: none; font-size: 14px; font-weight: 500; position: relative; transition: color 0.2s; }
+nav a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 1.5px; background: linear-gradient(90deg, var(--gold), var(--sakura)); transition: width 0.3s; border-radius: 2px; }
+nav a:hover { color: var(--gold); }
+nav a:hover::after { width: 100%; }
+nav a.active { color: var(--gold); }
+nav a.active::after { width: 100%; }
+.cta-header {
+  background: rgba(255,255,255,0.1); color: var(--cream); padding: 10px 22px; border-radius: 999px;
+  text-decoration: none; font-size: 13px; font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.22); backdrop-filter: blur(30px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.25), 0 4px 14px rgba(0,0,0,0.3); transition: all 0.3s;
+}
+.cta-header:hover { background: rgba(255,255,255,0.2); transform: translateY(-2px); }
+.menu-toggle { display: none; background: none; border: none; cursor: pointer; width: 32px; height: 32px; }
+.page-hero {
+  padding: 160px 5vw 60px; text-align: center; position: relative; z-index: 5;
+}
+.page-hero .eyebrow {
+  display: inline-flex; align-items: center; gap: 10px; padding: 10px 22px;
+  background: rgba(255,255,255,0.05); backdrop-filter: blur(40px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.18); border-radius: 999px;
+  font-family: 'Shippori Mincho', serif; font-size: 13px; color: var(--cream);
+  letter-spacing: 2px; margin-bottom: 28px;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 24px rgba(0,0,0,0.3);
+}
+.page-hero .eyebrow .dot {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--sakura);
+  box-shadow: 0 0 16px var(--sakura); animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+.page-hero h1 {
+  font-family: 'Shippori Mincho', serif; font-size: clamp(36px, 6vw, 78px); line-height: 1.05;
+  color: var(--cream); font-weight: 700; max-width: 1100px; margin: 0 auto 16px;
+  letter-spacing: -0.02em; text-shadow: 0 4px 40px rgba(0,0,0,0.5);
+}
+.page-hero h1 .italic {
+  font-family: 'Imbue', serif; font-style: italic; font-weight: 500;
+  background: linear-gradient(135deg, #FFE0A8, #FFB8C0 45%, #B8D4FF);
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 20px rgba(241,181,188,0.4));
+}
+.page-hero p.lead {
+  font-family: 'Imbue', serif; font-style: italic; font-size: clamp(18px, 2.2vw, 24px);
+  color: rgba(255,248,231,0.88); max-width: 720px; margin: 24px auto 0;
+}
+section { padding: 60px 5vw; position: relative; z-index: 5; }
+.section-head { text-align: center; margin-bottom: 50px; }
+.section-eyebrow {
+  display: inline-block; font-family: 'Shippori Mincho', serif; font-size: 12px;
+  letter-spacing: 5px; color: var(--gold); margin-bottom: 16px; text-transform: uppercase; opacity: 0.9;
+}
+.section-title {
+  font-family: 'Shippori Mincho', serif; font-size: clamp(28px, 4.5vw, 48px);
+  color: var(--cream); line-height: 1.15; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 16px;
+}
+.section-title .italic {
+  font-family: 'Imbue', serif; font-style: italic; font-weight: 500;
+  background: linear-gradient(135deg, var(--gold), var(--sakura));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
+.section-sub {
+  font-family: 'Imbue', serif; font-style: italic; font-size: 17px;
+  color: rgba(255,248,231,0.78); max-width: 620px; margin: 0 auto;
+}
+.container { max-width: 1280px; margin: 0 auto; }
+.btn-primary {
+  background: rgba(255,255,255,0.12); color: var(--cream); padding: 16px 36px; border-radius: 999px;
+  text-decoration: none; font-size: 15px; font-weight: 600;
+  display: inline-flex; align-items: center; gap: 10px;
+  border: 1px solid rgba(255,255,255,0.25); backdrop-filter: blur(40px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 10px 30px rgba(0,0,0,0.4);
+  transition: all 0.4s cubic-bezier(0.16,1,0.3,1);
+}
+.btn-primary:hover { transform: translateY(-3px); background: rgba(255,255,255,0.22); }
+.btn-ghost {
+  background: rgba(10,16,36,0.25); color: var(--cream); padding: 16px 36px; border-radius: 999px;
+  text-decoration: none; font-size: 15px; font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.12); backdrop-filter: blur(30px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.15); transition: all 0.4s;
+}
+.btn-ghost:hover { background: rgba(10,16,36,0.5); transform: translateY(-3px); }
+footer {
+  padding: 80px 5vw 30px; position: relative; z-index: 5; margin-top: 80px;
+  background: linear-gradient(180deg, rgba(5,8,24,0.4), rgba(5,8,24,0.85));
+  backdrop-filter: blur(40px) saturate(180%); border-top: 1px solid rgba(255,255,255,0.08);
+}
+.footer-grid {
+  max-width: 1280px; margin: 0 auto; display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 40px;
+}
+.footer-brand p { margin-top: 18px; color: rgba(255,248,231,0.7); font-size: 14px; line-height: 1.7; max-width: 320px; }
+footer h4 { font-family: 'Shippori Mincho', serif; font-size: 13px; margin-bottom: 18px; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
+footer ul { list-style: none; }
+footer li { margin-bottom: 10px; }
+footer a { color: rgba(255,248,231,0.78); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+footer a:hover { color: var(--gold); }
+.footer-bottom {
+  max-width: 1280px; margin: 0 auto; padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px;
+}
+.footer-bottom p { font-family: 'Imbue', serif; font-style: italic; font-size: 14px; color: rgba(255,248,231,0.6); }
+.floating-contact { position: fixed; right: 20px; bottom: 24px; display: flex; flex-direction: column; gap: 12px; z-index: 50; }
+.fc-btn {
+  width: 54px; height: 54px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; color: white;
+  text-decoration: none; font-weight: 700; font-size: 18px;
+  backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.3);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 24px rgba(0,0,0,0.5);
+  transition: all 0.3s;
+}
+.fc-btn:hover { transform: translateY(-4px) scale(1.05); }
+.fc-zalo { background: rgba(0,104,255,0.85); }
+.fc-fb { background: rgba(24,119,242,0.85); }
+.fc-phone { background: rgba(37,211,102,0.85); }
+@media (max-width: 900px) {
+  nav { display: none; }
+  nav.open { display: flex; position: absolute; top: 100%; left: 0; right: 0; background: rgba(10,16,36,0.92); backdrop-filter: blur(30px); padding: 24px; flex-direction: column; }
+  nav.open ul { flex-direction: column; gap: 20px; align-items: flex-start; }
+  .menu-toggle { display: flex; align-items: center; justify-content: center; }
+  .cta-header { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 30px; }
+  .footer-brand { grid-column: 1 / -1; }
+  .cursor-glow { display: none; }
+}
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .page-hero { padding-top: 120px; }
+  section { padding: 50px 5vw; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; } }
 </style>
-<title>Việc làm tại Nhật — Thực tập sinh, Tokutei, Kỹ sư — Trí Lữ Nihongo</title></head><body>
-<header class="site-header">
-  <div class="nav-wrap">
-    <a class="brand" href="index.html">
-      <div class="brand-logo">智</div>
-      <div class="brand-name"><strong>Trí Lữ Nihongo</strong><span>日本語 Academy</span></div>
-    </a>
-    <button class="nav-toggle" aria-label="Mở menu"><span></span></button>
-    <nav><ul class="nav-menu">
-      <li><a href="index.html">Trang chủ</a></li>
-      <li><a href="jlpt.html">JLPT</a></li>
-      <li><a href="kaiwa.html">Kaiwa</a></li>
-      <li><a href="eju.html">EJU</a></li>
-      <li><a href="thi-thu.html">Thi thử</a></li>
-      <li><a href="viec-lam.html">Việc làm Nhật</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="lien-he.html" class="nav-cta">Đăng ký tư vấn</a></li>
-    </ul></nav>
-  </div>
+</head>
+<body>
+
+<canvas class="hokusai-canvas" id="hokusai"></canvas>
+<div class="cursor-glow" id="cursorGlow"></div>
+<div class="particles" id="particles"></div>
+
+<header id="header">
+  <a href="/" class="logo">
+    <div class="logo-mark">智</div>
+    <div class="logo-text">
+      <div class="brand">Trí Lữ Nihongo</div>
+      <div class="sub">日本語 ACADEMY</div>
+    </div>
+  </a>
+  <nav id="nav">
+    <ul><li><a href="/" class="">Trang chủ</a></li>
+<li><a href="jlpt.html" class="">JLPT</a></li>
+<li><a href="kaiwa.html" class="">Kaiwa</a></li>
+<li><a href="eju.html" class="">EJU</a></li>
+<li><a href="thi-thu.html" class="">Thi thử</a></li>
+<li><a href="viec-lam.html" class="active">Việc làm Nhật</a></li>
+<li><a href="blog.html" class="">Blog</a></li></ul>
+  </nav>
+  <a href="lien-he.html" class="cta-header">Đăng ký tư vấn</a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFF8E7" stroke-width="2" stroke-linecap="round">
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <line x1="3" y1="12" x2="21" y2="12"/>
+      <line x1="3" y1="18" x2="21" y2="18"/>
+    </svg>
+  </button>
 </header>
-<section class="container">
-  <p class="breadcrumb"><a href="index.html">Trang chủ</a><span>›</span> Việc làm tại Nhật</p>
-  <div class="reveal" style="max-width:800px">
-    <span class="section-overline">就職 · Việc làm Nhật</span>
-    <h1 class="section-title" style="font-size:54px">3 con đường sang Nhật làm việc.</h1>
-    <p style="font-size:17px;color:var(--muted)">Mỗi diện visa có yêu cầu, mức lương và lộ trình riêng. Chúng tôi tư vấn từ trình độ tiếng Nhật cần đạt, kỹ năng nghề, hồ sơ rirekisho cho đến luyện phỏng vấn xí nghiệp.</p>
+
+<section class="page-hero">
+  <div class="eyebrow"><span class="dot"></span><span>JAPAN JOB · 仕事</span></div>
+  <h1>3 con đường — <span class="italic">một đích đến.</span></h1>
+  <p class="lead">Thực tập sinh, Tokutei, Kỹ sư — mỗi hệ phù hợp một mục tiêu khác nhau. Chọn đúng ngay từ đầu để không lãng phí thời gian và tiền bạc.</p>
+</section>
+
+<style>
+.path-card { padding: 48px 40px; position: relative; margin-bottom: 32px; }
+.path-card > * { position: relative; z-index: 2; }
+.path-kanji { position: absolute; top: 20px; right: 30px; font-family: 'Noto Serif JP', serif; font-size: 220px; color: rgba(255,255,255,0.05); font-weight: 700; line-height: 1; pointer-events: none; z-index: 1; }
+.path-tag { display: inline-block; padding: 6px 14px; border-radius: 999px; background: rgba(255,215,138,0.15); border: 1px solid rgba(255,215,138,0.3); color: var(--gold); font-size: 12px; letter-spacing: 2px; margin-bottom: 16px; }
+.path-title { font-family: 'Shippori Mincho', serif; font-size: clamp(32px,4.5vw,48px); color: var(--cream); margin-bottom: 8px; font-weight: 700; }
+.path-sub { font-family: 'Imbue', serif; font-style: italic; color: var(--gold); font-size: 18px; margin-bottom: 24px; }
+.path-desc { color: rgba(255,248,231,0.85); font-size: 16px; line-height: 1.75; max-width: 720px; margin-bottom: 28px; }
+.path-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; padding: 24px 0; border-top: 1px solid rgba(255,255,255,0.1); border-bottom: 1px solid rgba(255,255,255,0.1); margin-bottom: 28px; }
+.path-item { }
+.path-item-label { font-family: 'Shippori Mincho', serif; font-size: 11px; color: var(--gold); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+.path-item-value { color: var(--cream); font-size: 15px; font-weight: 500; line-height: 1.5; }
+.path-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin: 24px 0; }
+.path-features div { padding: 14px 18px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; color: rgba(255,248,231,0.88); font-size: 14px; display: flex; gap: 10px; align-items: flex-start; }
+.path-features div::before { content: '✦'; color: var(--gold); flex-shrink: 0; }
+</style>
+
+<section id="thuc-tap-sinh">
+  <div class="container">
+    <article class="path-card ultra-glass fade-in">
+      <div class="path-kanji">研修</div>
+      <span class="path-tag">HỆ 1 · 技能実習</span>
+      <h2 class="path-title">Thực tập sinh</h2>
+      <p class="path-sub">Kenshūsei / Gino Jisshu</p>
+      <p class="path-desc">Đi Nhật học nghề 3-5 năm. Chi phí xuất cảnh thấp, yêu cầu tiếng Nhật cơ bản. Phù hợp với bạn trẻ muốn tiết kiệm vốn, học nghề và trở về Việt Nam khởi nghiệp.</p>
+      <div class="path-grid">
+        <div class="path-item"><div class="path-item-label">Tiếng Nhật</div><div class="path-item-value">N5-N4 tối thiểu</div></div>
+        <div class="path-item"><div class="path-item-label">Tuổi</div><div class="path-item-value">18-30 tuổi</div></div>
+        <div class="path-item"><div class="path-item-label">Thời gian</div><div class="path-item-value">3-5 năm</div></div>
+        <div class="path-item"><div class="path-item-label">Lương</div><div class="path-item-value">28-35 triệu/tháng</div></div>
+        <div class="path-item"><div class="path-item-label">Chi phí</div><div class="path-item-value">120-180 triệu</div></div>
+      </div>
+      <div class="path-features">
+        <div>Bao ăn ở khi học tiếng tại Việt Nam</div>
+        <div>Tỷ lệ đỗ phỏng vấn 95%+</div>
+        <div>14 ngành nghề: Cơ khí, may, nông nghiệp, chế biến</div>
+        <div>Hỗ trợ thủ tục từ A-Z</div>
+        <div>Sempai đỡ đầu khi sang Nhật</div>
+        <div>Đào tạo văn hoá doanh nghiệp Nhật</div>
+      </div>
+      <a href="lien-he.html?path=thuctapsinh" class="btn-primary">Tư vấn Thực tập sinh →</a>
+    </article>
   </div>
 </section>
 
-<section class="section" id="thuc-tap-sinh"><div class="container">
-  <div class="grid grid-2" style="align-items:center;gap:50px">
-    <div class="reveal">
-      <span class="section-overline">技能実習 · Diện 1</span>
-      <h2 class="section-title">Thực tập sinh kỹ năng</h2>
-      <p style="color:var(--muted)">Phù hợp với học sinh tốt nghiệp THPT, muốn sang Nhật làm việc kết hợp học nghề. Hợp đồng 3-5 năm, ngành cơ khí, xây dựng, nông nghiệp, chế biến...</p>
-      <div class="feature-row"><div class="num">📋</div><div><h4>Yêu cầu</h4><p>Tốt nghiệp THPT, sức khoẻ tốt, tiếng Nhật N5+ (hỗ trợ đào tạo trước phái cử).</p></div></div>
-      <div class="feature-row"><div class="num">💰</div><div><h4>Mức lương</h4><p>Cơ bản 130-180k JPY/tháng (~22-30 triệu VND), tăng theo tay nghề.</p></div></div>
-      <div class="feature-row"><div class="num">🎯</div><div><h4>Lộ trình</h4><p>Học tiếng 4-6 tháng → thi tuyển xí nghiệp → đào tạo nghề → bay sang Nhật.</p></div></div>
-    </div>
-    <div class="reveal reveal-delay-1 card"><h3>Trí Lữ Nihongo hỗ trợ gì?</h3><ul style="padding-left:18px;color:#3b4250"><li>Khoá tiếng Nhật N5-N4 chuyên Thực tập sinh</li><li>Luyện phỏng vấn tuyển dụng xí nghiệp</li><li>Tư vấn chọn ngành phù hợp tay nghề</li><li>Kết nối nghiệp đoàn uy tín</li><li>Hỗ trợ làm hồ sơ, khám sức khoẻ</li></ul><a href="lien-he.html" class="btn btn-primary mt-4">Nhận tư vấn miễn phí</a></div>
+<section id="tokutei">
+  <div class="container">
+    <article class="path-card ultra-glass fade-in">
+      <div class="path-kanji">特定</div>
+      <span class="path-tag">HỆ 2 · 特定技能</span>
+      <h2 class="path-title">Tokutei (Kỹ năng đặc định)</h2>
+      <p class="path-sub">Tokutei Ginō · Visa SSW</p>
+      <p class="path-desc">Visa kỹ năng đặc định — có tay nghề chuyên môn. Đãi ngộ tốt hơn Thực tập sinh, có thể bảo lãnh người thân (Tokutei 2). Tự do chuyển việc trong cùng ngành.</p>
+      <div class="path-grid">
+        <div class="path-item"><div class="path-item-label">Tiếng Nhật</div><div class="path-item-value">N4 + bài test ngành</div></div>
+        <div class="path-item"><div class="path-item-label">Tuổi</div><div class="path-item-value">18-44 tuổi</div></div>
+        <div class="path-item"><div class="path-item-label">Thời gian</div><div class="path-item-value">5 năm (Tokutei 1) — vô hạn (Tokutei 2)</div></div>
+        <div class="path-item"><div class="path-item-label">Lương</div><div class="path-item-value">35-50 triệu/tháng</div></div>
+        <div class="path-item"><div class="path-item-label">Chi phí</div><div class="path-item-value">60-120 triệu</div></div>
+      </div>
+      <div class="path-features">
+        <div>14 ngành mở: Điều dưỡng, xây dựng, chế biến thực phẩm…</div>
+        <div>Bảo lãnh vợ/chồng + con (Tokutei 2)</div>
+        <div>Quyền lợi như người lao động Nhật</div>
+        <div>Đổi visa vĩnh trú sau 10 năm</div>
+        <div>Tự chuyển việc cùng ngành nghề</div>
+        <div>Hỗ trợ luyện bài test kỹ năng (skill test)</div>
+      </div>
+      <a href="lien-he.html?path=tokutei" class="btn-primary">Tư vấn Tokutei →</a>
+    </article>
   </div>
-</div></section>
+</section>
 
-<section class="section section-soft" id="tokutei"><div class="container">
-  <div class="grid grid-2" style="align-items:center;gap:50px">
-    <div class="reveal reveal-delay-1 card" style="order:2"><h3>Trí Lữ Nihongo hỗ trợ gì?</h3><ul style="padding-left:18px;color:#3b4250"><li>Luyện thi tiếng Nhật JFT-Basic / JLPT N4</li><li>Ôn thi tay nghề 14 ngành nghề Tokutei</li><li>Tìm đơn hàng từ doanh nghiệp Nhật trực tiếp</li><li>Hỗ trợ chuyển đổi từ Thực tập sinh → Tokutei</li></ul><a href="lien-he.html" class="btn btn-primary mt-4">Nhận tư vấn miễn phí</a></div>
-    <div class="reveal" style="order:1">
-      <span class="section-overline">特定技能 · Diện 2</span>
-      <h2 class="section-title">Tokutei Ginou (Kỹ năng đặc định)</h2>
-      <p style="color:var(--muted)">Visa mới (từ 2019), không bị giới hạn 5 năm như Thực tập sinh. Tokutei 2 còn được bảo lãnh gia đình. 14 ngành nghề mở: điều dưỡng, nhà hàng, xây dựng, nông nghiệp, đóng tàu, ô tô...</p>
-      <div class="feature-row"><div class="num">📋</div><div><h4>Yêu cầu</h4><p>Đỗ kỳ thi tiếng Nhật JFT-Basic (hoặc N4) + thi tay nghề ngành đăng ký.</p></div></div>
-      <div class="feature-row"><div class="num">💰</div><div><h4>Mức lương</h4><p>180-250k JPY/tháng (~30-42 triệu VND), bằng người Nhật cùng vị trí.</p></div></div>
-      <div class="feature-row"><div class="num">🎯</div><div><h4>Ưu điểm</h4><p>Chuyển việc tự do trong cùng ngành, Tokutei 2 visa vĩnh trú + bảo lãnh vợ con.</p></div></div>
-    </div>
+<section id="ky-su">
+  <div class="container">
+    <article class="path-card ultra-glass fade-in">
+      <div class="path-kanji">技術</div>
+      <span class="path-tag">HỆ 3 · 技術・人文</span>
+      <h2 class="path-title">Kỹ sư · Phiên dịch</h2>
+      <p class="path-sub">Gijutsu/Tsūyaku · Visa cao cấp</p>
+      <p class="path-desc">Đỉnh cao việc làm Nhật. Yêu cầu bằng đại học và tiếng Nhật N2-N1. Đãi ngộ cao, được tôn trọng, có thể định cư lâu dài và đổi quốc tịch.</p>
+      <div class="path-grid">
+        <div class="path-item"><div class="path-item-label">Tiếng Nhật</div><div class="path-item-value">N2-N1</div></div>
+        <div class="path-item"><div class="path-item-label">Bằng cấp</div><div class="path-item-value">Đại học chính quy</div></div>
+        <div class="path-item"><div class="path-item-label">Thời gian</div><div class="path-item-value">Visa 1-5 năm, gia hạn vô hạn</div></div>
+        <div class="path-item"><div class="path-item-label">Lương</div><div class="path-item-value">50-100+ triệu/tháng</div></div>
+        <div class="path-item"><div class="path-item-label">Chi phí</div><div class="path-item-value">30-80 triệu</div></div>
+      </div>
+      <div class="path-features">
+        <div>IT, kỹ thuật, biên-phiên dịch, marketing</div>
+        <div>Phỏng vấn online với công ty Nhật trực tiếp</div>
+        <div>Có thể đổi visa vĩnh trú sau 10 năm</div>
+        <div>Bảo lãnh gia đình ngay từ đầu</div>
+        <div>Hỗ trợ viết CV tiếng Nhật + luyện phỏng vấn</div>
+        <div>Network giới thiệu trực tiếp công ty Nhật</div>
+      </div>
+      <a href="lien-he.html?path=kysu" class="btn-primary">Tư vấn Kỹ sư →</a>
+    </article>
   </div>
-</div></section>
+</section>
 
-<section class="section" id="ky-su"><div class="container">
-  <div class="grid grid-2" style="align-items:center;gap:50px">
-    <div class="reveal">
-      <span class="section-overline">技人国 · Diện 3</span>
-      <h2 class="section-title">Kỹ sư / Gijinkoku</h2>
-      <p style="color:var(--muted)">Visa cao cấp nhất dành cho người tốt nghiệp Đại học/Cao đẳng. Làm việc đúng chuyên ngành, mức lương cao, lộ trình thăng tiến rõ ràng, dễ xin vĩnh trú.</p>
-      <div class="feature-row"><div class="num">📋</div><div><h4>Yêu cầu</h4><p>Bằng ĐH/CĐ đúng chuyên ngành tuyển dụng + tiếng Nhật N3 trở lên (N2 nếu vào công ty lớn).</p></div></div>
-      <div class="feature-row"><div class="num">💰</div><div><h4>Mức lương</h4><p>230-400k JPY/tháng (~40-70 triệu VND), bonus + lương 13.</p></div></div>
-      <div class="feature-row"><div class="num">🎯</div><div><h4>Ngành phổ biến</h4><p>IT / phần mềm, cơ khí, điện-điện tử, xây dựng, kế toán, biên-phiên dịch.</p></div></div>
+<section>
+  <div class="container" style="text-align:center;">
+    <div class="ultra-glass" style="padding: 50px 40px; max-width: 800px; margin: 0 auto;">
+      <h2 style="font-family: 'Shippori Mincho', serif; font-size: clamp(28px,4vw,38px); color: var(--cream); margin-bottom: 14px;">Chưa biết hệ nào phù hợp?</h2>
+      <p style="font-family: 'Imbue', serif; font-style: italic; font-size: 18px; color: rgba(255,248,231,0.85); margin-bottom: 28px;">Trả lời 5 câu hỏi — em sẽ gợi ý lộ trình phù hợp nhất với năng lực, hoàn cảnh và mục tiêu của bạn.</p>
+      <a href="lien-he.html?path=khong-biet" class="btn-primary">Tư vấn miễn phí →</a>
     </div>
-    <div class="reveal reveal-delay-1 card"><h3>Trí Lữ Nihongo hỗ trợ gì?</h3><ul style="padding-left:18px;color:#3b4250"><li>Lộ trình tiếng Nhật N3-N2 cấp tốc cho kỹ sư</li><li>Kaiwa chuyên ngành IT / cơ khí / công sở</li><li>Soạn rirekisho và shokumu-keirekisho chuẩn Nhật</li><li>Luyện phỏng vấn online với headhunter Nhật</li><li>Kết nối công ty Nhật tuyển trực tiếp</li></ul><a href="lien-he.html" class="btn btn-primary mt-4">Nhận tư vấn miễn phí</a></div>
   </div>
-</div></section>
-<div class="float-contact">
-  <a class="float-btn zalo" href="https://zalo.me/" title="Zalo">Z</a>
-  <a class="float-btn" href="https://m.me/" title="Messenger">M</a>
-  <a class="float-btn tel" href="tel:+84000000000" title="Hotline">☎</a>
-</div>
-<footer class="site-footer">
+</section>
+
+<footer>
   <div class="footer-grid">
-    <div>
-      <a class="brand" href="index.html" style="color:#fff">
-        <div class="brand-logo">智</div>
-        <div class="brand-name"><strong style="color:#fff">Trí Lữ Nihongo</strong><span>日本語 Academy</span></div>
+    <div class="footer-brand">
+      <a href="/" class="logo">
+        <div class="logo-mark">智</div>
+        <div class="logo-text">
+          <div class="brand">Trí Lữ Nihongo</div>
+          <div class="sub">日本語 ACADEMY</div>
+        </div>
       </a>
-      <p style="margin-top:14px;max-width:320px">Đào tạo tiếng Nhật bài bản từ N5 đến công việc tại Nhật.</p>
-      <p>📧 <a href="mailto:triluedu@gmail.com" style="display:inline">triluedu@gmail.com</a></p>
-      <p>🌐 <a href="https://trilu.edu.vn" style="display:inline">trilu.edu.vn</a></p>
+      <p>Học viện tiếng Nhật đào tạo từ JLPT N5 đến N1, Kaiwa, EJU và định hướng việc làm tại Nhật Bản.</p>
     </div>
-    <div><h5>Khoá học</h5>
-      <a href="jlpt.html">Luyện thi JLPT</a>
-      <a href="kaiwa.html">Kaiwa giao tiếp</a>
-      <a href="eju.html">Luyện thi EJU</a>
-      <a href="thi-thu.html">Thi thử online</a>
+    <div>
+      <h4>Khoá học</h4>
+      <ul>
+        <li><a href="jlpt.html">JLPT N5-N1</a></li>
+        <li><a href="kaiwa.html">Kaiwa</a></li>
+        <li><a href="eju.html">EJU du học</a></li>
+        <li><a href="thi-thu.html">Thi thử</a></li>
+      </ul>
     </div>
-    <div><h5>Việc làm Nhật</h5>
-      <a href="viec-lam.html#thuc-tap-sinh">Thực tập sinh</a>
-      <a href="viec-lam.html#tokutei">Tokutei Ginou</a>
-      <a href="viec-lam.html#ky-su">Kỹ sư (Gijinkoku)</a>
+    <div>
+      <h4>Việc làm Nhật</h4>
+      <ul>
+        <li><a href="viec-lam.html#thuc-tap-sinh">Thực tập sinh</a></li>
+        <li><a href="viec-lam.html#tokutei">Tokutei</a></li>
+        <li><a href="viec-lam.html#ky-su">Kỹ sư · Phiên dịch</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
     </div>
-    <div><h5>Về chúng tôi</h5>
-      <a href="blog.html">Blog</a>
-      <a href="lien-he.html">Liên hệ</a>
-      <a href="lien-he.html#faq">FAQ</a>
+    <div>
+      <h4>Liên hệ</h4>
+      <ul>
+        <li><a href="https://zalo.me/0342390667">Zalo: 0342390667</a></li>
+        <li><a href="https://www.facebook.com/" target="_blank">Facebook: Trí Lữ Nihongo</a></li>
+        <li><a href="mailto:hello@trilu.edu.vn">hello@trilu.edu.vn</a></li>
+      </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 Trí Lữ Nihongo. All rights reserved.</span>
-    <span>Made with ♥ for Japanese learners in Vietnam.</span>
+    <p>© 2026 Trí Lữ Nihongo · ⛩ <em>Crafted with care — Tokyo & Hà Nội.</em></p>
+    <p style="opacity:0.5;font-size:12px;">www.trilu.edu.vn</p>
   </div>
 </footer>
-<script>// Trí Lữ Nihongo — shared scripts
-(function(){
-  // Mobile nav
-  const toggle = document.querySelector('.nav-toggle');
-  const menu = document.querySelector('.nav-menu');
-  if (toggle && menu){
-    toggle.addEventListener('click', () => menu.classList.toggle('open'));
+
+<div class="floating-contact">
+  <a href="https://zalo.me/0342390667" class="fc-btn fc-zalo" target="_blank" aria-label="Zalo">Z</a>
+  <a href="https://m.me/" class="fc-btn fc-fb" target="_blank" aria-label="Messenger">M</a>
+  <a href="tel:+84342390667" class="fc-btn fc-phone" aria-label="Gọi điện">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+  </a>
+</div>
+<script>
+const canvas = document.getElementById('hokusai');
+const ctx = canvas.getContext('2d', { alpha: false });
+let W, H, DPR, t = 0, mouseX = 0.5, mouseY = 0.5, stars = [], foamP = [];
+function resize() {
+  DPR = Math.min(window.devicePixelRatio||1, 2); W = innerWidth; H = innerHeight;
+  canvas.width = W*DPR; canvas.height = H*DPR; canvas.style.width = W+'px'; canvas.style.height = H+'px';
+  ctx.setTransform(DPR,0,0,DPR,0,0);
+  stars = Array.from({length:80}, () => ({x: Math.random()*W, y: Math.random()*H*0.55, r: Math.random()*1.3+0.3, twinkle: Math.random()*Math.PI*2, speed: Math.random()*0.02+0.005}));
+}
+resize(); addEventListener('resize', resize);
+addEventListener('mousemove', e => { mouseX = e.clientX/W; mouseY = e.clientY/H; });
+function spawnFoam(x, y) { for (let i=0;i<2;i++) foamP.push({x,y,vx:(Math.random()-0.5)*1.5,vy:-Math.random()*2-1,life:1,size:Math.random()*3+1}); }
+function drawSky() {
+  const g = ctx.createLinearGradient(0,0,0,H);
+  g.addColorStop(0,'#0a0820'); g.addColorStop(0.3,'#1a1042'); g.addColorStop(0.55,'#2d1b5e'); g.addColorStop(0.75,'#3a2a7a'); g.addColorStop(1,'#1a3a6b');
+  ctx.fillStyle = g; ctx.fillRect(0,0,W,H);
+  const a1 = ctx.createRadialGradient(W*0.3,H*0.15,0,W*0.3,H*0.15,W*0.5);
+  a1.addColorStop(0,'rgba(241,181,188,0.18)'); a1.addColorStop(0.5,'rgba(180,200,255,0.08)'); a1.addColorStop(1,'transparent');
+  ctx.fillStyle = a1; ctx.fillRect(0,0,W,H);
+  const a2 = ctx.createRadialGradient(W*0.85,H*0.4,0,W*0.85,H*0.4,W*0.4);
+  a2.addColorStop(0,'rgba(255,215,138,0.12)'); a2.addColorStop(0.5,'rgba(241,181,188,0.05)'); a2.addColorStop(1,'transparent');
+  ctx.fillStyle = a2; ctx.fillRect(0,0,W,H);
+}
+function drawStars() {
+  for (const s of stars) {
+    const a = 0.5 + 0.5*Math.sin(t*s.speed+s.twinkle);
+    ctx.fillStyle = `rgba(255,248,231,${a*0.85})`;
+    ctx.beginPath(); ctx.arc(s.x,s.y,s.r,0,Math.PI*2); ctx.fill();
+    if (a > 0.8 && s.r > 0.9) {
+      ctx.strokeStyle = `rgba(255,248,231,${a*0.4})`; ctx.lineWidth = 0.5;
+      ctx.beginPath(); ctx.moveTo(s.x-3,s.y); ctx.lineTo(s.x+3,s.y); ctx.moveTo(s.x,s.y-3); ctx.lineTo(s.x,s.y+3); ctx.stroke();
+    }
   }
+}
+function drawMoon() {
+  const mx = W*(0.75-(mouseX-0.5)*0.02), my = H*(0.18-(mouseY-0.5)*0.015), r = 70;
+  const h = ctx.createRadialGradient(mx,my,r*0.5,mx,my,r*3);
+  h.addColorStop(0,'rgba(255,248,231,0.4)'); h.addColorStop(0.4,'rgba(255,220,170,0.15)'); h.addColorStop(1,'transparent');
+  ctx.fillStyle = h; ctx.fillRect(mx-r*3,my-r*3,r*6,r*6);
+  const m = ctx.createRadialGradient(mx-r*0.3,my-r*0.3,0,mx,my,r);
+  m.addColorStop(0,'#FFFAEC'); m.addColorStop(0.7,'#F5E8C8'); m.addColorStop(1,'#D4B98C');
+  ctx.fillStyle = m; ctx.beginPath(); ctx.arc(mx,my,r,0,Math.PI*2); ctx.fill();
+  ctx.fillStyle = 'rgba(180,150,100,0.18)';
+  ctx.beginPath(); ctx.arc(mx-18,my-12,8,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(mx+22,my+8,6,0,Math.PI*2); ctx.fill();
+  ctx.beginPath(); ctx.arc(mx-5,my+20,4,0,Math.PI*2); ctx.fill();
+}
+function drawMtFuji() {
+  const fx = W*0.55+(mouseX-0.5)*20, fbase = H*0.78, fh = H*0.32;
+  ctx.beginPath();
+  ctx.moveTo(fx-fh*1.4,fbase); ctx.lineTo(fx-30,fbase-fh+15);
+  ctx.quadraticCurveTo(fx,fbase-fh-10,fx+30,fbase-fh+15); ctx.lineTo(fx+fh*1.4,fbase); ctx.closePath();
+  const g = ctx.createLinearGradient(0,fbase-fh,0,fbase);
+  g.addColorStop(0,'rgba(45,60,120,0.65)'); g.addColorStop(1,'rgba(15,25,60,0.85)');
+  ctx.fillStyle = g; ctx.fill();
+  ctx.beginPath();
+  ctx.moveTo(fx-30,fbase-fh+15);
+  ctx.quadraticCurveTo(fx-24,fbase-fh+30,fx-10,fbase-fh+22);
+  ctx.quadraticCurveTo(fx,fbase-fh+35,fx+15,fbase-fh+25);
+  ctx.quadraticCurveTo(fx+28,fbase-fh+32,fx+30,fbase-fh+15);
+  ctx.quadraticCurveTo(fx,fbase-fh-10,fx-30,fbase-fh+15);
+  ctx.fillStyle = 'rgba(255,248,231,0.42)'; ctx.fill();
+}
+function wavePath(y, amp, freq, sp, ph) {
+  ctx.beginPath(); ctx.moveTo(0,H); ctx.lineTo(0,y);
+  for (let x=0;x<=W;x+=5) {
+    const yy = y + Math.sin(x*freq+t*sp+ph)*amp + Math.sin(x*freq*2.7+t*sp*1.5+ph)*amp*0.28 + Math.sin(x*freq*0.5+t*sp*0.7)*amp*0.45;
+    ctx.lineTo(x,yy);
+  }
+  ctx.lineTo(W,H); ctx.closePath();
+}
+function drawWave(y, amp, freq, sp, ph, cT, cB, op) {
+  wavePath(y,amp,freq,sp,ph);
+  const g = ctx.createLinearGradient(0,y-amp,0,H);
+  g.addColorStop(0,cT); g.addColorStop(1,cB);
+  ctx.fillStyle = g; ctx.globalAlpha = op; ctx.fill(); ctx.globalAlpha = 1;
+}
+function drawCrests() {
+  const cx = W*0.32+Math.sin(t*0.3)*80, cy = H*0.78+Math.sin(t*0.5)*8, sc = 1.4+Math.sin(t*0.4)*0.1;
+  ctx.save(); ctx.translate(cx,cy); ctx.scale(sc,sc);
+  ctx.beginPath();
+  ctx.moveTo(-180,50); ctx.bezierCurveTo(-150,-80,-50,-120,50,-90); ctx.bezierCurveTo(120,-65,140,-10,100,30); ctx.bezierCurveTo(60,65,-100,80,-180,50); ctx.closePath();
+  const wg = ctx.createLinearGradient(0,-120,0,80);
+  wg.addColorStop(0,'rgba(255,248,231,0.95)'); wg.addColorStop(0.4,'rgba(180,210,240,0.7)'); wg.addColorStop(1,'rgba(40,80,140,0.85)');
+  ctx.fillStyle = wg; ctx.fill();
+  ctx.strokeStyle = 'rgba(255,248,231,0.5)'; ctx.lineWidth = 1.5; ctx.stroke();
+  for (let i=0;i<6;i++) {
+    const fx=-80+i*32, fy=-85-i*4;
+    ctx.beginPath(); ctx.moveTo(fx,fy);
+    ctx.bezierCurveTo(fx-6,fy-20,fx+8,fy-35,fx+14,fy-25);
+    ctx.bezierCurveTo(fx+20,fy-15,fx+10,fy+5,fx+4,fy+2); ctx.closePath();
+    ctx.fillStyle = `rgba(255,248,231,${0.85-i*0.08})`; ctx.fill();
+  }
+  ctx.restore();
+  const cx2 = W*0.72+Math.cos(t*0.25)*60, cy2 = H*0.85+Math.cos(t*0.4)*6, sc2 = 1+Math.cos(t*0.35)*0.08;
+  ctx.save(); ctx.translate(cx2,cy2); ctx.scale(-sc2,sc2);
+  ctx.beginPath();
+  ctx.moveTo(-140,40); ctx.bezierCurveTo(-110,-60,-30,-90,50,-70); ctx.bezierCurveTo(100,-55,110,-10,80,25); ctx.bezierCurveTo(40,55,-80,65,-140,40); ctx.closePath();
+  const wg2 = ctx.createLinearGradient(0,-90,0,60);
+  wg2.addColorStop(0,'rgba(255,248,231,0.85)'); wg2.addColorStop(0.5,'rgba(150,180,220,0.6)'); wg2.addColorStop(1,'rgba(30,60,110,0.85)');
+  ctx.fillStyle = wg2; ctx.fill();
+  for (let i=0;i<5;i++) {
+    const fx=-60+i*28, fy=-65-i*3;
+    ctx.beginPath(); ctx.moveTo(fx,fy);
+    ctx.bezierCurveTo(fx-5,fy-16,fx+7,fy-28,fx+12,fy-20);
+    ctx.bezierCurveTo(fx+16,fy-12,fx+8,fy+4,fx+3,fy+1); ctx.closePath();
+    ctx.fillStyle = `rgba(255,248,231,${0.8-i*0.1})`; ctx.fill();
+  }
+  ctx.restore();
+}
+function drawFoam() {
+  for (let i=foamP.length-1;i>=0;i--) {
+    const p = foamP[i]; p.x+=p.vx; p.y+=p.vy; p.vy+=0.04; p.life-=0.012;
+    if (p.life<=0) { foamP.splice(i,1); continue; }
+    ctx.beginPath(); ctx.arc(p.x,p.y,p.size*p.life,0,Math.PI*2);
+    ctx.fillStyle = `rgba(255,248,231,${p.life*0.7})`; ctx.fill();
+  }
+}
+function animate() {
+  drawSky(); drawStars(); drawMoon(); drawMtFuji();
+  const py = (mouseY-0.5)*20;
+  drawWave(H*0.58+py*0.2,22,0.0065,0.4,0,'rgba(60,90,160,0.5)','rgba(20,40,90,0.85)',0.5);
+  drawWave(H*0.68+py*0.4,30,0.009,0.7,1.2,'rgba(80,120,190,0.7)','rgba(30,55,110,0.9)',0.7);
+  drawWave(H*0.78+py*0.6,40,0.011,1.0,2.5,'rgba(110,160,220,0.85)','rgba(40,75,140,0.95)',0.85);
+  drawCrests();
+  drawWave(H*0.88+py*0.8,50,0.013,1.3,3.5,'rgba(160,200,240,0.95)','rgba(50,95,160,1)',1);
+  drawWave(H*0.97+py*1,35,0.016,1.8,4.5,'rgba(220,240,255,1)','rgba(80,130,190,1)',1);
+  if (Math.random() < 0.3) spawnFoam(W*0.32+Math.sin(t*0.3)*80,H*0.78+Math.sin(t*0.5)*8-80);
+  if (Math.random() < 0.25) spawnFoam(W*0.72+Math.cos(t*0.25)*60,H*0.85+Math.cos(t*0.4)*6-60);
+  drawFoam();
+  t += 0.016; requestAnimationFrame(animate);
+}
+animate();
 
-  // Sticky header shadow on scroll
-  const header = document.querySelector('.site-header');
-  const onScroll = () => {
-    if (!header) return;
-    if (window.scrollY > 12) header.classList.add('scrolled');
-    else header.classList.remove('scrolled');
-  };
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
+const cg = document.getElementById('cursorGlow'); let mm = false;
+addEventListener('mousemove', e => { cg.style.left = e.clientX+'px'; cg.style.top = e.clientY+'px'; if (!mm) { mm = true; cg.classList.add('active'); } });
 
-  // Smooth scroll
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-      const id = a.getAttribute('href');
-      if (id.length > 1){
-        const t = document.querySelector(id);
-        if (t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
-      }
-    });
+document.querySelectorAll('[data-tilt]').forEach(card => {
+  let rect = null;
+  card.addEventListener('mouseenter', () => { rect = card.getBoundingClientRect(); });
+  card.addEventListener('mousemove', e => {
+    if (!rect) rect = card.getBoundingClientRect();
+    const x = (e.clientX-rect.left)/rect.width-0.5, y = (e.clientY-rect.top)/rect.height-0.5;
+    card.style.transform = `perspective(900px) rotateY(${x*6}deg) rotateX(${-y*6}deg) translateY(-6px)`;
+    card.style.background = `radial-gradient(circle at ${(x+0.5)*100}% ${(y+0.5)*100}%, rgba(255,255,255,0.09), rgba(255,255,255,0.035) 60%)`;
   });
+  card.addEventListener('mouseleave', () => { card.style.transform = ''; card.style.background = ''; rect = null; });
+});
 
-  // Reveal-on-scroll animations
-  const revealEls = document.querySelectorAll('.reveal');
-  if ('IntersectionObserver' in window && revealEls.length){
-    const io = new IntersectionObserver(entries => {
-      entries.forEach(en => {
-        if (en.isIntersecting){
-          en.target.classList.add('show');
-          io.unobserve(en.target);
-        }
-      });
-    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
-    revealEls.forEach(el => io.observe(el));
-  } else {
-    revealEls.forEach(el => el.classList.add('show'));
-  }
+const pp = document.getElementById('particles');
+const petalSVG = '<svg viewBox="0 0 20 20"><path d="M10 2 Q14 5 13 10 Q12 14 10 17 Q8 14 7 10 Q6 5 10 2 Z" fill="#F1B5BC" opacity="0.9"/></svg>';
+for (let i=0;i<20;i++) { const p=document.createElement('div'); p.className='particle petal'; p.innerHTML=petalSVG; p.style.left=Math.random()*100+'vw'; p.style.animationDuration=(10+Math.random()*15)+'s'; p.style.animationDelay=-(Math.random()*25)+'s'; const sz=10+Math.random()*12; p.style.width=sz+'px'; p.style.height=sz+'px'; pp.appendChild(p); }
+for (let i=0;i<12;i++) { const p=document.createElement('div'); p.className='particle spark'; p.style.left=Math.random()*100+'vw'; p.style.animationDuration=(18+Math.random()*20)+'s'; p.style.animationDelay=-(Math.random()*30)+'s'; pp.appendChild(p); }
 
-  // Contact form → mailto
-  const form = document.getElementById('contact-form');
-  if (form){
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      const d = new FormData(form);
-      const subject = encodeURIComponent('[Đăng ký tư vấn] ' + (d.get('name')||'') + ' - ' + (d.get('level')||''));
-      const body = encodeURIComponent(
-        'Họ tên: ' + (d.get('name')||'') +
-        '
-SĐT/Zalo: ' + (d.get('phone')||'') +
-        '
-Email: ' + (d.get('email')||'') +
-        '
-Trình độ hiện tại: ' + (d.get('level')||'') +
-        '
-Mục tiêu: ' + (d.get('goal')||'') +
-        '
+const hdr = document.getElementById('header');
+addEventListener('scroll', () => { if (scrollY > 30) hdr.classList.add('scrolled'); else hdr.classList.remove('scrolled'); }, { passive: true });
+document.getElementById('menuToggle').addEventListener('click', () => document.getElementById('nav').classList.toggle('open'));
 
-Lời nhắn:
-' + (d.get('message')||'')
-      );
-      window.location.href = 'mailto:triluedu@gmail.com?subject=' + subject + '&body=' + body;
-    });
-  }
-
-  // Active nav highlight
-  const path = location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav-menu a').forEach(a => {
-    const href = a.getAttribute('href');
-    if (href === path) a.classList.add('active');
-  });
-})();
+const obs = new IntersectionObserver(entries => { entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = 1; e.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.fade-in').forEach((el, i) => { el.style.opacity = 0; el.style.transform = 'translateY(30px)'; el.style.transition = `opacity 0.8s cubic-bezier(0.16,1,0.3,1) ${i*0.04}s, transform 0.8s cubic-bezier(0.16,1,0.3,1) ${i*0.04}s`; obs.observe(el); });
 </script>
-</body></html>
+</body>
+</html>
