@@ -309,6 +309,76 @@
       "totalUnits": 25,
       "selector": "section.lesson",
       "url": "/tai-lieu/jlpt/minna-n4-bunpou.html"
+    },
+    "premium-ngu-phap-n5": {
+      "title": "Premium Ngữ pháp N5 — Trí Lữ Nihongo",
+      "category": "Ngữ pháp",
+      "tier": "PLUS",
+      "freeUnits": 5,
+      "unitLabel": "bài",
+      "totalUnits": 25,
+      "selector": "section.lesson, .grammar-item",
+      "url": "/tai-lieu/jlpt/premium-ngu-phap-n5.html"
+    },
+    "premium-ngu-phap-n4": {
+      "title": "Premium Ngữ pháp N4 — Trí Lữ Nihongo",
+      "category": "Ngữ pháp",
+      "tier": "PLUS",
+      "freeUnits": 5,
+      "unitLabel": "bài",
+      "totalUnits": 25,
+      "selector": "section.lesson, .grammar-item",
+      "url": "/tai-lieu/jlpt/premium-ngu-phap-n4.html"
+    },
+    "premium-ngu-phap-n3": {
+      "title": "Premium Ngữ pháp N3 — Trí Lữ Nihongo",
+      "category": "Ngữ pháp",
+      "tier": "PLUS",
+      "freeUnits": 5,
+      "unitLabel": "bài",
+      "totalUnits": 30,
+      "selector": "section.lesson, .grammar-item",
+      "url": "/tai-lieu/jlpt/premium-ngu-phap-n3.html"
+    },
+    "premium-ngu-phap-n2": {
+      "title": "Premium Ngữ pháp N2 — Trí Lữ Nihongo",
+      "category": "Ngữ pháp",
+      "tier": "PLUS",
+      "freeUnits": 5,
+      "unitLabel": "bài",
+      "totalUnits": 30,
+      "selector": "section.lesson, .grammar-item",
+      "url": "/tai-lieu/jlpt/premium-ngu-phap-n2.html"
+    },
+    "premium-ngu-phap-n1": {
+      "title": "Premium Ngữ pháp N1 — Trí Lữ Nihongo",
+      "category": "Ngữ pháp",
+      "tier": "PRO",
+      "freeUnits": 3,
+      "unitLabel": "bài",
+      "totalUnits": 30,
+      "selector": "section.lesson, .grammar-item",
+      "url": "/tai-lieu/jlpt/premium-ngu-phap-n1.html"
+    },
+    "doc-hieu-trilu": {
+      "title": "Đọc hiểu N5-N1 — Hướng dẫn tư duy toàn diện",
+      "category": "Đọc hiểu",
+      "tier": "PLUS",
+      "freeUnits": 3,
+      "unitLabel": "phần",
+      "totalUnits": 15,
+      "selector": "section.lesson, .doc-section",
+      "url": "/tai-lieu/jlpt/doc-hieu-trilu.html"
+    },
+    "nghe-hieu-trilu": {
+      "title": "Nghe hiểu N5-N1 — Hướng dẫn tư duy toàn diện",
+      "category": "Nghe hiểu",
+      "tier": "PLUS",
+      "freeUnits": 3,
+      "unitLabel": "phần",
+      "totalUnits": 15,
+      "selector": "section.lesson, .doc-section",
+      "url": "/tai-lieu/jlpt/nghe-hieu-trilu.html"
     }
   }
 }
