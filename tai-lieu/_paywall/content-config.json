@@ -379,6 +379,86 @@
       "totalUnits": 15,
       "selector": "section.lesson, .doc-section",
       "url": "/tai-lieu/jlpt/nghe-hieu-trilu.html"
+    },
+    "kaiwa-n2-premium": {
+      "title": "Kaiwa N2 — Premium Editorial",
+      "category": "Giáo án Kaiwa",
+      "tier": "PLUS",
+      "freeUnits": 3,
+      "unitLabel": "phần",
+      "totalUnits": 12,
+      "selector": "section.lesson, .module",
+      "url": "/tai-lieu/kaiwa/n2-premium.html"
+    },
+    "kaiwa-n3-4-thang": {
+      "title": "Kaiwa N3 — Khoá 4 tháng Premium",
+      "category": "Giáo án Kaiwa",
+      "tier": "PLUS",
+      "freeUnits": 3,
+      "unitLabel": "tháng",
+      "totalUnits": 4,
+      "selector": "section.lesson, .module",
+      "url": "/tai-lieu/kaiwa/n3-4-thang.html"
+    },
+    "kaiwa-n4-3-thang": {
+      "title": "Kaiwa N4 — Khoá 3 tháng Premium",
+      "category": "Giáo án Kaiwa",
+      "tier": "PLUS",
+      "freeUnits": 3,
+      "unitLabel": "tháng",
+      "totalUnits": 3,
+      "selector": "section.lesson, .module",
+      "url": "/tai-lieu/kaiwa/n4-3-thang.html"
+    },
+    "lo-trinh-kaiwa-n5-html": {
+      "title": "Lộ trình Kaiwa N5 (Premium HTML)",
+      "category": "Lộ trình",
+      "tier": "FREE",
+      "freeUnits": -1,
+      "unitLabel": "phần",
+      "totalUnits": 1,
+      "selector": "section",
+      "url": "/tai-lieu/kaiwa/lo-trinh-n5.html"
+    },
+    "lo-trinh-jlpt-n1-html": {
+      "title": "Lộ trình JLPT N1 — 7 tháng Premium",
+      "category": "Lộ trình",
+      "tier": "PRO",
+      "freeUnits": 1,
+      "unitLabel": "tháng",
+      "totalUnits": 7,
+      "selector": "section.lesson, .month",
+      "url": "/tai-lieu/jlpt/lo-trinh-n1-7-thang.html"
+    },
+    "lo-trinh-jlpt-n3-html": {
+      "title": "Lộ trình JLPT N3 — 6 tháng (chi tiết từng bài)",
+      "category": "Lộ trình",
+      "tier": "PLUS",
+      "freeUnits": 1,
+      "unitLabel": "tháng",
+      "totalUnits": 6,
+      "selector": "section.lesson, .month",
+      "url": "/tai-lieu/jlpt/lo-trinh-n3-6-thang.html"
+    },
+    "lo-trinh-jlpt-n4-html": {
+      "title": "Lộ trình JLPT N4 — Premium Editorial",
+      "category": "Lộ trình",
+      "tier": "PLUS",
+      "freeUnits": 1,
+      "unitLabel": "phần",
+      "totalUnits": 1,
+      "selector": "section",
+      "url": "/tai-lieu/jlpt/lo-trinh-n4-editorial.html"
+    },
+    "lo-trinh-jlpt-n5-html": {
+      "title": "Lộ trình JLPT N5 — Premium Editorial",
+      "category": "Lộ trình",
+      "tier": "FREE",
+      "freeUnits": -1,
+      "unitLabel": "phần",
+      "totalUnits": 1,
+      "selector": "section",
+      "url": "/tai-lieu/jlpt/lo-trinh-n5-editorial.html"
     }
   }
 }
