@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Giáo án chi tiết Kaiwa N5 (36 buổi) - Trí Lữ Nihongo</title>
+<style>
+@page{size:A4;margin:14mm 12mm 16mm 12mm;}
+:root{--paper:#fffdfa;--ink:#1e2430;--muted:#5f6470;--accent:#6e1831;--accent-2:#9b7a38;--accent-3:#c7ab70;--line:#dfcfbb;--line-2:#eadfce;--shadow:0 18px 46px rgba(60,38,19,0.08);--kaiwa-bg:#fef4f7;}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(circle at top left,rgba(155,122,56,0.08),transparent 26%),radial-gradient(circle at 85% 14%,rgba(110,24,49,0.08),transparent 22%),linear-gradient(180deg,#f6efe8 0%,#f1ebe4 100%);font-family:Inter,"Noto Sans CJK JP","Segoe UI",sans-serif;line-height:1.7;font-size:14px;}
+.page-shell{max-width:1180px;margin:0 auto;padding:30px 24px 76px;}
+.cover{position:relative;overflow:hidden;background:radial-gradient(circle at 18% 18%,rgba(255,255,255,0.09),transparent 22%),radial-gradient(circle at 88% 20%,rgba(199,171,112,0.24),transparent 16%),linear-gradient(135deg,#4f0f24 0%,#6e1831 36%,#3a0f1b 100%);color:#fff;border-radius:30px;box-shadow:var(--shadow);padding:60px 64px 52px;}
+.cover::before{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,0.12);border-radius:22px;}
+.cover::after{content:"";position:absolute;right:-80px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(199,171,112,0.52) 0%,rgba(199,171,112,0.08) 48%,transparent 68%);}
+.cover-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid rgba(255,255,255,0.16);border-radius:999px;background:rgba(255,255,255,0.08);letter-spacing:0.16em;text-transform:uppercase;font-size:11px;font-weight:700;position:relative;z-index:1;}
+.cover-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent-3);box-shadow:0 0 0 5px rgba(199,171,112,0.14);}
+.cover-title{position:relative;z-index:1;margin:26px 0 14px;font-family:"EB Garamond","Noto Serif CJK JP",serif;font-weight:700;font-size:52px;line-height:1.05;letter-spacing:-0.02em;max-width:14ch;}
+.cover-subtitle{position:relative;z-index:1;max-width:780px;font-size:16px;color:rgba(255,255,255,0.88);margin:0 0 24px;}
+.metric-row{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 30px;}
+.metric-chip{padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.08);color:#fff;font-size:13px;font-weight:600;}
+.cover-quote{position:relative;z-index:1;margin:0;max-width:600px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.18);font-style:italic;font-size:16px;color:rgba(255,255,255,0.86);}
+.cover-meta{position:relative;z-index:1;margin-top:24px;display:flex;justify-content:space-between;gap:24px;font-size:13px;color:rgba(255,255,255,0.76);flex-wrap:wrap;}
+.toc-panel{margin:26px 0 30px;background:linear-gradient(180deg,rgba(255,253,250,0.96),rgba(252,246,238,0.96));border:1px solid rgba(155,122,56,0.20);border-radius:24px;box-shadow:var(--shadow);padding:28px 30px;}
+.panel-overline{display:block;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.18em;font-size:11px;font-weight:700;color:var(--accent-2);}
+.toc-title{margin:0 0 6px;font-family:"EB Garamond",serif;font-size:32px;line-height:1.1;color:var(--accent);}
+.toc-subtitle{margin:0 0 18px;color:var(--muted);font-size:14px;}
+.toc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.toc-item{display:block;text-decoration:none;color:inherit;padding:16px 18px;background:linear-gradient(180deg,#fffefd 0%,#fcf6ee 100%);border:1px solid var(--line-2);border-radius:18px;}
+.toc-item-number{display:block;margin-bottom:6px;font-family:"EB Garamond",serif;font-size:30px;line-height:1;color:var(--accent-2);}
+.toc-item-title{display:block;font-weight:700;color:var(--accent);margin-bottom:6px;}
+.toc-item-summary{display:block;color:var(--muted);font-size:13px;line-height:1.5;}
+.document{background:var(--paper);border:1px solid rgba(155,122,56,0.16);border-radius:28px;box-shadow:var(--shadow);padding:34px 42px 50px;}
+.doc-section{margin:0 0 30px;}
+.section-head{position:relative;overflow:hidden;margin:12px 0 18px;padding:18px 24px;border-radius:22px;background:linear-gradient(90deg,rgba(255,255,255,0.08),transparent 36%),linear-gradient(135deg,#57132a 0%,#6e1831 52%,#7f3b52 100%);color:#fff;}
+.section-head::after{content:attr(data-mark);position:absolute;right:18px;top:50%;transform:translateY(-50%);font-family:"EB Garamond",serif;font-size:56px;line-height:1;color:rgba(255,255,255,0.12);}
+.section-kicker{display:block;margin-bottom:8px;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;font-weight:700;color:rgba(255,255,255,0.76);}
+.section-head h2{margin:0;color:#fff;font-family:"EB Garamond","Noto Serif CJK JP",serif;font-size:29px;line-height:1.15;}
+p{margin:0 0 12px;}
+h3{margin:24px 0 12px;padding-left:14px;border-left:4px solid var(--accent-2);color:var(--accent);font-size:18px;line-height:1.35;font-weight:800;}
+table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;box-shadow:0 8px 20px rgba(60,38,19,0.04);font-size:13px;}
+th,td{padding:11px 12px;border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);vertical-align:top;}
+th:last-child,td:last-child{border-right:none;}tbody tr:last-child td{border-bottom:none;}
+thead th{background:linear-gradient(180deg,#fcf5ea 0%,#f2e3cf 100%);color:var(--accent);font-weight:800;}
+tbody tr:nth-child(even) td{background:#fffaf4;}
+.callout-box{margin:16px 0 22px;padding:16px 20px 16px 22px;border:1px solid #e7d7be;border-left:6px solid var(--accent-2);border-radius:18px;background:linear-gradient(180deg,#fffdf9 0%,#fbf3e8 100%);}
+.callout-box strong:first-child{color:var(--accent);}
+ol,ul{margin:0 0 14px;padding-left:22px;}li{margin:0 0 6px;}li::marker{color:var(--accent-2);font-weight:700;}
+.pillar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px;list-style:none;padding:0;margin:16px 0 22px;counter-reset:pillar;}
+.pillar-grid > li{position:relative;margin:0;padding:14px 18px 14px 58px;background:linear-gradient(180deg,#fffefd 0%,#fbf4ea 100%);border:1px solid var(--line-2);border-radius:18px;}
+.pillar-grid > li::before{counter-increment:pillar;content:counter(pillar,decimal-leading-zero);position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--accent-2) 0%,#7f642d 100%);color:#fff;font-size:12px;font-weight:800;}
+.month-banner{margin:30px 0 22px;padding:22px 26px;border-radius:24px;border:1px solid rgba(155,122,56,0.20);background:radial-gradient(circle at top right,rgba(199,171,112,0.18),transparent 25%),linear-gradient(135deg,#fffdfa 0%,#f9efe4 100%);box-shadow:0 12px 28px rgba(60,38,19,0.06);}
+.month-banner-overline{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;font-weight:800;color:var(--accent-2);margin-bottom:6px;}
+.month-banner h3{margin:0 0 8px;padding:0;border:none;font-family:"EB Garamond",serif;font-size:26px;color:var(--accent);}
+.month-banner .month-goal{color:#3b4250;margin-bottom:0;}
+.week-divider{margin:22px 0 14px;padding:10px 18px;border-radius:14px;background:linear-gradient(90deg,#6e1831 0%,#834a61 100%);color:#fff;font-weight:800;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;}
+.lesson-card{margin:0 0 18px;padding:18px 20px 16px;background:#fff;border:1px solid var(--line-2);border-left:5px solid var(--accent-2);border-radius:16px;box-shadow:0 6px 16px rgba(60,38,19,0.05);}
+.lesson-head{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:baseline;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--line-2);}
+.lesson-num{font-weight:800;color:var(--accent);font-size:13px;letter-spacing:0.04em;padding:4px 10px;background:#fcf5ea;border-radius:999px;white-space:nowrap;}
+.lesson-title{margin:0;font-family:"EB Garamond","Noto Serif CJK JP",serif;font-size:19px;color:var(--ink);font-weight:700;flex:1;min-width:200px;}
+.lesson-goal{margin:0;font-size:13px;color:var(--muted);width:100%;}
+.lesson-goal strong{color:var(--accent-2);}
+.timebox{width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--line-2);margin-top:10px;font-size:12.5px;}
+.timebox td{padding:9px 11px;border-bottom:1px solid var(--line-2);vertical-align:top;border-right:none;}
+.timebox tr:last-child td{border-bottom:none;}
+.timebox .tb-time{width:70px;font-weight:800;color:var(--accent);background:#fcf5ea;white-space:nowrap;}
+.timebox .tb-act{width:160px;font-weight:700;color:#674c1b;}
+.timebox .tb-content{color:#333a43;}
+.kaiwa-box{margin-top:12px;padding:12px 14px;background:linear-gradient(135deg,var(--kaiwa-bg) 0%,#fff0f4 100%);border:1px solid #e8c6d4;border-left:4px solid #b8295e;border-radius:12px;}
+.kaiwa-box-title{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;font-weight:800;color:#8a1f3f;margin-bottom:8px;}
+.kaiwa-box-title::before{content:"会話";font-family:"Noto Serif CJK JP",serif;font-size:14px;margin-right:6px;color:#b8295e;}
+.kaiwa-content{font-size:12.5px;line-height:1.55;color:#333a43;}
+.kaiwa-content b{color:#8a1f3f;display:block;margin-top:6px;font-size:11.5px;}
+.kaiwa-jp{font-family:"Noto Sans CJK JP",sans-serif;color:#1e2430;font-weight:600;}
+.lesson-hw{margin-top:10px;padding:10px 14px;background:linear-gradient(180deg,#fffdf9 0%,#fbf3e8 100%);border:1px solid var(--line-2);border-radius:10px;font-size:13px;}
+.lesson-hw strong{color:var(--accent);}
+.minitest{background:linear-gradient(180deg,#fff8ef 0%,#f9e7d1 100%);border-left-color:var(--accent);}
+.minitest .lesson-num{background:#6e1831;color:#fff;}
+.footer-card{margin-top:24px;padding-top:24px;border-top:1px solid var(--line-2);text-align:center;}
+.footer-card p{font-size:13px;color:var(--muted);}
+@media print{body{background:#fff;font-size:11.5px;}.page-shell{max-width:none;margin:0;padding:0;}.cover,.toc-panel,.document{box-shadow:none;}.cover{page-break-after:always;border-radius:16px;padding:42px 36px;}.toc-panel{page-break-after:always;margin:0 0 18px;border-radius:14px;}.document{border:none;border-radius:0;padding:0;}.section-head{break-after:avoid;margin-top:14px;}.month-banner,.lesson-card{break-inside:avoid;}.week-divider{break-after:avoid;}table{box-shadow:none;border-radius:0;}.kaiwa-box{break-inside:avoid;}}
+</style></head>
+<body><div class="page-shell">
+
+<section class="cover">
+  <div class="cover-badge"><span class="dot"></span>Trí Lữ Nihongo • Kaiwa Curriculum</div>
+  <h1 class="cover-title">Giáo án chi tiết<br/>Kaiwa N5</h1>
+  <p class="cover-subtitle">Giáo án từng buổi cho khóa Kaiwa N5 trong 12 tuần (36 buổi). Lớp 6 học viên, 70-80% thời gian học viên nói. Mỗi buổi 120 phút có 9 khối time-box: Warm-up → Cung cấp mẫu → Drill phát âm → Pair Drill → Reset → Guided Role-play → Free Role-play → Mini Performance → Tổng kết.</p>
+  <div class="metric-row">
+    <span class="metric-chip">12 tuần · 36 buổi</span>
+    <span class="metric-chip">120 phút/buổi · 6 học viên</span>
+    <span class="metric-chip">Kaiwa thực chiến</span>
+    <span class="metric-chip">Tình huống đời sống N5</span>
+    <span class="metric-chip">3 cặp / 2 nhóm 3</span>
+  </div>
+  <blockquote class="cover-quote">Mỗi buổi học chỉ có một mục tiêu: học viên phải dùng được tiếng Nhật trong một tình huống thật.</blockquote>
+  <div class="cover-meta"><div>Trình độ: Sơ cấp N5</div><div>Thiết kế cho nhóm nhỏ: 3 cặp đôi hoặc 2 nhóm ba người</div></div>
+</section>
+
+<nav class="toc-panel">
+  <span class="panel-overline">Điều hướng nhanh</span>
+  <h2 class="toc-title">Mục lục</h2>
+  <p class="toc-subtitle">6 phần: phương pháp Kaiwa + time-box 9 khối; 12 tuần × 3 buổi; rubric đánh giá.</p>
+  <div class="toc-grid">
+    <a class="toc-item" href="#section-1"><span class="toc-item-number">I</span><span class="toc-item-title">Tổng quan &amp; phương pháp Kaiwa</span><span class="toc-item-summary">6 nguyên tắc, 9 khối time-box, 5 hoạt động lớp 6 người.</span></a>
+    <a class="toc-item" href="#section-2"><span class="toc-item-number">II</span><span class="toc-item-title">Tháng 1: Tuần 1-4 (12 buổi)</span><span class="toc-item-summary">Chào hỏi, giới thiệu, gia đình, sinh hoạt, mua sắm cơ bản.</span></a>
+    <a class="toc-item" href="#section-3"><span class="toc-item-number">III</span><span class="toc-item-title">Tháng 2: Tuần 5-8 (12 buổi)</span><span class="toc-item-summary">Combini, nhà hàng, ga tàu, hỏi đường, mua quần áo.</span></a>
+    <a class="toc-item" href="#section-4"><span class="toc-item-number">IV</span><span class="toc-item-title">Tháng 3: Tuần 9-12 (12 buổi)</span><span class="toc-item-summary">Công ty, nhà ở, phòng khám, xử lý sự cố, performance cuối khóa.</span></a>
+    <a class="toc-item" href="#section-5"><span class="toc-item-number">+</span><span class="toc-item-title">Phụ lục · Rubric &amp; checklist Kaiwa</span><span class="toc-item-summary">Tiêu chí đánh giá năng lực nói, không thiên về luyện thi.</span></a>
+  </div>
+</nav>
+
+<main class="document">
+
+<section class="doc-section" id="section-1">
+  <div class="section-head" data-mark="I"><span class="section-kicker">Phần 1</span><h2>Tổng quan + Time-box Kaiwa 120 phút</h2></div>
+
+  <h3>Thông tin khóa học Kaiwa N5</h3>
+  <table>
+    <thead><tr><th style="width:30%">Hạng mục</th><th>Chi tiết</th></tr></thead>
+    <tbody>
+      <tr><td>Mục tiêu</td><td>Duy trì hội thoại ngắn 2-4 phút trong các tình huống quen thuộc: chào hỏi, mua sắm, gọi món, hỏi đường, hẹn lịch, báo vấn đề.</td></tr>
+      <tr><td>Triết lý</td><td>Nói trước, phân tích sau. Mỗi mẫu câu được dùng trong tình huống thật trước khi giải thích sâu.</td></tr>
+      <tr><td>Số buổi</td><td><strong>36 buổi cố định</strong> (3 tháng × 12 buổi), 3 buổi/tuần · 120p/buổi · lớp 6 học viên.</td></tr>
+      <tr><td>Cấu trúc lớp</td><td>3 cặp đôi hoặc 2 nhóm ba người - xoay partner liên tục.</td></tr>
+      <tr><td>Tỉ lệ nói</td><td><strong>70-80% học viên nói</strong>; 20-30% giáo viên dẫn dắt, sửa lỗi.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>6 nguyên tắc lớp Kaiwa</h3>
+  <ol class="pillar-grid">
+    <li><strong>Nói trước, phân tích sau.</strong> Mẫu câu được dùng trong tình huống thật trước khi giải thích.</li>
+    <li><strong>Không giảng quá 15 phút liên tục.</strong> Giáo viên dẫn dắt, đưa mẫu, sửa lỗi.</li>
+    <li><strong>Tận dụng lớp 6 người.</strong> Luân chuyển partner liên tục: 3 cặp đôi hoặc 2 nhóm ba.</li>
+    <li><strong>Mỗi buổi có 1 nhiệm vụ giao tiếp chính.</strong> VD: mua được đồ, hỏi được đường, gọi được món.</li>
+    <li><strong>Sửa lỗi ít nhưng trúng.</strong> Ưu tiên phát âm, mẫu câu chính, sự lịch sự.</li>
+    <li><strong>Phản xạ sinh tồn bắt buộc.</strong> もう一度お願いします / ゆっくりお願いします / わかりません.</li>
+  </ol>
+
+  <h3>Time-box chuẩn 120 phút (9 khối Kaiwa)</h3>
+  <table>
+    <thead><tr><th style="width:11%">Thời lượng</th><th style="width:23%">Khối</th><th>Cách tổ chức cho lớp 6 người</th></tr></thead>
+    <tbody>
+      <tr><td><strong>0-10p</strong></td><td>Warm-up phản xạ</td><td>Vòng tròn 6 người. Mỗi người hỏi người bên cạnh 1 câu, đổi chiều.</td></tr>
+      <tr><td><strong>10-25p</strong></td><td>Cung cấp từ vựng/mẫu câu</td><td>Giới thiệu 8-12 từ + 3-5 mẫu câu. Không giảng quá 15p.</td></tr>
+      <tr><td><strong>25-40p</strong></td><td>Pronunciation &amp; Pattern Drill</td><td>Cả lớp lặp theo nhịp, sau đó 3 cặp luyện thay từ: A hỏi - B trả lời.</td></tr>
+      <tr><td><strong>40-60p</strong></td><td>Pair Drill luân chuyển</td><td>3 cặp luyện hội thoại ngắn. 5p đổi partner. Mỗi học viên nói với ≥ 3 người.</td></tr>
+      <tr><td><strong>60-65p</strong></td><td>Reset nhanh</td><td>Giáo viên ghi 3 lỗi phổ biến lên bảng, sửa ngắn.</td></tr>
+      <tr><td><strong>65-85p</strong></td><td>Guided Role-play</td><td>2 nhóm ba người: vai A, vai B, vai quan sát. Sau mỗi lượt đổi vai.</td></tr>
+      <tr><td><strong>85-105p</strong></td><td>Free Role-play / Mission Task</td><td>3 cặp hoặc 2 nhóm ba nhận thẻ tình huống thật (combini, hỏi đường, gọi món).</td></tr>
+      <tr><td><strong>105-115p</strong></td><td>Mini Performance &amp; Feedback</td><td>2-3 cặp biểu diễn hội thoại 1-2 phút. Giáo viên sửa 3 điểm: phát âm, mẫu câu, tự nhiên.</td></tr>
+      <tr><td><strong>115-120p</strong></td><td>Tổng kết &amp; nhiệm vụ về nhà</td><td>Mỗi học viên nói 1 câu "hôm nay tôi dùng được câu nào". Giao ghi âm 30-60s.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout-box">
+    <strong>5 hình thức luyện nói cho lớp 6 người:</strong>
+    <ul>
+      <li><strong>Xoay cặp:</strong> 3 cặp luyện 5p rồi đổi partner.</li>
+      <li><strong>Triad role-play:</strong> 2 nhóm ba người (A, B, quan sát).</li>
+      <li><strong>Mission cards:</strong> mỗi học viên 1 thẻ tình huống thật.</li>
+      <li><strong>Information gap:</strong> mỗi người có thông tin thiếu, hỏi nhau để hoàn thành.</li>
+      <li><strong>Circle chain:</strong> vòng tròn 6 người hỏi-đáp tăng tốc.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- THÁNG 1 -->
+<section class="doc-section" id="section-2">
+  <div class="section-head" data-mark="II"><span class="section-kicker">Phần 2 · Tuần 1-4</span><h2>Tháng 1 · Tự giới thiệu &amp; sinh hoạt (12 buổi)</h2></div>
+  <div class="month-banner">
+    <span class="month-banner-overline">Mục tiêu tháng 1</span>
+    <h3>Phản xạ chào hỏi, giới thiệu, kể lịch sinh hoạt, mua đồ đơn giản</h3>
+    <p class="month-goal">12 buổi: chào hỏi - giới thiệu - gia đình - nghề nghiệp - số điện thoại - thời gian - thói quen - sở thích - mua combini - mua quần áo - Review.</p>
+  </div>
+
+  <div class="week-divider">Tuần 1 · 3 buổi · Chào hỏi &amp; Giới thiệu</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 1 · T2</span><h3 class="lesson-title">Chào hỏi và làm quen lần đầu</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Học viên giới thiệu được bản thân với 5 người khác trong lớp.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng trọng tâm</div>
+    <div class="kaiwa-content">
+      <b>Chào hỏi:</b> <span class="kaiwa-jp">おはようございます / こんにちは / こんばんは / さようなら</span>
+      <b>Tự giới thiệu:</b> <span class="kaiwa-jp">はじめまして。〜です。ベトナム人です。よろしくお願いします。</span>
+      <b>Tình huống:</b> Vòng tròn 6 người - lần lượt chào, giới thiệu, bắt tay/trao thẻ tên.
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Vòng tròn 6 người - mỗi người chào người bên phải bằng tiếng Nhật.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">4 câu chào theo khung giờ + 5 câu giới thiệu cơ bản + cách nói nghề nghiệp.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">Cả lớp lặp 3 vòng + sửa phát âm よろしく, はじめまして.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill xoay cặp</td><td class="tb-content">3 cặp luyện giới thiệu 5p rồi đổi. Mỗi học viên nói với 5 người khác.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play</td><td class="tb-content">2 nhóm ba: tình huống party đầu tiên đi làm. A-B chào, C quan sát.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Role-play</td><td class="tb-content">Mỗi học viên đổi vị trí + giới thiệu lại với người mới gặp.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Mini Performance</td><td class="tb-content">2 cặp biểu diễn giới thiệu 90s. GV sửa phát âm + tự nhiên.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Mỗi học viên nói 1 câu mới đã dùng được. Giao bài.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 60s tự giới thiệu (tên, quốc tịch, nghề nghiệp, よろしく) gửi vào nhóm.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 2 · T4</span><h3 class="lesson-title">Hỏi tên, quốc tịch, quê quán</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mỗi học viên phỏng vấn 3 bạn khác (tên, quê quán, quốc tịch) và giới thiệu lại.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Hỏi-đáp:</b> <span class="kaiwa-jp">お名前は？ / どこから来ましたか。 / ハノイから来ました。 / 〜人です。</span>
+      <b>Tình huống:</b> Phỏng vấn nhanh 3 cặp đôi, sau 5p đổi partner.
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Vòng tròn nhắc lại chào hỏi buổi 1.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">5 mẫu hỏi tên/quốc tịch/quê + lịch sự "お".</td></tr>
+      <tr><td class="tb-time">25-60p</td><td class="tb-act">Drill + Pair</td><td class="tb-content">Drill 3 cặp 5p × 3 lần = 9 cặp phỏng vấn.</td></tr>
+      <tr><td class="tb-time">65-105p</td><td class="tb-act">Role-play + Free</td><td class="tb-content">Mỗi học viên giới thiệu lại 1 bạn khác đã phỏng vấn.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Performance + Tổng kết</td><td class="tb-content">2-3 học viên trình bày trước lớp. Sửa lỗi.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Viết 5 câu giới thiệu 1 bạn cùng lớp; chuẩn bị survival Japanese.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 3 · T6</span><h3 class="lesson-title">Ngôn ngữ sinh tồn trong lớp học</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Sử dụng được 6 câu sinh tồn khi nghe không hiểu, cần lặp lại, hỏi tên đồ vật.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">6 câu sinh tồn bắt buộc</div>
+    <div class="kaiwa-content">
+      <b>Yêu cầu lặp/chậm:</b> <span class="kaiwa-jp">もう一度お願いします。 / ゆっくりお願いします。</span>
+      <b>Không hiểu:</b> <span class="kaiwa-jp">わかりません。 / すみません、わかりません。</span>
+      <b>OK:</b> <span class="kaiwa-jp">大丈夫です。</span>
+      <b>Hỏi từ:</b> <span class="kaiwa-jp">これは日本語で何ですか。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill chào hỏi + giới thiệu.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Cung cấp + Drill</td><td class="tb-content">Giảng 6 câu sinh tồn + drill lặp.</td></tr>
+      <tr><td class="tb-time">40-85p</td><td class="tb-act">Survival Game + Role-play</td><td class="tb-content">GV cố tình nói nhanh hoặc đưa đồ vật lạ. Học viên phải dùng câu sinh tồn để hỏi.</td></tr>
+      <tr><td class="tb-time">85-120p</td><td class="tb-act">Free Game + Tổng kết</td><td class="tb-content">Trò chơi tên đồ vật bằng tiếng Nhật.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 30s áp dụng 3 câu sinh tồn.</div>
+  </div>
+
+  <div class="week-divider">Tuần 2 · 3 buổi · Nghề nghiệp, Gia đình, Số/Tuổi</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 4 · T2</span><h3 class="lesson-title">Nghề nghiệp và nơi làm việc/học tập</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Name card exchange - giới thiệu nghề nghiệp với 5 người trong lớp.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Nghề nghiệp:</b> <span class="kaiwa-jp">会社員 / 学生 / 先生 / エンジニア / 店員</span>
+      <b>Hỏi-đáp:</b> <span class="kaiwa-jp">お仕事は何ですか。 / 会社員です。 / 〜で働いています。</span>
+      <b>Tình huống:</b> 6 người nhận thẻ vai giả - di chuyển quanh lớp, chào hỏi và hỏi nghề.
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill survival + giới thiệu.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">10 nghề nghiệp + mẫu お仕事は何ですか.</td></tr>
+      <tr><td class="tb-time">25-60p</td><td class="tb-act">Drill + Pair</td><td class="tb-content">Drill phát âm + Pair phỏng vấn nghề.</td></tr>
+      <tr><td class="tb-time">65-105p</td><td class="tb-act">Name card exchange</td><td class="tb-content">Mỗi người 1 thẻ vai giả (nhân viên công ty, sinh viên, kỹ sư, giáo viên). Di chuyển quanh lớp.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Performance + Tổng kết</td><td class="tb-content">Báo cáo: ai làm nghề gì.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 5 câu về nghề nghiệp của 5 người khác nhau.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 5 · T4</span><h3 class="lesson-title">Gia đình và người thân</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Family interview - chia 3 cặp hỏi-đáp về gia đình, rồi 2 nhóm 3 giới thiệu lại.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Gia đình:</b> <span class="kaiwa-jp">家族 / 父 / 母 / 兄 / 姉 / 弟 / 妹</span>
+      <b>Hỏi-đáp:</b> <span class="kaiwa-jp">家族は何人ですか。 / 父と母がいます。 / 兄が一人います。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill nghề nghiệp + giới thiệu.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">10 từ gia đình + 3 mẫu câu hỏi.</td></tr>
+      <tr><td class="tb-time">25-60p</td><td class="tb-act">Family Interview</td><td class="tb-content">3 cặp phỏng vấn gia đình.</td></tr>
+      <tr><td class="tb-time">65-105p</td><td class="tb-act">Triad Introduction</td><td class="tb-content">2 nhóm ba: mỗi người giới thiệu gia đình của partner.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Lỗi phổ biến + giao bài.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Vẽ sơ đồ gia đình + viết 5 câu mô tả.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 6 · T6</span><h3 class="lesson-title">Số điện thoại, tuổi, ngày sinh</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Information Gap - mỗi học viên có thông tin thiếu, hỏi các bạn để hoàn thành bảng.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Số đếm:</b> <span class="kaiwa-jp">数字 0〜100, 電話番号, 誕生日</span>
+      <b>Hỏi-đáp:</b> <span class="kaiwa-jp">何歳ですか。 / 電話番号は何番ですか。 / 誕生日はいつですか。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Đếm số 1-100 nhanh.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Cung cấp + Drill</td><td class="tb-content">Số 0-100 + cách nói số ĐT + cách nói ngày tháng.</td></tr>
+      <tr><td class="tb-time">40-105p</td><td class="tb-act">Information Gap Game</td><td class="tb-content">Mỗi học viên 1 thẻ thông tin thiếu. Hỏi 5 bạn còn lại để hoàn thành bảng tên-tuổi-SĐT-sinh nhật.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Báo cáo + tổng kết</td><td class="tb-content">Báo cáo thông tin đã thu được.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 60s tự giới thiệu kèm tuổi + sinh nhật.</div>
+  </div>
+
+  <div class="week-divider">Tuần 3 · 3 buổi · Thời gian, Thói quen, Sở thích</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 7 · T2</span><h3 class="lesson-title">Thời gian, thứ, lịch trong ngày</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Schedule Chain - vòng tròn 6 người hỏi giờ và trả lời, tăng tốc dần.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Thời gian:</b> <span class="kaiwa-jp">何時 / 何曜日 / 月曜日〜日曜日</span>
+      <b>Hỏi-đáp:</b> <span class="kaiwa-jp">今何時ですか。 / 何時から何時までですか。 / 9時から5時までです。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Đếm 0-100 nhanh.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Cung cấp + Drill</td><td class="tb-content">Giờ + thứ + giới thiệu mẫu から〜まで.</td></tr>
+      <tr><td class="tb-time">40-105p</td><td class="tb-act">Schedule Chain + Pair</td><td class="tb-content">Vòng tròn 6 người - hỏi-đáp giờ liên tục, tăng tốc. Pair phỏng vấn lịch trình.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Mỗi học viên nói giờ làm việc/học của mình.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Thời khóa biểu 1 tuần + ghi âm 60s.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 8 · T4</span><h3 class="lesson-title">Thói quen hằng ngày</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Daily Routine Pair Rotation - 3 cặp hỏi lịch sinh hoạt, mỗi lượt đổi partner, kể lại thói quen của bạn.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Động từ:</b> <span class="kaiwa-jp">起きます / 寝ます / 食べます / 飲みます / 行きます / 帰ります</span>
+      <b>Mẫu câu:</b> <span class="kaiwa-jp">7時に起きます。 / 会社へ行きます。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill thời gian + thứ.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Cung cấp + Drill</td><td class="tb-content">10 động từ sinh hoạt + mẫu に + động từ.</td></tr>
+      <tr><td class="tb-time">40-105p</td><td class="tb-act">Daily Routine Rotation</td><td class="tb-content">3 cặp hỏi lịch sinh hoạt 7-8 câu, đổi partner 3 lần. Mỗi người kể 1 thói quen của bạn.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Báo cáo + giao bài.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 90s mô tả "một ngày của tôi".</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 9 · T6</span><h3 class="lesson-title">Sở thích và điều thích/không thích</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Find Someone Who - đi quanh lớp tìm người cùng sở thích. Ai tìm được nhiều điểm chung nhất trình bày.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Sở thích:</b> <span class="kaiwa-jp">趣味 / 音楽 / 映画 / 旅行 / スポーツ / 料理</span>
+      <b>Mẫu câu:</b> <span class="kaiwa-jp">〜が好きです。 / 〜があまり好きじゃありません。 / 趣味は〜です。 / 映画が好きですか。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill động từ sinh hoạt.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Cung cấp + Drill</td><td class="tb-content">8 từ sở thích + が好き/嫌い.</td></tr>
+      <tr><td class="tb-time">40-105p</td><td class="tb-act">Find Someone Who Game</td><td class="tb-content">Đi quanh lớp tìm 5 người cùng/khác sở thích. Ai tìm được nhiều điểm chung trình bày.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Lỗi が vs は.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 5 câu sở thích cá nhân + ghi âm.</div>
+  </div>
+
+  <div class="week-divider">Tuần 4 · 3 buổi · Mua sắm cơ bản + Review</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 10 · T2</span><h3 class="lesson-title">Mua đồ ở combini/siêu thị</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Combini Role-play - 3 cặp khách-nhân viên với tiền giả và sản phẩm giả. 5p đổi vai/cửa hàng.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Sản phẩm:</b> <span class="kaiwa-jp">これ / それ / あれ / おにぎり / 水 / コーヒー / 弁当</span>
+      <b>Hỏi-đáp:</b> <span class="kaiwa-jp">これをください。 / いくらですか。 / 袋をお願いします。 / 〜円です。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill これ/それ/あれ + số tiền.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Cung cấp + Drill</td><td class="tb-content">10 sản phẩm combini + 5 mẫu mua hàng + hội thoại mẫu.</td></tr>
+      <tr><td class="tb-time">40-105p</td><td class="tb-act">Combini Role-play</td><td class="tb-content">3 cặp khách-nhân viên. Tiền giả + sản phẩm thật/giả. 5p đổi vai. Mỗi học viên mua 5 món.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Performance + Tổng kết</td><td class="tb-content">2 cặp biểu diễn trước lớp.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm hội thoại mua hàng combini 60s.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 11 · T4</span><h3 class="lesson-title">Mua quần áo/đồ dùng đơn giản</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Shopping Station - 2 nhóm 3 người, 1 bán 2 mua. Người mua phải hỏi giá, màu, size và quyết định.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Quần áo:</b> <span class="kaiwa-jp">サイズ / 色 / 白 / 黒 / 赤 / 青 / 安い / 高い</span>
+      <b>Hỏi-đáp:</b> <span class="kaiwa-jp">このTシャツはいくらですか。 / Mサイズはありますか。 / 試着してもいいですか。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill mua hàng combini.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Cung cấp + Drill</td><td class="tb-content">Từ vựng quần áo + size + màu + mẫu hỏi.</td></tr>
+      <tr><td class="tb-time">40-105p</td><td class="tb-act">Shopping Station</td><td class="tb-content">2 nhóm 3 người (1 bán + 2 mua). Người mua hỏi giá, màu, size, thử đồ, quyết định mua/không mua. Đổi vai 3 lần.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Performance + Tổng kết</td><td class="tb-content">Biểu diễn + sửa lỗi.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm hội thoại mua áo + hỏi size + thử đồ.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 12 · T6 · REVIEW 1</span><h3 class="lesson-title">Review 1: Giới thiệu - Sinh hoạt - Mua sắm</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mini Market Mission - lớp biến thành khu chợ nhỏ. 3 bán, 3 mua. Mỗi học viên mua 3 món và tự giới thiệu.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu tổng hợp Bài 1-11</div>
+    <div class="kaiwa-content">
+      <b>Tổng hợp:</b> <span class="kaiwa-jp">〜です / 〜から来ました / 〜が好きです / これをください / いくらですか</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill tổng hợp 4 tuần.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Ôn nhanh</td><td class="tb-content">Top 10 mẫu câu Tháng 1.</td></tr>
+      <tr><td class="tb-time">25-105p</td><td class="tb-act">Mini Market Mission</td><td class="tb-content">Lớp thành chợ nhỏ. 3 người bán, 3 mua. 10p đổi vai. Mỗi học viên mua ≥ 3 món và tự giới thiệu với người bán.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Performance + Đánh giá</td><td class="tb-content">2-3 cặp biểu diễn. GV đánh giá theo rubric tháng 1.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN cuối tháng 1:</strong> Tự đánh giá 4 tiêu chí (phát âm, mẫu câu, độ tự nhiên, chủ động); chuẩn bị tâm thế Tháng 2 - tình huống đời sống thật.</div>
+  </div>
+</section>
+
+<!-- THÁNG 2 -->
+<section class="doc-section" id="section-3">
+  <div class="section-head" data-mark="III"><span class="section-kicker">Phần 3 · Tuần 5-8</span><h2>Tháng 2 · Tình huống đời sống Nhật (12 buổi)</h2></div>
+  <div class="month-banner">
+    <span class="month-banner-overline">Mục tiêu tháng 2</span>
+    <h3>Nhà hàng - Ga tàu - Hỏi đường - Mua quần áo - Rủ bạn</h3>
+    <p class="month-goal">12 buổi: vào nhà hàng - gọi món - thanh toán - ga tàu - mua vé - hỏi đường - bưu điện - ngân hàng - rủ bạn - hẹn lịch - Review 2.</p>
+  </div>
+
+  <div class="week-divider">Tuần 5 · 3 buổi · Nhà hàng &amp; Gọi món</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 13 · T2</span><h3 class="lesson-title">Vào nhà hàng + Xin menu + Chỗ ngồi</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 3 cặp role-play nhân viên-khách hàng vào quán đặt chỗ + xin menu.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Nhân viên đón khách:</b> <span class="kaiwa-jp">いらっしゃいませ。何名様ですか。 / お席にご案内します。 / こちらへどうぞ。</span>
+      <b>Khách:</b> <span class="kaiwa-jp">2人です。 / 予約しています、〜です。 / 窓側の席はありますか。 / 禁煙席をお願いします。</span>
+      <b>Xin menu:</b> <span class="kaiwa-jp">メニューをお願いします。 / 英語のメニューはありますか。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Vòng tròn 6 người - chào hỏi nhanh + ôn nghề nghiệp tháng 1.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">5 mẫu nhân viên + 5 mẫu khách + từ vựng vị trí ghế.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">Cả lớp lặp 「いらっしゃいませ」3 vòng + sửa phát âm dài âm.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill xoay cặp</td><td class="tb-content">3 cặp đổi vai khách-nhân viên 5p, đổi 3 lần.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play</td><td class="tb-content">2 nhóm 3 (khách 2 người + nhân viên 1) - vào nhà hàng đặt chỗ.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Role-play</td><td class="tb-content">Mission cards: 4 loại quán (居酒屋, ファミレス, 寿司屋, カフェ).</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Mini Performance</td><td class="tb-content">2 cặp biểu diễn vào quán 60s. GV sửa lịch sự + ngữ điệu.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Mỗi học viên nói 1 mẫu mới dùng được. Giao BTVN.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 60s vào quán + xin chỗ; xem video YouTube "Japanese restaurant 入店".</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 14 · T4</span><h3 class="lesson-title">Gọi món + Hỏi đặc sản + Dị ứng/Hạn chế</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 3 cặp role-play khách hỏi đặc sản + báo dị ứng + gọi món.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Gọi món:</b> <span class="kaiwa-jp">これをお願いします。 / 〜を1つください。 / 〜と〜をお願いします。</span>
+      <b>Hỏi đặc sản:</b> <span class="kaiwa-jp">おすすめは何ですか。 / 人気のメニューはどれですか。 / 〜はありますか。</span>
+      <b>Dị ứng/hạn chế:</b> <span class="kaiwa-jp">エビアレルギーがあります。 / 豚肉が食べられません。 / ベジタリアン用はありますか。</span>
+      <b>Đồ uống:</b> <span class="kaiwa-jp">お水をください。 / ビールをもう一杯お願いします。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill vào quán buổi 13.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu gọi món + hỏi đặc sản + 8 từ về dị ứng/ăn kiêng + 10 món ăn Nhật.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">Phát âm tên món Nhật (寿司, 天ぷら, ラーメン, うどん, そば...).</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill xoay cặp</td><td class="tb-content">3 cặp luyện gọi món 5p, đổi 3 lần. Mỗi học viên thử 3 thực đơn.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play đặc sản</td><td class="tb-content">2 nhóm 3 với card đặc sản 4 vùng (北海道, 関西, 九州, 沖縄).</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Role-play dị ứng</td><td class="tb-content">Mission: khách báo dị ứng/ăn chay, nhân viên đề xuất món thay thế.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Mini Performance</td><td class="tb-content">2 cặp biểu diễn gọi món 90s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">3 mẫu hỏi đặc sản phổ biến nhất.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 90s gọi 3 món + hỏi 1 đặc sản; viết danh sách 5 món Việt giới thiệu cho người Nhật.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 15 · T6</span><h3 class="lesson-title">Thanh toán + Chia tiền + Cảm ơn rời quán</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Full Restaurant Performance - 3 cặp biểu diễn full 2 phút từ vào quán → gọi món → thanh toán → cảm ơn.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Yêu cầu hóa đơn:</b> <span class="kaiwa-jp">お会計お願いします。 / すみません、お勘定を。 / 領収書をください。</span>
+      <b>Phương thức:</b> <span class="kaiwa-jp">カードで払えますか。 / 現金でお願いします。 / PayPayは使えますか。</span>
+      <b>Chia tiền:</b> <span class="kaiwa-jp">別々でお願いします。 / 割り勘でお願いします。 / 私が払います。</span>
+      <b>Cảm ơn:</b> <span class="kaiwa-jp">ごちそうさまでした。 / おいしかったです。 / また来ます。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill gọi món buổi 14.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu thanh toán + chia tiền + cảm ơn + 5 cách trả tiền.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">「ごちそうさまでした」+「お会計」chuẩn ngữ điệu.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill</td><td class="tb-content">3 cặp luyện thanh toán + chia tiền. Tiền giấy giả + thẻ giả.</td></tr>
+      <tr><td class="tb-time">65-105p</td><td class="tb-act">Full Restaurant Role-play</td><td class="tb-content">2 nhóm 3 diễn full 5p: vào quán → gọi món → ăn → thanh toán → rời quán.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Performance Show</td><td class="tb-content">3 cặp biểu diễn full 2 phút. GV đánh giá rubric.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết tuần 5</td><td class="tb-content">Lỗi phổ biến + giao bài tuần 6.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN cuối tuần 5:</strong> Ghi âm hội thoại nhà hàng full 3 phút (3 phần đầy đủ); xem 1 clip thực tế thanh toán ở Nhật.</div>
+  </div>
+
+  <div class="week-divider">Tuần 6 · 3 buổi · Ga tàu &amp; Di chuyển</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 16 · T2</span><h3 class="lesson-title">Mua vé tàu + Máy bán vé tự động</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 3 cặp role-play mua vé tại quầy + tại máy bán vé tự động (券売機).</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Hỏi giá vé:</b> <span class="kaiwa-jp">〜駅までいくらですか。 / 渋谷までの片道はいくらですか。 / 往復はいくらですか。</span>
+      <b>Mua vé:</b> <span class="kaiwa-jp">切符を一枚お願いします。 / 大人2枚と子供1枚お願いします。 / Suicaにチャージしたいんですが。</span>
+      <b>Loại vé:</b> <span class="kaiwa-jp">片道 / 往復 / 自由席 / 指定席 / 学生割引</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Vòng tròn 6 người - ôn nhà hàng + đếm số tiền nhanh.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu mua vé + 10 từ về loại vé + cách dùng Suica/Pasmo.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">Phát âm tên ga (新宿, 渋谷, 池袋, 品川, 東京...) + số tiền lớn.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill mua vé</td><td class="tb-content">3 cặp khách-nhân viên 5p, đổi 3 lần.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play</td><td class="tb-content">2 nhóm 3 - mô phỏng máy 券売機 (1 vai máy + 2 vai khách).</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Role-play</td><td class="tb-content">Mission cards: 4 tình huống mua vé khác nhau (1 người, gia đình, đoàn 5 người, vé tháng).</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Mini Performance</td><td class="tb-content">2 cặp biểu diễn mua vé 60s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">3 cụm câu cần thuộc.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 60s mua vé; tải app "Yahoo!乗換案内" và thử tra 1 tuyến đường.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 17 · T4</span><h3 class="lesson-title">Hỏi giờ tàu + Sân ga + Chuyển tàu</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Train Information Mission - mỗi học viên hỏi nhân viên 3 thông tin: giờ tàu kế tiếp, sân ga, điểm chuyển tàu.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Hỏi giờ:</b> <span class="kaiwa-jp">次の電車は何時ですか。 / 〜行きの電車は何時に出ますか。 / 終電は何時ですか。</span>
+      <b>Sân ga:</b> <span class="kaiwa-jp">何番線ですか。 / 〜行きは何番線ですか。 / どこで待てばいいですか。</span>
+      <b>Chuyển tàu:</b> <span class="kaiwa-jp">どこで乗り換えますか。 / 〜線に乗り換えてください。 / 〜駅で降りてください。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill mua vé buổi 16.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu hỏi giờ tàu + sân ga + chuyển tàu + 10 tuyến tàu Tokyo.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">Phát âm tuyến tàu (山手線, 中央線, 銀座線...) + 何番線.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill</td><td class="tb-content">3 cặp khách-nhân viên hỏi 5 câu thông tin.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play với bản đồ</td><td class="tb-content">2 nhóm 3 + bản đồ ga Shinjuku/Tokyo Station thật.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Train Information Mission</td><td class="tb-content">Mỗi học viên hỏi 3 nhân viên 3 thông tin khác nhau.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Performance</td><td class="tb-content">2 cặp biểu diễn 90s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">3 mẫu cần thuộc nằm lòng.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 90s hỏi đường đi từ ga A đến ga B (3 câu hỏi).</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 18 · T6</span><h3 class="lesson-title">Xử lý đi nhầm + Hỏi nhân viên + Mất đồ</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Emergency Mission - 4 tình huống bất ngờ: đi nhầm tàu, lỡ tàu, mất đồ, đi quá ga.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Đi nhầm:</b> <span class="kaiwa-jp">すみません、間違えました。 / 〜駅に行きたかったんですが。 / どうしたらいいですか。</span>
+      <b>Lỡ tàu:</b> <span class="kaiwa-jp">電車に乗り遅れてしまいました。 / 次の電車はいつですか。 / タクシーで行ったほうがいいですか。</span>
+      <b>Mất đồ:</b> <span class="kaiwa-jp">電車に〜を忘れてしまったんです。 / お忘れ物センターはどこですか。 / 黒い財布を電車の中に置き忘れました。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill hỏi tàu.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu xử lý sự cố + từ vựng đồ thường mất + cách hỏi お忘れ物センター.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Drill cảm xúc lo lắng</td><td class="tb-content">Phát âm có ngữ điệu lo lắng (cao lên, vấp nhẹ).</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill 4 tình huống</td><td class="tb-content">3 cặp đổi vai mỗi 5p với 4 mission cards.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Emergency Role-play sâu</td><td class="tb-content">2 nhóm 3 - học viên kể trải nghiệm thật/giả + nhân viên hướng dẫn.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Performance</td><td class="tb-content">Mỗi học viên 1 sự cố tự chọn 90s.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Mini Performance</td><td class="tb-content">3 cặp biểu diễn 90s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết tuần 6</td><td class="tb-content">Tổng kết Ga tàu + nhắc tuần 7 hỏi đường.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN cuối tuần 6:</strong> Ghi âm 2 phút full hành trình ga tàu (mua vé → hỏi giờ → đi nhầm → xử lý); chuẩn bị 5 địa điểm Tokyo bạn muốn hỏi đường.</div>
+  </div>
+
+  <div class="week-divider">Tuần 7 · 3 buổi · Hỏi đường &amp; Tìm địa điểm</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 19 · T2</span><h3 class="lesson-title">Hỏi-chỉ đường cơ bản + Từ vựng phương hướng</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 3 cặp hỏi-chỉ đường đến 5 địa điểm với bản đồ phố Tokyo đơn giản.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Hỏi đường:</b> <span class="kaiwa-jp">すみません、〜はどこですか。 / 〜への行き方を教えてください。 / この辺に〜はありますか。</span>
+      <b>Khoảng cách:</b> <span class="kaiwa-jp">近いですか。 / 歩いて何分ですか。 / 遠いですか、タクシーのほうがいいですか。</span>
+      <b>Chỉ đường:</b> <span class="kaiwa-jp">まっすぐ行ってください。 / 〜の角を右/左に曲がってください。 / 〜の前/隣にあります。 / 〜を渡ってください。</span>
+      <b>Từ vựng:</b> <span class="kaiwa-jp">右 / 左 / 前 / 後ろ / 角 / 信号 / 交差点 / 橋 / 横断歩道</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Vòng tròn 6 người - drill phương hướng bằng tay.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu hỏi-chỉ đường + 10 từ vựng phương hướng + cấu trúc 〜の角を曲がる.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">Phát âm 〜を渡って, 〜を曲がって + ngữ điệu chỉ dẫn.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill với bản đồ</td><td class="tb-content">3 cặp luyện hỏi-chỉ 3 địa điểm trên bản đồ Shibuya in sẵn.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play</td><td class="tb-content">2 nhóm 3 (du khách - người dân - quan sát) + bản đồ phố thật.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Role-play</td><td class="tb-content">Mission: tìm 5 địa điểm khó (đền, bệnh viện, quán cafe, ATM, bưu điện).</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Mini Performance</td><td class="tb-content">2 cặp biểu diễn hỏi đường 60s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">3 từ phương hướng quan trọng nhất.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 60s chỉ đường từ ga gần nhất đến nhà mình; chuẩn bị 1 bản đồ thiếu.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 20 · T4</span><h3 class="lesson-title">Map Mission - Information Gap với bản đồ thiếu</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Information Gap Mission - mỗi học viên 1 bản đồ thiếu thông tin khác nhau. Hỏi 5 bạn để hoàn thành bản đồ.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu mở rộng</div>
+    <div class="kaiwa-content">
+      <b>Mở đầu lịch sự:</b> <span class="kaiwa-jp">すみません、ちょっとお尋ねしたいんですが。 / お忙しいところすみません。</span>
+      <b>Xác nhận:</b> <span class="kaiwa-jp">もう一度言っていただけますか。 / 〜という意味ですか。 / 地図に書いていただけますか。</span>
+      <b>Cảm ơn:</b> <span class="kaiwa-jp">どうもありがとうございました。 / 助かりました。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill hỏi đường buổi 19.</td></tr>
+      <tr><td class="tb-time">10-20p</td><td class="tb-act">Phổ biến game</td><td class="tb-content">6 bản đồ khác nhau - mỗi bản thiếu 5 địa điểm khác. Phải hỏi nhau để hoàn thành.</td></tr>
+      <tr><td class="tb-time">20-30p</td><td class="tb-act">Cung cấp mẫu xác nhận</td><td class="tb-content">Mẫu hỏi lại + viết lên bản đồ.</td></tr>
+      <tr><td class="tb-time">30-95p</td><td class="tb-act">Map Mission Information Gap</td><td class="tb-content">65 phút - học viên đi quanh lớp hỏi 5 bạn (mỗi bạn ~10p). Hoàn thành bản đồ 5 địa điểm.</td></tr>
+      <tr><td class="tb-time">95-115p</td><td class="tb-act">Báo cáo kết quả + chữa lỗi</td><td class="tb-content">Mỗi học viên trình bày 1 đường đi đã thu được.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">3 lỗi phổ biến.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Vẽ bản đồ khu mình ở + viết 5 câu chỉ đường bằng tiếng Nhật.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 21 · T6</span><h3 class="lesson-title">Performance hỏi đường + Tình huống bất ngờ</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 3 cặp biểu diễn full hỏi đường trước lớp. Tình huống: lạc đường ở Shibuya, Asakusa, Akihabara.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu mở rộng + tình huống bất ngờ</div>
+    <div class="kaiwa-content">
+      <b>Không hiểu:</b> <span class="kaiwa-jp">すみません、よくわかりません。 / 地図で見せていただけますか。 / ちょっと迷ってしまって…</span>
+      <b>Đề xuất:</b> <span class="kaiwa-jp">タクシーを呼びましょうか。 / 一緒に行きましょうか。 / Googleマップで調べてみますね。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill xác nhận + cảm ơn.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp tình huống bất ngờ</td><td class="tb-content">Card 3 tình huống Shibuya/Asakusa/Akihabara + 3 yếu tố khó (đêm, mưa, không biết tên đường).</td></tr>
+      <tr><td class="tb-time">25-45p</td><td class="tb-act">Pair chuẩn bị Performance</td><td class="tb-content">3 cặp chọn tình huống + chuẩn bị kịch bản 90s.</td></tr>
+      <tr><td class="tb-time">45-95p</td><td class="tb-act">Performance Show</td><td class="tb-content">Mỗi cặp biểu diễn 90s × 3 cặp + GV đánh giá + lớp comment.</td></tr>
+      <tr><td class="tb-time">95-115p</td><td class="tb-act">Chữa lỗi sâu</td><td class="tb-content">GV chữa từng cặp + cho mẫu chuẩn.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết tuần 7</td><td class="tb-content">Nhắc tuần 8 dịch vụ + rủ bạn.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN cuối tuần 7:</strong> Ghi âm 2 phút hỏi đường ở 1 thành phố Nhật bất kỳ (tự chọn tình huống); xem 1 clip thực tế hỏi đường ở Nhật.</div>
+  </div>
+
+  <div class="week-divider">Tuần 8 · 3 buổi · Bưu điện - Ngân hàng - Rủ bạn + Review 2</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 22 · T2</span><h3 class="lesson-title">Bưu điện - Gửi thư, bưu kiện ra nước ngoài</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 3 cặp role-play khách-nhân viên bưu điện: gửi thư về Việt Nam, mua tem, hỏi cước phí.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Gửi bưu phẩm:</b> <span class="kaiwa-jp">これをベトナムまでお願いします。 / 中身は〜です。 / 重さを測ってください。</span>
+      <b>Mua tem:</b> <span class="kaiwa-jp">切手はいくらですか。 / 〜円の切手を5枚ください。 / はがき用の切手はありますか。</span>
+      <b>Dịch vụ:</b> <span class="kaiwa-jp">速達でお願いします。 / 書留でお願いします。 / 何日で着きますか。 / 追跡できますか。</span>
+      <b>Từ vựng:</b> <span class="kaiwa-jp">封筒 / 小包 / 国際郵便 / 航空便 / 船便 / 受取人 / 差出人</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill từ vựng bưu phẩm + đếm tiền.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu gửi bưu phẩm + mua tem + 10 từ chuyên ngành.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">Phát âm 速達 (そくたつ), 書留 (かきとめ), 国際郵便 (こくさいゆうびん).</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill bưu điện</td><td class="tb-content">3 cặp khách-nhân viên với phiếu gửi giả.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play</td><td class="tb-content">2 nhóm 3 - gửi bưu phẩm thật về Việt Nam.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Role-play</td><td class="tb-content">Mission cards: 4 tình huống (thư thường, bưu kiện vỡ, văn bản quan trọng, quà lễ).</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Mini Performance</td><td class="tb-content">2 cặp biểu diễn 60s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Nhắc T4 ngân hàng.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 60s gửi 1 bưu phẩm về Việt Nam đầy đủ.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 23 · T4</span><h3 class="lesson-title">Ngân hàng + Rủ bạn lịch sự</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 2 nửa buổi: 60p ngân hàng (mở tài khoản, đổi tiền, rút tiền) + 60p rủ bạn (đồng ý/từ chối khéo).</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Ngân hàng:</b> <span class="kaiwa-jp">口座を開きたいです。 / 通帳をお願いします。 / 両替できますか。 / 〜円を引き出したいです。 / ATMはどこですか。</span>
+      <b>Rủ bạn:</b> <span class="kaiwa-jp">今度〜に行きませんか。 / 一緒に〜しませんか。 / もしよかったら〜どうですか。</span>
+      <b>Đồng ý:</b> <span class="kaiwa-jp">いいですね、行きましょう。 / ぜひ。 / 楽しみです。</span>
+      <b>Từ chối khéo:</b> <span class="kaiwa-jp">すみません、その日はちょっと… / 行きたいんですけど、用事があって。 / また今度誘ってください。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill bưu điện buổi 22.</td></tr>
+      <tr><td class="tb-time">10-30p</td><td class="tb-act">Phần A: Ngân hàng (Drill + Pair)</td><td class="tb-content">Mẫu ngân hàng + 3 cặp role-play mở tài khoản/đổi tiền.</td></tr>
+      <tr><td class="tb-time">30-60p</td><td class="tb-act">Phần A: Ngân hàng Role-play</td><td class="tb-content">2 nhóm 3 với card 3 tình huống ngân hàng.</td></tr>
+      <tr><td class="tb-time">60-65p</td><td class="tb-act">Reset chuyển sang Phần B</td><td class="tb-content">Sửa lỗi + chuyển chủ đề.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Phần B: Rủ bạn (Drill + Pair)</td><td class="tb-content">Mẫu rủ + đồng ý/từ chối + 3 cặp drill 5p × 3.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Phần B: Mission Rủ rê</td><td class="tb-content">Mỗi học viên rủ 3 bạn 3 sự kiện - nhận đáp đa dạng.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Performance</td><td class="tb-content">2 cặp biểu diễn cả 2 phần.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Nhắc T6 Review 2.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 60s ngân hàng + 60s rủ bạn (cả từ chối khéo).</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 24 · T6 · REVIEW 2</span><h3 class="lesson-title">Review Tháng 2 + Performance tổng hợp đánh giá rubric</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mỗi cặp chọn 1 tình huống Tháng 2 + biểu diễn full 2-3 phút. GV đánh giá rubric 7 tiêu chí.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-15p</td><td class="tb-act">Khởi động + ôn nhanh</td><td class="tb-content">Drill nhanh 5 tình huống Tháng 2 (nhà hàng/ga tàu/hỏi đường/bưu điện/rủ bạn).</td></tr>
+      <tr><td class="tb-time">15-30p</td><td class="tb-act">Chuẩn bị Performance</td><td class="tb-content">3 cặp chọn tình huống + viết kịch bản nhanh 2 phút.</td></tr>
+      <tr><td class="tb-time">30-95p</td><td class="tb-act">Performance Show</td><td class="tb-content">3 cặp × 2-3 phút biểu diễn. GV đánh giá theo 7 tiêu chí rubric.</td></tr>
+      <tr><td class="tb-time">95-110p</td><td class="tb-act">Phản hồi từng cặp</td><td class="tb-content">GV chữa từng cặp + cho điểm rubric + nhận xét cá nhân.</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Tổng kết Tháng 2</td><td class="tb-content">Mỗi học viên ghi 3 tiêu chí mình đạt tốt nhất + 2 cần cải thiện. Nhắc Tháng 3.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN cuối tháng 2:</strong> Ghi âm 3 phút Performance full 1 tình huống đã thi; chuẩn bị tâm thế Tháng 3 - công sở, nhà ở, y tế.</div>
+  </div>
+</section>
+
+<!-- THÁNG 3 -->
+<section class="doc-section" id="section-4">
+  <div class="section-head" data-mark="IV"><span class="section-kicker">Phần 4 · Tuần 9-12</span><h2>Tháng 3 · Công ty - Nhà ở - Y tế - Performance (12 buổi)</h2></div>
+  <div class="month-banner">
+    <span class="month-banner-overline">Mục tiêu tháng 3</span>
+    <h3>Tình huống công sở, nhà ở, phòng khám, xử lý sự cố + Performance cuối khóa</h3>
+    <p class="month-goal">12 buổi: công ty - chào sếp - báo cáo - nhà ở - thuê phòng - sự cố nhà - phòng khám - triệu chứng - báo vấn đề - Final Performance.</p>
+  </div>
+
+  <div class="week-divider">Tuần 9 · 3 buổi · Công ty &amp; Đồng nghiệp</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 25 · T2</span><h3 class="lesson-title">Chào sếp + Đồng nghiệp + Mẫu câu sinh tồn văn phòng</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 2 nhóm 3 role-play đầu giờ làm: chào sếp + đồng nghiệp + xin phép vào/ra văn phòng.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Chào hỏi:</b> <span class="kaiwa-jp">おはようございます。 / お疲れ様です。 / 先に失礼します。 / お先に。</span>
+      <b>Xin phép:</b> <span class="kaiwa-jp">失礼します。 / 入ってもよろしいですか。 / 〜さん、ちょっといいですか。</span>
+      <b>Cảm ơn/xin lỗi:</b> <span class="kaiwa-jp">ありがとうございます。 / すみませんでした。 / お手数おかけしました。</span>
+      <b>Vai trò:</b> <span class="kaiwa-jp">課長 (かちょう) / 部長 (ぶちょう) / 社長 (しゃちょう) / 先輩 / 後輩 / 同期</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill chào hỏi theo khung giờ.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">8 mẫu chào hỏi + xin phép + 10 từ chức danh.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">「お疲れ様です」chuẩn ngữ điệu + 失礼します vào/ra.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill xoay cặp</td><td class="tb-content">3 cặp drill chào hỏi sếp/đồng nghiệp/khách, đổi vai 3 lần.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play đầu giờ</td><td class="tb-content">2 nhóm 3 - mô phỏng buổi sáng văn phòng (sếp - nhân viên - đồng nghiệp).</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Role-play</td><td class="tb-content">Mission cards: vào phòng họp, xin nghỉ giữa giờ, gặp sếp ở thang máy.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Mini Performance</td><td class="tb-content">2 cặp biểu diễn đầu ngày làm 60s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Phân biệt cách dùng với sếp vs đồng nghiệp.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 60s buổi sáng văn phòng (chào sếp + đồng nghiệp); xem 1 video Salaryman ở Nhật buổi sáng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 26 · T4</span><h3 class="lesson-title">Giới thiệu khách + Tự giới thiệu công ty</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 3 cặp role-play đón khách + giới thiệu mình + giới thiệu công ty 60s.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Đón khách:</b> <span class="kaiwa-jp">いらっしゃいませ。 / 〜会社の〜様でいらっしゃいますね。 / お待ちしておりました。</span>
+      <b>Giới thiệu mình:</b> <span class="kaiwa-jp">〜会社の〜と申します。 / 〜部の〜です。 / よろしくお願いいたします。</span>
+      <b>Trao danh thiếp:</b> <span class="kaiwa-jp">名刺をどうぞ。 / 頂戴いたします。 / 失礼いたします。</span>
+      <b>Giới thiệu công ty:</b> <span class="kaiwa-jp">弊社は〜の会社です。 / 主に〜をしております。 / 〜年に設立されました。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill chào hỏi buổi 25.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu đón khách + giới thiệu mình + công ty + cách trao danh thiếp.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">「〜と申します」chuẩn ngữ điệu kính ngữ + 「頂戴いたします」.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill trao danh thiếp</td><td class="tb-content">3 cặp thực hành trao-nhận danh thiếp (in danh thiếp giả).</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play đón khách</td><td class="tb-content">2 nhóm 3 - lễ tân + khách + nhân viên tiếp.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Role-play công ty thật</td><td class="tb-content">Mỗi học viên đóng vai đại diện công ty của mình + giới thiệu công ty 60s.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Mini Performance</td><td class="tb-content">2 cặp biểu diễn meeting đầu tiên 90s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">3 mẫu trang trọng quan trọng.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 90s giới thiệu công ty mình (tên, ngành, quy mô, vị trí của mình).</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 27 · T6</span><h3 class="lesson-title">Báo cáo công việc ngắn + Xin nghỉ phép</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mỗi học viên báo cáo 1 nhiệm vụ 60s + xin nghỉ 1 ngày với 3 lý do khác nhau.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Báo cáo:</b> <span class="kaiwa-jp">〜について報告があります。 / 〜が完了しました。 / 進捗は〜です。 / 問題は〜です。</span>
+      <b>Hỏi sếp:</b> <span class="kaiwa-jp">〜について教えてください。 / もう一度確認させてください。 / 〜してもよろしいでしょうか。</span>
+      <b>Xin nghỉ:</b> <span class="kaiwa-jp">明日休ませていただきたいんですが。 / 〜のため、半日休みをいただきたいのですが。 / 申し訳ありません、急用ができてしまって。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill giới thiệu công ty.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu báo cáo + xin nghỉ + 5 lý do nghỉ thông dụng (ốm, đám cưới, đám tang, việc gia đình, đi khám).</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">「申し訳ありません」+ ngữ điệu xin lỗi/báo cáo.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill báo cáo</td><td class="tb-content">3 cặp sếp-nhân viên báo cáo 5p × 3 nhiệm vụ.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Phone Simulation xin nghỉ</td><td class="tb-content">Úp lưng nhau - gọi điện xin nghỉ với 3 lý do.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Performance báo cáo 60s</td><td class="tb-content">Mỗi học viên báo cáo 1 nhiệm vụ thật trong công việc/học tập của mình.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Performance Show</td><td class="tb-content">3 cặp biểu diễn báo cáo + xin nghỉ full 90s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết tuần 9</td><td class="tb-content">Nhắc tuần 10 nhà ở + sự cố.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN cuối tuần 9:</strong> Ghi âm 90s báo cáo công việc + 60s xin nghỉ qua điện thoại; chuẩn bị 3 sự cố nhà thường gặp.</div>
+  </div>
+
+  <div class="week-divider">Tuần 10 · 3 buổi · Nhà ở &amp; Sự cố</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 28 · T2</span><h3 class="lesson-title">Báo sự cố cho chủ nhà / Quản lý</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 3 cặp role-play người thuê - chủ nhà về 4 sự cố phổ biến (nước nóng, điện, điều hòa, khóa cửa).</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Mở đầu:</b> <span class="kaiwa-jp">すみません、〜のことで電話したんですが。 / 部屋のことでお願いがあります。</span>
+      <b>Tả sự cố:</b> <span class="kaiwa-jp">〜が壊れました。 / お湯が出ません。 / 電気がつきません。 / エアコンが動きません。 / 鍵が開かないんです。</span>
+      <b>Yêu cầu giúp:</b> <span class="kaiwa-jp">修理をお願いできますか。 / 業者を呼んでいただけますか。 / 早めに来てもらえると助かります。</span>
+      <b>Hỏi thông tin:</b> <span class="kaiwa-jp">いつ修理に来てもらえますか。 / 費用は誰が払うんですか。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill từ vựng đồ vật nhà + động từ 壊れる.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu báo sự cố + 10 đồ vật/hệ thống nhà thường hỏng.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">「〜が壊れました」+ ngữ điệu lo lắng.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill 4 sự cố</td><td class="tb-content">3 cặp đổi vai mỗi 5p với 4 sự cố khác nhau.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play sâu</td><td class="tb-content">2 nhóm 3 (người thuê + chủ nhà + ghi chú) - báo cáo chi tiết.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Role-play</td><td class="tb-content">Mission: 5 sự cố bất ngờ (rò nước, mất điện đột ngột, tiếng động lạ, mùi gas, kính vỡ).</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Mini Performance</td><td class="tb-content">2 cặp biểu diễn 90s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Phân biệt 壊れる vs 出ない vs つかない.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 90s báo 1 sự cố thật/giả cho chủ nhà.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 29 · T4</span><h3 class="lesson-title">Gọi điện thợ sửa + Hỏi lịch + Hỏi chi phí</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Phone Simulation - 3 cặp gọi điện (úp lưng nhau) thợ sửa máy giặt, máy điều hòa, vòi nước.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Mở đầu điện thoại:</b> <span class="kaiwa-jp">もしもし、〜と申しますが。 / 〜のホームページを見て電話しました。</span>
+      <b>Đặt lịch:</b> <span class="kaiwa-jp">いつ来てもらえますか。 / 今日中に来ていただけますか。 / 〜時頃でしたら家にいます。</span>
+      <b>Hỏi chi phí:</b> <span class="kaiwa-jp">費用はいくらかかりますか。 / 出張費は別ですか。 / 見積もりだけでもお願いできますか。</span>
+      <b>Xác nhận:</b> <span class="kaiwa-jp">それでは〜日の〜時にお願いします。 / 住所は〜です。 / お待ちしております。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill báo sự cố buổi 28.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu mở/kết thúc cuộc gọi + đặt lịch + hỏi chi phí.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">Điện thoại: "もしもし" + giọng điện thoại rõ + slow.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Phone Drill úp lưng</td><td class="tb-content">3 cặp úp lưng - gọi điện thợ sửa máy giặt/điều hòa/vòi nước.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Phone Simulation sâu</td><td class="tb-content">2 nhóm 3 (khách + thợ + tổng đài). Tình huống thật.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Phone Call</td><td class="tb-content">Mỗi học viên gọi 2 thợ khác nhau với 2 sự cố khác.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Performance</td><td class="tb-content">2 cặp biểu diễn full cuộc gọi 90s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">3 mẫu điện thoại quan trọng nhất.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 90s gọi điện thợ sửa (full hành trình từ mở đầu đến đặt lịch).</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 30 · T6</span><h3 class="lesson-title">Mượn đồ hàng xóm + Xin lỗi gây ồn</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 2 nhóm 3 role-play 3 tình huống hàng xóm: mượn đồ, xin lỗi gây ồn, mời nhau đồ ăn.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Mượn đồ:</b> <span class="kaiwa-jp">すみません、〜を貸していただけませんか。 / お醤油を少し分けていただけますか。 / 急に必要になって…</span>
+      <b>Xin lỗi gây ồn:</b> <span class="kaiwa-jp">うるさくてすみません。 / 子供がうるさかったですよね、申し訳ありません。 / これからは気をつけます。</span>
+      <b>Mời/cảm ơn:</b> <span class="kaiwa-jp">よかったら〜どうぞ。 / 国から送ってきたお菓子なんですが。 / ありがとうございます、いつも助かります。</span>
+      <b>Chào hỏi hàng xóm:</b> <span class="kaiwa-jp">こんにちは、お変わりありませんか。 / よろしくお願いします。 / お引越しされたんですか。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill mượn đồ N5 cơ bản.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">3 nhóm mẫu (mượn / xin lỗi / mời) + ngữ điệu lịch sự hàng xóm.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Drill mượn đồ + xin lỗi</td><td class="tb-content">「貸していただけませんか」chuẩn lễ phép + 「申し訳ありません」.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill 3 tình huống</td><td class="tb-content">3 cặp đổi vai mỗi 5p × 3 tình huống.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play sâu</td><td class="tb-content">2 nhóm 3 - lần đầu chào hàng xóm + mượn đồ + xin lỗi gây ồn.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Role-play</td><td class="tb-content">Mission: 4 tình huống (mượn ô, xin gas, xin nước nóng, xin lỗi tiệc khuya).</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Performance</td><td class="tb-content">2 cặp biểu diễn 90s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết tuần 10</td><td class="tb-content">Nhắc tuần 11 phòng khám.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN cuối tuần 10:</strong> Ghi âm 2 phút full 3 tình huống hàng xóm; chuẩn bị từ vựng triệu chứng cho tuần 11.</div>
+  </div>
+
+  <div class="week-divider">Tuần 11 · 3 buổi · Phòng khám &amp; Y tế</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 31 · T2</span><h3 class="lesson-title">Đặt lịch phòng khám qua điện thoại</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Phone Simulation 3 cặp - đặt lịch khám 3 chuyên khoa khác nhau (nội khoa, nha khoa, da liễu).</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Mở đầu:</b> <span class="kaiwa-jp">もしもし、〜と申しますが、予約をしたいんですが。 / 初めて受診します。 / 紹介状はありません。</span>
+      <b>Triệu chứng nhanh:</b> <span class="kaiwa-jp">熱があります。 / 喉が痛いです。 / 〜が痛くて。</span>
+      <b>Hỏi giờ:</b> <span class="kaiwa-jp">今日空いていますか。 / 何時から空いていますか。 / できれば午前中がいいのですが。</span>
+      <b>Chuyên khoa:</b> <span class="kaiwa-jp">内科 (ないか) / 外科 (げか) / 歯科 (しか) / 眼科 (がんか) / 皮膚科 (ひふか) / 耳鼻科</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill 6 chuyên khoa.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu mở đầu điện thoại + đặt lịch + 6 chuyên khoa + 10 triệu chứng cơ bản.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">「予約したいんですが」+ ngữ điệu điện thoại.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Phone Drill úp lưng</td><td class="tb-content">3 cặp đặt lịch 3 chuyên khoa.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Phone Simulation</td><td class="tb-content">2 nhóm 3 (bệnh nhân + lễ tân + bác sĩ trực).</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Phone Call</td><td class="tb-content">Mỗi học viên gọi 2 phòng khám với 2 triệu chứng khác nhau.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Mini Performance</td><td class="tb-content">2 cặp biểu diễn đặt lịch 90s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Phân biệt 内科 vs 外科.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 90s đặt lịch khám 1 chuyên khoa; học thuộc 15 từ chuyên khoa + triệu chứng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 32 · T4</span><h3 class="lesson-title">Mô tả triệu chứng với bác sĩ + Khám bệnh</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 2 nhóm 3 (bệnh nhân - bác sĩ - quan sát) - mô tả 5 triệu chứng + trả lời câu hỏi bác sĩ.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Mô tả đau:</b> <span class="kaiwa-jp">頭が痛いです。 / お腹が痛いです。 / 喉が痛いです。 / 〜がズキズキ痛いです。</span>
+      <b>Triệu chứng khác:</b> <span class="kaiwa-jp">熱があります。 / 咳が出ます。 / 鼻水が出ます。 / めまいがします。 / 吐き気があります。</span>
+      <b>Bác sĩ hỏi:</b> <span class="kaiwa-jp">どうしましたか。 / いつからですか。 / どのくらい痛いですか。 / アレルギーはありますか。</span>
+      <b>Trả lời:</b> <span class="kaiwa-jp">3日前からです。 / だんだんひどくなっています。 / 薬を飲んでも治りません。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill 15 triệu chứng nhanh.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu bác sĩ-bệnh nhân + 15 triệu chứng + 5 mức độ đau + thời gian.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">「ズキズキ」「キリキリ」 onomatopoeia mô tả đau.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill bác sĩ-bệnh nhân</td><td class="tb-content">3 cặp đổi vai 5p × 3 với card 3 triệu chứng khác nhau.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play 3 người</td><td class="tb-content">2 nhóm 3 - mô phỏng phòng khám có y tá ghi chú.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Role-play</td><td class="tb-content">Mission: 5 triệu chứng phức tạp (cảm cúm dài ngày, đau bụng kèm sốt, đau lưng mãn).</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Performance</td><td class="tb-content">2 cặp biểu diễn buổi khám full 90s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Onomatopoeia ぴzukizuki/kirikiri.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 90s mô tả 1 lần khám bệnh thật/giả với bác sĩ.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 33 · T6</span><h3 class="lesson-title">Mua thuốc ở nhà thuốc + Hỏi cách dùng + Tác dụng phụ</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 3 cặp role-play khách-dược sĩ - đưa toa thuốc + hỏi cách uống + tác dụng phụ.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu câu &amp; từ vựng</div>
+    <div class="kaiwa-content">
+      <b>Đưa toa:</b> <span class="kaiwa-jp">この処方箋でお願いします。 / 〜の薬がほしいんですが。 / 風邪薬を探しています。</span>
+      <b>Hỏi cách dùng:</b> <span class="kaiwa-jp">1日何回飲みますか。 / 食前/食後ですか。 / 何錠ずつですか。 / 何日分ですか。</span>
+      <b>Tác dụng phụ:</b> <span class="kaiwa-jp">副作用はありますか。 / 眠くなりますか。 / 他の薬と一緒に飲んでも大丈夫ですか。</span>
+      <b>Từ vựng:</b> <span class="kaiwa-jp">処方箋 / 錠剤 / カプセル / 粉薬 / 塗り薬 / 目薬 / 1日3回</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Drill triệu chứng buổi 32.</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Cung cấp mẫu</td><td class="tb-content">Mẫu mua thuốc + 10 từ loại thuốc + cách đọc liều lượng.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Pronunciation Drill</td><td class="tb-content">「1日3回食後」chuẩn ngữ điệu.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Pair Drill</td><td class="tb-content">3 cặp khách-dược sĩ 5p × 3 với toa thuốc giả.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Guided Role-play</td><td class="tb-content">2 nhóm 3 (khách + dược sĩ + ghi chú) với 3 loại thuốc.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Free Performance</td><td class="tb-content">Mỗi học viên 1 lần mua thuốc full 60s (từ đến quầy đến cảm ơn).</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Performance Show</td><td class="tb-content">3 cặp biểu diễn 90s.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết tuần 11</td><td class="tb-content">Nhắc tuần 12 Final Performance.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN cuối tuần 11:</strong> Ghi âm 2 phút full hành trình khám bệnh (đặt lịch + khám + nhận thuốc); chuẩn bị Final Performance tuần 12.</div>
+  </div>
+
+  <div class="week-divider">Tuần 12 · FINAL PERFORMANCE WEEK · Trình diễn + Tổng kết</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 34 · T2</span><h3 class="lesson-title">Chuẩn bị Final Performance · Viết kịch bản &amp; luyện cặp</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mỗi cặp chọn 1 tình huống trong 11 tuần đã học, viết kịch bản 3 phút (≥ 25 lượt nói/cặp), luyện đến trôi chảy không vấp.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">11 tình huống Kaiwa N5 đã học (chọn 1)</div>
+    <div class="kaiwa-content">
+      <b>Cá nhân:</b> <span class="kaiwa-jp">自己紹介 (Tuần 1), 家族紹介 (Tuần 2), 趣味の話 (Tuần 3)</span><br>
+      <b>Mua sắm &amp; Dịch vụ:</b> <span class="kaiwa-jp">レストラン注文 (Tuần 4), コンビニ・スーパー (Tuần 5), 服を買う (Tuần 6)</span><br>
+      <b>Di chuyển:</b> <span class="kaiwa-jp">道を聞く (Tuần 7), 電車・タクシー (Tuần 8)</span><br>
+      <b>Giao tiếp xã hội:</b> <span class="kaiwa-jp">電話で誘う (Tuần 9), ホテル予約 (Tuần 10), 病院で (Tuần 11)</span><br>
+      <b>Tiêu chí kịch bản:</b> 3 phút | ≥ 25 lượt nói/cặp | dùng ≥ 5 mẫu câu N5 | có 相づち | có câu hỏi ngược.
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up &amp; Brief</td><td class="tb-content">Chia sẻ tình huống mong muốn (vote 6 học viên → 3 tình huống cho 3 cặp).</td></tr>
+      <tr><td class="tb-time">10-25p</td><td class="tb-act">Sửa BTVN T11</td><td class="tb-content">Nghe 3 bản ghi âm 90s khám bệnh → góp ý phát âm + mẫu câu.</td></tr>
+      <tr><td class="tb-time">25-40p</td><td class="tb-act">Brief Final Performance</td><td class="tb-content">GV trình bày rubric 7 tiêu chí, cách chấm điểm, format trình diễn 3 phút.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">Chọn tình huống + Viết outline</td><td class="tb-content">3 cặp chọn 3 tình huống khác nhau. Viết outline 8 ý chính (mở-thân-kết).</td></tr>
+      <tr><td class="tb-time">60-65p</td><td class="tb-act">Break</td><td class="tb-content">Nghỉ giữa giờ.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">Viết kịch bản đầy đủ</td><td class="tb-content">Mỗi cặp viết 25 lượt nói (~50 câu) → GV duyệt &amp; sửa.</td></tr>
+      <tr><td class="tb-time">85-105p</td><td class="tb-act">Luyện cặp lần 1</td><td class="tb-content">Đọc kịch bản 3 lần liền nhau. Bấm giờ 3 phút.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Feedback chéo</td><td class="tb-content">3 cặp đổi nghe nhau → ghi 2 điểm mạnh + 1 điểm cần sửa.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">GV nhắc nhở: học thuộc kịch bản, luyện 5 lần ở nhà, mang đạo cụ nếu cần.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Học thuộc kịch bản 100%, luyện cặp qua video call ít nhất 3 lần, ghi âm 1 bản hoàn chỉnh gửi GV trước Buổi 35.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 35 · T4</span><h3 class="lesson-title">FINAL PERFORMANCE Day 1 · 3 cặp đầu trình diễn</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 3 cặp (6 học viên đầu) biểu diễn Kaiwa 3 phút. GV chấm rubric 7 tiêu chí + cả lớp feedback. Quay video lưu hồ sơ.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Format Final Performance</div>
+    <div class="kaiwa-content">
+      <b>Trình tự:</b> Giới thiệu tình huống (30s) → Biểu diễn 3 phút → Q&amp;A từ khán giả 2 phút → GV feedback rubric 3 phút.<br>
+      <b>Rubric 7 tiêu chí:</b> Phát âm | Mẫu câu N5 | Phản xạ | Độ tự nhiên (相づち) | Chủ động hỏi | Tự sửa lỗi | Survival JP.<br>
+      <b>Yêu cầu khán giả:</b> Ghi 2 điểm hay + 1 câu hỏi cho cặp trình diễn (bằng tiếng Nhật).<br>
+      <b>Câu hỏi mẫu khán giả:</b> <span class="kaiwa-jp">何が一番難しかったですか？/ どうやって練習しましたか？/ どんな気持ちでしたか？</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up &amp; Set up</td><td class="tb-content">Bố trí ghế khán giả, kê bàn diễn, kiểm tra máy quay/đạo cụ.</td></tr>
+      <tr><td class="tb-time">10-15p</td><td class="tb-act">Cặp 1 giới thiệu</td><td class="tb-content">Cặp 1 giới thiệu tình huống + nhân vật (30s).</td></tr>
+      <tr><td class="tb-time">15-25p</td><td class="tb-act">Cặp 1 BIỂU DIỄN</td><td class="tb-content">Trình diễn 3 phút + Q&amp;A 2 phút + GV feedback 3 phút.</td></tr>
+      <tr><td class="tb-time">25-30p</td><td class="tb-act">Chuyển cặp + Reset</td><td class="tb-content">Khán giả viết phản hồi cặp 1. Cặp 2 chuẩn bị.</td></tr>
+      <tr><td class="tb-time">30-50p</td><td class="tb-act">Cặp 2 BIỂU DIỄN</td><td class="tb-content">Giới thiệu + 3 phút diễn + Q&amp;A + Feedback rubric.</td></tr>
+      <tr><td class="tb-time">50-55p</td><td class="tb-act">Break</td><td class="tb-content">Nghỉ giữa giờ.</td></tr>
+      <tr><td class="tb-time">55-80p</td><td class="tb-act">Cặp 3 BIỂU DIỄN</td><td class="tb-content">Giới thiệu + 3 phút diễn + Q&amp;A + Feedback rubric chi tiết.</td></tr>
+      <tr><td class="tb-time">80-100p</td><td class="tb-act">Xem lại video 3 cặp</td><td class="tb-content">Phát lại video, học viên tự đánh giá rubric của mình.</td></tr>
+      <tr><td class="tb-time">100-115p</td><td class="tb-act">Workshop sửa lỗi</td><td class="tb-content">GV chốt 3 lỗi phổ biến nhất từ 3 cặp → cả lớp drill lại.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">Chúc mừng 3 cặp đầu, nhắc nhở 3 cặp còn lại chuẩn bị Buổi 36.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 3 học viên đã biểu diễn → viết reflection 200 từ (điều học được + kế hoạch tiếp). 3 học viên chưa diễn → luyện thêm 5 lần kịch bản.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 36 · T6 · TỔNG KẾT KHÓA</span><h3 class="lesson-title">Final Performance Day 2 + Tổng kết 12 tuần + Trao chứng nhận</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 3 cặp còn lại biểu diễn. Tổng kết hành trình 12 tuần Kaiwa N5. Trao chứng nhận hoàn thành. Định hướng tiếp lên Kaiwa N4.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Tổng kết khóa Kaiwa N5</div>
+    <div class="kaiwa-content">
+      <b>Hành trình 12 tuần:</b> 11 tình huống đời sống + 36 buổi học + 250+ mẫu câu N5 + 6 câu Survival JP linh hoạt.<br>
+      <b>Tiêu chí hoàn thành:</b> Tham gia ≥ 80% (29/36 buổi) | Final ≥ Tốt (3) trên 5/7 tiêu chí | BTVN ≥ 90%.<br>
+      <b>Định hướng Kaiwa N4 (5 tháng tiếp):</b> Tăng độ phức tạp tình huống (công sở, khiếu nại, phỏng vấn) + ngữ pháp 〜と思う, 〜たら, 〜ながら + thảo luận nhóm.<br>
+      <b>Câu chia tay mẫu:</b> <span class="kaiwa-jp">12週間お疲れさまでした！皆さんの成長が見られて嬉しいです。これからも頑張ってください！</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Warm-up</td><td class="tb-content">Chào tạm biệt, chia sẻ cảm xúc cuối khóa 1 câu/người.</td></tr>
+      <tr><td class="tb-time">10-30p</td><td class="tb-act">Cặp 4 BIỂU DIỄN</td><td class="tb-content">Giới thiệu + 3 phút + Q&amp;A + Feedback rubric.</td></tr>
+      <tr><td class="tb-time">30-50p</td><td class="tb-act">Cặp 5 BIỂU DIỄN</td><td class="tb-content">Giới thiệu + 3 phút + Q&amp;A + Feedback rubric.</td></tr>
+      <tr><td class="tb-time">50-55p</td><td class="tb-act">Break</td><td class="tb-content">Nghỉ giữa giờ.</td></tr>
+      <tr><td class="tb-time">55-75p</td><td class="tb-act">Cặp 6 BIỂU DIỄN</td><td class="tb-content">Giới thiệu + 3 phút + Q&amp;A + Feedback rubric.</td></tr>
+      <tr><td class="tb-time">75-90p</td><td class="tb-act">Tổng kết rubric + Trao kết quả</td><td class="tb-content">GV công bố điểm rubric 6 học viên, đọc reflection nổi bật.</td></tr>
+      <tr><td class="tb-time">90-105p</td><td class="tb-act">Tổng kết hành trình 12 tuần</td><td class="tb-content">Xem video highlights, chia sẻ kỷ niệm. Mỗi học viên nói 1 điều biết ơn nhất.</td></tr>
+      <tr><td class="tb-time">105-115p</td><td class="tb-act">Định hướng Kaiwa N4</td><td class="tb-content">Giới thiệu lộ trình N4 (5 tháng/60 buổi), khuyến nghị nghỉ 1 tuần rồi bắt đầu.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">TRAO CHỨNG NHẬN &amp; Chụp ảnh</td><td class="tb-content">Trao chứng nhận hoàn thành Kaiwa N5. Chụp ảnh lớp. <span class="kaiwa-jp">お疲れさまでした！</span></td></tr>
+    </table>
+    <div class="lesson-hw"><strong>Bài tập cuối khóa:</strong> (1) Tự đánh giá rubric 7 tiêu chí; (2) Viết kế hoạch luyện nói tiếp 3 tháng (mỗi tuần 30 phút shadowing + 1 cuộc gọi với bạn cũ); (3) Đăng ký Kaiwa N4 nếu tiếp tục.</div>
+  </div>
+</section>
+
+<!-- PHỤ LỤC -->
+<section class="doc-section" id="section-5">
+  <div class="section-head" data-mark="+"><span class="section-kicker">Phụ lục</span><h2>Rubric đánh giá &amp; checklist Kaiwa N5</h2></div>
+
+  <h3>Rubric đánh giá năng lực nói N5 (7 tiêu chí)</h3>
+  <table>
+    <thead><tr><th style="width:18%">Tiêu chí</th><th>Xuất sắc (4)</th><th>Tốt (3)</th><th>Đạt (2)</th><th>Cần hỗ trợ (1)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Phát âm</strong></td><td>Rõ ràng, tự nhiên 100%.</td><td>Đa số đúng, 1-2 lỗi nhỏ.</td><td>Hiểu được, nhiều lỗi phụ âm.</td><td>Khó hiểu.</td></tr>
+      <tr><td><strong>Mẫu câu</strong></td><td>Dùng đúng 100% mẫu N5.</td><td>≥ 85%.</td><td>≥ 70%.</td><td>&lt; 70%.</td></tr>
+      <tr><td><strong>Phản xạ</strong></td><td>Đáp dưới 2s, không vấp.</td><td>2-4s, vấp 1-2 lần.</td><td>5-8s, vấp 3-5 lần.</td><td>&gt; 8s hoặc dừng lâu.</td></tr>
+      <tr><td><strong>Độ tự nhiên</strong></td><td>Sử dụng相づち (うん, そうですね).</td><td>Có 相づち nhưng đôi khi quên.</td><td>Hiếm 相づち.</td><td>Chỉ trả lời thẳng.</td></tr>
+      <tr><td><strong>Chủ động hỏi</strong></td><td>Chủ động hỏi ≥ 5 câu trong 3p.</td><td>3-4 câu.</td><td>1-2 câu.</td><td>0 câu (chỉ đáp).</td></tr>
+      <tr><td><strong>Sửa lỗi</strong></td><td>Tự sửa khi sai.</td><td>Sửa được khi nhắc.</td><td>Khó tự sửa.</td><td>Không nhận ra lỗi.</td></tr>
+      <tr><td><strong>Survival JP</strong></td><td>Dùng 6 câu sinh tồn linh hoạt.</td><td>5/6 câu.</td><td>3-4 câu.</td><td>&lt; 3.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Checklist hoàn thành khóa Kaiwa N5</h3>
+  <div class="callout-box">
+    <strong>Học viên đạt yêu cầu khi:</strong>
+    <ul>
+      <li>✔ Tham gia ≥ 80% buổi (29/36).</li>
+      <li>✔ Hoàn thành Final Performance đạt ≥ Tốt (3) trên 5/7 tiêu chí.</li>
+      <li>✔ Nộp đủ ≥ 25/36 BTVN ghi âm.</li>
+      <li>✔ Tự duy trì hội thoại 3-4 phút trong 3 tình huống bất kỳ N5.</li>
+    </ul>
+  </div>
+
+  <div class="footer-card">
+    <p><strong>Trí Lữ Nihongo</strong> · Giáo án chi tiết Kaiwa N5 · 36 buổi · Lớp 6 học viên · 70-80% học viên nói</p>
+    <p>"Mỗi buổi học chỉ có một mục tiêu: học viên phải dùng được tiếng Nhật trong một tình huống thật."</p>
+  </div>
+</section>
+
+</main>
+</div>
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="giao-an-kaiwa-n5"></script>
+</body></html>

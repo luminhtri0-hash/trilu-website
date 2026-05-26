@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Giáo án chi tiết Kaiwa N2 (48 buổi) - Trí Lữ Nihongo</title>
+<style>
+@page{size:A4;margin:14mm 12mm 16mm 12mm;}
+:root{--paper:#fffdfa;--ink:#1e2430;--muted:#5f6470;--accent:#6e1831;--accent-2:#9b7a38;--accent-3:#c7ab70;--line:#dfcfbb;--line-2:#eadfce;--shadow:0 18px 46px rgba(60,38,19,0.08);--kaiwa-bg:#fef4f7;}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);background:radial-gradient(circle at top left,rgba(155,122,56,0.08),transparent 26%),radial-gradient(circle at 85% 14%,rgba(110,24,49,0.08),transparent 22%),linear-gradient(180deg,#f6efe8 0%,#f1ebe4 100%);font-family:Inter,"Noto Sans CJK JP","Segoe UI",sans-serif;line-height:1.7;font-size:14px;}
+.page-shell{max-width:1180px;margin:0 auto;padding:30px 24px 76px;}
+.cover{position:relative;overflow:hidden;background:radial-gradient(circle at 18% 18%,rgba(255,255,255,0.09),transparent 22%),radial-gradient(circle at 88% 20%,rgba(199,171,112,0.24),transparent 16%),linear-gradient(135deg,#4f0f24 0%,#6e1831 36%,#3a0f1b 100%);color:#fff;border-radius:30px;box-shadow:var(--shadow);padding:60px 64px 52px;}
+.cover::before{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,0.12);border-radius:22px;}
+.cover::after{content:"";position:absolute;right:-80px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(199,171,112,0.52) 0%,rgba(199,171,112,0.08) 48%,transparent 68%);}
+.cover-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid rgba(255,255,255,0.16);border-radius:999px;background:rgba(255,255,255,0.08);letter-spacing:0.16em;text-transform:uppercase;font-size:11px;font-weight:700;position:relative;z-index:1;}
+.cover-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent-3);box-shadow:0 0 0 5px rgba(199,171,112,0.14);}
+.cover-title{position:relative;z-index:1;margin:26px 0 14px;font-family:"EB Garamond","Noto Serif CJK JP",serif;font-weight:700;font-size:52px;line-height:1.05;letter-spacing:-0.02em;max-width:14ch;}
+.cover-subtitle{position:relative;z-index:1;max-width:780px;font-size:16px;color:rgba(255,255,255,0.88);margin:0 0 24px;}
+.metric-row{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 30px;}
+.metric-chip{padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.08);color:#fff;font-size:13px;font-weight:600;}
+.cover-quote{position:relative;z-index:1;margin:0;max-width:600px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.18);font-style:italic;font-size:16px;color:rgba(255,255,255,0.86);}
+.cover-meta{position:relative;z-index:1;margin-top:24px;display:flex;justify-content:space-between;gap:24px;font-size:13px;color:rgba(255,255,255,0.76);flex-wrap:wrap;}
+.toc-panel{margin:26px 0 30px;background:linear-gradient(180deg,rgba(255,253,250,0.96),rgba(252,246,238,0.96));border:1px solid rgba(155,122,56,0.20);border-radius:24px;box-shadow:var(--shadow);padding:28px 30px;}
+.panel-overline{display:block;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.18em;font-size:11px;font-weight:700;color:var(--accent-2);}
+.toc-title{margin:0 0 6px;font-family:"EB Garamond",serif;font-size:32px;line-height:1.1;color:var(--accent);}
+.toc-subtitle{margin:0 0 18px;color:var(--muted);font-size:14px;}
+.toc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.toc-item{display:block;text-decoration:none;color:inherit;padding:16px 18px;background:linear-gradient(180deg,#fffefd 0%,#fcf6ee 100%);border:1px solid var(--line-2);border-radius:18px;}
+.toc-item-number{display:block;margin-bottom:6px;font-family:"EB Garamond",serif;font-size:30px;line-height:1;color:var(--accent-2);}
+.toc-item-title{display:block;font-weight:700;color:var(--accent);margin-bottom:6px;}
+.toc-item-summary{display:block;color:var(--muted);font-size:13px;line-height:1.5;}
+.document{background:var(--paper);border:1px solid rgba(155,122,56,0.16);border-radius:28px;box-shadow:var(--shadow);padding:34px 42px 50px;}
+.doc-section{margin:0 0 30px;}
+.section-head{position:relative;overflow:hidden;margin:12px 0 18px;padding:18px 24px;border-radius:22px;background:linear-gradient(90deg,rgba(255,255,255,0.08),transparent 36%),linear-gradient(135deg,#57132a 0%,#6e1831 52%,#7f3b52 100%);color:#fff;}
+.section-head::after{content:attr(data-mark);position:absolute;right:18px;top:50%;transform:translateY(-50%);font-family:"EB Garamond",serif;font-size:56px;line-height:1;color:rgba(255,255,255,0.12);}
+.section-kicker{display:block;margin-bottom:8px;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;font-weight:700;color:rgba(255,255,255,0.76);}
+.section-head h2{margin:0;color:#fff;font-family:"EB Garamond","Noto Serif CJK JP",serif;font-size:29px;line-height:1.15;}
+p{margin:0 0 12px;}h3{margin:24px 0 12px;padding-left:14px;border-left:4px solid var(--accent-2);color:var(--accent);font-size:18px;line-height:1.35;font-weight:800;}
+table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;box-shadow:0 8px 20px rgba(60,38,19,0.04);font-size:13px;}
+th,td{padding:11px 12px;border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);vertical-align:top;}
+th:last-child,td:last-child{border-right:none;}tbody tr:last-child td{border-bottom:none;}
+thead th{background:linear-gradient(180deg,#fcf5ea 0%,#f2e3cf 100%);color:var(--accent);font-weight:800;}
+tbody tr:nth-child(even) td{background:#fffaf4;}
+.callout-box{margin:16px 0 22px;padding:16px 20px 16px 22px;border:1px solid #e7d7be;border-left:6px solid var(--accent-2);border-radius:18px;background:linear-gradient(180deg,#fffdf9 0%,#fbf3e8 100%);}
+.callout-box strong:first-child{color:var(--accent);}
+ol,ul{margin:0 0 14px;padding-left:22px;}li{margin:0 0 6px;}li::marker{color:var(--accent-2);font-weight:700;}
+.month-banner{margin:30px 0 22px;padding:22px 26px;border-radius:24px;border:1px solid rgba(155,122,56,0.20);background:radial-gradient(circle at top right,rgba(199,171,112,0.18),transparent 25%),linear-gradient(135deg,#fffdfa 0%,#f9efe4 100%);box-shadow:0 12px 28px rgba(60,38,19,0.06);}
+.month-banner-overline{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;font-weight:800;color:var(--accent-2);margin-bottom:6px;}
+.month-banner h3{margin:0 0 8px;padding:0;border:none;font-family:"EB Garamond",serif;font-size:26px;color:var(--accent);}
+.month-banner .month-goal{color:#3b4250;margin-bottom:0;}
+.week-divider{margin:22px 0 14px;padding:10px 18px;border-radius:14px;background:linear-gradient(90deg,#6e1831 0%,#834a61 100%);color:#fff;font-weight:800;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;}
+.lesson-card{margin:0 0 18px;padding:18px 20px 16px;background:#fff;border:1px solid var(--line-2);border-left:5px solid var(--accent-2);border-radius:16px;box-shadow:0 6px 16px rgba(60,38,19,0.05);}
+.lesson-head{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:baseline;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--line-2);}
+.lesson-num{font-weight:800;color:var(--accent);font-size:13px;letter-spacing:0.04em;padding:4px 10px;background:#fcf5ea;border-radius:999px;white-space:nowrap;}
+.lesson-title{margin:0;font-family:"EB Garamond","Noto Serif CJK JP",serif;font-size:19px;color:var(--ink);font-weight:700;flex:1;min-width:200px;}
+.lesson-goal{margin:0;font-size:13px;color:var(--muted);width:100%;}
+.lesson-goal strong{color:var(--accent-2);}
+.timebox{width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--line-2);margin-top:10px;font-size:12.5px;}
+.timebox td{padding:9px 11px;border-bottom:1px solid var(--line-2);vertical-align:top;border-right:none;}
+.timebox tr:last-child td{border-bottom:none;}
+.timebox .tb-time{width:90px;font-weight:800;color:var(--accent);background:#fcf5ea;white-space:nowrap;}
+.timebox .tb-act{width:170px;font-weight:700;color:#674c1b;}
+.timebox .tb-content{color:#333a43;}
+.kaiwa-box{margin-top:12px;padding:12px 14px;background:linear-gradient(135deg,var(--kaiwa-bg) 0%,#fff0f4 100%);border:1px solid #e8c6d4;border-left:4px solid #b8295e;border-radius:12px;}
+.kaiwa-box-title{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;font-weight:800;color:#8a1f3f;margin-bottom:8px;}
+.kaiwa-box-title::before{content:"会話";font-family:"Noto Serif CJK JP",serif;font-size:14px;margin-right:6px;color:#b8295e;}
+.kaiwa-content{font-size:12.5px;line-height:1.55;color:#333a43;}
+.kaiwa-content b{color:#8a1f3f;display:block;margin-top:6px;font-size:11.5px;}
+.kaiwa-jp{font-family:"Noto Sans CJK JP",sans-serif;color:#1e2430;font-weight:600;}
+.lesson-hw{margin-top:10px;padding:10px 14px;background:linear-gradient(180deg,#fffdf9 0%,#fbf3e8 100%);border:1px solid var(--line-2);border-radius:10px;font-size:13px;}
+.lesson-hw strong{color:var(--accent);}
+.minitest{background:linear-gradient(180deg,#fff8ef 0%,#f9e7d1 100%);border-left-color:var(--accent);}
+.minitest .lesson-num{background:#6e1831;color:#fff;}
+.footer-card{margin-top:24px;padding-top:24px;border-top:1px solid var(--line-2);text-align:center;}
+.footer-card p{font-size:13px;color:var(--muted);}
+@media print{body{background:#fff;font-size:11.5px;}.page-shell{max-width:none;margin:0;padding:0;}.cover,.toc-panel,.document{box-shadow:none;}.cover{page-break-after:always;border-radius:16px;padding:42px 36px;}.toc-panel{page-break-after:always;margin:0 0 18px;border-radius:14px;}.document{border:none;border-radius:0;padding:0;}.section-head{break-after:avoid;margin-top:14px;}.month-banner,.lesson-card{break-inside:avoid;}.week-divider{break-after:avoid;}table{box-shadow:none;border-radius:0;}.kaiwa-box{break-inside:avoid;}}
+</style></head>
+<body><div class="page-shell">
+
+<section class="cover">
+  <div class="cover-badge"><span class="dot"></span>Trí Lữ Nihongo • Premium Kaiwa N2</div>
+  <h1 class="cover-title">Giáo án chi tiết<br/>Kaiwa N2</h1>
+  <p class="cover-subtitle">Chương trình 4 tháng (48 buổi / 96 giờ) - lớp 6 học viên - thực chiến, giàu tương tác, ưu tiên ứng dụng ngữ pháp N2 trong đời sống, công việc, phỏng vấn, báo cáo và thảo luận chuyên sâu.</p>
+  <div class="metric-row">
+    <span class="metric-chip">4 tháng · 48 buổi / 96 giờ</span>
+    <span class="metric-chip">120 phút/buổi · 6 học viên</span>
+    <span class="metric-chip">70%+ thời lượng nói</span>
+    <span class="metric-chip">Thương lượng · Phản biện · Thuyết trình</span>
+  </div>
+  <blockquote class="cover-quote">Mục tiêu không phải là "biết nhiều mẫu N2", mà là dùng được tiếng Nhật N2 để suy nghĩ, phản ứng, thương lượng, phản biện và thể hiện bản thân trong tình huống thật.</blockquote>
+  <div class="cover-meta"><div>Theo hướng Kaiwa ứng dụng, không luyện đề JLPT</div><div>Trung - cao cấp N2</div></div>
+</section>
+
+<nav class="toc-panel">
+  <span class="panel-overline">Điều hướng nhanh</span>
+  <h2 class="toc-title">Mục lục</h2>
+  <p class="toc-subtitle">6 phần: phương pháp + 4 tháng × 12 buổi + rubric.</p>
+  <div class="toc-grid">
+    <a class="toc-item" href="#section-1"><span class="toc-item-number">I</span><span class="toc-item-title">Phương pháp Kaiwa N2 + Time-box</span><span class="toc-item-summary">7 nguyên tắc + 9 khối time-box + 70%+ nói.</span></a>
+    <a class="toc-item" href="#section-2"><span class="toc-item-number">II</span><span class="toc-item-title">Tháng 1: Tuần 1-4 (12 buổi)</span><span class="toc-item-summary">Thương lượng + Đàm phán + Kính ngữ trang trọng N2.</span></a>
+    <a class="toc-item" href="#section-3"><span class="toc-item-number">III</span><span class="toc-item-title">Tháng 2: Tuần 5-8 (12 buổi)</span><span class="toc-item-summary">Phản biện sâu + Tranh luận + Phỏng vấn nâng cao.</span></a>
+    <a class="toc-item" href="#section-4"><span class="toc-item-number">IV</span><span class="toc-item-title">Tháng 3: Tuần 9-12 (12 buổi)</span><span class="toc-item-summary">Báo cáo công việc + Thuyết trình + Giải quyết xung đột.</span></a>
+    <a class="toc-item" href="#section-5"><span class="toc-item-number">V</span><span class="toc-item-title">Tháng 4: Tuần 13-16 (12 buổi)</span><span class="toc-item-summary">Thể hiện bản thân + Quan điểm sâu + Final Performance.</span></a>
+    <a class="toc-item" href="#section-6"><span class="toc-item-number">+</span><span class="toc-item-title">Phụ lục · Rubric N2 (10 tiêu chí)</span><span class="toc-item-summary">Tiêu chí đánh giá năng lực Kaiwa cao cấp.</span></a>
+  </div>
+</nav>
+
+<main class="document">
+
+<section class="doc-section" id="section-1">
+  <div class="section-head" data-mark="I"><span class="section-kicker">Phần 1</span><h2>Phương pháp Kaiwa N2 + Time-box</h2></div>
+  <h3>Thông tin khóa học Kaiwa N2</h3>
+  <table>
+    <thead><tr><th style="width:30%">Hạng mục</th><th>Chi tiết</th></tr></thead>
+    <tbody>
+      <tr><td>Mục tiêu</td><td>Thương lượng - phản biện - thuyết trình - thể hiện bản thân trong tình huống trung-cao cấp 6-10 phút.</td></tr>
+      <tr><td>Đặc trưng</td><td><strong>70%+ thời lượng nói.</strong> Ngữ pháp N2 đưa vào tình huống thật (business, học thuật, xã hội).</td></tr>
+      <tr><td>Số buổi</td><td><strong>48 buổi</strong> (4 tháng × 12 buổi), 6 học viên/lớp.</td></tr>
+      <tr><td>Đặc trưng N2</td><td>Câu phức 25-40 từ, ~に対して, ~に伴って, ~に関して, ~に基づいて, ~を契機に, ~恐れがある, ~に違いない.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Time-box chuẩn 120 phút Kaiwa N2 (9 khối · 70%+ nói)</h3>
+  <table>
+    <thead><tr><th style="width:11%">Thời lượng</th><th style="width:25%">Khối</th><th>Đặc điểm N2</th></tr></thead>
+    <tbody>
+      <tr><td><strong>0-10p</strong></td><td>Warm-up + ôn N3</td><td>Câu hỏi N2 phức tạp - thảo luận nhanh.</td></tr>
+      <tr><td><strong>10-25p</strong></td><td>Nạp mẫu N2 + ngữ cảnh</td><td>3-5 mẫu N2 cao cấp + 15-20 từ business/học thuật.</td></tr>
+      <tr><td><strong>25-40p</strong></td><td>Drill nâng cao + câu phức</td><td>Câu 25-40 từ với cấu trúc N2 phức tạp.</td></tr>
+      <tr><td><strong>40-65p</strong></td><td>Pair Discussion sâu</td><td>3 cặp thảo luận 5-7p, đổi 3 lần.</td></tr>
+      <tr><td><strong>65-70p</strong></td><td>Reset N2</td><td>3 lỗi sắc thái N2 hoặc kính ngữ.</td></tr>
+      <tr><td><strong>70-90p</strong></td><td>Group Role-play / Debate</td><td>2 nhóm 3 hoặc 1 vs 5 - thương lượng/phản biện.</td></tr>
+      <tr><td><strong>90-105p</strong></td><td>Free Mission cao cấp</td><td>Mission có xung đột thực tế cần xử lý.</td></tr>
+      <tr><td><strong>105-115p</strong></td><td>Performance 5 phút + Ghi âm</td><td>2 cặp biểu diễn + ghi âm so sánh tuần trước.</td></tr>
+      <tr><td><strong>115-120p</strong></td><td>Tổng kết &amp; BTVN</td><td>3 cấu trúc N2 đã dùng. Ghi âm 3 phút.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout-box">
+    <strong>7 cụm chức năng N2 trọng tâm:</strong>
+    <ol>
+      <li><strong>Thương lượng / Đàm phán:</strong> ~ということで, ~とさせていただきたい, 〜の件について.</li>
+      <li><strong>Phản biện:</strong> ~とは限らない, ~わけではない, ~どころか, ~に反して.</li>
+      <li><strong>Báo cáo:</strong> ~に基づいて, ~に関して, ~につきまして, ~の結果.</li>
+      <li><strong>Đề xuất:</strong> ~ではないでしょうか, ~ようにしたら, ~の方が望ましい.</li>
+      <li><strong>Giải thích:</strong> ~と言うのは, ~というのは, ~に他ならない, ~に過ぎない.</li>
+      <li><strong>Cảm xúc cao cấp:</strong> ~に堪えない, ~ずにはいられない, ~てたまらない.</li>
+      <li><strong>Kính ngữ business:</strong> いただく / させていただく / お願い申し上げます / 何卒.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- THÁNG 1 -->
+<section class="doc-section" id="section-2">
+  <div class="section-head" data-mark="II"><span class="section-kicker">Phần 2 · Tuần 1-4</span><h2>Tháng 1 · Thương lượng &amp; Đàm phán (12 buổi)</h2></div>
+  <div class="month-banner">
+    <span class="month-banner-overline">Mục tiêu tháng 1</span>
+    <h3>Thương lượng kinh doanh + Đàm phán hợp đồng + Kính ngữ business</h3>
+    <p class="month-goal">12 buổi: thương lượng giá - thương lượng điều khoản - đàm phán hợp đồng - meeting client - email business + ngữ pháp N2 trang trọng.</p>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 1-3 · Tuần 1</span><h3 class="lesson-title">Khai giảng + Kính ngữ business + Lời chào trang trọng</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mỗi học viên gặp 3 "khách hàng" mới + chào hỏi business + tự giới thiệu công ty.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu kính ngữ business N2</div>
+    <div class="kaiwa-content">
+      <b>Chào business:</b> <span class="kaiwa-jp">いつもお世話になっております。 / 弊社の〜と申します。 / 本日はお時間をいただきありがとうございます。</span>
+      <b>Trao danh thiếp:</b> <span class="kaiwa-jp">名刺を頂戴できますでしょうか。 / よろしくお願い申し上げます。</span>
+      <b>Mời ngồi:</b> <span class="kaiwa-jp">どうぞお掛けください。 / お飲み物はいかがですか。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Buổi 1 T2</td><td class="tb-act">Khai giảng + Kính ngữ business</td><td class="tb-content">Phổ biến 4 tháng + Drill 10 mẫu kính ngữ.</td></tr>
+      <tr><td class="tb-time">Buổi 2 T4</td><td class="tb-act">Chào hỏi khách hàng + trao danh thiếp</td><td class="tb-content">2 nhóm 3 role-play meeting.</td></tr>
+      <tr><td class="tb-time">Buổi 3 T6</td><td class="tb-act">Tự giới thiệu công ty 3 phút</td><td class="tb-content">Mỗi học viên trình bày + ghi âm.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN tuần 1:</strong> Ghi âm 3 phút tự giới thiệu công ty + 2 phút chào khách hàng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 4-6 · Tuần 2</span><h3 class="lesson-title">Thương lượng giá + Đề xuất + Đáp lại</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mỗi cặp thương lượng 3 hợp đồng (mua hàng - hợp tác - dịch vụ) trong 10p/hợp đồng.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu thương lượng N2</div>
+    <div class="kaiwa-content">
+      <b>Đề xuất giá:</b> <span class="kaiwa-jp">〜円でお願いできますでしょうか。 / お値引きをご検討いただけませんか。 / 〜の条件でしたら、〜可能です。</span>
+      <b>Phản hồi:</b> <span class="kaiwa-jp">それは少し厳しいですね。 / ご提案について検討させていただきます。 / 上司と相談の上、改めてご連絡いたします。</span>
+      <b>Thỏa hiệp:</b> <span class="kaiwa-jp">それでしたら、〜ということで。 / 折衷案として〜はいかがでしょうか。 / お互いにとって良い方向で。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Buổi 4 T2</td><td class="tb-act">Đề xuất + đáp lại nhẹ</td><td class="tb-content">Drill + 3 cặp.</td></tr>
+      <tr><td class="tb-time">Buổi 5 T4</td><td class="tb-act">Thỏa hiệp + ký hợp đồng</td><td class="tb-content">2 nhóm 3 role-play full meeting.</td></tr>
+      <tr><td class="tb-time">Buổi 6 T6</td><td class="tb-act">3 hợp đồng khác nhau</td><td class="tb-content">Pair thương lượng 10p × 3 hợp đồng.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN tuần 2:</strong> Ghi âm 5 phút thương lượng 1 hợp đồng đầy đủ.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 7-9 · Tuần 3</span><h3 class="lesson-title">Đàm phán điều khoản + Xử lý phản đối</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mỗi cặp đàm phán 1 điều khoản khó + xử lý 3 phản đối khác nhau.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu đàm phán N2</div>
+    <div class="kaiwa-content">
+      <b>Đưa điều khoản:</b> <span class="kaiwa-jp">条件として〜が必要となります。 / 〜の点について、確認させていただきたいのですが。</span>
+      <b>Xử lý phản đối:</b> <span class="kaiwa-jp">ご心配は理解できますが、〜です。 / ただし、〜という前提でしたら可能です。 / ご懸念の点については〜で対応可能です。</span>
+      <b>Đưa giải pháp:</b> <span class="kaiwa-jp">代替案として、〜はどうでしょうか。 / 妥協点を探りましょう。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Buổi 7 T2</td><td class="tb-act">Đưa điều khoản</td><td class="tb-content">Drill + Pair.</td></tr>
+      <tr><td class="tb-time">Buổi 8 T4</td><td class="tb-act">Xử lý phản đối</td><td class="tb-content">3 cặp role-play 3 cấp độ phản đối.</td></tr>
+      <tr><td class="tb-time">Buổi 9 T6</td><td class="tb-act">Đàm phán full</td><td class="tb-content">Pair đàm phán 15p + sửa lỗi sâu.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN tuần 3:</strong> Ghi âm 5 phút đàm phán + xử lý phản đối.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 10-12 · Tuần 4 · REVIEW 1</span><h3 class="lesson-title">Meeting full + Review tháng 1</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Full Business Meeting 15 phút - chào hỏi → đàm phán → kết thúc → email follow-up.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Buổi 10 T2</td><td class="tb-act">Email business + lời cảm ơn sau meeting</td><td class="tb-content">Viết + nói 2 mẫu email cơ bản.</td></tr>
+      <tr><td class="tb-time">Buổi 11 T4</td><td class="tb-act">Full Meeting 15 phút (1)</td><td class="tb-content">3 cặp biểu diễn full + GV đánh giá.</td></tr>
+      <tr><td class="tb-time">Buổi 12 T6 · REVIEW 1</td><td class="tb-act">Full Meeting 15 phút (2) + Review</td><td class="tb-content">3 cặp còn lại + tổng kết tháng 1.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN cuối tháng 1:</strong> Ghi âm 10 phút Full Business Meeting cá nhân.</div>
+  </div>
+</section>
+
+<!-- THÁNG 2 -->
+<section class="doc-section" id="section-3">
+  <div class="section-head" data-mark="III"><span class="section-kicker">Phần 3 · Tuần 5-8</span><h2>Tháng 2 · Phản biện &amp; Tranh luận sâu (12 buổi)</h2></div>
+  <div class="month-banner">
+    <span class="month-banner-overline">Mục tiêu tháng 2</span>
+    <h3>Tranh luận chuyên sâu + Phỏng vấn nâng cao + Phản biện có dẫn chứng</h3>
+    <p class="month-goal">12 buổi: tranh luận 3 chủ đề lớn (AI, lao động, gia đình) - phỏng vấn senior - phản biện có dẫn chứng + ~とは限らない, ~どころか, ~に反して.</p>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 13-18 · Tuần 5-6</span><h3 class="lesson-title">Tranh luận 3 chủ đề lớn + Phản biện có dẫn chứng</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> 3 chủ đề × 2 buổi/chủ đề: AI thay thế công việc - lao động nước ngoài - vai trò phụ nữ trong gia đình.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu tranh luận N2</div>
+    <div class="kaiwa-content">
+      <b>Đưa luận điểm:</b> <span class="kaiwa-jp">私の意見では〜と考えます。 / 〜という点に関して言えば〜。 / 〜の観点から見ると〜。</span>
+      <b>Phản biện mạnh:</b> <span class="kaiwa-jp">それは必ずしも〜とは限らないと思います。 / 〜とは言い切れません。 / 〜どころか、〜です。 / それに反して、〜の場合は〜。</span>
+      <b>Dẫn chứng:</b> <span class="kaiwa-jp">例えば、〜の調査によると〜。 / 私の経験では〜。 / 〜のデータが示すように〜。</span>
+      <b>Kết luận:</b> <span class="kaiwa-jp">以上の点から、〜と結論づけることができます。 / 総合的に判断すると〜。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Tuần 5 (3 buổi)</td><td class="tb-act">Chủ đề 1-2: AI + Lao động nước ngoài</td><td class="tb-content">Mỗi chủ đề 1 buổi chuẩn bị + 1 buổi tranh luận 2 nhóm 3.</td></tr>
+      <tr><td class="tb-time">Tuần 6 (3 buổi)</td><td class="tb-act">Chủ đề 3 + Phản biện sâu</td><td class="tb-content">Chủ đề vai trò phụ nữ + Performance 5p/cặp.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 5 phút tranh luận 1 chủ đề + nghiên cứu 3 dẫn chứng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 19-21 · Tuần 7</span><h3 class="lesson-title">Phỏng vấn nâng cao (full-time job)</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mock Interview Senior - phỏng vấn vị trí senior với câu hỏi khó: điểm yếu, lý do nghỉ việc cũ, mục tiêu 5 năm.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu phỏng vấn N2</div>
+    <div class="kaiwa-content">
+      <b>Câu hỏi khó:</b> <span class="kaiwa-jp">あなたの強みと弱みは何ですか。 / 前職を辞めた理由は何ですか。 / 5年後の自分はどうなっていたいですか。 / 弊社で何を実現したいですか。</span>
+      <b>Trả lời chuyên nghiệp:</b> <span class="kaiwa-jp">私の強みは〜です。具体的には〜という経験があります。 / 弱みについては〜ですが、現在〜に努めています。 / 〜という理由から、貴社で〜を実現したいと考えています。</span>
+      <b>Hỏi ngược nhà tuyển dụng:</b> <span class="kaiwa-jp">御社の今後の展望について教えていただけますか。 / 入社後の研修制度について伺ってもよろしいでしょうか。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Buổi 19 T2</td><td class="tb-act">Câu hỏi khó + trả lời mạch lạc</td><td class="tb-content">Drill + Pair.</td></tr>
+      <tr><td class="tb-time">Buổi 20 T4</td><td class="tb-act">Mock Interview full 20p</td><td class="tb-content">3 cặp đổi vai.</td></tr>
+      <tr><td class="tb-time">Buổi 21 T6</td><td class="tb-act">Phỏng vấn group (1 NTD vs 3 UV)</td><td class="tb-content">Stress simulation.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN tuần 7:</strong> Ghi âm 10 phút Mock Interview Senior.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 22-24 · Tuần 8 · REVIEW 2</span><h3 class="lesson-title">Tranh luận + Phỏng vấn tổng hợp + Review 2</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mỗi học viên tham gia 1 panel debate (3 vs 3) + được phỏng vấn 10 phút.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Buổi 22 T2</td><td class="tb-act">Panel Debate (3 vs 3)</td><td class="tb-content">Chủ đề tự chọn.</td></tr>
+      <tr><td class="tb-time">Buổi 23 T4</td><td class="tb-act">Interview Performance</td><td class="tb-content">3 học viên phỏng vấn 10p.</td></tr>
+      <tr><td class="tb-time">Buổi 24 T6 · REVIEW 2</td><td class="tb-act">3 học viên còn lại + Review</td><td class="tb-content">Tổng kết tháng 2.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN cuối tháng 2:</strong> So sánh ghi âm tháng 1 vs tháng 2.</div>
+  </div>
+</section>
+
+<!-- THÁNG 3 -->
+<section class="doc-section" id="section-4">
+  <div class="section-head" data-mark="IV"><span class="section-kicker">Phần 4 · Tuần 9-12</span><h2>Tháng 3 · Báo cáo &amp; Thuyết trình (12 buổi)</h2></div>
+  <div class="month-banner">
+    <span class="month-banner-overline">Mục tiêu tháng 3</span>
+    <h3>Báo cáo công việc + Thuyết trình + Giải quyết xung đột</h3>
+    <p class="month-goal">12 buổi: báo cáo tiến độ - presentation dự án - giải quyết xung đột nội bộ - phát biểu công khai + ~に基づいて, ~に関して.</p>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 25-30 · Tuần 9-10</span><h3 class="lesson-title">Báo cáo tiến độ + Thuyết trình dự án</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mỗi học viên thuyết trình dự án 8 phút với slide + Q&amp;A.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu thuyết trình N2</div>
+    <div class="kaiwa-content">
+      <b>Mở đầu:</b> <span class="kaiwa-jp">本日は〜についてご報告させていただきます。 / 〜について発表させていただきます。 / 始めに、〜の概要をご説明します。</span>
+      <b>Triển khai:</b> <span class="kaiwa-jp">続きまして〜です。 / 次に〜について見ていきましょう。 / ここで重要なのは〜です。 / 〜のデータに基づいて〜。</span>
+      <b>Kết luận:</b> <span class="kaiwa-jp">以上が〜の結果でございます。 / まとめますと〜です。 / ご清聴ありがとうございました。 / 何かご質問はございませんか。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Tuần 9 (3 buổi)</td><td class="tb-act">Chuẩn bị slide + cấu trúc 8 phút</td><td class="tb-content">Drill + viết kịch bản + luyện cặp.</td></tr>
+      <tr><td class="tb-time">Tuần 10 (3 buổi)</td><td class="tb-act">Thuyết trình + Q&amp;A</td><td class="tb-content">Mỗi học viên 8 phút + 4-5 câu hỏi.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ghi âm 8 phút thuyết trình; sửa kịch bản theo phản hồi.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 31-33 · Tuần 11</span><h3 class="lesson-title">Giải quyết xung đột nội bộ + Mediation</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mediation Role-play - 3 người: 2 bên xung đột + 1 hòa giải. Đổi vai 3 lượt.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu hòa giải N2</div>
+    <div class="kaiwa-content">
+      <b>Lắng nghe:</b> <span class="kaiwa-jp">お話を伺いたいのですが、〜と感じておられるんですね。 / そのお気持ちはよくわかります。</span>
+      <b>Đề xuất giải pháp:</b> <span class="kaiwa-jp">折衷案として、〜はどうでしょうか。 / お互いに歩み寄ることができれば〜。 / 共通の目標は〜だと思います。</span>
+      <b>Chốt:</b> <span class="kaiwa-jp">それでよろしければ、〜ということで。 / 今後の進め方について確認させてください。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Buổi 31 T2</td><td class="tb-act">Mâu thuẫn cơ bản + lắng nghe</td><td class="tb-content">Drill + 2 nhóm 3.</td></tr>
+      <tr><td class="tb-time">Buổi 32 T4</td><td class="tb-act">Mediation 3 tình huống xung đột thực</td><td class="tb-content">Role-play với card.</td></tr>
+      <tr><td class="tb-time">Buổi 33 T6</td><td class="tb-act">Performance Mediation 10p</td><td class="tb-content">3 nhóm biểu diễn full.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN tuần 11:</strong> Ghi âm 10 phút Mediation 1 tình huống.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 34-36 · Tuần 12 · REVIEW 3</span><h3 class="lesson-title">Phát biểu công khai + Review 3</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Public Speech - mỗi học viên phát biểu 5 phút trước cả lớp về 1 chủ đề xã hội.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Buổi 34 T2</td><td class="tb-act">Chuẩn bị Public Speech</td><td class="tb-content">Chọn chủ đề + kịch bản + luyện cặp.</td></tr>
+      <tr><td class="tb-time">Buổi 35 T4</td><td class="tb-act">Public Speech Day 1</td><td class="tb-content">3 học viên phát biểu 5p + Q&amp;A.</td></tr>
+      <tr><td class="tb-time">Buổi 36 T6 · REVIEW 3</td><td class="tb-act">Public Speech Day 2 + Review</td><td class="tb-content">3 học viên còn lại + tổng kết tháng 3.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN cuối tháng 3:</strong> Ghi âm Public Speech 5 phút.</div>
+  </div>
+</section>
+
+<!-- THÁNG 4 -->
+<section class="doc-section" id="section-5">
+  <div class="section-head" data-mark="V"><span class="section-kicker">Phần 5 · Tuần 13-16</span><h2>Tháng 4 · Thể hiện bản thân + Final (12 buổi)</h2></div>
+  <div class="month-banner">
+    <span class="month-banner-overline">Mục tiêu tháng 4 - Cuối khóa</span>
+    <h3>Thể hiện quan điểm sâu + Network business + Final Performance</h3>
+    <p class="month-goal">12 buổi: quan điểm sâu - network event - email/phone follow-up - Final Performance 10 phút.</p>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 37-39 · Tuần 13</span><h3 class="lesson-title">Quan điểm cá nhân sâu + Lập luận chặt chẽ</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mỗi học viên trình bày 1 quan điểm sống cá nhân 5 phút + bảo vệ trước 3 câu hỏi phản biện.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu trình bày quan điểm sâu</div>
+    <div class="kaiwa-content">
+      <b>Trình bày sâu:</b> <span class="kaiwa-jp">私が大切にしているのは〜です。 / 〜という経験から、〜と考えるようになりました。 / 〜こそが本質だと思います。</span>
+      <b>Bảo vệ:</b> <span class="kaiwa-jp">ご指摘の点は理解できますが、私の立場では〜です。 / 確かに〜という側面もありますが、〜です。 / その視点は新鮮ですね。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Buổi 37 T2</td><td class="tb-act">Trình bày quan điểm + cấu trúc</td><td class="tb-content">Drill + viết kịch bản.</td></tr>
+      <tr><td class="tb-time">Buổi 38 T4</td><td class="tb-act">Bảo vệ quan điểm trước phản biện</td><td class="tb-content">2 nhóm 3 simulation.</td></tr>
+      <tr><td class="tb-time">Buổi 39 T6</td><td class="tb-act">Performance 5p + Q&amp;A 3 câu</td><td class="tb-content">Mỗi học viên trình bày.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN tuần 13:</strong> Ghi âm 5 phút quan điểm + 3 phút bảo vệ.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 40-42 · Tuần 14</span><h3 class="lesson-title">Network Event + Small Talk N2</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Networking Mission - mỗi học viên kết nối với 5 người tại "sự kiện" + giới thiệu công ty + gợi ý hợp tác.</p></div>
+    <div class="kaiwa-box"><div class="kaiwa-box-title">Mẫu Small Talk business N2</div>
+    <div class="kaiwa-content">
+      <b>Khởi đầu:</b> <span class="kaiwa-jp">初めまして、〜と申します。 / こちらのイベントには〜の関係でお越しに？ / 〜業界でいらっしゃるんですね。</span>
+      <b>Tìm điểm chung:</b> <span class="kaiwa-jp">そういえば、〜の件で〜さんもご存知だと思うのですが。 / 共通の知人がいらっしゃるかもしれません。</span>
+      <b>Gợi ý hợp tác:</b> <span class="kaiwa-jp">機会があれば〜の件でお話しできればと思います。 / 名刺を交換させていただけますか。 / 後日改めてご連絡してもよろしいでしょうか。</span>
+    </div></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Buổi 40 T2</td><td class="tb-act">Small talk N2 + tìm điểm chung</td><td class="tb-content">Drill + Pair.</td></tr>
+      <tr><td class="tb-time">Buổi 41 T4</td><td class="tb-act">Networking Mission</td><td class="tb-content">Simulation sự kiện kết nối 5 người.</td></tr>
+      <tr><td class="tb-time">Buổi 42 T6</td><td class="tb-act">Performance + ghi âm</td><td class="tb-content">3 cặp biểu diễn network 5p.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN tuần 14:</strong> Ghi âm 5 phút Networking + 2 email follow-up.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 43-45 · Tuần 15</span><h3 class="lesson-title">Chuẩn bị Final Performance + Luyện cặp sâu</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mỗi cặp chuẩn bị 1 tình huống Kaiwa N2 phức tạp 10 phút - viết kịch bản + luyện 3 buổi.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Buổi 43 T2</td><td class="tb-act">Chọn tình huống + viết kịch bản</td><td class="tb-content">3 cặp viết kịch bản 10 phút.</td></tr>
+      <tr><td class="tb-time">Buổi 44 T4</td><td class="tb-act">Luyện cặp + sửa lỗi</td><td class="tb-content">Luyện 60p + GV sửa lỗi từng cặp.</td></tr>
+      <tr><td class="tb-time">Buổi 45 T6</td><td class="tb-act">Dress rehearsal</td><td class="tb-content">Mỗi cặp diễn thử + nhận phản hồi.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN tuần 15:</strong> Luyện thuộc kịch bản; ghi âm thử 10 phút.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 46-48 · Tuần 16 · FINAL PERFORMANCE</span><h3 class="lesson-title">Final Performance 10 phút + Tổng kết khóa</h3><p class="lesson-goal"><strong>Nhiệm vụ:</strong> Mỗi cặp biểu diễn 10 phút tình huống Kaiwa N2 phức tạp. GV đánh giá rubric 10 tiêu chí.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">Buổi 46 T2</td><td class="tb-act">Final Performance Day 1</td><td class="tb-content">3 cặp × 10 phút biểu diễn.</td></tr>
+      <tr><td class="tb-time">Buổi 47 T4</td><td class="tb-act">Final Performance Day 2</td><td class="tb-content">3 cặp còn lại × 10 phút.</td></tr>
+      <tr><td class="tb-time">Buổi 48 T6 · TỔNG KẾT</td><td class="tb-act">Tổng kết khóa + Chứng nhận</td><td class="tb-content">Phản hồi từng học viên + chứng nhận + kế hoạch sau khóa.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>Cuối khóa N2:</strong> So sánh ghi âm tháng 1 vs tháng 4; tự đánh giá rubric 10 tiêu chí; lập kế hoạch tự duy trì Kaiwa cao cấp sau khóa (community, conversation partner, podcast, business meeting thật).</div>
+  </div>
+</section>
+
+<!-- PHỤ LỤC -->
+<section class="doc-section" id="section-6">
+  <div class="section-head" data-mark="+"><span class="section-kicker">Phụ lục</span><h2>Rubric Kaiwa N2 (10 tiêu chí)</h2></div>
+  <table>
+    <thead><tr><th style="width:18%">Tiêu chí</th><th>Xuất sắc (4)</th><th>Tốt (3)</th><th>Đạt (2)</th><th>Cần hỗ trợ (1)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Phát âm + ngữ điệu</strong></td><td>Gần native, ngữ điệu tự nhiên.</td><td>Rõ ràng, ngữ điệu N2.</td><td>Hiểu được, ngữ điệu cứng.</td><td>Khó hiểu.</td></tr>
+      <tr><td><strong>Câu N2 phức tạp</strong></td><td>25-40 từ, dùng 10 mẫu N2.</td><td>20-30 từ, 7-8 mẫu.</td><td>15-20 từ, 5 mẫu.</td><td>&lt; 15 từ.</td></tr>
+      <tr><td><strong>Kính ngữ business</strong></td><td>Dùng đúng + tự nhiên 15+ mẫu.</td><td>10-14 mẫu.</td><td>6-9 mẫu.</td><td>&lt; 6.</td></tr>
+      <tr><td><strong>Thương lượng</strong></td><td>Linh hoạt, khéo léo dẫn dắt.</td><td>Đề xuất + thỏa hiệp được.</td><td>Đề xuất cứng, thỏa hiệp ít.</td><td>Không xử lý được.</td></tr>
+      <tr><td><strong>Phản biện</strong></td><td>Có dẫn chứng + 3 lý do mạnh.</td><td>2 lý do rõ.</td><td>1 lý do, mờ.</td><td>Đồng tình hoàn toàn.</td></tr>
+      <tr><td><strong>Thuyết trình</strong></td><td>8-10 phút mạch lạc + xử lý Q&amp;A xuất sắc.</td><td>6-8 phút mạch lạc, Q&amp;A tốt.</td><td>4-6 phút, Q&amp;A khó.</td><td>&lt; 4 phút hoặc dừng.</td></tr>
+      <tr><td><strong>Mediation</strong></td><td>Hòa giải thành công, lắng nghe sâu.</td><td>Hòa giải được, hơi cứng.</td><td>Lắng nghe nhưng không hòa giải.</td><td>Đứng về 1 phía.</td></tr>
+      <tr><td><strong>Networking</strong></td><td>Kết nối 5+ người tự nhiên + small talk.</td><td>Kết nối 3-4 người.</td><td>Kết nối 1-2 người, đơn điệu.</td><td>Không kết nối được.</td></tr>
+      <tr><td><strong>Phản xạ</strong></td><td>&lt; 1s, không vấp.</td><td>1-2s, vấp 1.</td><td>2-4s, vấp 2-3.</td><td>&gt; 4s hoặc dừng.</td></tr>
+      <tr><td><strong>Tiến bộ ghi âm</strong></td><td>Tháng 4 vượt xa tháng 1 (gần native).</td><td>Tiến bộ rõ.</td><td>Tiến bộ ít.</td><td>Không tiến bộ.</td></tr>
+    </tbody>
+  </table>
+  <div class="callout-box">
+    <strong>Checklist hoàn thành khóa Kaiwa N2:</strong>
+    <ul>
+      <li>✔ Tham gia ≥ 80% buổi (39/48).</li>
+      <li>✔ Final Performance đạt ≥ Tốt (3) trên 8/10 tiêu chí.</li>
+      <li>✔ Nộp ≥ 36/48 BTVN ghi âm.</li>
+      <li>✔ Tự duy trì hội thoại N2 8-10 phút trong 3 tình huống business/xã hội phức tạp.</li>
+      <li>✔ Có thể thuyết trình 8 phút + xử lý Q&amp;A.</li>
+      <li>✔ So sánh ghi âm cá nhân tháng 1 vs tháng 4 thấy rõ tiến bộ vượt bậc.</li>
+    </ul>
+  </div>
+  <div class="footer-card">
+    <p><strong>Trí Lữ Nihongo</strong> · Giáo án Kaiwa N2 · 48 buổi / 96 giờ · 6 học viên · 70%+ thời lượng nói</p>
+    <p>"Mục tiêu không phải biết nhiều mẫu N2, mà dùng được tiếng Nhật N2 để suy nghĩ, phản ứng, thương lượng, phản biện và thể hiện bản thân trong tình huống thật."</p>
+  </div>
+</section>
+
+</main>
+</div>
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="giao-an-kaiwa-n2"></script>
+</body></html>
