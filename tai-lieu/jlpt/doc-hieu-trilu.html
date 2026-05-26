@@ -1,0 +1,1115 @@
+
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hướng dẫn Tư duy Đọc hiểu Tiếng Nhật Toàn diện (N5 - N1)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Shippori+Mincho:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    @page { size: A4; margin: 18mm 14mm 18mm 14mm; }
+    :root {
+      --washi: #F7F2E8;
+      --paper: #FAF8F1;
+      --ink: #2D3436;
+      --muted: #5E6672;
+      --vermilion: #A02C2C;
+      --gold: #D4AF37;
+      --gold-soft: rgba(212,175,55,.14);
+      --line: #E5D8B8;
+      --card: rgba(255,255,255,.82);
+      --shadow: 0 18px 42px rgba(77, 51, 18, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: radial-gradient(circle at 50% 12%, rgba(255,255,255,.85) 0%, rgba(247,242,232,1) 50%, rgba(241,233,217,1) 100%);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.78;
+      font-size: 11pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .24;
+      background-image: radial-gradient(rgba(160,44,44,.08) .7px, transparent .7px), radial-gradient(rgba(212,175,55,.08) .7px, transparent .7px);
+      background-size: 26px 26px, 38px 38px;
+      background-position: 0 0, 12px 12px;
+    }
+    header, footer {
+      position: fixed; left: 0; right: 0; z-index: 10; color: var(--muted);
+      font-size: 9.4pt;
+    }
+    header { top: -12mm; display:flex; justify-content:space-between; align-items:center; font-style: italic; }
+    footer { bottom: -12mm; border-top: 1px solid rgba(160,44,44,.14); padding-top: 3mm; display:flex; justify-content:space-between; align-items:center; }
+    main { max-width: 980px; margin: 0 auto; padding: 10mm 0 6mm; position: relative; z-index: 1; }
+    .cover {
+      background: linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(250,248,241,.96) 100%);
+      border: 1px solid rgba(212,175,55,.35);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 18mm 14mm 16mm;
+      margin-bottom: 12mm;
+      position: relative;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+    .cover::before {
+      content: ""; position:absolute; top:-80px; right:-80px; width:220px; height:220px;
+      background: radial-gradient(circle, rgba(160,44,44,.10) 0%, transparent 70%);
+    }
+    .cover::after {
+      content:""; position:absolute; left:-70px; bottom:-70px; width:180px; height:180px;
+      background: radial-gradient(circle, rgba(212,175,55,.12) 0%, transparent 72%);
+    }
+    .eyebrow, .kicker, .stage-banner, .small-caps {
+      display:inline-block; font-size: 9.3pt; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+      color: var(--vermilion); background: rgba(212,175,55,.10); border:1px solid rgba(212,175,55,.28);
+      padding: 6px 12px; border-radius: 999px;
+    }
+    h1, h2, h3, h4, h5 { font-family:'Shippori Mincho','Noto Serif JP',serif; color:#4D1717; page-break-after: avoid; }
+    h1 { font-size: 26pt; line-height: 1.26; margin: 10px 0 8px; }
+    h2 { font-size: 17pt; margin: 14mm 0 4mm; padding-bottom: 2.2mm; border-bottom: 2px solid rgba(160,44,44,.18); }
+    h3 { font-size: 13.3pt; margin: 7mm 0 2.5mm; }
+    h4 { font-size: 11.8pt; margin: 5mm 0 2mm; }
+    h5 { font-size: 11.2pt; margin: 4mm 0 1.5mm; }
+    p { margin: 0 0 3.2mm; text-align: justify; }
+    ul, ol { margin: 0 0 4mm 6mm; padding-left: 5mm; }
+    li { margin-bottom: 1.7mm; }
+    .lead, .subtitle, .strapline { font-size: 11.6pt; color: #394150; max-width: 95%; }
+    .lead-brand { margin-top: 10px; font-size: 10.5pt; color: var(--muted); }
+    .goal, .method-box, .toc, .toc-card, .panel, .note-box, .example-box, .strategy-box, .warning-box, .summary-box, .practice-note, .table-wrap, .micro-drill, .callout, .trap, .insight, .checklist, .diagram, .answer, .script-block, .reading-block, .question-box {
+      background: var(--card);
+      border: 1px solid rgba(212,175,55,.28);
+      border-radius: 20px;
+      padding: 14px 16px;
+      box-shadow: 0 10px 24px rgba(90, 60, 20, 0.05);
+      page-break-inside: avoid;
+      break-inside: avoid;
+      margin: 4mm 0 5mm;
+      position: relative;
+      overflow: hidden;
+    }
+    .method-box::before, .toc::before, .panel::before, .note-box::before, .example-box::before, .strategy-box::before, .warning-box::before, .summary-box::before, .practice-note::before, .table-wrap::before, .micro-drill::before, .callout::before, .trap::before, .insight::before, .checklist::before, .reading-block::before, .script-block::before {
+      content: ""; position:absolute; inset:0; pointer-events:none;
+      background: linear-gradient(135deg, rgba(255,255,255,.34), transparent 42%);
+    }
+    .goal { border-left: 6px solid var(--vermilion); background: linear-gradient(90deg, rgba(212,175,55,.12), rgba(255,255,255,.82)); }
+    .strategy-box, .insight, .summary-box { background: linear-gradient(180deg, rgba(212,175,55,.10), rgba(255,255,255,.86)); }
+    .warning-box, .trap, .answer { background: linear-gradient(180deg, rgba(160,44,44,.08), rgba(255,255,255,.90)); }
+    .diagram { font-family: 'Courier New', monospace; white-space: pre-wrap; background: rgba(250,248,241,.95); }
+    .reading-text, .jp {
+      background: rgba(250,248,241,.96); border-left: 4px solid rgba(160,44,44,.28); border-radius: 14px;
+      padding: 12px 14px; margin: 10px 0 12px;
+    }
+    .jp p, .reading-text p { margin-bottom: 2mm; }
+    .label, .card-section-label {
+      font-family:'Shippori Mincho','Noto Serif JP',serif; font-size: 10pt; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--vermilion); font-weight: 700; margin-bottom: 2.2mm; display:block;
+      border-left: 3px solid var(--gold); padding-left: 8px;
+    }
+    .tag, .chunk {
+      display:inline-block; border:1px solid rgba(212,175,55,.35); background: rgba(212,175,55,.09); border-radius: 999px;
+      padding: 2px 8px; margin: 1px 4px 3px 0; font-size: 9pt;
+    }
+    table { width:100%; border-collapse: collapse; background: rgba(255,255,255,.86); overflow:hidden; border-radius: 14px; }
+    th, td { border: 1px solid rgba(212,175,55,.24); padding: 9px 10px; vertical-align: top; text-align:left; }
+    th { background: rgba(212,175,55,.12); color: #7A1F1F; font-weight:700; }
+    .section-divider { border:0; border-top:1px solid rgba(212,175,55,.3); margin: 7mm 0; }
+    .quote { border-left: 4px solid rgba(160,44,44,.25); background: rgba(250,248,241,.88); padding: 10px 12px; border-radius: 12px; }
+    .formula { font-family: 'Courier New', monospace; font-size: 10pt; background: rgba(250,248,241,.92); border:1px dashed rgba(160,44,44,.22); border-radius: 12px; padding: 10px 12px; margin: 8px 0; }
+    .small, .mini { font-size: 9.7pt; color: var(--muted); }
+    .mono { font-family: 'Courier New', monospace; }
+    .center { text-align:center; } .right { text-align:right; }
+    .page-break, .page-break-before { page-break-before: always; break-before: page; }
+    .line-no { display:inline-block; min-width: 30px; color: var(--vermilion); font-weight:700; }
+    ruby rt { font-size: .58em; color: #A02C2C; }
+    .ja, [lang="ja"] { font-family: 'Noto Serif JP', 'Shippori Mincho', serif; }
+    .brand-lockup { display:flex; gap:12px; align-items:center; margin-bottom: 8px; }
+    .crest { width: 56px; height: 56px; border-radius: 16px; border:1px solid rgba(212,175,55,.38); display:flex; align-items:center; justify-content:center; background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(250,248,241,.9)); font-family:'Shippori Mincho',serif; font-size: 22pt; color: var(--vermilion); box-shadow: 0 8px 20px rgba(122, 31, 31, .08); }
+    .brand-meta strong { display:block; color: #4D1717; font-size: 11pt; letter-spacing: .04em; }
+    .brand-meta span { color: var(--muted); font-size: 9.6pt; }
+    .toc-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 12px; }
+    .toc-item { background: rgba(255,255,255,.75); border:1px solid rgba(212,175,55,.26); border-radius:16px; padding:12px 14px; }
+    .toc-item strong { color:#7A1F1F; display:block; margin-bottom:4px; }
+    @media print { a { color: inherit; text-decoration: none; } main { max-width:none; } }
+  </style>
+</head>
+<body class="trilu-themed">
+<header class="print-header"><div>Trí Lữ Nihongo | Học một ngôn ngữ, sống một cuộc đời</div><div>ĐỌC HIỂU · Phiên bản thương hiệu hoá</div></header>
+<footer class="print-footer"><div>Trilu Education</div><div>Website: trilu.edu.vn</div></footer>
+<main class="container">
+<section class="cover">
+<div class="brand-lockup">
+<div class="crest">旅</div>
+<div class="brand-meta">
+<strong>TRÍ LỮ NIHONGO</strong>
+<span>Tài liệu học thuật nội bộ · Thiết kế nhận diện đồng bộ theo bộ tài liệu Hán tự</span>
+</div>
+</div>
+<div class="eyebrow">ĐỌC HIỂU · Bản tái biên tập nhận diện trung tâm</div>
+
+
+<h1>Hướng dẫn Tư duy Đọc hiểu Tiếng Nhật Toàn diện (N5 - N1)</h1>
+<p class="subtitle">Dành cho người Việt Nam học tiếng Nhật từ nền tảng sơ cấp đến chinh phục tư duy đọc ở trình độ cao cấp</p>
+<p class="strapline">
+        Tài liệu này không chỉ dạy “dịch đúng”, mà dạy cách dựng lại logic của câu tiếng Nhật, nhìn ra mạch lập luận của đoạn văn,
+        và xử lý các bẫy đọc hiểu thường gặp trong JLPT bằng một hệ tư duy nhất quán.
+      </p>
+<p class="lead-brand">Đọc đúng cấu trúc. Hiểu đúng lập luận. Làm chủ toàn bộ lộ trình từ nền tảng tới cao cấp.</p></section>
+<section>
+<div class="stage-banner">Khung định hướng</div><h2>Mở đầu: Đổi tư duy trước khi đổi tốc độ</h2>
+<p class="lead">
+        Trở ngại lớn nhất của người Việt khi đọc tiếng Nhật không nằm ở việc “thiếu từ vựng” đơn thuần, mà ở việc mang nguyên xi tư duy
+        đọc của tiếng Việt sang tiếng Nhật. Tiếng Việt thường cho người đọc thấy hành động khá sớm; trong khi đó, tiếng Nhật giữ vị ngữ ở cuối,
+        dồn phần quyết định nghĩa, thời, thể, phủ định và thái độ của câu về điểm chốt sau cùng. Vì thế, nếu vừa đọc vừa dịch tuyến tính từ trái
+        sang phải, người học rất dễ hiểu nhầm vai trò của từng cụm và đánh rơi logic câu.
+      </p>
+<p>
+        Mục tiêu của cuốn hướng dẫn này là giúp bạn chuyển từ cách đọc “bắt từ rời rạc” sang cách đọc “dựng khung cú pháp và mạch nghĩa”.
+        Khi đã biết tìm vị ngữ, gom cụm theo trợ từ, tách mệnh đề, rồi xác định luận điểm, việc đọc nhanh hơn chỉ là hệ quả tự nhiên.
+      </p>
+<div class="note-box"><div class="label">Trọng tâm sư phạm</div>
+<h3>Nguyên tắc xương sống xuyên suốt từ N5 đến N1</h3>
+<ul>
+<li>Không dịch ngay khi mới thấy vài từ đầu; hãy đợi đến khi nhìn rõ bộ khung câu.</li>
+<li>Luôn tìm vị ngữ chính trước, vì đó là trung tâm điều khiển nghĩa của toàn câu.</li>
+<li>Đọc theo cụm đi với trợ từ, không tách danh từ ra khỏi chức năng của nó.</li>
+<li>Tách các mệnh đề nhỏ trước khi cố hiểu một câu dài.</li>
+<li>Khi lên trình độ cao, đừng chỉ hỏi “câu này nghĩa là gì”, mà hãy hỏi “tác giả đang muốn dẫn mình tới kết luận nào”.</li>
+</ul>
+</div>
+<div class="toc">
+<h3>Mục lục nội dung</h3>
+
+<div class="toc-grid"><div class="toc-item"><strong>Giai đoạn 1</strong><p>Nền tảng Cơ bản (N5 - N4)</p></div><div class="toc-item"><strong>Giai đoạn 2</strong><p>Tăng tốc Trung cấp (N3 - N2)</p></div><div class="toc-item"><strong>Giai đoạn 3</strong><p>Vượt ngưỡng Cao cấp (N1)</p></div></div></div>
+</section>
+<section class="page-break-before" id="stage-1">
+<div class="stage-banner">Trí Lữ Nihongo · Cấu trúc bài học</div><h2>Giai đoạn 1: Nền tảng Cơ bản (N5 - N4)</h2>
+<p class="goal">
+        Mục tiêu: Phá vỡ thói quen dịch tuyến tính theo tiếng Việt, nhận ra sự khác biệt giữa cấu trúc SVO của tiếng Việt và SOV của tiếng Nhật,
+        từ đó biết cách dựng bộ khung câu trước khi dịch.
+      </p>
+<h3>1.1. Vì sao người Việt đọc câu tiếng Nhật theo phản xạ cũ thì rất dễ sai?</h3>
+<p>
+        Trong tiếng Việt, người học thường gặp mô hình quen thuộc: chủ thể → hành động → đối tượng. Ví dụ: “Tôi đọc sách ở thư viện”.
+        Bộ não nhận hành động “đọc” khá sớm nên việc xây nghĩa diễn ra nhanh. Tiếng Nhật vận hành khác: chủ đề hoặc chủ ngữ thường xuất hiện trước,
+        sau đó là nơi chốn, đối tượng, thông tin phụ, và hành động chỉ chốt ở cuối. Điều này khiến tiếng Nhật giống một quá trình “treo nghĩa”
+        cho đến phút cuối.
+      </p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width: 18%;">Ngôn ngữ</th>
+<th style="width: 36%;">Cách triển khai ý</th>
+<th>Ví dụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tiếng Việt</td>
+<td>Chủ thể → Động từ → Tân ngữ / bổ ngữ</td>
+<td>Tôi / đọc / sách tiếng Nhật ở thư viện.</td>
+</tr>
+<tr>
+<td>Tiếng Nhật</td>
+<td>Chủ đề / chủ ngữ → các cụm thông tin → vị ngữ cuối câu</td>
+<td class="ja">
+<ruby>私<rt>わたし</rt></ruby>は <ruby>図書館<rt>としょかん</rt></ruby>で <ruby>日本語<rt>にほんご</rt></ruby>の <ruby>本<rt>ほん</rt></ruby>を
+                <ruby>読<rt>よ</rt></ruby>みます。
+              </td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>
+        Nếu nhìn câu tiếng Nhật theo mắt người Việt và dịch ngay từ đầu, bạn sẽ dễ rơi vào trạng thái: “Tôi thì... ở thư viện... tiếng Nhật của sách...”
+        mà chưa biết rốt cuộc câu đang làm gì. Cách đúng là: đi tìm vị ngữ cuối câu, rồi lắp ngược các khối thông tin vào đúng vị trí logic.
+      </p>
+<div class="strategy-box"><div class="label">Trọng tâm sư phạm</div>
+<h3>Bản đồ xử lý một câu sơ cấp</h3>
+<ol>
+<li>Tìm từ cuối câu: đó thường là động từ, tính từ, hoặc danh từ kèm <span class="ja">です</span>.</li>
+<li>Nhìn các trợ từ: <span class="ja">は / が / に / で / を</span>.</li>
+<li>Gom từng cụm: “danh từ + trợ từ” thành một đơn vị nghĩa.</li>
+<li>Chỉ sau khi có khung mới diễn đạt lại sang tiếng Việt tự nhiên.</li>
+</ol>
+</div>
+<h3>1.2. Xác định bộ khung câu qua các trợ từ cốt lõi</h3>
+<h4>1.2.1. <span class="ja">は</span> và <span class="ja">が</span>: chủ đề và tâm điểm thông tin</h4>
+<p>
+        Đây là cặp gây nhầm lẫn bậc nhất ở giai đoạn đầu. Nói đơn giản nhưng chính xác về mặt sư phạm:
+        <span class="em">は</span> dựng “khung đang bàn đến”, còn <span class="em">が</span> thường chỉ ra “điểm mang thông tin mới,
+        điểm được xác nhận, hoặc chủ thể nổi bật trong ngữ cảnh cụ thể”. Người Việt rất hay ép cả hai thành “chủ ngữ”, rồi bỏ mất khác biệt.
+      </p>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<p class="ja">
+<ruby>私<rt>わたし</rt></ruby>は <ruby>学生<rt>がくせい</rt></ruby>です。
+        </p>
+<p><strong>Hiểu đúng:</strong> “Về tôi thì, là sinh viên.” Trong tiếng Việt tự nhiên: “Tôi là sinh viên.”</p>
+<p><strong>Điểm cốt lõi:</strong> <span class="ja">は</span> mở chủ đề “tôi”, sau đó mới đưa nhận định về chủ đề đó.</p>
+</div>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<p class="ja">
+<ruby>教室<rt>きょうしつ</rt></ruby>に <ruby>先生<rt>せんせい</rt></ruby>が います。
+        </p>
+<p><strong>Hiểu đúng:</strong> “Trong lớp có giáo viên.”</p>
+<p><strong>Điểm cốt lõi:</strong> <span class="ja">が</span> đánh dấu đối tượng đang được giới thiệu như thông tin nổi bật hoặc mới xuất hiện trong khung câu.</p>
+</div>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<p class="ja">
+<ruby>私<rt>わたし</rt></ruby>は <ruby>行<rt>い</rt></ruby>きますが、<ruby>弟<rt>おとうと</rt></ruby>は <ruby>行<rt>い</rt></ruby>きません。
+        </p>
+<p><strong>Hiểu đúng:</strong> “Tôi thì đi, còn em trai tôi thì không đi.”</p>
+<p><strong>Điểm cốt lõi:</strong> <span class="ja">は</span> còn mang sắc thái đối chiếu, so sánh ngầm.</p>
+</div>
+<div class="warning-box"><div class="label">Trọng tâm sư phạm</div>
+<p>
+          Sai lầm phổ biến là gắn máy móc: “<span class="ja">は = là</span>, <span class="ja">が = là chủ ngữ</span>”.
+          Thực tế, <span class="ja">は</span> có chức năng chủ đề và đối chiếu; <span class="ja">が</span> có thể báo thông tin mới,
+          nhấn chủ thể thực hiện, hoặc đứng trong mệnh đề phụ. Hãy luôn xét theo vai trò trong ngữ cảnh.
+        </p>
+</div>
+<h4>1.2.2. <span class="ja">に</span> và <span class="ja">で</span>: điểm đích, điểm tồn tại, nơi diễn ra hành động</h4>
+<p>
+        Người học hay nhớ mơ hồ rằng cả <span class="ja">に</span> và <span class="ja">で</span> đều “liên quan đến nơi chốn”, rồi dùng lẫn lộn.
+        Cách nhớ đúng là: <span class="em">に</span> thiên về điểm đích, thời điểm, đối tượng nhận, nơi tồn tại; còn <span class="em">で</span>
+        thiên về nơi hành động xảy ra hoặc phương tiện thực hiện.
+      </p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width: 14%;">Trợ từ</th>
+<th style="width: 30%;">Câu hỏi nên tự đặt</th>
+<th>Ví dụ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="ja">に</td>
+<td>Đến đâu? vào lúc nào? cho ai? cái gì tồn tại ở đâu?</td>
+<td class="ja">
+<ruby>七時<rt>しちじ</rt></ruby>に <ruby>起<rt>お</rt></ruby>きます。<br/>
+<ruby>学校<rt>がっこう</rt></ruby>に <ruby>行<rt>い</rt></ruby>きます。<br/>
+<ruby>机<rt>つくえ</rt></ruby>の <ruby>上<rt>うえ</rt></ruby>に <ruby>本<rt>ほん</rt></ruby>が あります。<br/>
+<ruby>友達<rt>ともだち</rt></ruby>に <ruby>手紙<rt>てがみ</rt></ruby>を <ruby>書<rt>か</rt></ruby>きます。
+              </td>
+</tr>
+<tr>
+<td class="ja">で</td>
+<td>Hành động diễn ra ở đâu? bằng cách gì? bằng phương tiện gì?</td>
+<td class="ja">
+<ruby>図書館<rt>としょかん</rt></ruby>で <ruby>勉強<rt>べんきょう</rt></ruby>します。<br/>
+<ruby>電車<rt>でんしゃ</rt></ruby>で <ruby>会社<rt>かいしゃ</rt></ruby>へ <ruby>行<rt>い</rt></ruby>きます。
+              </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<p class="ja">
+<ruby>公園<rt>こうえん</rt></ruby>に <ruby>行<rt>い</rt></ruby>きます。<br/>
+<ruby>公園<rt>こうえん</rt></ruby>で <ruby>遊<rt>あそ</rt></ruby>びます。
+        </p>
+<p><strong>Phân biệt:</strong> Câu đầu nói “đi đến công viên”; câu sau nói “chơi ở công viên”. Cùng là <ruby>公園<rt>こうえん</rt></ruby>, nhưng chức năng khác hẳn vì trợ từ khác.</p>
+</div>
+<h4>1.2.3. <span class="ja">を</span>: thứ bị tác động và đôi khi là tuyến đường đi qua</h4>
+<p>
+        Ở N5 - N4, hãy nắm vững chức năng cơ bản nhất: <span class="ja">を</span> đánh dấu đối tượng trực tiếp của hành động.
+        Khi nền tảng đã chắc, bạn sẽ mở rộng sang cách dùng chỉ lộ trình hoặc không gian đi qua.
+      </p>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<p class="ja">
+<ruby>水<rt>みず</rt></ruby>を <ruby>飲<rt>の</rt></ruby>みます。<br/>
+<ruby>音楽<rt>おんがく</rt></ruby>を <ruby>聞<rt>き</rt></ruby>きます。<br/>
+<ruby>橋<rt>はし</rt></ruby>を <ruby>渡<rt>わた</rt></ruby>ります。
+        </p>
+<p>
+          Hai câu đầu: <span class="ja">を</span> đánh dấu đối tượng của hành động “uống”, “nghe”.
+          Câu ba: <span class="ja">を</span> không phải tân ngữ theo kiểu quen thuộc của tiếng Việt, mà là tuyến đi qua: “băng qua cây cầu”.
+        </p>
+</div>
+<h3>1.3. Hai quy tắc sống còn khi dịch câu cơ bản</h3>
+<div class="strategy-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Quy tắc 1: “Dịch từ cuối câu dịch lên”</h4>
+<p>
+          Câu tiếng Nhật không nên được dịch bằng cách bám tay từ đầu câu tới cuối câu. Hãy khóa vị ngữ cuối câu trước, vì nó quyết định
+          toàn bộ trục nghĩa. Sau đó mới lần lượt gắn vào: đối tượng, nơi chốn, thời gian, chủ đề.
+        </p>
+<div class="reading-text ja">
+<ruby>私<rt>わたし</rt></ruby>は <ruby>図書館<rt>としょかん</rt></ruby>で <ruby>日本語<rt>にほんご</rt></ruby>の <ruby>本<rt>ほん</rt></ruby>を
+          <ruby>読<rt>よ</rt></ruby>みます。
+        </div>
+<div class="formula">
+          Bước 1: <ruby>読<rt>よ</rt></ruby>みます → “đọc”<br/>
+          Bước 2: <ruby>本<rt>ほん</rt></ruby>を → “sách”<br/>
+          Bước 3: <ruby>日本語<rt>にほんご</rt></ruby>の → “sách tiếng Nhật”<br/>
+          Bước 4: <ruby>図書館<rt>としょかん</rt></ruby>で → “ở thư viện”<br/>
+          Bước 5: <ruby>私<rt>わたし</rt></ruby>は → “còn tôi / tôi thì”<br/>
+          Diễn đạt tự nhiên: “Tôi đọc sách tiếng Nhật ở thư viện.”
+        </div>
+<p>
+          Điều quan trọng không phải là dịch “ngược” một cách máy móc, mà là đặt trọng tâm vào vị ngữ trước để không hiểu sai chức năng của các cụm đứng trước.
+        </p>
+</div>
+<div class="strategy-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Quy tắc 2: “Dịch trước trợ từ” theo nghĩa phải đọc cả cụm thành một khối chức năng</h4>
+<p>
+          Khi gặp một danh từ rồi mới thấy trợ từ phía sau, đừng ghi nghĩa danh từ như một mảnh rời. Hãy đọc ngay cả cụm
+          <span class="mono">danh từ + trợ từ</span> như một đơn vị logic. Nói cách khác, không đọc “ga… bạn… ảnh… cho xem”,
+          mà phải đọc thành “ở ga / cho bạn / bức ảnh / đã cho xem”.
+        </p>
+<div class="reading-text ja">
+<ruby>兄<rt>あに</rt></ruby>は <ruby>駅<rt>えき</rt></ruby>で <ruby>友達<rt>ともだち</rt></ruby>に <ruby>写真<rt>しゃしん</rt></ruby>を
+          <ruby>見<rt>み</rt></ruby>せました。
+        </div>
+<div class="formula">
+<ruby>駅<rt>えき</rt></ruby>で → ở ga<br/>
+<ruby>友達<rt>ともだち</rt></ruby>に → cho bạn<br/>
+<ruby>写真<rt>しゃしん</rt></ruby>を → bức ảnh<br/>
+<ruby>見<rt>み</rt></ruby>せました → đã cho xem<br/>
+          Diễn đạt tự nhiên: “Anh tôi đã cho bạn xem ảnh ở ga.”
+        </div>
+<p>
+          Quy tắc này đặc biệt hữu ích khi câu bắt đầu dài dần. Bạn sẽ không bị lạc vì mỗi khối đã có nhãn chức năng rất rõ.
+        </p>
+</div>
+<h3>1.4. Nhận diện câu ghép ngắn: mục đích và nguyên nhân – kết quả</h3>
+<p>
+        Sang N4, người học bắt đầu gặp nhiều câu gồm hai vế ngắn. Nếu không nhận ra ranh giới và quan hệ giữa hai vế, bạn sẽ thấy câu “dài bất thường”
+        dù thực ra cấu trúc rất cơ bản. Hãy tập nhìn xem mệnh đề đầu đang chỉ <span class="em">mục đích</span> hay <span class="em">lý do</span>.
+      </p>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Mẫu chỉ mục đích</h4>
+<p class="ja">
+<ruby>日本<rt>にほん</rt></ruby>で <ruby>働<rt>はたら</rt></ruby>くために、<ruby>日本語<rt>にほんご</rt></ruby>を
+          <ruby>勉強<rt>べんきょう</rt></ruby>しています。<br/>
+<ruby>切符<rt>きっぷ</rt></ruby>を <ruby>買<rt>か</rt></ruby>いに <ruby>駅<rt>えき</rt></ruby>へ <ruby>行<rt>い</rt></ruby>きます。
+        </p>
+<p>
+          Trong câu thứ nhất, vế trước vị ngữ chính cho biết mục đích học tiếng Nhật. Trong câu thứ hai,
+          <span class="ja"><ruby>買<rt>か</rt></ruby>いに</span> cho biết “đi để mua”.
+        </p>
+</div>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Mẫu chỉ nguyên nhân – kết quả</h4>
+<p class="ja">
+<ruby>雨<rt>あめ</rt></ruby>が <ruby>降<rt>ふ</rt></ruby>っているので、<ruby>出<rt>で</rt></ruby>かけません。<br/>
+<ruby>熱<rt>ねつ</rt></ruby>が あるから、<ruby>学校<rt>がっこう</rt></ruby>を <ruby>休<rt>やす</rt></ruby>みます。
+        </p>
+<p>
+          Hãy nhìn theo khung: [lý do] → [kết quả]. Khi câu dài hơn, vẫn giữ cách đọc đó. Đừng để phần lý do kéo bạn đi quá xa khỏi vị ngữ chính.
+        </p>
+</div>
+<div class="micro-drill"><div class="label">Trọng tâm sư phạm</div>
+<h4>Bài tập phản xạ nhanh</h4>
+<p>Hãy thử tự gạch nhịp trước khi dịch:</p>
+<p class="ja">
+<span class="chunk"><ruby>雨<rt>あめ</rt></ruby>が <ruby>強<rt>つよ</rt></ruby>いので</span>
+<span class="chunk"><ruby>今日<rt>きょう</rt></ruby>は <ruby>家<rt>いえ</rt></ruby>で</span>
+<span class="chunk"><ruby>勉強<rt>べんきょう</rt></ruby>します</span>
+</p>
+<p><strong>Đáp án tư duy:</strong> lý do → bối cảnh → hành động chính. Dịch tự nhiên: “Vì mưa to nên hôm nay tôi học ở nhà.”</p>
+</div>
+<div class="reading-block"><div class="label">Trọng tâm sư phạm</div>
+<h3>Thực hành 1: Bài đọc ngắn chủ đề sinh hoạt hằng ngày</h3>
+<div class="reading-text ja">
+<p>
+<ruby>毎朝<rt>まいあさ</rt></ruby>、<ruby>私<rt>わたし</rt></ruby>は <ruby>六時<rt>ろくじ</rt></ruby>に
+            <ruby>起<rt>お</rt></ruby>きます。<ruby>台所<rt>だいどころ</rt></ruby>で <ruby>母<rt>はは</rt></ruby>が
+            <ruby>朝ご飯<rt>あさごはん</rt></ruby>を <ruby>作<rt>つく</rt></ruby>っているので、<ruby>私<rt>わたし</rt></ruby>は
+            <ruby>皿<rt>さら</rt></ruby>を <ruby>並<rt>なら</rt></ruby>べます。<ruby>朝<rt>あさ</rt></ruby>ごはんを
+            <ruby>食<rt>た</rt></ruby>べたあと、<ruby>駅<rt>えき</rt></ruby>まで <ruby>自転車<rt>じてんしゃ</rt></ruby>で
+            <ruby>行<rt>い</rt></ruby>きます。<ruby>七時半<rt>しちじはん</rt></ruby>の <ruby>電車<rt>でんしゃ</rt></ruby>に
+            <ruby>乗<rt>の</rt></ruby>って、<ruby>学校<rt>がっこう</rt></ruby>へ <ruby>向<rt>む</rt></ruby>かいます。
+          </p>
+</div>
+<div class="note-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Điểm ngữ pháp và điểm nhìn cần nhận ra</h4>
+<ul>
+<li><span class="ja"><ruby>六時<rt>ろくじ</rt></ruby>に</span>: mốc thời gian với <span class="ja">に</span>.</li>
+<li><span class="ja"><ruby>台所<rt>だいどころ</rt></ruby>で</span>: nơi hành động “nấu” xảy ra, nên dùng <span class="ja">で</span>.</li>
+<li><span class="ja">〜ているので</span>: mệnh đề chỉ lý do, mở ra kết quả phía sau.</li>
+<li><span class="ja">〜たあと</span>: sau khi làm xong hành động A thì làm B.</li>
+<li><span class="ja"><ruby>電車<rt>でんしゃ</rt></ruby>に <ruby>乗<rt>の</rt></ruby>って</span>: chuỗi hành động bằng thể <span class="ja">て</span>, báo hiệu “làm rồi tiếp tục làm”.</li>
+</ul>
+</div>
+<div class="summary-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Phân tích cấu trúc và dịch chi tiết</h4>
+<ol class="analysis-list">
+<li>
+<strong>Câu 1:</strong>
+<span class="ja"><ruby>毎朝<rt>まいあさ</rt></ruby>、<ruby>私<rt>わたし</rt></ruby>は <ruby>六時<rt>ろくじ</rt></ruby>に <ruby>起<rt>お</rt></ruby>きます。</span><br/>
+<strong>Khung câu:</strong> [thời gian] + [chủ đề] + [mốc giờ] + [hành động cuối câu].<br/>
+<strong>Dịch:</strong> “Mỗi sáng, tôi thức dậy lúc sáu giờ.”
+            </li>
+<li>
+<strong>Câu 2:</strong>
+<span class="ja"><ruby>台所<rt>だいどころ</rt></ruby>で <ruby>母<rt>はは</rt></ruby>が <ruby>朝ご飯<rt>あさごはん</rt></ruby>を <ruby>作<rt>つく</rt></ruby>っているので、<ruby>私<rt>わたし</rt></ruby>は <ruby>皿<rt>さら</rt></ruby>を <ruby>並<rt>なら</rt></ruby>べます。</span><br/>
+<strong>Tách mệnh đề:</strong> [Mẹ đang nấu bữa sáng ở bếp nên] [tôi xếp bát đĩa].<br/>
+<strong>Điểm quan trọng:</strong> <span class="ja"><ruby>母<rt>はは</rt></ruby>が</span> là chủ thể của mệnh đề lý do; còn hành động chính của toàn câu nằm ở cuối: <span class="ja"><ruby>並<rt>なら</rt></ruby>べます</span>.<br/>
+<strong>Dịch:</strong> “Vì mẹ đang nấu bữa sáng trong bếp nên tôi xếp bát đĩa.”
+            </li>
+<li>
+<strong>Câu 3:</strong>
+<span class="ja"><ruby>朝<rt>あさ</rt></ruby>ごはんを <ruby>食<rt>た</rt></ruby>べたあと、<ruby>駅<rt>えき</rt></ruby>まで <ruby>自転車<rt>じてんしゃ</rt></ruby>で <ruby>行<rt>い</rt></ruby>きます。</span><br/>
+<strong>Tách cụm:</strong> [sau khi ăn sáng] + [đến ga] + [bằng xe đạp] + [đi].<br/>
+<strong>Dịch:</strong> “Sau khi ăn sáng, tôi đi xe đạp đến ga.”
+            </li>
+<li>
+<strong>Câu 4:</strong>
+<span class="ja"><ruby>七時半<rt>しちじはん</rt></ruby>の <ruby>電車<rt>でんしゃ</rt></ruby>に <ruby>乗<rt>の</rt></ruby>って、<ruby>学校<rt>がっこう</rt></ruby>へ <ruby>向<rt>む</rt></ruby>かいます。</span><br/>
+<strong>Tách cụm:</strong> [lên chuyến tàu 7 giờ rưỡi] rồi [hướng đến trường].<br/>
+<strong>Dịch:</strong> “Tôi lên chuyến tàu lúc bảy giờ rưỡi rồi đến trường.”
+            </li>
+</ol>
+</div>
+<div class="practice-note"><div class="label">Trọng tâm sư phạm</div>
+<h4>Câu hỏi tự kiểm tra</h4>
+<ol>
+<li>Trong câu 2, ai là người đang nấu bữa sáng?</li>
+<li>Vì sao người nói xếp bát đĩa?</li>
+<li>Người nói đi đến ga bằng phương tiện gì?</li>
+</ol>
+<div class="answer">
+<strong>Gợi ý tìm đáp án:</strong> Dùng kỹ thuật đọc theo trợ từ.
+            <span class="ja"><ruby>母<rt>はは</rt></ruby>が</span> cho biết “mẹ” là chủ thể của hành động nấu;
+            <span class="ja">〜ので</span> báo quan hệ nguyên nhân – kết quả; 
+            <span class="ja"><ruby>自転車<rt>じてんしゃ</rt></ruby>で</span> là phương tiện.
+          </div>
+</div>
+</div>
+<div class="summary-box"><div class="label">Trọng tâm sư phạm</div>
+<h3>Kết luận giai đoạn 1</h3>
+<p>
+          Ở N5 - N4, điều quan trọng nhất không phải là đọc thật nhanh, mà là đọc thật đúng khung. Khi bạn không còn dịch từ đơn lẻ,
+          mà chuyển sang nhìn <span class="mono">vị ngữ cuối câu + cụm danh từ đi với trợ từ</span>, cảm giác “rối” sẽ giảm rất mạnh.
+          Từ nền này, bạn mới đủ sức bước vào các câu dài hơn của N3 - N2.
+        </p>
+</div>
+</section>
+<section class="page-break-before" id="stage-2">
+<div class="stage-banner">Trí Lữ Nihongo · Cấu trúc bài học</div><h2>Giai đoạn 2: Tăng tốc Trung cấp (N3 - N2)</h2>
+<p class="goal">
+        Mục tiêu: Biết xử lý câu dài, mệnh đề bổ nghĩa phức tạp, và nắm ý chính của đoạn văn thay vì mắc kẹt ở từng từ đơn lẻ.
+        Đây là giai đoạn chuyển từ “đọc câu” sang “đọc đoạn”.
+      </p>
+<h3>2.1. Kỹ năng “cắt câu”: dừng đúng chỗ để không vỡ nghĩa</h3>
+<p>
+        Nhiều người học trung cấp không thực sự yếu từ vựng; họ yếu ở chỗ giữ quá nhiều thông tin trong đầu mà không chia khối.
+        Câu tiếng Nhật dài lên không phải vì tác giả cố làm khó, mà vì nhiều mệnh đề được nối mượt bằng dấu phẩy, từ nối, hoặc thể <span class="ja">て</span>.
+        Bài toán của bạn là nhìn ra <span class="em">điểm ngắt tạm thời</span>.
+      </p>
+<div class="note-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Ba vị trí cắt câu nên ưu tiên</h4>
+<ol>
+<li><strong>Dấu phẩy:</strong> thường đánh dấu ranh giới một cụm giải thích, điều kiện, ví dụ, nhấn mạnh, hoặc vế đối lập.</li>
+<li><strong>Từ nối:</strong> như <span class="ja">しかし</span>, <span class="ja">そのため</span>, <span class="ja"><ruby>一方<rt>いっぽう</rt></ruby></span> — đây là biển chỉ đường cho logic đoạn.</li>
+<li><strong>Thể <span class="ja">て</span> và chuỗi động từ:</strong> báo hành động nối tiếp, cách thức, nguyên nhân nhẹ, hoặc bước đệm trước mệnh đề chính.</li>
+</ol>
+</div>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Ví dụ cắt câu theo dấu phẩy và cụm logic</h4>
+<p class="ja">
+<span class="chunk"><ruby>地域<rt>ちいき</rt></ruby>の <ruby>図書館<rt>としょかん</rt></ruby>は</span>
+<span class="chunk"><ruby>静<rt>しず</rt></ruby>かな <ruby>場所<rt>ばしょ</rt></ruby>であるだけでなく、</span>
+<span class="chunk"><ruby>世代<rt>せだい</rt></ruby>の <ruby>異<rt>こと</rt></ruby>なる <ruby>人々<rt>ひとびと</rt></ruby>が <ruby>集<rt>あつ</rt></ruby>まり、</span>
+<span class="chunk"><ruby>情報<rt>じょうほう</rt></ruby>を <ruby>交換<rt>こうかん</rt></ruby>する <ruby>場<rt>ば</rt></ruby>にも なっている。</span>
+</p>
+<p>
+          Nếu cố giữ nguyên câu này trong đầu như một khối, bạn sẽ mệt rất nhanh. Nhưng khi cắt thành bốn cụm, bạn sẽ thấy cấu trúc rất rõ:
+          “Thư viện địa phương không chỉ là nơi yên tĩnh, mà còn là nơi những người khác thế hệ tụ họp và trao đổi thông tin.”
+        </p>
+</div>
+<div class="micro-drill"><div class="label">Trọng tâm sư phạm</div>
+<h4>Bài tập cắt câu nhanh</h4>
+<p>Hãy tự thêm dấu <span class="mono">/</span> vào chỗ nên ngắt trước khi xem gợi ý.</p>
+<p class="ja">
+<ruby>町<rt>まち</rt></ruby>の <ruby>中心<rt>ちゅうしん</rt></ruby>に ある <ruby>小<rt>ちい</rt></ruby>さな
+          <ruby>店<rt>みせ</rt></ruby>は <ruby>観光客<rt>かんこうきゃく</rt></ruby>が <ruby>増<rt>ふ</rt></ruby>えたことで
+          <ruby>有名<rt>ゆうめい</rt></ruby>に なったが <ruby>長<rt>なが</rt></ruby>く <ruby>通<rt>かよ</rt></ruby>う
+          <ruby>客<rt>きゃく</rt></ruby>は むしろ <ruby>減<rt>へ</rt></ruby>っている。
+        </p>
+<div class="answer">
+<strong>Gợi ý cắt:</strong><br/>
+<span class="ja">
+<ruby>町<rt>まち</rt></ruby>の <ruby>中心<rt>ちゅうしん</rt></ruby>に ある <ruby>小<rt>ちい</rt></ruby>さな <ruby>店<rt>みせ</rt></ruby>は /
+            <ruby>観光客<rt>かんこうきゃく</rt></ruby>が <ruby>増<rt>ふ</rt></ruby>えたことで /
+            <ruby>有名<rt>ゆうめい</rt></ruby>に なったが /
+            <ruby>長<rt>なが</rt></ruby>く <ruby>通<rt>かよ</rt></ruby>う <ruby>客<rt>きゃく</rt></ruby>は /
+            むしろ <ruby>減<rt>へ</rt></ruby>っている。
+          </span>
+</div>
+</div>
+<h3>2.2. Bí quyết dịch mệnh đề bổ nghĩa cho danh từ: điểm yếu cốt tử của người Việt</h3>
+<p>
+        Đây là điểm khiến rất nhiều người học N3 - N2 dù biết từ vẫn không hiểu câu. Trong tiếng Việt, danh từ thường xuất hiện trước,
+        rồi phần bổ nghĩa đứng sau: “cuốn sách mà tôi mua hôm qua”. Trong tiếng Nhật, toàn bộ phần bổ nghĩa lại đứng trước danh từ:
+        “hôm qua tôi mua cuốn sách”. Nếu bạn không biết chờ đến khi danh từ xuất hiện, bạn sẽ dịch dở dang và tự làm rối trí.
+      </p>
+<div class="strategy-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Công thức xử lý mệnh đề bổ nghĩa</h4>
+<ol>
+<li>Tìm danh từ “đầu ra” ở cuối cụm.</li>
+<li>Hỏi: “Danh từ này là loại nào? đang được bổ nghĩa ra sao?”</li>
+<li>Khoanh toàn bộ phần đứng trước danh từ cho tới điểm ngắt trước đó.</li>
+<li>Dịch tự nhiên theo tiếng Việt bằng cấu trúc “danh từ + mà...” hoặc chuyển trật tự cho mượt.</li>
+</ol>
+</div>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<p class="ja">
+<ruby>昨日<rt>きのう</rt></ruby> <ruby>駅前<rt>えきまえ</rt></ruby>で <ruby>買<rt>か</rt></ruby>った <ruby>本<rt>ほん</rt></ruby>
+</p>
+<p><strong>Danh từ trung tâm:</strong> <span class="ja"><ruby>本<rt>ほん</rt></ruby></span></p>
+<p><strong>Phần bổ nghĩa:</strong> “đã mua ở trước ga hôm qua”</p>
+<p><strong>Dịch tự nhiên:</strong> “quyển sách tôi đã mua trước ga hôm qua” hoặc “quyển sách mà hôm qua tôi mua ở trước ga”.</p>
+</div>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<p class="ja">
+<ruby>留学<rt>りゅうがく</rt></ruby>した <ruby>友人<rt>ゆうじん</rt></ruby>が
+          <ruby>紹介<rt>しょうかい</rt></ruby>してくれた <ruby>先生<rt>せんせい</rt></ruby>
+</p>
+<p>
+          Cụm này khó hơn vì có hai tầng:
+          trước hết là <span class="ja"><ruby>留学<rt>りゅうがく</rt></ruby>した <ruby>友人<rt>ゆうじん</rt></ruby></span>,
+          tức “người bạn đã từng du học”; sau đó toàn bộ cụm ấy trở thành chủ thể của hành động
+          <span class="ja"><ruby>紹介<rt>しょうかい</rt></ruby>してくれた</span>, và danh từ bị bổ nghĩa cuối cùng là
+          <span class="ja"><ruby>先生<rt>せんせい</rt></ruby></span>.
+        </p>
+<p>
+<strong>Dịch tự nhiên:</strong> “người thầy mà người bạn từng du học đã giới thiệu cho tôi”.
+        </p>
+</div>
+<div class="warning-box"><div class="label">Trọng tâm sư phạm</div>
+<p>
+          Sai lầm phổ biến: vừa thấy <span class="ja"><ruby>留学<rt>りゅうがく</rt></ruby>した</span> đã tự kết luận xong nghĩa.
+          Không được. Trong tiếng Nhật, cho tới khi danh từ cuối cụm lộ diện, nghĩa vẫn còn treo.
+          Hãy kiên nhẫn giữ cụm ở dạng “chưa chốt”.
+        </p>
+</div>
+<h3>2.3. Skimming và Scanning: đọc đoạn văn như một người đi tìm cấu trúc, không đi nhặt từng từ</h3>
+<p>
+        Từ N3 trở lên, không phải câu nào cũng cần dịch hoàn toàn. Trong kỳ thi đọc hiểu, bạn phải biết lúc nào cần “đọc lướt để nắm ý chính”
+        và lúc nào cần “quét nhanh để tìm chi tiết phục vụ câu hỏi”. Hai kỹ năng này không đối lập; chúng bổ trợ nhau.
+      </p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width: 20%;">Kỹ năng</th>
+<th style="width: 38%;">Mục tiêu</th>
+<th>Cách áp dụng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Skimming</td>
+<td>Nắm chủ đề, thái độ tác giả, trục triển khai của đoạn</td>
+<td>
+                Đọc tiêu đề, câu đầu mỗi đoạn, câu cuối mỗi đoạn, những từ lặp lại, những câu đánh giá khái quát.
+              </td>
+</tr>
+<tr>
+<td>Scanning</td>
+<td>Tìm thông tin cụ thể để trả lời câu hỏi</td>
+<td>
+                Gạch từ khóa trong câu hỏi, đổi chúng sang từ đồng nghĩa / cách diễn đạt khác, rồi quét ngược văn bản để định vị.
+              </td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Ba câu hỏi nên tự hỏi khi skimming</h4>
+<ol>
+<li>Từ nào lặp lại nhiều lần? Nó hé lộ chủ điểm của đoạn.</li>
+<li>Đoạn mở đang nêu thực trạng, kể ví dụ hay nêu quan điểm?</li>
+<li>Đoạn kết đang tóm lại, phản biện, hay đẩy sang một kết luận rộng hơn?</li>
+</ol>
+</div>
+<div class="note-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Ba thao tác scanning hiệu quả trong JLPT</h4>
+<ol>
+<li>Biến câu hỏi thành “dấu mốc tìm kiếm”: người nào, thời điểm nào, lý do nào, sự thay đổi nào.</li>
+<li>Đừng tìm khớp từ tuyệt đối; tác giả rất hay paraphrase, tức diễn đạt lại bằng từ khác.</li>
+<li>Khi tìm thấy khu vực nghi vấn, luôn đọc thêm một câu trước và một câu sau để tránh cắt nghĩa quá hẹp.</li>
+</ol>
+</div>
+<h3>2.4. Cấu trúc đoạn văn Mở – Thân – Kết và cách tác giả giấu câu chủ đề</h3>
+<p>
+        Nhiều đoạn văn tiếng Nhật không nêu luận điểm ở câu đầu theo kiểu “tuyên bố trực diện”. Tác giả có thể mở bằng ví dụ,
+        quan sát thường ngày, hay một nhận định tưởng như trung tính; sau đó mới chuyển sang điều mình thực sự muốn nói.
+        Vì vậy, “câu chủ đề” có thể nằm ở cuối đoạn đầu, đầu đoạn hai, hoặc trong câu kết.
+      </p>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<p class="ja">
+<ruby>祭<rt>まつ</rt></ruby>りは にぎやかで <ruby>楽<rt>たの</rt></ruby>しい。だが、その
+          <ruby>価値<rt>かち</rt></ruby>は <ruby>見<rt>み</rt></ruby>ることよりも、<ruby>準備<rt>じゅんび</rt></ruby>に
+          <ruby>参加<rt>さんか</rt></ruby>する <ruby>過程<rt>かてい</rt></ruby>に ある。
+        </p>
+<p>
+          Câu đầu mở bối cảnh quen thuộc. Câu hai mới là câu chủ đề thật sự: tác giả định nghĩa lại “giá trị của lễ hội”.
+        </p>
+</div>
+<div class="summary-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Dấu hiệu nhận ra câu chủ đề bị giấu</h4>
+<ul>
+<li>Câu chuyển từ mô tả hiện tượng sang đánh giá: “điều quan trọng là...”, “vấn đề nằm ở...”, “giá trị không phải chỉ...”</li>
+<li>Câu mang tính khái quát cao hơn các câu còn lại.</li>
+<li>Câu mà nếu bỏ đi, đoạn văn mất “xương sống” lập luận.</li>
+</ul>
+</div>
+<div class="reading-block"><div class="label">Trọng tâm sư phạm</div>
+<h3>Thực hành 2: Đoạn văn trung bình về văn hóa – xã hội</h3>
+<div class="reading-text ja">
+<p>
+<span class="line-no">[1]</span><ruby>地方<rt>ちほう</rt></ruby>の <ruby>祭<rt>まつ</rt></ruby>りは、かつては
+            <ruby>地域<rt>ちいき</rt></ruby>に <ruby>住<rt>す</rt></ruby>む <ruby>人<rt>ひと</rt></ruby>だけが
+            <ruby>支<rt>ささ</rt></ruby>える <ruby>行事<rt>ぎょうじ</rt></ruby>だと <ruby>考<rt>かんが</rt></ruby>えられていた。<br/>
+<span class="line-no">[2]</span>しかし、<ruby>人口<rt>じんこう</rt></ruby>が <ruby>減<rt>へ</rt></ruby>り、
+            <ruby>長<rt>なが</rt></ruby>く <ruby>祭<rt>まつ</rt></ruby>りを <ruby>準備<rt>じゅんび</rt></ruby>してきた
+            <ruby>高齢<rt>こうれい</rt></ruby>の <ruby>住民<rt>じゅうみん</rt></ruby>だけでは、
+            <ruby>同<rt>おな</rt></ruby>じ <ruby>形<rt>かたち</rt></ruby>を <ruby>保<rt>たも</rt></ruby>つことが
+            <ruby>難<rt>むずか</rt></ruby>しくなっている。<br/>
+<span class="line-no">[3]</span>そこで、<ruby>最近<rt>さいきん</rt></ruby>は <ruby>外<rt>そと</rt></ruby>から
+            <ruby>来<rt>き</rt></ruby>た <ruby>若者<rt>わかもの</rt></ruby>や、<ruby>以前<rt>いぜん</rt></ruby>この
+            <ruby>町<rt>まち</rt></ruby>に <ruby>住<rt>す</rt></ruby>んでいた <ruby>人<rt>ひと</rt></ruby>にも
+            <ruby>参加<rt>さんか</rt></ruby>を <ruby>呼<rt>よ</rt></ruby>びかける <ruby>例<rt>れい</rt></ruby>が
+            <ruby>増<rt>ふ</rt></ruby>えている。<br/>
+<span class="line-no">[4]</span>その <ruby>変化<rt>へんか</rt></ruby>を <ruby>見<rt>み</rt></ruby>て、
+            <ruby>祭<rt>まつ</rt></ruby>りらしさが <ruby>薄<rt>うす</rt></ruby>れると <ruby>心配<rt>しんぱい</rt></ruby>する
+            <ruby>声<rt>こえ</rt></ruby>も ある。<br/>
+<span class="line-no">[5]</span>ただ、<ruby>役割<rt>やくわり</rt></ruby>を <ruby>分<rt>わ</rt></ruby>け
+            <ruby>合<rt>あ</rt></ruby>いながら <ruby>一<rt>ひと</rt></ruby>つの <ruby>行事<rt>ぎょうじ</rt></ruby>を
+            <ruby>作<rt>つく</rt></ruby>る <ruby>過程<rt>かてい</rt></ruby>そのものが、<ruby>新<rt>あたら</rt></ruby>しい
+            <ruby>地域<rt>ちいき</rt></ruby>の つながりを <ruby>生<rt>う</rt></ruby>み <ruby>出<rt>だ</rt></ruby>している と
+            <ruby>言<rt>い</rt></ruby>える。<br/>
+<span class="line-no">[6]</span><ruby>祭<rt>まつ</rt></ruby>りの <ruby>価値<rt>かち</rt></ruby>は、
+            <ruby>昔<rt>むかし</rt></ruby>の <ruby>形<rt>かたち</rt></ruby>を そのまま <ruby>守<rt>まも</rt></ruby>ることだけではなく、
+            <ruby>協力<rt>きょうりょく</rt></ruby>の <ruby>機会<rt>きかい</rt></ruby>を <ruby>更新<rt>こうしん</rt></ruby>し
+            <ruby>続<rt>つづ</rt></ruby>けることに あるのかもしれない。
+          </p>
+</div>
+<div class="note-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Điểm ngữ pháp và điểm đọc then chốt</h4>
+<ul>
+<li><span class="ja"><ruby>長<rt>なが</rt></ruby>く <ruby>祭<rt>まつ</rt></ruby>りを <ruby>準備<rt>じゅんび</rt></ruby>してきた <ruby>高齢<rt>こうれい</rt></ruby>の <ruby>住民<rt>じゅうみん</rt></ruby></span>: cụm bổ nghĩa dài, danh từ trung tâm là <span class="ja"><ruby>住民<rt>じゅうみん</rt></ruby></span>.</li>
+<li><span class="ja">だけではなく</span>: không chỉ... mà còn / mà đúng hơn là...</li>
+<li><span class="ja">〜のかもしれない</span>: kết luận mềm, tránh khẳng định tuyệt đối.</li>
+<li>Từ lặp lại nổi bật khi skimming: <span class="ja"><ruby>祭<rt>まつ</rt></ruby>り</span>, <span class="ja"><ruby>参加<rt>さんか</rt></ruby></span>, <span class="ja"><ruby>価値<rt>かち</rt></ruby></span>, <span class="ja"><ruby>地域<rt>ちいき</rt></ruby></span>.</li>
+</ul>
+</div>
+<div class="summary-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Dịch ý toàn đoạn</h4>
+<p>
+            Lễ hội ở địa phương trước đây được xem là sự kiện chỉ do người trong vùng duy trì. Tuy nhiên, dân số giảm và chỉ riêng những cư dân lớn tuổi
+            vốn đã chuẩn bị lễ hội suốt thời gian dài thì ngày càng khó giữ nguyên hình thức cũ. Vì vậy, gần đây ngày càng có nhiều trường hợp kêu gọi cả
+            những người trẻ từ nơi khác đến và cả những người từng sống ở thị trấn này trước đây tham gia. Cũng có ý kiến lo rằng sự thay đổi đó làm nhạt đi
+            “chất lễ hội”. Dù vậy, chính quá trình cùng chia sẻ vai trò để làm nên một sự kiện lại đang tạo ra những mối liên kết cộng đồng mới. Có lẽ giá trị
+            của lễ hội không chỉ nằm ở việc giữ nguyên hình thức xưa, mà còn ở việc liên tục làm mới những cơ hội hợp tác.
+          </p>
+</div>
+<div class="practice-note"><div class="label">Trọng tâm sư phạm</div>
+<h4>Câu hỏi và cách tìm đáp án</h4>
+<ol class="answer-list">
+<li>
+<strong>Câu 1.</strong> Nguyên nhân trực tiếp khiến cách tổ chức lễ hội thay đổi là gì?
+              <div class="answer">
+<strong>Cách tìm:</strong> Scanning theo từ khóa “thay đổi” và “nguyên nhân”. Nhìn vào câu [2], bạn thấy cặp nguyên nhân rõ nhất:
+                dân số giảm, và chỉ riêng những cư dân cao tuổi lâu năm thì khó giữ nguyên hình thức cũ.
+              </div>
+</li>
+<li>
+<strong>Câu 2.</strong> Cụm
+              <span class="ja"><ruby>長<rt>なが</rt></ruby>く <ruby>祭<rt>まつ</rt></ruby>りを <ruby>準備<rt>じゅんび</rt></ruby>してきた <ruby>高齢<rt>こうれい</rt></ruby>の <ruby>住民<rt>じゅうみん</rt></ruby></span>
+              bổ nghĩa cho danh từ nào, và nên dịch thế nào cho tự nhiên?
+              <div class="answer">
+<strong>Đáp án:</strong> Bổ nghĩa cho <span class="ja"><ruby>住民<rt>じゅうみん</rt></ruby></span>.
+                Dịch tự nhiên: “những cư dân lớn tuổi đã chuẩn bị lễ hội suốt một thời gian dài”.
+                Đây là bài kiểm tra điển hình về mệnh đề bổ nghĩa: không chốt nghĩa trước khi thấy danh từ cuối.
+              </div>
+</li>
+<li>
+<strong>Câu 3.</strong> Câu nào thể hiện rõ nhất luận điểm trung tâm của tác giả?
+              <div class="answer">
+<strong>Đáp án tốt nhất:</strong> câu [6].<br/>
+<strong>Lý do:</strong> câu [1] - [4] mô tả bối cảnh và tranh luận; câu [5] là bước đệm đánh giá; câu [6] khái quát hóa thành một định nghĩa mới
+                về “giá trị của lễ hội”. Khi skimming, hãy luôn tìm câu có mức độ khái quát cao nhất.
+              </div>
+</li>
+<li>
+<strong>Câu 4.</strong> Tác giả có thái độ thế nào với nỗi lo rằng
+              <span class="ja"><ruby>祭<rt>まつ</rt></ruby>りらしさが <ruby>薄<rt>うす</rt></ruby>れる</span>?
+              <div class="answer">
+<strong>Đáp án:</strong> Tác giả thừa nhận có nỗi lo đó, nhưng không đồng tình hoàn toàn.
+                Thay vì bác bỏ cảm xúc của người lo ngại, tác giả định nghĩa lại giá trị của lễ hội:
+                trọng tâm không chỉ là giữ nguyên hình thức cũ, mà là duy trì khả năng hợp tác cộng đồng.
+              </div>
+<div class="trap"><div class="label">Trọng tâm sư phạm</div>
+<strong>Bẫy thường gặp:</strong> Chọn đáp án “tác giả hoàn toàn phủ nhận truyền thống”.
+                Văn bản không nói như vậy. Cụm <span class="ja">だけではなく</span> cho thấy tác giả đang mở rộng khái niệm giá trị,
+                không phải phủ định sạch trơn cái cũ.
+              </div>
+</li>
+</ol>
+</div>
+</div>
+<div class="summary-box"><div class="label">Trọng tâm sư phạm</div>
+<h3>Kết luận giai đoạn 2</h3>
+<p>
+          Bước chuyển lớn nhất ở N3 - N2 là từ “giải mã câu” sang “định vị cấu trúc đoạn”. Bạn không cần dịch mọi thứ tuyệt đối chi tiết ngay từ đầu.
+          Hãy cắt câu, tìm danh từ được bổ nghĩa, dùng skimming để dựng xương sống đoạn văn, rồi dùng scanning để chốt đáp án.
+          Khi làm được như vậy, bạn bắt đầu đọc như người điều khiển văn bản, không còn là người bị văn bản kéo đi.
+        </p>
+</div>
+</section>
+<section class="page-break-before" id="stage-3">
+<div class="stage-banner">Trí Lữ Nihongo · Cấu trúc bài học</div><h2>Giai đoạn 3: Vượt ngưỡng Cao cấp (N1)</h2>
+<p class="goal">
+        Mục tiêu: Đọc ra ý đồ tác giả, nhận biết mạch logic ngầm, xử lý văn phong học thuật – xã luận – triết luận,
+        và phân biệt được các đáp án nhiễu rất gần nghĩa trong bài đọc hiểu N1.
+      </p>
+<h3>3.1. Nắm mạch logic ngầm khi bài viết không cho sẵn từ nối rõ ràng</h3>
+<p>
+        Ở N1, độ khó không chỉ nằm ở từ vựng hàn lâm, mà ở chỗ tác giả không phải lúc nào cũng dùng biển báo logic thật rõ.
+        Có những đoạn văn gần như không có nhiều từ nối, nhưng mạch luận vẫn chạy rất chặt. Người đọc yếu thường than “đoạn này câu nào cũng hiểu mà vẫn không biết tác giả muốn gì”.
+        Nguyên nhân là vì họ đọc nghĩa cục bộ, nhưng không dựng quan hệ giữa các câu.
+      </p>
+<div class="note-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Năm câu hỏi để lần ra logic ngầm</h4>
+<ol>
+<li>Tác giả đang phản ứng lại quan niệm phổ biến nào?</li>
+<li>Từ hoặc cụm ý nào lặp lại nhiều lần dưới những cách nói khác nhau?</li>
+<li>Đoạn này đang đi từ hiện tượng → định nghĩa lại → hệ quả, hay từ ví dụ → nguyên tắc?</li>
+<li>Câu nào mang giọng đánh giá, không chỉ mô tả?</li>
+<li>Kết đoạn có mở rộng từ phạm vi cá nhân sang giáo dục, xã hội, hay đạo đức không?</li>
+</ol>
+</div>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Ví dụ về logic ngầm không cần nhiều từ nối</h4>
+<p class="ja">
+<ruby>情報<rt>じょうほう</rt></ruby>が <ruby>増<rt>ふ</rt></ruby>える。<ruby>判断<rt>はんだん</rt></ruby>が
+          <ruby>難<rt>むずか</rt></ruby>しくなる。<ruby>速<rt>はや</rt></ruby>さは ここで <ruby>力<rt>ちから</rt></ruby>にも
+          <ruby>弱点<rt>じゃくてん</rt></ruby>にも なる。
+        </p>
+<p>
+          Không có nhiều từ nối, nhưng logic vẫn rõ: thông tin tăng → phán đoán khó hơn → tốc độ vừa có ích vừa có rủi ro.
+          Khi đọc N1, bạn phải tự dựng mũi tên logic như vậy trong đầu.
+        </p>
+</div>
+<h3>3.2. Chiến thuật phân tích câu hỏi và loại trừ đáp án “bẫy”</h3>
+<p>
+        Ở N1, rất nhiều đáp án sai không sai hoàn toàn; chúng sai ở một điểm nhỏ nhưng chí mạng: đổi phạm vi, đổi mức độ, đổi quan hệ nhân quả,
+        hoặc tráo giọng điệu của tác giả. Muốn làm đúng, bạn phải đọc câu hỏi như một nhà phân tích logic chứ không chỉ như người học từ vựng.
+      </p>
+<div class="table-wrap">
+<table>
+<thead>
+<tr>
+<th style="width: 22%;">Loại bẫy</th>
+<th style="width: 34%;">Biểu hiện</th>
+<th>Cách loại trừ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mở rộng quá mức</td>
+<td>Bài chỉ nói “một phần”, đáp án đổi thành “toàn bộ”, “luôn luôn”, “chỉ có”.</td>
+<td>Tìm trong bài xem tác giả có dùng sắc thái mềm như “có thể”, “không chỉ”, “một phần” hay không.</td>
+</tr>
+<tr>
+<td>Đảo quan hệ nhân quả</td>
+<td>Bài nói A dẫn tới B, đáp án viết như thể B là nguyên nhân của A.</td>
+<td>Quay lại câu chứa vị ngữ đánh giá hoặc hệ quả chính.</td>
+</tr>
+<tr>
+<td>Trộn ví dụ với kết luận</td>
+<td>Một chi tiết minh họa bị đẩy lên thành luận điểm trung tâm.</td>
+<td>Hỏi lại: nếu bỏ chi tiết này, xương sống bài có còn không?</td>
+</tr>
+<tr>
+<td>Đổi sắc thái từ gần nghĩa</td>
+<td>“không tránh khỏi” bị đổi thành “đáng mong muốn”, “hỗ trợ” bị đổi thành “quyết định”.</td>
+<td>So mức độ và thái độ, không chỉ nhìn sự gần nghĩa bề mặt.</td>
+</tr>
+<tr>
+<td>Thu hẹp phạm vi</td>
+<td>Bài nói về xã hội, đáp án chỉ nói về trường học; hoặc ngược lại.</td>
+<td>Theo dõi xem đoạn kết có mở rộng tầng khái quát hay không.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="example-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Một số cặp diễn đạt gần nghĩa nhưng không đồng nghĩa</h4>
+<p class="ja">
+<ruby>避<rt>さ</rt></ruby>けられない ／ <ruby>望<rt>のぞ</rt></ruby>ましい<br/>
+<ruby>支<rt>ささ</rt></ruby>える ／ <ruby>決定<rt>けってい</rt></ruby>づける<br/>
+<ruby>結<rt>むす</rt></ruby>びつく ／ <ruby>同一視<rt>どういつし</rt></ruby>する<br/>
+<ruby>保<rt>たも</rt></ruby>つ ／ <ruby>守<rt>まも</rt></ruby>る
+        </p>
+<p>
+          Khi thấy đáp án dùng từ gần nghĩa, đừng vội tin. Hãy kiểm tra:
+          nó có cùng mức độ mạnh – yếu, cùng thái độ đánh giá, cùng phạm vi áp dụng với bản gốc hay không.
+        </p>
+</div>
+<div class="warning-box"><div class="label">Trọng tâm sư phạm</div>
+<p>
+          Mẹo cực quan trọng: đáp án đúng ở N1 thường không “hào nhoáng”. Nó bám logic của văn bản và giữ đúng mức độ phát biểu của tác giả.
+          Đáp án sai thường có cảm giác rất trơn tru, rất hợp lý, thậm chí rất “đẹp”, nhưng lại thêm bớt một nấc nghĩa mà bài không hề nói.
+        </p>
+</div>
+<div class="reading-block"><div class="label">Trọng tâm sư phạm</div>
+<h3>Thực hành 3: Bài đọc dài trình độ N1 — chủ đề triết lý xã hội về tốc độ và hiểu biết</h3>
+<div class="reading-text ja tight">
+<p>
+<span class="line-no">[1]</span><ruby>情報<rt>じょうほう</rt></ruby>に すぐ <ruby>届<rt>とど</rt></ruby>くことは、
+            <ruby>現代<rt>げんだい</rt></ruby>では ほとんど <ruby>善<rt>よ</rt></ruby>いこととして
+            <ruby>受<rt>う</rt></ruby>け <ruby>取<rt>と</rt></ruby>られている。<ruby>検索<rt>けんさく</rt></ruby>すれば
+            <ruby>答<rt>こた</rt></ruby>えの <ruby>候補<rt>こうほ</rt></ruby>が すぐに <ruby>並<rt>なら</rt></ruby>び、
+            <ruby>要約<rt>ようやく</rt></ruby>を <ruby>読<rt>よ</rt></ruby>めば <ruby>長<rt>なが</rt></ruby>い
+            <ruby>文章<rt>ぶんしょう</rt></ruby>に <ruby>触<rt>ふ</rt></ruby>れたような <ruby>気<rt>き</rt></ruby>にも
+            なれる。<ruby>待<rt>ま</rt></ruby>つことなく <ruby>理解<rt>りかい</rt></ruby>したいという
+            <ruby>願<rt>ねが</rt></ruby>いは、<ruby>効率<rt>こうりつ</rt></ruby>を <ruby>重<rt>おも</rt></ruby>んじる
+            <ruby>社会<rt>しゃかい</rt></ruby>では ごく <ruby>自然<rt>しぜん</rt></ruby>に <ruby>見<rt>み</rt></ruby>える。
+          </p>
+<p>
+<span class="line-no">[2]</span>けれども、<ruby>知<rt>し</rt></ruby>ることと <ruby>分<rt>わ</rt></ruby>かることは
+            <ruby>同<rt>おな</rt></ruby>じではない。<ruby>互<rt>たが</rt></ruby>いに <ruby>合<rt>あ</rt></ruby>わない
+            <ruby>情報<rt>じょうほう</rt></ruby>を <ruby>並<rt>なら</rt></ruby>べ、どこが <ruby>足<rt>た</rt></ruby>りないのかを
+            <ruby>考<rt>かんが</rt></ruby>え、<ruby>自分<rt>じぶん</rt></ruby>の <ruby>前提<rt>ぜんてい</rt></ruby>を
+            <ruby>少<rt>すこ</rt></ruby>しずつ <ruby>組<rt>く</rt></ruby>み <ruby>替<rt>か</rt></ruby>えていく
+            <ruby>過程<rt>かてい</rt></ruby>が あって はじめて、<ruby>判断<rt>はんだん</rt></ruby>は
+            <ruby>深<rt>ふか</rt></ruby>さを もつ。<ruby>迷<rt>まよ</rt></ruby>い や <ruby>停滞<rt>ていたい</rt></ruby>は、
+            <ruby>未熟<rt>みじゅく</rt></ruby>さの <ruby>印<rt>しるし</rt></ruby>というより、<ruby>思考<rt>しこう</rt></ruby>が
+            <ruby>動<rt>うご</rt></ruby>いている <ruby>証拠<rt>しょうこ</rt></ruby>で ある。
+          </p>
+<p>
+<span class="line-no">[3]</span>この <ruby>点<rt>てん</rt></ruby>から <ruby>見<rt>み</rt></ruby>ると、
+            すぐに <ruby>正解<rt>せいかい</rt></ruby>へ たどり <ruby>着<rt>つ</rt></ruby>く <ruby>練習<rt>れんしゅう</rt></ruby>だけを
+            <ruby>重<rt>かさ</rt></ruby>ねる <ruby>教育<rt>きょういく</rt></ruby>は、<ruby>既<rt>すで</rt></ruby>に
+            <ruby>用意<rt>ようい</rt></ruby>された <ruby>選択肢<rt>せんたくし</rt></ruby>の <ruby>中<rt>なか</rt></ruby>から
+            <ruby>最適<rt>さいてき</rt></ruby>な ものを <ruby>選<rt>えら</rt></ruby>ぶ <ruby>力<rt>ちから</rt></ruby>は
+            <ruby>育<rt>そだ</rt></ruby>てられても、まだ <ruby>名前<rt>なまえ</rt></ruby>の ない <ruby>問題<rt>もんだい</rt></ruby>に
+            <ruby>言葉<rt>ことば</rt></ruby>を <ruby>与<rt>あた</rt></ruby>える <ruby>力<rt>ちから</rt></ruby>までは
+            <ruby>育<rt>そだ</rt></ruby>てにくい。<ruby>難<rt>むずか</rt></ruby>しい <ruby>文章<rt>ぶんしょう</rt></ruby>を
+            <ruby>読<rt>よ</rt></ruby>む <ruby>経験<rt>けいけん</rt></ruby>は、すぐには <ruby>使<rt>つか</rt></ruby>えない
+            <ruby>知識<rt>ちしき</rt></ruby>を <ruby>増<rt>ふ</rt></ruby>やすためではなく、すぐには
+            <ruby>答<rt>こた</rt></ruby>えに ならない ものを <ruby>抱<rt>かか</rt></ruby>えたまま
+            <ruby>考<rt>かんが</rt></ruby>え <ruby>続<rt>つづ</rt></ruby>ける <ruby>態度<rt>たいど</rt></ruby>を
+            <ruby>身<rt>み</rt></ruby>に つけるために ある。
+          </p>
+<p>
+<span class="line-no">[4]</span>そのような <ruby>態度<rt>たいど</rt></ruby>は、<ruby>研究<rt>けんきゅう</rt></ruby>の
+            <ruby>場<rt>ば</rt></ruby>だけで なく、<ruby>公共<rt>こうきょう</rt></ruby>の <ruby>議論<rt>ぎろん</rt></ruby>にも
+            <ruby>必要<rt>ひつよう</rt></ruby>で ある。<ruby>分<rt>わ</rt></ruby>からないことに <ruby>耐<rt>た</rt></ruby>えられない
+            <ruby>社会<rt>しゃかい</rt></ruby>では、<ruby>最<rt>もっと</rt></ruby>も <ruby>速<rt>はや</rt></ruby>く、
+            <ruby>最<rt>もっと</rt></ruby>も <ruby>強<rt>つよ</rt></ruby>い <ruby>言葉<rt>ことば</rt></ruby>が いつも
+            <ruby>勝<rt>か</rt></ruby>つ。そこでは、<ruby>慎重<rt>しんちょう</rt></ruby>に <ruby>考<rt>かんが</rt></ruby>え
+            <ruby>直<rt>なお</rt></ruby>す <ruby>人<rt>ひと</rt></ruby>ほど <ruby>遅<rt>おそ</rt></ruby>い と
+            <ruby>見<rt>み</rt></ruby>なされ、<ruby>判断<rt>はんだん</rt></ruby>の <ruby>保留<rt>ほりゅう</rt></ruby>は
+            <ruby>弱<rt>よわ</rt></ruby>さだと <ruby>誤解<rt>ごかい</rt></ruby>される。
+          </p>
+<p>
+<span class="line-no">[5]</span>しかし、<ruby>自由<rt>じゆう</rt></ruby>とは ただ <ruby>素早<rt>すばや</rt></ruby>く
+            <ruby>発言<rt>はつげん</rt></ruby>できることでは ない。<ruby>自分<rt>じぶん</rt></ruby>の
+            <ruby>理解<rt>りかい</rt></ruby>を <ruby>疑<rt>うたが</rt></ruby>い、<ruby>他者<rt>たしゃ</rt></ruby>の
+            <ruby>言葉<rt>ことば</rt></ruby>に よって <ruby>考<rt>かんが</rt></ruby>えを <ruby>修正<rt>しゅうせい</rt></ruby>できること、
+            そして <ruby>結論<rt>けつろん</rt></ruby>を <ruby>急<rt>いそ</rt></ruby>がない <ruby>時間<rt>じかん</rt></ruby>を
+            もてることの <ruby>中<rt>なか</rt></ruby>に ある。ゆっくり <ruby>読<rt>よ</rt></ruby>むことは、
+            <ruby>懐<rt>なつ</rt></ruby>かしい <ruby>学習<rt>がくしゅう</rt></ruby>の <ruby>習慣<rt>しゅうかん</rt></ruby>では なく、
+            <ruby>他者<rt>たしゃ</rt></ruby>と ともに <ruby>考<rt>かんが</rt></ruby>えるための
+            <ruby>社会的<rt>しゃかいてき</rt></ruby>な <ruby>技術<rt>ぎじゅつ</rt></ruby>なので ある。
+          </p>
+</div>
+<div class="note-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Điểm ngữ pháp – ngữ nghĩa cần khóa lại</h4>
+<ul>
+<li><span class="ja">〜が あって はじめて</span>: chỉ khi có quá trình đó thì điều phía sau mới thật sự thành hình.</li>
+<li><span class="ja">〜というより</span>: không hẳn là A, mà gần với B hơn; dùng để sửa lại cách nhìn.</li>
+<li><span class="ja">〜だけを <ruby>重<rt>かさ</rt></ruby>ねる</span>: nhấn phê bình một hướng giáo dục quá thiên lệch.</li>
+<li><span class="ja">〜ためではなく、〜ために ある</span>: cấu trúc đối lập để tái định nghĩa bản chất của việc đọc khó.</li>
+<li><span class="ja"><ruby>社会的<rt>しゃかいてき</rt></ruby>な <ruby>技術<rt>ぎじゅつ</rt></ruby></span>: cụm kết luận có mức độ khái quát cao, cần được xem như nhãn của toàn bài.</li>
+</ul>
+</div>
+<div class="summary-box"><div class="label">Trọng tâm sư phạm</div>
+<h4>Dịch ý khái quát</h4>
+<p>
+            Xã hội hiện đại coi việc tiếp cận thông tin nhanh là điều tốt. Chỉ cần tìm kiếm và đọc tóm tắt, con người có cảm giác mình đã hiểu.
+            Nhưng “biết” và “thật sự hiểu” không giống nhau. Chỉ khi đặt các thông tin không khớp cạnh nhau, nhận ra chỗ thiếu, rồi dần điều chỉnh tiền đề của chính mình,
+            phán đoán mới có chiều sâu. Vì vậy, một nền giáo dục chỉ luyện tìm đáp án đúng thật nhanh có thể giúp con người chọn lựa tốt trong những phương án đã được chuẩn bị sẵn,
+            nhưng lại khó nuôi dưỡng năng lực gọi tên những vấn đề chưa từng được đặt thành câu hỏi. Việc đọc văn bản khó quan trọng không phải vì nó cho ta nhiều tri thức dùng ngay,
+            mà vì nó luyện cho ta thái độ tiếp tục suy nghĩ ngay cả khi chưa có câu trả lời. Thái độ ấy không chỉ cần trong nghiên cứu, mà còn cần trong tranh luận công cộng.
+            Một xã hội không chịu được sự chưa rõ ràng sẽ để cho tiếng nói nhanh và mạnh nhất thắng thế. Tự do vì thế không chỉ là quyền phát biểu nhanh,
+            mà còn là khả năng nghi ngờ chính sự hiểu biết của mình, sửa mình trước lời người khác, và có thời gian để chưa chốt kết luận.
+            Bởi vậy, đọc chậm là một kỹ thuật xã hội giúp con người cùng nhau suy nghĩ.
+          </p>
+</div>
+<div class="practice-note"><div class="label">Trọng tâm sư phạm</div>
+<h4>Câu hỏi hóc búa và lời giải chi tiết</h4>
+<ol class="answer-list">
+<li>
+<strong>Câu 1. Luận điểm trung tâm của toàn bài là gì?</strong>
+<ul>
+<li>A. Xã hội hiện đại không còn cần đọc những văn bản dài.</li>
+<li>B. Đọc chậm chỉ quan trọng trong nghiên cứu hàn lâm, không liên quan đời sống công cộng.</li>
+<li>C. Hiểu biết sâu đòi hỏi khả năng chịu đựng sự chưa rõ, và đọc chậm là một kỹ thuật xã hội giúp hình thành năng lực đó.</li>
+<li>D. Giáo dục nên loại bỏ hoàn toàn các bài kiểm tra có đáp án rõ ràng.</li>
+</ul>
+<div class="answer">
+<strong>Đáp án đúng: C.</strong><br/>
+                Để giải câu này, không nên bám một câu lẻ mà phải skimming theo trục toàn bài:
+                [1] nêu hiện tượng xã hội tôn sùng tốc độ; [2] định nghĩa lại sự hiểu; [3] kéo sang giáo dục; [4] mở rộng tới tranh luận công cộng; [5] chốt bằng khái niệm
+                <span class="ja"><ruby>社会的<rt>しゃかいてき</rt></ruby>な <ruby>技術<rt>ぎじゅつ</rt></ruby></span>.
+                Đáp án C gom được cả hai lõi của bài: <em>sự sâu của hiểu biết</em> và <em>ý nghĩa xã hội của đọc chậm</em>.
+              </div>
+<div class="trap"><div class="label">Trọng tâm sư phạm</div>
+<strong>Vì sao các đáp án khác sai?</strong><br/>
+                A chỉ nhắc hiện tượng mở bài, không phải kết luận của tác giả.<br/>
+                B thu hẹp phạm vi: đoạn [4] - [5] cho thấy tác giả mở rộng sang xã hội công cộng, không chỉ nghiên cứu.<br/>
+                D là bẫy “cực đoan hóa”: bài không hề nói phải loại bỏ hoàn toàn hình thức có đáp án rõ ràng; tác giả chỉ phê bình sự lệch hẳn về một phía.
+              </div>
+</li>
+<li>
+<strong>Câu 2. Tác giả xem <span class="ja"><ruby>迷<rt>まよ</rt></ruby>い や <ruby>停滞<rt>ていたい</rt></ruby></span> là gì?</strong>
+<ul>
+<li>A. Dấu hiệu chắc chắn của thiếu năng lực tư duy.</li>
+<li>B. Một trạng thái có thể cho thấy tư duy đang vận động.</li>
+<li>C. Hệ quả duy nhất của việc thiếu thông tin trên mạng.</li>
+<li>D. Trạng thái phải bị loại bỏ càng sớm càng tốt trong học tập.</li>
+</ul>
+<div class="answer">
+<strong>Đáp án đúng: B.</strong><br/>
+                Căn cứ trực tiếp nằm ở đoạn [2]:
+                <span class="ja"><ruby>迷<rt>まよ</rt></ruby>い や <ruby>停滞<rt>ていたい</rt></ruby>は、<ruby>未熟<rt>みじゅく</rt></ruby>さの <ruby>印<rt>しるし</rt></ruby>というより、<ruby>思考<rt>しこう</rt></ruby>が <ruby>動<rt>うご</rt></ruby>いている <ruby>証拠<rt>しょうこ</rt></ruby>で ある。</span>
+                Cụm <span class="ja">というより</span> rất quan trọng: tác giả sửa lại cách hiểu thông thường, chuyển từ “dấu hiệu non kém” sang “dấu hiệu suy nghĩ đang diễn ra”.
+              </div>
+<div class="trap"><div class="label">Trọng tâm sư phạm</div>
+<strong>Bẫy logic:</strong><br/>
+                A đảo nghĩa với văn bản.<br/>
+                C gán nguyên nhân không có trong bài: tác giả không hề quy trạng thái này về “thiếu thông tin trên mạng”.<br/>
+                D biến nhận định của tác giả thành lời khuyên ngược hẳn với ông.
+              </div>
+</li>
+<li>
+<strong>Câu 3. Cách hiểu nào gần nhất với cụm <span class="ja"><ruby>名前<rt>なまえ</rt></ruby>の ない <ruby>問題<rt>もんだい</rt></ruby>に <ruby>言葉<rt>ことば</rt></ruby>を <ruby>与<rt>あた</rt></ruby>える</span>?</strong>
+<ul>
+<li>A. Ghi nhớ thật nhiều thuật ngữ chuyên môn để đặt tên đúng cho khái niệm có sẵn.</li>
+<li>B. Tùy ý tạo ra những từ mới lạ để gây ấn tượng trong học thuật.</li>
+<li>C. Nhận ra vấn đề chưa được hệ lựa chọn sẵn bao quát và diễn đạt nó thành điều có thể suy nghĩ, bàn luận.</li>
+<li>D. Biến mọi câu hỏi mở thành câu hỏi trắc nghiệm để dễ trả lời hơn.</li>
+</ul>
+<div class="answer">
+<strong>Đáp án đúng: C.</strong><br/>
+                Đây là câu kiểm tra năng lực paraphrase. Đoạn [3] đối lập hai năng lực:
+                chọn đáp án tối ưu trong các lựa chọn đã có sẵn, và gọi tên những vấn đề “chưa có tên”.
+                Vì vậy, “cho vấn đề ngôn từ” không phải là học thuộc thuật ngữ, mà là phát hiện vấn đề chưa được khung sẵn và biến nó thành đối tượng tư duy.
+              </div>
+<div class="trap"><div class="label">Trọng tâm sư phạm</div>
+<strong>Bẫy gần nghĩa:</strong><br/>
+                A nghe rất học thuật nhưng lệch trọng tâm: thuật ngữ có sẵn không phải “vấn đề chưa có tên”.<br/>
+                B sai ở sắc thái: tác giả không nói đến sự phô diễn ngôn ngữ.<br/>
+                D là bẫy đảo chiều: văn bản đang phê bình việc chỉ luyện chọn đáp án có sẵn.
+              </div>
+</li>
+<li>
+<strong>Câu 4. Phát biểu nào gần nhất với quan điểm của tác giả về tốc độ và sự tiện lợi?</strong>
+<ul>
+<li>A. Tốc độ luôn phá hủy tự do, nên xã hội hiện đại cần quay lại hoàn toàn cách học cũ.</li>
+<li>B. Tiếp cận nhanh thông tin là vô ích, vì chỉ có đọc chậm mới tạo ra tri thức.</li>
+<li>C. Tốc độ có giá trị thực dụng, nhưng nếu đồng nhất việc tiếp cận nhanh với hiểu biết thật sự thì năng lực phán đoán sẽ nghèo đi.</li>
+<li>D. Càng chậm càng tốt; người phản ứng nhanh chắc chắn suy nghĩ nông.</li>
+</ul>
+<div class="answer">
+<strong>Đáp án đúng: C.</strong><br/>
+                Đoạn [1] cho thấy tác giả hiểu vì sao xã hội ưa tốc độ; ông không phủ nhận hoàn toàn tính tiện lợi.
+                Nhưng từ [2] trở đi, ông phản biện việc đồng nhất “tiếp cận nhanh” với “hiểu sâu”. Đáp án C giữ đúng sắc thái cân bằng ấy.
+              </div>
+<div class="trap"><div class="label">Trọng tâm sư phạm</div>
+<strong>Vì sao A, B, D sai?</strong><br/>
+                A và D cực đoan hóa quan điểm; bài không hề thần thánh hóa sự chậm như một giá trị tuyệt đối.<br/>
+                B là bẫy phủ định sạch trơn. Văn bản phê bình sự đồng nhất sai lầm, chứ không nói tiếp cận nhanh là vô ích.
+              </div>
+</li>
+<li>
+<strong>Câu 5. Vì sao tác giả kết luận rằng đọc chậm là <span class="ja"><ruby>社会的<rt>しゃかいてき</rt></ruby>な <ruby>技術<rt>ぎじゅつ</rt></ruby></span>?</strong>
+<ul>
+<li>A. Vì nó làm con người nói năng đẹp hơn trong tranh luận.</li>
+<li>B. Vì nó giúp con người có khả năng cùng suy nghĩ với người khác, sửa lại sự hiểu của mình, và làm lành mạnh hơn đời sống tranh luận công cộng.</li>
+<li>C. Vì nó bảo vệ nguyên vẹn mọi thói quen học tập cũ khỏi các thay đổi công nghệ.</li>
+<li>D. Vì nó khiến phản ứng chậm đi, nên tự nhiên thận trọng hơn.</li>
+</ul>
+<div class="answer">
+<strong>Đáp án đúng: B.</strong><br/>
+                Để trả lời câu này, phải nối đoạn [3], [4], [5] với nhau. Đoạn [3] nói về thái độ tiếp tục suy nghĩ dù chưa có đáp án;
+                đoạn [4] chuyển thái độ ấy sang nghiên cứu và tranh luận công cộng; đoạn [5] chốt rằng tự do bao gồm khả năng sửa mình trước lời người khác.
+                Vì thế “kỹ thuật xã hội” ở đây không phải kỹ năng cá nhân đơn lẻ, mà là điều kiện để nhiều người cùng suy nghĩ một cách có trách nhiệm.
+              </div>
+<div class="trap"><div class="label">Trọng tâm sư phạm</div>
+<strong>Bẫy thường gặp:</strong><br/>
+                A chỉ bám bề mặt ngôn ngữ, không chạm đến cốt lõi tương tác xã hội.<br/>
+                C trái trực tiếp với câu
+                <span class="ja"><ruby>懐<rt>なつ</rt></ruby>かしい <ruby>学習<rt>がくしゅう</rt></ruby>の <ruby>習慣<rt>しゅうかん</rt></ruby>では なく</span>:
+                tác giả phủ nhận cách hiểu hoài cổ này.<br/>
+                D nêu một hệ quả tâm lý có thể có, nhưng quá hẹp và không chứa chiều kích “cùng suy nghĩ với người khác”.
+              </div>
+</li>
+</ol>
+</div>
+</div>
+<div class="summary-box"><div class="label">Trọng tâm sư phạm</div>
+<h3>Kết luận giai đoạn 3</h3>
+<p>
+          Từ N1 trở lên, đọc hiểu không còn là cuộc thi giữa bạn và từ điển, mà là cuộc đối thoại giữa bạn và một hệ thống lập luận.
+          Người đọc giỏi không phải người hiểu từng chữ sớm nhất, mà là người giữ được sự chính xác trong việc xác định
+          <span class="mono">lập trường – quan hệ logic – mức độ phát biểu – phạm vi kết luận</span>.
+          Khi bạn làm được điều đó, các bài đọc khó sẽ bớt đáng sợ, vì bạn không còn lao vào từng câu một cách cô lập,
+          mà nhìn thấy cả cỗ máy tư duy đang vận hành bên dưới.
+        </p>
+</div>
+</section>
+<section class="page-break-before">
+<div class="stage-banner">Khóa lại toàn bộ lộ trình</div><h2>Tổng kết cuối tài liệu: Lộ trình học đúng để đọc hiểu tiến nhanh và bền</h2>
+<p>
+        Học đọc hiểu tiếng Nhật không phải là tích trữ càng nhiều bản dịch mẫu càng tốt, mà là xây một hệ phản xạ đúng.
+        Ở sơ cấp, bạn cần phá tư duy dịch tuyến tính. Ở trung cấp, bạn cần biết cắt câu và nhận diện mệnh đề bổ nghĩa.
+        Ở cao cấp, bạn cần theo được mạch lập luận và loại trừ các đáp án nhiễu có vẻ rất hợp lý. Ba giai đoạn ấy không tách rời nhau;
+        mỗi tầng sau chỉ vững khi tầng trước đã thành phản xạ.
+      </p>
+<div class="note-box"><div class="label">Trọng tâm sư phạm</div>
+<h3>Checklist tự học nên lặp lại mỗi tuần</h3>
+<ol>
+<li>Chọn một bài đọc ngắn và xác định toàn bộ vị ngữ cuối câu.</li>
+<li>Gạch các cụm <span class="mono">danh từ + trợ từ</span> để kiểm tra bộ khung.</li>
+<li>Khoanh mọi mệnh đề bổ nghĩa trước danh từ trung tâm.</li>
+<li>Viết một câu tóm tắt ý chính của mỗi đoạn.</li>
+<li>Tự tạo 2 đáp án nhiễu cho một câu hỏi để luyện nhìn bẫy logic.</li>
+</ol>
+</div>
+<div class="summary-box"><div class="label">Trọng tâm sư phạm</div>
+<h3>Lời nhắn cuối</h3>
+<p>
+          Đọc hiểu giỏi không đến từ việc ép bản thân đọc thật nhanh ngay lập tức. Nó đến từ việc đọc có cấu trúc, đọc có kiểm soát,
+          và đọc với sự kiên nhẫn đủ lớn để cho phép nghĩa của câu và ý đồ của tác giả hiện ra đúng hình.
+          Khi tư duy đã đúng, tốc độ sẽ tăng. Khi logic đã rõ, kỳ thi sẽ bớt mơ hồ.
+          Và khi bạn bắt đầu nhìn thấy tiếng Nhật như một hệ thống tổ chức suy nghĩ, việc đọc sẽ không còn là gánh nặng,
+          mà trở thành một năng lực thực sự.
+        </p>
+</div>
+</section>
+</main>
+
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="doc-hieu-trilu"></script>
+</body>
+</html>

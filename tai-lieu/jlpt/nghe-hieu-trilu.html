@@ -1,0 +1,994 @@
+
+<!DOCTYPE html>
+
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hướng dẫn Tư duy Nghe hiểu Tiếng Nhật Toàn diện (N5 - N1)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700;900&amp;family=Outfit:wght@300;400;500;600;700&amp;family=Shippori+Mincho:wght@400;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    @page { size: A4; margin: 18mm 14mm 18mm 14mm; }
+    :root {
+      --washi: #F7F2E8;
+      --paper: #FAF8F1;
+      --ink: #2D3436;
+      --muted: #5E6672;
+      --vermilion: #A02C2C;
+      --gold: #D4AF37;
+      --gold-soft: rgba(212,175,55,.14);
+      --line: #E5D8B8;
+      --card: rgba(255,255,255,.82);
+      --shadow: 0 18px 42px rgba(77, 51, 18, 0.08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: radial-gradient(circle at 50% 12%, rgba(255,255,255,.85) 0%, rgba(247,242,232,1) 50%, rgba(241,233,217,1) 100%);
+      font-family: 'Outfit', sans-serif;
+      line-height: 1.78;
+      font-size: 11pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .24;
+      background-image: radial-gradient(rgba(160,44,44,.08) .7px, transparent .7px), radial-gradient(rgba(212,175,55,.08) .7px, transparent .7px);
+      background-size: 26px 26px, 38px 38px;
+      background-position: 0 0, 12px 12px;
+    }
+    header, footer {
+      position: fixed; left: 0; right: 0; z-index: 10; color: var(--muted);
+      font-size: 9.4pt;
+    }
+    header { top: -12mm; display:flex; justify-content:space-between; align-items:center; font-style: italic; }
+    footer { bottom: -12mm; border-top: 1px solid rgba(160,44,44,.14); padding-top: 3mm; display:flex; justify-content:space-between; align-items:center; }
+    main { max-width: 980px; margin: 0 auto; padding: 10mm 0 6mm; position: relative; z-index: 1; }
+    .cover {
+      background: linear-gradient(180deg, rgba(255,255,255,.92) 0%, rgba(250,248,241,.96) 100%);
+      border: 1px solid rgba(212,175,55,.35);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 18mm 14mm 16mm;
+      margin-bottom: 12mm;
+      position: relative;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+    .cover::before {
+      content: ""; position:absolute; top:-80px; right:-80px; width:220px; height:220px;
+      background: radial-gradient(circle, rgba(160,44,44,.10) 0%, transparent 70%);
+    }
+    .cover::after {
+      content:""; position:absolute; left:-70px; bottom:-70px; width:180px; height:180px;
+      background: radial-gradient(circle, rgba(212,175,55,.12) 0%, transparent 72%);
+    }
+    .eyebrow, .kicker, .stage-banner, .small-caps {
+      display:inline-block; font-size: 9.3pt; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+      color: var(--vermilion); background: rgba(212,175,55,.10); border:1px solid rgba(212,175,55,.28);
+      padding: 6px 12px; border-radius: 999px;
+    }
+    h1, h2, h3, h4, h5 { font-family:'Shippori Mincho','Noto Serif JP',serif; color:#4D1717; page-break-after: avoid; }
+    h1 { font-size: 26pt; line-height: 1.26; margin: 10px 0 8px; }
+    h2 { font-size: 17pt; margin: 14mm 0 4mm; padding-bottom: 2.2mm; border-bottom: 2px solid rgba(160,44,44,.18); }
+    h3 { font-size: 13.3pt; margin: 7mm 0 2.5mm; }
+    h4 { font-size: 11.8pt; margin: 5mm 0 2mm; }
+    h5 { font-size: 11.2pt; margin: 4mm 0 1.5mm; }
+    p { margin: 0 0 3.2mm; text-align: justify; }
+    ul, ol { margin: 0 0 4mm 6mm; padding-left: 5mm; }
+    li { margin-bottom: 1.7mm; }
+    .lead, .subtitle, .strapline { font-size: 11.6pt; color: #394150; max-width: 95%; }
+    .lead-brand { margin-top: 10px; font-size: 10.5pt; color: var(--muted); }
+    .goal, .method-box, .toc, .toc-card, .panel, .note-box, .example-box, .strategy-box, .warning-box, .summary-box, .practice-note, .table-wrap, .micro-drill, .callout, .trap, .insight, .checklist, .diagram, .answer, .script-block, .reading-block, .question-box {
+      background: var(--card);
+      border: 1px solid rgba(212,175,55,.28);
+      border-radius: 20px;
+      padding: 14px 16px;
+      box-shadow: 0 10px 24px rgba(90, 60, 20, 0.05);
+      page-break-inside: avoid;
+      break-inside: avoid;
+      margin: 4mm 0 5mm;
+      position: relative;
+      overflow: hidden;
+    }
+    .method-box::before, .toc::before, .panel::before, .note-box::before, .example-box::before, .strategy-box::before, .warning-box::before, .summary-box::before, .practice-note::before, .table-wrap::before, .micro-drill::before, .callout::before, .trap::before, .insight::before, .checklist::before, .reading-block::before, .script-block::before {
+      content: ""; position:absolute; inset:0; pointer-events:none;
+      background: linear-gradient(135deg, rgba(255,255,255,.34), transparent 42%);
+    }
+    .goal { border-left: 6px solid var(--vermilion); background: linear-gradient(90deg, rgba(212,175,55,.12), rgba(255,255,255,.82)); }
+    .strategy-box, .insight, .summary-box { background: linear-gradient(180deg, rgba(212,175,55,.10), rgba(255,255,255,.86)); }
+    .warning-box, .trap, .answer { background: linear-gradient(180deg, rgba(160,44,44,.08), rgba(255,255,255,.90)); }
+    .diagram { font-family: 'Courier New', monospace; white-space: pre-wrap; background: rgba(250,248,241,.95); }
+    .reading-text, .jp {
+      background: rgba(250,248,241,.96); border-left: 4px solid rgba(160,44,44,.28); border-radius: 14px;
+      padding: 12px 14px; margin: 10px 0 12px;
+    }
+    .jp p, .reading-text p { margin-bottom: 2mm; }
+    .label, .card-section-label {
+      font-family:'Shippori Mincho','Noto Serif JP',serif; font-size: 10pt; letter-spacing: .08em; text-transform: uppercase;
+      color: var(--vermilion); font-weight: 700; margin-bottom: 2.2mm; display:block;
+      border-left: 3px solid var(--gold); padding-left: 8px;
+    }
+    .tag, .chunk {
+      display:inline-block; border:1px solid rgba(212,175,55,.35); background: rgba(212,175,55,.09); border-radius: 999px;
+      padding: 2px 8px; margin: 1px 4px 3px 0; font-size: 9pt;
+    }
+    table { width:100%; border-collapse: collapse; background: rgba(255,255,255,.86); overflow:hidden; border-radius: 14px; }
+    th, td { border: 1px solid rgba(212,175,55,.24); padding: 9px 10px; vertical-align: top; text-align:left; }
+    th { background: rgba(212,175,55,.12); color: #7A1F1F; font-weight:700; }
+    .section-divider { border:0; border-top:1px solid rgba(212,175,55,.3); margin: 7mm 0; }
+    .quote { border-left: 4px solid rgba(160,44,44,.25); background: rgba(250,248,241,.88); padding: 10px 12px; border-radius: 12px; }
+    .formula { font-family: 'Courier New', monospace; font-size: 10pt; background: rgba(250,248,241,.92); border:1px dashed rgba(160,44,44,.22); border-radius: 12px; padding: 10px 12px; margin: 8px 0; }
+    .small, .mini { font-size: 9.7pt; color: var(--muted); }
+    .mono { font-family: 'Courier New', monospace; }
+    .center { text-align:center; } .right { text-align:right; }
+    .page-break, .page-break-before { page-break-before: always; break-before: page; }
+    .line-no { display:inline-block; min-width: 30px; color: var(--vermilion); font-weight:700; }
+    ruby rt { font-size: .58em; color: #A02C2C; }
+    .ja, [lang="ja"] { font-family: 'Noto Serif JP', 'Shippori Mincho', serif; }
+    .brand-lockup { display:flex; gap:12px; align-items:center; margin-bottom: 8px; }
+    .crest { width: 56px; height: 56px; border-radius: 16px; border:1px solid rgba(212,175,55,.38); display:flex; align-items:center; justify-content:center; background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(250,248,241,.9)); font-family:'Shippori Mincho',serif; font-size: 22pt; color: var(--vermilion); box-shadow: 0 8px 20px rgba(122, 31, 31, .08); }
+    .brand-meta strong { display:block; color: #4D1717; font-size: 11pt; letter-spacing: .04em; }
+    .brand-meta span { color: var(--muted); font-size: 9.6pt; }
+    .toc-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 12px; }
+    .toc-item { background: rgba(255,255,255,.75); border:1px solid rgba(212,175,55,.26); border-radius:16px; padding:12px 14px; }
+    .toc-item strong { color:#7A1F1F; display:block; margin-bottom:4px; }
+    @media print { a { color: inherit; text-decoration: none; } main { max-width:none; } }
+  </style>
+</head>
+<body class="trilu-themed">
+<header><div>Trí Lữ Nihongo | Học một ngôn ngữ, sống một cuộc đời</div><div>NGHE HIỂU · Phiên bản thương hiệu hoá</div></header>
+<footer><div>Trilu Education</div><div>Website: trilu.edu.vn</div></footer>
+<main>
+<section class="cover">
+<div class="brand-lockup">
+<div class="crest">旅</div>
+<div class="brand-meta">
+<strong>TRÍ LỮ NIHONGO</strong>
+<span>Tài liệu học thuật nội bộ · Thiết kế nhận diện đồng bộ theo bộ tài liệu Hán tự</span>
+</div>
+</div>
+<div class="eyebrow">NGHE HIỂU · Bản tái biên tập nhận diện trung tâm</div>
+
+
+<h1>Hướng dẫn Tư duy Nghe hiểu Tiếng Nhật Toàn diện (N5 - N1)</h1>
+<p class="lead">
+        Tài liệu này không dạy người học “nghe cho nhiều rồi sẽ quen”, mà huấn luyện một năng lực cụ thể:
+        chuyển từ trạng thái chỉ nhặt được vài từ rời rạc sang trạng thái nghe được tình huống, quan hệ giữa
+        các nhân vật, ý định thực sự của người nói và điểm mấu chốt để chọn đáp án đúng trong giao tiếp cũng như trong JLPT.
+      </p>
+<div class="intro-grid avoid-break">
+<div class="panel">
+<h3>Vì sao người Việt thường sợ phần nghe?</h3>
+<ul>
+<li>Hay nghe theo từng “từ đơn” thay vì theo cụm ý nghĩa và quan hệ ngữ cảnh.</li>
+<li>Dễ bỏ lỡ các khác biệt rất ngắn nhưng quyết định nghĩa: âm dài, âm ngắt, nguyên âm vô thanh.</li>
+<li>Quá tập trung phần đầu câu, trong khi tiếng Nhật thường dồn thông tin quyết định ở cuối câu.</li>
+<li>Bối rối khi chủ ngữ bị lược bỏ, khi người Nhật nói vòng, hoặc khi dùng kính ngữ làm mờ tác thể.</li>
+<li>Có thói quen dịch thầm sang tiếng Việt quá sớm nên tốc độ xử lý bị nghẽn.</li>
+</ul>
+</div>
+<div class="panel">
+<h3>Ba nguyên tắc xuyên suốt của tài liệu</h3>
+<ul>
+<li><strong>Nghe cảnh trước, nghe chữ sau:</strong> đoán tình huống giao tiếp trước khi cố chốt nghĩa từng từ.</li>
+<li><strong>Nghe đuôi câu để khóa ý:</strong> thì, phủ định, mệnh lệnh, nhờ vả và quyết định thường nằm ở cuối.</li>
+<li><strong>Nghe quan hệ thay vì nghe riêng lẻ:</strong> ai nói với ai, ai làm cho ai, ai chịu trách nhiệm bước tiếp theo.</li>
+</ul>
+</div>
+</div>
+<p class="lead-brand">Nghe đúng tín hiệu. Bắt đúng dụng ý. Xử lý trọn vẹn hội thoại và bài nghe từ N5 đến N1.</p></section>
+<section class="section toc">
+<div class="stage-banner">Trí Lữ Nihongo · Cấu trúc bài học</div><h2>Bản đồ sử dụng tài liệu</h2>
+<p>
+        Cuốn hướng dẫn này được thiết kế như một lộ trình đổi tư duy. Người học không chỉ tăng vốn nghe, mà còn học cách
+        nhận diện bẫy. Hãy đọc theo thứ tự từ Giai đoạn 1 đến Giai đoạn 3; nếu đang ở trình độ trung cấp hoặc cao cấp,
+        vẫn nên rà lại Giai đoạn 1 vì rất nhiều lỗi nghe sai ở N2–N1 thực chất bắt nguồn từ nền tảng âm thanh chưa vững.
+      </p>
+
+<div class="callout tight">
+<p class="label">Cách đọc mỗi bài thực hành</p>
+
+</div>
+<div class="toc-grid"><div class="toc-item"><strong>Giai đoạn 1 (N5–N4)</strong><p>nền tảng âm thanh, phản xạ cơ bản, rút gọn khẩu ngữ, nghe đuôi câu.</p></div><div class="toc-item"><strong>Giai đoạn 2 (N3–N2)</strong><p>xử lý hội thoại dài, ghi chú nhanh, kính ngữ, nói vòng, cho–nhận, sai khiến–bị động.</p></div><div class="toc-item"><strong>Giai đoạn 3 (N1)</strong><p>nghe bản tin, diễn thuyết, bình luận xã hội; suy ra thái độ và quan điểm cốt lõi.</p></div><div class="toc-item"><strong>Khuyến nghị học</strong><p>mỗi script nên được nghe theo ba lượt tư duy: đoán cảnh → xác định điểm khóa → kiểm tra bẫy.</p></div><div class="toc-item"><strong>Lượt 1</strong><p>chỉ hỏi “đây là bối cảnh gì, ai đang tương tác với ai?”.</p></div><div class="toc-item"><strong>Lượt 2</strong><p>đánh dấu từ nghi vấn, từ nối, đuôi câu, mốc thời gian và quan hệ cho–nhận.</p></div><div class="toc-item"><strong>Lượt 3</strong><p>đối chiếu bẫy: có chi tiết nào nghe thấy nhưng bị người nói sửa lại, phủ định lại, hoặc chuyển hướng bằng でも／ただ／ちょっと hay không.</p></div></div></section>
+<section class="section">
+<div class="stage-banner">Giai đoạn 1 · Nền tảng âm thanh &amp; phản xạ cơ bản (N5 - N4)</div>
+<h2>1. Giai đoạn 1: Nền tảng Âm thanh &amp; Phản xạ cơ bản (N5 - N4)</h2>
+<p class="goal">
+<strong>Mục tiêu:</strong> sửa những lệch chuẩn phát âm khiến tai nghe sai nghĩa, làm quen với tốc độ nói tự nhiên,
+        và hình thành phản xạ nghe theo “cụm tín hiệu” thay vì săn từng từ đơn lẻ.
+      </p>
+<h3>1.1. Chuyển tư duy: đừng nghe như đang chép chính tả</h3>
+<p>
+        Phần lớn người học mới nghĩ rằng nghe tốt là nghe đủ từ vựng. Thực tế, ở trình độ đầu, người học cần nghe được
+        <strong>khung câu</strong> trước: đây là câu hỏi hay câu trả lời, đang nói về hiện tại hay quá khứ, là xác nhận hay phủ định,
+        là mô tả hay hướng dẫn. Nếu chưa nghe được khung này, việc cố nhặt từ rời rạc chỉ tạo ra ảo giác “nghe thấy nhiều mà vẫn không hiểu”.
+      </p>
+<div class="insight tight">
+<p class="label">Điểm then chốt</p>
+<p>
+          Tiếng Nhật là ngôn ngữ mà thông tin quyết định thường đến muộn. Người học Việt Nam hay khóa nghĩa quá sớm ở giữa câu,
+          trong khi đáp án đúng lại bị đảo ở cuối bằng một phủ định, một mốc thời gian khác, hoặc một cụm rút gọn trong khẩu ngữ.
+        </p>
+</div>
+<h3>1.2. Ba nhóm âm gây nhầm nghĩa nặng nhất</h3>
+<h4>1.2.1. Trường âm: kéo dài rất ngắn nhưng nghĩa đổi hẳn</h4>
+<p>
+        Trường âm là chỗ âm được giữ lâu hơn một nhịp rất ngắn. Với tai quen tiếng Việt, phần kéo này thường bị xem như “không đáng kể”.
+        Nhưng trong tiếng Nhật, bỏ qua nó có thể làm đổi từ.
+      </p>
+<table>
+<thead>
+<tr>
+<th>Dạng dễ nhầm</th>
+<th>Khác biệt khi nghe</th>
+<th>Bẫy người Việt thường mắc</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="ja">おばさん</span> / <span lang="ja">おばあさん</span></td>
+<td>Âm <span lang="ja">あ</span> ở từ sau dài hơn một nhịp</td>
+<td>Nghe “na ná nhau” rồi suy bằng ngữ cảnh sai, dẫn đến hiểu nhầm người nói đang nhắc “cô” hay “bà”.</td>
+</tr>
+<tr>
+<td><span lang="ja">ここ</span> / <span lang="ja">こうこう</span></td>
+<td>Số nhịp âm khác hẳn, không chỉ khác độ dài</td>
+<td>Người học chỉ chú ý phụ âm đầu mà bỏ qua nhịp toàn cụm.</td>
+</tr>
+<tr>
+<td><span lang="ja">ゆき</span> / <span lang="ja">ゆうき</span></td>
+<td>Âm kéo có thể rất ngắn khi người nói nhanh</td>
+<td>Cho rằng người bản xứ “nuốt âm”, trong khi thật ra vẫn đủ nhịp.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout tight">
+<p class="label">Mẹo nghe</p>
+<p>
+          Đừng cố nghe trường âm bằng cách đợi một âm thật dài. Hãy nghe theo <strong>số nhịp</strong>. Nếu một cụm đáng lẽ có ba nhịp
+          mà bạn chỉ nghe được hai, rất có thể bạn vừa bỏ sót trường âm. Khi luyện, nên vỗ tay hoặc gõ bút theo nhịp để tai quen với cấu trúc thời lượng.
+        </p>
+</div>
+<h4>1.2.2. Xúc âm: khoảng ngắt cực ngắn quyết định nghĩa</h4>
+<p>
+        Xúc âm là chỗ dừng ngắn ở chữ <span lang="ja">っ</span>. Người Việt dễ bỏ qua vì khoảng ngắt này ngắn hơn nhiều so với một âm tiết tiếng Việt,
+        nhưng nó làm đổi từ ngay lập tức.
+      </p>
+<table>
+<thead>
+<tr>
+<th>Dạng dễ nhầm</th>
+<th>Tín hiệu nghe</th>
+<th>Ý nghĩa sư phạm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="ja">きて</span> / <span lang="ja">きって</span></td>
+<td>Có một “cú hẫng” ngắn trước phụ âm sau</td>
+<td>Nếu bỏ ngắt, người học dễ nghe nhầm động từ và chọn sai hành động.</td>
+</tr>
+<tr>
+<td><span lang="ja">さか</span> / <span lang="ja">さっか</span></td>
+<td>Phụ âm sau bị nén lại rồi bật ra</td>
+<td>Nghe đúng xúc âm giúp phân biệt danh từ rất nhanh.</td>
+</tr>
+<tr>
+<td><span lang="ja">いって</span> / <span lang="ja">いて</span></td>
+<td>Một bên có ngắt, một bên trôi liên tục</td>
+<td>Bẫy thường gặp trong mệnh lệnh, chỉ đường và lời nhờ vả.</td>
+</tr>
+</tbody>
+</table>
+<div class="trap tight">
+<p class="label">Bẫy điển hình</p>
+<p>
+          Khi gặp tốc độ nói nhanh, nhiều người tưởng xúc âm “biến mất”. Thực ra điều biến mất chỉ là sự phân tích chậm của người học.
+          Hãy nghe phần <strong>nén trước phụ âm</strong>, không chờ nghe một âm riêng rẽ.
+        </p>
+</div>
+<h4>1.2.3. Ảo thanh: nguyên âm bị vô thanh, nghe như mất hẳn</h4>
+<p>
+        Cái mà nhiều người gọi là “ảo thanh” thường là hiện tượng nguyên âm, nhất là <span lang="ja">い</span> và <span lang="ja">う</span>,
+        bị làm rất nhẹ hoặc gần như không bật rõ khi đứng giữa những phụ âm vô thanh. Vì vậy, người học có cảm giác người Nhật “nuốt mất tiếng”.
+      </p>
+<table>
+<thead>
+<tr>
+<th>Ví dụ thường gặp</th>
+<th>Cảm giác khi nghe</th>
+<th>Cách xử lý</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="ja">です</span></td>
+<td>Cuối câu có thể nghe như chỉ còn khung phụ âm và ngữ điệu</td>
+<td>Đừng đợi nghe đủ nguyên âm; hãy dựa vào vị trí cuối câu và mạch lịch sự.</td>
+</tr>
+<tr>
+<td><span lang="ja">ます</span></td>
+<td>Âm cuối nhẹ, đôi khi rất mờ</td>
+<td>Nhận diện qua mẫu lịch sự, không cần “chộp” từng âm.</td>
+</tr>
+<tr>
+<td><span lang="ja">すき</span>, <span lang="ja">ひと</span></td>
+<td>Một nguyên âm ở giữa nghe mỏng, khiến từ như ngắn lại</td>
+<td>Bám vào phụ âm đầu–cuối và ngữ cảnh danh từ/tính từ xung quanh.</td>
+</tr>
+</tbody>
+</table>
+<div class="insight tight">
+<p class="label">Chốt tư duy</p>
+<p>
+          Đừng hoảng khi “không nghe thấy hết”. Ở trình độ đầu, nghe tốt không phải là nghe đủ mọi âm, mà là
+          nhận ra <strong>mẫu âm thanh nào đang xuất hiện</strong> và gắn đúng nó vào khung ngữ pháp, tình huống.
+        </p>
+</div>
+<h3>1.3. Bắt nghi vấn từ và khóa nghĩa ở đuôi câu</h3>
+<p>
+        Trong các bài nghe sơ cấp, đáp án rất hay xoay quanh bốn điểm: ai, cái gì, khi nào, ở đâu. Tuy nhiên, người ra đề thường không hỏi trực tiếp.
+        Họ để thông tin này trôi qua rất nhanh ở giữa câu, rồi dùng đuôi câu để đảo nghĩa. Vì vậy, người học phải tách hai tầng nghe:
+        <strong>nghe từ nghi vấn</strong> và <strong>nghe đuôi khóa nghĩa</strong>.
+      </p>
+<table>
+<thead>
+<tr>
+<th>Tín hiệu cần chộp</th>
+<th>Chức năng</th>
+<th>Cách phản xạ khi nghe</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="ja">だれ</span></td>
+<td>Xác định người</td>
+<td>Khoanh ngay nhân vật; đừng chờ hiểu cả câu rồi mới tìm người nói tới ai.</td>
+</tr>
+<tr>
+<td><span lang="ja">なに</span></td>
+<td>Xác định vật / nội dung</td>
+<td>Chú ý cụm danh từ đi sau hoặc trước nó tùy cấu trúc.</td>
+</tr>
+<tr>
+<td><span lang="ja">いつ</span></td>
+<td>Xác định thời điểm</td>
+<td>Đặc biệt cảnh giác khi sau đó người nói tự sửa từ “hôm nay” sang “ngày mai”.</td>
+</tr>
+<tr>
+<td><span lang="ja">どこ</span>, <span lang="ja">どちら</span></td>
+<td>Xác định địa điểm / hướng</td>
+<td>Trong chỉ đường, hãy khóa luôn động từ đi kèm như “rẽ”, “đi thẳng”, “qua đường”.</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Đuôi câu</th>
+<th>Ý nghĩa thường gặp</th>
+<th>Bẫy khi làm bài</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="ja">〜ました</span></td>
+<td>Quá khứ khẳng định</td>
+<td>Người học chỉ nghe gốc động từ, bỏ mất dấu thời gian.</td>
+</tr>
+<tr>
+<td><span lang="ja">〜ません</span></td>
+<td>Hiện tại / tương lai phủ định</td>
+<td>Nếu bỏ lỡ một nhịp cuối, đáp án đảo ngược hoàn toàn.</td>
+</tr>
+<tr>
+<td><span lang="ja">〜でした</span></td>
+<td>Quá khứ của danh từ / tính từ đuôi <span lang="ja">です</span></td>
+<td>Rất dễ bị nghe thành câu trần thuật hiện tại nếu tai chỉ bám phần đầu.</td>
+</tr>
+<tr>
+<td><span lang="ja">〜ていました</span></td>
+<td>Trạng thái / hành động đang diễn ra trong mốc quá khứ</td>
+<td>Dễ bị hiểu nhầm thành hiện tại nếu chỉ nghe thân câu.</td>
+</tr>
+<tr>
+<td><span lang="ja">〜ないんです</span></td>
+<td>Phủ định kèm giải thích</td>
+<td>Nhiều người chỉ nghe “giải thích” mà quên mất lõi là phủ định.</td>
+</tr>
+</tbody>
+</table>
+<div class="checklist tight">
+<p class="label">Quy trình nghe đuôi câu trong 3 giây cuối</p>
+<ol>
+<li>Nghe xem động từ / tính từ / danh từ kết thúc theo hướng khẳng định hay phủ định.</li>
+<li>Xác định thời gian: hiện tại, quá khứ, ý định tương lai.</li>
+<li>Nếu có <span lang="ja">でも／けど／ただ</span>, tạm hoãn chốt đáp án vì rất có thể ý chính nằm ở vế sau.</li>
+</ol>
+</div>
+<h3>1.4. Nuốt âm và rút gọn trong văn nói: nghe đúng cái “người thật” hay nói</h3>
+<p>
+        Ở giao tiếp tự nhiên, người Nhật không phải lúc nào cũng phát âm đủ như trong sách giáo khoa. Nếu người học chỉ quen với mẫu đầy đủ,
+        khi gặp khẩu ngữ sẽ tưởng bản thân “không biết từ đó”. Thật ra đó chỉ là dạng rút gọn.
+      </p>
+<table>
+<thead>
+<tr>
+<th>Dạng đầy đủ</th>
+<th>Dạng hay nghe trong lời nói</th>
+<th>Điều cần nhận ra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="ja">〜ている</span></td>
+<td><span lang="ja">〜てる</span></td>
+<td>Thường diễn tả trạng thái hiện tại hoặc hành động đang diễn ra.</td>
+</tr>
+<tr>
+<td><span lang="ja">〜ておく</span></td>
+<td><span lang="ja">〜とく</span></td>
+<td>Hàm ý làm trước để chuẩn bị hoặc tiện cho bước sau.</td>
+</tr>
+<tr>
+<td><span lang="ja">〜てしまう</span></td>
+<td><span lang="ja">〜ちゃう／〜じゃう</span></td>
+<td>Có sắc thái hoàn tất, tiếc nuối, lỡ làm mất.</td>
+</tr>
+<tr>
+<td><span lang="ja">〜なければならない</span></td>
+<td><span lang="ja">〜なきゃ</span></td>
+<td>Khẩu ngữ rất hay gặp; nghe được sẽ giúp nắm nghĩa “phải làm”.</td>
+</tr>
+</tbody>
+</table>
+<div class="trap tight">
+<p class="label">Sai lầm phổ biến</p>
+<p>
+          Người học nghe thấy <span lang="ja">〜てる</span> nhưng trong đầu lại cố truy tìm đúng mặt chữ của sách giáo khoa,
+          làm chậm xử lý đúng lúc cần phản xạ. Hãy luyện một cặp quy đổi hai chiều:
+          <span lang="ja">〜てる ↔ 〜ている</span>, <span lang="ja">〜とく ↔ 〜ておく</span>, <span lang="ja">〜ちゃう ↔ 〜てしまう</span>.
+        </p>
+</div>
+<h3>1.5. Thực hành minh họa</h3>
+<div class="script-block">
+<h4>Script bài nghe + Dịch nghĩa + Phân tích bẫy</h4>
+<p class="label">Tình huống: mua sắm trong cửa hàng</p>
+<div class="jp" lang="ja">
+<p><strong><ruby>女<rt>おんな</rt></ruby>：</strong> すみません、その かばん、まだ ありますか。</p>
+<p><strong><ruby>店員<rt>てんいん</rt></ruby>：</strong> <ruby>申<rt>もう</rt></ruby>し<ruby>訳<rt>わけ</rt></ruby>ないんですが、<ruby>黒<rt>くろ</rt></ruby>いのは さっき <ruby>売<rt>う</rt></ruby>り<ruby>切<rt>き</rt></ruby>れちゃって。<ruby>青<rt>あお</rt></ruby>いのなら、あと <ruby>一<rt>ひと</rt></ruby>つ ありますよ。</p>
+<p><strong><ruby>女<rt>おんな</rt></ruby>：</strong> じゃあ、<ruby>青<rt>あお</rt></ruby>いの、<ruby>見<rt>み</rt></ruby>せて ください。</p>
+<p><strong><ruby>店員<rt>てんいん</rt></ruby>：</strong> はい、こちらです。<ruby>今<rt>いま</rt></ruby>、<ruby>少<rt>すこ</rt></ruby>し <ruby>安<rt>やす</rt></ruby>くなってて、<ruby>五千八百円<rt>ごせんはっぴゃくえん</rt></ruby>です。</p>
+<p><strong><ruby>女<rt>おんな</rt></ruby>：</strong> えっ、<ruby>昨日<rt>きのう</rt></ruby> <ruby>店<rt>みせ</rt></ruby>で <ruby>見<rt>み</rt></ruby>た ときは、<ruby>六千円<rt>ろくせんえん</rt></ruby> でしたよね。</p>
+<p><strong><ruby>店員<rt>てんいん</rt></ruby>：</strong> はい。<ruby>今日<rt>きょう</rt></ruby>から セールで、<ruby>二百円<rt>にひゃくえん</rt></ruby> <ruby>引<rt>ひ</rt></ruby>いときました。</p>
+<p><strong><ruby>女<rt>おんな</rt></ruby>：</strong> じゃあ、これにします。カード、<ruby>使<rt>つか</rt></ruby>えますか。</p>
+<p><strong><ruby>店員<rt>てんいん</rt></ruby>：</strong> はい、<ruby>使<rt>つか</rt></ruby>えます。</p>
+</div>
+<div class="question-box">
+<p><strong>Câu hỏi giả định:</strong> Người nữ cuối cùng quyết định mua chiếc túi nào và thông tin thanh toán là gì?</p>
+</div>
+<div class="translation">
+<h5>Dịch nghĩa</h5>
+<p>
+<strong>Nữ:</strong> Xin lỗi, chiếc túi đó còn không ạ?<br/>
+<strong>Nhân viên:</strong> Rất xin lỗi, nhưng chiếc màu đen vừa mới bán hết mất rồi. Nếu là màu xanh thì còn một chiếc.<br/>
+<strong>Nữ:</strong> Vậy cho tôi xem chiếc màu xanh.<br/>
+<strong>Nhân viên:</strong> Vâng, đây ạ. Hiện tại nó đang được giảm nhẹ, là 5.800 yên.<br/>
+<strong>Nữ:</strong> Ủa, hôm qua tôi thấy ở cửa hàng là 6.000 yên mà nhỉ.<br/>
+<strong>Nhân viên:</strong> Vâng. Từ hôm nay bắt đầu giảm giá, nên tôi đã trừ sẵn 200 yên rồi.<br/>
+<strong>Nữ:</strong> Vậy tôi lấy chiếc này. Có dùng thẻ được không?<br/>
+<strong>Nhân viên:</strong> Vâng, dùng được ạ.
+          </p>
+</div>
+<div class="analysis-box">
+<h5>Phân tích bẫy và cách nghe</h5>
+<ul>
+<li><strong>Bẫy 1 — chỉ nghe màu sắc ở đầu đoạn:</strong> nếu tai chỉ chộp được <span lang="ja">くろい</span>, bạn sẽ tưởng người nữ mua màu đen. Nhưng chỗ quyết định là <span lang="ja">うりきれちゃって</span>: đã bán hết rồi.</li>
+<li><strong>Bẫy 2 — không nhận ra rút gọn:</strong> <span lang="ja">うりきれちゃって</span> là dạng khẩu ngữ của <span lang="ja">うりきれてしまって</span>; <span lang="ja">やすくなってて</span> tương ứng với <span lang="ja">やすくなっていて</span>; <span lang="ja">ひいときました</span> tương ứng với <span lang="ja">ひいておきました</span>.</li>
+<li><strong>Bẫy 3 — nghe giá đầu mà không nghe giá cuối:</strong> người nữ nhắc <span lang="ja">ろくせんえん</span>, nhưng đó là giá hôm qua. Giá hiện tại được khóa ở câu trước: <span lang="ja">ごせんはっぴゃくえんです</span>.</li>
+<li><strong>Bẫy 4 — bỏ qua đuôi quyết định:</strong> <span lang="ja">これにします</span> là đuôi chốt hành động mua. Nếu chưa nghe đến đây, chưa được phép kết luận.</li>
+<li><strong>Bẫy 5 — nhầm khả năng với hành động:</strong> <span lang="ja">つかえますか</span> chỉ hỏi khả năng dùng thẻ, không phải đã thanh toán xong. Đáp án đúng phải diễn đạt là “có thể thanh toán bằng thẻ”.</li>
+</ul>
+</div>
+<div class="answer">
+<p><strong>Đáp án:</strong> Người nữ mua chiếc túi màu xanh; cửa hàng chấp nhận thanh toán bằng thẻ.</p>
+<p class="mini">
+            Mấu chốt không nằm ở những từ nổi bật nhất, mà ở các cụm xuất hiện sau khi người nói sửa thông tin:
+            “màu đen đã hết”, “giá hiện tại là 5.800 yên”, “dùng được thẻ”.
+          </p>
+</div>
+</div>
+<div class="checklist tight">
+<p class="label">Mẫu luyện hằng ngày cho N5–N4</p>
+<ol>
+<li>Nghe 10–15 giây đầu và chỉ ghi lại: bối cảnh, số nhân vật, mục đích cuộc nói chuyện.</li>
+<li>Nghe lại và gạch chân các đuôi câu: khẳng định, phủ định, quá khứ, yêu cầu.</li>
+<li>Lần cuối, đối chiếu xem có rút gọn khẩu ngữ nào khiến mình tưởng là từ mới hay không.</li>
+</ol>
+</div>
+</section>
+<section class="section page-break">
+<div class="stage-banner">Giai đoạn 2 · Tăng tốc xử lý thông tin &amp; ghi chú nhanh (N3 - N2)</div>
+<h2>2. Giai đoạn 2: Tăng tốc Xử lý Thông tin &amp; Kỹ năng Ghi chú nhanh (N3 - N2)</h2>
+<p class="goal">
+<strong>Mục tiêu:</strong> nghe được các hội thoại dài hơn, nhiều nhân vật hơn, có kính ngữ, có nói vòng,
+        và biết ghi chú đủ ít để không tụt khỏi âm thanh nhưng đủ đúng để suy ra hành động tiếp theo.
+      </p>
+<h3>2.1. Từ “nghe hiểu câu” sang “nghe hiểu luồng việc”</h3>
+<p>
+        Ở N3–N2, trở ngại không còn chỉ là nghe ra từ. Khó nhất là theo được <strong>dòng chuyển động của thông tin</strong>:
+        ai báo cho ai, ai xin phép ai, ai nhờ ai làm gì, việc nào phải làm trước, việc nào chỉ là khả năng, việc nào đã đổi kế hoạch.
+        Nếu vẫn nghe kiểu chốt nghĩa từng câu riêng lẻ, người học sẽ mất mạch ngay khi xuất hiện nhân vật thứ ba hoặc kính ngữ.
+      </p>
+<div class="callout tight">
+<p class="label">Một thay đổi tư duy rất quan trọng</p>
+<p>
+          Ở trình độ này, câu hỏi không chỉ còn là “người nói đã nói gì”, mà là “sau đoạn nói này, ai phải hành động thế nào”.
+          Vì vậy, kỹ năng ghi chú nhanh phải tập trung vào <strong>quan hệ hành động</strong>, không chép lại toàn câu.
+        </p>
+</div>
+<h3>2.2. Kỹ năng ghi chú nhanh: vẽ luồng thay vì chép chữ</h3>
+<p>
+        Ghi chú tốt trong nghe tiếng Nhật không phải viết nhanh thật nhiều. Càng cố chép nguyên văn, bạn càng bỏ lỡ âm thanh tiếp theo.
+        Hãy dùng hệ thống kí hiệu tối giản: nhân vật, mũi tên hành động, mốc thời gian, dấu hỏi cho điều cần xác nhận, dấu chéo cho việc không làm.
+      </p>
+<table>
+<thead>
+<tr>
+<th>Kí hiệu gợi ý</th>
+<th>Công dụng</th>
+<th>Ví dụ tư duy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nữ</strong> / <strong>Nam</strong> / tên riêng</td>
+<td>Đánh dấu tác thể</td>
+<td>Không cần chép đủ chức danh, chỉ cần đủ để không lẫn vai.</td>
+</tr>
+<tr>
+<td><strong>→</strong></td>
+<td>Ai làm gì cho ai / chuyển thông tin</td>
+<td><span class="mini">Nữ → khách: gửi thư điện tử</span></td>
+</tr>
+<tr>
+<td><strong>?</strong></td>
+<td>Thông tin chưa chắc, cần xác nhận</td>
+<td><span class="mini">số liệu ? / lịch ?</span></td>
+</tr>
+<tr>
+<td><strong>×</strong></td>
+<td>Không thực hiện / bị loại</td>
+<td><span class="mini">Nữ gọi khách ×</span></td>
+</tr>
+<tr>
+<td><strong>15:00</strong>, <strong>mai</strong>, <strong>sau</strong></td>
+<td>Mốc thời gian</td>
+<td>Đây thường là chi tiết quyết định đáp án.</td>
+</tr>
+</tbody>
+</table>
+<div class="diagram">Ví dụ sơ đồ ghi chú nên hướng tới
+
+Khách ? số liệu cũ
+Nữ → Trưởng nhóm: xin xác nhận
+Trưởng nhóm chỉ thị:
+  1) nhờ đồng nghiệp cập nhật số mới
+  2) đưa trưởng nhóm duyệt
+  3) Nữ → Khách: gửi thư điện tử trước 15:00
+  4) Trưởng nhóm → Khách: gọi điện
+Điểm bẫy: "gọi điện" không phải việc của Nữ</div>
+<h3>2.3. Từ đệm phản hồi và nghệ thuật từ chối khéo</h3>
+<p>
+        Trong giao tiếp Nhật, các từ đệm phản hồi không đơn thuần là “ừ, à”. Chúng điều tiết nhịp hội thoại, báo hiệu mức độ đồng tình,
+        xác nhận đã nghe, hoặc tạo khoảng trễ trước khi từ chối. Người Việt rất dễ hiểu nhầm vì nhìn chúng như những từ có nghĩa trực tiếp.
+      </p>
+<table>
+<thead>
+<tr>
+<th>Tín hiệu</th>
+<th>Đừng hiểu quá đơn giản là</th>
+<th>Nên nghe như</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="ja">そうですね</span></td>
+<td>“Đồng ý hoàn toàn”</td>
+<td>“Tôi đang cân nhắc / đang nối nhịp suy nghĩ”.</td>
+</tr>
+<tr>
+<td><span lang="ja">なるほど</span></td>
+<td>“Tôi tán thành”</td>
+<td>“Tôi đã hiểu thông tin anh vừa nêu”.</td>
+</tr>
+<tr>
+<td><span lang="ja">ちょっと…</span></td>
+<td>“Một chút”</td>
+<td>Một lời từ chối mềm hoặc ít nhất là dấu hiệu khó chấp nhận đề nghị.</td>
+</tr>
+<tr>
+<td><span lang="ja">けれども／ですが</span></td>
+<td>Chỉ là liên từ nối nhẹ</td>
+<td>Vế sau mới là phần phải nghe thật kỹ; đôi khi người Nhật thậm chí dừng luôn ở đó để ngụ ý từ chối.</td>
+</tr>
+</tbody>
+</table>
+<div class="trap tight">
+<p class="label">Bẫy văn hóa nói vòng</p>
+<p>
+          Nếu nghe thấy <span lang="ja">ちょっと…</span> trong bối cảnh xin phép, hẹn lịch, mời gọi hoặc nhờ vả, gần như không nên dự đoán tiếp theo là đồng ý.
+          Ở cấp độ N3–N2, người học phải bớt bám nghĩa từ điển và tăng độ nhạy với dụng ý xã hội.
+        </p>
+</div>
+<h3>2.4. Xác định đối tượng hành động trong mẫu cho–nhận và sai khiến–bị động</h3>
+<p>
+        Một trong những nguyên nhân khiến người học trung cấp nghe xong vẫn lẫn vai là vì không xác định được hướng lợi ích trong các động từ
+        <span lang="ja">あげる／くれる／もらう</span> và các dạng có yếu tố khiến hoặc bị ép buộc.
+      </p>
+<table>
+<thead>
+<tr>
+<th>Mẫu</th>
+<th>Trọng tâm khi nghe</th>
+<th>Câu hỏi phải tự đặt ra</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="ja">あげる</span></td>
+<td>Chủ ngữ cho người khác</td>
+<td>Ai là người chủ động trao đi?</td>
+</tr>
+<tr>
+<td><span lang="ja">くれる</span></td>
+<td>Người khác cho phía “tôi/chúng tôi”</td>
+<td>Ai mang lợi ích đến cho phía người nói?</td>
+</tr>
+<tr>
+<td><span lang="ja">もらう</span></td>
+<td>Chủ ngữ là người nhận</td>
+<td>Ai là người thu được lợi ích?</td>
+</tr>
+<tr>
+<td><span lang="ja">〜させる</span></td>
+<td>Khiến / cho phép làm</td>
+<td>Là ép buộc, cho phép hay giao nhiệm vụ?</td>
+</tr>
+<tr>
+<td><span lang="ja">〜させられる</span></td>
+<td>Bị bắt phải làm</td>
+<td>Ai chịu tác động, ai ép buộc?</td>
+</tr>
+</tbody>
+</table>
+<div class="insight tight">
+<p class="label">Mẹo nghe trong môi trường công sở</p>
+<p>
+          Khi gặp kính ngữ như <span lang="ja">お送りいたします</span>, <span lang="ja">ご確認いただけますでしょうか</span>,
+          đừng hoảng vì lớp vỏ lịch sự. Hãy tìm động từ gốc và hướng hành động:
+          ai gửi, ai xác nhận, ai phải làm bước tiếp theo. Kính ngữ che bề mặt, nhưng luồng việc vẫn rất rõ nếu bắt đúng động từ lõi.
+        </p>
+</div>
+<h3>2.5. Thực hành minh họa</h3>
+<div class="script-block">
+<h4>Script bài nghe + Dịch nghĩa + Phân tích bẫy</h4>
+<p class="label">Tình huống: điện thoại công sở và phân công xử lý tài liệu</p>
+<div class="jp" lang="ja">
+<p><strong><ruby>女性社員<rt>じょせいしゃいん</rt></ruby>：</strong> お<ruby>電話<rt>でんわ</rt></ruby>ありがとうございます。<ruby>青葉商事<rt>あおばしょうじ</rt></ruby>、<ruby>営業部<rt>えいぎょうぶ</rt></ruby>の <ruby>山口<rt>やまぐち</rt></ruby>でございます。</p>
+<p><strong><ruby>取引先<rt>とりひきさき</rt></ruby>の<ruby>男性<rt>だんせい</rt></ruby>：</strong> いつもお<ruby>世話<rt>せわ</rt></ruby>になっております。<ruby>東星物産<rt>とうせいぶっさん</rt></ruby>の <ruby>田中<rt>たなか</rt></ruby>と <ruby>申<rt>もう</rt></ruby>します。きょうの <ruby>会議資料<rt>かいぎしりょう</rt></ruby>の <ruby>数値<rt>すうち</rt></ruby>について、<ruby>一点<rt>いってん</rt></ruby> <ruby>確認<rt>かくにん</rt></ruby>したいのですが。</p>
+<p><strong><ruby>女性社員<rt>じょせいしゃいん</rt></ruby>：</strong> はい、<ruby>会議資料<rt>かいぎしりょう</rt></ruby>の <ruby>数値<rt>すうち</rt></ruby>でございますね。</p>
+<p><strong><ruby>取引先<rt>とりひきさき</rt></ruby>の<ruby>男性<rt>だんせい</rt></ruby>：</strong> はい。<ruby>三<rt>さん</rt></ruby>ページ<ruby>目<rt>め</rt></ruby>の <ruby>四月<rt>しがつ</rt></ruby>の <ruby>売上見込<rt>うりあげみこ</rt></ruby>みが、きのう いただいた <ruby>表<rt>ひょう</rt></ruby>と <ruby>違<rt>ちが</rt></ruby>っておりまして。</p>
+<p><strong><ruby>女性社員<rt>じょせいしゃいん</rt></ruby>：</strong> かしこまりました。<ruby>担当<rt>たんとう</rt></ruby>の <ruby>木村<rt>きむら</rt></ruby>に <ruby>確認<rt>かくにん</rt></ruby>いたしますので、<ruby>少々<rt>しょうしょう</rt></ruby> お<ruby>待<rt>ま</rt></ruby>ちいただけますでしょうか。</p>
+<p><strong><ruby>女性社員<rt>じょせいしゃいん</rt></ruby>：</strong> <ruby>木村<rt>きむら</rt></ruby>さん、<ruby>東星物産<rt>とうせいぶっさん</rt></ruby>の <ruby>田中<rt>たなか</rt></ruby>さんからです。<ruby>会議資料<rt>かいぎしりょう</rt></ruby>の <ruby>四月<rt>しがつ</rt></ruby>の <ruby>数値<rt>すうち</rt></ruby>が、きのうの <ruby>表<rt>ひょう</rt></ruby>と <ruby>違<rt>ちが</rt></ruby>うそうです。</p>
+<p><strong><ruby>上司<rt>じょうし</rt></ruby>：</strong> ああ、あの <ruby>資料<rt>しりょう</rt></ruby>、<ruby>更新前<rt>こうしんまえ</rt></ruby>の <ruby>数字<rt>すうじ</rt></ruby>が <ruby>残<rt>のこ</rt></ruby>っていたかもしれないね。では、<ruby>高橋<rt>たかはし</rt></ruby>さんに <ruby>最新<rt>さいしん</rt></ruby>の <ruby>数字<rt>すうじ</rt></ruby>を <ruby>入<rt>い</rt></ruby>れてもらって。できたら、まず <ruby>私<rt>わたし</rt></ruby>に <ruby>見<rt>み</rt></ruby>せてください。</p>
+<p><strong><ruby>女性社員<rt>じょせいしゃいん</rt></ruby>：</strong> はい。</p>
+<p><strong><ruby>上司<rt>じょうし</rt></ruby>：</strong> そのあと、<ruby>山口<rt>やまぐち</rt></ruby>さんから <ruby>田中<rt>たなか</rt></ruby>さんへ <ruby>修正版<rt>しゅうせいばん</rt></ruby>を メールで お<ruby>送<rt>おく</rt></ruby>りしてください。<ruby>三時<rt>さんじ</rt></ruby>までには <ruby>届<rt>とど</rt></ruby>くように お<ruby>願<rt>ねが</rt></ruby>いします。</p>
+<p><strong><ruby>女性社員<rt>じょせいしゃいん</rt></ruby>：</strong> かしこまりました。お<ruby>電話<rt>でんわ</rt></ruby>での ご<ruby>説明<rt>せつめい</rt></ruby>は、わたしから いたしましょうか。</p>
+<p><strong><ruby>上司<rt>じょうし</rt></ruby>：</strong> いえ、<ruby>先方<rt>せんぽう</rt></ruby>への お<ruby>電話<rt>でんわ</rt></ruby>は <ruby>私<rt>わたし</rt></ruby>が <ruby>入<rt>い</rt></ruby>れます。<ruby>山口<rt>やまぐち</rt></ruby>さんは メールの <ruby>送付<rt>そうふ</rt></ruby>まで お<ruby>願<rt>ねが</rt></ruby>いします。</p>
+<p><strong><ruby>女性社員<rt>じょせいしゃいん</rt></ruby>：</strong> お<ruby>待<rt>ま</rt></ruby>たせいたしました。<ruby>確認<rt>かくにん</rt></ruby>のうえ、<ruby>修正版<rt>しゅうせいばん</rt></ruby>を <ruby>三時<rt>さんじ</rt></ruby>までに メールで お<ruby>送<rt>おく</rt></ruby>りいたします。</p>
+<p><strong><ruby>取引先<rt>とりひきさき</rt></ruby>の<ruby>男性<rt>だんせい</rt></ruby>：</strong> <ruby>承知<rt>しょうち</rt></ruby>しました。よろしく お<ruby>願<rt>ねが</rt></ruby>いいたします。</p>
+</div>
+<div class="question-box">
+<p><strong>Câu hỏi:</strong> Người nữ tiếp theo phải làm gì?</p>
+</div>
+<div class="translation">
+<h5>Dịch nghĩa</h5>
+<p>
+<strong>Nữ nhân viên:</strong> Xin cảm ơn quý khách đã gọi điện. Tôi là nhân viên thuộc phòng kinh doanh phía công ty chúng tôi.<br/>
+<strong>Nam đối tác:</strong> Xin cảm ơn vì đã luôn hỗ trợ. Tôi gọi từ phía đối tác để xác nhận một điểm về số liệu trong tài liệu cuộc họp hôm nay.<br/>
+<strong>Nữ nhân viên:</strong> Vâng, là về số liệu trong tài liệu cuộc họp ạ.<br/>
+<strong>Nam đối tác:</strong> Vâng. Do dự báo doanh số tháng Tư ở trang thứ ba khác với bảng đã nhận hôm qua.<br/>
+<strong>Nữ nhân viên:</strong> Tôi hiểu rồi. Tôi sẽ xác nhận với người phụ trách, xin quý vị vui lòng chờ một chút ạ.<br/>
+<strong>Nữ nhân viên:</strong> Thưa anh, phía đối tác đang gọi. Có vẻ số liệu tháng Tư trong tài liệu họp khác với bảng hôm qua.<br/>
+<strong>Cấp trên:</strong> À, có thể trong tài liệu đó vẫn còn sót số liệu trước khi cập nhật. Vậy hãy nhờ một đồng nghiệp nhập số liệu mới nhất. Xong rồi thì trước hết cho tôi xem.<br/>
+<strong>Nữ nhân viên:</strong> Vâng.<br/>
+<strong>Cấp trên:</strong> Sau đó, từ phía cô hãy gửi bản sửa cho đối tác bằng thư điện tử. Nhờ cô để tài liệu đến nơi trước 3 giờ.<br/>
+<strong>Nữ nhân viên:</strong> Tôi hiểu. Phần giải thích qua điện thoại để tôi làm có được không ạ?<br/>
+<strong>Cấp trên:</strong> Không, cuộc gọi cho phía đối tác thì tôi sẽ thực hiện. Cô chỉ phụ trách đến bước gửi thư điện tử thôi.<br/>
+<strong>Nữ nhân viên:</strong> Xin lỗi đã để quý vị chờ. Sau khi xác nhận, chúng tôi sẽ gửi bản sửa qua thư điện tử trước 3 giờ.<br/>
+<strong>Nam đối tác:</strong> Tôi đã hiểu. Mong nhận được sự hỗ trợ.
+          </p>
+</div>
+<div class="analysis-box">
+<h5>Phân tích biểu đồ ghi chú lý tưởng</h5>
+<div class="diagram">Đối tác ? số liệu tháng 4 khác
+Nữ → Cấp trên: xin xác nhận
+Cấp trên chỉ thị:
+  Nữ → Đồng nghiệp: nhờ nhập số mới
+  Đồng nghiệp → Nữ: trả bản đã cập nhật
+  Nữ → Cấp trên: cho duyệt
+  Nữ → Đối tác: gửi thư điện tử trước 15:00
+  Cấp trên → Đối tác: gọi điện
+Điểm loại trừ:
+  Nữ gọi điện ×
+  gửi ngay không duyệt ×</div>
+<ul>
+<li><strong>Mấu chốt 1 — nghe chuỗi hành động chứ không nghe từng câu rời:</strong> nữ nhân viên không tự sửa số liệu ngay; trước hết phải nhờ một đồng nghiệp cập nhật, rồi đưa cấp trên xem, rồi mới gửi cho đối tác.</li>
+<li><strong>Mấu chốt 2 — nhận ra hành động nào thuộc về ai:</strong> khi nữ nhân viên hỏi “phần giải thích qua điện thoại để tôi làm được không”, cấp trên đáp <span lang="ja">いえ、わたしが いれます</span>. Đây là chỗ cực hay ra bẫy. Cuộc gọi là việc của cấp trên, không phải của người nữ.</li>
+<li><strong>Mấu chốt 3 — kính ngữ không làm thay đổi luồng việc:</strong> <span lang="ja">おおくりしてください</span>, <span lang="ja">おねがいします</span>, <span lang="ja">しょうしょう おまちいただけますでしょうか</span> chỉ là lớp lịch sự. Phải bóc lấy động từ lõi: chờ, xác nhận, cập nhật, duyệt, gửi.</li>
+<li><strong>Mấu chốt 4 — bẫy trật tự:</strong> rất nhiều người nhớ được “gửi thư điện tử trước 3 giờ” nhưng quên rằng trước đó còn có bước nhờ đồng nghiệp cập nhật số mới và đưa cấp trên duyệt. Trong bài thi, đáp án thiếu một mắt xích có thể vẫn sai.</li>
+</ul>
+</div>
+<div class="answer">
+<p><strong>Đáp án:</strong> Người nữ phải nhờ một đồng nghiệp nhập số liệu mới nhất, đưa bản đó cho cấp trên kiểm tra, sau đó gửi bản sửa cho phía đối tác trước 3 giờ chiều. Việc gọi điện giải thích sẽ do cấp trên thực hiện.</p>
+</div>
+</div>
+<h3>2.6. Cách tự kiểm tra sau khi nghe xong</h3>
+<div class="checklist tight"><div class="label">Trọng tâm sư phạm</div>
+<ol>
+<li>Tôi có xác định đúng <strong>người chịu trách nhiệm bước tiếp theo</strong> không?</li>
+<li>Tôi có nghe ra được chỗ người Nhật nói vòng, hoãn trả lời, hoặc từ chối mềm không?</li>
+<li>Tôi có nhầm hành động “cho tôi / từ tôi” trong các động từ cho–nhận không?</li>
+<li>Tôi có bỏ mất mốc thời gian, thứ tự trước–sau, hoặc điều kiện phải hoàn tất trước khi hành động chính diễn ra không?</li>
+</ol>
+</div>
+</section>
+<section class="section page-break">
+<div class="stage-banner">Giai đoạn 3 · Vượt ngưỡng cao cấp &amp; đọc vị ngữ cảnh (N1)</div>
+<h2>3. Giai đoạn 3: Vượt ngưỡng Cao cấp &amp; Đọc vị Ngữ cảnh (N1)</h2>
+<p class="goal">
+<strong>Mục tiêu:</strong> nghe hiểu tin tức, bài thuyết trình học thuật, bình luận xã hội và phỏng vấn;
+        từ đó nắm được quan điểm lõi, cấu trúc lập luận, sắc thái dè dặt hay nhấn mạnh của người nói.
+      </p>
+<h3>3.1. Cấu trúc đặc thù của bản tin và bài diễn thuyết dài</h3>
+<p>
+        Ở trình độ N1, vấn đề không nằm ở từng từ hiếm, mà ở việc người học không nhận ra loại diễn ngôn đang nghe.
+        Bản tin, bình luận, bài nói học thuật và phỏng vấn có nhịp triển khai rất khác nhau. Khi đoán đúng thể loại trong 5–10 giây đầu,
+        bạn đã giảm được một nửa tải nhận thức.
+      </p>
+<table>
+<thead>
+<tr>
+<th>Loại nội dung</th>
+<th>Tín hiệu mở đầu thường gặp</th>
+<th>Cách nghe chiến lược</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bản tin</td>
+<td><span lang="ja">〜によりますと</span>, <span lang="ja">〜ことがわかりました</span>, <span lang="ja">〜見通しです</span></td>
+<td>Nghe mốc thời gian, chủ thể tổ chức, con số, và quan hệ nhân–quả.</td>
+</tr>
+<tr>
+<td>Bài bình luận xã hội / kinh tế</td>
+<td><span lang="ja">最近</span>, <span lang="ja">一方で</span>, <span lang="ja">つまり</span>, <span lang="ja">要するに</span></td>
+<td>Nghe luận điểm chính, dẫn chứng phụ, đoạn chuyển hướng và câu kết luận.</td>
+</tr>
+<tr>
+<td>Bài thuyết trình học thuật</td>
+<td><span lang="ja">まず</span>, <span lang="ja">次に</span>, <span lang="ja">ここで</span>, <span lang="ja">以上から</span></td>
+<td>Đánh số ý, nắm quan hệ phân loại, so sánh, phản biện và kết luận.</td>
+</tr>
+<tr>
+<td>Phỏng vấn</td>
+<td>Câu hỏi ngắn, câu trả lời dài, nhiều tự sửa</td>
+<td>Phân biệt ý của người hỏi và ý của người trả lời; chú ý những chỗ người trả lời tự điều chỉnh quan điểm.</td>
+</tr>
+</tbody>
+</table>
+<div class="insight tight">
+<p class="label">Tư duy mấu chốt ở N1</p>
+<p>
+          Không phải chi tiết nào cũng cùng trọng lượng. Người học cao cấp phải biết câu nào chỉ là ví dụ minh họa,
+          câu nào là phản biện, câu nào là kết luận. Khi chưa phân tầng được vai trò của từng câu, bạn rất dễ bị các phương án nhiễu kéo đi.
+        </p>
+</div>
+<h3>3.2. Kỹ năng dự đoán nội dung qua câu mở đầu và từ nối</h3>
+<p>
+        Dự đoán không phải đoán mò. Đó là việc dùng tín hiệu diễn ngôn để chuẩn bị “khung trống” trong đầu trước khi thông tin thật tràn vào.
+        Khi nghe thấy các từ nối, bạn phải lập tức đổi chế độ xử lý.
+      </p>
+<table>
+<thead>
+<tr>
+<th>Từ nối / tín hiệu</th>
+<th>Điều nó báo trước</th>
+<th>Hành động nghe nên làm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="ja">しかし</span>, <span lang="ja">ただし</span></td>
+<td>Sắp có giới hạn, phản biện, ngoại lệ</td>
+<td>Tạm treo kết luận trước đó; ý thật có thể đảo hướng ngay sau đây.</td>
+</tr>
+<tr>
+<td><span lang="ja">一方で</span></td>
+<td>Đối chiếu hai mặt, không phải lặp ý</td>
+<td>Ghi chú hai cột: mặt A và mặt B.</td>
+</tr>
+<tr>
+<td><span lang="ja">つまり</span>, <span lang="ja">要するに</span></td>
+<td>Thu gọn thành kết luận</td>
+<td>Đây thường là nơi ra đáp án về “ý kiến chính”.</td>
+</tr>
+<tr>
+<td><span lang="ja">たとえば</span></td>
+<td>Ví dụ minh họa</td>
+<td>Không nhầm ví dụ thành luận điểm gốc.</td>
+</tr>
+<tr>
+<td><span lang="ja">〜わけではありません</span></td>
+<td>Phủ định một phần, không phủ định tuyệt đối</td>
+<td>Cảnh giác với đáp án cực đoan kiểu “hoàn toàn không”.</td>
+</tr>
+</tbody>
+</table>
+<div class="callout tight">
+<p class="label">Quy tắc vàng khi gặp đoạn nói dài</p>
+<p>
+          Trong 15 giây đầu, hãy xác định ba thứ: chủ đề, hướng đánh giá ban đầu, và liệu người nói đang tường thuật trung tính hay đang bộc lộ lập trường.
+          Nếu làm được điều này, phần thân bài sẽ bớt rối hẳn.
+        </p>
+</div>
+<h3>3.3. Đọc sắc thái cảm xúc và thái độ của người nói</h3>
+<p>
+        Ở N1, không ít câu hỏi không hỏi “nội dung bề mặt” mà hỏi thái độ hoặc quan điểm. Người nói có thể không dùng những từ mạnh như
+        “tôi phản đối” hay “tôi hoàn toàn ủng hộ”, mà chỉ bộc lộ thái độ qua đuôi câu, độ dè dặt, cách chọn liên từ và nhịp nhấn.
+      </p>
+<table>
+<thead>
+<tr>
+<th>Tín hiệu</th>
+<th>Sắc thái thường gợi ra</th>
+<th>Bẫy đáp án</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span lang="ja">〜でしょう</span></td>
+<td>Phán đoán có cơ sở nhưng vẫn để khoảng mở</td>
+<td>Không nên chọn đáp án diễn đạt như chân lý tuyệt đối.</td>
+</tr>
+<tr>
+<td><span lang="ja">〜はずです</span></td>
+<td>Kỳ vọng hợp lý, suy luận mạnh</td>
+<td>Không đồng nghĩa với “đã được chứng minh hoàn toàn”.</td>
+</tr>
+<tr>
+<td><span lang="ja">〜わけではありません</span></td>
+<td>Bác bỏ kiểu cực đoan, giữ thế cân bằng</td>
+<td>Phương án chứa “luôn luôn”, “hoàn toàn”, “chỉ có” rất dễ sai.</td>
+</tr>
+<tr>
+<td><span lang="ja">ね</span>, <span lang="ja">ですよね</span></td>
+<td>Mời người nghe chia sẻ quan điểm, tìm đồng thuận</td>
+<td>Không nhầm thành thiếu chắc chắn hoàn toàn.</td>
+</tr>
+<tr>
+<td>Ngữ điệu hạ xuống ở câu kết</td>
+<td>Chốt ý, đóng luận điểm</td>
+<td>Nếu mải bám chi tiết trước đó, người học bỏ lỡ kết luận cuối.</td>
+</tr>
+</tbody>
+</table>
+<div class="trap tight">
+<p class="label">Bẫy N1 rất hay gặp</p>
+<p>
+          Đáp án sai thường không bịa ra thông tin. Nó lấy một chi tiết có thật trong bài rồi thổi nó thành ý chính.
+          Muốn tránh bẫy này, người học phải phân biệt rõ: đâu là ví dụ, đâu là ý phụ, đâu là kết luận.
+        </p>
+</div>
+<h3>3.4. Thực hành minh họa</h3>
+<div class="script-block">
+<h4>Script bài nghe + Dịch nghĩa + Phân tích bẫy</h4>
+<p class="label">Tình huống: độc thoại bình luận xã hội – kinh tế về chi tiêu trong thời kỳ vật giá tăng</p>
+<div class="jp" lang="ja">
+<p><ruby>最近<rt>さいきん</rt></ruby>、<ruby>物価<rt>ぶっか</rt></ruby>の <ruby>上昇<rt>じょうしょう</rt></ruby>が <ruby>続<rt>つづ</rt></ruby>くなか、<ruby>家計<rt>かけい</rt></ruby>を どう <ruby>守<rt>まも</rt></ruby>るかが <ruby>大<rt>おお</rt></ruby>きな <ruby>課題<rt>かだい</rt></ruby>になっています。</p>
+<p>その <ruby>対策<rt>たいさく</rt></ruby>として、キャッシュレス<ruby>決済<rt>けっさい</rt></ruby>を <ruby>積極的<rt>せっきょくてき</rt></ruby>に <ruby>使<rt>つか</rt></ruby>うべきだという <ruby>意見<rt>いけん</rt></ruby>を よく <ruby>耳<rt>みみ</rt></ruby>にします。</p>
+<p>たしかに、ポイント<ruby>還元<rt>かんげん</rt></ruby>や <ruby>割引<rt>わりびき</rt></ruby>を <ruby>考<rt>かんが</rt></ruby>えれば、<ruby>現金<rt>げんきん</rt></ruby>より <ruby>得<rt>とく</rt></ruby>に <ruby>見<rt>み</rt></ruby>える <ruby>場面<rt>ばめん</rt></ruby>は <ruby>少<rt>すく</rt></ruby>なくありません。</p>
+<p>しかし、<ruby>支払<rt>しはら</rt></ruby>いの <ruby>痛<rt>いた</rt></ruby>みが <ruby>小<rt>ちい</rt></ruby>さいため、<ruby>何<rt>なに</rt></ruby>に いくら <ruby>使<rt>つか</rt></ruby>ったのかを <ruby>意識<rt>いしき</rt></ruby>しにくくなり、<ruby>結果<rt>けっか</rt></ruby>として <ruby>出費<rt>しゅっぴ</rt></ruby>が <ruby>増<rt>ふ</rt></ruby>える <ruby>人<rt>ひと</rt></ruby>もいます。</p>
+<p><ruby>一方<rt>いっぽう</rt></ruby>で、<ruby>家計簿<rt>かけいぼ</rt></ruby>アプリと <ruby>連動<rt>れんどう</rt></ruby>させれば、<ruby>支出<rt>ししゅつ</rt></ruby>が <ruby>自動的<rt>じどうてき</rt></ruby>に <ruby>記録<rt>きろく</rt></ruby>され、むだを <ruby>見<rt>み</rt></ruby>つけやすいという <ruby>利点<rt>りてん</rt></ruby>もあります。</p>
+<p>つまり、<ruby>問題<rt>もんだい</rt></ruby>は <ruby>現金<rt>げんきん</rt></ruby>か キャッシュレスかという <ruby>二者択一<rt>にしゃたくいつ</rt></ruby>ではありません。</p>
+<p><ruby>自分<rt>じぶん</rt></ruby>の <ruby>支出<rt>ししゅつ</rt></ruby>を <ruby>見<rt>み</rt></ruby>える <ruby>形<rt>かたち</rt></ruby>で <ruby>把握<rt>はあく</rt></ruby>できる <ruby>仕組<rt>しく</rt></ruby>みを <ruby>持<rt>も</rt></ruby>てるかどうかが、<ruby>値上<rt>ねあ</rt></ruby>がりの <ruby>時代<rt>じだい</rt></ruby>には これまで <ruby>以上<rt>いじょう</rt></ruby>に <ruby>重要<rt>じゅうよう</rt></ruby>だと <ruby>言<rt>い</rt></ruby>えるでしょう。</p>
+<p><ruby>便利<rt>べんり</rt></ruby>さだけに <ruby>目<rt>め</rt></ruby>を <ruby>奪<rt>うば</rt></ruby>われれば <ruby>支出<rt>ししゅつ</rt></ruby>は ふくらみますが、<ruby>記録<rt>きろく</rt></ruby>と <ruby>振<rt>ふ</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>りを <ruby>習慣<rt>しゅうかん</rt></ruby>にすれば、<ruby>家計<rt>かけい</rt></ruby>は <ruby>立<rt>た</rt></ruby>て<ruby>直<rt>なお</rt></ruby>せるはずです。</p>
+</div>
+<div class="question-box">
+<p><strong>Câu hỏi:</strong> Quan điểm cốt lõi của người nói là gì?</p>
+<ol class="option-list" type="A">
+<li>Trong thời kỳ giá cả tăng, nên tránh thanh toán không tiền mặt vì hình thức này về bản chất gây lãng phí.</li>
+<li>Thanh toán không tiền mặt luôn kinh tế hơn thanh toán bằng tiền mặt nhờ điểm thưởng và giảm giá.</li>
+<li>Điều quan trọng không phải chọn tiền mặt hay không tiền mặt, mà là có cơ chế giúp nhìn thấy và kiểm soát chi tiêu.</li>
+<li>Chỉ cần dùng ứng dụng ghi chép chi tiêu là có thể giải quyết triệt để khó khăn của mọi hộ gia đình.</li>
+</ol>
+</div>
+<div class="translation">
+<h5>Dịch nghĩa</h5>
+<p>
+            Gần đây, trong bối cảnh giá cả tiếp tục tăng, việc làm thế nào để bảo vệ ngân sách gia đình đã trở thành một vấn đề lớn.
+            Như một biện pháp đối phó, người ta thường nghe ý kiến cho rằng nên tích cực sử dụng thanh toán không tiền mặt.
+            Quả thực, nếu xét đến hoàn điểm và giảm giá, có không ít trường hợp nó trông có vẻ lợi hơn tiền mặt.
+            Tuy nhiên, vì cảm giác “đau khi trả tiền” nhỏ hơn, nên cũng có những người khó ý thức được mình đã tiêu bao nhiêu cho việc gì,
+            và kết quả là chi tiêu tăng lên. Mặt khác, nếu liên kết với ứng dụng quản lý chi tiêu, các khoản chi sẽ được ghi lại tự động,
+            nhờ đó dễ phát hiện lãng phí. Nói cách khác, vấn đề không phải là lựa chọn giữa tiền mặt và không tiền mặt.
+            Điều quan trọng hơn trong thời đại giá tăng là có hay không một cơ chế giúp bản thân nắm được chi tiêu dưới dạng nhìn thấy được.
+            Nếu chỉ bị sự tiện lợi cuốn hút thì chi tiêu sẽ phình ra, nhưng nếu biến việc ghi chép và nhìn lại thành thói quen,
+            ngân sách gia đình vẫn có thể được vực lại.
+          </p>
+</div>
+<div class="analysis-box">
+<h5>Phân tích chi tiết bẫy và loại trừ phương án</h5>
+<ul>
+<li><strong>Đáp án đúng là C.</strong> Từ khóa quyết định là <span lang="ja">つまり</span>. Ở ngay sau đó, người nói rút gọn toàn bộ lập luận thành một kết luận:
+              vấn đề không nằm ở việc chọn tiền mặt hay không tiền mặt, mà ở chỗ có theo dõi chi tiêu được hay không.</li>
+<li><strong>Phương án A sai</strong> vì nó cực đoan hóa lập trường. Người nói không phản đối thanh toán không tiền mặt. Ngược lại,
+              họ thừa nhận khá rõ lợi ích của nó ở câu chứa <span lang="ja">たしかに</span> và <span lang="ja">りてんも あります</span>.</li>
+<li><strong>Phương án B sai</strong> vì lấy một ý phụ có thật rồi nâng thành kết luận tuyệt đối. Đúng là người nói nhắc tới hoàn điểm và giảm giá,
+              nhưng ngay sau <span lang="ja">しかし</span> họ chỉ ra rủi ro tăng chi tiêu. Vì thế “luôn kinh tế hơn” là diễn giải sai mức độ.</li>
+<li><strong>Phương án D sai</strong> vì biến công cụ thành thuốc chữa toàn năng. Người nói chỉ nêu ứng dụng quản lý chi tiêu như một ví dụ hỗ trợ cho mục tiêu
+              “nhìn thấy được dòng tiền”, chứ không hề nói đây là giải pháp duy nhất hay giải quyết triệt để cho mọi nhà.</li>
+<li><strong>Bẫy về thái độ:</strong> câu kết dùng <span lang="ja">〜でしょう</span> và <span lang="ja">〜はずです</span>. Đây là giọng đánh giá có cơ sở nhưng vẫn chừa khoảng dè dặt,
+              nên không thể chọn các đáp án có sắc thái giáo điều hay tuyệt đối hóa.</li>
+</ul>
+</div>
+<div class="answer">
+<p><strong>Đáp án:</strong> C — Điều quan trọng không phải chọn tiền mặt hay không tiền mặt, mà là có cơ chế giúp nhìn thấy và kiểm soát chi tiêu.</p>
+</div>
+</div>
+<h3>3.5. Khung tự học để vượt từ “nghe được” sang “nghe ra quan điểm”</h3>
+<div class="checklist tight"><div class="label">Trọng tâm sư phạm</div>
+<ol>
+<li><strong>Xác định thể loại</strong> trong 10 giây đầu: bản tin, bình luận, thuyết trình hay phỏng vấn.</li>
+<li><strong>Đánh dấu từ nối</strong> như <span lang="ja">しかし</span>, <span lang="ja">一方で</span>, <span lang="ja">つまり</span>, vì đây là bản đồ cấu trúc lập luận.</li>
+<li><strong>Phân tầng thông tin:</strong> ví dụ minh họa, ý phụ, ngoại lệ, và kết luận không được đặt cùng trọng lượng.</li>
+<li><strong>Nghe sắc thái ngôn điệu:</strong> người nói chắc chắn, dè dặt, phản biện hay kêu gọi đồng thuận?</li>
+<li><strong>Kiểm tra lại các đáp án cực đoan:</strong> ở N1, những từ như “hoàn toàn”, “luôn luôn”, “chỉ có”, “duy nhất” thường là tín hiệu cần cảnh giác.</li>
+</ol>
+</div>
+</section>
+<section class="section">
+<div class="stage-banner">Trí Lữ Nihongo · Cấu trúc bài học</div><h2>Kết luận: Từ nghe âm thanh sang nghe tư duy</h2>
+<p>
+        Nghe hiểu tiếng Nhật không phải cuộc thi xem ai bắt được nhiều từ hơn. Đó là năng lực tái dựng một thế giới vô hình:
+        hoàn cảnh, quan hệ, thái độ, trật tự hành động và điều người nói thực sự muốn chuyển tải. Người học Việt Nam thường sợ nghe
+        không phải vì thiếu khả năng, mà vì đang dùng sai chiến lược: nghe phẳng, nghe chậm, nghe từng chữ, nghe mà không giữ cấu trúc.
+      </p>
+<p>
+        Lộ trình đúng là đi từ nền tảng âm thanh chính xác, sang quản lý thông tin hội thoại, rồi lên tầng đọc vị lập luận và dụng ý.
+        Khi tai quen với các khác biệt rất ngắn, khi mắt ghi chú được luồng việc, và khi đầu óc nhận ra vai trò của từng câu trong tổng thể,
+        phần nghe sẽ không còn là một “khối mờ đáng sợ”, mà trở thành một hệ thống có thể phân tích và làm chủ.
+      </p>
+<div class="insight tight">
+<p class="label">Thông điệp sau cùng</p>
+<p>
+          Hãy luyện nghe không phải để “nghe thấy hết”, mà để “nghe đúng điều quan trọng nhất”. Từ N5 đến N1, người tiến bộ nhanh không phải người nghe được nhiều âm nhất,
+          mà là người biết âm nào quyết định nghĩa, câu nào quyết định hướng, và chi tiết nào chỉ là mồi nhử.
+        </p>
+</div>
+</section>
+</main>
+
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="nghe-hieu-trilu"></script>
+</body>
+</html>
