@@ -53,8 +53,9 @@ nav a:hover{color:var(--gold-light);opacity:1}
 
 /* === HERO — FULL BLEED IMAGE === */
 .hero{position:relative;min-height:100vh;width:100%;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:end;padding:120px 5vw 80px;gap:60px;color:var(--paper)}
-.hero-bg{position:absolute;inset:0;z-index:-2;background-image:url('https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Red_Fuji_southern_wind_clear_morning.jpg/2560px-Red_Fuji_southern_wind_clear_morning.jpg');background-size:cover;background-position:center 30%;filter:saturate(1.05) brightness(.92)}
-.hero-bg-fallback{position:absolute;inset:0;z-index:-3;background:linear-gradient(135deg,#7A5340 0%,#4A2A1F 40%,#1A1620 100%)}
+.hero-bg{position:absolute;inset:0;z-index:-2;background-image:url('https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&w=2400&q=80');background-size:cover;background-position:center 35%;filter:saturate(1.1) brightness(.78)}
+.hero-bg-fallback{position:absolute;inset:0;z-index:-3;background:radial-gradient(ellipse at 30% 20%,#4A2A1F 0%,#2a1810 35%,#1A1620 75%,#0f0c14 100%)}
+.hero-bg-fallback::after{content:'富士';position:absolute;right:-2vw;bottom:-12vw;font-family:'Shippori Mincho','Noto Serif JP',serif;font-size:44vw;color:rgba(184,149,104,.05);line-height:1;letter-spacing:-.04em;pointer-events:none}
 .hero-overlay{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(15,15,30,.4) 0%,rgba(15,15,30,.15) 30%,rgba(15,15,30,.55) 100%),linear-gradient(90deg,rgba(15,15,30,.5) 0%,transparent 60%)}
 .hero-grain{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.35;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hero-left{position:relative;z-index:5;max-width:680px;padding-bottom:20px}
@@ -231,42 +232,42 @@ nav a:hover{color:var(--gold-light);opacity:1}
   </div>
   <div class="gallery-track">
     <div class="gallery-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Hokusai_Hodogaya_on_the_Tokaido.jpg/640px-Hokusai_Hodogaya_on_the_Tokaido.jpg" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy">
       <div class="gallery-overlay">
         <div class="gallery-jp">東海道 · TOKAIDO</div>
         <div class="gallery-title">Lộ trình</div>
       </div>
     </div>
     <div class="gallery-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Red_Fuji_southern_wind_clear_morning.jpg/640px-Red_Fuji_southern_wind_clear_morning.jpg" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy">
       <div class="gallery-overlay">
         <div class="gallery-jp">富士山 · FUJI</div>
         <div class="gallery-title">Đỉnh cao</div>
       </div>
     </div>
     <div class="gallery-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/The_Great_Wave_off_Kanagawa.jpg/640px-The_Great_Wave_off_Kanagawa.jpg" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1543872084-c7bd3822856f?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy">
       <div class="gallery-overlay">
         <div class="gallery-jp">神奈川沖浪裏 · WAVE</div>
         <div class="gallery-title">Vượt sóng</div>
       </div>
     </div>
     <div class="gallery-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Hiroshige_Travelers_Surprised_by_Sudden_Rain.jpg/640px-Hiroshige_Travelers_Surprised_by_Sudden_Rain.jpg" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1480796927426-f609979314bd?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy">
       <div class="gallery-overlay">
         <div class="gallery-jp">雨 · RAIN</div>
         <div class="gallery-title">Bền bỉ</div>
       </div>
     </div>
     <div class="gallery-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Hiroshige_Plum_Park_in_Kameido.jpg/640px-Hiroshige_Plum_Park_in_Kameido.jpg" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1522383225653-ed111181a951?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy">
       <div class="gallery-overlay">
         <div class="gallery-jp">梅 · UME</div>
         <div class="gallery-title">Nở rộ</div>
       </div>
     </div>
     <div class="gallery-item">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Tsukioka_Yoshitoshi_-_Ono_no_Komachi.jpg/640px-Tsukioka_Yoshitoshi_-_Ono_no_Komachi.jpg" alt="" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1545569310-7456c0d31bcd?auto=format&fit=crop&w=900&q=80" alt="" loading="lazy">
       <div class="gallery-overlay">
         <div class="gallery-jp">学び · MANABI</div>
         <div class="gallery-title">Học</div>
