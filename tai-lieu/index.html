@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Thư viện tài liệu — Trí Lữ Nihongo</title>
+<meta name="description" content="Bộ tài liệu học tiếng Nhật được Trí Lữ Nihongo biên soạn và hiệu đính — JLPT N1-N5, EJU, Kaiwa, từ điển Nhật-Việt GS Nguyễn Văn Khang."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Inter+Tight:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Shippori+Mincho:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --paper:#FBF6E8;--paper2:#F2EDDE;--navy:#1B3A6B;--gold:#B89568;--gold2:#9F7E55;
+  --sumi:#8B3A2E;--ink:#333;--muted:#777;--line:#E0D5BC;--sakura:#E89AA3;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Inter Tight",-apple-system,sans-serif;line-height:1.6}
+a{color:inherit;text-decoration:none}
+
+/* TOP BAR */
+.topbar{background:var(--navy);color:var(--paper);padding:8px 0;font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.topbar .inner{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.topbar a{color:var(--gold);border-bottom:1px solid transparent;transition:.2s}
+.topbar a:hover{border-color:var(--gold)}
+
+/* HEADER */
+header.site{padding:28px 0 8px;border-bottom:1px solid var(--line)}
+.head{max-width:1280px;margin:0 auto;padding:0 24px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{font-family:"Cormorant Garamond","Noto Serif JP",serif;font-style:italic;font-size:30px;color:var(--navy);line-height:1}
+.brand b{font-style:normal;font-weight:600;color:var(--sumi)}
+nav.main{display:flex;gap:22px;flex-wrap:wrap}
+nav.main a{font-size:13px;font-weight:500;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);padding:8px 2px;border-bottom:2px solid transparent;transition:.2s}
+nav.main a.active,nav.main a:hover{border-bottom-color:var(--gold);color:var(--navy)}
+
+/* HERO */
+.hero{padding:64px 24px 40px;max-width:1280px;margin:0 auto;border-bottom:1px solid var(--line)}
+.eyebrow{font-family:"JetBrains Mono",monospace;font-size:11px;letter-spacing:.25em;color:var(--gold);text-transform:uppercase;margin-bottom:18px}
+.eyebrow span{color:var(--muted);margin:0 10px}
+h1.title{font-family:"Cormorant Garamond","Noto Serif JP",serif;font-style:italic;font-weight:400;font-size:64px;line-height:1.05;color:var(--navy);margin:0 0 22px;max-width:980px}
+.lede{font-size:17px;color:#555;max-width:780px;line-height:1.75}
+.lede b{color:var(--navy);font-weight:600}
+.stats{display:flex;gap:48px;flex-wrap:wrap;margin-top:36px}
+.stat{position:relative}
+.stat-num{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:42px;color:var(--gold);line-height:1}
+.stat-label{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--muted);text-transform:uppercase;margin-top:6px}
+
+/* CATEGORY */
+.section{max-width:1280px;margin:0 auto;padding:48px 24px}
+.section h2{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:400;font-size:36px;color:var(--navy);margin:0 0 8px;display:flex;align-items:baseline;gap:18px}
+.section h2 .num{font-family:"JetBrains Mono",monospace;font-size:14px;letter-spacing:.25em;color:var(--gold);font-style:normal}
+.section .desc{color:var(--muted);font-size:14px;margin-bottom:28px;max-width:680px}
+
+/* DOC GRID */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:22px}
+.card{position:relative;background:#fff;border:1px solid var(--line);border-radius:6px;padding:24px 22px 22px;transition:.2s;overflow:hidden;display:flex;flex-direction:column;min-height:220px}
+.card:hover{border-color:var(--gold);box-shadow:0 12px 32px rgba(27,58,107,.08);transform:translateY(-2px)}
+.card .kanji-bg{position:absolute;right:-10px;bottom:-30px;font-family:"Shippori Mincho",serif;font-size:160px;color:var(--paper2);line-height:1;pointer-events:none;font-weight:400;z-index:0}
+.card > *{position:relative;z-index:1}
+.card-meta{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;gap:8px}
+.pill{display:inline-block;padding:3px 9px;border-radius:99px;font-family:"JetBrains Mono",monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;font-weight:700}
+.pill-FREE{background:#E0D5BC;color:#555}
+.pill-PLUS{background:var(--gold);color:#fff}
+.pill-PRO{background:var(--sumi);color:#fff}
+.pill-PDF{background:var(--navy);color:#fff}
+.card h3{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:22px;color:var(--navy);line-height:1.25;margin:0 0 10px;font-weight:400}
+.card-info{color:var(--muted);font-size:13px;margin-bottom:auto}
+.card-info b{color:var(--ink);font-weight:600;font-family:"JetBrains Mono",monospace}
+.card-cta{margin-top:18px;padding-top:14px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card-cta .open{font-family:"Inter Tight",sans-serif;font-size:13px;font-weight:600;color:var(--gold);letter-spacing:.04em;text-transform:uppercase}
+.card-cta .free-tag{font-size:11px;font-family:"JetBrains Mono",monospace;color:var(--muted);letter-spacing:.08em}
+
+/* FOOTER */
+footer.site{background:var(--navy);color:var(--paper);padding:48px 0 24px;margin-top:64px;border-top:1px solid var(--line)}
+footer.site .inner{max-width:1280px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px;font-size:13px}
+footer.site h4{font-family:"Cormorant Garamond",serif;font-style:italic;font-weight:400;font-size:20px;color:var(--gold);margin:0 0 12px}
+footer.site p,footer.site a{color:#cfd9eb;display:block;margin:2px 0;line-height:1.7}
+footer.site a:hover{color:var(--gold)}
+.legal{max-width:1280px;margin:32px auto 0;padding:18px 24px 0;border-top:1px solid #2a4674;font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.1em;color:#7d8db0;text-transform:uppercase}
+@media(max-width:760px){h1.title{font-size:42px}footer.site .inner{grid-template-columns:1fr}.head{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="inner">
+    <div>ZALO · <a href="https://zalo.me/0342390667">0342 390 667</a></div>
+    <div><a href="/lien-he.html">LIÊN HỆ</a> · <a href="/gia-goi.html">GÓI HỌC</a></div>
+  </div>
+</div>
+
+<header class="site">
+  <div class="head">
+    <div class="brand">Trí Lữ · <b>Nihongo</b></div>
+    <nav class="main">
+      <a href="/index.html">TRANG CHỦ</a>
+      <a href="/jlpt.html">JLPT</a>
+      <a href="/eju.html">EJU</a>
+      <a href="/kaiwa.html">KAIWA</a>
+      <a href="/index.html#du-hoc">DU HỌC</a>
+      <a href="/viec-lam.html">VIỆC LÀM</a>
+      <a href="/index.html#luyen-doc">LUYỆN ĐỌC</a>
+      <a href="/tai-lieu/" class="active">TÀI LIỆU</a>
+      <a href="/lien-he.html">LIÊN HỆ</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">11 · THƯ VIỆN TÀI LIỆU <span>·</span> CẬP NHẬT 05·2026</div>
+  <h1 class="title">Tài liệu được biên soạn,<br/>hiệu đính, dùng trong lớp.</h1>
+  <p class="lede">
+    Toàn bộ tài liệu trên trang này do <b>Lữ Minh Trí (JLPT N1 perfect 180/180)</b> trực tiếp biên soạn hoặc hiệu đính,
+    bao gồm <b>Từ điển Nhật–Việt 18.000 từ của GS Nguyễn Văn Khang</b> (Trí Lữ hiệu đính), bộ Shinkanzen N1–N3,
+    EJU 3200 từ vựng, giáo án JLPT N1–N5 (72 buổi/cấp), giáo án Kaiwa N2–N5 (48 buổi/cấp), và 9 PDF lộ trình.
+    Mỗi tài liệu cho phép xem một phần miễn phí — xem đầy đủ khi nâng cấp <b>PLUS</b> hoặc <b>PRO</b>.
+  </p>
+  <div class="stats">
+    <div class="stat"><div class="stat-num">15</div><div class="stat-label">Tài liệu HTML</div></div>
+    <div class="stat"><div class="stat-num">10</div><div class="stat-label">PDF lộ trình</div></div>
+    <div class="stat"><div class="stat-num">18.000+</div><div class="stat-label">Mục từ điển</div></div>
+    <div class="stat"><div class="stat-num">3.200</div><div class="stat-label">Từ EJU</div></div>
+  </div>
+</section>
+
+<!-- CATEGORIES will be rendered by JS from content-config.json -->
+<div id="library"></div>
+
+<footer class="site">
+  <div class="inner">
+    <div>
+      <h4>Trí Lữ Nihongo</h4>
+      <p><b>CÔNG TY TNHH TRÍ LỮ NIHONGO</b></p>
+      <p>MST: 1801798583</p>
+      <p>Số 37, đường số 1, Khu dân cư Cồn Khương,<br/>Phường Cái Khế, TP Cần Thơ</p>
+      <p>Đăng ký 01·08·2025 · Vốn 1 tỷ đồng</p>
+    </div>
+    <div>
+      <h4>Liên hệ</h4>
+      <p>Zalo: <a href="https://zalo.me/0342390667">0342 390 667</a></p>
+      <p>SĐT: 0398 091 049</p>
+      <p>Email: <a href="mailto:luminhtri0@gmail.com">luminhtri0@gmail.com</a></p>
+      <p>Email tư vấn: <a href="mailto:triluedu@gmail.com">triluedu@gmail.com</a></p>
+    </div>
+    <div>
+      <h4>Uy tín</h4>
+      <p>編 Hiệu đính từ điển Nhật–Việt 18.000 từ của GS Nguyễn Văn Khang</p>
+      <p>結 Đối tác truyền thông <a href="https://mazii.net" target="_blank" rel="noopener">Mazii Dictionary · 1.7M users</a></p>
+      <p>一 JLPT N1 perfect 180/180 (Cert N1A238237J · 7·2021)</p>
+      <p>日 EJU Nhật ngữ 359/400 · Writing 50/50</p>
+    </div>
+  </div>
+  <div class="legal">© 2026 Trí Lữ Nihongo · Mã số DN 1801798583 · Cấp bởi Sở Tài chính TP Cần Thơ</div>
+</footer>
+
+<script>
+const KANJI_ICON = {
+  'Từ điển':'辭',
+  'JLPT':'文',
+  'EJU':'試',
+  'Giáo án JLPT':'授',
+  'Giáo án Kaiwa':'話',
+  'Lộ trình':'路'
+};
+const CATEGORY_ORDER = ['Từ điển','JLPT','EJU','Giáo án JLPT','Giáo án Kaiwa','Lộ trình'];
+const CATEGORY_DESC = {
+  'Từ điển':'Bộ từ điển Nhật–Việt do GS Nguyễn Văn Khang biên soạn, được Lữ Minh Trí hiệu đính và bổ sung furigana + câu ví dụ trình độ N2–N1.',
+  'JLPT':'Bộ Shinkanzen Master Goi & Bunpou N1–N3 — kèm phân tích Hán Việt, ngữ pháp song ngữ và bài tập thực hành.',
+  'EJU':'3.200 từ vựng quan trọng nhất kỳ thi EJU, sắp xếp theo chủ đề và tần suất xuất hiện.',
+  'Giáo án JLPT':'Giáo án chi tiết 72 buổi + Kanji cho từng cấp độ JLPT N1–N5, dùng trực tiếp trong lớp tại Trí Lữ Nihongo.',
+  'Giáo án Kaiwa':'Giáo án giao tiếp 48 buổi/cấp với dialogue thực tế, role-play, audio mẫu.',
+  'Lộ trình':'9 PDF lộ trình học chi tiết JLPT N1–N5 và Kaiwa N2–N5 — đã được dùng cho 120+ học viên cohort 01 & 02.'
+};
+
+async function load(){
+  const r = await fetch('/tai-lieu/_paywall/content-config.json',{cache:'no-cache'});
+  const cfg = await r.json();
+  const byCat = {};
+  Object.entries(cfg.documents).forEach(([id,d])=>{
+    const cat = d.category || 'Khác';
+    (byCat[cat] = byCat[cat] || []).push({id, ...d});
+  });
+  const container = document.getElementById('library');
+  CATEGORY_ORDER.forEach((cat, idx)=>{
+    if (!byCat[cat]) return;
+    const sec = document.createElement('section');
+    sec.className = 'section';
+    sec.innerHTML = `
+      <h2><span class="num">${String(idx+1).padStart(2,'0')}</span> ${cat} <span style="color:var(--gold);font-family:'Shippori Mincho',serif;font-size:28px;margin-left:8px;font-style:normal">${KANJI_ICON[cat]||''}</span></h2>
+      <p class="desc">${CATEGORY_DESC[cat]||''}</p>
+      <div class="grid">
+        ${byCat[cat].map(d=>cardHtml(d)).join('')}
+      </div>
+    `;
+    container.appendChild(sec);
+  });
+  // Other categories not in order
+  Object.entries(byCat).forEach(([cat,docs])=>{
+    if (CATEGORY_ORDER.includes(cat)) return;
+    const sec = document.createElement('section');
+    sec.className = 'section';
+    sec.innerHTML = `
+      <h2>${cat}</h2>
+      <div class="grid">${docs.map(d=>cardHtml(d)).join('')}</div>
+    `;
+    container.appendChild(sec);
+  });
+}
+
+function cardHtml(d){
+  const isPdf = d.type === 'pdf';
+  const freeText = d.freeUnits === -1 ? 'Miễn phí toàn bộ' :
+                   d.freeUnits === 0 ? 'Cần ' + d.tier :
+                   d.freeUnits + ' ' + (d.unitLabel||'mục') + ' miễn phí';
+  const bigKanji = isPdf ? 'PDF' :
+                   (d.category==='Từ điển'?'辭':d.category==='JLPT'?'文':d.category==='EJU'?'試':
+                    d.category==='Giáo án JLPT'?'授':d.category==='Giáo án Kaiwa'?'話':'路');
+  return `
+    <div class="card">
+      <span class="kanji-bg">${bigKanji}</span>
+      <div class="card-meta">
+        <span class="pill pill-${d.tier}">${d.tier}</span>
+        ${isPdf ? '<span class="pill pill-PDF">PDF</span>':''}
+      </div>
+      <h3>${d.title}</h3>
+      <div class="card-info">
+        ${d.totalUnits ? '<b>'+d.totalUnits+'</b> '+(d.unitLabel||'mục')+' · ' : ''}
+        ${d.category}
+      </div>
+      <a class="card-cta" href="${d.url}" ${isPdf?'target="_blank" rel="noopener"':''}>
+        <span class="open">${isPdf?'Tải PDF ↓':'Mở tài liệu →'}</span>
+        <span class="free-tag">${freeText}</span>
+      </a>
+    </div>
+  `;
+}
+
+load();
+</script>
+
+</body>
+</html>
