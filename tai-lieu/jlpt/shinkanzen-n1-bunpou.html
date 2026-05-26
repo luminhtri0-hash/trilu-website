@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Shin Kanzen Master N1 — Bunpou (Ngữ pháp) — Trí Lữ Nihongo</title>
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa; --paper-2:#fff8f0;
+  --surface:#f7f0e8; --surface-2:#f2e5d8;
+  --ink:#1e2430; --muted:#5f6470;
+  --accent:#4f0f24; --accent-dark:#3a0a1c;
+  --accent-2:#9b7a38; --accent-3:#c7ab70;
+  --line:#dfcfbb; --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --green:#2d5e3e; --teal:#2d6e7a;
+  --plum:#6a4a8a; --terra:#b56b3f;
+  --rose:#a23b5a; --navy:#1a4a6e;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(79,15,36,0.10), transparent 22%),
+    linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+.cover{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),
+    linear-gradient(135deg, #3a0a1c 0%, #4f0f24 36%, #240612 100%);
+  color:#fff; border-radius:30px; box-shadow:var(--shadow);
+  padding:60px 64px 50px; margin-bottom:26px;
+}
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+.toc-panel{ margin:0 0 34px; background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96)); border:1px solid rgba(155,122,56,0.20); border-radius:24px; box-shadow:var(--shadow); padding:28px 30px; }
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:12px 14px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(79,15,36,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item-number{ display:inline-block; min-width:32px; padding:2px 7px; margin-right:7px; border-radius:7px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:10.5px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:12.5px; font-family:"Noto Serif CJK JP",serif; }
+.toc-item-summary{ display:block; margin-top:4px; color:var(--muted); font-size:11.5px; line-height:1.4; }
+
+.document{ background:var(--paper); border:1px solid rgba(155,122,56,0.16); border-radius:28px; box-shadow:var(--shadow); padding:0 0 36px; margin-bottom:36px; overflow:hidden; }
+.lesson-banner{ position:relative; overflow:hidden; padding:26px 40px 24px; background:radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%), linear-gradient(135deg, #3a0a1c 0%, #4f0f24 50%, #240612 100%); color:#fff; }
+.lesson-banner::after{ content:"文法"; position:absolute; right:-10px; bottom:-50px; font-family:"Noto Serif CJK JP",serif; font-weight:900; font-size:clamp(6rem, 12vw, 10rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:6px; }
+.lesson-banner h2{ margin:0 0 5px; font-family:"Noto Serif CJK JP",serif; font-size:26px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:13px; color:rgba(255,255,255,0.82); }
+.doc-body{ padding:24px 40px 8px; }
+
+.grammar-card{ margin:20px 0; background:#fff; border:1px solid var(--line-2); border-radius:18px; overflow:hidden; box-shadow:0 8px 22px rgba(60,38,19,0.05); }
+.gc-head{ display:flex; align-items:center; gap:12px; padding:14px 20px; background:linear-gradient(90deg, rgba(79,15,36,0.06), rgba(199,171,112,0.05)); border-bottom:2px solid var(--accent); }
+.gc-num{ flex-shrink:0; width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg, var(--accent) 0%, #8a2d49 100%); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; font-family:"EB Garamond",serif; box-shadow:0 4px 10px rgba(79,15,36,0.25); }
+.gc-title{ font-family:"Noto Serif CJK JP",serif; font-size:19px; font-weight:700; color:var(--accent); flex:1; }
+.gc-title .gc-meaning{ display:block; font-family:Inter,sans-serif; font-size:12.5px; color:var(--accent-2); font-style:italic; font-weight:600; margin-top:2px; }
+.gc-body{ padding:16px 20px; }
+
+.gc-section{ margin-bottom:14px; }
+.gc-section:last-child{ margin-bottom:0; }
+.gc-label{ display:inline-block; font-size:10px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#fff; padding:3px 9px; border-radius:5px; margin-bottom:6px; }
+.gc-label.lbl-struct{ background:var(--green); }
+.gc-label.lbl-explain{ background:var(--navy); }
+.gc-label.lbl-example{ background:var(--accent-2); }
+.gc-label.lbl-note{ background:var(--terra); }
+.gc-label.lbl-compare{ background:var(--plum); }
+
+.struct-box{ background:linear-gradient(180deg, #f3f9ed, #e7f2dc); border:1px solid #c8dab1; border-left:4px solid var(--green); border-radius:10px; padding:10px 14px; font-family:"Noto Serif CJK JP",serif; font-size:14px; color:#2c4a2d; line-height:1.75; }
+.struct-box code{ background:rgba(45,94,62,0.10); padding:1px 5px; border-radius:4px; font-family:"Noto Serif CJK JP",serif; color:var(--green); font-weight:700; }
+
+.explain-box{ background:linear-gradient(180deg, #f4f8fc, #e8f0f8); border:1px solid #c4d8e8; border-left:4px solid var(--navy); border-radius:10px; padding:10px 14px; font-size:13px; line-height:1.65; color:#1f3a4f; }
+.explain-box strong{ color:var(--navy); }
+
+.examples-list{ display:flex; flex-direction:column; gap:8px; }
+.ex-box{ background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent-2); padding:11px 14px; border-radius:0 10px 10px 0; }
+.ex-jp{ font-size:14.5px; color:#222; margin-bottom:6px; line-height:1.9; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn{ font-size:13px; color:#6e5230; font-style:italic; line-height:1.5; padding-top:5px; border-top:1px dotted #e2d4b8; }
+
+.note-box{ background:linear-gradient(180deg, #fff6ee, #fbe9d4); border:1px solid #ecc89e; border-left:4px solid var(--terra); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.6; color:#6a3e1c; }
+.note-box strong{ color:var(--terra); }
+
+.compare-box{ background:linear-gradient(180deg, #f9f3fb, #ecdef2); border:1px solid #d8c4e6; border-left:4px solid var(--plum); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.65; color:#3f2a52; }
+.compare-box strong{ color:var(--plum); }
+.compare-box .cmp-item{ margin:5px 0; padding-left:13px; position:relative; }
+.compare-box .cmp-item::before{ content:"◆"; position:absolute; left:0; color:var(--plum); }
+.compare-box .cmp-jp{ font-family:"Noto Serif CJK JP",serif; font-weight:700; color:var(--plum); }
+
+.exercise-block{ margin:14px 0 4px; background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%); border:1px solid #e7d7be; border-radius:14px; overflow:hidden; box-shadow:0 4px 10px rgba(60,38,19,0.04); }
+.exercise-banner{ display:flex; align-items:center; gap:10px; padding:10px 18px; background:linear-gradient(90deg, var(--rose) 0%, #c14e6e 100%); color:#fff; }
+.exercise-icon{ width:30px; height:30px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; font-family:"Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:14px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:10.5px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:1px; }
+.exercise-body{ padding:12px 18px; }
+.ex-q{ padding:6px 0; border-bottom:1px dotted #eadfce; font-size:13.5px; line-height:1.8; font-family:"Noto Serif CJK JP",serif; }
+.ex-q:last-child{ border-bottom:none; }
+.ex-q .qnum{ display:inline-block; min-width:20px; font-weight:700; color:var(--rose); margin-right:3px; font-family:"EB Garamond",sans-serif; font-size:14px; }
+.ex-q .blank{ display:inline-block; min-width:80px; border-bottom:1.5px solid #b08850; padding:0 7px; margin:0 2px; text-align:center; color:transparent; cursor:pointer; transition:all .15s; }
+.ex-q .blank:hover{ background:rgba(199,171,112,0.12); }
+.ex-q .blank.shown{ color:var(--rose); font-weight:700; border-bottom-color:var(--rose); background:rgba(162,59,90,0.08); }
+.ex-q .vn-hint{ display:block; margin-left:22px; font-size:11.5px; color:#7a6650; font-style:italic; font-family:Inter,sans-serif; }
+.answer-toggle{ display:inline-flex; align-items:center; gap:6px; margin-top:8px; padding:6px 16px; background:linear-gradient(135deg, var(--rose) 0%, #c14e6e 100%); color:#fff; border:none; border-radius:999px; font-weight:700; font-size:11.5px; cursor:pointer; transition:all 0.2s; font-family:inherit; box-shadow:0 4px 10px rgba(162,59,90,0.18); }
+.answer-toggle:hover{ transform:translateY(-1px); }
+.answer-toggle::before{ content:"鍵"; font-family:"Noto Serif CJK JP",serif; margin-right:4px; }
+
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 8px; }
+  .lesson-banner{ padding:20px 20px 18px; }
+  .gc-body{ padding:14px 16px; }
+}
+@media print {
+  body{ background:#fff; font-size:12px; }
+  .page-shell{ padding:0; max-width:none; }
+  .cover{ page-break-after:always; box-shadow:none; }
+  .toc-panel{ page-break-after:always; }
+  .document{ page-break-before:always; box-shadow:none; }
+  .answer-toggle{ display:none; }
+  .ex-q .blank{ color:var(--rose) !important; font-weight:700; }
+}
+</style>
+</head>
+<body>
+<div class="page-shell">
+
+<section class="cover">
+  <span class="cover-mark" aria-hidden="true">文法</span>
+  <div class="cover-badge"><span class="dot"></span>Trí Lữ Nihongo • Hiệu Đính: Lữ Minh Trí</div>
+  <h1 class="cover-title">Shin Kanzen Master N1<br/>Ngữ Pháp (文法)</h1>
+  <div class="cover-jp">新完全マスター N1 — 文法</div>
+  <p class="cover-subtitle">Tài liệu học 20 bài ngữ pháp đầu của giáo trình. Mỗi mẫu ngữ pháp gồm: nghĩa tiếng Việt, cấu trúc, giải thích, câu ví dụ có furigana + dịch nghĩa, ghi chú, phân biệt với ngữ pháp tương tự, và 3 câu bài tập ngay sau để ôn lại.</p>
+  <div class="metric-row">
+    <span class="metric-chip">20 Bài học</span>
+    <span class="metric-chip">~70 mẫu ngữ pháp</span>
+    <span class="metric-chip">Furigana đầy đủ</span>
+    <span class="metric-chip">Phân biệt ngữ pháp</span>
+    <span class="metric-chip">Bài tập ngay sau bài</span>
+  </div>
+  <div class="cover-meta">
+    <div>Biên soạn lại cho mục đích học tập cá nhân</div>
+    <div>第1部・第2部 文の文法 (1課～20課)</div>
+  </div>
+</section>
+
+<nav class="toc-panel">
+  <span class="panel-overline">Điều hướng nhanh</span>
+  <h2 class="toc-title">Mục lục 20 bài ngữ pháp N1</h2>
+  <p class="toc-subtitle">20 bài ngữ pháp được chia theo chức năng ý nghĩa. Bấm vào từng bài để chuyển đến nội dung.</p>
+  <div class="toc-grid">
+    <a class="toc-item" href="#lesson-1"><span class="toc-item-number">01</span><span class="toc-item-title">時間関係</span><span class="toc-item-summary">Liên quan thời gian (が早いか…)</span></a>
+    <a class="toc-item" href="#lesson-2"><span class="toc-item-number">02</span><span class="toc-item-title">範囲</span><span class="toc-item-summary">Phạm vi (を皮切りに…)</span></a>
+    <a class="toc-item" href="#lesson-3"><span class="toc-item-number">03</span><span class="toc-item-title">限定・非限定・付加</span><span class="toc-item-summary">Giới hạn, bổ sung</span></a>
+    <a class="toc-item" href="#lesson-4"><span class="toc-item-number">04</span><span class="toc-item-title">例示</span><span class="toc-item-summary">Ví dụ (といい・なり)</span></a>
+    <a class="toc-item" href="#lesson-5"><span class="toc-item-number">05</span><span class="toc-item-title">関連・無関係</span><span class="toc-item-summary">Liên quan/Bất kể (いかんに…)</span></a>
+    <a class="toc-item" href="#lesson-6"><span class="toc-item-number">06</span><span class="toc-item-title">様子・状態</span><span class="toc-item-summary">Trạng thái (まじき…)</span></a>
+    <a class="toc-item" href="#lesson-7"><span class="toc-item-number">07</span><span class="toc-item-title">原因・理由</span><span class="toc-item-summary">Nguyên nhân (ばかりに…)</span></a>
+    <a class="toc-item" href="#lesson-8"><span class="toc-item-number">08</span><span class="toc-item-title">関係</span><span class="toc-item-summary">Liên đới (ことから・ことだから)</span></a>
+    <a class="toc-item" href="#lesson-9"><span class="toc-item-number">09</span><span class="toc-item-title">条件</span><span class="toc-item-summary">Điều kiện (たらきり, ようと…)</span></a>
+    <a class="toc-item" href="#lesson-10"><span class="toc-item-number">10</span><span class="toc-item-title">譲歩・逆接</span><span class="toc-item-summary">Nhượng bộ (ようと、ところで)</span></a>
+    <a class="toc-item" href="#lesson-11"><span class="toc-item-number">11</span><span class="toc-item-title">目的・手段</span><span class="toc-item-summary">Mục đích (べく・んがため)</span></a>
+    <a class="toc-item" href="#lesson-12"><span class="toc-item-number">12</span><span class="toc-item-title">起点・帰結・到達</span><span class="toc-item-summary">Điểm xuất phát/đến (に至る)</span></a>
+    <a class="toc-item" href="#lesson-13"><span class="toc-item-number">13</span><span class="toc-item-title">立場・評価の基準</span><span class="toc-item-summary">Lập trường (からして・として)</span></a>
+    <a class="toc-item" href="#lesson-14"><span class="toc-item-number">14</span><span class="toc-item-title">比較対照</span><span class="toc-item-summary">So sánh đối chiếu (ひきかえ…)</span></a>
+    <a class="toc-item" href="#lesson-15"><span class="toc-item-number">15</span><span class="toc-item-title">結果・最後の状態</span><span class="toc-item-summary">Kết quả cuối cùng (始末だ…)</span></a>
+    <a class="toc-item" href="#lesson-16"><span class="toc-item-number">16</span><span class="toc-item-title">強調</span><span class="toc-item-summary">Nhấn mạnh (たりとも…)</span></a>
+    <a class="toc-item" href="#lesson-17"><span class="toc-item-number">17</span><span class="toc-item-title">主張・断定</span><span class="toc-item-summary">Khẳng định (までだ・までもない)</span></a>
+    <a class="toc-item" href="#lesson-18"><span class="toc-item-number">18</span><span class="toc-item-title">評価・感想</span><span class="toc-item-summary">Đánh giá (にあたいする…)</span></a>
+    <a class="toc-item" href="#lesson-19"><span class="toc-item-number">19</span><span class="toc-item-title">心情・強調的問い</span><span class="toc-item-summary">Cảm xúc (てやまない・てたまる)</span></a>
+    <a class="toc-item" href="#lesson-20"><span class="toc-item-number">20</span><span class="toc-item-title">様態・推量</span><span class="toc-item-summary">Vẻ ngoài, suy đoán</span></a>
+  </div>
+</nav>
+
+<!-- ============ LESSON 1 ============ -->
+<article class="document" id="lesson-1">
+<div class="lesson-banner"><span class="lesson-kicker">1課 — Bài 1 · 時間関係</span><h2>Liên quan thời gian (gần như đồng thời)</h2><div class="lesson-sub">4 mẫu: ～が早いか / ～や否や / ～なり / ～そばから</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～が早いか<span class="gc-meaning">Vừa ~ thì lập tức… (cứng, văn viết)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形 / た形</code> ＋ が早いか</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Vừa ~ thì ngay lập tức xảy ra…</strong>". Diễn tả hai sự việc xảy ra liên tiếp gần như đồng thời. Văn phong cứng, văn viết. Vế sau là sự việc đã xảy ra rồi (đã xảy ra trong quá khứ).</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>授<rt>じゅ</rt></ruby><ruby>業<rt>ぎょう</rt></ruby><ruby>終<rt>しゅう</rt></ruby><ruby>了<rt>りょう</rt></ruby>のベルが<ruby>鳴<rt>な</rt></ruby>る<span class="target">が早いか</span>、<ruby>子<rt>こ</rt></ruby>どもたちは<ruby>校<rt>こう</rt></ruby><ruby>庭<rt>てい</rt></ruby>へ<ruby>駆<rt>か</rt></ruby>け<ruby>出<rt>だ</rt></ruby>した。</div><div class="ex-vn">Chuông tan học vừa vang lên thì bọn trẻ đã ào ra sân trường.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>新<rt>しん</rt></ruby><ruby>製<rt>せい</rt></ruby><ruby>品<rt>ひん</rt></ruby>は<ruby>発<rt>はつ</rt></ruby><ruby>売<rt>ばい</rt></ruby>される<span class="target">が早いか</span>、<ruby>売<rt>う</rt></ruby>り<ruby>切<rt>き</rt></ruby>れてしまった。</div><div class="ex-vn">Sản phẩm mới vừa được bán ra là cháy hàng ngay.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>彼<rt>かれ</rt></ruby>は<ruby>家<rt>いえ</rt></ruby>に<ruby>着<rt>つ</rt></ruby>く<span class="target">が早いか</span>、ベッドに<ruby>倒<rt>たお</rt></ruby>れ<ruby>込<rt>こ</rt></ruby>んだ。</div><div class="ex-vn">Anh ấy vừa về tới nhà thì đã lăn ra giường.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～が早いか</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>母<rt>はは</rt></ruby>の<ruby>顔<rt>かお</rt></ruby>を<ruby>見<rt>み</rt></ruby>る(　<span class="blank">が早いか</span>　)、<ruby>子<rt>こ</rt></ruby>どもは<ruby>泣<rt>な</rt></ruby>き<ruby>出<rt>だ</rt></ruby>した。<span class="vn-hint">Vừa thấy mặt mẹ là đứa bé đã khóc òa.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>会<rt>かい</rt></ruby><ruby>議<rt>ぎ</rt></ruby>が<ruby>終<rt>お</rt></ruby>わる(　<span class="blank">が早いか</span>　)、<ruby>彼<rt>かれ</rt></ruby>は<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>を<ruby>出<rt>で</rt></ruby>ていった。<span class="vn-hint">Cuộc họp vừa kết thúc là anh ấy ra khỏi phòng ngay.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>ドアを<ruby>開<rt>あ</rt></ruby>ける(　<span class="blank">が早いか</span>　)、<ruby>犬<rt>いぬ</rt></ruby>が<ruby>飛<rt>と</rt></ruby>び<ruby>出<rt>だ</rt></ruby>してきた。<span class="vn-hint">Vừa mở cửa là con chó nhảy ào ra.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～や否や / ～や<span class="gc-meaning">Vừa ~ thì… (văn viết trang trọng)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形</code> ＋ や否や / や</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Đồng nghĩa「が早いか」. <strong>Văn viết, trang trọng, thường gặp trong tin tức/tiểu thuyết</strong>. Hai sự việc gần như nối tiếp nhau ngay tức thì.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①その<ruby>知<rt>し</rt></ruby>らせを<ruby>聞<rt>き</rt></ruby>く<span class="target">や否や</span>、<ruby>彼<rt>かのじょ</rt></ruby>は<ruby>気<rt>き</rt></ruby>を<ruby>失<rt>うしな</rt></ruby>った。</div><div class="ex-vn">Vừa nghe tin đó, cô ấy ngất xỉu.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>選<rt>せん</rt></ruby><ruby>挙<rt>きょ</rt></ruby><ruby>結<rt>けっ</rt></ruby><ruby>果<rt>か</rt></ruby>が<ruby>発<rt>はっ</rt></ruby><ruby>表<rt>ぴょう</rt></ruby>される<span class="target">や</span>、<ruby>会<rt>かい</rt></ruby><ruby>場<rt>じょう</rt></ruby>は<ruby>大<rt>おお</rt></ruby>きな<ruby>歓<rt>かん</rt></ruby><ruby>声<rt>せい</rt></ruby>に<ruby>包<rt>つつ</rt></ruby>まれた。</div><div class="ex-vn">Vừa công bố kết quả bầu cử, hội trường vỡ òa trong tiếng reo hò.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>事<rt>じ</rt></ruby><ruby>故<rt>こ</rt></ruby>の<ruby>知<rt>し</rt></ruby>らせを<ruby>受<rt>う</rt></ruby>ける<span class="target">や否や</span>、<ruby>彼<rt>かれ</rt></ruby>は<ruby>病<rt>びょう</rt></ruby><ruby>院<rt>いん</rt></ruby>へ<ruby>駆<rt>か</rt></ruby>けつけた。</div><div class="ex-vn">Vừa nhận tin tai nạn, anh ấy lao đến bệnh viện ngay.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～や否や</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>記<rt>き</rt></ruby><ruby>者<rt>しゃ</rt></ruby><ruby>会<rt>かい</rt></ruby><ruby>見<rt>けん</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まる(　<span class="blank">や否や</span>　)、<ruby>質<rt>しつ</rt></ruby><ruby>問<rt>もん</rt></ruby>が<ruby>飛<rt>と</rt></ruby>び<ruby>交<rt>か</rt></ruby>った。<span class="vn-hint">Họp báo vừa bắt đầu, câu hỏi đã tới tấp.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>母<rt>はは</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>を<ruby>聞<rt>き</rt></ruby>く(　<span class="blank">や</span>　)、<ruby>赤<rt>あか</rt></ruby>ちゃんは<ruby>泣<rt>な</rt></ruby>き<ruby>止<rt>や</rt></ruby>んだ。<span class="vn-hint">Vừa nghe tiếng mẹ, em bé ngừng khóc.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>新<rt>あたら</rt></ruby>しい<ruby>規<rt>き</rt></ruby><ruby>則<rt>そく</rt></ruby>が<ruby>発<rt>はっ</rt></ruby><ruby>表<rt>ぴょう</rt></ruby>される(　<span class="blank">や否や</span>　)、<ruby>抗<rt>こう</rt></ruby><ruby>議<rt>ぎ</rt></ruby>の<ruby>声<rt>こえ</rt></ruby>が<ruby>上<rt>あ</rt></ruby>がった。<span class="vn-hint">Quy định mới vừa công bố là phản đối nổi lên.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～なり<span class="gc-meaning">Vừa ~ là (chủ ngữ có hành động đáng ngạc nhiên)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形</code> ＋ なり</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Vừa ~ là (lập tức làm việc khác)</strong>" — vế sau là <em>hành động đáng ngạc nhiên</em> của <em>chủ ngữ thứ 3</em>. Vế trước và sau cùng chủ ngữ.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>子<rt>こ</rt></ruby>どもは<ruby>母<rt>はは</rt></ruby><ruby>親<rt>おや</rt></ruby>の<ruby>顔<rt>かお</rt></ruby>を<ruby>見<rt>み</rt></ruby>る<span class="target">なり</span>、わっと<ruby>泣<rt>な</rt></ruby>き<ruby>出<rt>だ</rt></ruby>した。</div><div class="ex-vn">Vừa thấy mặt mẹ là đứa bé òa lên khóc.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>彼<rt>かれ</rt></ruby>は<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>に<ruby>入<rt>はい</rt></ruby>る<span class="target">なり</span>、ドアを<ruby>強<rt>つよ</rt></ruby>く<ruby>閉<rt>し</rt></ruby>めた。</div><div class="ex-vn">Vừa vào phòng là anh ấy đóng sầm cửa lại.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>祖<rt>そ</rt></ruby><ruby>母<rt>ぼ</rt></ruby>は<ruby>孫<rt>まご</rt></ruby>を<ruby>見<rt>み</rt></ruby>る<span class="target">なり</span>、<ruby>涙<rt>なみだ</rt></ruby>ぐんだ。</div><div class="ex-vn">Vừa nhìn thấy cháu, bà tôi rưng rưng nước mắt.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～なり</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>彼<rt>かれ</rt></ruby>は<ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>る(　<span class="blank">なり</span>　)、ソファに<ruby>横<rt>よこ</rt></ruby>になった。<span class="vn-hint">Vừa về nhà là anh ấy nằm dài trên sofa ngay.</span></div>
+<div class="ex-q"><span class="qnum">2.</span>その<ruby>女<rt>じょ</rt></ruby><ruby>性<rt>せい</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>の<ruby>顔<rt>かお</rt></ruby>を<ruby>見<rt>み</rt></ruby>る(　<span class="blank">なり</span>　)、<ruby>逃<rt>に</rt></ruby>げてしまった。<span class="vn-hint">Người phụ nữ vừa nhìn thấy tôi là bỏ chạy.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>父<rt>ちち</rt></ruby>は<ruby>電<rt>でん</rt></ruby><ruby>話<rt>わ</rt></ruby>を<ruby>切<rt>き</rt></ruby>る(　<span class="blank">なり</span>　)、<ruby>急<rt>いそ</rt></ruby>いで<ruby>出<rt>で</rt></ruby>かけた。<span class="vn-hint">Vừa cúp máy là bố vội vàng ra ngoài.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">4</div><div class="gc-title">～そばから<span class="gc-meaning">Vừa ~ là đã… (lặp đi lặp lại, phàn nàn)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形 / た形</code> ＋ そばから</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Vừa làm xong ~ là lại ~ (lặp đi lặp lại)</strong>". Mang sắc thái <em>phàn nàn, bực mình</em> vì sự việc cứ tái diễn.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>掃<rt>そう</rt></ruby><ruby>除<rt>じ</rt></ruby>した<span class="target">そばから</span>、<ruby>子<rt>こ</rt></ruby>どもが<ruby>散<rt>ち</rt></ruby>らかしてしまう。</div><div class="ex-vn">Vừa dọn xong là bọn trẻ lại bày bừa ra ngay.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>単<rt>たん</rt></ruby><ruby>語<rt>ご</rt></ruby>を<ruby>覚<rt>おぼ</rt></ruby>える<span class="target">そばから</span><ruby>忘<rt>わす</rt></ruby>れてしまう。</div><div class="ex-vn">Vừa nhớ được từ là lại quên ngay.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>料<rt>りょう</rt></ruby><ruby>理<rt>り</rt></ruby>を<ruby>作<rt>つく</rt></ruby>る<span class="target">そばから</span>、<ruby>夫<rt>おっと</rt></ruby>が<ruby>食<rt>た</rt></ruby>べてしまう。</div><div class="ex-vn">Tôi vừa nấu xong là chồng đã ăn hết ngay.</div></div>
+</div></div>
+<div class="gc-section"><span class="gc-label lbl-compare">Phân biệt</span><div class="compare-box">
+<div class="cmp-item"><span class="cmp-jp">～が早いか・や否や</span>: một lần, ngay tức khắc.</div>
+<div class="cmp-item"><span class="cmp-jp">～そばから</span>: <strong>lặp đi lặp lại</strong>, mang sắc thái phàn nàn.</div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～そばから</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>洗<rt>あら</rt></ruby>った(　<span class="blank">そばから</span>　)、<ruby>子<rt>こ</rt></ruby>どもが<ruby>服<rt>ふく</rt></ruby>を<ruby>汚<rt>よご</rt></ruby>す。<span class="vn-hint">Vừa giặt xong là bọn trẻ lại làm bẩn áo.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>注<rt>ちゅう</rt></ruby><ruby>意<rt>い</rt></ruby>する(　<span class="blank">そばから</span>　)、<ruby>同<rt>おな</rt></ruby>じミスを<ruby>繰<rt>く</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>す。<span class="vn-hint">Vừa nhắc là lại lặp lại lỗi cũ ngay.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>稼<rt>かせ</rt></ruby>いだ(　<span class="blank">そばから</span>　)<ruby>使<rt>つか</rt></ruby>ってしまう。<span class="vn-hint">Vừa kiếm được là tiêu hết ngay.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 2 ============ -->
+<article class="document" id="lesson-2">
+<div class="lesson-banner"><span class="lesson-kicker">2課 — Bài 2 · 範囲</span><h2>Phạm vi: bắt đầu &amp; kết thúc</h2><div class="lesson-sub">3 mẫu: ～を皮切りに / ～を限りに・を最後に / ～をもって</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～を皮切りに(して)<span class="gc-meaning">Lấy ~ làm khởi điểm, từ đó… (mở rộng)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ を皮切りに / を皮切りにして</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Lấy ~ làm khởi điểm</strong>, từ đó sự việc/hiện tượng lan rộng/tiếp diễn". Văn viết trang trọng.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>東<rt>とう</rt></ruby><ruby>京<rt>きょう</rt></ruby><ruby>公<rt>こう</rt></ruby><ruby>演<rt>えん</rt></ruby><span class="target">を皮切りに</span>、<ruby>全<rt>ぜん</rt></ruby><ruby>国<rt>こく</rt></ruby>ツアーが<ruby>始<rt>はじ</rt></ruby>まる。</div><div class="ex-vn">Lấy buổi diễn ở Tokyo làm khởi điểm, tour toàn quốc bắt đầu.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>彼<rt>かれ</rt></ruby>の<ruby>発<rt>はつ</rt></ruby><ruby>言<rt>げん</rt></ruby><span class="target">を皮切りに</span>、<ruby>議<rt>ぎ</rt></ruby><ruby>論<rt>ろん</rt></ruby>が<ruby>活<rt>かっ</rt></ruby><ruby>発<rt>ぱつ</rt></ruby>になった。</div><div class="ex-vn">Bắt đầu từ phát biểu của anh ấy, cuộc tranh luận sôi nổi hẳn lên.</div></div>
+<div class="ex-box"><div class="ex-jp">③この<ruby>店<rt>みせ</rt></ruby>の<ruby>開<rt>かい</rt></ruby><ruby>店<rt>てん</rt></ruby><span class="target">を皮切りにして</span>、<ruby>続<rt>つづ</rt></ruby>々と<ruby>支<rt>し</rt></ruby><ruby>店<rt>てん</rt></ruby>がオープンした。</div><div class="ex-vn">Lấy việc mở quán này làm điểm khởi đầu, các chi nhánh đã liên tiếp khai trương.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～を皮切りに</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>大<rt>おお</rt></ruby><ruby>阪<rt>さか</rt></ruby><ruby>支<rt>し</rt></ruby><ruby>店<rt>てん</rt></ruby>(　<span class="blank">を皮切りに</span>　)、<ruby>全<rt>ぜん</rt></ruby><ruby>国<rt>こく</rt></ruby>に<ruby>展<rt>てん</rt></ruby><ruby>開<rt>かい</rt></ruby>する<ruby>予<rt>よ</rt></ruby><ruby>定<rt>てい</rt></ruby>だ。<span class="vn-hint">Bắt đầu từ chi nhánh Osaka, sẽ mở rộng ra toàn quốc.</span></div>
+<div class="ex-q"><span class="qnum">2.</span>その<ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby>(　<span class="blank">を皮切りに</span>　)、<ruby>類<rt>るい</rt></ruby><ruby>似<rt>じ</rt></ruby>の<ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby>が<ruby>相<rt>あい</rt></ruby><ruby>次<rt>つ</rt></ruby>いだ。<span class="vn-hint">Bắt đầu từ vụ đó, các vụ tương tự liên tiếp xảy ra.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>新<rt>しん</rt></ruby><ruby>製<rt>せい</rt></ruby><ruby>品<rt>ひん</rt></ruby><ruby>発<rt>はっ</rt></ruby><ruby>表<rt>ぴょう</rt></ruby><ruby>会<rt>かい</rt></ruby>(　<span class="blank">を皮切りに</span>　)、<ruby>各<rt>かく</rt></ruby><ruby>地<rt>ち</rt></ruby>で<ruby>説<rt>せつ</rt></ruby><ruby>明<rt>めい</rt></ruby><ruby>会<rt>かい</rt></ruby>が<ruby>開<rt>ひら</rt></ruby>かれる。<span class="vn-hint">Bắt đầu từ buổi giới thiệu sản phẩm, các buổi giới thiệu sẽ mở ở mọi nơi.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～を限りに / ～を最後に<span class="gc-meaning">Lấy ~ làm điểm kết thúc, từ đó không còn…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 (thời điểm)</code> ＋ を限りに / を最後に</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Sau thời điểm ~ thì không còn ~ nữa</strong>". Tuyên bố sự kết thúc hoàn toàn của một việc. Văn phong trang trọng, mang sắc thái quyết liệt.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>今<rt>きょ</rt></ruby><ruby>日<rt>う</rt></ruby><span class="target">を限りに</span>、タバコをやめます。</div><div class="ex-vn">Từ hôm nay tôi sẽ bỏ thuốc.</div></div>
+<div class="ex-box"><div class="ex-jp">②あのコンサート<span class="target">を最後に</span>、<ruby>彼<rt>かのじょ</rt></ruby>は<ruby>引<rt>いん</rt></ruby><ruby>退<rt>たい</rt></ruby>した。</div><div class="ex-vn">Cô ấy giải nghệ sau buổi hòa nhạc đó.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>今<rt>こん</rt></ruby><ruby>月<rt>げつ</rt></ruby><ruby>末<rt>まつ</rt></ruby><span class="target">を限りに</span>、この<ruby>店<rt>みせ</rt></ruby>は<ruby>閉<rt>へい</rt></ruby><ruby>店<rt>てん</rt></ruby>します。</div><div class="ex-vn">Cửa hàng này sẽ đóng cửa kể từ cuối tháng này.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～を限りに / 最後に</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>その<ruby>試<rt>し</rt></ruby><ruby>合<rt>あい</rt></ruby>(　<span class="blank">を最後に</span>　)、<ruby>彼<rt>かれ</rt></ruby>は<ruby>選<rt>せん</rt></ruby><ruby>手<rt>しゅ</rt></ruby><ruby>生<rt>せい</rt></ruby><ruby>活<rt>かつ</rt></ruby>を<ruby>終<rt>お</rt></ruby>えた。<span class="vn-hint">Anh ấy kết thúc đời cầu thủ sau trận đấu đó.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>今<rt>きょ</rt></ruby><ruby>日<rt>う</rt></ruby>(　<span class="blank">を限りに</span>　)<ruby>夜<rt>よる</rt></ruby><ruby>食<rt>しょく</rt></ruby>はやめると<ruby>決<rt>き</rt></ruby>めた。<span class="vn-hint">Tôi đã quyết định từ hôm nay không ăn đêm nữa.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>あの<ruby>大<rt>たい</rt></ruby><ruby>会<rt>かい</rt></ruby>(　<span class="blank">を最後に</span>　)、<ruby>大<rt>おお</rt></ruby>きな<ruby>事<rt>じ</rt></ruby><ruby>故<rt>こ</rt></ruby>は<ruby>起<rt>お</rt></ruby>きていない。<span class="vn-hint">Từ sau giải đấu đó, không có vụ tai nạn lớn nào nữa.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～をもって<span class="gc-meaning">Bằng ~ / Tính đến ~ là kết thúc</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ をもって</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">2 nghĩa: ① <strong>Bằng ~ (phương tiện trang trọng)</strong>; ② <strong>Tính đến thời điểm ~ là kết thúc</strong>. Văn phong cứng, dùng trong thông báo chính thức.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>本<rt>ほん</rt></ruby><ruby>日<rt>じつ</rt></ruby>の<ruby>営<rt>えい</rt></ruby><ruby>業<rt>ぎょう</rt></ruby>は19<ruby>時<rt>じ</rt></ruby><span class="target">をもって</span><ruby>終<rt>しゅう</rt></ruby><ruby>了<rt>りょう</rt></ruby>させていただきます。</div><div class="ex-vn">Hoạt động ngày hôm nay xin kết thúc vào lúc 19h.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>合<rt>ごう</rt></ruby><ruby>否<rt>ひ</rt></ruby>は<ruby>書<rt>しょ</rt></ruby><ruby>面<rt>めん</rt></ruby><span class="target">をもって</span>お<ruby>知<rt>し</rt></ruby>らせします。</div><div class="ex-vn">Kết quả đỗ/trượt sẽ được thông báo bằng văn bản.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby><span class="target">をもって</span><ruby>困<rt>こん</rt></ruby><ruby>難<rt>なん</rt></ruby>を<ruby>乗<rt>の</rt></ruby>り<ruby>越<rt>こ</rt></ruby>えた。</div><div class="ex-vn">Anh ấy đã vượt qua khó khăn bằng nỗ lực.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～をもって</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>本<rt>ほん</rt></ruby><ruby>日<rt>じつ</rt></ruby>(　<span class="blank">をもって</span>　)、<ruby>会<rt>かい</rt></ruby><ruby>長<rt>ちょう</rt></ruby>を<ruby>退<rt>たい</rt></ruby><ruby>任<rt>にん</rt></ruby>いたします。<span class="vn-hint">Kể từ hôm nay, tôi xin từ chức chủ tịch.</span></div>
+<div class="ex-q"><span class="qnum">2.</span>ご<ruby>連<rt>れん</rt></ruby><ruby>絡<rt>らく</rt></ruby>はメール(　<span class="blank">をもって</span>　)お<ruby>願<rt>ねが</rt></ruby>いします。<span class="vn-hint">Vui lòng liên lạc bằng email.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>3<ruby>月<rt>がつ</rt></ruby>31<ruby>日<rt>にち</rt></ruby>(　<span class="blank">をもって</span>　)<ruby>会<rt>かい</rt></ruby><ruby>員<rt>いん</rt></ruby><ruby>登<rt>とう</rt></ruby><ruby>録<rt>ろく</rt></ruby>を<ruby>締<rt>し</rt></ruby>め<ruby>切<rt>き</rt></ruby>ります。<span class="vn-hint">Đăng ký thành viên kết thúc vào ngày 31/3.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 3 ============ -->
+<article class="document" id="lesson-3">
+<div class="lesson-banner"><span class="lesson-kicker">3課 — Bài 3 · 限定・非限定・付加</span><h2>Giới hạn &amp; bổ sung</h2><div class="lesson-sub">4 mẫu: ～をおいて / ～ならではの / ～に至るまで / ～と相まって</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～をおいて(～ない)<span class="gc-meaning">Ngoài ~ ra thì không còn (giới hạn cao)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ をおいて (＋ ない・他にない)</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Ngoài ~ ra thì không có ai/cái nào khác (xứng đáng/phù hợp)</strong>". Mang sắc thái <em>đề cao ~ là duy nhất</em>.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①このプロジェクトを<ruby>任<rt>まか</rt></ruby>せられるのは<ruby>彼<rt>かれ</rt></ruby><span class="target">をおいて</span>ほかにいない。</div><div class="ex-vn">Người có thể giao phó dự án này, ngoài anh ấy ra thì không còn ai.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>桜<rt>さくら</rt></ruby>を<ruby>見<rt>み</rt></ruby>るなら、<ruby>京<rt>きょう</rt></ruby><ruby>都<rt>と</rt></ruby><span class="target">をおいて</span>ほかにない。</div><div class="ex-vn">Để ngắm hoa anh đào, ngoài Kyoto ra thì không nơi nào hơn.</div></div>
+<div class="ex-box"><div class="ex-jp">③この<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>を<ruby>頼<rt>たの</rt></ruby>めるのは<ruby>君<rt>きみ</rt></ruby><span class="target">をおいて</span>いない。</div><div class="ex-vn">Người tôi có thể nhờ công việc này, ngoài em ra thì không còn ai.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～をおいて</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>会<rt>かい</rt></ruby><ruby>長<rt>ちょう</rt></ruby>にふさわしいのは<ruby>彼<rt>かのじょ</rt></ruby>(　<span class="blank">をおいて</span>　)ほかにない。<span class="vn-hint">Người xứng làm chủ tịch, ngoài cô ấy thì không ai.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>頼<rt>たよ</rt></ruby>れる<ruby>人<rt>ひと</rt></ruby>は<ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby>(　<span class="blank">をおいて</span>　)<ruby>他<rt>ほか</rt></ruby>にいない。<span class="vn-hint">Người tôi tin cậy, ngoài gia đình thì không ai.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>そんなことを<ruby>言<rt>い</rt></ruby>えるのはあなた(　<span class="blank">をおいて</span>　)いない。<span class="vn-hint">Người dám nói điều đó, ngoài bạn thì không ai khác.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～ならではの<span class="gc-meaning">Mang đặc trưng riêng của ~ (chỉ ~ mới có)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ ならではの ＋ <code>名</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Chỉ riêng ~ mới có / Mang đặc trưng riêng của ~</strong>". Mang sắc thái <em>tán dương đặc tính độc đáo</em>.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①ここでしか<ruby>味<rt>あじ</rt></ruby>わえない、<ruby>下<rt>した</rt></ruby><ruby>町<rt>まち</rt></ruby><span class="target">ならではの</span><ruby>雰<rt>ふん</rt></ruby><ruby>囲<rt>い</rt></ruby><ruby>気<rt>き</rt></ruby>が<ruby>魅<rt>み</rt></ruby><ruby>力<rt>りょく</rt></ruby>です。</div><div class="ex-vn">Không khí đặc trưng phố cổ chỉ có ở đây là điểm hấp dẫn.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>沖<rt>おき</rt></ruby><ruby>縄<rt>なわ</rt></ruby><span class="target">ならではの</span><ruby>料<rt>りょう</rt></ruby><ruby>理<rt>り</rt></ruby>を<ruby>楽<rt>たの</rt></ruby>しめる。</div><div class="ex-vn">Có thể thưởng thức món ăn đặc trưng chỉ Okinawa mới có.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>子<rt>こ</rt></ruby>ども<span class="target">ならではの</span><ruby>素<rt>す</rt></ruby><ruby>直<rt>なお</rt></ruby>な<ruby>感<rt>かん</rt></ruby><ruby>想<rt>そう</rt></ruby>が<ruby>聞<rt>き</rt></ruby>けた。</div><div class="ex-vn">Tôi nghe được cảm nhận trong sáng đúng kiểu trẻ con.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ならではの</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>この<ruby>店<rt>みせ</rt></ruby>(　<span class="blank">ならではの</span>　)<ruby>味<rt>あじ</rt></ruby>が<ruby>絶<rt>ぜっ</rt></ruby><ruby>品<rt>ぴん</rt></ruby>だ。<span class="vn-hint">Vị đặc trưng chỉ quán này có thật tuyệt.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>京<rt>きょう</rt></ruby><ruby>都<rt>と</rt></ruby>(　<span class="blank">ならではの</span>　)<ruby>町<rt>まち</rt></ruby><ruby>並<rt>な</rt></ruby>みを<ruby>楽<rt>たの</rt></ruby>しんだ。<span class="vn-hint">Tôi đã ngắm cảnh phố cổ đặc trưng của Kyoto.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>職<rt>しょく</rt></ruby><ruby>人<rt>にん</rt></ruby>(　<span class="blank">ならではの</span>　)<ruby>技<rt>わざ</rt></ruby>を<ruby>見<rt>み</rt></ruby>せてくれた。<span class="vn-hint">Anh ấy cho tôi xem kỹ năng đặc trưng của nghệ nhân.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～に至るまで<span class="gc-meaning">Cho đến cả ~ (cực đoan, bổ sung)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ に至るまで</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Phạm vi mở rộng đến cả ~</strong>" — lấy ví dụ cực đoan để chỉ ra phạm vi rộng. Trang trọng.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>頭<rt>あたま</rt></ruby>のてっぺんから<ruby>足<rt>あし</rt></ruby>のつま<ruby>先<rt>さき</rt></ruby><span class="target">に至るまで</span><ruby>検<rt>けん</rt></ruby><ruby>査<rt>さ</rt></ruby>された。</div><div class="ex-vn">Tôi bị kiểm tra từ đầu cho đến cả mũi chân.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>子<rt>こ</rt></ruby>どもから<ruby>老<rt>ろう</rt></ruby><ruby>人<rt>じん</rt></ruby><span class="target">に至るまで</span>このアニメを<ruby>知<rt>し</rt></ruby>っている。</div><div class="ex-vn">Từ trẻ con cho đến cả người già đều biết bộ anime này.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>会<rt>かい</rt></ruby><ruby>議<rt>ぎ</rt></ruby>では<ruby>大<rt>たい</rt></ruby><ruby>事<rt>じ</rt></ruby>な<ruby>議<rt>ぎ</rt></ruby><ruby>題<rt>だい</rt></ruby>から<ruby>細<rt>こま</rt></ruby>かい<ruby>問<rt>もん</rt></ruby><ruby>題<rt>だい</rt></ruby><span class="target">に至るまで</span><ruby>話<rt>はな</rt></ruby>し<ruby>合<rt>あ</rt></ruby>った。</div><div class="ex-vn">Trong cuộc họp, đã bàn từ vấn đề lớn đến cả chuyện nhỏ nhặt.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～に至るまで</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>食<rt>しょく</rt></ruby><ruby>器<rt>き</rt></ruby>から<ruby>家<rt>か</rt></ruby><ruby>具<rt>ぐ</rt></ruby>(　<span class="blank">に至るまで</span>　)、すべて<ruby>新<rt>あたら</rt></ruby>しく<ruby>買<rt>か</rt></ruby>い<ruby>換<rt>か</rt></ruby>えた。<span class="vn-hint">Từ chén bát cho đến cả nội thất, tôi đã đổi mới tất cả.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>幼<rt>よう</rt></ruby><ruby>稚<rt>ち</rt></ruby><ruby>園<rt>えん</rt></ruby><ruby>児<rt>じ</rt></ruby>から<ruby>大<rt>だい</rt></ruby><ruby>学<rt>がく</rt></ruby><ruby>生<rt>せい</rt></ruby>(　<span class="blank">に至るまで</span>　)この<ruby>曲<rt>きょく</rt></ruby>が<ruby>流<rt>りゅう</rt></ruby><ruby>行<rt>こう</rt></ruby>している。<span class="vn-hint">Từ trẻ mẫu giáo đến cả sinh viên đều mê bài hát này.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>細<rt>こま</rt></ruby>かい<ruby>規<rt>き</rt></ruby><ruby>則<rt>そく</rt></ruby>(　<span class="blank">に至るまで</span>　)きちんと<ruby>定<rt>さだ</rt></ruby>められている。<span class="vn-hint">Quy định đã được lập đến cả các chi tiết nhỏ.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">4</div><div class="gc-title">～と相まって<span class="gc-meaning">Cộng hưởng với ~ thì… (tổng hợp hiệu quả)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ と相まって</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Cộng hưởng/kết hợp với ~ tạo nên hiệu quả lớn hơn</strong>". Văn viết trang trọng.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>が<ruby>才<rt>さい</rt></ruby><ruby>能<rt>のう</rt></ruby><span class="target">と相まって</span>、<ruby>大<rt>だい</rt></ruby><ruby>成<rt>せい</rt></ruby><ruby>功<rt>こう</rt></ruby>を<ruby>収<rt>おさ</rt></ruby>めた。</div><div class="ex-vn">Nỗ lực cộng hưởng với tài năng, anh ấy đã thành công vang dội.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>天<rt>てん</rt></ruby><ruby>候<rt>こう</rt></ruby>不<ruby>順<rt>じゅん</rt></ruby>が<ruby>物<rt>ぶっ</rt></ruby><ruby>価<rt>か</rt></ruby><ruby>上<rt>じょう</rt></ruby><ruby>昇<rt>しょう</rt></ruby><span class="target">と相まって</span>、<ruby>農<rt>のう</rt></ruby><ruby>家<rt>か</rt></ruby>の<ruby>負<rt>ふ</rt></ruby><ruby>担<rt>たん</rt></ruby>が<ruby>大<rt>おお</rt></ruby>きい。</div><div class="ex-vn">Thời tiết thất thường cộng với giá cả tăng, nông dân chịu gánh nặng lớn.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>美<rt>うつく</rt></ruby>しい<ruby>景<rt>けし</rt></ruby><ruby>色<rt>き</rt></ruby>が<ruby>静<rt>しず</rt></ruby>けさ<span class="target">と相まって</span>、<ruby>心<rt>こころ</rt></ruby>に<ruby>残<rt>のこ</rt></ruby>る<ruby>旅<rt>たび</rt></ruby>だった。</div><div class="ex-vn">Cảnh đẹp kết hợp với sự yên tĩnh, chuyến đi để lại ấn tượng sâu sắc.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～と相まって</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>音<rt>おん</rt></ruby><ruby>楽<rt>がく</rt></ruby>が<ruby>映<rt>えい</rt></ruby><ruby>像<rt>ぞう</rt></ruby>(　<span class="blank">と相まって</span>　)、<ruby>感<rt>かん</rt></ruby><ruby>動<rt>どう</rt></ruby>が<ruby>倍<rt>ばい</rt></ruby><ruby>増<rt>ぞう</rt></ruby>した。<span class="vn-hint">Âm nhạc kết hợp với hình ảnh, cảm xúc được nhân đôi.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>が<ruby>運<rt>うん</rt></ruby>(　<span class="blank">と相まって</span>　)、<ruby>成<rt>せい</rt></ruby><ruby>功<rt>こう</rt></ruby>を<ruby>呼<rt>よ</rt></ruby>び<ruby>込<rt>こ</rt></ruby>んだ。<span class="vn-hint">Nỗ lực cộng với may mắn đã mang lại thành công.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>香<rt>か</rt></ruby>りが<ruby>味<rt>あじ</rt></ruby>(　<span class="blank">と相まって</span>　)、<ruby>絶<rt>ぜっ</rt></ruby><ruby>品<rt>ぴん</rt></ruby>の<ruby>料<rt>りょう</rt></ruby><ruby>理<rt>り</rt></ruby>になった。<span class="vn-hint">Hương kết hợp với vị tạo nên món ăn tuyệt phẩm.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 4 ============ -->
+<article class="document" id="lesson-4">
+<div class="lesson-banner"><span class="lesson-kicker">4課 — Bài 4 · 例示</span><h2>Liệt kê, ví dụ</h2><div class="lesson-sub">3 mẫu: ～といい～といい / ～であれ～であれ / ～なり～なり</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～といい～といい<span class="gc-meaning">Nói về ~ rồi nói về ~ thì cũng (đánh giá tổng thể)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ といい ＋ <code>名</code> ＋ といい</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Cả ~ lẫn ~ đều … (đánh giá chung)</strong>". Lấy 2 yếu tố tiêu biểu để đánh giá tổng thể.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①この<ruby>宿<rt>やど</rt></ruby>は<ruby>料<rt>りょう</rt></ruby><ruby>理<rt>り</rt></ruby><span class="target">といい</span>サービス<span class="target">といい</span>、<ruby>申<rt>もう</rt></ruby>し<ruby>分<rt>ぶん</rt></ruby>ない。</div><div class="ex-vn">Nhà trọ này cả món ăn lẫn dịch vụ đều không có gì để chê.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>色<rt>いろ</rt></ruby><span class="target">といい</span>デザイン<span class="target">といい</span>、<ruby>気<rt>き</rt></ruby>に<ruby>入<rt>い</rt></ruby>った。</div><div class="ex-vn">Cả màu lẫn thiết kế, tôi đều thích.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>父<rt>ちち</rt></ruby><span class="target">といい</span><ruby>母<rt>はは</rt></ruby><span class="target">といい</span>、<ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby>の<ruby>誰<rt>だれ</rt></ruby>もが<ruby>反<rt>はん</rt></ruby><ruby>対<rt>たい</rt></ruby>している。</div><div class="ex-vn">Cả bố lẫn mẹ, ai trong gia đình cũng phản đối.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～といい～といい</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>味<rt>あじ</rt></ruby>(　<span class="blank">といい</span>　)、<ruby>盛<rt>も</rt></ruby>り<ruby>付<rt>つ</rt></ruby>け(　<span class="blank">といい</span>　)、<ruby>本<rt>ほん</rt></ruby><ruby>当<rt>とう</rt></ruby>に<ruby>素<rt>す</rt></ruby><ruby>晴<rt>ば</rt></ruby>らしい。<span class="vn-hint">Cả vị lẫn cách trình bày đều thật tuyệt.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>歌<rt>うた</rt></ruby>(　<span class="blank">といい</span>　)<ruby>踊<rt>おど</rt></ruby>り(　<span class="blank">といい</span>　)、<ruby>彼<rt>かのじょ</rt></ruby>は<ruby>才<rt>さい</rt></ruby><ruby>能<rt>のう</rt></ruby>がある。<span class="vn-hint">Cả hát lẫn nhảy, cô ấy đều có tài.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>天<rt>てん</rt></ruby><ruby>気<rt>き</rt></ruby>(　<span class="blank">といい</span>　)<ruby>景<rt>けし</rt></ruby><ruby>色<rt>き</rt></ruby>(　<span class="blank">といい</span>　)、<ruby>最<rt>さい</rt></ruby><ruby>高<rt>こう</rt></ruby>の<ruby>旅<rt>たび</rt></ruby>だった。<span class="vn-hint">Cả thời tiết lẫn cảnh sắc, đều là chuyến đi tuyệt nhất.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～であれ～であれ<span class="gc-meaning">Dù là ~ hay ~ thì cũng…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ であれ ＋ <code>名</code> ＋ であれ</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Bất kể ~ hay ~ thì kết quả vẫn không đổi</strong>". Văn viết trang trọng.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>大<rt>おとな</rt></ruby><span class="target">であれ</span><ruby>子<rt>こ</rt></ruby>ども<span class="target">であれ</span>、ルールは<ruby>守<rt>まも</rt></ruby>るべきだ。</div><div class="ex-vn">Dù là người lớn hay trẻ con, đều phải tuân thủ luật.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>晴<rt>は</rt></ruby>れ<span class="target">であれ</span><ruby>雨<rt>あめ</rt></ruby><span class="target">であれ</span>、<ruby>明<rt>あ</rt></ruby><ruby>日<rt>した</rt></ruby>のイベントは<ruby>行<rt>おこな</rt></ruby>われる。</div><div class="ex-vn">Dù nắng hay mưa, sự kiện ngày mai vẫn diễn ra.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>男<rt>だん</rt></ruby><ruby>性<rt>せい</rt></ruby><span class="target">であれ</span><ruby>女<rt>じょ</rt></ruby><ruby>性<rt>せい</rt></ruby><span class="target">であれ</span>、<ruby>平<rt>びょう</rt></ruby><ruby>等<rt>どう</rt></ruby>に<ruby>扱<rt>あつか</rt></ruby>われる<ruby>権<rt>けん</rt></ruby><ruby>利<rt>り</rt></ruby>がある。</div><div class="ex-vn">Bất kể nam hay nữ đều có quyền được đối xử công bằng.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～であれ～であれ</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>夏<rt>なつ</rt></ruby>(　<span class="blank">であれ</span>　)<ruby>冬<rt>ふゆ</rt></ruby>(　<span class="blank">であれ</span>　)、<ruby>毎<rt>まい</rt></ruby><ruby>朝<rt>あさ</rt></ruby><ruby>走<rt>はし</rt></ruby>っている。<span class="vn-hint">Dù hè hay đông, tôi đều chạy bộ mỗi sáng.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>本<rt>ほん</rt></ruby><ruby>物<rt>もの</rt></ruby>(　<span class="blank">であれ</span>　)コピー(　<span class="blank">であれ</span>　)、<ruby>大<rt>たい</rt></ruby><ruby>切<rt>せつ</rt></ruby>な<ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>で</rt></ruby>だ。<span class="vn-hint">Dù là hàng thật hay bản sao, đều là kỷ niệm quý giá.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>(　<span class="blank">であれ</span>　)<ruby>勉<rt>べん</rt></ruby><ruby>強<rt>きょう</rt></ruby>(　<span class="blank">であれ</span>　)、<ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>が<ruby>必<rt>ひつ</rt></ruby><ruby>要<rt>よう</rt></ruby>だ。<span class="vn-hint">Dù việc làm hay học hành đều cần nỗ lực.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～なり～なり<span class="gc-meaning">~ hay ~ gì cũng được</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 / 動・辞書形</code> ＋ なり ＋ <code>名 / 動・辞書形</code> ＋ なり</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>~ hay ~ gì cũng được (lấy ví dụ một số phương án)</strong>". Đưa ra một vài gợi ý cho người nghe.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>困<rt>こま</rt></ruby>ったときは、<ruby>先<rt>せん</rt></ruby><ruby>生<rt>せい</rt></ruby><span class="target">なり</span><ruby>友<rt>とも</rt></ruby>だち<span class="target">なり</span>に<ruby>相<rt>そう</rt></ruby><ruby>談<rt>だん</rt></ruby>しなさい。</div><div class="ex-vn">Khi gặp khó khăn, hỏi thầy hay bạn bè gì cũng được.</div></div>
+<div class="ex-box"><div class="ex-jp">②メール<span class="target">なり</span><ruby>電<rt>でん</rt></ruby><ruby>話<rt>わ</rt></ruby><span class="target">なり</span>で<ruby>連<rt>れん</rt></ruby><ruby>絡<rt>らく</rt></ruby>してください。</div><div class="ex-vn">Liên lạc bằng mail hay điện thoại gì cũng được.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>休<rt>やす</rt></ruby>みなんだから、<ruby>映<rt>えい</rt></ruby><ruby>画<rt>が</rt></ruby>を<ruby>見<rt>み</rt></ruby>る<span class="target">なり</span><ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>む<span class="target">なり</span>、ゆっくりしたら?</div><div class="ex-vn">Đang nghỉ mà, xem phim hay đọc sách gì cũng được, thư giãn đi.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～なり～なり</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>水<rt>みず</rt></ruby>(　<span class="blank">なり</span>　)お<ruby>茶<rt>ちゃ</rt></ruby>(　<span class="blank">なり</span>　)<ruby>飲<rt>の</rt></ruby>んでください。<span class="vn-hint">Uống nước hay trà gì cũng được, mời.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>分<rt>わ</rt></ruby>からない<ruby>時<rt>とき</rt></ruby>は<ruby>辞<rt>じ</rt></ruby><ruby>書<rt>しょ</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>く(　<span class="blank">なり</span>　)<ruby>調<rt>しら</rt></ruby>べる(　<span class="blank">なり</span>　)しなさい。<span class="vn-hint">Không biết thì hãy tra từ điển hay tra cứu gì đó.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>休<rt>きゅう</rt></ruby><ruby>暇<rt>か</rt></ruby><ruby>中<rt>ちゅう</rt></ruby>は<ruby>旅<rt>りょ</rt></ruby><ruby>行<rt>こう</rt></ruby>(　<span class="blank">なり</span>　)<ruby>運<rt>うん</rt></ruby><ruby>動<rt>どう</rt></ruby>(　<span class="blank">なり</span>　)<ruby>好<rt>す</rt></ruby>きなことをしたい。<span class="vn-hint">Trong kỳ nghỉ tôi muốn đi du lịch hay tập thể dục gì đó.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 5 ============ -->
+<article class="document" id="lesson-5">
+<div class="lesson-banner"><span class="lesson-kicker">5課 — Bài 5 · 関連・無関係</span><h2>Liên quan, bất kể</h2><div class="lesson-sub">3 mẫu: ～いかんで・いかんによって / ～いかんによらず / ～をよそに</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～いかんで / ～いかんによって<span class="gc-meaning">Tùy theo ~ mà (kết quả khác nhau)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ いかんで / いかんによって</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Kết quả thay đổi tùy theo ~</strong>". Văn viết trang trọng, tương đương「次第で」.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>成<rt>せい</rt></ruby><ruby>績<rt>せき</rt></ruby><span class="target">いかんで</span>、<ruby>進<rt>しん</rt></ruby><ruby>級<rt>きゅう</rt></ruby>できるかどうかが<ruby>決<rt>き</rt></ruby>まる。</div><div class="ex-vn">Việc lên lớp được hay không tùy thuộc vào thành tích.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby><span class="target">いかんによって</span>、<ruby>未<rt>み</rt></ruby><ruby>来<rt>らい</rt></ruby>は<ruby>大<rt>おお</rt></ruby>きく<ruby>変<rt>か</rt></ruby>わる。</div><div class="ex-vn">Tùy theo nỗ lực mà tương lai thay đổi rất nhiều.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>天<rt>てん</rt></ruby><ruby>候<rt>こう</rt></ruby><span class="target">いかんで</span>、<ruby>出<rt>しゅっ</rt></ruby><ruby>発<rt>ぱつ</rt></ruby>は<ruby>延<rt>えん</rt></ruby><ruby>期<rt>き</rt></ruby>になる<ruby>可<rt>か</rt></ruby><ruby>能<rt>のう</rt></ruby><ruby>性<rt>せい</rt></ruby>がある。</div><div class="ex-vn">Tùy theo thời tiết, có khả năng chuyến đi sẽ bị hoãn.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～いかんで</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>結<rt>けっ</rt></ruby><ruby>果<rt>か</rt></ruby>(　<span class="blank">いかんによって</span>　)、<ruby>方<rt>ほう</rt></ruby><ruby>針<rt>しん</rt></ruby>を<ruby>変<rt>か</rt></ruby>える<ruby>可<rt>か</rt></ruby><ruby>能<rt>のう</rt></ruby><ruby>性<rt>せい</rt></ruby>がある。<span class="vn-hint">Tùy theo kết quả mà có thể thay đổi phương châm.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>状<rt>じょう</rt></ruby><ruby>況<rt>きょう</rt></ruby>(　<span class="blank">いかんで</span>　)<ruby>判<rt>はん</rt></ruby><ruby>断<rt>だん</rt></ruby>します。<span class="vn-hint">Tôi sẽ phán đoán tùy tình hình.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>態<rt>たい</rt></ruby><ruby>度<rt>ど</rt></ruby>(　<span class="blank">いかんによって</span>　)、<ruby>処<rt>しょ</rt></ruby><ruby>分<rt>ぶん</rt></ruby>が<ruby>決<rt>き</rt></ruby>まる。<span class="vn-hint">Tùy thái độ mà hình thức xử lý sẽ khác.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～いかんによらず / ～いかんを問わず<span class="gc-meaning">Bất kể ~ thế nào…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ いかんによらず / いかんを問わず</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Bất kể ~ thế nào, kết quả vẫn không đổi</strong>". Văn viết trang trọng.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>理<rt>り</rt></ruby><ruby>由<rt>ゆう</rt></ruby><span class="target">いかんによらず</span>、<ruby>暴<rt>ぼう</rt></ruby><ruby>力<rt>りょく</rt></ruby>は<ruby>許<rt>ゆる</rt></ruby>されない。</div><div class="ex-vn">Bất kể lý do gì, bạo lực đều không thể tha thứ.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>事<rt>じ</rt></ruby><ruby>情<rt>じょう</rt></ruby><span class="target">いかんを問わず</span>、<ruby>納<rt>のう</rt></ruby><ruby>付<rt>ふ</rt></ruby>した<ruby>料<rt>りょう</rt></ruby><ruby>金<rt>きん</rt></ruby>は<ruby>返<rt>へん</rt></ruby><ruby>金<rt>きん</rt></ruby>いたしません。</div><div class="ex-vn">Bất kể hoàn cảnh thế nào, chúng tôi không hoàn tiền đã nộp.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>結<rt>けっ</rt></ruby><ruby>果<rt>か</rt></ruby><span class="target">いかんによらず</span>、<ruby>挑<rt>ちょう</rt></ruby><ruby>戦<rt>せん</rt></ruby>することに<ruby>意<rt>い</rt></ruby><ruby>義<rt>ぎ</rt></ruby>がある。</div><div class="ex-vn">Bất kể kết quả thế nào, sự thử thách bản thân có ý nghĩa riêng.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～いかんによらず</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>性<rt>せい</rt></ruby><ruby>別<rt>べつ</rt></ruby>(　<span class="blank">いかんによらず</span>　)、<ruby>機<rt>き</rt></ruby><ruby>会<rt>かい</rt></ruby>は<ruby>平<rt>びょう</rt></ruby><ruby>等<rt>どう</rt></ruby>であるべきだ。<span class="vn-hint">Bất kể giới tính, cơ hội phải bình đẳng.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>年<rt>ねん</rt></ruby><ruby>齢<rt>れい</rt></ruby>(　<span class="blank">いかんを問わず</span>　)<ruby>応<rt>おう</rt></ruby><ruby>募<rt>ぼ</rt></ruby>できます。<span class="vn-hint">Bất kể tuổi tác đều có thể nộp đơn.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>原<rt>げん</rt></ruby><ruby>因<rt>いん</rt></ruby>(　<span class="blank">いかんによらず</span>　)、<ruby>責<rt>せき</rt></ruby><ruby>任<rt>にん</rt></ruby>を<ruby>取<rt>と</rt></ruby>る<ruby>必<rt>ひつ</rt></ruby><ruby>要<rt>よう</rt></ruby>がある。<span class="vn-hint">Bất kể nguyên nhân, vẫn phải chịu trách nhiệm.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～をよそに<span class="gc-meaning">Mặc kệ ~ / Bất chấp ~</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ をよそに</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Bất chấp ~, không quan tâm đến ~, vẫn làm…</strong>". Vế trước thường là sự lo lắng/phản đối/kỳ vọng của người khác mà người này không màng đến.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>親<rt>おや</rt></ruby>の<ruby>反<rt>はん</rt></ruby><ruby>対<rt>たい</rt></ruby><span class="target">をよそに</span>、<ruby>彼<rt>かれ</rt></ruby>は<ruby>留<rt>りゅう</rt></ruby><ruby>学<rt>がく</rt></ruby>を<ruby>決<rt>き</rt></ruby>めた。</div><div class="ex-vn">Bất chấp sự phản đối của bố mẹ, anh ấy đã quyết định đi du học.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby>の<ruby>心<rt>しん</rt></ruby><ruby>配<rt>ぱい</rt></ruby><span class="target">をよそに</span>、<ruby>夜<rt>よ</rt></ruby><ruby>遅<rt>おそ</rt></ruby>くまで<ruby>働<rt>はたら</rt></ruby>き<ruby>続<rt>つづ</rt></ruby>けている。</div><div class="ex-vn">Bất chấp sự lo lắng của gia đình, anh ấy vẫn làm việc đến đêm khuya.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>周<rt>しゅう</rt></ruby><ruby>囲<rt>い</rt></ruby>の<ruby>視<rt>し</rt></ruby><ruby>線<rt>せん</rt></ruby><span class="target">をよそに</span>、<ruby>彼<rt>かのじょ</rt></ruby>は<ruby>大<rt>おお</rt></ruby><ruby>声<rt>ごえ</rt></ruby>で<ruby>笑<rt>わら</rt></ruby>っていた。</div><div class="ex-vn">Mặc kệ ánh mắt xung quanh, cô ấy vẫn cười to.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～をよそに</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>住<rt>じゅう</rt></ruby><ruby>民<rt>みん</rt></ruby>の<ruby>反<rt>はん</rt></ruby><ruby>対<rt>たい</rt></ruby>(　<span class="blank">をよそに</span>　)、<ruby>工<rt>こう</rt></ruby><ruby>事<rt>じ</rt></ruby>が<ruby>始<rt>はじ</rt></ruby>まった。<span class="vn-hint">Bất chấp phản đối của cư dân, công trình vẫn khởi công.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>母<rt>はは</rt></ruby>の<ruby>願<rt>ねが</rt></ruby>い(　<span class="blank">をよそに</span>　)、<ruby>彼<rt>かれ</rt></ruby>は<ruby>学<rt>がっ</rt></ruby><ruby>校<rt>こう</rt></ruby>を<ruby>辞<rt>や</rt></ruby>めた。<span class="vn-hint">Bất chấp nguyện vọng của mẹ, anh ấy đã bỏ học.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>批<rt>ひ</rt></ruby><ruby>判<rt>はん</rt></ruby>(　<span class="blank">をよそに</span>　)、<ruby>政<rt>せい</rt></ruby><ruby>策<rt>さく</rt></ruby>を<ruby>進<rt>すす</rt></ruby>めている。<span class="vn-hint">Mặc kệ chỉ trích, vẫn đẩy mạnh chính sách.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 6 ============ -->
+<article class="document" id="lesson-6">
+<div class="lesson-banner"><span class="lesson-kicker">6課 — Bài 6 · 様子・状態</span><h2>Trạng thái, vẻ ngoài</h2><div class="lesson-sub">3 mẫu: ～ながら(に) / ～まじき / ～にたえる・にたえない</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～ながら(に) / ～ながらの<span class="gc-meaning">Vẫn ~ như vốn / Giữ nguyên ~</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 / 動・ます形</code> ＋ ながら(に) / ながらの ＋ <code>名</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Vẫn giữ nguyên trạng thái ~</strong>" — không thay đổi, vẫn như vốn có. Khác với「ながら」 (vừa ~ vừa ~).</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①この<ruby>町<rt>まち</rt></ruby>は<ruby>昔<rt>むかし</rt></ruby><span class="target">ながらの</span><ruby>風<rt>ふう</rt></ruby><ruby>景<rt>けい</rt></ruby>を<ruby>残<rt>のこ</rt></ruby>している。</div><div class="ex-vn">Thị trấn này vẫn giữ được phong cảnh xưa.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>彼<rt>かのじょ</rt></ruby>は<ruby>涙<rt>なみだ</rt></ruby><span class="target">ながらに</span><ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby>のことを<ruby>語<rt>かた</rt></ruby>った。</div><div class="ex-vn">Cô ấy vừa rưng rưng nước mắt vừa kể về vụ việc.</div></div>
+<div class="ex-box"><div class="ex-jp">③インターネットで<ruby>家<rt>いえ</rt></ruby>に<ruby>居<rt>い</rt></ruby><span class="target">ながらにして</span><ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby>とつながれる。</div><div class="ex-vn">Nhờ internet, ngồi nhà cũng kết nối với thế giới.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ながらに</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>生<rt>う</rt></ruby>まれ(　<span class="blank">ながらに</span>　)<ruby>才<rt>さい</rt></ruby><ruby>能<rt>のう</rt></ruby>を<ruby>持<rt>も</rt></ruby>っている。<span class="vn-hint">Anh ấy có tài năng thiên bẩm.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>古<rt>ふる</rt></ruby>く(　<span class="blank">からの</span>　)<ruby>伝<rt>でん</rt></ruby><ruby>統<rt>とう</rt></ruby>を<ruby>守<rt>まも</rt></ruby>っている。<span class="vn-hint">Vẫn giữ truyền thống từ xưa.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>涙<rt>なみだ</rt></ruby>(　<span class="blank">ながらに</span>　)<ruby>感<rt>かん</rt></ruby><ruby>謝<rt>しゃ</rt></ruby>の<ruby>気<rt>き</rt></ruby><ruby>持<rt>も</rt></ruby>ちを<ruby>伝<rt>つた</rt></ruby>えた。<span class="vn-hint">Anh ấy vừa rơi lệ vừa nói lời cảm ơn.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～まじき<span class="gc-meaning">Không thể tha thứ / Không xứng đáng ~</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形</code> ＋ まじき ＋ <code>名</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Hành vi không thể tha thứ với một người có vai trò/cương vị nào đó</strong>". Văn viết cứng, nghiêm trọng.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>政<rt>せい</rt></ruby><ruby>治<rt>じ</rt></ruby><ruby>家<rt>か</rt></ruby>として<ruby>言<rt>い</rt></ruby>う<span class="target">まじき</span><ruby>発<rt>はつ</rt></ruby><ruby>言<rt>げん</rt></ruby>だ。</div><div class="ex-vn">Phát ngôn đó không xứng đáng với chính trị gia.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>医<rt>い</rt></ruby><ruby>師<rt>し</rt></ruby>としてある<span class="target">まじき</span><ruby>行<rt>こう</rt></ruby><ruby>為<rt>い</rt></ruby>だ。</div><div class="ex-vn">Đó là hành vi không xứng đáng với một bác sĩ.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>教<rt>きょう</rt></ruby><ruby>師<rt>し</rt></ruby>として<ruby>許<rt>ゆる</rt></ruby>される<span class="target">まじき</span><ruby>失<rt>しっ</rt></ruby><ruby>言<rt>げん</rt></ruby>だった。</div><div class="ex-vn">Đó là lời nói không thể tha thứ với một giáo viên.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～まじき</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>プロとしてある(　<span class="blank">まじき</span>　)<ruby>失<rt>しっ</rt></ruby><ruby>敗<rt>ぱい</rt></ruby>だった。<span class="vn-hint">Đó là sai lầm không xứng đáng với một dân chuyên nghiệp.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>警<rt>けい</rt></ruby><ruby>察<rt>さつ</rt></ruby><ruby>官<rt>かん</rt></ruby>としてある(　<span class="blank">まじき</span>　)<ruby>行<rt>こう</rt></ruby><ruby>動<rt>どう</rt></ruby>だ。<span class="vn-hint">Hành động không xứng đáng với một cảnh sát.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>学<rt>がく</rt></ruby><ruby>生<rt>せい</rt></ruby>として<ruby>言<rt>い</rt></ruby>う(　<span class="blank">まじき</span>　)<ruby>暴<rt>ぼう</rt></ruby><ruby>言<rt>げん</rt></ruby>だった。<span class="vn-hint">Lời quá đáng không xứng với một sinh viên.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～にたえる / ～にたえない<span class="gc-meaning">Đáng ~ / Không chịu nổi ~</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形 / 名</code> ＋ にたえる / にたえない</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">2 nghĩa: ① <strong>～にたえる</strong>: đáng/xứng để làm ~; ② <strong>～にたえない</strong>: không xứng/không chịu nổi ~ (chịu đựng cảm xúc).</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①その<ruby>事<rt>じ</rt></ruby><ruby>故<rt>こ</rt></ruby>の<ruby>映<rt>えい</rt></ruby><ruby>像<rt>ぞう</rt></ruby>は<ruby>見<rt>み</rt></ruby>る<span class="target">にたえない</span>。</div><div class="ex-vn">Hình ảnh vụ tai nạn đó không xem nổi.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>大<rt>たい</rt></ruby><ruby>変<rt>へん</rt></ruby><ruby>嬉<rt>うれ</rt></ruby>しく、<ruby>感<rt>かん</rt></ruby><ruby>謝<rt>しゃ</rt></ruby><span class="target">にたえません</span>。</div><div class="ex-vn">Rất vui mừng, không thể bày tỏ hết lời cảm ơn.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>大<rt>おとな</rt></ruby>の<ruby>鑑<rt>かん</rt></ruby><ruby>賞<rt>しょう</rt></ruby><span class="target">にたえる</span><ruby>作<rt>さく</rt></ruby><ruby>品<rt>ひん</rt></ruby>だ。</div><div class="ex-vn">Đây là tác phẩm đáng để người lớn thưởng thức.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～にたえる・にたえない</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>その<ruby>記<rt>き</rt></ruby><ruby>事<rt>じ</rt></ruby>は<ruby>読<rt>よ</rt></ruby>む(　<span class="blank">にたえない</span>　)<ruby>内<rt>ない</rt></ruby><ruby>容<rt>よう</rt></ruby>だ。<span class="vn-hint">Bài báo đó có nội dung không đọc nổi.</span></div>
+<div class="ex-q"><span class="qnum">2.</span>この<ruby>絵<rt>え</rt></ruby><ruby>画<rt>が</rt></ruby>は<ruby>鑑<rt>かん</rt></ruby><ruby>賞<rt>しょう</rt></ruby>(　<span class="blank">にたえる</span>　)<ruby>作<rt>さく</rt></ruby><ruby>品<rt>ひん</rt></ruby>だ。<span class="vn-hint">Bức tranh này đáng để thưởng thức.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>悲<rt>かな</rt></ruby>しみの<ruby>気<rt>き</rt></ruby><ruby>持<rt>も</rt></ruby>ちは<ruby>言<rt>い</rt></ruby>う(　<span class="blank">にたえない</span>　)。<span class="vn-hint">Nỗi buồn không thể diễn tả bằng lời.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 7 ============ -->
+<article class="document" id="lesson-7">
+<div class="lesson-banner"><span class="lesson-kicker">7課 — Bài 7 · 原因・理由</span><h2>Nguyên nhân, lý do (cứng)</h2><div class="lesson-sub">3 mẫu: ～あって / ～ばかりに / ～ゆえに</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～あって / ～あっての<span class="gc-meaning">Nhờ có ~ mà / ~ là tiền đề mới có…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ あって(の) ＋ <code>名</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Có ~ là tiền đề/điều kiện thì mới có thể ~</strong>". Nhấn mạnh tầm quan trọng của ~.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby><span class="target">あっての</span><ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>だ。</div><div class="ex-vn">Có gia đình thì mới có công việc (gia đình là quan trọng nhất).</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>お<rt></rt></ruby><ruby>客<rt>きゃく</rt></ruby><ruby>様<rt>さま</rt></ruby><span class="target">あっての</span><ruby>商<rt>しょう</rt></ruby><ruby>売<rt>ばい</rt></ruby>だ。</div><div class="ex-vn">Có khách thì mới có chuyện buôn bán.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby><span class="target">あって</span>の<ruby>成<rt>せい</rt></ruby><ruby>功<rt>こう</rt></ruby>だ。</div><div class="ex-vn">Có nỗ lực thì mới có thành công.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～あっての</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>命<rt>いのち</rt></ruby>(　<span class="blank">あっての</span>　)<ruby>物<rt>もの</rt></ruby><ruby>種<rt>だね</rt></ruby>だ。<span class="vn-hint">Có sinh mạng thì mới có tất cả.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>読<rt>どく</rt></ruby><ruby>者<rt>しゃ</rt></ruby>(　<span class="blank">あっての</span>　)<ruby>作<rt>さっ</rt></ruby><ruby>家<rt>か</rt></ruby>だ。<span class="vn-hint">Có độc giả thì mới có nhà văn.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>健<rt>けん</rt></ruby><ruby>康<rt>こう</rt></ruby>(　<span class="blank">あっての</span>　)<ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby>だ。<span class="vn-hint">Có sức khỏe thì mới có cuộc sống hàng ngày.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～ばかりに<span class="gc-meaning">Chỉ vì ~ mà (kết quả xấu)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>普通形 (ナ形 -な/-である・名 -である)</code> ＋ ばかりに</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Chỉ vì ~ mà dẫn đến kết quả tiêu cực</strong>". Sắc thái tiếc nuối, hối hận. (Đã có ở N2 nhưng N1 mở rộng cách dùng.)</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>正<rt>しょう</rt></ruby><ruby>直<rt>じき</rt></ruby>に<ruby>言<rt>い</rt></ruby>った<span class="target">ばかりに</span>、<ruby>叱<rt>しか</rt></ruby>られた。</div><div class="ex-vn">Chỉ vì nói thẳng mà bị mắng.</div></div>
+<div class="ex-box"><div class="ex-jp">②うっかり<ruby>名<rt>な</rt></ruby><ruby>前<rt>まえ</rt></ruby>を<ruby>言<rt>い</rt></ruby>った<span class="target">ばかりに</span>、<ruby>秘<rt>ひ</rt></ruby><ruby>密<rt>みつ</rt></ruby>がばれてしまった。</div><div class="ex-vn">Chỉ vì lỡ miệng nói tên mà bí mật bị lộ.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>確<rt>かく</rt></ruby><ruby>認<rt>にん</rt></ruby>しなかった<span class="target">ばかりに</span>、<ruby>大<rt>おお</rt></ruby>きなミスにつながった。</div><div class="ex-vn">Chỉ vì không kiểm tra mà dẫn đến sai sót lớn.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ばかりに</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>欲<rt>よく</rt></ruby>を<ruby>出<rt>だ</rt></ruby>した(　<span class="blank">ばかりに</span>　)、<ruby>失<rt>しっ</rt></ruby><ruby>敗<rt>ぱい</rt></ruby>してしまった。<span class="vn-hint">Chỉ vì tham lam mà thất bại.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>遅<rt>おく</rt></ruby>れて<ruby>来<rt>き</rt></ruby>た(　<span class="blank">ばかりに</span>　)、<ruby>大<rt>たい</rt></ruby><ruby>事<rt>じ</rt></ruby>な<ruby>場<rt>ば</rt></ruby><ruby>面<rt>めん</rt></ruby>を<ruby>見<rt>み</rt></ruby>そびれた。<span class="vn-hint">Chỉ vì đến muộn mà lỡ mất cảnh quan trọng.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>知<rt>し</rt></ruby>らなかった(　<span class="blank">ばかりに</span>　)、<ruby>大<rt>おお</rt></ruby>きな<ruby>損<rt>そん</rt></ruby>をした。<span class="vn-hint">Chỉ vì không biết mà chịu thiệt lớn.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～(が)ゆえに / ～ゆえの<span class="gc-meaning">Vì ~ nên… (văn viết, cứng)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>普通形 (ナ形 -である・名 -である)</code> ＋ (が)ゆえに　|　 + ゆえの ＋ <code>名</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Vì ~ nên (theo lẽ tự nhiên/logic)…</strong>". Cách nói cứng, văn viết, văn chính luận, tiểu thuyết.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>若<rt>わか</rt></ruby>い<span class="target">ゆえに</span>、<ruby>失<rt>しっ</rt></ruby><ruby>敗<rt>ぱい</rt></ruby>を<ruby>恐<rt>おそ</rt></ruby>れない。</div><div class="ex-vn">Vì còn trẻ nên không sợ thất bại.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>外<rt>がい</rt></ruby><ruby>国<rt>こく</rt></ruby><ruby>人<rt>じん</rt></ruby>である<span class="target">ゆえの</span><ruby>苦<rt>く</rt></ruby><ruby>労<rt>ろう</rt></ruby>がある。</div><div class="ex-vn">Có những vất vả do là người nước ngoài.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>真<rt>しん</rt></ruby><ruby>面<rt>じ</rt></ruby><ruby>目<rt>め</rt></ruby><span class="target">であるがゆえに</span>、ストレスを<ruby>溜<rt>た</rt></ruby>めやすい。</div><div class="ex-vn">Vì nghiêm túc nên dễ tích tụ stress.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ゆえに</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>無<rt>む</rt></ruby><ruby>知<rt>ち</rt></ruby>(　<span class="blank">ゆえに</span>　)、<ruby>誤<rt>あやま</rt></ruby>った<ruby>判<rt>はん</rt></ruby><ruby>断<rt>だん</rt></ruby>をしてしまった。<span class="vn-hint">Vì thiếu hiểu biết nên đã phán đoán sai.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>子<rt>こ</rt></ruby>ども(　<span class="blank">ゆえの</span>　)<ruby>純<rt>じゅん</rt></ruby><ruby>粋<rt>すい</rt></ruby>さに<ruby>感<rt>かん</rt></ruby><ruby>動<rt>どう</rt></ruby>した。<span class="vn-hint">Tôi cảm động trước sự trong sáng đúng kiểu trẻ con.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>有<rt>ゆう</rt></ruby><ruby>名<rt>めい</rt></ruby>である(　<span class="blank">がゆえに</span>　)<ruby>不<rt>ふ</rt></ruby><ruby>便<rt>べん</rt></ruby>なこともある。<span class="vn-hint">Vì nổi tiếng nên cũng có những bất tiện.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 8 ============ -->
+<article class="document" id="lesson-8">
+<div class="lesson-banner"><span class="lesson-kicker">8課 — Bài 8 · 関係</span><h2>Liên đới sự việc</h2><div class="lesson-sub">3 mẫu: ～ことだから / ～ことから / ～あまり(に)</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～ことだから<span class="gc-meaning">Vì là ~ nên (suy đoán dựa vào tính cách)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 ＋ の</code> ＋ ことだから</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Dựa vào việc bản chất/tính cách của ~ là vốn vậy, nên suy đoán…</strong>". Người nói và người nghe cùng biết về ~.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>真<rt>ま</rt></ruby><ruby>面<rt>じ</rt></ruby><ruby>目<rt>め</rt></ruby>な<ruby>彼<rt>かれ</rt></ruby>の<span class="target">ことだから</span>、きっと<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>を<ruby>守<rt>まも</rt></ruby>るだろう。</div><div class="ex-vn">Anh ấy nghiêm túc thế chắc chắn sẽ đúng giờ.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>食<rt>た</rt></ruby>いしん<ruby>坊<rt>ぼう</rt></ruby>な<ruby>弟<rt>おとうと</rt></ruby>の<span class="target">ことだから</span>、もう<ruby>食<rt>た</rt></ruby>べてしまったに<ruby>違<rt>ちが</rt></ruby>いない。</div><div class="ex-vn">Em trai tôi háu ăn thế, chắc đã ăn xong rồi.</div></div>
+<div class="ex-box"><div class="ex-jp">③おしゃべりな<ruby>母<rt>はは</rt></ruby>の<span class="target">ことだから</span>、もうみんなに<ruby>話<rt>はな</rt></ruby>してしまったかもしれない。</div><div class="ex-vn">Mẹ tôi nhiều chuyện thế, có khi đã nói cho mọi người biết rồi.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ことだから</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>優<rt>やさ</rt></ruby>しい<ruby>彼<rt>かのじょ</rt></ruby>の(　<span class="blank">ことだから</span>　)、きっと<ruby>助<rt>たす</rt></ruby>けてくれる。<span class="vn-hint">Cô ấy hiền thế, chắc chắn sẽ giúp.</span></div>
+<div class="ex-q"><span class="qnum">2.</span>のんびり<ruby>屋<rt>や</rt></ruby>の<ruby>父<rt>ちち</rt></ruby>の(　<span class="blank">ことだから</span>　)、まだ<ruby>準<rt>じゅん</rt></ruby><ruby>備<rt>び</rt></ruby>が<ruby>終<rt>お</rt></ruby>わっていないだろう。<span class="vn-hint">Bố tôi thư thả thế, chắc còn chưa chuẩn bị xong.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>慎<rt>しん</rt></ruby><ruby>重<rt>ちょう</rt></ruby>な<ruby>彼<rt>かれ</rt></ruby>の(　<span class="blank">ことだから</span>　)、きっと<ruby>大<rt>だい</rt></ruby><ruby>丈<rt>じょう</rt></ruby><ruby>夫<rt>ぶ</rt></ruby>だ。<span class="vn-hint">Anh ấy cẩn thận thế, chắc chắn ổn cả.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～ことから / ～ところから<span class="gc-meaning">Từ việc ~ mà…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>普通形 (ナ形 -な/-である・名 -である)</code> ＋ ことから</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Từ một sự thật/dấu hiệu ~, người ta phán đoán/đặt tên/dẫn đến…</strong>".</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①この<ruby>町<rt>まち</rt></ruby>は<ruby>桜<rt>さくら</rt></ruby>が<ruby>多<rt>おお</rt></ruby>い<span class="target">ことから</span>「<ruby>桜<rt>さくら</rt></ruby><ruby>町<rt>まち</rt></ruby>」と<ruby>呼<rt>よ</rt></ruby>ばれている。</div><div class="ex-vn">Từ việc có nhiều hoa anh đào, phố này được gọi là "Sakura-machi".</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>声<rt>こえ</rt></ruby>が<ruby>似<rt>に</rt></ruby>ている<span class="target">ことから</span>、<ruby>姉<rt>あね</rt></ruby>と<ruby>間<rt>ま</rt></ruby><ruby>違<rt>ちが</rt></ruby>えられた。</div><div class="ex-vn">Từ việc giọng giống nhau, tôi bị nhầm là chị tôi.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>足<rt>あし</rt></ruby><ruby>跡<rt>あと</rt></ruby>が<ruby>残<rt>のこ</rt></ruby>されていた<span class="target">ことから</span>、<ruby>誰<rt>だれ</rt></ruby>かが<ruby>侵<rt>しん</rt></ruby><ruby>入<rt>にゅう</rt></ruby>したと<ruby>判<rt>はん</rt></ruby><ruby>断<rt>だん</rt></ruby>された。</div><div class="ex-vn">Từ việc có vết chân để lại, người ta đã phán đoán có người đã đột nhập.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ことから</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>顔<rt>かお</rt></ruby>がそっくりな(　<span class="blank">ことから</span>　)、<ruby>双<rt>ふた</rt></ruby><ruby>子<rt>ご</rt></ruby>だと<ruby>分<rt>わ</rt></ruby>かった。<span class="vn-hint">Từ việc khuôn mặt giống nhau, tôi biết là sinh đôi.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>痕<rt>こん</rt></ruby><ruby>跡<rt>せき</rt></ruby>が<ruby>残<rt>のこ</rt></ruby>っている(　<span class="blank">ことから</span>　)、<ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby>と<ruby>関<rt>かん</rt></ruby><ruby>連<rt>れん</rt></ruby>があると<ruby>考<rt>かんが</rt></ruby>えられる。<span class="vn-hint">Từ việc có dấu vết để lại, có thể nghĩ là có liên quan đến vụ án.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>この<ruby>地<rt>ち</rt></ruby><ruby>方<rt>ほう</rt></ruby>は<ruby>米<rt>こめ</rt></ruby>がよく<ruby>取<rt>と</rt></ruby>れる(　<span class="blank">ことから</span>　)「<ruby>米<rt>こめ</rt></ruby>どころ」と<ruby>呼<rt>よ</rt></ruby>ばれる。<span class="vn-hint">Từ việc gạo nhiều, vùng này được gọi là "vùng lúa gạo".</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～あまり(に) / ～のあまり<span class="gc-meaning">Quá ~ đến mức…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形 / 名 ＋ の</code> ＋ あまり(に)</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Vì ~ ở mức cực đoan nên kéo theo hậu quả khác thường</strong>". Tương tự N2 nhưng dùng cứng hơn.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>驚<rt>おどろ</rt></ruby>きの<span class="target">あまり</span>、<ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>を<ruby>失<rt>うしな</rt></ruby>った。</div><div class="ex-vn">Vì quá kinh ngạc, tôi không thốt nên lời.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>心<rt>しん</rt></ruby><ruby>配<rt>ぱい</rt></ruby>する<span class="target">あまり</span>、<ruby>夜<rt>よる</rt></ruby><ruby>眠<rt>ねむ</rt></ruby>れなくなった。</div><div class="ex-vn">Vì quá lo lắng, tôi mất ngủ ban đêm.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>嬉<rt>うれ</rt></ruby>しさの<span class="target">あまりに</span>、<ruby>抱<rt>だ</rt></ruby>き<ruby>合<rt>あ</rt></ruby>って<ruby>泣<rt>な</rt></ruby>いた。</div><div class="ex-vn">Vì quá vui mừng, họ ôm nhau khóc.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～あまり</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>悲<rt>かな</rt></ruby>しみの(　<span class="blank">あまり</span>　)、<ruby>声<rt>こえ</rt></ruby>を<ruby>上<rt>あ</rt></ruby>げて<ruby>泣<rt>な</rt></ruby>いた。<span class="vn-hint">Vì quá buồn, tôi khóc thành tiếng.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>緊<rt>きん</rt></ruby><ruby>張<rt>ちょう</rt></ruby>の(　<span class="blank">あまり</span>　)、<ruby>手<rt>て</rt></ruby>が<ruby>震<rt>ふる</rt></ruby>えた。<span class="vn-hint">Vì quá căng thẳng, tay tôi run lên.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>怒<rt>いか</rt></ruby>りの(　<span class="blank">あまり</span>　)、<ruby>口<rt>くち</rt></ruby>もきけなかった。<span class="vn-hint">Vì quá tức giận, tôi không nói được lời nào.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 9 ============ -->
+<article class="document" id="lesson-9">
+<div class="lesson-banner"><span class="lesson-kicker">9課 — Bài 9 · 条件</span><h2>Điều kiện cao cấp</h2><div class="lesson-sub">3 mẫu: ～ものなら / ～たら最後 / ～ばこそ</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～(よ)うものなら<span class="gc-meaning">Nếu lỡ ~ thì… (kết quả nghiêm trọng)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・意向形 (う・よう)</code> ＋ ものなら</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Nếu lỡ làm ~ là sẽ có hậu quả nghiêm trọng</strong>". Văn viết, mang tính cảnh báo.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>父<rt>ちち</rt></ruby>に<ruby>反<rt>はん</rt></ruby><ruby>抗<rt>こう</rt></ruby>し<span class="target">ようものなら</span>、ひどく<ruby>叱<rt>しか</rt></ruby>られる。</div><div class="ex-vn">Lỡ cãi lại bố là bị mắng dữ dội.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>嘘<rt>うそ</rt></ruby>をつこ<span class="target">うものなら</span>、すぐにバレてしまう。</div><div class="ex-vn">Lỡ nói dối là sẽ bị lộ ngay.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>休<rt>やす</rt></ruby>もう<span class="target">ものなら</span>、<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>がたまってしまう。</div><div class="ex-vn">Nếu lỡ nghỉ thì việc sẽ chồng chất.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～(よ)うものなら</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>遅<rt>ち</rt></ruby><ruby>刻<rt>こく</rt></ruby>(　<span class="blank">しようものなら</span>　)、<ruby>怒<rt>おこ</rt></ruby>られるよ。<span class="vn-hint">Nếu lỡ đi trễ thì sẽ bị mắng đấy.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>悪<rt>わる</rt></ruby><ruby>口<rt>くち</rt></ruby>を(　<span class="blank">言おうものなら</span>　)、<ruby>大<rt>おお</rt></ruby>ごとになる。<span class="vn-hint">Nếu lỡ nói xấu thì thành chuyện lớn.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>大<rt>たい</rt></ruby><ruby>事<rt>じ</rt></ruby>な<ruby>物<rt>もの</rt></ruby>を(　<span class="blank">なくそうものなら</span>　)、<ruby>母<rt>はは</rt></ruby>に<ruby>叱<rt>しか</rt></ruby>られる。<span class="vn-hint">Nếu lỡ làm mất đồ quan trọng sẽ bị mẹ mắng.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～たら最後 / ～たが最後<span class="gc-meaning">Một khi ~ rồi thì… (không thể cứu vãn)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・た形</code> ＋ ら最後 / が最後</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Một khi ~ là sẽ dẫn đến kết cục xấu, không thể đảo ngược</strong>".</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>彼<rt>かれ</rt></ruby>に<ruby>話<rt>はな</rt></ruby>し<span class="target">たら最後</span>、<ruby>秘<rt>ひ</rt></ruby><ruby>密<rt>みつ</rt></ruby>はすぐに<ruby>広<rt>ひろ</rt></ruby>まってしまう。</div><div class="ex-vn">Một khi đã kể với anh ấy là bí mật lan ngay.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>母<rt>はは</rt></ruby>が<ruby>話<rt>はな</rt></ruby>し<ruby>始<rt>はじ</rt></ruby>め<span class="target">たが最後</span>、1<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>は<ruby>止<rt>と</rt></ruby>まらない。</div><div class="ex-vn">Một khi mẹ bắt đầu nói là cả tiếng không ngừng.</div></div>
+<div class="ex-box"><div class="ex-jp">③この<ruby>道<rt>みち</rt></ruby>に<ruby>入<rt>はい</rt></ruby>っ<span class="target">たら最後</span>、もう<ruby>戻<rt>もど</rt></ruby>れない。</div><div class="ex-vn">Một khi đã rẽ vào đường này là không quay lại được nữa.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～たら最後</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>この<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>み<ruby>始<rt>はじ</rt></ruby>め(　<span class="blank">たら最後</span>　)、やめられない。<span class="vn-hint">Một khi bắt đầu đọc cuốn sách này là không dừng được.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>彼<rt>かれ</rt></ruby>を<ruby>怒<rt>おこ</rt></ruby>らせ(　<span class="blank">たが最後</span>　)、口をきいてくれない。<span class="vn-hint">Một khi làm anh ấy giận là không thèm nói chuyện nữa.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>飲<rt>の</rt></ruby>み<ruby>始<rt>はじ</rt></ruby>め(　<span class="blank">たら最後</span>　)、<ruby>朝<rt>あさ</rt></ruby>まで<ruby>続<rt>つづ</rt></ruby>く。<span class="vn-hint">Một khi đã bắt đầu uống là kéo tới sáng.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～ばこそ<span class="gc-meaning">Chính vì ~ mới…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・ば形 / イ形 -ければ / ナ形 なら / 名 なら</code> ＋ こそ</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Chính vì ~ chứ không phải lý do khác thì mới…</strong>" — nhấn mạnh nguyên nhân chân chính. Văn viết.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①あなたのことを<ruby>思<rt>おも</rt></ruby>えば<span class="target">こそ</span>、こうして<ruby>注<rt>ちゅう</rt></ruby><ruby>意<rt>い</rt></ruby>するんだ。</div><div class="ex-vn">Chính vì nghĩ cho em mới phải nhắc nhở thế này.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby>のためであれ<span class="target">ばこそ</span>、<ruby>頑<rt>がん</rt></ruby><ruby>張<rt>ば</rt></ruby>ってこられた。</div><div class="ex-vn">Chính vì gia đình mà tôi mới có thể cố gắng đến giờ.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>愛<rt>あい</rt></ruby>していれ<span class="target">ばこそ</span>、<ruby>厳<rt>きび</rt></ruby>しいことを<ruby>言<rt>い</rt></ruby>う。</div><div class="ex-vn">Chính vì thương mới phải nói nặng.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ばこそ</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>すれ(　<span class="blank">ばこそ</span>　)、<ruby>成<rt>せい</rt></ruby><ruby>功<rt>こう</rt></ruby>がある。<span class="vn-hint">Chính vì nỗ lực mới có thành công.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>君<rt>きみ</rt></ruby>のためを<ruby>思<rt>おも</rt></ruby>え(　<span class="blank">ばこそ</span>　)、こう<ruby>言<rt>い</rt></ruby>うんだ。<span class="vn-hint">Chính vì nghĩ cho em mới nói thế này.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>健<rt>けん</rt></ruby><ruby>康<rt>こう</rt></ruby>であれ(　<span class="blank">ばこそ</span>　)、<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>ができる。<span class="vn-hint">Chính vì khỏe mạnh mới có thể làm việc.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 10 ============ -->
+<article class="document" id="lesson-10">
+<div class="lesson-banner"><span class="lesson-kicker">10課 — Bài 10 · 譲歩・逆接</span><h2>Nhượng bộ &amp; nghịch ý</h2><div class="lesson-sub">3 mẫu: ～(よ)うが・(よ)うと / ～ところで / ～にしたところで</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～(よ)うが / ～(よ)うと(も)<span class="gc-meaning">Dù ~ thì cũng… (bất kể)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・意向形</code> ＋ が / と(も)　|　イ形 -かろう+が/と　|　ナ形・名 + であろうが/と</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Bất kể ~ thế nào, vế sau vẫn không đổi</strong>" — giả định cực đoan vẫn không ảnh hưởng. Cứng, văn viết.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>誰<rt>だれ</rt></ruby>が<ruby>反<rt>はん</rt></ruby><ruby>対<rt>たい</rt></ruby>し<span class="target">ようと</span>、<ruby>私<rt>わたし</rt></ruby>は<ruby>意<rt>い</rt></ruby><ruby>志<rt>し</rt></ruby>を<ruby>変<rt>か</rt></ruby>えない。</div><div class="ex-vn">Bất kể ai phản đối, tôi không thay đổi ý chí.</div></div>
+<div class="ex-box"><div class="ex-jp">②どんなに<ruby>苦<rt>くる</rt></ruby>しかろ<span class="target">うが</span>、<ruby>最<rt>さい</rt></ruby><ruby>後<rt>ご</rt></ruby>までやり<ruby>抜<rt>ぬ</rt></ruby>く。</div><div class="ex-vn">Dù khó khăn thế nào, tôi sẽ làm đến cùng.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>雨<rt>あめ</rt></ruby>であろ<span class="target">うと</span><ruby>雪<rt>ゆき</rt></ruby>であろうと、<ruby>試<rt>し</rt></ruby><ruby>合<rt>あい</rt></ruby>は<ruby>行<rt>おこな</rt></ruby>われる。</div><div class="ex-vn">Bất kể mưa hay tuyết, trận đấu vẫn diễn ra.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～(よ)うと</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>何<rt>なに</rt></ruby>を<ruby>言<rt>い</rt></ruby>われ(　<span class="blank">ようと</span>　)、<ruby>気<rt>き</rt></ruby>にしない。<span class="vn-hint">Dù bị nói gì tôi cũng không bận tâm.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>遠<rt>とお</rt></ruby>かろ(　<span class="blank">うと</span>　)<ruby>会<rt>あ</rt></ruby>いに<ruby>行<rt>い</rt></ruby>く。<span class="vn-hint">Dù xa cách mấy tôi vẫn đi gặp.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>どんな<ruby>困<rt>こん</rt></ruby><ruby>難<rt>なん</rt></ruby>に<ruby>遭<rt>あ</rt></ruby>(　<span class="blank">おうと</span>　)、<ruby>諦<rt>あきら</rt></ruby>めない。<span class="vn-hint">Bất kể gặp khó khăn nào, tôi không bỏ cuộc.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～ところで<span class="gc-meaning">Dù có ~ thì cũng vô ích…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・た形</code> ＋ ところで</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Dù có làm ~ thì vế sau (kết quả tiêu cực/vô ích) cũng không thay đổi</strong>". Vế sau là dạng phủ định/vô nghĩa.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>今<rt>いま</rt></ruby>から<ruby>急<rt>いそ</rt></ruby>いだ<span class="target">ところで</span>、<ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わない。</div><div class="ex-vn">Giờ có vội cũng không kịp.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>謝<rt>あやま</rt></ruby>った<span class="target">ところで</span>、<ruby>許<rt>ゆる</rt></ruby>してもらえないだろう。</div><div class="ex-vn">Dù có xin lỗi thì cũng không được tha thứ đâu.</div></div>
+<div class="ex-box"><div class="ex-jp">③どんなに<ruby>勉<rt>べん</rt></ruby><ruby>強<rt>きょう</rt></ruby>した<span class="target">ところで</span>、1<ruby>日<rt>か</rt></ruby>で<ruby>覚<rt>おぼ</rt></ruby>えるのは<ruby>無<rt>む</rt></ruby><ruby>理<rt>り</rt></ruby>だ。</div><div class="ex-vn">Dù có học bao nhiêu thì nhớ hết trong 1 ngày cũng không nổi.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ところで</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>泣<rt>な</rt></ruby>い(　<span class="blank">たところで</span>　)<ruby>状<rt>じょう</rt></ruby><ruby>況<rt>きょう</rt></ruby>は<ruby>変<rt>か</rt></ruby>わらない。<span class="vn-hint">Dù có khóc thì tình hình cũng không đổi.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>頼<rt>たの</rt></ruby>ん(　<span class="blank">だところで</span>　)、<ruby>聞<rt>き</rt></ruby>いてくれないだろう。<span class="vn-hint">Có nhờ thì cũng không nghe đâu.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>反<rt>はん</rt></ruby><ruby>省<rt>せい</rt></ruby>し(　<span class="blank">たところで</span>　)、もう<ruby>遅<rt>おそ</rt></ruby>い。<span class="vn-hint">Có hối lỗi thì cũng muộn rồi.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～にしたところで / ～にしたって<span class="gc-meaning">Ngay cả với ~ thì cũng…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ にしたところで / にしたって</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Đứng từ phía/lập trường ~ đi nữa thì cũng…</strong>" — nhấn mạnh ngay cả trường hợp ấy cũng không khác.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>専<rt>せん</rt></ruby><ruby>門<rt>もん</rt></ruby><ruby>家<rt>か</rt></ruby><span class="target">にしたところで</span>、<ruby>正<rt>せい</rt></ruby><ruby>確<rt>かく</rt></ruby>に<ruby>予<rt>よ</rt></ruby><ruby>測<rt>そく</rt></ruby>するのは<ruby>難<rt>むずか</rt></ruby>しい。</div><div class="ex-vn">Ngay cả chuyên gia cũng khó dự đoán chính xác.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>親<rt>おや</rt></ruby><span class="target">にしたって</span>、<ruby>子<rt>こ</rt></ruby>どもの<ruby>気<rt>き</rt></ruby><ruby>持<rt>も</rt></ruby>ちを<ruby>全<rt>すべ</rt></ruby>て<ruby>理<rt>り</rt></ruby><ruby>解<rt>かい</rt></ruby>するのは<ruby>難<rt>むずか</rt></ruby>しい。</div><div class="ex-vn">Ngay cả bố mẹ cũng khó hiểu hết được tâm trạng con.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>私<rt>わたし</rt></ruby><span class="target">にしたところで</span>、その<ruby>意<rt>い</rt></ruby><ruby>見<rt>けん</rt></ruby>には<ruby>賛<rt>さん</rt></ruby><ruby>成<rt>せい</rt></ruby>できない。</div><div class="ex-vn">Ngay cả với tôi thì cũng không thể đồng tình với ý kiến đó.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～にしたところで</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>先<rt>せん</rt></ruby><ruby>生<rt>せい</rt></ruby>(　<span class="blank">にしたって</span>　)、<ruby>分<rt>わ</rt></ruby>からないことはある。<span class="vn-hint">Ngay cả thầy cũng có chuyện không biết.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>会<rt>かい</rt></ruby><ruby>社<rt>しゃ</rt></ruby>(　<span class="blank">にしたところで</span>　)、<ruby>急<rt>きゅう</rt></ruby>な<ruby>対<rt>たい</rt></ruby><ruby>応<rt>おう</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しい。<span class="vn-hint">Ngay cả công ty cũng khó ứng phó gấp.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>大<rt>おとな</rt></ruby>(　<span class="blank">にしたって</span>　)<ruby>失<rt>しっ</rt></ruby><ruby>敗<rt>ぱい</rt></ruby>はする。<span class="vn-hint">Ngay cả người lớn cũng có lỗi.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 11 ============ -->
+<article class="document" id="lesson-11">
+<div class="lesson-banner"><span class="lesson-kicker">11課 — Bài 11 · 目的・手段</span><h2>Mục đích &amp; phương tiện cao cấp</h2><div class="lesson-sub">3 mẫu: ～べく / ～んがため(に) / ～をもって</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～べく<span class="gc-meaning">Để mà ~ (mục đích, văn viết cứng)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形</code> ＋ べく　|　* するべく = すべく</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Để mà thực hiện mục đích ~</strong>". Cách nói cứng, văn viết, thường gặp trong văn chính luận, tin tức.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>夢<rt>ゆめ</rt></ruby>を<ruby>実<rt>じつ</rt></ruby><ruby>現<rt>げん</rt></ruby>す<span class="target">べく</span>、<ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby><ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>している。</div><div class="ex-vn">Để thực hiện ước mơ, tôi nỗ lực mỗi ngày.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>真<rt>しん</rt></ruby><ruby>実<rt>じつ</rt></ruby>を<ruby>知<rt>し</rt></ruby>る<span class="target">べく</span>、<ruby>独<rt>どく</rt></ruby><ruby>自<rt>じ</rt></ruby>に<ruby>調<rt>ちょう</rt></ruby><ruby>査<rt>さ</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>めた。</div><div class="ex-vn">Để biết sự thật, tôi đã tự khởi xướng điều tra.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>新<rt>あたら</rt></ruby>しいプロジェクトを<ruby>成<rt>せい</rt></ruby><ruby>功<rt>こう</rt></ruby>させる<span class="target">べく</span>、<ruby>全<rt>ぜん</rt></ruby><ruby>力<rt>りょく</rt></ruby>を<ruby>尽<rt>つ</rt></ruby>くす。</div><div class="ex-vn">Để dự án mới thành công, tôi sẽ dốc hết sức.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～べく</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>N1に<ruby>合<rt>ごう</rt></ruby><ruby>格<rt>かく</rt></ruby>す(　<span class="blank">べく</span>　)、<ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby><ruby>勉<rt>べん</rt></ruby><ruby>強<rt>きょう</rt></ruby>している。<span class="vn-hint">Để đậu N1, tôi học mỗi ngày.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る(　<span class="blank">べく</span>　)、<ruby>頑<rt>がん</rt></ruby><ruby>張<rt>ば</rt></ruby>って<ruby>働<rt>はたら</rt></ruby>く。<span class="vn-hint">Để bảo vệ gia đình, tôi sẽ cố gắng làm việc.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>地<rt>ち</rt></ruby><ruby>球<rt>きゅう</rt></ruby><ruby>環<rt>かん</rt></ruby><ruby>境<rt>きょう</rt></ruby>を<ruby>守<rt>まも</rt></ruby>る(　<span class="blank">べく</span>　)、<ruby>各<rt>かっ</rt></ruby><ruby>国<rt>こく</rt></ruby>が<ruby>協<rt>きょう</rt></ruby><ruby>力<rt>りょく</rt></ruby>している。<span class="vn-hint">Để bảo vệ môi trường, các nước đang hợp tác.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～んがため(に)<span class="gc-meaning">Vì mục đích ~ (cố gắng, cứng)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・ない形 (bỏ ない)</code> ＋ んがため(に)　|　例: する→せんがため</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Vì mục tiêu ~ mà cố gắng (làm việc gì đó nỗ lực hết sức)</strong>". Văn viết rất cứng.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>真<rt>しん</rt></ruby><ruby>実<rt>じつ</rt></ruby>を<ruby>明<rt>あき</rt></ruby>らかにせ<span class="target">んがため</span>、<ruby>研<rt>けん</rt></ruby><ruby>究<rt>きゅう</rt></ruby>を<ruby>続<rt>つづ</rt></ruby>けている。</div><div class="ex-vn">Để làm rõ sự thật, anh ấy vẫn tiếp tục nghiên cứu.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>勝<rt>か</rt></ruby>た<span class="target">んがため</span>に、<ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby>のように<ruby>練<rt>れん</rt></ruby><ruby>習<rt>しゅう</rt></ruby>を<ruby>繰<rt>く</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>した。</div><div class="ex-vn">Vì muốn thắng, anh ấy lặp đi lặp lại luyện tập như mỗi ngày.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>子<rt>こ</rt></ruby>どもを<ruby>養<rt>やしな</rt></ruby>わ<span class="target">んがために</span>、<ruby>朝<rt>あさ</rt></ruby>から<ruby>晩<rt>ばん</rt></ruby>まで<ruby>働<rt>はたら</rt></ruby>く。</div><div class="ex-vn">Vì để nuôi con, làm từ sáng đến đêm.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～んがため</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>夢<rt>ゆめ</rt></ruby>を<ruby>叶<rt>かな</rt></ruby>え(　<span class="blank">んがため</span>　)、<ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>を<ruby>続<rt>つづ</rt></ruby>けている。<span class="vn-hint">Vì để thực hiện ước mơ, tôi nỗ lực không ngừng.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>生<rt>い</rt></ruby>き(　<span class="blank">んがため</span>　)、<ruby>必<rt>ひっ</rt></ruby><ruby>死<rt>し</rt></ruby>に<ruby>戦<rt>たたか</rt></ruby>った。<span class="vn-hint">Để sống, đã chiến đấu hết mình.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>名<rt>めい</rt></ruby><ruby>誉<rt>よ</rt></ruby>を<ruby>守<rt>まも</rt></ruby>ら(　<span class="blank">んがために</span>　)、<ruby>必<rt>ひっ</rt></ruby><ruby>死<rt>し</rt></ruby>に<ruby>説<rt>せつ</rt></ruby><ruby>明<rt>めい</rt></ruby>した。<span class="vn-hint">Để bảo vệ danh dự, đã giải thích đến hết sức.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～をもって (phương tiện)<span class="gc-meaning">Bằng phương tiện ~ (trang trọng)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 (phương tiện trừu tượng)</code> ＋ をもって</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Bằng phương tiện ~ mà…</strong>". Vế trước thường là khả năng/phẩm chất/tâm thế trừu tượng.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>誠<rt>せい</rt></ruby><ruby>意<rt>い</rt></ruby><span class="target">をもって</span>お<ruby>客<rt>きゃく</rt></ruby><ruby>様<rt>さま</rt></ruby>に<ruby>対<rt>たい</rt></ruby><ruby>応<rt>おう</rt></ruby>します。</div><div class="ex-vn">Chúng tôi sẽ đối ứng với khách hàng bằng tất cả thành ý.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>愛<rt>あい</rt></ruby><span class="target">をもって</span><ruby>接<rt>せっ</rt></ruby>すれば、<ruby>子<rt>こ</rt></ruby>どもは<ruby>素<rt>す</rt></ruby><ruby>直<rt>なお</rt></ruby>に<ruby>育<rt>そだ</rt></ruby>つ。</div><div class="ex-vn">Đối xử bằng tình yêu thì con sẽ lớn lên ngoan ngoãn.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>勇<rt>ゆう</rt></ruby><ruby>気<rt>き</rt></ruby><span class="target">をもって</span><ruby>困<rt>こん</rt></ruby><ruby>難<rt>なん</rt></ruby>に<ruby>立<rt>た</rt></ruby>ち<ruby>向<rt>む</rt></ruby>かう。</div><div class="ex-vn">Đối mặt với khó khăn bằng dũng khí.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～をもって</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>感<rt>かん</rt></ruby><ruby>謝<rt>しゃ</rt></ruby>の<ruby>気<rt>き</rt></ruby><ruby>持<rt>も</rt></ruby>ち(　<span class="blank">をもって</span>　)<ruby>応<rt>こた</rt></ruby>える。<span class="vn-hint">Đáp lại bằng tấm lòng biết ơn.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>(　<span class="blank">をもって</span>　)<ruby>結<rt>けっ</rt></ruby><ruby>果<rt>か</rt></ruby>を<ruby>示<rt>しめ</rt></ruby>したい。<span class="vn-hint">Tôi muốn cho thấy kết quả bằng nỗ lực.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>真<rt>しん</rt></ruby><ruby>心<rt>ごころ</rt></ruby>(　<span class="blank">をもって</span>　)お<ruby>客<rt>きゃく</rt></ruby>に<ruby>接<rt>せっ</rt></ruby>する。<span class="vn-hint">Đối đãi khách bằng tấm lòng chân thành.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 12 ============ -->
+<article class="document" id="lesson-12">
+<div class="lesson-banner"><span class="lesson-kicker">12課 — Bài 12 · 起点・帰結・到達</span><h2>Khởi điểm, đích đến</h2><div class="lesson-sub">3 mẫu: ～に至る / ～に至っては / ～に至っても</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～に至る / ～に至るまで<span class="gc-meaning">Đi đến mức ~ / Đến tận ~</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形 / 名</code> ＋ に至る</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Đi đến mức (cực đoan) ~</strong>" — diễn tả quá trình đi đến điểm kết thúc lớn.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>議<rt>ぎ</rt></ruby><ruby>論<rt>ろん</rt></ruby>を<ruby>重<rt>かさ</rt></ruby>ね、ようやく<ruby>合<rt>ごう</rt></ruby><ruby>意<rt>い</rt></ruby><span class="target">に至った</span>。</div><div class="ex-vn">Sau nhiều thảo luận, cuối cùng đã đi đến đồng thuận.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby>は<ruby>裁<rt>さい</rt></ruby><ruby>判<rt>ばん</rt></ruby><span class="target">に至る</span>ことになった。</div><div class="ex-vn">Vụ việc đã đi đến mức kiện tụng.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>大<rt>たい</rt></ruby><ruby>事<rt>じ</rt></ruby><span class="target">に至らずに</span><ruby>済<rt>す</rt></ruby>んでよかった。</div><div class="ex-vn">Thật may là không đi đến mức nghiêm trọng.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～に至る</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>長<rt>なが</rt></ruby>い<ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>の<ruby>末<rt>すえ</rt></ruby>、<ruby>成<rt>せい</rt></ruby><ruby>功<rt>こう</rt></ruby>(　<span class="blank">に至った</span>　)。<span class="vn-hint">Sau nỗ lực dài, cuối cùng đi đến thành công.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>離<rt>り</rt></ruby><ruby>婚<rt>こん</rt></ruby>(　<span class="blank">に至る</span>　)<ruby>原<rt>げん</rt></ruby><ruby>因<rt>いん</rt></ruby>はさまざまだ。<span class="vn-hint">Nguyên nhân đi đến ly hôn rất đa dạng.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>重<rt>じゅう</rt></ruby><ruby>大<rt>だい</rt></ruby>な<ruby>結<rt>けつ</rt></ruby><ruby>論<rt>ろん</rt></ruby>(　<span class="blank">に至った</span>　)。<span class="vn-hint">Đã đi đến một kết luận quan trọng.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～に至っては<span class="gc-meaning">Đến mức ~ thì… (ví dụ cực đoan)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ に至っては</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Lấy ~ làm ví dụ cực đoan để chỉ ra mức độ nghiêm trọng</strong>".</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>最<rt>さい</rt></ruby><ruby>近<rt>きん</rt></ruby>の<ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby><span class="target">に至っては</span>、もはや<ruby>説<rt>せつ</rt></ruby><ruby>明<rt>めい</rt></ruby>がつかない。</div><div class="ex-vn">Đến mức vụ việc gần đây thì không thể giải thích nổi.</div></div>
+<div class="ex-box"><div class="ex-jp">②あの<ruby>店<rt>みせ</rt></ruby>の<ruby>対<rt>たい</rt></ruby><ruby>応<rt>おう</rt></ruby><span class="target">に至っては</span>、<ruby>論<rt>ろん</rt></ruby><ruby>外<rt>がい</rt></ruby>だ。</div><div class="ex-vn">Đến cách ứng xử của quán đó thì miễn bàn.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>弟<rt>おとうと</rt></ruby><span class="target">に至っては</span>、まったく<ruby>勉<rt>べん</rt></ruby><ruby>強<rt>きょう</rt></ruby>しようとしない。</div><div class="ex-vn">Đến em trai thì hoàn toàn không có ý học.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～に至っては</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>最<rt>さい</rt></ruby><ruby>後<rt>ご</rt></ruby>の<ruby>場<rt>ば</rt></ruby><ruby>面<rt>めん</rt></ruby>(　<span class="blank">に至っては</span>　)、<ruby>涙<rt>なみだ</rt></ruby>が<ruby>止<rt>と</rt></ruby>まらなかった。<span class="vn-hint">Đến cảnh cuối thì tôi không cầm được nước mắt.</span></div>
+<div class="ex-q"><span class="qnum">2.</span>そのミス(　<span class="blank">に至っては</span>　)、<ruby>言<rt>い</rt></ruby><ruby>葉<rt>ば</rt></ruby>もない。<span class="vn-hint">Đến lỗi đó thì không nói nên lời.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>最<rt>さい</rt></ruby><ruby>近<rt>きん</rt></ruby>の<ruby>物<rt>ぶっ</rt></ruby><ruby>価<rt>か</rt></ruby>(　<span class="blank">に至っては</span>　)<ruby>異<rt>い</rt></ruby><ruby>常<rt>じょう</rt></ruby>と<ruby>言<rt>い</rt></ruby>える。<span class="vn-hint">Đến giá cả gần đây thì có thể nói là bất thường.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～に至っても<span class="gc-meaning">Ngay cả khi đến mức ~ vẫn còn…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形 / 名</code> ＋ に至っても</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Ngay cả khi đã đi đến mức ~ rồi mà vẫn …</strong>" — chỉ ra sự việc dù đã ở mức cực đoan vẫn không thay đổi.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>今<rt>いま</rt></ruby><span class="target">に至っても</span>、<ruby>彼<rt>かれ</rt></ruby>は<ruby>真<rt>しん</rt></ruby><ruby>実<rt>じつ</rt></ruby>を<ruby>認<rt>みと</rt></ruby>めようとしない。</div><div class="ex-vn">Cho đến tận bây giờ, anh ta vẫn không chịu thừa nhận sự thật.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>事<rt>じ</rt></ruby><ruby>故<rt>こ</rt></ruby>を<ruby>起<rt>お</rt></ruby>こす<span class="target">に至っても</span>、まだ<ruby>反<rt>はん</rt></ruby><ruby>省<rt>せい</rt></ruby>しない。</div><div class="ex-vn">Đến mức đã gây tai nạn vẫn không hối lỗi.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>大<rt>おとな</rt></ruby>になる<span class="target">に至っても</span>、まだ<ruby>親<rt>おや</rt></ruby>に<ruby>頼<rt>たよ</rt></ruby>っている。</div><div class="ex-vn">Đến mức trưởng thành rồi mà vẫn ỷ vào bố mẹ.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～に至っても</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>この<ruby>段<rt>だん</rt></ruby><ruby>階<rt>かい</rt></ruby>(　<span class="blank">に至っても</span>　)<ruby>諦<rt>あきら</rt></ruby>めない。<span class="vn-hint">Ngay cả ở giai đoạn này tôi cũng không bỏ cuộc.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>大<rt>たい</rt></ruby><ruby>変<rt>へん</rt></ruby>な<ruby>状<rt>じょう</rt></ruby><ruby>況<rt>きょう</rt></ruby>(　<span class="blank">に至っても</span>　)<ruby>冷<rt>れい</rt></ruby><ruby>静<rt>せい</rt></ruby>でいた。<span class="vn-hint">Ngay cả khi tình hình nghiêm trọng vẫn bình tĩnh.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>失<rt>しっ</rt></ruby><ruby>敗<rt>ぱい</rt></ruby>を<ruby>経<rt>けい</rt></ruby><ruby>験<rt>けん</rt></ruby>する(　<span class="blank">に至っても</span>　)、<ruby>意<rt>い</rt></ruby><ruby>欲<rt>よく</rt></ruby>を<ruby>失<rt>うしな</rt></ruby>わなかった。<span class="vn-hint">Dù đến mức thất bại vẫn không mất nhiệt huyết.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 13 ============ -->
+<article class="document" id="lesson-13">
+<div class="lesson-banner"><span class="lesson-kicker">13課 — Bài 13 · 立場・評価の基準</span><h2>Lập trường &amp; tiêu chuẩn đánh giá</h2><div class="lesson-sub">3 mẫu: ～にしてみれば / ～ともなると / ～たる(者)</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～にしてみれば / ～にしてみたら<span class="gc-meaning">Đứng từ phía ~ mà nghĩ thì…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 (người)</code> ＋ にしてみれば / にしてみたら</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Đứng từ góc nhìn/lập trường của ~ thì…</strong>". Thường dùng để đồng cảm/hiểu cảm xúc của bên còn lại.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>親<rt>おや</rt></ruby><span class="target">にしてみれば</span>、<ruby>子<rt>こ</rt></ruby>どもは<ruby>何<rt>なに</rt></ruby>よりも<ruby>大<rt>たい</rt></ruby><ruby>切<rt>せつ</rt></ruby>だ。</div><div class="ex-vn">Đứng từ góc nhìn cha mẹ, con cái là quý hơn tất cả.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>新<rt>しん</rt></ruby><ruby>人<rt>じん</rt></ruby>の<ruby>彼<rt>かのじょ</rt></ruby><span class="target">にしてみたら</span>、この<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しすぎる。</div><div class="ex-vn">Đứng từ góc nhìn cô ấy là người mới, công việc này quá khó.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>外<rt>がい</rt></ruby><ruby>国<rt>こく</rt></ruby><ruby>人<rt>じん</rt></ruby><span class="target">にしてみれば</span>、<ruby>日<rt>に</rt></ruby><ruby>本<rt>ほん</rt></ruby>の<ruby>習<rt>しゅう</rt></ruby><ruby>慣<rt>かん</rt></ruby>は<ruby>不<rt>ふ</rt></ruby><ruby>思<rt>し</rt></ruby><ruby>議<rt>ぎ</rt></ruby>に<ruby>見<rt>み</rt></ruby>えるだろう。</div><div class="ex-vn">Đứng từ góc nhìn người nước ngoài, tập quán Nhật có lẽ rất lạ.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～にしてみれば</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>子<rt>こ</rt></ruby>ども(　<span class="blank">にしてみれば</span>　)、<ruby>大<rt>おとな</rt></ruby>の<ruby>話<rt>はなし</rt></ruby>は<ruby>難<rt>むずか</rt></ruby>しい。<span class="vn-hint">Đứng từ trẻ con, lời người lớn rất khó hiểu.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>留<rt>りゅう</rt></ruby><ruby>学<rt>がく</rt></ruby><ruby>生<rt>せい</rt></ruby>(　<span class="blank">にしてみたら</span>　)、<ruby>家<rt>か</rt></ruby><ruby>賃<rt>ちん</rt></ruby>は<ruby>大<rt>たい</rt></ruby><ruby>変<rt>へん</rt></ruby>な<ruby>負<rt>ふ</rt></ruby><ruby>担<rt>たん</rt></ruby>だ。<span class="vn-hint">Đứng từ du học sinh, tiền nhà là gánh nặng lớn.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>客<rt>きゃく</rt></ruby>(　<span class="blank">にしてみれば</span>　)、サービスの<ruby>良<rt>よ</rt></ruby>し<ruby>悪<rt>あ</rt></ruby>しはとても<ruby>大<rt>たい</rt></ruby><ruby>事<rt>じ</rt></ruby>だ。<span class="vn-hint">Đứng từ khách hàng, chất lượng dịch vụ rất quan trọng.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～ともなると / ～ともなれば<span class="gc-meaning">Đã đến mức ~ thì (đương nhiên)…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 / 動・辞書形</code> ＋ ともなると / ともなれば</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Khi đã đến cương vị/giai đoạn ~ thì đương nhiên có thay đổi tương ứng</strong>".</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>大<rt>だい</rt></ruby><ruby>学<rt>がく</rt></ruby><ruby>生<rt>せい</rt></ruby><span class="target">ともなると</span>、<ruby>自<rt>じ</rt></ruby><ruby>分<rt>ぶん</rt></ruby>のことは<ruby>自<rt>じ</rt></ruby><ruby>分<rt>ぶん</rt></ruby>でしなければならない。</div><div class="ex-vn">Đã là sinh viên đại học thì việc mình phải tự lo.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>社<rt>しゃ</rt></ruby><ruby>長<rt>ちょう</rt></ruby><span class="target">ともなれば</span>、<ruby>責<rt>せき</rt></ruby><ruby>任<rt>にん</rt></ruby>も<ruby>大<rt>おお</rt></ruby>きい。</div><div class="ex-vn">Đã là giám đốc thì trách nhiệm cũng lớn.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>連<rt>れん</rt></ruby><ruby>休<rt>きゅう</rt></ruby><span class="target">ともなると</span>、どこへ<ruby>行<rt>い</rt></ruby>っても<ruby>人<rt>ひと</rt></ruby>でいっぱいだ。</div><div class="ex-vn">Đến kỳ nghỉ dài thì đi đâu cũng đông người.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ともなると</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>プロ(　<span class="blank">ともなると</span>　)、<ruby>技<rt>ぎ</rt></ruby><ruby>術<rt>じゅつ</rt></ruby>のレベルが<ruby>違<rt>ちが</rt></ruby>う。<span class="vn-hint">Đã là dân chuyên thì trình độ khác hẳn.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>結<rt>けっ</rt></ruby><ruby>婚<rt>こん</rt></ruby><ruby>式<rt>しき</rt></ruby>(　<span class="blank">ともなると</span>　)、<ruby>準<rt>じゅん</rt></ruby><ruby>備<rt>び</rt></ruby>が<ruby>大<rt>たい</rt></ruby><ruby>変<rt>へん</rt></ruby>だ。<span class="vn-hint">Đến đám cưới thì chuẩn bị vất vả.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>40<ruby>歳<rt>さい</rt></ruby>(　<span class="blank">ともなれば</span>　)、<ruby>体<rt>たい</rt></ruby><ruby>力<rt>りょく</rt></ruby>の<ruby>衰<rt>おとろ</rt></ruby>えを<ruby>感<rt>かん</rt></ruby>じる。<span class="vn-hint">Đã ngoài 40 thì cảm thấy thể lực giảm sút.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～たる(者)<span class="gc-meaning">Là người ~ thì… (xứng đáng)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 (cương vị)</code> ＋ たる ＋ 者 / もの</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Là người mang cương vị/vai trò ~ thì phải…</strong>" — đề cao trách nhiệm. Văn viết cứng.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>教<rt>きょう</rt></ruby><ruby>師<rt>し</rt></ruby><span class="target">たる者</span>、<ruby>生<rt>せい</rt></ruby><ruby>徒<rt>と</rt></ruby>の<ruby>手<rt>て</rt></ruby><ruby>本<rt>ほん</rt></ruby>であるべきだ。</div><div class="ex-vn">Là giáo viên thì phải là tấm gương cho học sinh.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>政<rt>せい</rt></ruby><ruby>治<rt>じ</rt></ruby><ruby>家<rt>か</rt></ruby><span class="target">たる者</span>、<ruby>国<rt>こく</rt></ruby><ruby>民<rt>みん</rt></ruby>のために<ruby>働<rt>はたら</rt></ruby>くべきだ。</div><div class="ex-vn">Đã là chính trị gia thì phải làm việc vì dân.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>親<rt>おや</rt></ruby><span class="target">たる者</span>、<ruby>子<rt>こ</rt></ruby>どもを<ruby>守<rt>まも</rt></ruby>る<ruby>責<rt>せき</rt></ruby><ruby>任<rt>にん</rt></ruby>がある。</div><div class="ex-vn">Đã là cha mẹ thì có trách nhiệm bảo vệ con.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～たる者</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>医<rt>い</rt></ruby><ruby>者<rt>しゃ</rt></ruby>(　<span class="blank">たる者</span>　)、<ruby>命<rt>いのち</rt></ruby>を<ruby>守<rt>まも</rt></ruby>るのが<ruby>使<rt>し</rt></ruby><ruby>命<rt>めい</rt></ruby>だ。<span class="vn-hint">Là bác sĩ thì sứ mệnh là cứu mạng.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>社<rt>しゃ</rt></ruby><ruby>会<rt>かい</rt></ruby><ruby>人<rt>じん</rt></ruby>(　<span class="blank">たる者</span>　)、<ruby>常<rt>じょう</rt></ruby><ruby>識<rt>しき</rt></ruby>を<ruby>身<rt>み</rt></ruby>につけるべきだ。<span class="vn-hint">Đã là người đi làm thì cần có kiến thức cơ bản.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>リーダー(　<span class="blank">たる者</span>　)、<ruby>責<rt>せき</rt></ruby><ruby>任<rt>にん</rt></ruby>を<ruby>取<rt>と</rt></ruby>る<ruby>覚<rt>かく</rt></ruby><ruby>悟<rt>ご</rt></ruby>が<ruby>必<rt>ひつ</rt></ruby><ruby>要<rt>よう</rt></ruby>だ。<span class="vn-hint">Là người lãnh đạo thì cần có quyết tâm chịu trách nhiệm.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 14 ============ -->
+<article class="document" id="lesson-14">
+<div class="lesson-banner"><span class="lesson-kicker">14課 — Bài 14 · 比較対照</span><h2>So sánh đối chiếu</h2><div class="lesson-sub">3 mẫu: ～にひきかえ / ～にもまして / ～もさることながら</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～にひきかえ<span class="gc-meaning">Trái ngược với ~ thì… (đối lập mạnh)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 / 普通形 (ナ形 -な/-である・名 -な/-である) + の</code> ＋ にひきかえ</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Khác biệt rõ rệt với ~, … thì…</strong>". Mang sắc thái <em>so sánh chủ quan</em> giữa hai sự việc tương phản.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>兄<rt>あに</rt></ruby>が<ruby>真<rt>ま</rt></ruby><ruby>面<rt>じ</rt></ruby><ruby>目<rt>め</rt></ruby>なの<span class="target">にひきかえ</span>、<ruby>弟<rt>おとうと</rt></ruby>は<ruby>気<rt>き</rt></ruby><ruby>楽<rt>らく</rt></ruby>だ。</div><div class="ex-vn">Trái ngược anh nghiêm túc, em thì thoải mái.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>去<rt>きょ</rt></ruby><ruby>年<rt>ねん</rt></ruby>の<ruby>夏<rt>なつ</rt></ruby>が<ruby>暑<rt>あつ</rt></ruby>かった<span class="target">のにひきかえ</span>、<ruby>今<rt>こ</rt></ruby><ruby>年<rt>とし</rt></ruby>は<ruby>涼<rt>すず</rt></ruby>しい。</div><div class="ex-vn">Trái ngược với hè năm ngoái nóng, năm nay mát mẻ.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>姉<rt>あね</rt></ruby><span class="target">にひきかえ</span>、<ruby>私<rt>わたし</rt></ruby>は<ruby>勉<rt>べん</rt></ruby><ruby>強<rt>きょう</rt></ruby>が<ruby>苦<rt>にが</rt></ruby><ruby>手<rt>て</rt></ruby>だ。</div><div class="ex-vn">Trái với chị, tôi học không giỏi.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～にひきかえ</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>都<rt>と</rt></ruby><ruby>会<rt>かい</rt></ruby>の<ruby>賑<rt>にぎ</rt></ruby>やかさ(　<span class="blank">にひきかえ</span>　)、<ruby>田<rt>いな</rt></ruby><ruby>舎<rt>か</rt></ruby>は<ruby>静<rt>しず</rt></ruby>かだ。<span class="vn-hint">Trái với sự ồn ào của thành phố, quê yên tĩnh.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>兄<rt>あに</rt></ruby>はおしゃべりなの(　<span class="blank">にひきかえ</span>　)、<ruby>弟<rt>おとうと</rt></ruby>はおとなしい。<span class="vn-hint">Trái với anh nhiều lời, em ít nói.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>あの<ruby>店<rt>みせ</rt></ruby>(　<span class="blank">にひきかえ</span>　)、ここはサービスがいい。<span class="vn-hint">Trái với quán đó, ở đây phục vụ tốt.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～にもまして<span class="gc-meaning">Hơn cả ~ / Hơn nữa ~</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 (chỉ thời gian/mức độ)</code> ＋ にもまして</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Hơn cả ~ (so sánh ở mức độ cao hơn)</strong>".</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>去<rt>きょ</rt></ruby><ruby>年<rt>ねん</rt></ruby><span class="target">にもまして</span>、<ruby>今<rt>こ</rt></ruby><ruby>年<rt>とし</rt></ruby>は<ruby>暑<rt>あつ</rt></ruby>い。</div><div class="ex-vn">Năm nay nóng hơn cả năm ngoái.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>以<rt>い</rt></ruby><ruby>前<rt>ぜん</rt></ruby><span class="target">にもまして</span><ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>が<ruby>忙<rt>いそが</rt></ruby>しくなった。</div><div class="ex-vn">Công việc bận hơn cả trước đây.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>何<rt>なに</rt></ruby><span class="target">にもまして</span><ruby>大<rt>たい</rt></ruby><ruby>切<rt>せつ</rt></ruby>なのは<ruby>健<rt>けん</rt></ruby><ruby>康<rt>こう</rt></ruby>だ。</div><div class="ex-vn">Hơn tất cả thì sức khỏe là quý nhất.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～にもまして</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>例<rt>れい</rt></ruby><ruby>年<rt>ねん</rt></ruby>(　<span class="blank">にもまして</span>　)<ruby>観<rt>かん</rt></ruby><ruby>光<rt>こう</rt></ruby><ruby>客<rt>きゃく</rt></ruby>が<ruby>多<rt>おお</rt></ruby>い。<span class="vn-hint">Khách du lịch nhiều hơn cả mọi năm.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>誰<rt>だれ</rt></ruby>(　<span class="blank">にもまして</span>　)<ruby>君<rt>きみ</rt></ruby>を<ruby>愛<rt>あい</rt></ruby>している。<span class="vn-hint">Yêu em hơn ai hết.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>昨<rt>きのう</rt></ruby><ruby>日<rt>う</rt></ruby>(　<span class="blank">にもまして</span>　)<ruby>今<rt>きょ</rt></ruby><ruby>日<rt>う</rt></ruby>は<ruby>寒<rt>さむ</rt></ruby>い。<span class="vn-hint">Hôm nay lạnh hơn hôm qua.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～もさることながら<span class="gc-meaning">~ đã đành nhưng còn ~ nữa</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ もさることながら</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>~ là đương nhiên rồi, nhưng ~ ở vế sau còn nổi bật hơn</strong>".</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>味<rt>あじ</rt></ruby><span class="target">もさることながら</span>、<ruby>雰<rt>ふん</rt></ruby><ruby>囲<rt>い</rt></ruby><ruby>気<rt>き</rt></ruby>もすばらしい。</div><div class="ex-vn">Vị đã đành, không khí cũng tuyệt vời.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>容<rt>よう</rt></ruby><ruby>姿<rt>し</rt></ruby><span class="target">もさることながら</span>、<ruby>心<rt>こころ</rt></ruby>がきれいだ。</div><div class="ex-vn">Ngoại hình đã đành, tâm hồn còn đẹp hơn.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>の<ruby>能<rt>のう</rt></ruby><ruby>力<rt>りょく</rt></ruby><span class="target">もさることながら</span>、<ruby>人<rt>にん</rt></ruby><ruby>柄<rt>がら</rt></ruby>もすばらしい。</div><div class="ex-vn">Năng lực đã đành, nhân cách còn tuyệt vời.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～もさることながら</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>歌<rt>うた</rt></ruby>(　<span class="blank">もさることながら</span>　)、ダンスも<ruby>上<rt>じょう</rt></ruby><ruby>手<rt>ず</rt></ruby>だ。<span class="vn-hint">Hát đã đành, nhảy còn giỏi.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>品<rt>ひん</rt></ruby><ruby>質<rt>しつ</rt></ruby>(　<span class="blank">もさることながら</span>　)、<ruby>価<rt>か</rt></ruby><ruby>格<rt>かく</rt></ruby>も<ruby>魅<rt>み</rt></ruby><ruby>力<rt>りょく</rt></ruby><ruby>的<rt>てき</rt></ruby>だ。<span class="vn-hint">Chất lượng đã đành, giá cả còn hấp dẫn.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>知<rt>ち</rt></ruby><ruby>識<rt>しき</rt></ruby>(　<span class="blank">もさることながら</span>　)、<ruby>経<rt>けい</rt></ruby><ruby>験<rt>けん</rt></ruby>も<ruby>豊<rt>ほう</rt></ruby><ruby>富<rt>ふ</rt></ruby>だ。<span class="vn-hint">Kiến thức đã đành, kinh nghiệm còn phong phú.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 15 ============ -->
+<article class="document" id="lesson-15">
+<div class="lesson-banner"><span class="lesson-kicker">15課 — Bài 15 · 結果・最後の状態</span><h2>Kết quả &amp; trạng thái cuối</h2><div class="lesson-sub">3 mẫu: ～始末だ / ～までだ・までのことだ / ～ずじまい</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～始末だ<span class="gc-meaning">Cuối cùng lại ra nông nỗi ~ (xấu)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形</code> ＋ 始末だ</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Cuối cùng dẫn đến kết cục xấu/tệ ~</strong>". Sắc thái phàn nàn, trách móc.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>注<rt>ちゅう</rt></ruby><ruby>意<rt>い</rt></ruby>しても<ruby>聞<rt>き</rt></ruby>かず、ついには<ruby>怪<rt>け</rt></ruby><ruby>我<rt>が</rt></ruby>をする<span class="target">始末だ</span>。</div><div class="ex-vn">Nhắc mà không nghe, cuối cùng lại bị thương.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>遅<rt>ち</rt></ruby><ruby>刻<rt>こく</rt></ruby>を<ruby>続<rt>つづ</rt></ruby>けて、とうとうクビになる<span class="target">始末だ</span>。</div><div class="ex-vn">Cứ đi muộn liên tục, cuối cùng lại bị đuổi việc.</div></div>
+<div class="ex-box"><div class="ex-jp">③お<ruby>金<rt>かね</rt></ruby>を<ruby>使<rt>つか</rt></ruby>いすぎて<ruby>借<rt>しゃっ</rt></ruby><ruby>金<rt>きん</rt></ruby>を<ruby>抱<rt>かか</rt></ruby>える<span class="target">始末だ</span>。</div><div class="ex-vn">Tiêu quá tay, cuối cùng lại ôm cả khoản nợ.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～始末だ</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>けんかが<ruby>続<rt>つづ</rt></ruby>き、ついに<ruby>離<rt>り</rt></ruby><ruby>婚<rt>こん</rt></ruby>する(　<span class="blank">始末だ</span>　)。<span class="vn-hint">Cãi vã liên tục, cuối cùng đi đến ly hôn.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>飲<rt>の</rt></ruby>みすぎて<ruby>道<rt>みち</rt></ruby>で<ruby>寝<rt>ね</rt></ruby>てしまう(　<span class="blank">始末だ</span>　)。<span class="vn-hint">Uống quá đà rồi ngủ luôn ngoài đường.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>言<rt>い</rt></ruby>い<ruby>訳<rt>わけ</rt></ruby>ばかりして、<ruby>誰<rt>だれ</rt></ruby>も<ruby>信<rt>しん</rt></ruby><ruby>用<rt>よう</rt></ruby>しなくなる(　<span class="blank">始末だ</span>　)。<span class="vn-hint">Cứ biện hộ mãi rồi cuối cùng không ai tin nữa.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～までだ / ～までのことだ<span class="gc-meaning">Chỉ là ~ mà thôi / Chỉ cần ~ là xong</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形 / た形</code> ＋ までだ / までのことだ</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">2 nghĩa: ① <strong>Nếu xảy ra ~ thì chỉ cần ~ thôi (giải pháp đơn giản)</strong>; ② <strong>Chỉ vì ~ mà thôi, không có ý gì khác (biện hộ)</strong>.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>電<rt>でん</rt></ruby><ruby>車<rt>しゃ</rt></ruby>が<ruby>動<rt>うご</rt></ruby>かないなら、<ruby>歩<rt>ある</rt></ruby>いて<ruby>行<rt>い</rt></ruby>く<span class="target">までだ</span>。</div><div class="ex-vn">Nếu tàu không chạy thì chỉ cần đi bộ là xong.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>本<rt>ほん</rt></ruby><ruby>当<rt>とう</rt></ruby>のことを<ruby>言<rt>い</rt></ruby>った<span class="target">までだ</span>。<ruby>悪<rt>あく</rt></ruby><ruby>気<rt>き</rt></ruby>はない。</div><div class="ex-vn">Tôi chỉ nói sự thật thôi, không có ý xấu.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>断<rt>ことわ</rt></ruby>られたら<ruby>諦<rt>あきら</rt></ruby>める<span class="target">までのことだ</span>。</div><div class="ex-vn">Nếu bị từ chối thì chỉ cần bỏ cuộc là xong.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～までだ</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>できないなら、もう<ruby>一<rt>いち</rt></ruby><ruby>度<rt>ど</rt></ruby><ruby>挑<rt>ちょう</rt></ruby><ruby>戦<rt>せん</rt></ruby>する(　<span class="blank">までだ</span>　)。<span class="vn-hint">Nếu không được thì chỉ cần thử lần nữa là xong.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>気<rt>き</rt></ruby>になったから<ruby>聞<rt>き</rt></ruby>いた(　<span class="blank">までだ</span>　)。<span class="vn-hint">Chỉ vì thấy quan tâm nên tôi hỏi thôi.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>嫌<rt>いや</rt></ruby>なら<ruby>辞<rt>や</rt></ruby>める(　<span class="blank">までのことだ</span>　)。<span class="vn-hint">Nếu không thích thì chỉ cần nghỉ việc là xong.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～ずじまい<span class="gc-meaning">Cuối cùng vẫn không thể ~ (tiếc nuối)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・ない形 (bỏ ない)</code> ＋ ずじまい　|　 する→せずじまい</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Cuối cùng vẫn không thể ~ (dù muốn)</strong>". Mang sắc thái tiếc nuối.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>忙<rt>いそが</rt></ruby>しくて、<ruby>結<rt>けっ</rt></ruby><ruby>局<rt>きょく</rt></ruby><ruby>映<rt>えい</rt></ruby><ruby>画<rt>が</rt></ruby>を<ruby>見<rt>み</rt></ruby><span class="target">ずじまい</span>だった。</div><div class="ex-vn">Vì bận quá, cuối cùng vẫn không xem được phim.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>会<rt>あ</rt></ruby>いたかったが、<ruby>会<rt>あ</rt></ruby>え<span class="target">ずじまい</span>になってしまった。</div><div class="ex-vn">Muốn gặp nhưng cuối cùng vẫn không gặp được.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>気<rt>き</rt></ruby><ruby>持<rt>も</rt></ruby>ちを<ruby>伝<rt>つた</rt></ruby>え<span class="target">ずじまい</span>で<ruby>別<rt>わか</rt></ruby>れてしまった。</div><div class="ex-vn">Cuối cùng tôi vẫn không truyền được tâm tư và đã chia tay.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ずじまい</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>お<ruby>礼<rt>れい</rt></ruby>を<ruby>言<rt>い</rt></ruby>わ(　<span class="blank">ずじまい</span>　)で<ruby>別<rt>わか</rt></ruby>れた。<span class="vn-hint">Cuối cùng tôi vẫn không nói được lời cảm ơn rồi chia tay.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>謝<rt>あやま</rt></ruby>ら(　<span class="blank">ずじまい</span>　)で<ruby>後<rt>こう</rt></ruby><ruby>悔<rt>かい</rt></ruby>している。<span class="vn-hint">Tôi đang hối hận vì cuối cùng vẫn chưa kịp xin lỗi.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>欲<rt>ほ</rt></ruby>しかった<ruby>物<rt>もの</rt></ruby>を<ruby>買<rt>か</rt></ruby>わ(　<span class="blank">ずじまい</span>　)だった。<span class="vn-hint">Đồ tôi muốn mua, cuối cùng vẫn không mua được.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 16 ============ -->
+<article class="document" id="lesson-16">
+<div class="lesson-banner"><span class="lesson-kicker">16課 — Bài 16 · 強調</span><h2>Nhấn mạnh cao cấp</h2><div class="lesson-sub">3 mẫu: ～たりとも～ない / ～すら / ～からある・からの</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～たりとも～ない<span class="gc-meaning">Dù chỉ ~ nhỏ nhất cũng không…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>数量詞 (一日・一円・一人 v.v.)</code> ＋ たりとも ＋ phủ định</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Dù chỉ ~ một chút thôi cũng không (được)</strong>" — nhấn mạnh phủ định tuyệt đối.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>一<rt>いち</rt></ruby><ruby>日<rt>にち</rt></ruby><span class="target">たりとも</span>あなたのことを<ruby>忘<rt>わす</rt></ruby>れたことはない。</div><div class="ex-vn">Dù chỉ một ngày tôi cũng không quên em.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>一<rt>いち</rt></ruby><ruby>円<rt>えん</rt></ruby><span class="target">たりとも</span>無<ruby>駄<rt>だ</rt></ruby>には<ruby>使<rt>つか</rt></ruby>えない。</div><div class="ex-vn">Dù chỉ một yên cũng không được phí phạm.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>一<rt>いち</rt></ruby><ruby>瞬<rt>しゅん</rt></ruby><span class="target">たりとも</span><ruby>気<rt>き</rt></ruby>を<ruby>抜<rt>ぬ</rt></ruby>けない。</div><div class="ex-vn">Dù chỉ một giây cũng không được lơ là.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～たりとも</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>一<rt>ひと</rt></ruby><ruby>人<rt>り</rt></ruby>(　<span class="blank">たりとも</span>　)<ruby>逃<rt>に</rt></ruby>がさない。<span class="vn-hint">Dù chỉ một người cũng không cho thoát.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>一<rt>いっ</rt></ruby><ruby>滴<rt>てき</rt></ruby>(　<span class="blank">たりとも</span>　)<ruby>残<rt>のこ</rt></ruby>さない。<span class="vn-hint">Dù chỉ một giọt cũng không để sót.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>一<rt>いっ</rt></ruby><ruby>歩<rt>ぽ</rt></ruby>(　<span class="blank">たりとも</span>　)<ruby>引<rt>ひ</rt></ruby>かない。<span class="vn-hint">Dù chỉ một bước cũng không nhường.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～すら / ～ですら<span class="gc-meaning">Đến cả ~ cũng… (cực đoan)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 (+助詞)</code> ＋ すら / ですら</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Đồng nghĩa「さえ」 nhưng <strong>trang trọng hơn, văn viết</strong>. "Đến cả ~ còn …, huống chi cái khác".</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>名<rt>な</rt></ruby><ruby>前<rt>まえ</rt></ruby><span class="target">すら</span><ruby>書<rt>か</rt></ruby>けないほど<ruby>緊<rt>きん</rt></ruby><ruby>張<rt>ちょう</rt></ruby>していた。</div><div class="ex-vn">Tôi căng thẳng đến mức ngay cả tên cũng viết không nổi.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>専<rt>せん</rt></ruby><ruby>門<rt>もん</rt></ruby><ruby>家<rt>か</rt></ruby><span class="target">ですら</span>この<ruby>問<rt>もん</rt></ruby><ruby>題<rt>だい</rt></ruby>を<ruby>解<rt>と</rt></ruby>けない。</div><div class="ex-vn">Đến cả chuyên gia cũng không giải được vấn đề này.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>水<rt>みず</rt></ruby>を<ruby>飲<rt>の</rt></ruby>むこと<span class="target">すら</span>できない<ruby>状<rt>じょう</rt></ruby><ruby>態<rt>たい</rt></ruby>だ。</div><div class="ex-vn">Tình trạng đến cả uống nước cũng không được.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～すら</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>挨<rt>あい</rt></ruby><ruby>拶<rt>さつ</rt></ruby>(　<span class="blank">すら</span>　)できない<ruby>子<rt>こ</rt></ruby>どもになってしまった。<span class="vn-hint">Đã thành đứa trẻ đến cả chào hỏi cũng không biết.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>親<rt>おや</rt></ruby>(　<span class="blank">ですら</span>　)<ruby>気<rt>き</rt></ruby>づかなかった。<span class="vn-hint">Đến cả bố mẹ cũng không nhận ra.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>立<rt>た</rt></ruby>つこと(　<span class="blank">すら</span>　)できない。<span class="vn-hint">Đến cả đứng cũng không thể.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～からある / ～からの<span class="gc-meaning">Đến hơn ~ (số lượng/kích cỡ lớn)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>数量詞</code> ＋ からある / からの ＋ <code>名</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Có/lên đến hơn cả ~</strong>" — nhấn mạnh số lượng/kích thước/khoảng cách lớn.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①100キロ<span class="target">からある</span><ruby>荷<rt>に</rt></ruby><ruby>物<rt>もつ</rt></ruby>を<ruby>一<rt>ひと</rt></ruby><ruby>人<rt>り</rt></ruby>で<ruby>運<rt>はこ</rt></ruby>んだ。</div><div class="ex-vn">Tôi đã tự một mình vác hành lý hơn 100kg.</div></div>
+<div class="ex-box"><div class="ex-jp">②3<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby><span class="target">からの</span><ruby>会<rt>かい</rt></ruby><ruby>議<rt>ぎ</rt></ruby>でみんな<ruby>疲<rt>つか</rt></ruby>れていた。</div><div class="ex-vn">Cuộc họp kéo dài hơn 3 tiếng nên mọi người đều mệt.</div></div>
+<div class="ex-box"><div class="ex-jp">③1<ruby>万<rt>まん</rt></ruby><ruby>人<rt>にん</rt></ruby><span class="target">からの</span><ruby>観<rt>かん</rt></ruby><ruby>客<rt>きゃく</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>まった。</div><div class="ex-vn">Đã có hơn cả 1 vạn khán giả đến.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～からある・からの</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>50キロ(　<span class="blank">からある</span>　)<ruby>米<rt>こめ</rt></ruby><ruby>袋<rt>ぶくろ</rt></ruby>を<ruby>運<rt>はこ</rt></ruby>んだ。<span class="vn-hint">Đã vác bao gạo hơn 50kg.</span></div>
+<div class="ex-q"><span class="qnum">2.</span>10<ruby>万<rt>まん</rt></ruby><ruby>円<rt>えん</rt></ruby>(　<span class="blank">からの</span>　)<ruby>時<rt>と</rt></ruby><ruby>計<rt>けい</rt></ruby>を<ruby>買<rt>か</rt></ruby>った。<span class="vn-hint">Mua chiếc đồng hồ giá hơn cả 10 vạn yên.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>2<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>(　<span class="blank">からの</span>　)<ruby>映<rt>えい</rt></ruby><ruby>画<rt>が</rt></ruby>を<ruby>見<rt>み</rt></ruby>た。<span class="vn-hint">Đã xem bộ phim kéo dài hơn 2 tiếng.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 17 ============ -->
+<article class="document" id="lesson-17">
+<div class="lesson-banner"><span class="lesson-kicker">17課 — Bài 17 · 主張・断定</span><h2>Khẳng định mạnh</h2><div class="lesson-sub">3 mẫu: ～までもない / ～にすぎない / ～にほかならない</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～までもない / ～までだ<span class="gc-meaning">Không cần phải ~ / Chỉ cần ~ là đủ</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形</code> ＋ までもない</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Không cần phải làm đến mức ~ (vì đã quá rõ ràng)</strong>".</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①わざわざ<ruby>言<rt>い</rt></ruby>う<span class="target">までもない</span>ことだが、<ruby>健<rt>けん</rt></ruby><ruby>康<rt>こう</rt></ruby>は<ruby>大<rt>たい</rt></ruby><ruby>切<rt>せつ</rt></ruby>だ。</div><div class="ex-vn">Không cần phải cố nói cũng biết, sức khỏe rất quan trọng.</div></div>
+<div class="ex-box"><div class="ex-jp">②そんな<ruby>簡<rt>かん</rt></ruby><ruby>単<rt>たん</rt></ruby>な<ruby>計<rt>けい</rt></ruby><ruby>算<rt>さん</rt></ruby>、<ruby>電<rt>でん</rt></ruby><ruby>卓<rt>たく</rt></ruby>を<ruby>使<rt>つか</rt></ruby>う<span class="target">までもない</span>。</div><div class="ex-vn">Phép tính đơn giản thế, không cần phải dùng máy tính.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>説<rt>せつ</rt></ruby><ruby>明<rt>めい</rt></ruby>する<span class="target">までもなく</span>、<ruby>結<rt>けっ</rt></ruby><ruby>果<rt>か</rt></ruby>は<ruby>明<rt>あき</rt></ruby>らかだ。</div><div class="ex-vn">Không cần phải giải thích, kết quả đã rõ ràng.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～までもない</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>近<rt>ちか</rt></ruby>いから、タクシーを<ruby>使<rt>つか</rt></ruby>う(　<span class="blank">までもない</span>　)。<span class="vn-hint">Gần thế thì không cần phải đi taxi.</span></div>
+<div class="ex-q"><span class="qnum">2.</span>もう<ruby>知<rt>し</rt></ruby>っているから、<ruby>調<rt>しら</rt></ruby>べる(　<span class="blank">までもない</span>　)。<span class="vn-hint">Đã biết rồi nên không cần tra cứu nữa.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>分<rt>わ</rt></ruby>かりきっていることなので、<ruby>確<rt>かく</rt></ruby><ruby>認<rt>にん</rt></ruby>する(　<span class="blank">までもない</span>　)。<span class="vn-hint">Quá rõ ràng nên không cần xác nhận.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～にすぎない<span class="gc-meaning">Chỉ là ~ mà thôi</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 / 動・辞書形・た形</code> ＋ にすぎない</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Chỉ ở mức ~ mà thôi, không hơn</strong>". Mang sắc thái khiêm tốn hoặc coi nhẹ.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>私<rt>わたし</rt></ruby>は<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>として<ruby>担<rt>たん</rt></ruby><ruby>当<rt>とう</rt></ruby>している<span class="target">にすぎない</span>。</div><div class="ex-vn">Tôi chỉ phụ trách như công việc thôi, không hơn.</div></div>
+<div class="ex-box"><div class="ex-jp">②それは<ruby>個<rt>こ</rt></ruby><ruby>人<rt>じん</rt></ruby><ruby>的<rt>てき</rt></ruby>な<ruby>意<rt>い</rt></ruby><ruby>見<rt>けん</rt></ruby><span class="target">にすぎない</span>。</div><div class="ex-vn">Đó chỉ là ý kiến cá nhân mà thôi.</div></div>
+<div class="ex-box"><div class="ex-jp">③これは<ruby>始<rt>はじ</rt></ruby>まり<span class="target">にすぎない</span>。これから<ruby>本<rt>ほん</rt></ruby><ruby>当<rt>とう</rt></ruby>のチャレンジが<ruby>始<rt>はじ</rt></ruby>まる。</div><div class="ex-vn">Đây chỉ là khởi đầu. Thử thách thật sự sẽ tới.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～にすぎない</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>偶<rt>ぐう</rt></ruby><ruby>然<rt>ぜん</rt></ruby>(　<span class="blank">にすぎない</span>　)。<span class="vn-hint">Chỉ là ngẫu nhiên mà thôi.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>言<rt>い</rt></ruby>い<ruby>訳<rt>わけ</rt></ruby>(　<span class="blank">にすぎない</span>　)。<span class="vn-hint">Chỉ là biện minh mà thôi.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>これは<ruby>一<rt>いち</rt></ruby><ruby>例<rt>れい</rt></ruby>(　<span class="blank">にすぎない</span>　)。<span class="vn-hint">Đây chỉ là một ví dụ mà thôi.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～にほかならない<span class="gc-meaning">Chính là ~ chứ không gì khác</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名</code> ＋ にほかならない</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Chính là ~ chứ không phải ai/cái nào khác</strong>" — khẳng định mạnh.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>合<rt>ごう</rt></ruby><ruby>格<rt>かく</rt></ruby>できたのは、<ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby>の<ruby>支<rt>し</rt></ruby><ruby>え<rt></rt></ruby>があったから<span class="target">にほかならない</span>。</div><div class="ex-vn">Đậu được chính là nhờ có sự ủng hộ của gia đình.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>厳<rt>きび</rt></ruby>しく<ruby>言<rt>い</rt></ruby>うのは、<ruby>君<rt>きみ</rt></ruby>を<ruby>思<rt>おも</rt></ruby>っているから<span class="target">にほかならない</span>。</div><div class="ex-vn">Nói nghiêm là chính vì nghĩ cho em chứ không gì khác.</div></div>
+<div class="ex-box"><div class="ex-jp">③この<ruby>成<rt>せい</rt></ruby><ruby>功<rt>こう</rt></ruby>は<ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>の<ruby>結<rt>けっ</rt></ruby><ruby>果<rt>か</rt></ruby><span class="target">にほかならない</span>。</div><div class="ex-vn">Thành công này chính là kết quả của nỗ lực.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～にほかならない</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>失<rt>しっ</rt></ruby><ruby>敗<rt>ぱい</rt></ruby>の<ruby>原<rt>げん</rt></ruby><ruby>因<rt>いん</rt></ruby>は<ruby>準<rt>じゅん</rt></ruby><ruby>備<rt>び</rt></ruby><ruby>不<rt>ぶ</rt></ruby><ruby>足<rt>そく</rt></ruby>(　<span class="blank">にほかならない</span>　)。<span class="vn-hint">Nguyên nhân thất bại chính là chuẩn bị thiếu.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>愛<rt>あい</rt></ruby>とは<ruby>信<rt>しん</rt></ruby><ruby>頼<rt>らい</rt></ruby>(　<span class="blank">にほかならない</span>　)。<span class="vn-hint">Tình yêu chính là sự tin cậy.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>これはみんなの<ruby>協<rt>きょう</rt></ruby><ruby>力<rt>りょく</rt></ruby>の<ruby>結<rt>けっ</rt></ruby><ruby>果<rt>か</rt></ruby>(　<span class="blank">にほかならない</span>　)。<span class="vn-hint">Đây chính là kết quả của sự hợp tác của mọi người.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 18 ============ -->
+<article class="document" id="lesson-18">
+<div class="lesson-banner"><span class="lesson-kicker">18課 — Bài 18 · 評価・感想</span><h2>Đánh giá &amp; cảm tưởng</h2><div class="lesson-sub">3 mẫu: ～にあたいする / ～にたる / ～かいがある</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～に値する<span class="gc-meaning">Đáng ~ / Xứng đáng ~</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形 / 名</code> ＋ に値(あたい)する</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Có giá trị/xứng đáng được ~</strong>". Văn viết.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①この<ruby>作<rt>さく</rt></ruby><ruby>品<rt>ひん</rt></ruby>は<ruby>賞<rt>しょう</rt></ruby><span class="target">に値する</span>。</div><div class="ex-vn">Tác phẩm này xứng đáng nhận giải thưởng.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>彼<rt>かれ</rt></ruby>の<ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>は<ruby>称<rt>しょう</rt></ruby><ruby>賛<rt>さん</rt></ruby><span class="target">に値する</span>ものだ。</div><div class="ex-vn">Nỗ lực của anh ấy xứng đáng được khen ngợi.</div></div>
+<div class="ex-box"><div class="ex-jp">③その<ruby>意<rt>い</rt></ruby><ruby>見<rt>けん</rt></ruby>は<ruby>議<rt>ぎ</rt></ruby><ruby>論<rt>ろん</rt></ruby>する<span class="target">に値する</span>。</div><div class="ex-vn">Ý kiến đó đáng để đem ra thảo luận.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～に値する</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>彼<rt>かれ</rt></ruby>の<ruby>行<rt>こう</rt></ruby><ruby>動<rt>どう</rt></ruby>は<ruby>尊<rt>そん</rt></ruby><ruby>敬<rt>けい</rt></ruby>(　<span class="blank">に値する</span>　)。<span class="vn-hint">Hành động của anh ấy đáng được tôn trọng.</span></div>
+<div class="ex-q"><span class="qnum">2.</span>この<ruby>本<rt>ほん</rt></ruby>は<ruby>一<rt>いち</rt></ruby><ruby>読<rt>どく</rt></ruby>する(　<span class="blank">に値する</span>　)。<span class="vn-hint">Cuốn sách này đáng để đọc một lần.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>その<ruby>提<rt>てい</rt></ruby><ruby>案<rt>あん</rt></ruby>は<ruby>検<rt>けん</rt></ruby><ruby>討<rt>とう</rt></ruby>(　<span class="blank">に値する</span>　)。<span class="vn-hint">Đề xuất đó đáng để xem xét.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～にたる / ～にたりない<span class="gc-meaning">Đáng ~ / Không đáng ~</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・辞書形 / 名</code> ＋ にたる / にたりない</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Có đủ giá trị/đáng để ~</strong>" / "Không đáng". Văn viết.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>彼<rt>かれ</rt></ruby>は<ruby>信<rt>しん</rt></ruby><ruby>頼<rt>らい</rt></ruby>する<span class="target">にたる</span><ruby>人<rt>じん</rt></ruby><ruby>物<rt>ぶつ</rt></ruby>だ。</div><div class="ex-vn">Anh ấy là người đáng để tin cậy.</div></div>
+<div class="ex-box"><div class="ex-jp">②そんな<ruby>小<rt>ちい</rt></ruby>さなミスは<ruby>気<rt>き</rt></ruby>に<ruby>留<rt>と</rt></ruby>める<span class="target">にたりない</span>。</div><div class="ex-vn">Lỗi nhỏ thế không đáng để bận tâm.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>満<rt>まん</rt></ruby><ruby>足<rt>ぞく</rt></ruby>する<span class="target">にたる</span><ruby>結<rt>けっ</rt></ruby><ruby>果<rt>か</rt></ruby>が<ruby>出<rt>で</rt></ruby>た。</div><div class="ex-vn">Có kết quả đáng để hài lòng.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～にたる</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>尊<rt>そん</rt></ruby><ruby>敬<rt>けい</rt></ruby>する(　<span class="blank">にたる</span>　)<ruby>先<rt>せん</rt></ruby><ruby>輩<rt>ぱい</rt></ruby>だ。<span class="vn-hint">Là tiền bối đáng để kính trọng.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>取<rt>と</rt></ruby>る(　<span class="blank">にたりない</span>　)<ruby>問<rt>もん</rt></ruby><ruby>題<rt>だい</rt></ruby>だ。<span class="vn-hint">Là vấn đề không đáng kể.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>感<rt>かん</rt></ruby><ruby>動<rt>どう</rt></ruby>する(　<span class="blank">にたる</span>　)<ruby>場<rt>ば</rt></ruby><ruby>面<rt>めん</rt></ruby>だった。<span class="vn-hint">Đó là cảnh đáng để cảm động.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～かいがある / ～かいもなく<span class="gc-meaning">Đáng làm ~ / Uổng công ~</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・た形・辞書形 / 名 + の</code> ＋ かいがある / かいもなく</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Công sức bỏ ra ~ được đền đáp / không được đền đáp</strong>".</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>頑<rt>がん</rt></ruby><ruby>張<rt>ば</rt></ruby>った<span class="target">かいがあって</span>、<ruby>目<rt>もく</rt></ruby><ruby>標<rt>ひょう</rt></ruby>を<ruby>達<rt>たっ</rt></ruby><ruby>成<rt>せい</rt></ruby>した。</div><div class="ex-vn">Cố gắng không uổng, đã đạt được mục tiêu.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>努<rt>ど</rt></ruby><ruby>力<rt>りょく</rt></ruby>の<span class="target">かいもなく</span>、<ruby>負<rt>ま</rt></ruby>けてしまった。</div><div class="ex-vn">Uổng công nỗ lực, vẫn thua.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>勉<rt>べん</rt></ruby><ruby>強<rt>きょう</rt></ruby>した<span class="target">かいがあって</span>、テストでいい<ruby>点<rt>てん</rt></ruby>が<ruby>取<rt>と</rt></ruby>れた。</div><div class="ex-vn">Học không uổng, đã được điểm tốt trong bài kiểm tra.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～かいがある</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>練<rt>れん</rt></ruby><ruby>習<rt>しゅう</rt></ruby>した(　<span class="blank">かいがあって</span>　)<ruby>優<rt>ゆう</rt></ruby><ruby>勝<rt>しょう</rt></ruby>できた。<span class="vn-hint">Không uổng công luyện tập, đã vô địch.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>苦<rt>く</rt></ruby><ruby>労<rt>ろう</rt></ruby>の(　<span class="blank">かいもなく</span>　)、<ruby>結<rt>けっ</rt></ruby><ruby>果<rt>か</rt></ruby>は<ruby>出<rt>で</rt></ruby>なかった。<span class="vn-hint">Vất vả uổng công, không có kết quả.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>看<rt>かん</rt></ruby><ruby>病<rt>びょう</rt></ruby>した(　<span class="blank">かいがあって</span>　)、<ruby>祖<rt>そ</rt></ruby><ruby>母<rt>ぼ</rt></ruby>は<ruby>元<rt>げん</rt></ruby><ruby>気<rt>き</rt></ruby>になった。<span class="vn-hint">Chăm sóc không uổng, bà tôi đã khỏe.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 19 ============ -->
+<article class="document" id="lesson-19">
+<div class="lesson-banner"><span class="lesson-kicker">19課 — Bài 19 · 心情・強調的問い</span><h2>Cảm xúc &amp; câu hỏi nhấn mạnh</h2><div class="lesson-sub">3 mẫu: ～てやまない / ～てたまるか / ～ものか</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～てやまない<span class="gc-meaning">~ không nguôi / ~ mãi không thôi</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・て形</code> ＋ やまない</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Tình cảm/cảm xúc ~ kéo dài, không nguôi</strong>". Văn viết. Đi với động từ chỉ cảm xúc.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>皆<rt>みな</rt></ruby>様<ruby>様<rt>さま</rt></ruby>のご<ruby>健<rt>けん</rt></ruby><ruby>康<rt>こう</rt></ruby>を<ruby>願<rt>ねが</rt></ruby>っ<span class="target">てやまない</span>。</div><div class="ex-vn">Tôi luôn cầu chúc sức khỏe cho quý vị, không nguôi.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>故<rt>こ</rt></ruby><ruby>郷<rt>きょう</rt></ruby>のことを<ruby>愛<rt>あい</rt></ruby>し<span class="target">てやまない</span>。</div><div class="ex-vn">Tôi yêu quê hương không nguôi.</div></div>
+<div class="ex-box"><div class="ex-jp">③お<ruby>二<rt>ふた</rt></ruby><ruby>人<rt>り</rt></ruby>の<ruby>幸<rt>しあわ</rt></ruby>せを<ruby>祈<rt>いの</rt></ruby>っ<span class="target">てやみません</span>。</div><div class="ex-vn">Tôi luôn cầu chúc hai bạn hạnh phúc, không nguôi.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～てやまない</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>君<rt>きみ</rt></ruby>の<ruby>成<rt>せい</rt></ruby><ruby>功<rt>こう</rt></ruby>を<ruby>願<rt>ねが</rt></ruby>っ(　<span class="blank">てやまない</span>　)。<span class="vn-hint">Tôi mong em thành công không nguôi.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>故<rt>こ</rt></ruby><ruby>人<rt>じん</rt></ruby>のご<ruby>冥<rt>めい</rt></ruby><ruby>福<rt>ふく</rt></ruby>を<ruby>祈<rt>いの</rt></ruby>っ(　<span class="blank">てやみません</span>　)。<span class="vn-hint">Tôi cầu chúc cho người đã khuất an nghỉ, không nguôi.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>あの<ruby>頃<rt>ころ</rt></ruby>のことを<ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>だ</rt></ruby>し(　<span class="blank">てやまない</span>　)。<span class="vn-hint">Tôi nhớ mãi về những ngày ấy.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～てたまるか / ～てなるものか<span class="gc-meaning">Đời nào tôi để ~ / Không đời nào</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・て形</code> ＋ たまるか / なるものか</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Đời nào tôi để/cho phép ~</strong>" — biểu thị quyết tâm mạnh không để điều xấu xảy ra. Văn nói/cảm thán.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①こんなところで<ruby>負<rt>ま</rt></ruby>け<span class="target">てたまるか</span>!</div><div class="ex-vn">Đời nào để mình thua ở chỗ này!</div></div>
+<div class="ex-box"><div class="ex-jp">②あんなやつに<ruby>従<rt>したが</rt></ruby><span class="target">ってなるものか</span>。</div><div class="ex-vn">Đời nào tôi nghe theo gã đó.</div></div>
+<div class="ex-box"><div class="ex-jp">③こんなことで<ruby>諦<rt>あきら</rt></ruby>め<span class="target">てたまるか</span>。</div><div class="ex-vn">Chuyện này mà bỏ cuộc thì đời nào.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～てたまるか</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>ここで<ruby>泣<rt>な</rt></ruby>い(　<span class="blank">てたまるか</span>　)。<span class="vn-hint">Đời nào tôi khóc ở đây.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>嘘<rt>うそ</rt></ruby>に<ruby>負<rt>ま</rt></ruby>け(　<span class="blank">てなるものか</span>　)。<span class="vn-hint">Đời nào tôi thua trước lời dối.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>こんな<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>に<ruby>負<rt>ま</rt></ruby>け(　<span class="blank">てたまるか</span>　)。<span class="vn-hint">Đời nào tôi thua trước việc thế này.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～ものか<span class="gc-meaning">Đời nào / Không đời nào ~ (cảm thán)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>普通形 (ナ形 -な・名 -な)</code> ＋ ものか</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Phủ định mạnh có sắc thái cảm xúc</strong>": Đời nào ~. Văn nói.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①あんな<ruby>店<rt>みせ</rt></ruby>に<ruby>二<rt>に</rt></ruby><ruby>度<rt>ど</rt></ruby>と<ruby>行<rt>い</rt></ruby>く<span class="target">ものか</span>。</div><div class="ex-vn">Đời nào tôi đi lại quán đó lần nữa.</div></div>
+<div class="ex-box"><div class="ex-jp">②そんな<ruby>嘘<rt>うそ</rt></ruby>、<ruby>信<rt>しん</rt></ruby>じる<span class="target">ものか</span>。</div><div class="ex-vn">Lời dối thế đó, đời nào tôi tin.</div></div>
+<div class="ex-box"><div class="ex-jp">③もう<ruby>彼<rt>かれ</rt></ruby>に<ruby>頼<rt>たの</rt></ruby>む<span class="target">ものか</span>。</div><div class="ex-vn">Đời nào tôi nhờ anh ấy nữa.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ものか</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span>こんな<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>、<ruby>続<rt>つづ</rt></ruby>けられる(　<span class="blank">ものか</span>　)。<span class="vn-hint">Công việc thế này, đời nào tôi làm tiếp.</span></div>
+<div class="ex-q"><span class="qnum">2.</span>そんなこと、<ruby>許<rt>ゆる</rt></ruby>せる(　<span class="blank">ものか</span>　)。<span class="vn-hint">Chuyện như thế, đời nào tôi tha thứ.</span></div>
+<div class="ex-q"><span class="qnum">3.</span>もう<ruby>会<rt>あ</rt></ruby>う(　<span class="blank">ものか</span>　)、あの<ruby>人<rt>ひと</rt></ruby>には。<span class="vn-hint">Người đó, đời nào tôi gặp lại.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ============ LESSON 20 ============ -->
+<article class="document" id="lesson-20">
+<div class="lesson-banner"><span class="lesson-kicker">20課 — Bài 20 · 様態・推量</span><h2>Vẻ ngoài &amp; suy đoán cao cấp</h2><div class="lesson-sub">3 mẫu: ～かのごとく / ～かと思いきや / ～んばかりに</div></div>
+<div class="doc-body">
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～かのごとく / ～かのごとき<span class="gc-meaning">Như thể là ~ (văn viết cứng)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>普通形 (ナ形 -である・名 -である)</code> ＋ かのごとく / かのごとき ＋ <code>名</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Đồng nghĩa「かのように」 nhưng <strong>văn viết rất cứng</strong>, dùng trong tiểu thuyết/văn chính luận.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>彼<rt>かれ</rt></ruby>は<ruby>何<rt>なに</rt></ruby>も<ruby>知<rt>し</rt></ruby>らない<span class="target">かのごとく</span><ruby>振<rt>ふ</rt></ruby>る<ruby>舞<rt>ま</rt></ruby>った。</div><div class="ex-vn">Anh ta hành xử như thể chẳng biết gì.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>嵐<rt>あらし</rt></ruby>が<ruby>来<rt>く</rt></ruby>る<span class="target">かのごとき</span><ruby>暗<rt>くら</rt></ruby>い<ruby>空<rt>そら</rt></ruby>だった。</div><div class="ex-vn">Bầu trời tối sầm như thể sắp có bão.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>夢<rt>ゆめ</rt></ruby>を<ruby>見<rt>み</rt></ruby>ている<span class="target">かのごとき</span><ruby>気<rt>き</rt></ruby><ruby>分<rt>ぶん</rt></ruby>だ。</div><div class="ex-vn">Có cảm giác như đang nằm mơ.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～かのごとく</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>が<ruby>止<rt>と</rt></ruby>まった(　<span class="blank">かのごとく</span>　)<ruby>感<rt>かん</rt></ruby>じた。<span class="vn-hint">Tôi cảm thấy như thể thời gian đã ngừng.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>全<rt>すべ</rt></ruby>てを<ruby>理<rt>り</rt></ruby><ruby>解<rt>かい</rt></ruby>している(　<span class="blank">かのごとき</span>　)<ruby>口<rt>くち</rt></ruby><ruby>調<rt>ちょう</rt></ruby>だ。<span class="vn-hint">Giọng điệu như thể đã hiểu hết.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>春<rt>はる</rt></ruby>が<ruby>来<rt>き</rt></ruby>た(　<span class="blank">かのごとき</span>　)<ruby>暖<rt>あたた</rt></ruby>かさだ。<span class="vn-hint">Ấm áp như thể mùa xuân đã đến.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～かと思いきや<span class="gc-meaning">Tưởng là ~ nhưng (thực ra)…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>普通形</code> ＋ かと思いきや</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Tưởng ~ mà hóa ra ngược lại / khác hẳn</strong>". Mang sắc thái ngạc nhiên.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>難<rt>むずか</rt></ruby>しい<span class="target">かと思いきや</span>、<ruby>意<rt>い</rt></ruby><ruby>外<rt>がい</rt></ruby>に<ruby>簡<rt>かん</rt></ruby><ruby>単<rt>たん</rt></ruby>だった。</div><div class="ex-vn">Tưởng khó hóa ra lại dễ bất ngờ.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>晴<rt>は</rt></ruby>れる<span class="target">かと思いきや</span>、<ruby>急<rt>きゅう</rt></ruby>に<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>ってきた。</div><div class="ex-vn">Tưởng sẽ nắng nhưng đột nhiên mưa rơi.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>怒<rt>おこ</rt></ruby>られる<span class="target">かと思いきや</span>、<ruby>褒<rt>ほ</rt></ruby>められた。</div><div class="ex-vn">Tưởng sẽ bị mắng mà lại được khen.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～かと思いきや</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>勝<rt>か</rt></ruby>った(　<span class="blank">かと思いきや</span>　)、<ruby>最<rt>さい</rt></ruby><ruby>後<rt>ご</rt></ruby>に<ruby>逆<rt>ぎゃく</rt></ruby><ruby>転<rt>てん</rt></ruby>された。<span class="vn-hint">Tưởng thắng rồi nhưng cuối cùng bị lội ngược dòng.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>泣<rt>な</rt></ruby>いている(　<span class="blank">かと思いきや</span>　)、<ruby>笑<rt>わら</rt></ruby>っていた。<span class="vn-hint">Tưởng đang khóc, hóa ra đang cười.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>失<rt>しっ</rt></ruby><ruby>敗<rt>ぱい</rt></ruby>した(　<span class="blank">かと思いきや</span>　)、<ruby>大<rt>だい</rt></ruby><ruby>成<rt>せい</rt></ruby><ruby>功<rt>こう</rt></ruby>だった。<span class="vn-hint">Tưởng thất bại nhưng hóa ra thành công lớn.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～んばかり(に)<span class="gc-meaning">Như thể sắp ~ / Như sắp ~</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・ない形 (bỏ ない)</code> ＋ んばかり(に) / んばかりの ＋ <code>名</code>　|　例外: する→せんばかり</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"<strong>Trông như thể sắp ~ (gần đến mức ~ nhưng chưa thực sự)</strong>". Văn viết.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span><div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>怒<rt>おこ</rt></ruby>って、<ruby>殴<rt>なぐ</rt></ruby>ら<span class="target">んばかり</span>の<ruby>勢<rt>いきお</rt></ruby>いで<ruby>叫<rt>さけ</rt></ruby>んだ。</div><div class="ex-vn">Anh ta nổi giận hét lên với khí thế như sắp đánh.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>子<rt>こ</rt></ruby>どもは<ruby>泣<rt>な</rt></ruby>き<ruby>出<rt>だ</rt></ruby>さ<span class="target">んばかりの</span><ruby>顔<rt>かお</rt></ruby>をしていた。</div><div class="ex-vn">Đứa trẻ có vẻ mặt như sắp bật khóc.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>会<rt>かい</rt></ruby><ruby>場<rt>じょう</rt></ruby>は<ruby>溢<rt>あふ</rt></ruby>れ<span class="target">んばかりの</span><ruby>観<rt>かん</rt></ruby><ruby>客<rt>きゃく</rt></ruby>でいっぱいだった。</div><div class="ex-vn">Hội trường chật cứng khán giả như sắp tràn ra ngoài.</div></div>
+</div></div>
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～んばかり</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><span class="qnum">1.</span><ruby>大<rt>たい</rt></ruby><ruby>声<rt>せい</rt></ruby>で<ruby>叫<rt>さけ</rt></ruby>ば(　<span class="blank">んばかりに</span>　)<ruby>抗<rt>こう</rt></ruby><ruby>議<rt>ぎ</rt></ruby>した。<span class="vn-hint">Anh ấy phản đối với khí thế như sắp hét lớn.</span></div>
+<div class="ex-q"><span class="qnum">2.</span><ruby>飛<rt>と</rt></ruby>び<ruby>上<rt>あ</rt></ruby>がら(　<span class="blank">んばかりの</span>　)<ruby>喜<rt>よろこ</rt></ruby>びようだった。<span class="vn-hint">Cô ấy mừng đến mức như sắp nhảy lên.</span></div>
+<div class="ex-q"><span class="qnum">3.</span><ruby>桜<rt>さくら</rt></ruby>はこぼれ<ruby>落<rt>お</rt></ruby>ち(　<span class="blank">んばかり</span>　)に<ruby>咲<rt>さ</rt></ruby>いていた。<span class="vn-hint">Hoa anh đào nở rộ như sắp rụng xuống.</span></div>
+<button class="answer-toggle">Xem đáp án</button>
+</div></div>
+</div></div>
+
+</div></article>
+
+
+<div class="footer-card">
+  <strong>Trí Lữ Nihongo</strong> · Biên soạn cho mục đích học tập cá nhân<br/>
+  Dựa theo phân loại ngữ pháp Shin Kanzen Master N1 — Tất cả câu ví dụ &amp; bài tập đều được biên soạn mới.
+</div>
+
+</div>
+
+<script>
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('blank')) { e.target.classList.toggle('shown'); }
+  if (e.target.classList.contains('answer-toggle')) {
+    const block = e.target.closest('.exercise-block');
+    const blanks = block.querySelectorAll('.blank');
+    const allShown = Array.from(blanks).every(b => b.classList.contains('shown'));
+    blanks.forEach(b => { if (allShown) b.classList.remove('shown'); else b.classList.add('shown'); });
+    e.target.textContent = allShown ? 'Xem đáp án' : 'Ẩn đáp án';
+  }
+});
+</script>
+
+
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="shinkanzen-n1-bunpou"></script>
+</body>
+</html>

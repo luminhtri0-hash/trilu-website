@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Giáo án chi tiết JLPT N3 (72 buổi + Kanji) - Trí Lữ Nihongo</title>
+<style>
+@page{size:A4;margin:14mm 12mm 16mm 12mm;}
+:root{--paper:#fffdfa;--ink:#1e2430;--muted:#5f6470;--accent:#6e1831;--accent-2:#9b7a38;--accent-3:#c7ab70;--line:#dfcfbb;--line-2:#eadfce;--shadow:0 18px 46px rgba(60,38,19,0.08);--kanji-bg:#fff9ec;}
+*{box-sizing:border-box}
+body{margin:0;color:var(--ink);background:radial-gradient(circle at top left,rgba(155,122,56,0.08),transparent 26%),radial-gradient(circle at 85% 14%,rgba(110,24,49,0.08),transparent 22%),linear-gradient(180deg,#f6efe8 0%,#f1ebe4 100%);font-family:Inter,"Noto Sans CJK JP","Segoe UI",sans-serif;line-height:1.7;font-size:14px;}
+.page-shell{max-width:1180px;margin:0 auto;padding:30px 24px 76px;}
+.cover{position:relative;overflow:hidden;background:radial-gradient(circle at 18% 18%,rgba(255,255,255,0.09),transparent 22%),radial-gradient(circle at 88% 20%,rgba(199,171,112,0.24),transparent 16%),linear-gradient(135deg,#4f0f24 0%,#6e1831 36%,#3a0f1b 100%);color:#fff;border-radius:30px;box-shadow:var(--shadow);padding:60px 64px 52px;}
+.cover::before{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,0.12);border-radius:22px;}
+.cover::after{content:"";position:absolute;right:-80px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(199,171,112,0.52) 0%,rgba(199,171,112,0.08) 48%,transparent 68%);}
+.cover-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid rgba(255,255,255,0.16);border-radius:999px;background:rgba(255,255,255,0.08);letter-spacing:0.16em;text-transform:uppercase;font-size:11px;font-weight:700;position:relative;z-index:1;}
+.cover-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent-3);box-shadow:0 0 0 5px rgba(199,171,112,0.14);}
+.cover-title{position:relative;z-index:1;margin:26px 0 14px;font-family:"EB Garamond","Noto Serif CJK JP",serif;font-weight:700;font-size:52px;line-height:1.05;letter-spacing:-0.02em;max-width:14ch;}
+.cover-subtitle{position:relative;z-index:1;max-width:780px;font-size:16px;color:rgba(255,255,255,0.88);margin:0 0 24px;}
+.metric-row{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 30px;}
+.metric-chip{padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,0.16);background:rgba(255,255,255,0.08);color:#fff;font-size:13px;font-weight:600;}
+.cover-quote{position:relative;z-index:1;margin:0;max-width:600px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.18);font-style:italic;font-size:16px;color:rgba(255,255,255,0.86);}
+.cover-meta{position:relative;z-index:1;margin-top:24px;display:flex;justify-content:space-between;gap:24px;font-size:13px;color:rgba(255,255,255,0.76);flex-wrap:wrap;}
+.toc-panel{margin:26px 0 30px;background:linear-gradient(180deg,rgba(255,253,250,0.96),rgba(252,246,238,0.96));border:1px solid rgba(155,122,56,0.20);border-radius:24px;box-shadow:var(--shadow);padding:28px 30px;}
+.panel-overline{display:block;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.18em;font-size:11px;font-weight:700;color:var(--accent-2);}
+.toc-title{margin:0 0 6px;font-family:"EB Garamond",serif;font-size:32px;line-height:1.1;color:var(--accent);}
+.toc-subtitle{margin:0 0 18px;color:var(--muted);font-size:14px;}
+.toc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;}
+.toc-item{display:block;text-decoration:none;color:inherit;padding:16px 18px;background:linear-gradient(180deg,#fffefd 0%,#fcf6ee 100%);border:1px solid var(--line-2);border-radius:18px;}
+.toc-item-number{display:block;margin-bottom:6px;font-family:"EB Garamond",serif;font-size:30px;line-height:1;color:var(--accent-2);}
+.toc-item-title{display:block;font-weight:700;color:var(--accent);margin-bottom:6px;}
+.toc-item-summary{display:block;color:var(--muted);font-size:13px;line-height:1.5;}
+.document{background:var(--paper);border:1px solid rgba(155,122,56,0.16);border-radius:28px;box-shadow:var(--shadow);padding:34px 42px 50px;}
+.doc-section{margin:0 0 30px;}
+.section-head{position:relative;overflow:hidden;margin:12px 0 18px;padding:18px 24px;border-radius:22px;background:linear-gradient(90deg,rgba(255,255,255,0.08),transparent 36%),linear-gradient(135deg,#57132a 0%,#6e1831 52%,#7f3b52 100%);color:#fff;}
+.section-head::after{content:attr(data-mark);position:absolute;right:18px;top:50%;transform:translateY(-50%);font-family:"EB Garamond",serif;font-size:56px;line-height:1;color:rgba(255,255,255,0.12);}
+.section-kicker{display:block;margin-bottom:8px;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;font-weight:700;color:rgba(255,255,255,0.76);}
+.section-head h2{margin:0;color:#fff;font-family:"EB Garamond","Noto Serif CJK JP",serif;font-size:29px;line-height:1.15;}
+p{margin:0 0 12px;}
+h3{margin:24px 0 12px;padding-left:14px;border-left:4px solid var(--accent-2);color:var(--accent);font-size:18px;line-height:1.35;font-weight:800;}
+table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line-2);border-radius:16px;overflow:hidden;box-shadow:0 8px 20px rgba(60,38,19,0.04);font-size:13px;}
+th,td{padding:11px 12px;border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);vertical-align:top;}
+th:last-child,td:last-child{border-right:none;}
+tbody tr:last-child td{border-bottom:none;}
+thead th{background:linear-gradient(180deg,#fcf5ea 0%,#f2e3cf 100%);color:var(--accent);font-weight:800;}
+tbody tr:nth-child(even) td{background:#fffaf4;}
+.callout-box{margin:16px 0 22px;padding:16px 20px 16px 22px;border:1px solid #e7d7be;border-left:6px solid var(--accent-2);border-radius:18px;background:linear-gradient(180deg,#fffdf9 0%,#fbf3e8 100%);}
+.callout-box strong:first-child{color:var(--accent);}
+ol,ul{margin:0 0 14px;padding-left:22px;}li{margin:0 0 6px;}li::marker{color:var(--accent-2);font-weight:700;}
+.pillar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px;list-style:none;padding:0;margin:16px 0 22px;counter-reset:pillar;}
+.pillar-grid > li{position:relative;margin:0;padding:14px 18px 14px 58px;background:linear-gradient(180deg,#fffefd 0%,#fbf4ea 100%);border:1px solid var(--line-2);border-radius:18px;}
+.pillar-grid > li::before{counter-increment:pillar;content:counter(pillar,decimal-leading-zero);position:absolute;left:14px;top:14px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--accent-2) 0%,#7f642d 100%);color:#fff;font-size:12px;font-weight:800;}
+.month-banner{margin:30px 0 22px;padding:22px 26px;border-radius:24px;border:1px solid rgba(155,122,56,0.20);background:radial-gradient(circle at top right,rgba(199,171,112,0.18),transparent 25%),linear-gradient(135deg,#fffdfa 0%,#f9efe4 100%);box-shadow:0 12px 28px rgba(60,38,19,0.06);}
+.month-banner-overline{display:block;font-size:11px;text-transform:uppercase;letter-spacing:0.18em;font-weight:800;color:var(--accent-2);margin-bottom:6px;}
+.month-banner h3{margin:0 0 8px;padding:0;border:none;font-family:"EB Garamond",serif;font-size:26px;color:var(--accent);}
+.month-banner .month-goal{color:#3b4250;margin-bottom:0;}
+.week-divider{margin:22px 0 14px;padding:10px 18px;border-radius:14px;background:linear-gradient(90deg,#6e1831 0%,#834a61 100%);color:#fff;font-weight:800;font-size:13px;letter-spacing:0.06em;text-transform:uppercase;}
+.lesson-card{margin:0 0 18px;padding:18px 20px 16px;background:#fff;border:1px solid var(--line-2);border-left:5px solid var(--accent-2);border-radius:16px;box-shadow:0 6px 16px rgba(60,38,19,0.05);}
+.lesson-head{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:baseline;margin-bottom:10px;padding-bottom:10px;border-bottom:1px dashed var(--line-2);}
+.lesson-num{font-weight:800;color:var(--accent);font-size:13px;letter-spacing:0.04em;padding:4px 10px;background:#fcf5ea;border-radius:999px;white-space:nowrap;}
+.lesson-title{margin:0;font-family:"EB Garamond","Noto Serif CJK JP",serif;font-size:19px;color:var(--ink);font-weight:700;flex:1;min-width:200px;}
+.lesson-goal{margin:0;font-size:13px;color:var(--muted);width:100%;}
+.lesson-goal strong{color:var(--accent-2);}
+.timebox{width:100%;border-radius:12px;overflow:hidden;border:1px solid var(--line-2);margin-top:10px;font-size:12.5px;}
+.timebox td{padding:9px 11px;border-bottom:1px solid var(--line-2);vertical-align:top;border-right:none;}
+.timebox tr:last-child td{border-bottom:none;}
+.timebox .tb-time{width:70px;font-weight:800;color:var(--accent);background:#fcf5ea;white-space:nowrap;}
+.timebox .tb-act{width:140px;font-weight:700;color:#674c1b;}
+.timebox .tb-content{color:#333a43;}
+.kanji-card{margin-top:12px;padding:12px 14px;background:linear-gradient(135deg,var(--kanji-bg) 0%,#fff5dc 100%);border:1px solid #e8d4a8;border-left:4px solid #b8901f;border-radius:12px;}
+.kanji-card-title{font-size:11px;text-transform:uppercase;letter-spacing:0.12em;font-weight:800;color:#8a6510;margin-bottom:8px;}
+.kanji-card-title::before{content:"漢";font-family:"Noto Serif CJK JP",serif;font-size:14px;margin-right:6px;color:#b8901f;}
+.kanji-grid{display:flex;flex-wrap:wrap;gap:10px;}
+.kanji-item{display:flex;gap:10px;background:#fff;border:1px solid #e8d4a8;border-radius:10px;padding:8px 12px;min-width:200px;flex:1;}
+.kanji-char{font-family:"Noto Serif CJK JP","Noto Sans CJK JP",serif;font-size:32px;line-height:1;color:#1e2430;font-weight:700;align-self:center;}
+.kanji-info{font-size:12px;line-height:1.4;flex:1;}
+.kanji-info b{color:var(--accent);font-size:11px;display:block;letter-spacing:0.06em;}
+.kanji-info .kanji-yomi{color:#674c1b;font-weight:600;font-family:"Noto Sans CJK JP",sans-serif;}
+.kanji-info .kanji-mean{color:#333a43;}
+.kanji-info .kanji-mnemo{color:#8a6510;font-style:italic;font-size:11px;margin-top:3px;display:block;}
+.lesson-hw{margin-top:10px;padding:10px 14px;background:linear-gradient(180deg,#fffdf9 0%,#fbf3e8 100%);border:1px solid var(--line-2);border-radius:10px;font-size:13px;}
+.lesson-hw strong{color:var(--accent);}
+.minitest{background:linear-gradient(180deg,#fff8ef 0%,#f9e7d1 100%);border-left-color:var(--accent);}
+.minitest .lesson-num{background:#6e1831;color:#fff;}
+.footer-card{margin-top:24px;padding-top:24px;border-top:1px solid var(--line-2);text-align:center;}
+.footer-card p{font-size:13px;color:var(--muted);}
+@media print{body{background:#fff;font-size:11.5px;}.page-shell{max-width:none;margin:0;padding:0;}.cover,.toc-panel,.document{box-shadow:none;}.cover{page-break-after:always;border-radius:16px;padding:42px 36px;}.toc-panel{page-break-after:always;margin:0 0 18px;border-radius:14px;}.document{border:none;border-radius:0;padding:0;}.section-head{break-after:avoid;margin-top:14px;}.month-banner,.lesson-card{break-inside:avoid;}.week-divider{break-after:avoid;}table{box-shadow:none;border-radius:0;}.kanji-card{break-inside:avoid;}}
+</style></head>
+<body><div class="page-shell">
+
+<section class="cover">
+  <div class="cover-badge"><span class="dot"></span>Trí Lữ Nihongo • Premium N3 Roadmap</div>
+  <h1 class="cover-title">Giáo án chi tiết<br/>JLPT N3</h1>
+  <p class="cover-subtitle">Giáo án từng buổi cho khóa JLPT N3 6 tháng (72 buổi) với Shinkanzen Master N3 (21 bài Từ vựng + 12 bài Ngữ pháp) + Kanji Master 370 chữ. Mỗi buổi 120 phút có 5 khối time-box + mini-card Kanji 4-6 chữ Hán.</p>
+  <div class="metric-row">
+    <span class="metric-chip">6 tháng · 24 tuần · 72 buổi</span>
+    <span class="metric-chip">120 phút/buổi · T3/5/7</span>
+    <span class="metric-chip">Shinkanzen Master N3 + Kanji Master</span>
+    <span class="metric-chip">370 Kanji N3 xen kẽ</span>
+    <span class="metric-chip">2 Mini Test + 1 Checkpoint + 3 Full Mock</span>
+  </div>
+  <blockquote class="cover-quote">Không học để đi thật nhanh. Học để mỗi tuần đều tiến bộ, mỗi tháng đều nhìn thấy mình gần hơn với N3.</blockquote>
+  <div class="cover-meta"><div>Bám đúng mục lục Shinkanzen N3 + 370 Kanji</div><div>2 giai đoạn: Tích lũy (12 tuần) + Bứt tốc (12 tuần)</div></div>
+</section>
+
+<nav class="toc-panel">
+  <span class="panel-overline">Điều hướng nhanh</span>
+  <h2 class="toc-title">Mục lục</h2>
+  <p class="toc-subtitle">5 phần: phương pháp + time-box; Giai đoạn 1 (36 buổi Từ vựng-Ngữ pháp); Giai đoạn 2 (36 buổi Kỹ năng-Luyện đề); Phụ lục.</p>
+  <div class="toc-grid">
+    <a class="toc-item" href="#section-1"><span class="toc-item-number">I</span><span class="toc-item-title">Tổng quan &amp; phương pháp</span><span class="toc-item-summary">6 trụ cột, time-box 120p, tích hợp Kanji.</span></a>
+    <a class="toc-item" href="#section-2"><span class="toc-item-number">II</span><span class="toc-item-title">Giai đoạn 1 · Tuần 1-12 (36 buổi)</span><span class="toc-item-summary">21 bài Từ vựng + 12 bài Ngữ pháp Shinkanzen + ~130 Kanji.</span></a>
+    <a class="toc-item" href="#section-3"><span class="toc-item-number">III</span><span class="toc-item-title">Giai đoạn 2 · Tuần 13-24 (36 buổi)</span><span class="toc-item-summary">Kanji 240 chữ + Đọc + Nghe + 3 Full Mock.</span></a>
+    <a class="toc-item" href="#section-4"><span class="toc-item-number">+</span><span class="toc-item-title">Phụ lục · 370 Kanji + checklist + rubric</span><span class="toc-item-summary">Bảng tổng hợp, chuẩn đầu ra, rubric 7 tiêu chí.</span></a>
+  </div>
+</nav>
+
+<main class="document">
+
+<section class="doc-section" id="section-1">
+  <div class="section-head" data-mark="I"><span class="section-kicker">Phần 1</span><h2>Tổng quan + Time-box 120 phút + Kanji</h2></div>
+
+  <h3>Thông tin khóa học N3 (72 buổi cố định)</h3>
+  <table>
+    <thead><tr><th style="width:30%">Hạng mục</th><th>Chi tiết</th></tr></thead>
+    <tbody>
+      <tr><td>Mục tiêu</td><td>Đỗ JLPT N3 (≥ 95/180); sử dụng tiếng Nhật tự nhiên đời sống.</td></tr>
+      <tr><td>Giáo trình</td><td>Shinkanzen Master N3 (Từ vựng-Ngữ pháp-Đọc-Nghe) + Kanji Master 370 chữ.</td></tr>
+      <tr><td>Số buổi</td><td><strong>Cố định 72 buổi</strong> (6 tháng × 12 buổi), 3 buổi/tuần · T3/5/7 · 120 phút/buổi.</td></tr>
+      <tr><td>Giai đoạn 1 (Tuần 1-12)</td><td>21 bài Từ vựng + 4 mốc 実力を試そう + 12 bài Ngữ pháp + Checkpoint.</td></tr>
+      <tr><td>Giai đoạn 2 (Tuần 13-24)</td><td>Kanji 370 chữ + Đọc hiểu + Nghe hiểu + 3 Full Mock + Final.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>6 trụ cột năng lực N3</h3>
+  <ol class="pillar-grid">
+    <li><strong>Từ vựng N3:</strong> 21 bài Shinkanzen, ngữ cảnh + collocation.</li>
+    <li><strong>Ngữ pháp N3:</strong> 12 bài Shinkanzen, sắc thái + ứng dụng.</li>
+    <li><strong>Kanji N3:</strong> 370 chữ học xen kẽ qua mini-card, kèm Hán Việt + On/Kun + mnemonic.</li>
+    <li><strong>読解 Đọc hiểu:</strong> đoạn ngắn/trung bình/bài quan điểm N3.</li>
+    <li><strong>聴解 Nghe:</strong> bắt ý chính, chi tiết, mục đích hội thoại.</li>
+    <li><strong>Luyện đề:</strong> đề chuẩn thời gian, chiến lược thi.</li>
+  </ol>
+
+  <h3>Time-box chuẩn 120 phút (có Kanji)</h3>
+  <table>
+    <thead><tr><th style="width:11%">Thời lượng</th><th style="width:25%">Khối</th><th>Hoạt động cụ thể</th></tr></thead>
+    <tbody>
+      <tr><td><strong>0-10p</strong></td><td>Khởi động + kiểm tra nhanh</td><td>Flashcard 15-20 từ + 5 Kanji buổi trước; ghi 3 lỗi chung.</td></tr>
+      <tr><td><strong>10-40p</strong></td><td>Giảng bài mới (TV/NP)</td><td>Trọng tâm, cách dùng, BẪY, ví dụ mẫu, phân biệt mẫu gần nghĩa.</td></tr>
+      <tr><td><strong>40-60p</strong></td><td><strong>Kanji mới (4-6 chữ)</strong></td><td>Mỗi chữ: âm Hán Việt - On - Kun - mnemonic - 2-3 từ ghép. Viết 3 lần.</td></tr>
+      <tr><td><strong>60-90p</strong></td><td>Luyện ứng dụng có hướng dẫn</td><td>Chọn đáp án, đặt câu, đọc-nghe theo ngữ cảnh, pair drill.</td></tr>
+      <tr><td><strong>90-110p</strong></td><td>Sửa bài tập &amp; chữa lỗi</td><td>Sửa sâu, giải thích nguyên nhân, cập nhật sổ lỗi cá nhân.</td></tr>
+      <tr><td><strong>110-120p</strong></td><td>Giao bài &amp; định hướng</td><td>BTVN định lượng (sách + viết Kanji + flashcard).</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout-box">
+    <strong>Cách tích hợp Kanji vào N3:</strong>
+    <ul>
+      <li>Giai đoạn 1 (36 buổi): mỗi buổi 4-5 Kanji = ~150 Kanji.</li>
+      <li>Giai đoạn 2 (36 buổi): mỗi buổi 5-7 Kanji = ~220 Kanji = đủ 370 Kanji.</li>
+      <li>BTVN Kanji: viết mỗi chữ × 5 dòng + flashcard.</li>
+      <li>Tái kiểm tra Kanji sau 7 ngày (chu kỳ ngắt quãng).</li>
+    </ul>
+  </div>
+</section>
+
+<!-- GIAI ĐOẠN 1 -->
+<section class="doc-section" id="section-2">
+  <div class="section-head" data-mark="II"><span class="section-kicker">Phần 2 · Tuần 1-12</span><h2>Giai đoạn 1 · Tích lũy Từ vựng &amp; Ngữ pháp (36 buổi)</h2></div>
+  <div class="month-banner">
+    <span class="month-banner-overline">Mục tiêu Giai đoạn 1</span>
+    <h3>21 bài Từ vựng + 12 bài Ngữ pháp Shinkanzen + ~150 Kanji</h3>
+    <p class="month-goal">12 tuần × 3 buổi: T3+T7 Từ vựng; T5 Ngữ pháp. 4 mốc 実力を試そう tích hợp cuối tuần. 2 Mini Test (tuần 4, 8) + Checkpoint (tuần 12).</p>
+  </div>
+
+  <div class="week-divider">Tuần 1 · 3 buổi · Bài TV1 + NP1 + Bài TV2 + Kanji 彼-対</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 1 · T3</span><h3 class="lesson-title">Khai giảng + Từ vựng Bài 1 - 人間関係1: 家族と友達、性格 + Kanji 彼 (BỈ), 内 (NỘI)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Định hướng N3; 50 từ về gia đình, bạn bè, tính cách; Kanji 彼, 内.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khai giảng &amp; định hướng</td><td class="tb-content">① Giới thiệu giáo viên, học viên. ② Tổng quan 6 tháng / 72 buổi / 370 Kanji. ③ Quy định.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ vựng Bài 1</td><td class="tb-content">① 50 từ: 両親, 兄弟, 親戚, 仲間, 知り合い, 同僚, まじめ, おとなしい, わがまま, 積極的, 消極的, 慎重... ② Phân nhóm gia đình huyết thống / xã hội / tính cách. ③ Collocation: 性格が明るい, 信頼できる.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI (2 chữ)</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">彼</div><div class="kanji-info"><b>BỈ</b><span class="kanji-yomi">On: ヒ · Kun: かれ・かの</span><span class="kanji-mean">Anh ấy, kia</span><span class="kanji-mnemo">Đi + da = người kia. 彼 (かれ - anh ấy), 彼女 (かのじょ).</span></div></div><div class="kanji-item"><div class="kanji-char">内</div><div class="kanji-info"><b>NỘI</b><span class="kanji-yomi">On: ナイ · Kun: うち</span><span class="kanji-mean">Bên trong</span><span class="kanji-mnemo">Người vào trong. 内 (うち - trong), 案内 (あんない - hướng dẫn), 内容 (ないよう).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện ứng dụng</td><td class="tb-content">① Bài tập Shinkanzen Bài 1. ② Pair phỏng vấn mô tả tính cách 1 người gia đình 5 tính từ N3. ③ Đoán nghĩa qua ngữ cảnh.</td></tr>
+      <tr><td class="tb-time">90-110p</td><td class="tb-act">Sửa bài + sổ lỗi N3</td><td class="tb-content">① Sửa. ② Hướng dẫn lập sổ lỗi: từ - đọc - nghĩa - ngữ cảnh - ví dụ. ③ Học theo collocation.</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Giao bài</td><td class="tb-content">① Nhắc T5 NP Bài 1; T7 TV Bài 2.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Thiết lập sổ lỗi; 50 từ Bài 1 + 30 flashcard; bài tập Shinkanzen; xem trước NP Bài 1; viết Kanji 彼, 内 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 2 · T5</span><h3 class="lesson-title">Ngữ pháp Bài 1 - Thời điểm &amp; tiến trình + Kanji 実 (THỰC), 当 (ĐƯƠNG)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 5 mẫu: ~うちに, ~間, ~間に, ~てからでないと, ~ところだ; Kanji 実, 当.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động + chữa BTVN</td><td class="tb-content">① Quiz 15 từ Bài 1. ② Chữa.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng 5 mẫu NP Bài 1</td><td class="tb-content">① 〜うちに: trong lúc chưa thay đổi (明るいうちに帰る). ② 〜間: V1 kéo dài, V2 suốt khoảng đó. ③ 〜間に: V2 xảy ra trong khoảng V1. ④ 〜てからでないと: chưa A thì không B. ⑤ 〜ところだ: 3 thời điểm (sắp/đang/vừa xong). ⑥ Phân biệt ~うちに vs ~間に.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">実</div><div class="kanji-info"><b>THỰC</b><span class="kanji-yomi">On: ジツ · Kun: み</span><span class="kanji-mean">Thật, quả</span><span class="kanji-mnemo">Mái + ba người. 実 (じつ - thật), 事実 (じじつ), 実力 (じつりょく).</span></div></div><div class="kanji-item"><div class="kanji-char">当</div><div class="kanji-info"><b>ĐƯƠNG</b><span class="kanji-yomi">On: トウ · Kun: あ(たる)</span><span class="kanji-mean">Trúng, đúng</span><span class="kanji-mnemo">Nhỏ + cái tay. 当たる (あたる - trúng), 本当 (ほんとう), 当然 (とうぜん).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện ứng dụng</td><td class="tb-content">① Bài tập NP Bài 1. ② 15 câu chọn mẫu. ③ Đặt 10 câu cá nhân.</td></tr>
+      <tr><td class="tb-time">90-110p</td><td class="tb-act">Sửa bài + chữa lỗi</td><td class="tb-content">① Sửa. ② Phân biệt cặp dễ nhầm.</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Giao bài</td><td class="tb-content">① Nhắc T7 TV Bài 2.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Bài tập NP Bài 1; 10 câu áp dụng 5 mẫu; chuẩn bị TV Bài 2 (50 từ); viết Kanji 実, 当 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 3 · T7</span><h3 class="lesson-title">Từ vựng Bài 2 - 人間関係2: 付き合い、気持ち + Kanji 戦 (CHIẾN), 性 (TÍNH), 対 (ĐỐI)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về mối quan hệ, cảm xúc; tích hợp NP Bài 1; Kanji 戦, 性, 対.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz 15 từ Bài 1 + 5 câu NP Bài 1.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 2</td><td class="tb-content">① 付き合い: 付き合う, デート, 別れる, 仲がいい/悪い, 噂, 信頼, 裏切る. ② 気持ち: 感動, 興奮, 落ち込む, ストレス, 緊張, 安心, 焦る, 戸惑う. ③ Collocation: 気持ちが落ち着く, 感情を抑える.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI (3 chữ)</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">戦</div><div class="kanji-info"><b>CHIẾN</b><span class="kanji-yomi">On: セン · Kun: たたか(う)</span><span class="kanji-mean">Chiến đấu</span><span class="kanji-mnemo">Cờ + giáo = chiến. 戦争 (せんそう - chiến tranh), 作戦 (さくせん).</span></div></div><div class="kanji-item"><div class="kanji-char">性</div><div class="kanji-info"><b>TÍNH</b><span class="kanji-yomi">On: セイ · Kun: さが</span><span class="kanji-mean">Tính chất, giới</span><span class="kanji-mnemo">Tâm + sinh. 性格 (せいかく - tính cách), 女性 (じょせい), 性別 (せいべつ).</span></div></div><div class="kanji-item"><div class="kanji-char">対</div><div class="kanji-info"><b>ĐỐI</b><span class="kanji-yomi">On: タイ · Kun: つい</span><span class="kanji-mean">Đối, chống</span><span class="kanji-mnemo">Văn + thước. 対 (たい - đối), 反対 (はんたい - phản đối), 対応 (たいおう).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện ứng dụng</td><td class="tb-content">① Bài tập Bài 2. ② Pair mô tả cảm xúc 5 tình huống. ③ Tích hợp NP Bài 1.</td></tr>
+      <tr><td class="tb-time">90-110p</td><td class="tb-act">Sửa bài + collocation</td><td class="tb-content">① Sửa. ② Collocation chuẩn N3.</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Giao bài</td><td class="tb-content">① Tuần 1 xong. Nhắc Tuần 2.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 2 + collocation; đoạn 100 chữ về trải nghiệm cảm xúc; chuẩn bị TV Bài 3; viết Kanji 戦, 性, 対 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 2 · 3 buổi · Bài TV3 + NP2 + TV4 + Kanji 関-定</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 4 · T3</span><h3 class="lesson-title">Từ vựng Bài 3 - 生活1: 毎日の生活 + Kanji 関 (QUAN), 感 (CẢM), 定 (ĐỊNH)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về sinh hoạt thường ngày; Kanji 関, 感, 定.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz 20 từ Bài 1-2.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 3</td><td class="tb-content">① 50 từ sinh hoạt: 起床, 就寝, 出勤, 帰宅, 通勤, 家事, 洗濯, 掃除, 片付け, 散歩, 余暇... ② Trạng từ tần suất: 常に, たまに, めったに, ほとんど. ③ 朝食を取る, 残業する.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI (3 chữ)</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">関</div><div class="kanji-info"><b>QUAN</b><span class="kanji-yomi">On: カン · Kun: せき</span><span class="kanji-mean">Liên quan, cửa ải</span><span class="kanji-mnemo">Cổng + then. 関係 (かんけい - quan hệ), 関心 (かんしん - quan tâm).</span></div></div><div class="kanji-item"><div class="kanji-char">感</div><div class="kanji-info"><b>CẢM</b><span class="kanji-yomi">On: カン</span><span class="kanji-mean">Cảm giác</span><span class="kanji-mnemo">Lăm + tim. 感じる (かんじる - cảm), 感情 (かんじょう - cảm xúc), 感謝 (かんしゃ).</span></div></div><div class="kanji-item"><div class="kanji-char">定</div><div class="kanji-info"><b>ĐỊNH</b><span class="kanji-yomi">On: テイ · Kun: さだ(める)</span><span class="kanji-mean">Quyết định, ổn định</span><span class="kanji-mnemo">Mái + đúng. 予定 (よてい - kế hoạch), 決定 (けってい), 安定 (あんてい).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập tr.10-13. ② Pair kể 1 ngày bằng N3 + ghi 5 từ quan trọng.</td></tr>
+      <tr><td class="tb-time">90-110p</td><td class="tb-act">Sửa bài</td><td class="tb-content">① Sửa. ② Bảng từ trái nghĩa.</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Giao bài</td><td class="tb-content">① Nhắc T5 NP Bài 2.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 3; "Một ngày của tôi" 150 chữ dùng 10 từ N3; xem trước NP Bài 2; viết Kanji 関, 感, 定 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 5 · T5</span><h3 class="lesson-title">Ngữ pháp Bài 2 - Cách thức &amp; mức độ + Kanji 政 (CHÍNH), 取 (THỦ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 5 mẫu: ~とおり, ~によって, ~たびに, ~ば~ほど, ~ついでに; Kanji 政, 取.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 1 + 10 từ Bài 3.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng 5 mẫu NP Bài 2</td><td class="tb-content">① ~とおり/どおり: làm đúng như. ② ~によって/~によっては: tùy theo. ③ ~たびに: cứ mỗi lần. ④ (~ば)~ほど: càng... càng... ⑤ ~ついでに: nhân tiện.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">政</div><div class="kanji-info"><b>CHÍNH</b><span class="kanji-yomi">On: セイ・ショウ</span><span class="kanji-mean">Chính trị</span><span class="kanji-mnemo">Chính + cây gậy. 政治 (せいじ - chính trị), 政府 (せいふ - chính phủ).</span></div></div><div class="kanji-item"><div class="kanji-char">取</div><div class="kanji-info"><b>THỦ</b><span class="kanji-yomi">On: シュ · Kun: と(る)</span><span class="kanji-mean">Lấy</span><span class="kanji-mnemo">Tai + tay = bắt tai địch lấy. 取る (とる), 取材 (しゅざい - phỏng vấn).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập NP Bài 2. ② Đặt 10 câu áp dụng.</td></tr>
+      <tr><td class="tb-time">90-110p</td><td class="tb-act">Sửa bài</td><td class="tb-content">① Phân biệt ~たびに vs ~場合.</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Giao bài</td><td class="tb-content">① Nhắc T7 TV Bài 4.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Bài tập NP Bài 2; 10 câu áp dụng; chuẩn bị TV Bài 4 (生活2: 食生活); viết Kanji 政, 取 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 6 · T7</span><h3 class="lesson-title">Từ vựng Bài 4 - 生活2: 食生活 + Kanji 所 (SỞ), 現 (HIỆN), 最 (TỐI)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về thói quen ăn uống; tích hợp NP Bài 1-2; Kanji 所, 現, 最.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 2 + từ Bài 3.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 4</td><td class="tb-content">① 食事: 朝食, 昼食, 夕食, 間食, 食欲, ダイエット, 栄養, バランス. ② Chế biến: 煮る, 焼く, 揚げる, 蒸す, 茹でる. ③ Cảm nhận: あっさり, こってり, さっぱり, 甘い/辛い/酸っぱい/苦い/渋い.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI (3 chữ)</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">所</div><div class="kanji-info"><b>SỞ</b><span class="kanji-yomi">On: ショ · Kun: ところ</span><span class="kanji-mean">Nơi chốn</span><span class="kanji-mnemo">Cửa + rìu. 所 (ところ - nơi), 場所 (ばしょ - địa điểm), 住所 (じゅうしょ).</span></div></div><div class="kanji-item"><div class="kanji-char">現</div><div class="kanji-info"><b>HIỆN</b><span class="kanji-yomi">On: ゲン · Kun: あらわ(れる)</span><span class="kanji-mean">Hiện ra</span><span class="kanji-mnemo">Ngọc + thấy. 現在 (げんざい - hiện tại), 表現 (ひょうげん - biểu hiện).</span></div></div><div class="kanji-item"><div class="kanji-char">最</div><div class="kanji-info"><b>TỐI</b><span class="kanji-yomi">On: サイ · Kun: もっと(も)</span><span class="kanji-mean">Nhất</span><span class="kanji-mnemo">Đỉnh + tai. 最も (もっとも), 最近 (さいきん - gần đây), 最初 (さいしょ).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập tr.14-17. ② Mô tả 1 món Việt cho người Nhật.</td></tr>
+      <tr><td class="tb-time">90-110p</td><td class="tb-act">Sửa bài</td><td class="tb-content">① Collocation: 栄養を取る, ダイエットをする.</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Giao bài</td><td class="tb-content">① Nhắc Tuần 3.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 4; đoạn 150 chữ về món ăn yêu thích; chuẩn bị TV Bài 5; viết Kanji 所, 現, 最 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 3 · 3 buổi · Bài 5 + NP3 + Bài 6 + 実力を試そう (1-5) + Kanji 化-法</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 7 · T3</span><h3 class="lesson-title">Từ vựng Bài 5 - 生活3: 家 + chốt nhóm 1-5 + Kanji 化 (HÓA), 民 (DÂN), 相 (TƯƠNG)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về nhà ở; Kanji 化, 民, 相.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz 25 từ Bài 1-4.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 5</td><td class="tb-content">① Nhà: 一戸建て, マンション, リフォーム, 引っ越し, 賃貸, 家賃, 敷金, 礼金, 大家. ② Đồ đạc: 家具, 家電, 寝具, インテリア. ③ Sửa: 修理, 取り付ける, ふさがる.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">化</div><div class="kanji-info"><b>HÓA</b><span class="kanji-yomi">On: カ · Kun: ば(ける)</span><span class="kanji-mean">Biến đổi</span><span class="kanji-mnemo">Người + lộn ngược = thay đổi. 文化 (ぶんか - văn hóa), 変化 (へんか - biến hóa).</span></div></div><div class="kanji-item"><div class="kanji-char">民</div><div class="kanji-info"><b>DÂN</b><span class="kanji-yomi">On: ミン · Kun: たみ</span><span class="kanji-mean">Dân, nhân dân</span><span class="kanji-mnemo">Người dân thường. 民 (たみ), 国民 (こくみん - quốc dân), 市民 (しみん).</span></div></div><div class="kanji-item"><div class="kanji-char">相</div><div class="kanji-info"><b>TƯƠNG</b><span class="kanji-yomi">On: ソウ · Kun: あい</span><span class="kanji-mean">Lẫn nhau, tướng mạo</span><span class="kanji-mnemo">Cây + mắt. 相手 (あいて - đối tác), 相談 (そうだん - bàn bạc), 首相 (しゅしょう - thủ tướng).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện + chốt Bài 1-5</td><td class="tb-content">① Bài tập tr.18-21. ② Mô tả nhà lý tưởng. ③ Lập bảng tổng 250 từ Bài 1-5.</td></tr>
+      <tr><td class="tb-time">90-110p</td><td class="tb-act">Sửa bài</td><td class="tb-content">① Chuẩn bị 実力を試そう (1-5) cuối tuần.</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Giao bài</td><td class="tb-content">① Nhắc T5 NP Bài 3.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 5; ôn 250 từ Bài 1-5; chuẩn bị NP Bài 3; viết Kanji 化, 民, 相 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 8 · T5</span><h3 class="lesson-title">Ngữ pháp Bài 3 - Mức độ &amp; lựa chọn + Kanji 法 (PHÁP), 全 (TOÀN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 4 mẫu: ~くらい/ほど, ~くらい/ほど...はない, ~くらいなら, ~に限る; Kanji 法, 全.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 1-2 + 10 từ Bài 5.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng 4 mẫu NP Bài 3</td><td class="tb-content">① ~くらい/ほど: đến mức. ② ~くらい/ほど...はない: không gì bằng. ③ ~くらいなら: thà... còn hơn. ④ ~に限る: là tốt nhất.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">法</div><div class="kanji-info"><b>PHÁP</b><span class="kanji-yomi">On: ホウ</span><span class="kanji-mean">Pháp luật, phương pháp</span><span class="kanji-mnemo">Nước + đi = luật như nước. 法律 (ほうりつ), 方法 (ほうほう - phương pháp).</span></div></div><div class="kanji-item"><div class="kanji-char">全</div><div class="kanji-info"><b>TOÀN</b><span class="kanji-yomi">On: ゼン · Kun: まった(く)</span><span class="kanji-mean">Toàn bộ</span><span class="kanji-mnemo">Mái + vua = toàn quyền. 全部 (ぜんぶ - toàn bộ), 安全 (あんぜん), 全然 (ぜんぜん).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập NP Bài 3. ② Đặt 10 câu áp dụng.</td></tr>
+      <tr><td class="tb-time">90-110p</td><td class="tb-act">Sửa bài</td><td class="tb-content">① Phân biệt ~に限る (chủ quan) vs 一番.</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Giao bài</td><td class="tb-content">① Nhắc T7 tích hợp 実力を試そう.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> NP Bài 3; ôn 250 từ Bài 1-5 chuẩn bị 実力を試そう; xem trước TV Bài 6; viết Kanji 法, 全 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 9 · T7</span><h3 class="lesson-title">Từ vựng Bài 6 - 体1: 美容、健康 + 実力を試そう (1-5) + Kanji 情 (TÌNH), 向 (HƯỚNG)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về sắc đẹp, sức khỏe; kiểm tra năng lực Bài 1-5; Kanji 情, 向.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-15p</td><td class="tb-act">実力を試そう 1-5</td><td class="tb-content">① Làm bài tr.22 trong 15 phút (quiz 250 từ Bài 1-5).</td></tr>
+      <tr><td class="tb-time">15-45p</td><td class="tb-act">Giảng từ Bài 6</td><td class="tb-content">① Sắc đẹp: 化粧, スキンケア, 美容院, 美白, しわ, シミ. ② Sức khỏe: 健康, 体力, 免疫, 運動, ストレッチ, 体重, 血圧. ③ Trạng thái: だるい, 痩せる, 太る.</td></tr>
+      <tr><td class="tb-time">45-65p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">情</div><div class="kanji-info"><b>TÌNH</b><span class="kanji-yomi">On: ジョウ · Kun: なさ(け)</span><span class="kanji-mean">Tình cảm, tình hình</span><span class="kanji-mnemo">Tim + xanh. 感情 (かんじょう), 情報 (じょうほう - thông tin), 事情 (じじょう).</span></div></div><div class="kanji-item"><div class="kanji-char">向</div><div class="kanji-info"><b>HƯỚNG</b><span class="kanji-yomi">On: コウ · Kun: む(かう)</span><span class="kanji-mean">Hướng về</span><span class="kanji-mnemo">Mái + miệng. 向く (むく), 方向 (ほうこう - phương hướng), 向上 (こうじょう).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">65-90p</td><td class="tb-act">Luyện + chữa 実力を試そう</td><td class="tb-content">① Bài tập tr.24-27. ② Chữa 実力を試そう.</td></tr>
+      <tr><td class="tb-time">90-110p</td><td class="tb-act">Sửa bài + sổ lỗi</td><td class="tb-content">① Cập nhật sổ lỗi 5 từ yếu nhất.</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Giao bài</td><td class="tb-content">① Nhắc Tuần 4 + Mini Test 1.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 6; sửa lỗi 実力を試そう; chuẩn bị NP Bài 4 + TV Bài 7-8; viết Kanji 情, 向 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 4 · 3 buổi · Bài TV7 + NP4 + TV8 + Mini Test 1 + Kanji 平-経</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 10 · T3</span><h3 class="lesson-title">Từ vựng Bài 7 - 体2: 病気 + Kanji 平 (BÌNH), 成 (THÀNH), 経 (KINH)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về bệnh tật; Kanji 平, 成, 経.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz Bài 6.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 7</td><td class="tb-content">① 風邪, インフルエンザ, 熱, 咳, くしゃみ, 鼻水, 頭痛, 腹痛, めまい, 吐き気. ② 病院: 内科, 外科, 診察, 治療, 入院, 退院, 手術, 処方箋. ③ 治る, 治す, 倒れる.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI (3 chữ)</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">平</div><div class="kanji-info"><b>BÌNH</b><span class="kanji-yomi">On: ヘイ · Kun: たい(ら)</span><span class="kanji-mean">Bằng phẳng, hòa bình</span><span class="kanji-mnemo">Cái thước bằng phẳng. 平和 (へいわ - hòa bình), 平日 (へいじつ - ngày thường).</span></div></div><div class="kanji-item"><div class="kanji-char">成</div><div class="kanji-info"><b>THÀNH</b><span class="kanji-yomi">On: セイ · Kun: な(る)</span><span class="kanji-mean">Trở thành</span><span class="kanji-mnemo">Cái rìu + nét chéo. 成功 (せいこう - thành công), 完成 (かんせい - hoàn thành).</span></div></div><div class="kanji-item"><div class="kanji-char">経</div><div class="kanji-info"><b>KINH</b><span class="kanji-yomi">On: ケイ · Kun: へ(る)</span><span class="kanji-mean">Trải qua, kinh tế</span><span class="kanji-mnemo">Sợi + công. 経済 (けいざい - kinh tế), 経験 (けいけん - kinh nghiệm).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập tr.28-31. ② Pair role-play khám bệnh.</td></tr>
+      <tr><td class="tb-time">90-110p</td><td class="tb-act">Sửa bài</td><td class="tb-content">① Phân biệt 治る (tự khỏi) vs 治す (chữa).</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Giao bài</td><td class="tb-content">① Nhắc T5 NP Bài 4.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 7; xem trước NP Bài 4; viết Kanji 平, 成, 経 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 11 · T5</span><h3 class="lesson-title">Ngữ pháp Bài 4 - Đối lập, so sánh + Kanji 信 (TÍN), 面 (DIỆN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 5 mẫu: ~に対して, ~反面, ~一方(で), ~というより, ~代わりに; Kanji 信, 面.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 1-3 + từ Bài 7.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng 5 mẫu NP Bài 4</td><td class="tb-content">① ~に対して: đối với / so sánh đối lập. ② ~反面: 1 việc 2 mặt. ③ ~一方(で): 2 mặt khác nhau. ④ ~というより: B đúng hơn A. ⑤ ~代わりに: thay vì / bù lại.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">信</div><div class="kanji-info"><b>TÍN</b><span class="kanji-yomi">On: シン · Kun: しん(じる)</span><span class="kanji-mean">Tin tưởng</span><span class="kanji-mnemo">Người + lời. 信じる (しんじる - tin), 信用 (しんよう - tín dụng), 自信 (じしん - tự tin).</span></div></div><div class="kanji-item"><div class="kanji-char">面</div><div class="kanji-info"><b>DIỆN</b><span class="kanji-yomi">On: メン · Kun: おも</span><span class="kanji-mean">Mặt, bề mặt</span><span class="kanji-mnemo">Hình khuôn mặt. 面 (めん - mặt), 場面 (ばめん), 表面 (ひょうめん - bề mặt).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập NP Bài 4. ② Đặt 10 câu.</td></tr>
+      <tr><td class="tb-time">90-110p</td><td class="tb-act">Sửa bài</td><td class="tb-content">① Phân biệt ~反面 vs ~一方で.</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Giao bài</td><td class="tb-content">① Nhắc T7 + Mini Test 1.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> NP Bài 4; chuẩn bị Mini Test 1 (TV 1-8 + NP 1-4); học TV Bài 8; viết Kanji 信, 面 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 12 · T7 · MINI TEST 1</span><h3 class="lesson-title">TV Bài 8 - 趣味と旅行1 + Mini Test 1 (TV 1-8 + NP 1-4) + Kanji 連 (LIÊN), 原 (NGUYÊN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về thể thao, nghệ thuật; Mini Test 1; Kanji 連, 原.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-40p</td><td class="tb-act">Mini Test 1 (40p) + chữa</td><td class="tb-content">① 40 câu TV (20) + NP (20). ② Chữa.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI + giảng từ Bài 8</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">連</div><div class="kanji-info"><b>LIÊN</b><span class="kanji-yomi">On: レン · Kun: つ(れる)</span><span class="kanji-mean">Liên lạc, dắt theo</span><span class="kanji-mnemo">Đi + xe. 連絡 (れんらく - liên lạc), 連休 (れんきゅう - kỳ nghỉ liên tục).</span></div></div><div class="kanji-item"><div class="kanji-char">原</div><div class="kanji-info"><b>NGUYÊN</b><span class="kanji-yomi">On: ゲン · Kun: はら</span><span class="kanji-mean">Gốc, cánh đồng</span><span class="kanji-mnemo">Vách + suối nguồn. 原因 (げんいん - nguyên nhân), 草原 (そうげん).</span></div></div></div></div>① 50 từ Bài 8: 試合, 選手, 監督, 応援, 観戦, 美術, 音楽, 演劇, 鑑賞.</td></tr>
+      <tr><td class="tb-time">60-95p</td><td class="tb-act">Luyện ứng dụng</td><td class="tb-content">① Bài tập tr.32-35. ② Pair sở thích thể thao/nghệ thuật.</td></tr>
+      <tr><td class="tb-time">95-115p</td><td class="tb-act">Sửa bài + chữa Mini Test 2</td><td class="tb-content">① Sửa lỗi Mini Test 1 + sổ lỗi.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Giao bài</td><td class="tb-content">① Nhắc Tuần 5 + 9課, 10課 + 実力を試そう (6-10).</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Sửa Mini Test 1; 50 từ Bài 8; chuẩn bị NP Bài 5 + TV Bài 9; viết Kanji 連, 原 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 5 · 3 buổi · TV9 + NP5 + TV10 + 実力を試そう (6-10) + Kanji 顔-数</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 13 · T3</span><h3 class="lesson-title">TV Bài 9 - 趣味と旅行2: ファッション + Kanji 顔 (NHAN), 機 (CƠ), 次 (THỨ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về thời trang; Kanji 顔, 機, 次.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz 15 từ Bài 8.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 9</td><td class="tb-content">① Thời trang: 流行, おしゃれ, 派手, 地味, 上品, スーツ, アクセサリー. ② Hành động: 着る, 着替える, 履く, かぶる, つける, 外す.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">顔</div><div class="kanji-info"><b>NHAN</b><span class="kanji-yomi">On: ガン · Kun: かお</span><span class="kanji-mean">Gương mặt</span><span class="kanji-mnemo">Khuôn mặt. 顔 (かお), 笑顔 (えがお - mặt cười).</span></div></div><div class="kanji-item"><div class="kanji-char">機</div><div class="kanji-info"><b>CƠ</b><span class="kanji-yomi">On: キ · Kun: はた</span><span class="kanji-mean">Máy, cơ hội</span><span class="kanji-mnemo">Cây + nhỏ. 機械 (きかい - máy móc), 機会 (きかい - cơ hội), 飛行機 (ひこうき).</span></div></div><div class="kanji-item"><div class="kanji-char">次</div><div class="kanji-info"><b>THỨ</b><span class="kanji-yomi">On: ジ · Kun: つぎ</span><span class="kanji-mean">Tiếp theo, thứ tự</span><span class="kanji-mnemo">2 ngày tiếp. 次 (つぎ), 目次 (もくじ - mục lục).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện + chữa</td><td class="tb-content">① Bài tập tr.36-39. ② Mô tả phong cách cá nhân.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa. ② Nhắc T5 NP Bài 5.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 9; xem trước NP Bài 5; viết Kanji 顔, 機, 次 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 14 · T5</span><h3 class="lesson-title">NP Bài 5 - Nguyên nhân + Kanji 数 (SỐ), 美 (MỸ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 6 mẫu nguyên nhân; Kanji 数, 美.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 1-4.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng 6 mẫu</td><td class="tb-content">① ~ためだ/ため(に). ② ~によって/による. ③ ~から/ことから. ④ ~おかげで (tích cực) / ~せいで (tiêu cực). ⑤ ~のだから (hiển nhiên).</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">数</div><div class="kanji-info"><b>SỐ</b><span class="kanji-yomi">On: スウ · Kun: かず</span><span class="kanji-mean">Số, đếm</span><span class="kanji-mnemo">Phụ nữ + lúa + dấu. 数 (かず - số), 数学 (すうがく), 数える (かぞえる - đếm).</span></div></div><div class="kanji-item"><div class="kanji-char">美</div><div class="kanji-info"><b>MỸ</b><span class="kanji-yomi">On: ビ · Kun: うつく(しい)</span><span class="kanji-mean">Đẹp</span><span class="kanji-mnemo">Cừu lớn. 美しい (うつくしい), 美術 (びじゅつ - mỹ thuật).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập NP Bài 5. ② Phân biệt 6 mẫu.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa. ② Nhắc T7.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> NP Bài 5; chuẩn bị TV Bài 10; viết Kanji 数, 美 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 15 · T7</span><h3 class="lesson-title">TV Bài 10 - 趣味と旅行3: 旅行 + 実力を試そう (6-10) + Kanji 回 (HỒI), 表 (BIỂU)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về du lịch; chốt nhóm 6-10; Kanji 回, 表.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-15p</td><td class="tb-act">実力を試そう 6-10</td><td class="tb-content">① Làm tr.44 trong 15p.</td></tr>
+      <tr><td class="tb-time">15-45p</td><td class="tb-act">Giảng từ Bài 10</td><td class="tb-content">① Du lịch: 観光, 案内, ガイド, ツアー, 宿泊, 予約, 出発, 到着, 移動. ② 体験, 思い出, 名所, お土産.</td></tr>
+      <tr><td class="tb-time">45-65p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">回</div><div class="kanji-info"><b>HỒI</b><span class="kanji-yomi">On: カイ · Kun: まわ(る)</span><span class="kanji-mean">Quay, lần</span><span class="kanji-mnemo">Vòng tròn trong vòng. 回 (lần), 回る (まわる), 今回 (こんかい - lần này).</span></div></div><div class="kanji-item"><div class="kanji-char">表</div><div class="kanji-info"><b>BIỂU</b><span class="kanji-yomi">On: ヒョウ · Kun: あらわ(す)・おもて</span><span class="kanji-mean">Bề mặt, biểu</span><span class="kanji-mnemo">Lông + áo. 表 (おもて - mặt), 発表 (はっぴょう), 表現 (ひょうげん - biểu hiện).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">65-95p</td><td class="tb-act">Luyện + chữa 実力を試そう</td><td class="tb-content">① Bài tập tr.40-43. ② Chữa.</td></tr>
+      <tr><td class="tb-time">95-120p</td><td class="tb-act">Sửa bài + giao bài</td><td class="tb-content">① Gom lỗi. ② Nhắc Tuần 6.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 10; sửa 実力を試そう 6-10; chuẩn bị Bài 11 + NP Bài 6; viết Kanji 回, 表 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 6 · 3 buổi · TV11 + NP6 + TV12 + Kanji 声-変</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 16 · T3</span><h3 class="lesson-title">TV Bài 11 - 教育1: 学校生活 (小中高) + Kanji 声 (THANH), 報 (BÁO), 要 (YẾU)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về trường tiểu/trung/phổ thông; Kanji 声, 報, 要.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz Bài 10.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 11</td><td class="tb-content">① Cấp học: 小学校, 中学校, 高校. ② Hoạt động: 授業, 試験, 宿題, 部活, クラス, 担任, 校長, 教師. ③ Đánh giá: 成績, 評価, 合格.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">声</div><div class="kanji-info"><b>THANH</b><span class="kanji-yomi">On: セイ · Kun: こえ</span><span class="kanji-mean">Tiếng, giọng</span><span class="kanji-mnemo">Đàn + tai. 声 (こえ - giọng), 名声 (めいせい).</span></div></div><div class="kanji-item"><div class="kanji-char">報</div><div class="kanji-info"><b>BÁO</b><span class="kanji-yomi">On: ホウ</span><span class="kanji-mean">Báo cáo, tin tức</span><span class="kanji-mnemo">Đất + tin. 報告 (ほうこく), 情報 (じょうほう - thông tin).</span></div></div><div class="kanji-item"><div class="kanji-char">要</div><div class="kanji-info"><b>YẾU</b><span class="kanji-yomi">On: ヨウ · Kun: い(る)</span><span class="kanji-mean">Cần, quan trọng</span><span class="kanji-mnemo">Áo + phụ nữ. 必要 (ひつよう - cần thiết), 重要 (じゅうよう - quan trọng).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện + pair</td><td class="tb-content">① Bài tập tr.46-49. ② Pair kể trải nghiệm thời học sinh.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa. ② Nhắc T5 NP Bài 6.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 11; xem trước NP Bài 6; viết Kanji 声, 報, 要 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 17 · T5</span><h3 class="lesson-title">NP Bài 6 - Điều kiện &amp; nhượng bộ + Kanji 変 (BIẾN), 神 (THẦN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 5 cụm điều kiện; phân biệt ば/たら/なら; Kanji 変, 神.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 1-5.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng + bảng so sánh</td><td class="tb-content">① ~(の)なら: dựa thông tin biết. ② ~ては: trạng thái xấu. ③ ~さえ~ば: chỉ cần. ④ たとえ~ても: dù. ⑤ ば (quy luật) / たら (giả định thoải mái) / なら (đề nghị).</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">変</div><div class="kanji-info"><b>BIẾN</b><span class="kanji-yomi">On: ヘン · Kun: か(わる)</span><span class="kanji-mean">Biến đổi, lạ</span><span class="kanji-mnemo">Đỏ + cuối. 変わる (かわる - thay đổi), 大変 (たいへん - vất vả), 変な (へんな - kỳ lạ).</span></div></div><div class="kanji-item"><div class="kanji-char">神</div><div class="kanji-info"><b>THẦN</b><span class="kanji-yomi">On: シン · Kun: かみ</span><span class="kanji-mean">Thần</span><span class="kanji-mnemo">Lễ + duỗi. 神 (かみ - thần), 神社 (じんじゃ - đền thờ).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập NP Bài 6. ② 25 câu phân biệt ば/たら/なら.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa. ② Ngữ cảnh điển hình.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> NP Bài 6; chuẩn bị TV Bài 12; viết Kanji 変, 神 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 18 · T7</span><h3 class="lesson-title">TV Bài 12 - 教育2: 学校生活 (大学) + Kanji 記 (KÝ), 和 (HÒA), 引 (DẪN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về đại học; tích hợp NP Bài 6; Kanji 記, 和, 引.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 6.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 12</td><td class="tb-content">① 大学: 大学院, 学部, 学科, 専攻, 講義, ゼミ, 単位, 卒論, レポート. ② Cấp: 学士, 修士, 博士. ③ Hoạt động: 研究, 発表, 論文, 留学.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">記</div><div class="kanji-info"><b>KÝ</b><span class="kanji-yomi">On: キ · Kun: しる(す)</span><span class="kanji-mean">Ghi chép</span><span class="kanji-mnemo">Lời + dòng dõi. 日記 (にっき - nhật ký), 記録 (きろく - ghi chép).</span></div></div><div class="kanji-item"><div class="kanji-char">和</div><div class="kanji-info"><b>HÒA</b><span class="kanji-yomi">On: ワ · Kun: なご(む)</span><span class="kanji-mean">Hòa, Nhật</span><span class="kanji-mnemo">Lúa + miệng. 平和 (へいわ), 和食 (わしょく - đồ Nhật).</span></div></div><div class="kanji-item"><div class="kanji-char">引</div><div class="kanji-info"><b>DẪN</b><span class="kanji-yomi">On: イン · Kun: ひ(く)</span><span class="kanji-mean">Kéo, dẫn</span><span class="kanji-mnemo">Cung + dây. 引く (ひく - kéo), 引っ越し (ひっこし - chuyển nhà).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện + đọc</td><td class="tb-content">① Bài tập tr.50-53. ② Đoạn 200 chữ về sinh viên ĐH.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa. ② Nhắc Tuần 7.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 12; chuẩn bị Bài 13 + NP Bài 7; viết Kanji 記, 和, 引 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 7 · 3 buổi · TV13 + NP7 + TV14 + 実力を試そう (11-14) + Kanji 治-能</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 19 · T3</span><h3 class="lesson-title">TV Bài 13 - 仕事1: 仕事 + Kanji 治 (TRỊ), 決 (QUYẾT), 太 (THÁI)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về công việc; Kanji 治, 決, 太.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz từ Bài 12.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 13</td><td class="tb-content">① 仕事: 給料, 出張, 残業, 会議, 同僚, 上司, 部下, 出世, 昇進. ② 雇用: 採用, 退職, 転職, 就職, 解雇.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">治</div><div class="kanji-info"><b>TRỊ</b><span class="kanji-yomi">On: ジ・チ · Kun: なお(る)</span><span class="kanji-mean">Trị, chữa</span><span class="kanji-mnemo">Nước + lưỡi. 政治 (せいじ), 治す (なおす - chữa).</span></div></div><div class="kanji-item"><div class="kanji-char">決</div><div class="kanji-info"><b>QUYẾT</b><span class="kanji-yomi">On: ケツ · Kun: き(める)</span><span class="kanji-mean">Quyết định</span><span class="kanji-mnemo">Nước + dấu. 決める (きめる - quyết định), 決心 (けっしん).</span></div></div><div class="kanji-item"><div class="kanji-char">太</div><div class="kanji-info"><b>THÁI</b><span class="kanji-yomi">On: タイ · Kun: ふと(い)</span><span class="kanji-mean">To, mập</span><span class="kanji-mnemo">Lớn + giọt. 太い (ふとい), 太陽 (たいよう - mặt trời).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện + pair</td><td class="tb-content">① Bài tập tr.54-57. ② Pair phỏng vấn công việc lý tưởng.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa. ② Nhắc T5 NP Bài 7.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 13; xem trước NP Bài 7; viết Kanji 治, 決, 太 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 20 · T5</span><h3 class="lesson-title">NP Bài 7 - Truyền đạt + Kanji 込 (NHẬP), 受 (THỌ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 5 mẫu truyền đạt; Kanji 込, 受.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 1-6.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng 5 mẫu</td><td class="tb-content">① ~ということだ/とのことだ. ② ~と言われている. ③ ~とか. ④ ~って (văn nói). ⑤ ~という (định nghĩa).</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">込</div><div class="kanji-info"><b>NHẬP</b><span class="kanji-yomi">Kun: こ(む)</span><span class="kanji-mean">Vào, đông</span><span class="kanji-mnemo">Đi + vào. 申し込む (もうしこむ - đăng ký), 混む (こむ - đông).</span></div></div><div class="kanji-item"><div class="kanji-char">受</div><div class="kanji-info"><b>THỌ</b><span class="kanji-yomi">On: ジュ · Kun: う(ける)</span><span class="kanji-mean">Nhận</span><span class="kanji-mnemo">Tay trao tay. 受ける (うける - nhận), 受験 (じゅけん - dự thi).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập NP Bài 7. ② Đặt 10 câu truyền đạt.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa. ② Nhắc T7 + 実力を試そう 11-14.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> NP Bài 7; chuẩn bị 実力を試そう 11-14 + TV Bài 14; viết Kanji 込, 受 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 21 · T7</span><h3 class="lesson-title">TV Bài 14 - 仕事2: コンピューター・郵便・電話 + 実力を試そう (11-14) + Kanji 解 (GIẢI), 市 (THỊ), 期 (KỲ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về máy tính, bưu phẩm; chốt nhóm 11-14; Kanji 解, 市, 期.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-15p</td><td class="tb-act">実力を試そう 11-14</td><td class="tb-content">① Làm tr.62 trong 15p.</td></tr>
+      <tr><td class="tb-time">15-45p</td><td class="tb-act">Giảng từ Bài 14</td><td class="tb-content">① コンピューター: パソコン, インターネット, データ, ファイル, ダウンロード, 削除, 保存. ② 郵便: 切手, はがき, 封筒, 宛先, 速達. ③ 電話: 通話, 着信, 留守番電話.</td></tr>
+      <tr><td class="tb-time">45-65p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">解</div><div class="kanji-info"><b>GIẢI</b><span class="kanji-yomi">On: カイ · Kun: と(く)</span><span class="kanji-mean">Giải, hiểu</span><span class="kanji-mnemo">Sừng + dao + trâu. 解く (とく - giải), 理解 (りかい - hiểu), 解決 (かいけつ).</span></div></div><div class="kanji-item"><div class="kanji-char">市</div><div class="kanji-info"><b>THỊ</b><span class="kanji-yomi">On: シ · Kun: いち</span><span class="kanji-mean">Chợ, thành phố</span><span class="kanji-mnemo">Đầu + khăn. 市 (し - thành phố), 市場 (しじょう/いちば).</span></div></div><div class="kanji-item"><div class="kanji-char">期</div><div class="kanji-info"><b>KỲ</b><span class="kanji-yomi">On: キ</span><span class="kanji-mean">Kỳ, thời gian</span><span class="kanji-mnemo">Cơ + nguyệt. 期間 (きかん - thời kỳ), 時期 (じき), 期待 (きたい - mong đợi).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">65-95p</td><td class="tb-act">Luyện + chữa 実力を試そう</td><td class="tb-content">① Bài tập tr.58-61. ② Chữa.</td></tr>
+      <tr><td class="tb-time">95-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa. ② Nhắc Tuần 8 + Mini Test 2.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 14; chuẩn bị Mini Test 2 (TV 9-16 + NP 5-8) + TV Bài 15; viết Kanji 解, 市, 期 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 8 · 3 buổi · TV15 + NP8 + TV16 + Mini Test 2 + Kanji 様-葉</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 22 · T3</span><h3 class="lesson-title">TV Bài 15 - 社会1: 事件、事故 + Kanji 様 (DẠNG), 活 (HOẠT), 頭 (ĐẦU)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về vụ việc, tai nạn; Kanji 様, 活, 頭.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz Bài 14.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 15</td><td class="tb-content">① 事件: 犯罪, 泥棒, 強盗, 殺人, 逮捕, 容疑者, 警察, 裁判. ② 事故: 交通事故, 火事, 地震, 津波, 被害, 救助, 救急車.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">様</div><div class="kanji-info"><b>DẠNG</b><span class="kanji-yomi">On: ヨウ · Kun: さま</span><span class="kanji-mean">Hình thức, ngài</span><span class="kanji-mnemo">Cây + dài + nước. お客様 (おきゃくさま), 様子 (ようす - tình hình).</span></div></div><div class="kanji-item"><div class="kanji-char">活</div><div class="kanji-info"><b>HOẠT</b><span class="kanji-yomi">On: カツ</span><span class="kanji-mean">Sống, hoạt động</span><span class="kanji-mnemo">Nước + lưỡi. 生活 (せいかつ - cuộc sống), 活動 (かつどう - hoạt động).</span></div></div><div class="kanji-item"><div class="kanji-char">頭</div><div class="kanji-info"><b>ĐẦU</b><span class="kanji-yomi">On: トウ · Kun: あたま</span><span class="kanji-mean">Đầu</span><span class="kanji-mnemo">Đậu + trang trí. 頭 (あたま - đầu), 頭痛 (ずつう - đau đầu).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập tr.64-67. ② Đọc tin tức ngắn N3.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa. ② Nhắc T5 NP Bài 8.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 15; xem trước NP Bài 8; viết Kanji 様, 活, 頭 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 23 · T5</span><h3 class="lesson-title">NP Bài 8 - Phủ định 1 phần + Kanji 組 (TỔ), 指 (CHỈ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 5 mẫu phủ định 1 phần; Kanji 組, 指.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 1-7.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng 5 mẫu</td><td class="tb-content">① ~はずがない/わけがない: chắc không. ② ~とは限らない: không hẳn. ③ ~わけではない: không phải tất cả. ④ ~ないことはない: có khả năng. ⑤ ~ことは~が: thừa nhận rồi giảm nhẹ.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">組</div><div class="kanji-info"><b>TỔ</b><span class="kanji-yomi">On: ソ · Kun: く(む)</span><span class="kanji-mean">Tổ, nhóm</span><span class="kanji-mnemo">Sợi + nguyên. 組 (くみ - tổ), 番組 (ばんぐみ - chương trình), 組織 (そしき).</span></div></div><div class="kanji-item"><div class="kanji-char">指</div><div class="kanji-info"><b>CHỈ</b><span class="kanji-yomi">On: シ · Kun: ゆび・さ(す)</span><span class="kanji-mean">Ngón tay, chỉ</span><span class="kanji-mnemo">Tay + chỉ. 指 (ゆび - ngón tay), 指す (さす - chỉ), 指示 (しじ - chỉ thị).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập NP Bài 8. ② Drill phân biệt 5 mẫu.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa. ② Nhắc T7 Mini Test 2.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> NP Bài 8; ôn TV 9-16; chuẩn bị Mini Test 2; viết Kanji 組, 指 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 24 · T7 · MINI TEST 2</span><h3 class="lesson-title">TV Bài 16 - 社会2: 政治、経済 + Mini Test 2 + Kanji 説 (THUYẾT), 能 (NĂNG)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về chính trị, kinh tế; Mini Test 2 (TV 9-16 + NP 5-8); Kanji 説, 能.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-40p</td><td class="tb-act">Mini Test 2 (40p) + chữa</td><td class="tb-content">① 40 câu TV 9-16 + NP 5-8. ② Chữa.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI + giảng từ Bài 16</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">説</div><div class="kanji-info"><b>THUYẾT</b><span class="kanji-yomi">On: セツ · Kun: と(く)</span><span class="kanji-mean">Thuyết, giải thích</span><span class="kanji-mnemo">Lời + bộ giải thích. 説明 (せつめい), 小説 (しょうせつ - tiểu thuyết).</span></div></div><div class="kanji-item"><div class="kanji-char">能</div><div class="kanji-info"><b>NĂNG</b><span class="kanji-yomi">On: ノウ</span><span class="kanji-mean">Có thể, năng lực</span><span class="kanji-mnemo">Khả năng. 可能 (かのう), 能力 (のうりょく - năng lực).</span></div></div></div></div>① 50 từ Bài 16: 政府, 政党, 選挙, 投票, 大統領, 首相, 法律, 経済, 景気, 物価, 円高, 貿易.</td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện + chữa sâu</td><td class="tb-content">① Bài tập tr.68-71. ② Chữa lỗi Mini Test 2 + sổ lỗi.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa. ② Nhắc Tuần 9.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Sửa Mini Test 2; 50 từ Bài 16; chuẩn bị NP Bài 9 + TV Bài 17-18; viết Kanji 説, 能 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 9 · 3 buổi · TV17 + NP9 + TV18 + Kanji 葉-初</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 25 · T3</span><h3 class="lesson-title">TV Bài 17 - 社会3: 行事、宗教 + Kanji 葉 (DIỆP), 流 (LƯU), 然 (NHIÊN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về sự kiện lễ hội, tôn giáo; Kanji 葉, 流, 然.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz Bài 16.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 17</td><td class="tb-content">① 行事: 祭り, お正月, お盆, クリスマス, 卒業式, 入学式, 結婚式, 葬式. ② 宗教: 神社, お寺, 教会, 仏教, キリスト教, 神様, お祈り.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">葉</div><div class="kanji-info"><b>DIỆP</b><span class="kanji-yomi">On: ヨウ · Kun: は</span><span class="kanji-mean">Lá</span><span class="kanji-mnemo">Cỏ + đời. 葉 (は - lá), 言葉 (ことば - từ ngữ), 紅葉 (もみじ - lá đỏ).</span></div></div><div class="kanji-item"><div class="kanji-char">流</div><div class="kanji-info"><b>LƯU</b><span class="kanji-yomi">On: リュウ · Kun: なが(れる)</span><span class="kanji-mean">Chảy, dòng</span><span class="kanji-mnemo">Nước chảy. 流れる (ながれる), 流行 (りゅうこう - thịnh hành), 一流 (いちりゅう).</span></div></div><div class="kanji-item"><div class="kanji-char">然</div><div class="kanji-info"><b>NHIÊN</b><span class="kanji-yomi">On: ゼン</span><span class="kanji-mean">Như vậy, tự nhiên</span><span class="kanji-mnemo">Thịt + chó + lửa. 自然 (しぜん - tự nhiên), 全然 (ぜんぜん - hoàn toàn).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện + pair</td><td class="tb-content">① Bài tập tr.72-75. ② Kể về 1 lễ hội Việt cho người Nhật.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 17; xem trước NP Bài 9; viết Kanji 葉, 流, 然 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 26 · T5</span><h3 class="lesson-title">NP Bài 9 - Mong muốn, xin phép + Kanji 初 (SƠ), 在 (TẠI)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 3 cụm mong muốn/xin phép; Kanji 初, 在.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 1-8.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng 3 cụm</td><td class="tb-content">① ~てもらいたい/~ていただきたい/~てほしい. ② ~(さ)せてもらいたい/~させていただきたい. ③ ~といい/~ばいい/~たらいい.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">初</div><div class="kanji-info"><b>SƠ</b><span class="kanji-yomi">On: ショ · Kun: はじ(め)・はつ</span><span class="kanji-mean">Đầu, lần đầu</span><span class="kanji-mnemo">Y + dao. 初めて (はじめて - lần đầu), 最初 (さいしょ), 初日 (しょにち).</span></div></div><div class="kanji-item"><div class="kanji-char">在</div><div class="kanji-info"><b>TẠI</b><span class="kanji-yomi">On: ザイ · Kun: あ(る)</span><span class="kanji-mean">Ở, tồn tại</span><span class="kanji-mnemo">Dầm + đất. 現在 (げんざい - hiện tại), 在学 (ざいがく).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập NP Bài 9. ② Đặt 10 câu xin phép lịch sự.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> NP Bài 9; chuẩn bị TV Bài 18; viết Kanji 初, 在 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 27 · T7</span><h3 class="lesson-title">TV Bài 18 - 自然1: 季節と天気、地理 + Kanji 調 (ĐIỀU), 笑 (TIẾU), 議 (NGHỊ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về mùa, thời tiết, địa lý; Kanji 調, 笑, 議.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz Bài 17.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 18</td><td class="tb-content">① 季節: 春, 夏, 秋, 冬, 梅雨, 紅葉. ② 天気: 晴れ, 曇り, 雨, 雪, 風, 雷, 台風, 湿度. ③ 地理: 山, 川, 海, 湖, 島, 平野, 盆地.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">調</div><div class="kanji-info"><b>ĐIỀU</b><span class="kanji-yomi">On: チョウ · Kun: しら(べる)</span><span class="kanji-mean">Điều tra, điều</span><span class="kanji-mnemo">Lời + chu. 調べる (しらべる - điều tra), 体調 (たいちょう - thể trạng).</span></div></div><div class="kanji-item"><div class="kanji-char">笑</div><div class="kanji-info"><b>TIẾU</b><span class="kanji-yomi">On: ショウ · Kun: わら(う)・え(む)</span><span class="kanji-mean">Cười</span><span class="kanji-mnemo">Tre + thiên. 笑う (わらう - cười), 笑顔 (えがお - mặt cười).</span></div></div><div class="kanji-item"><div class="kanji-char">議</div><div class="kanji-info"><b>NGHỊ</b><span class="kanji-yomi">On: ギ</span><span class="kanji-mean">Bàn bạc</span><span class="kanji-mnemo">Lời + nghĩa. 会議 (かいぎ - hội nghị), 議員 (ぎいん - nghị sĩ).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện + đọc</td><td class="tb-content">① Bài tập tr.76-79. ② Đọc dự báo thời tiết Nhật.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa. ② Nhắc Tuần 10.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 18; chuẩn bị Bài 19 + NP Bài 10; viết Kanji 調, 笑, 議 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 10 · 3 buổi · TV19 + NP10 + TV20 + 実力を試そう (15-19) + Kanji 直-選</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 28 · T3</span><h3 class="lesson-title">TV Bài 19 - 自然2: 植物、動物 + Kanji 直 (TRỰC), 夫 (PHU), 選 (TUYỂN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về thực vật, động vật; Kanji 直, 夫, 選.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz Bài 18.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 19</td><td class="tb-content">① 植物: 木, 葉, 花, 種, 根, 育てる, 枯れる, 咲く. ② 動物: 哺乳類, 鳥類, 魚類, 昆虫, 野生, ペット, 飼う, 餌.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">直</div><div class="kanji-info"><b>TRỰC</b><span class="kanji-yomi">On: チョク · Kun: なお(す)</span><span class="kanji-mean">Thẳng, sửa</span><span class="kanji-mnemo">Mắt nhìn thẳng. 直す (なおす - sửa), 正直 (しょうじき - thành thật).</span></div></div><div class="kanji-item"><div class="kanji-char">夫</div><div class="kanji-info"><b>PHU</b><span class="kanji-yomi">On: フ · Kun: おっと</span><span class="kanji-mean">Chồng</span><span class="kanji-mnemo">Người trưởng thành. 夫 (おっと), 夫婦 (ふうふ - vợ chồng).</span></div></div><div class="kanji-item"><div class="kanji-char">選</div><div class="kanji-info"><b>TUYỂN</b><span class="kanji-yomi">On: セン · Kun: えら(ぶ)</span><span class="kanji-mean">Chọn lựa</span><span class="kanji-mnemo">Đi + hai. 選ぶ (えらぶ), 選挙 (せんきょ - bầu cử).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện + đọc</td><td class="tb-content">① Bài tập tr.80-83. ② Đoạn N3 về môi trường.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 19; chuẩn bị NP Bài 10 + 実力を試そう; viết Kanji 直, 夫, 選 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 29 · T5</span><h3 class="lesson-title">NP Bài 10 - Mệnh lệnh &amp; quy tắc + Kanji 権 (QUYỀN), 利 (LỢI)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 5 mẫu mệnh lệnh; Kanji 権, 利.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 9.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng 5 mẫu</td><td class="tb-content">① 命令形 (しろ): mệnh lệnh thô. ② 禁止形 (~な): cấm thô. ③ ~こと: quy tắc. ④ ~べきだ/~べきではない: nên/không nên (đạo lý). ⑤ ~たらどう: gợi ý nhẹ.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">権</div><div class="kanji-info"><b>QUYỀN</b><span class="kanji-yomi">On: ケン</span><span class="kanji-mean">Quyền lực</span><span class="kanji-mnemo">Cây + quyền. 権利 (けんり - quyền lợi), 政権 (せいけん - chính quyền).</span></div></div><div class="kanji-item"><div class="kanji-char">利</div><div class="kanji-info"><b>LỢI</b><span class="kanji-yomi">On: リ · Kun: き(く)</span><span class="kanji-mean">Lợi ích</span><span class="kanji-mnemo">Lúa + dao = thu hoạch. 便利 (べんり - tiện lợi), 利用 (りよう), 利益 (りえき).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập NP Bài 10. ② Đặt 10 câu quy tắc + khuyên.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> NP Bài 10; chuẩn bị TV Bài 20 + 実力を試そう 15-19; viết Kanji 権, 利 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 30 · T7</span><h3 class="lesson-title">TV Bài 20 - 数と量 + 実力を試そう (15-19) + Kanji 制 (CHẾ), 続 (TỤC), 石 (THẠCH)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về số lượng; chốt nhóm 15-19; Kanji 制, 続, 石.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-15p</td><td class="tb-act">実力を試そう 15-19</td><td class="tb-content">① Làm tr.84 trong 15p.</td></tr>
+      <tr><td class="tb-time">15-45p</td><td class="tb-act">Giảng từ Bài 20</td><td class="tb-content">① 数: 倍, 半分, 何倍, ダブル, トリプル. ② 量: 大量, 少量, 多数, 少数, わずか, ほぼ, おおよそ, 約.</td></tr>
+      <tr><td class="tb-time">45-65p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">制</div><div class="kanji-info"><b>CHẾ</b><span class="kanji-yomi">On: セイ</span><span class="kanji-mean">Chế, kiểm soát</span><span class="kanji-mnemo">Sữa + dao. 制度 (せいど - chế độ), 制限 (せいげん - giới hạn).</span></div></div><div class="kanji-item"><div class="kanji-char">続</div><div class="kanji-info"><b>TỤC</b><span class="kanji-yomi">On: ゾク · Kun: つづ(く)</span><span class="kanji-mean">Tiếp tục</span><span class="kanji-mnemo">Sợi + bán. 続く (つづく - tiếp tục), 連続 (れんぞく).</span></div></div><div class="kanji-item"><div class="kanji-char">石</div><div class="kanji-info"><b>THẠCH</b><span class="kanji-yomi">On: セキ · Kun: いし</span><span class="kanji-mean">Đá</span><span class="kanji-mnemo">Hình đá. 石 (いし - đá), 石油 (せきゆ - dầu mỏ).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">65-95p</td><td class="tb-act">Luyện + chữa 実力を試そう</td><td class="tb-content">① Bài tập tr.86-89. ② Chữa.</td></tr>
+      <tr><td class="tb-time">95-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 20; sửa 実力を試そう 15-19; chuẩn bị Bài 21 + NP Bài 11; viết Kanji 制, 続, 石 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 11 · 3 buổi · TV21 + NP11 + Tổng ôn TV + Kanji 進-加</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 31 · T3</span><h3 class="lesson-title">TV Bài 21 - 時間 (Bài Từ vựng cuối) + Kanji 進 (TIẾN), 伝 (TRUYỀN), 加 (GIA)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 50 từ về thời gian; hoàn tất 21 bài TV; Kanji 進, 伝, 加.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz Bài 20.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng từ Bài 21</td><td class="tb-content">① 時間: 期間, 間隔, 瞬間, 永遠, 当時, 現代, 古代, 将来, 一瞬, 期限. ② 動詞: 過ぎる, 経つ, 過ごす, 遅らせる, 急ぐ.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">進</div><div class="kanji-info"><b>TIẾN</b><span class="kanji-yomi">On: シン · Kun: すす(む)</span><span class="kanji-mean">Tiến lên</span><span class="kanji-mnemo">Đi + chim. 進む (すすむ), 進学 (しんがく).</span></div></div><div class="kanji-item"><div class="kanji-char">伝</div><div class="kanji-info"><b>TRUYỀN</b><span class="kanji-yomi">On: デン · Kun: つた(える)</span><span class="kanji-mean">Truyền đạt</span><span class="kanji-mnemo">Người + chuyên. 伝える (つたえる), 手伝う (てつだう - giúp đỡ).</span></div></div><div class="kanji-item"><div class="kanji-char">加</div><div class="kanji-info"><b>GIA</b><span class="kanji-yomi">On: カ · Kun: くわ(える)</span><span class="kanji-mean">Thêm vào</span><span class="kanji-mnemo">Sức + miệng. 加える (くわえる), 参加 (さんか - tham gia), 増加 (ぞうか).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện + chốt 21 bài</td><td class="tb-content">① Bài tập tr.90-93. ② Lập bảng tổng 1050 từ Bài 1-21.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> 50 từ Bài 21; chuẩn bị NP Bài 11; viết Kanji 進, 伝, 加 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 32 · T5</span><h3 class="lesson-title">NP Bài 11 - Quyết định &amp; ý định + Kanji 助 (TRỢ), 点 (ĐIỂM)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 5 mẫu quyết định; Kanji 助, 点.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 10.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Giảng 5 mẫu</td><td class="tb-content">① ~ことにする: quyết định cá nhân. ② ~ことにしている: duy trì thói quen. ③ ~ようにする: cố tạo thói quen. ④ ~ようにしている: nỗ lực duy trì. ⑤ ~(よ)うとする: định/sắp làm. ⑥ ~つもりだ (nghĩa "tưởng nhầm").</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">助</div><div class="kanji-info"><b>TRỢ</b><span class="kanji-yomi">On: ジョ · Kun: たす(ける)</span><span class="kanji-mean">Giúp đỡ</span><span class="kanji-mnemo">Sĩ + sức. 助ける (たすける), 助かる (たすかる).</span></div></div><div class="kanji-item"><div class="kanji-char">点</div><div class="kanji-info"><b>ĐIỂM</b><span class="kanji-yomi">On: テン</span><span class="kanji-mean">Điểm, chấm</span><span class="kanji-mnemo">Chấm cờ. 点 (てん), 点数 (てんすう - điểm số), 問題点 (もんだいてん).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập NP Bài 11. ② Đặt 10 câu quyết định + thói quen.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> NP Bài 11; ôn 1050 từ + danh sách từ yếu cần ôn hằng ngày; viết Kanji 助, 点 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 33 · T7</span><h3 class="lesson-title">Tổng ôn TV 1-21 (rà từ yếu, gần nghĩa) + Kanji 産 (SẢN), 務 (VỤ), 件 (KIỆN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Rà từ yếu, từ gần nghĩa; bài đọc ứng dụng; Kanji 産, 務, 件.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz 30 từ random 21 bài.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Rà từ yếu + cặp gần nghĩa</td><td class="tb-content">① 50 từ học viên hay sai. ② 20 cặp gần nghĩa. ③ 30 cụm collocation.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">産</div><div class="kanji-info"><b>SẢN</b><span class="kanji-yomi">On: サン · Kun: う(む)</span><span class="kanji-mean">Sinh sản, sản phẩm</span><span class="kanji-mnemo">Đứng + sinh. 産業 (さんぎょう), 生産 (せいさん), お土産 (おみやげ).</span></div></div><div class="kanji-item"><div class="kanji-char">務</div><div class="kanji-info"><b>VỤ</b><span class="kanji-yomi">On: ム · Kun: つと(める)</span><span class="kanji-mean">Vụ việc, làm</span><span class="kanji-mnemo">Tay + nỗ lực. 仕事 → 事務 (じむ - văn phòng), 公務員 (こうむいん).</span></div></div><div class="kanji-item"><div class="kanji-char">件</div><div class="kanji-info"><b>KIỆN</b><span class="kanji-yomi">On: ケン</span><span class="kanji-mean">Vụ việc</span><span class="kanji-mnemo">Người + cừu. 事件 (じけん - vụ việc), 条件 (じょうけん - điều kiện).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện đọc ứng dụng</td><td class="tb-content">① Đoạn 250 chữ N3 tổng hợp.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Lập sổ từ yếu cuối. ② Nhắc Tuần 12 + Checkpoint.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Sổ từ yếu cá nhân; chuẩn bị NP Bài 12 (Kính ngữ); chuẩn bị Checkpoint; viết Kanji 産, 務, 件 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 12 · 3 buổi · Bài NP cuối + Checkpoint Giai đoạn 1 + Kanji 命-付</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 34 · T3</span><h3 class="lesson-title">Tổng ôn TV 1-21 (phần 2) + Bài đọc ứng dụng + Kanji 命 (MỆNH), 番 (đã có), 落 (LẠC)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Đọc 2 đoạn N3 tổng hợp; chọn từ trong ngữ cảnh; Kanji 命, 落.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz 40 từ trộn 21 bài.</td></tr>
+      <tr><td class="tb-time">10-40p</td><td class="tb-act">Đọc 2 đoạn N3</td><td class="tb-content">① Đoạn 1 (220 chữ + 5 câu) xã hội. ② Đoạn 2 (260 chữ + 6 câu) giáo dục.</td></tr>
+      <tr><td class="tb-time">40-60p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">命</div><div class="kanji-info"><b>MỆNH</b><span class="kanji-yomi">On: メイ · Kun: いのち</span><span class="kanji-mean">Mệnh, sự sống</span><span class="kanji-mnemo">Lệnh + miệng. 命 (いのち), 命令 (めいれい), 生命 (せいめい).</span></div></div><div class="kanji-item"><div class="kanji-char">落</div><div class="kanji-info"><b>LẠC</b><span class="kanji-yomi">On: ラク · Kun: お(ちる)</span><span class="kanji-mean">Rơi xuống</span><span class="kanji-mnemo">Cỏ + nước + dấu. 落ちる (おちる - rơi), 落ち着く (おちつく - bình tĩnh).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">60-90p</td><td class="tb-act">Luyện chọn từ trong ngữ cảnh</td><td class="tb-content">① 20 câu Moji-Goi dạng Bunmyaku.</td></tr>
+      <tr><td class="tb-time">90-120p</td><td class="tb-act">Sửa + giao bài</td><td class="tb-content">① Sửa.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Sửa toàn bộ; chuẩn bị NP Bài 12 (Kính ngữ); viết Kanji 命, 落 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 35 · T5</span><h3 class="lesson-title">NP Bài 12 - Kính ngữ + Khiêm nhường ngữ - HOÀN TẤT NP! + Kanji 付 (PHÓ), 得 (ĐẮC)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Hệ thống kính ngữ, khiêm nhường ngữ, lịch sự ngữ; hoàn tất 12 bài NP; Kanji 付, 得.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz NP Bài 11.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Giảng Kính/Khiêm/Lịch sự</td><td class="tb-content">① Tiền tố お/ご. ② Động từ tôn kính: お+Vます(bỏ)+になる; bị động ~れる; đặc biệt (いらっしゃる, おっしゃる, 召し上がる, ご覧になる, なさる, くださる). ③ Khiêm nhường: お+Vます(bỏ)+する/いたす (申す, 伺う, 拝見する, 存じる, いただく, 差し上げる). ④ Lịch sự: ある→ござる; だ→でござる; よろしいでしょうか.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">付</div><div class="kanji-info"><b>PHÓ</b><span class="kanji-yomi">On: フ · Kun: つ(く)</span><span class="kanji-mean">Đính, kèm</span><span class="kanji-mnemo">Người + thước = đính. 付ける (つける), 受付 (うけつけ - tiếp tân).</span></div></div><div class="kanji-item"><div class="kanji-char">得</div><div class="kanji-info"><b>ĐẮC</b><span class="kanji-yomi">On: トク · Kun: え(る)</span><span class="kanji-mean">Được, lợi</span><span class="kanji-mnemo">Đi + ngày + thước. 得る (える - được), 得意 (とくい - sở trường).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Luyện</td><td class="tb-content">① Bài tập NP Bài 12. ② Chuyển 20 câu thường → kính/khiêm.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Sửa + chốt 12 bài</td><td class="tb-content">① Hoàn tất 12 NP + 21 TV. ② Nhắc T7 Checkpoint.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> NP Bài 12; chuẩn bị Checkpoint Giai đoạn 1; viết Kanji 付, 得 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 36 · T7 · CHECKPOINT GĐ1</span><h3 class="lesson-title">Checkpoint Giai đoạn 1 (TV 1-21 + NP 1-12) + Kanji 好 (HẢO), 違 (VI)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Đánh giá toàn diện sau GĐ1; chia nhóm cho GĐ2; Kanji 好, 違.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">KANJI MỚI + phổ biến</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">好</div><div class="kanji-info"><b>HẢO</b><span class="kanji-yomi">On: コウ · Kun: す(き)</span><span class="kanji-mean">Tốt, thích</span><span class="kanji-mnemo">Phụ nữ + con. 好き (すき), 好む (このむ), 友好 (ゆうこう - hữu nghị).</span></div></div><div class="kanji-item"><div class="kanji-char">違</div><div class="kanji-info"><b>VI</b><span class="kanji-yomi">On: イ · Kun: ちが(う)</span><span class="kanji-mean">Khác, sai</span><span class="kanji-mnemo">Đi + đối lập. 違う (ちがう), 違い (ちがい - sự khác).</span></div></div></div></div>① Cấu trúc: 80 câu (50 TV + 30 NP) + đọc 250 chữ + nghe 10 câu.</td></tr>
+      <tr><td class="tb-time">10-90p</td><td class="tb-act">Checkpoint 80p</td><td class="tb-content">① Phần 1: 50 câu TV (25p). ② Phần 2: 30 câu NP (20p). ③ Phần 3: đọc 250 chữ + 6 câu (15p). ④ Phần 4: nghe 10 câu (15p). ⑤ Phần 5: viết 200 chữ (5p ghi note).</td></tr>
+      <tr><td class="tb-time">90-115p</td><td class="tb-act">Chữa + chia nhóm cho GĐ2</td><td class="tb-content">① Chữa. ② 3 nhóm: (a) cần củng cố nền, (b) cần tăng tốc kỹ năng, (c) sẵn sàng luyện đề.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Định hướng GĐ2</td><td class="tb-content">① 12 tuần cuối: T3 Kanji+Đọc, T5 Nghe, T7 Luyện đề.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN cuối GĐ1:</strong> Sửa toàn bộ Checkpoint; rà soát sổ lỗi; chuẩn bị Kanji 001-030 cho buổi 37; xem trước cấu trúc đề thi N3; viết Kanji 好, 違 × 5 dòng.</div>
+  </div>
+</section>
+
+<!-- GIAI ĐOẠN 2 -->
+<section class="doc-section" id="section-3">
+  <div class="section-head" data-mark="III"><span class="section-kicker">Phần 3 · Tuần 13-24</span><h2>Giai đoạn 2 · Kỹ năng &amp; Luyện đề (36 buổi)</h2></div>
+  <div class="month-banner">
+    <span class="month-banner-overline">Mục tiêu Giai đoạn 2</span>
+    <h3>Đọc hiểu + Nghe hiểu + Kanji 240 chữ + 3 Full Mock</h3>
+    <p class="month-goal">12 tuần × 3 buổi: T3 Kanji+Đọc (30 Kanji/tuần ≈ 360 chữ); T5 Nghe; T7 Luyện đề. 3 Full Mock + Final checkpoint.</p>
+  </div>
+
+  <div class="week-divider">Tuần 13 · 3 buổi · Kanji 001-030 + Nghe ngắn + Mini set + Kanji 殺-反</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 37 · T3</span><h3 class="lesson-title">Kanji 001-030 + Đọc câu chủ đề &amp; từ khóa + Kanji 殺 (SÁT), 置 (TRÍ), 返 (PHẢN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Kỹ thuật đọc câu chủ đề; nhận diện 30 Kanji đầu Kanji Master; Kanji 殺, 置, 返.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill 30 Kanji 001-030 (cách đọc + nghĩa). ② Sửa BTVN Checkpoint.</td></tr>
+      <tr><td class="tb-time">10-45p</td><td class="tb-act">Kỹ thuật đọc câu chủ đề</td><td class="tb-content">① Câu đầu thường nêu chủ đề (主題). ② Câu cuối thường là ý chính (主張). ③ Quét từ khóa lặp lại. ④ Phân biệt thông tin chính / chi tiết / lý do.</td></tr>
+      <tr><td class="tb-time">45-65p</td><td class="tb-act">KANJI MỚI (Kanji Master 001-030)</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">殺</div><div class="kanji-info"><b>SÁT</b><span class="kanji-yomi">On: サツ · Kun: ころ(す)</span><span class="kanji-mean">Giết</span><span class="kanji-mnemo">殺人 (さつじん - giết người), 自殺 (じさつ).</span></div></div><div class="kanji-item"><div class="kanji-char">置</div><div class="kanji-info"><b>TRÍ</b><span class="kanji-yomi">On: チ · Kun: お(く)</span><span class="kanji-mean">Đặt, để</span><span class="kanji-mnemo">置く (おく), 位置 (いち - vị trí), 設置 (せっち - lắp đặt).</span></div></div><div class="kanji-item"><div class="kanji-char">返</div><div class="kanji-info"><b>PHẢN</b><span class="kanji-yomi">On: ヘン · Kun: かえ(す)</span><span class="kanji-mean">Trả lại</span><span class="kanji-mnemo">返す (かえす), 返事 (へんじ - trả lời), 返却 (へんきゃく).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">65-95p</td><td class="tb-act">Đọc 200 chữ + 5 câu</td><td class="tb-content">① Đoạn 200 chữ N3 đơn giản. ② Áp dụng kỹ thuật chủ đề + từ khóa.</td></tr>
+      <tr><td class="tb-time">95-120p</td><td class="tb-act">Drill Kanji + giao bài</td><td class="tb-content">① Đọc Kanji trong context. ② Nhắc T5 Nghe bắt yêu cầu.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn Kanji 001-030; đọc 2 đoạn 200 chữ; viết Kanji 殺, 置, 返 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 38 · T5</span><h3 class="lesson-title">Nghe - Bắt yêu cầu câu hỏi, nhân vật, bối cảnh + Kanji 論 (LUẬN), 際 (TẾ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Nghe câu hỏi trước, xác định nhân vật và bối cảnh; Kanji 論, 際.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill 30 Kanji đã học. ② Phổ biến cấu trúc Choukai N3.</td></tr>
+      <tr><td class="tb-time">10-45p</td><td class="tb-act">Choukai Mondai 1-2 (12 câu)</td><td class="tb-content">① Mondai 1 (hành động tiếp theo) 6 câu. ② Mondai 2 (điểm chính) 6 câu. ③ Chiến lược: nghe câu hỏi trước.</td></tr>
+      <tr><td class="tb-time">45-65p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">論</div><div class="kanji-info"><b>LUẬN</b><span class="kanji-yomi">On: ロン</span><span class="kanji-mean">Lập luận</span><span class="kanji-mnemo">議論 (ぎろん - tranh luận), 論文 (ろんぶん - luận văn), 結論 (けつろん).</span></div></div><div class="kanji-item"><div class="kanji-char">際</div><div class="kanji-info"><b>TẾ</b><span class="kanji-yomi">On: サイ · Kun: きわ</span><span class="kanji-mean">Lúc, dịp</span><span class="kanji-mnemo">国際 (こくさい - quốc tế), 実際 (じっさい - thực tế), この際.</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">65-95p</td><td class="tb-act">Chữa Choukai + transcript</td><td class="tb-content">① Chữa từng câu. ② Đọc transcript, gạch keyword.</td></tr>
+      <tr><td class="tb-time">95-120p</td><td class="tb-act">Drill + giao bài</td><td class="tb-content">① Shadowing 5 đoạn. ② Nhắc T7 mini set.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Nghe lại 12 câu + chép transcript; viết Kanji 論, 際 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 39 · T7</span><h3 class="lesson-title">Mini set Đọc hiểu + chữa từ vựng + Kanji 歳 (TUẾ), 反 (PHẢN), 形 (HÌNH)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Mini set 3 đoạn ngắn + chữa lỗi từ vựng; Kanji 歳, 反, 形.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz Kanji + từ vựng yếu.</td></tr>
+      <tr><td class="tb-time">10-60p</td><td class="tb-act">Mini set 3 đoạn ngắn</td><td class="tb-content">① 3 đoạn (150 + 180 + 220 chữ). ② Mỗi đoạn 3-4 câu hỏi. ③ Căn giờ.</td></tr>
+      <tr><td class="tb-time">60-80p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">歳</div><div class="kanji-info"><b>TUẾ</b><span class="kanji-yomi">On: サイ・セイ</span><span class="kanji-mean">Tuổi, năm</span><span class="kanji-mnemo">30歳, 万歳 (ばんざい).</span></div></div><div class="kanji-item"><div class="kanji-char">反</div><div class="kanji-info"><b>PHẢN</b><span class="kanji-yomi">On: ハン · Kun: そ(る)</span><span class="kanji-mean">Phản, chống</span><span class="kanji-mnemo">反対 (はんたい - phản đối), 違反 (いはん - vi phạm).</span></div></div><div class="kanji-item"><div class="kanji-char">形</div><div class="kanji-info"><b>HÌNH</b><span class="kanji-yomi">On: ケイ · Kun: かたち</span><span class="kanji-mean">Hình dạng</span><span class="kanji-mnemo">形 (かたち), 図形 (ずけい), 形式 (けいしき).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">80-105p</td><td class="tb-act">Chữa sâu + từ vựng yếu</td><td class="tb-content">① Chữa từng câu. ② Lập sổ từ yếu mới.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Tổng kết + giao bài</td><td class="tb-content">① 5 từ yếu cần ôn. ② Nhắc Tuần 14.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Sửa mini set; ôn 30 Kanji + từ yếu; viết Kanji 歳, 反, 形 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 14 · 3 buổi · Kanji 031-060 + Hội thoại ngắn + Tích hợp TV+NP+Đọc + Kanji 光-必</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 40 · T3</span><h3 class="lesson-title">Kanji 031-060 + Đọc đoạn ngắn, ý chính + Kanji 光 (QUANG), 首 (THỦ), 勝 (THẮNG)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> 30 Kanji tiếp; đọc xác định ý chính; Kanji 光, 首, 勝.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji 031-060.</td></tr>
+      <tr><td class="tb-time">10-45p</td><td class="tb-act">Đọc 2 đoạn ngắn N3</td><td class="tb-content">① Đoạn 1 (180 chữ) - xác định ý chính. ② Đoạn 2 (220 chữ) - chi tiết.</td></tr>
+      <tr><td class="tb-time">45-65p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">光</div><div class="kanji-info"><b>QUANG</b><span class="kanji-yomi">On: コウ · Kun: ひかり</span><span class="kanji-mean">Ánh sáng</span><span class="kanji-mnemo">光 (ひかり), 観光 (かんこう - du lịch), 日光 (にっこう).</span></div></div><div class="kanji-item"><div class="kanji-char">首</div><div class="kanji-info"><b>THỦ</b><span class="kanji-yomi">On: シュ · Kun: くび</span><span class="kanji-mean">Đầu, cổ</span><span class="kanji-mnemo">首 (くび), 首相 (しゅしょう), 首都 (しゅと - thủ đô).</span></div></div><div class="kanji-item"><div class="kanji-char">勝</div><div class="kanji-info"><b>THẮNG</b><span class="kanji-yomi">On: ショウ · Kun: か(つ)</span><span class="kanji-mean">Thắng</span><span class="kanji-mnemo">勝つ (かつ), 優勝 (ゆうしょう - vô địch).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">65-95p</td><td class="tb-act">Drill Kanji trong context</td><td class="tb-content">① Đọc Kanji 001-060 trong đoạn.</td></tr>
+      <tr><td class="tb-time">95-120p</td><td class="tb-act">Tổng kết + giao bài</td><td class="tb-content">① Phân tích cấu trúc đoạn.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn 60 Kanji; 2 đoạn N3; viết Kanji 光, 首, 勝 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 41 · T5</span><h3 class="lesson-title">Nghe hội thoại ngắn - chính/phụ + Kanji 係 (HỆ), 由 (DO)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Phân biệt thông tin chính/phụ trong hội thoại; Kanji 係, 由.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Choukai Mondai 1+2 (12 câu)</td><td class="tb-content">① Nghe hội thoại 2-3 nhân vật. ② Phân biệt thông tin chính vs chi tiết phụ.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">係</div><div class="kanji-info"><b>HỆ</b><span class="kanji-yomi">On: ケイ · Kun: かか(る)</span><span class="kanji-mean">Liên hệ, người phụ trách</span><span class="kanji-mnemo">関係 (かんけい), 係 (かかり - người phụ trách).</span></div></div><div class="kanji-item"><div class="kanji-char">由</div><div class="kanji-info"><b>DO</b><span class="kanji-yomi">On: ユウ・ユ</span><span class="kanji-mean">Lý do</span><span class="kanji-mnemo">理由 (りゆう - lý do), 自由 (じゆう - tự do).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-105p</td><td class="tb-act">Chữa + transcript</td><td class="tb-content">① Chữa kỹ. ② Đọc transcript.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Shadowing + giao bài</td><td class="tb-content">① Shadowing 5 đoạn.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Nghe lại + transcript; viết Kanji 係, 由 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 42 · T7</span><h3 class="lesson-title">Bài tập tích hợp TV + NP + Đọc ngắn + Kanji 愛 (ÁI), 都 (ĐÔ), 放 (PHÓNG)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Đề mini tích hợp 3 phần; Kanji 愛, 都, 放.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz Kanji yếu.</td></tr>
+      <tr><td class="tb-time">10-55p</td><td class="tb-act">Đề mini 40 câu TV+NP + 2 đoạn đọc</td><td class="tb-content">① 40 câu TV+NP (20p). ② 2 đoạn 150-220 chữ + 5 câu (15p). ③ Chấm chéo.</td></tr>
+      <tr><td class="tb-time">55-75p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">愛</div><div class="kanji-info"><b>ÁI</b><span class="kanji-yomi">On: アイ</span><span class="kanji-mean">Yêu thương</span><span class="kanji-mnemo">愛 (あい), 愛する (あいする), 恋愛 (れんあい).</span></div></div><div class="kanji-item"><div class="kanji-char">都</div><div class="kanji-info"><b>ĐÔ</b><span class="kanji-yomi">On: ト・ツ · Kun: みやこ</span><span class="kanji-mean">Đô thị</span><span class="kanji-mnemo">京都 (きょうと), 都市 (とし), 東京都.</span></div></div><div class="kanji-item"><div class="kanji-char">放</div><div class="kanji-info"><b>PHÓNG</b><span class="kanji-yomi">On: ホウ · Kun: はな(す)</span><span class="kanji-mean">Thả, phát</span><span class="kanji-mnemo">放送 (ほうそう - phát sóng), 開放 (かいほう).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">75-105p</td><td class="tb-act">Chữa sâu + nhật ký lỗi</td><td class="tb-content">① Chữa từng câu. ② Cập nhật sổ lỗi.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Top 5 lỗi.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Sửa đề mini; ôn lỗi yếu; viết Kanji 愛, 都, 放 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 15 · 3 buổi · Kanji 061-090 + Tình huống đời sống + Mini test kỹ năng 1 + Kanji 確-状</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 43 · T3</span><h3 class="lesson-title">Kanji 061-090 + Đọc thông báo, email, ghi chú + Kanji 確 (XÁC), 過 (QUÁ), 約 (ƯỚC)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Đọc văn bản thông báo/ghi chú; Kanji 確, 過, 約.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji 061-090.</td></tr>
+      <tr><td class="tb-time">10-45p</td><td class="tb-act">Đọc thông báo + email</td><td class="tb-content">① 3 thông báo Nhật (lịch, sự kiện, hướng dẫn). ② 2 email công việc. ③ Trả lời câu hỏi.</td></tr>
+      <tr><td class="tb-time">45-65p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">確</div><div class="kanji-info"><b>XÁC</b><span class="kanji-yomi">On: カク · Kun: たし(か)</span><span class="kanji-mean">Chắc chắn</span><span class="kanji-mnemo">確認 (かくにん - xác nhận), 確かに (たしかに).</span></div></div><div class="kanji-item"><div class="kanji-char">過</div><div class="kanji-info"><b>QUÁ</b><span class="kanji-yomi">On: カ · Kun: す(ぎる)</span><span class="kanji-mean">Quá, qua</span><span class="kanji-mnemo">過ぎる (すぎる), 過去 (かこ - quá khứ).</span></div></div><div class="kanji-item"><div class="kanji-char">約</div><div class="kanji-info"><b>ƯỚC</b><span class="kanji-yomi">On: ヤク</span><span class="kanji-mean">Khoảng, hứa</span><span class="kanji-mnemo">約束 (やくそく - lời hứa), 予約 (よやく - đặt trước).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">65-95p</td><td class="tb-act">Drill Kanji trong context</td><td class="tb-content">① Đọc Kanji trong thông báo.</td></tr>
+      <tr><td class="tb-time">95-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① 5 từ thường gặp trong thông báo.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn 90 Kanji; sưu tầm 5 thông báo Nhật; viết Kanji 確, 過, 約 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 44 · T5</span><h3 class="lesson-title">Nghe tình huống đời sống - hỏi đường, lịch hẹn, mua bán + Kanji 馬 (MÃ), 状 (TRẠNG)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Nghe tình huống đời sống thật; Kanji 馬, 状.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Choukai Mondai 3-4 (10 câu)</td><td class="tb-content">① Mondai 3 (ý chính từ hội thoại) 4 câu. ② Mondai 4 (phản xạ ngắn) 6 câu. ③ Tình huống: hỏi đường, lịch hẹn, mua bán.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">馬</div><div class="kanji-info"><b>MÃ</b><span class="kanji-yomi">On: バ · Kun: うま</span><span class="kanji-mean">Ngựa</span><span class="kanji-mnemo">馬 (うま), 競馬 (けいば - đua ngựa).</span></div></div><div class="kanji-item"><div class="kanji-char">状</div><div class="kanji-info"><b>TRẠNG</b><span class="kanji-yomi">On: ジョウ</span><span class="kanji-mean">Tình trạng, thư</span><span class="kanji-mnemo">状況 (じょうきょう - tình huống), 招待状 (しょうたいじょう - thư mời).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Chữa + chiến lược</td><td class="tb-content">① Chữa. ② Chiến lược nghe ngắn: tập trung động từ chính.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Shadowing + giao bài</td><td class="tb-content">① Shadowing 5 đoạn.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Nghe + transcript; viết Kanji 馬, 状 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 45 · T7 · MINI TEST KỸ NĂNG 1</span><h3 class="lesson-title">Mini test kỹ năng 1 (TV+NP+Đọc+Nghe) + Kanji 想 (TƯỞNG), 官 (QUAN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Đánh giá 4 kỹ năng; Kanji 想, 官.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Phổ biến</td><td class="tb-content">① Cấu trúc Mini test kỹ năng 1.</td></tr>
+      <tr><td class="tb-time">10-80p</td><td class="tb-act">Làm bài 70p</td><td class="tb-content">① Moji-Goi (15p): 25 câu. ② Bunpou (15p): 20 câu. ③ Dokkai (20p): 2 đoạn + 8 câu. ④ Choukai (20p): 12 câu.</td></tr>
+      <tr><td class="tb-time">80-100p</td><td class="tb-act">KANJI MỚI + chữa</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">想</div><div class="kanji-info"><b>TƯỞNG</b><span class="kanji-yomi">On: ソウ</span><span class="kanji-mean">Tưởng tượng</span><span class="kanji-mnemo">予想 (よそう - dự đoán), 感想 (かんそう - cảm tưởng).</span></div></div><div class="kanji-item"><div class="kanji-char">官</div><div class="kanji-info"><b>QUAN</b><span class="kanji-yomi">On: カン</span><span class="kanji-mean">Quan chức</span><span class="kanji-mnemo">警官 (けいかん - cảnh sát), 官庁 (かんちょう - cơ quan).</span></div></div></div></div>① Chữa Mini test.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Phân loại lỗi + giao bài</td><td class="tb-content">① 5 nhóm lỗi cá nhân.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Chữa Mini test theo nhật ký lỗi; viết Kanji 想, 官 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 16 · 3 buổi · Kanji 091-120 + Lý do/cảm xúc + Luyện từng phần + Kanji 交-果</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 46 · T3</span><h3 class="lesson-title">Kanji 091-120 + Đọc đoạn so sánh, ý kiến + Kanji 交 (GIAO), 米 (MỄ), 配 (PHỐI)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Đọc đoạn so sánh + ý kiến cá nhân; Kanji 交, 米, 配.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji 091-120.</td></tr>
+      <tr><td class="tb-time">10-45p</td><td class="tb-act">Đọc đoạn so sánh, ý kiến</td><td class="tb-content">① Đoạn 250 chữ so sánh 2 quan điểm. ② Xác định ý kiến của tác giả.</td></tr>
+      <tr><td class="tb-time">45-65p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">交</div><div class="kanji-info"><b>GIAO</b><span class="kanji-yomi">On: コウ · Kun: まじ(わる)</span><span class="kanji-mean">Giao thông, gặp</span><span class="kanji-mnemo">交通 (こうつう), 交換 (こうかん - trao đổi).</span></div></div><div class="kanji-item"><div class="kanji-char">米</div><div class="kanji-info"><b>MỄ</b><span class="kanji-yomi">On: ベイ · Kun: こめ</span><span class="kanji-mean">Gạo, Mỹ</span><span class="kanji-mnemo">米 (こめ - gạo), アメリカ → 米国 (べいこく).</span></div></div><div class="kanji-item"><div class="kanji-char">配</div><div class="kanji-info"><b>PHỐI</b><span class="kanji-yomi">On: ハイ · Kun: くば(る)</span><span class="kanji-mean">Phân phát</span><span class="kanji-mnemo">配る (くばる), 心配 (しんぱい - lo lắng), 配達 (はいたつ).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">65-95p</td><td class="tb-act">Drill Kanji trong context</td><td class="tb-content">① Đọc Kanji 001-120 trong đoạn.</td></tr>
+      <tr><td class="tb-time">95-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① 5 cụm "diễn đạt ý kiến" hay gặp.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn 120 Kanji; đọc 2 đoạn so sánh; viết Kanji 交, 米, 配 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 47 · T5</span><h3 class="lesson-title">Nghe lý do, cảm xúc, thái độ + Kanji 若 (NHƯỢC), 資 (TƯ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Nghe lý do, cảm xúc và ý định người nói; Kanji 若, 資.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Choukai 12 câu (Mondai 1-3)</td><td class="tb-content">① Nghe lý do từ chối/đồng ý. ② Nghe cảm xúc qua giọng điệu. ③ Nghe thái độ phản đối/ủng hộ.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">若</div><div class="kanji-info"><b>NHƯỢC</b><span class="kanji-yomi">On: ジャク · Kun: わか(い)</span><span class="kanji-mean">Trẻ</span><span class="kanji-mnemo">若い (わかい), 若者 (わかもの - thanh niên).</span></div></div><div class="kanji-item"><div class="kanji-char">資</div><div class="kanji-info"><b>TƯ</b><span class="kanji-yomi">On: シ</span><span class="kanji-mean">Tư liệu, tiền</span><span class="kanji-mnemo">資料 (しりょう - tài liệu), 資金 (しきん - quỹ).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Chữa + chiến lược</td><td class="tb-content">① Chiến lược nghe cảm xúc: chú ý 思う/感じる/気がする.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Shadowing + giao bài</td><td class="tb-content">① Shadowing 5 đoạn.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Nghe lại + transcript; viết Kanji 若, 資 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 48 · T7</span><h3 class="lesson-title">Luyện đề từng phần - Ngôn ngữ tri thức + Đọc + Kanji 常 (THƯỜNG), 果 (QUẢ), 呼 (HÔ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Luyện 50 câu Moji-Goi+Bunpou + đọc; Kanji 常, 果, 呼.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz Kanji.</td></tr>
+      <tr><td class="tb-time">10-55p</td><td class="tb-act">50 câu Moji-Goi + Bunpou</td><td class="tb-content">① 25 Moji-Goi (15p). ② 25 Bunpou (15p). ③ Chữa chấm chéo.</td></tr>
+      <tr><td class="tb-time">55-75p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">常</div><div class="kanji-info"><b>THƯỜNG</b><span class="kanji-yomi">On: ジョウ · Kun: つね</span><span class="kanji-mean">Thường, bình thường</span><span class="kanji-mnemo">常に (つねに - luôn), 日常 (にちじょう), 非常 (ひじょう).</span></div></div><div class="kanji-item"><div class="kanji-char">果</div><div class="kanji-info"><b>QUẢ</b><span class="kanji-yomi">On: カ · Kun: は(たす)</span><span class="kanji-mean">Quả, kết quả</span><span class="kanji-mnemo">結果 (けっか - kết quả), 効果 (こうか - hiệu quả), 果物 (くだもの).</span></div></div><div class="kanji-item"><div class="kanji-char">呼</div><div class="kanji-info"><b>HÔ</b><span class="kanji-yomi">On: コ · Kun: よ(ぶ)</span><span class="kanji-mean">Gọi</span><span class="kanji-mnemo">呼ぶ (よぶ), 呼吸 (こきゅう - hô hấp).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">75-105p</td><td class="tb-act">Đọc 1 đoạn N3 dài + 4 câu</td><td class="tb-content">① Đoạn 280 chữ.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Phân tích "bẫy diễn đạt khác từ"</td><td class="tb-content">① Cùng ý nhưng từ khác.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Sửa 50 câu + đoạn dài; viết Kanji 常, 果, 呼 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 17 · 3 buổi · Kanji 121-150 + Bài nói nhiều bước + Chữa đề + Kanji 共-両</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 49 · T3</span><h3 class="lesson-title">Kanji 121-150 + Đọc đoạn trung bình, nối logic + Kanji 共 (CỘNG), 残 (TÀN), 判 (PHÁN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Đọc đoạn 280 chữ; nối logic bằng từ liên kết; Kanji 共, 残, 判.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji 121-150.</td></tr>
+      <tr><td class="tb-time">10-45p</td><td class="tb-act">Đọc 280 chữ + 6 câu</td><td class="tb-content">① Đoạn 280 chữ N3. ② Chú ý từ liên kết: そして, しかし, つまり, 一方, したがって, それに.</td></tr>
+      <tr><td class="tb-time">45-65p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">共</div><div class="kanji-info"><b>CỘNG</b><span class="kanji-yomi">On: キョウ · Kun: とも</span><span class="kanji-mean">Cộng, chung</span><span class="kanji-mnemo">共に (ともに), 公共 (こうきょう - công cộng).</span></div></div><div class="kanji-item"><div class="kanji-char">残</div><div class="kanji-info"><b>TÀN</b><span class="kanji-yomi">On: ザン · Kun: のこ(る)</span><span class="kanji-mean">Còn lại</span><span class="kanji-mnemo">残る (のこる), 残業 (ざんぎょう - làm thêm), 残念 (ざんねん).</span></div></div><div class="kanji-item"><div class="kanji-char">判</div><div class="kanji-info"><b>PHÁN</b><span class="kanji-yomi">On: ハン</span><span class="kanji-mean">Phán đoán</span><span class="kanji-mnemo">判断 (はんだん - phán đoán), 裁判 (さいばん - tòa án).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">65-95p</td><td class="tb-act">Drill từ liên kết + Kanji</td><td class="tb-content">① 10 từ liên kết phổ biến.</td></tr>
+      <tr><td class="tb-time">95-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Tốc độ đọc mục tiêu N3.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn 150 Kanji; đọc 2 đoạn nối logic; viết Kanji 共, 残, 判 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 50 · T5</span><h3 class="lesson-title">Nghe bài nói nhiều bước hành động + Kanji 役 (DỊCH), 他 (THA)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Nghe bài có nhiều bước hành động; Kanji 役, 他.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Choukai bài nói nhiều bước</td><td class="tb-content">① 8 câu hội thoại có nhiều bước. ② Ghi note nhanh các bước.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">役</div><div class="kanji-info"><b>DỊCH/VAI</b><span class="kanji-yomi">On: ヤク</span><span class="kanji-mean">Vai trò</span><span class="kanji-mnemo">役 (やく - vai), 役に立つ (やくにたつ - hữu ích).</span></div></div><div class="kanji-item"><div class="kanji-char">他</div><div class="kanji-info"><b>THA</b><span class="kanji-yomi">On: タ · Kun: ほか</span><span class="kanji-mean">Khác</span><span class="kanji-mnemo">他 (ほか), その他 (そのほか).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Chữa + transcript</td><td class="tb-content">① Chữa từng câu.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Shadowing</td><td class="tb-content">① Shadowing 5 đoạn.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Nghe + transcript; viết Kanji 役, 他 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 51 · T7</span><h3 class="lesson-title">Chữa đề đọc theo chiến lược + Kanji 術 (THUẬT), 支 (CHI), 両 (LƯỠNG)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Chiến lược chọn câu làm trước/sau; Kanji 術, 支, 両.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz Kanji.</td></tr>
+      <tr><td class="tb-time">10-55p</td><td class="tb-act">3 đoạn N3 + 9 câu</td><td class="tb-content">① 3 đoạn (180+240+300 chữ). ② Chọn câu dễ trước, khó sau.</td></tr>
+      <tr><td class="tb-time">55-75p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">術</div><div class="kanji-info"><b>THUẬT</b><span class="kanji-yomi">On: ジュツ</span><span class="kanji-mean">Thuật, kỹ thuật</span><span class="kanji-mnemo">技術 (ぎじゅつ - kỹ thuật), 美術 (びじゅつ), 手術 (しゅじゅつ).</span></div></div><div class="kanji-item"><div class="kanji-char">支</div><div class="kanji-info"><b>CHI</b><span class="kanji-yomi">On: シ · Kun: ささ(える)</span><span class="kanji-mean">Chi, ủng hộ</span><span class="kanji-mnemo">支える (ささえる), 支払う (しはらう - thanh toán), 支店 (してん).</span></div></div><div class="kanji-item"><div class="kanji-char">両</div><div class="kanji-info"><b>LƯỠNG</b><span class="kanji-yomi">On: リョウ</span><span class="kanji-mean">Hai, cả hai</span><span class="kanji-mnemo">両親 (りょうしん - bố mẹ), 両方 (りょうほう).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">75-105p</td><td class="tb-act">Chữa sâu</td><td class="tb-content">① Phân tích keyword + bẫy.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Chiến lược tốc độ.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Sửa 3 đoạn; viết Kanji 術, 支, 両 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 18 · 3 buổi · Kanji 151-180 + Chi tiết số liệu + Mini test kỹ năng 2 + Kanji 乗-断</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 52 · T3</span><h3 class="lesson-title">Kanji 151-180 + Đọc đoạn dài, lập luận tác giả + Kanji 乗 (THỪA), 済 (TẾ), 供 (CUNG)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Đọc đoạn 350 chữ, xác định lập luận; Kanji 乗, 済, 供.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji 151-180.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Đọc 350 chữ + 6 câu</td><td class="tb-content">① Đoạn 350 chữ N3 dài. ② Xác định lập luận chính + bằng chứng.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">乗</div><div class="kanji-info"><b>THỪA</b><span class="kanji-yomi">On: ジョウ · Kun: の(る)</span><span class="kanji-mean">Lên xe</span><span class="kanji-mnemo">乗る (のる), 乗車 (じょうしゃ), 乗客 (じょうきゃく).</span></div></div><div class="kanji-item"><div class="kanji-char">済</div><div class="kanji-info"><b>TẾ</b><span class="kanji-yomi">On: サイ · Kun: す(む)</span><span class="kanji-mean">Xong, kinh tế</span><span class="kanji-mnemo">経済 (けいざい), 済む (すむ - xong).</span></div></div><div class="kanji-item"><div class="kanji-char">供</div><div class="kanji-info"><b>CUNG</b><span class="kanji-yomi">On: キョウ · Kun: そな(える)・とも</span><span class="kanji-mean">Cung cấp</span><span class="kanji-mnemo">子供 (こども - trẻ con), 提供 (ていきょう - cung cấp).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Drill Kanji trong context</td><td class="tb-content">① Đọc Kanji 001-180 trong đoạn dài.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① 5 cấu trúc lập luận thường gặp.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn 180 Kanji; đọc 1 đoạn 350 chữ; viết Kanji 乗, 済, 供 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 53 · T5</span><h3 class="lesson-title">Nghe chi tiết số liệu, thời gian, địa điểm + Kanji 格 (CÁCH), 打 (ĐẢ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Nghe chi tiết cụ thể; Kanji 格, 打.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Choukai chi tiết (12 câu)</td><td class="tb-content">① Nghe số liệu, thời gian, địa điểm. ② Ghi note nhanh.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">格</div><div class="kanji-info"><b>CÁCH</b><span class="kanji-yomi">On: カク</span><span class="kanji-mean">Cách, tư cách</span><span class="kanji-mnemo">性格 (せいかく), 合格 (ごうかく - đỗ), 格好 (かっこう - hình thức).</span></div></div><div class="kanji-item"><div class="kanji-char">打</div><div class="kanji-info"><b>ĐẢ</b><span class="kanji-yomi">On: ダ · Kun: う(つ)</span><span class="kanji-mean">Đánh</span><span class="kanji-mnemo">打つ (うつ), 打ち合わせ (うちあわせ - cuộc họp).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Chữa + chiến lược</td><td class="tb-content">① Chiến lược ghi note số.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Shadowing</td><td class="tb-content">① Shadowing 5 đoạn có nhiều số.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Nghe + transcript; viết Kanji 格, 打 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 54 · T7 · MINI TEST KỸ NĂNG 2</span><h3 class="lesson-title">Mini test kỹ năng 2 (Đọc trung bình + Nghe) + Kanji 御 (NGỰ), 断 (ĐOẠN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Test sức bền + bài dài; Kanji 御, 断.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Phổ biến</td><td class="tb-content">① Cấu trúc Mini test 2.</td></tr>
+      <tr><td class="tb-time">10-70p</td><td class="tb-act">Làm bài 60p</td><td class="tb-content">① Dokkai (35p): 3 đoạn (200+280+350) + 12 câu. ② Choukai (25p): 15 câu.</td></tr>
+      <tr><td class="tb-time">70-90p</td><td class="tb-act">KANJI MỚI + chữa</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">御</div><div class="kanji-info"><b>NGỰ</b><span class="kanji-yomi">On: ゴ・オ</span><span class="kanji-mean">Tiền tố kính ngữ</span><span class="kanji-mnemo">御中 (おんちゅう), ご飯 (ごはん).</span></div></div><div class="kanji-item"><div class="kanji-char">断</div><div class="kanji-info"><b>ĐOẠN</b><span class="kanji-yomi">On: ダン · Kun: ことわ(る)</span><span class="kanji-mean">Quyết định, từ chối</span><span class="kanji-mnemo">判断 (はんだん), 断る (ことわる - từ chối).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">90-115p</td><td class="tb-act">Chữa sâu + nhật ký</td><td class="tb-content">① 5 nhóm lỗi.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Định hướng tuần 19-20.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Chữa Mini test 2; viết Kanji 御, 断 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 19 · 3 buổi · Kanji 181-210 + Hội thoại loại trừ + Luyện Choukai + Kanji 式-参</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 55 · T3</span><h3 class="lesson-title">Kanji 181-210 + Đọc bảng biểu, quảng cáo + Kanji 式 (THỨC), 師 (SƯ), 告 (CÁO)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Đọc bảng biểu/quảng cáo thực dụng; Kanji 式, 師, 告.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji 181-210.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Đọc bảng biểu + quảng cáo</td><td class="tb-content">① Bảng giờ tàu / vé / dịch vụ. ② Quảng cáo căn hộ / khóa học. ③ Trả lời câu hỏi nhanh.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">式</div><div class="kanji-info"><b>THỨC</b><span class="kanji-yomi">On: シキ</span><span class="kanji-mean">Lễ, kiểu</span><span class="kanji-mnemo">結婚式 (けっこんしき), 形式 (けいしき - hình thức).</span></div></div><div class="kanji-item"><div class="kanji-char">師</div><div class="kanji-info"><b>SƯ</b><span class="kanji-yomi">On: シ</span><span class="kanji-mean">Thầy, người dạy</span><span class="kanji-mnemo">教師 (きょうし - giáo viên), 医師 (いし - bác sĩ).</span></div></div><div class="kanji-item"><div class="kanji-char">告</div><div class="kanji-info"><b>CÁO</b><span class="kanji-yomi">On: コク · Kun: つ(げる)</span><span class="kanji-mean">Báo, cáo</span><span class="kanji-mnemo">広告 (こうこく - quảng cáo), 報告 (ほうこく).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Drill Kanji trong context</td><td class="tb-content">① Đọc Kanji 001-210.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Chiến lược đọc bảng biểu nhanh.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn 210 Kanji; sưu tầm 3 bảng biểu Nhật; viết Kanji 式, 師, 告 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 56 · T5</span><h3 class="lesson-title">Nghe hội thoại có phương án bị loại trừ + Kanji 深 (THÂM), 存 (TỒN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Nghe phân biệt 3-4 phương án; Kanji 深, 存.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Choukai loại trừ (10 câu)</td><td class="tb-content">① Nghe 4 phương án, loại 3 còn 1. ② Chiến lược: nghe lý do loại bỏ.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">深</div><div class="kanji-info"><b>THÂM</b><span class="kanji-yomi">On: シン · Kun: ふか(い)</span><span class="kanji-mean">Sâu</span><span class="kanji-mnemo">深い (ふかい - sâu), 深夜 (しんや - đêm khuya).</span></div></div><div class="kanji-item"><div class="kanji-char">存</div><div class="kanji-info"><b>TỒN</b><span class="kanji-yomi">On: ソン・ゾン</span><span class="kanji-mean">Tồn tại</span><span class="kanji-mnemo">存在 (そんざい - tồn tại), 保存 (ほぞん - bảo tồn).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Chữa + transcript</td><td class="tb-content">① Đọc transcript chữa.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Shadowing</td><td class="tb-content">① Shadowing 5 đoạn.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Nghe + transcript; viết Kanji 深, 存 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 57 · T7</span><h3 class="lesson-title">Luyện đề Nghe + chữa transcript chuyên sâu + Kanji 争 (TRANH), 覚 (GIÁC), 側 (TRẮC)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Mock Choukai 28 câu; chữa transcript; Kanji 争, 覚, 側.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Quiz Kanji.</td></tr>
+      <tr><td class="tb-time">10-55p</td><td class="tb-act">Mock Choukai 28 câu (40p)</td><td class="tb-content">① Mondai 1 (6) + 2 (6) + 3 (3) + 4 (4) + 5 (9) = 28 câu sát N3 thật.</td></tr>
+      <tr><td class="tb-time">55-75p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">争</div><div class="kanji-info"><b>TRANH</b><span class="kanji-yomi">On: ソウ · Kun: あらそ(う)</span><span class="kanji-mean">Tranh giành</span><span class="kanji-mnemo">争う (あらそう), 戦争 (せんそう), 競争 (きょうそう).</span></div></div><div class="kanji-item"><div class="kanji-char">覚</div><div class="kanji-info"><b>GIÁC</b><span class="kanji-yomi">On: カク · Kun: おぼ(える)</span><span class="kanji-mean">Nhớ, tỉnh</span><span class="kanji-mnemo">覚える (おぼえる - nhớ), 感覚 (かんかく).</span></div></div><div class="kanji-item"><div class="kanji-char">側</div><div class="kanji-info"><b>TRẮC</b><span class="kanji-yomi">On: ソク · Kun: がわ</span><span class="kanji-mean">Bên cạnh</span><span class="kanji-mnemo">右側 (みぎがわ), 反対側 (はんたいがわ).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">75-105p</td><td class="tb-act">Chữa transcript chuyên sâu</td><td class="tb-content">① Đọc transcript, đánh dấu cụm khó.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Top 5 từ nghe yếu.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Nghe lại + chép transcript; viết Kanji 争, 覚, 側 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 20 · 3 buổi · Kanji 211-240 + Bài nói giải thích + Section Mock + Kanji 飛-容</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 58 · T3</span><h3 class="lesson-title">Kanji 211-240 + Đọc tổng hợp nhiều đoạn ngắn + Kanji 飛 (PHI), 参 (THAM), 突 (ĐỘT)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Đọc tổng hợp 2-3 đoạn ngắn cùng chủ đề; Kanji 飛, 参, 突.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji 211-240.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Đọc tổng hợp 2 đoạn so sánh</td><td class="tb-content">① 2 đoạn cùng chủ đề (150 + 200) - quan điểm khác nhau. ② So sánh tìm điểm khác biệt.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">飛</div><div class="kanji-info"><b>PHI</b><span class="kanji-yomi">On: ヒ · Kun: と(ぶ)</span><span class="kanji-mean">Bay</span><span class="kanji-mnemo">飛ぶ (とぶ), 飛行機 (ひこうき), 飛行 (ひこう).</span></div></div><div class="kanji-item"><div class="kanji-char">参</div><div class="kanji-info"><b>THAM</b><span class="kanji-yomi">On: サン · Kun: まい(る)</span><span class="kanji-mean">Tham gia</span><span class="kanji-mnemo">参加 (さんか), 参考 (さんこう), 参る (まいる - khiêm).</span></div></div><div class="kanji-item"><div class="kanji-char">突</div><div class="kanji-info"><b>ĐỘT</b><span class="kanji-yomi">On: トツ · Kun: つ(く)</span><span class="kanji-mean">Đột nhiên, đâm</span><span class="kanji-mnemo">突然 (とつぜん - đột nhiên), 衝突 (しょうとつ).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Drill Kanji + đọc context</td><td class="tb-content">① Đọc 240 Kanji trong đoạn.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Chiến lược so sánh 2 nguồn.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn 240 Kanji; đọc 2 đoạn so sánh; viết Kanji 飛, 参, 突 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 59 · T5</span><h3 class="lesson-title">Nghe bài nói giải thích, thông báo, chỉ dẫn + Kanji 容 (DUNG), 育 (DỤC)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Nghe bài nói 1 chiều (thông báo); Kanji 容, 育.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Choukai giải thích/thông báo</td><td class="tb-content">① 10 đoạn thông báo loa / giải thích cách làm. ② Ghi note nhanh.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">容</div><div class="kanji-info"><b>DUNG</b><span class="kanji-yomi">On: ヨウ</span><span class="kanji-mean">Dung lượng, nội dung</span><span class="kanji-mnemo">内容 (ないよう - nội dung), 美容 (びよう - sắc đẹp).</span></div></div><div class="kanji-item"><div class="kanji-char">育</div><div class="kanji-info"><b>DỤC</b><span class="kanji-yomi">On: イク · Kun: そだ(つ)</span><span class="kanji-mean">Nuôi dạy</span><span class="kanji-mnemo">教育 (きょういく - giáo dục), 育てる (そだてる).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Chữa + transcript</td><td class="tb-content">① Chữa kỹ.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Shadowing</td><td class="tb-content">① Shadowing 5 đoạn dài.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Nghe + transcript; viết Kanji 容, 育 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 60 · T7</span><h3 class="lesson-title">Section Mock - Ngôn ngữ tri thức + Đọc hiểu (giới hạn thời gian) + Kanji 構 (CẤU), 認 (NHẬN), 位 (VỊ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Mock 2 phần đầu N3 (Moji-Goi + Bunpou-Dokkai); Kanji 構, 認, 位.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Phổ biến</td><td class="tb-content">① Cấu trúc 2 phần.</td></tr>
+      <tr><td class="tb-time">10-75p</td><td class="tb-act">Section Mock (65p)</td><td class="tb-content">① Moji-Goi (25p): 35 câu. ② Bunpou-Dokkai (40p): 23 câu NP + 16 câu Dokkai.</td></tr>
+      <tr><td class="tb-time">75-95p</td><td class="tb-act">KANJI MỚI + chữa</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">構</div><div class="kanji-info"><b>CẤU</b><span class="kanji-yomi">On: コウ · Kun: かま(える)</span><span class="kanji-mean">Cấu trúc</span><span class="kanji-mnemo">構造 (こうぞう), 結構 (けっこう - tốt).</span></div></div><div class="kanji-item"><div class="kanji-char">認</div><div class="kanji-info"><b>NHẬN</b><span class="kanji-yomi">On: ニン · Kun: みと(める)</span><span class="kanji-mean">Công nhận</span><span class="kanji-mnemo">確認 (かくにん), 認める (みとめる).</span></div></div><div class="kanji-item"><div class="kanji-char">位</div><div class="kanji-info"><b>VỊ</b><span class="kanji-yomi">On: イ · Kun: くらい</span><span class="kanji-mean">Vị trí, ngôi</span><span class="kanji-mnemo">位 (くらい), 学位 (がくい), 第一位 (đầu tiên).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">95-115p</td><td class="tb-act">Chữa sâu</td><td class="tb-content">① Chữa từng câu.</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Phân bổ phút thi.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Sửa Section Mock; viết Kanji 構, 認, 位 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 21 · 3 buổi · Kanji 241-270 + Listening Mock 1 + Full Mock 1 + Kanji 達-予</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 61 · T3</span><h3 class="lesson-title">Kanji 241-270 + rà từ Kanji hay sai + Kanji 達 (ĐẠT), 守 (THỦ), 満 (MÃN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Rà soát Kanji hay sai; Kanji 達, 守, 満.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill 270 Kanji.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Rà 50 Kanji hay sai trong đề</td><td class="tb-content">① Lập danh sách 50 Kanji bị sai nhiều nhất trong tests đã làm. ② Drill có ngữ cảnh.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">達</div><div class="kanji-info"><b>ĐẠT</b><span class="kanji-yomi">On: タツ</span><span class="kanji-mean">Đạt, các</span><span class="kanji-mnemo">友達 (ともだち), 達する (たっする - đạt được).</span></div></div><div class="kanji-item"><div class="kanji-char">守</div><div class="kanji-info"><b>THỦ</b><span class="kanji-yomi">On: シュ · Kun: まも(る)</span><span class="kanji-mean">Bảo vệ, giữ</span><span class="kanji-mnemo">守る (まもる - giữ), 留守 (るす - vắng nhà).</span></div></div><div class="kanji-item"><div class="kanji-char">満</div><div class="kanji-info"><b>MÃN</b><span class="kanji-yomi">On: マン · Kun: み(ちる)</span><span class="kanji-mean">Đầy, mãn</span><span class="kanji-mnemo">満員 (まんいん - đầy người), 満足 (まんぞく - hài lòng).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Đọc 2 đoạn N3</td><td class="tb-content">① Đoạn 220 + 300 chữ.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Top 20 Kanji ưu tiên ôn.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn 270 Kanji + 50 từ Kanji hay sai; viết Kanji 達, 守, 満 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 62 · T5 · LISTENING MOCK 1</span><h3 class="lesson-title">Listening Mock 1 - Sát format đề thi + Kanji 消 (TIÊU), 任 (NHIỆM)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Mock Choukai 28 câu sát thật; Kanji 消, 任.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Phổ biến</td><td class="tb-content">① Cấu trúc Choukai N3 thật.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Mock Choukai 28 câu (40p)</td><td class="tb-content">① 5 Mondai. ② Đeo tai nghe, làm như thi thật.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI + chữa nhanh</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">消</div><div class="kanji-info"><b>TIÊU</b><span class="kanji-yomi">On: ショウ · Kun: け(す)</span><span class="kanji-mean">Tiêu, tắt</span><span class="kanji-mnemo">消す (けす), 消費 (しょうひ - tiêu thụ).</span></div></div><div class="kanji-item"><div class="kanji-char">任</div><div class="kanji-info"><b>NHIỆM</b><span class="kanji-yomi">On: ニン · Kun: まか(せる)</span><span class="kanji-mean">Nhiệm vụ</span><span class="kanji-mnemo">責任 (せきにん - trách nhiệm), 任せる (まかせる).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-110p</td><td class="tb-act">Chữa transcript chuyên sâu</td><td class="tb-content">① Đọc transcript chữa từng câu.</td></tr>
+      <tr><td class="tb-time">110-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① 5 từ nghe yếu nhất.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Nghe lại Mock 1; viết Kanji 消, 任 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 63 · T7 · FULL MOCK 1</span><h3 class="lesson-title">Full Mock 1 + chữa lỗi theo nhóm + Kanji 居 (CƯ), 予 (DỰ), 路 (LỘ)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Full Mock 1 (Moji-Goi+Bunpou-Dokkai+Choukai); Kanji 居, 予, 路.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Phổ biến</td><td class="tb-content">① Cấu trúc full N3.</td></tr>
+      <tr><td class="tb-time">10-105p</td><td class="tb-act">Full Mock 1 (95p)</td><td class="tb-content">① Moji-Goi (25p, 35 câu). ② Bunpou-Dokkai (35p, 39 câu). ③ Choukai (35p, 28 câu).</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">KANJI MỚI + chấm điểm</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">居</div><div class="kanji-info"><b>CƯ</b><span class="kanji-yomi">On: キョ · Kun: い(る)</span><span class="kanji-mean">Ở, cư trú</span><span class="kanji-mnemo">居る (いる), 居間 (いま - phòng khách).</span></div></div><div class="kanji-item"><div class="kanji-char">予</div><div class="kanji-info"><b>DỰ</b><span class="kanji-yomi">On: ヨ</span><span class="kanji-mean">Trước, dự</span><span class="kanji-mnemo">予定 (よてい), 予約 (よやく), 予算 (よさん).</span></div></div><div class="kanji-item"><div class="kanji-char">路</div><div class="kanji-info"><b>LỘ</b><span class="kanji-yomi">On: ロ · Kun: じ・みち</span><span class="kanji-mean">Đường</span><span class="kanji-mnemo">道路 (どうろ - đường), 通路 (つうろ).</span></div></div></div></div>① Chấm điểm + xác định điểm mạnh-yếu thực tế.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Chữa Full Mock 1; phân loại lỗi theo 5 nhóm; viết Kanji 居, 予, 路 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 22 · 3 buổi · Kanji 271-300 + Shadowing chọn lọc + Full Mock 2 + Kanji 座-息</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 64 · T3</span><h3 class="lesson-title">Kanji 271-300 + Đọc lại chủ đề yếu + Kanji 座 (TỌA), 客 (KHÁCH), 船 (THUYỀN)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Đọc lại 2 chủ đề yếu nhất; Kanji 座, 客, 船.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji 271-300.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Đọc 2 đoạn chủ đề yếu</td><td class="tb-content">① 2 đoạn về chủ đề học viên yếu (xã hội/kinh tế/giáo dục). ② Đoạn 250 + 300 chữ.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">座</div><div class="kanji-info"><b>TỌA</b><span class="kanji-yomi">On: ザ · Kun: すわ(る)</span><span class="kanji-mean">Ngồi</span><span class="kanji-mnemo">座る (すわる), 銀座 (ぎんざ), 講座 (こうざ).</span></div></div><div class="kanji-item"><div class="kanji-char">客</div><div class="kanji-info"><b>KHÁCH</b><span class="kanji-yomi">On: キャク</span><span class="kanji-mean">Khách</span><span class="kanji-mnemo">お客様 (おきゃくさま), 観客 (かんきゃく).</span></div></div><div class="kanji-item"><div class="kanji-char">船</div><div class="kanji-info"><b>THUYỀN</b><span class="kanji-yomi">On: セン · Kun: ふね</span><span class="kanji-mean">Tàu, thuyền</span><span class="kanji-mnemo">船 (ふね), 船長 (せんちょう).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Drill Kanji + ôn 300 Kanji</td><td class="tb-content">① Drill toàn bộ.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Kế hoạch ôn từng ngày.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn 300 Kanji; đọc lại 2 đoạn yếu; viết Kanji 座, 客, 船 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 65 · T5</span><h3 class="lesson-title">Shadowing chọn lọc - câu phản ứng, kết luận, từ nối + Kanji 追 (TRUY), 背 (BỐI)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Shadowing câu phản ứng, từ nối; Kanji 追, 背.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Shadowing 8 đoạn chọn lọc</td><td class="tb-content">① Câu phản ứng: それは大変ですね, 困りましたね. ② Từ nối logic: つまり, したがって, ところが. ③ Câu kết luận.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">追</div><div class="kanji-info"><b>TRUY</b><span class="kanji-yomi">On: ツイ · Kun: お(う)</span><span class="kanji-mean">Đuổi theo</span><span class="kanji-mnemo">追う (おう), 追加 (ついか - bổ sung).</span></div></div><div class="kanji-item"><div class="kanji-char">背</div><div class="kanji-info"><b>BỐI</b><span class="kanji-yomi">On: ハイ · Kun: せ・せい</span><span class="kanji-mean">Lưng, chiều cao</span><span class="kanji-mnemo">背 (せ - lưng/chiều cao), 背中 (せなか).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Choukai 12 câu + chữa</td><td class="tb-content">① 12 câu mới.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Top từ nghe yếu.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Shadowing 5 đoạn; viết Kanji 追, 背 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 66 · T7 · FULL MOCK 2</span><h3 class="lesson-title">Full Mock 2 + lập kế hoạch vá lỗi 7 ngày + Kanji 観 (QUAN), 誰 (THÙY), 息 (TỨC)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Full Mock 2; kế hoạch 7 ngày trước thi; Kanji 観, 誰, 息.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Phổ biến</td><td class="tb-content">① Cấu trúc Mock 2.</td></tr>
+      <tr><td class="tb-time">10-105p</td><td class="tb-act">Full Mock 2 (95p)</td><td class="tb-content">① Như Mock 1 nhưng đề khác.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">KANJI MỚI + lập kế hoạch</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">観</div><div class="kanji-info"><b>QUAN</b><span class="kanji-yomi">On: カン</span><span class="kanji-mean">Quan sát, xem</span><span class="kanji-mnemo">観光 (かんこう - du lịch), 観察 (かんさつ - quan sát).</span></div></div><div class="kanji-item"><div class="kanji-char">誰</div><div class="kanji-info"><b>THÙY</b><span class="kanji-yomi">Kun: だれ</span><span class="kanji-mean">Ai</span><span class="kanji-mnemo">誰 (だれ - ai).</span></div></div><div class="kanji-item"><div class="kanji-char">息</div><div class="kanji-info"><b>TỨC</b><span class="kanji-yomi">On: ソク · Kun: いき</span><span class="kanji-mean">Hơi thở, con trai</span><span class="kanji-mnemo">息子 (むすこ - con trai), 休息 (きゅうそく).</span></div></div></div></div>① So Mock 2 với Mock 1. ② Lập kế hoạch vá lỗi 7 ngày.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Kế hoạch vá lỗi 7 ngày; viết Kanji 観, 誰, 息 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 23 · 3 buổi · Kanji 301-330 + Speed drill nghe + Full Mock 3 + Kanji 失-警</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 67 · T3</span><h3 class="lesson-title">Kanji 301-330 + Tổng ôn âm đọc &amp; từ ghép trọng điểm + Kanji 失 (THẤT), 老 (LÃO), 良 (LƯƠNG)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Ôn 50 từ ghép Kanji trọng điểm; Kanji 失, 老, 良.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji 301-330.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Tổng ôn từ ghép Kanji</td><td class="tb-content">① 50 từ ghép Kanji hay xuất hiện trong đề. ② Drill Onyomi/Kunyomi nhanh.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">失</div><div class="kanji-info"><b>THẤT</b><span class="kanji-yomi">On: シツ · Kun: うしな(う)</span><span class="kanji-mean">Mất</span><span class="kanji-mnemo">失う (うしなう), 失礼 (しつれい - thất lễ), 失敗 (しっぱい).</span></div></div><div class="kanji-item"><div class="kanji-char">老</div><div class="kanji-info"><b>LÃO</b><span class="kanji-yomi">On: ロウ · Kun: お(いる)</span><span class="kanji-mean">Già</span><span class="kanji-mnemo">老人 (ろうじん - người già), 老ける (ふける).</span></div></div><div class="kanji-item"><div class="kanji-char">良</div><div class="kanji-info"><b>LƯƠNG</b><span class="kanji-yomi">On: リョウ · Kun: よ(い)</span><span class="kanji-mean">Tốt</span><span class="kanji-mnemo">良い (よい), 改良 (かいりょう), 良心 (りょうしん).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Đọc tốc độ + Kanji</td><td class="tb-content">① Đọc đoạn dài 350 chữ có Kanji - tốc độ 5p.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Top 30 Kanji ưu tiên cuối cùng.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn 330 Kanji + 50 từ ghép trọng điểm; viết Kanji 失, 老, 良 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 68 · T5</span><h3 class="lesson-title">Listening Speed drill - nghe 1 lần ghi ý chính + Kanji 示 (THỊ), 号 (HIỆU)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Nghe 1 lần đáp; Kanji 示, 号.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji.</td></tr>
+      <tr><td class="tb-time">10-55p</td><td class="tb-act">Speed drill nghe 1 lần (15 câu)</td><td class="tb-content">① 15 câu chỉ nghe 1 lần. ② Ghi ý chính, chọn đáp án nhanh. ③ Áp lực tốc độ.</td></tr>
+      <tr><td class="tb-time">55-75p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">示</div><div class="kanji-info"><b>THỊ</b><span class="kanji-yomi">On: シ · Kun: しめ(す)</span><span class="kanji-mean">Chỉ ra</span><span class="kanji-mnemo">示す (しめす), 表示 (ひょうじ), 指示 (しじ).</span></div></div><div class="kanji-item"><div class="kanji-char">号</div><div class="kanji-info"><b>HIỆU</b><span class="kanji-yomi">On: ゴウ</span><span class="kanji-mean">Số hiệu</span><span class="kanji-mnemo">番号 (ばんごう - số), 信号 (しんごう - đèn tín hiệu).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">75-105p</td><td class="tb-act">Chữa + transcript</td><td class="tb-content">① Đọc transcript chữa.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Shadowing</td><td class="tb-content">① Shadowing 5 đoạn.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Nghe + transcript; viết Kanji 示, 号 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 69 · T7 · FULL MOCK 3</span><h3 class="lesson-title">Full Mock 3 + chữa đề chiến lược + Kanji 職 (CHỨC), 王 (VƯƠNG), 識 (THỨC), 警 (CẢNH)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Full Mock 3 cuối + chữa chiến lược; Kanji 職, 王, 識, 警.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Phổ biến</td><td class="tb-content">① Cấu trúc Mock 3.</td></tr>
+      <tr><td class="tb-time">10-105p</td><td class="tb-act">Full Mock 3 (95p)</td><td class="tb-content">① Như Mock 1-2 nhưng đề mới.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">KANJI MỚI + chấm</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay (4 chữ)</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">職</div><div class="kanji-info"><b>CHỨC</b><span class="kanji-yomi">On: ショク</span><span class="kanji-mean">Chức nghiệp</span><span class="kanji-mnemo">職業 (しょくぎょう), 就職 (しゅうしょく - xin việc).</span></div></div><div class="kanji-item"><div class="kanji-char">王</div><div class="kanji-info"><b>VƯƠNG</b><span class="kanji-yomi">On: オウ</span><span class="kanji-mean">Vua</span><span class="kanji-mnemo">王 (おう - vua), 王女 (おうじょ - công chúa).</span></div></div><div class="kanji-item"><div class="kanji-char">識</div><div class="kanji-info"><b>THỨC</b><span class="kanji-yomi">On: シキ</span><span class="kanji-mean">Tri thức</span><span class="kanji-mnemo">知識 (ちしき), 意識 (いしき - ý thức).</span></div></div><div class="kanji-item"><div class="kanji-char">警</div><div class="kanji-info"><b>CẢNH</b><span class="kanji-yomi">On: ケイ</span><span class="kanji-mean">Cảnh sát</span><span class="kanji-mnemo">警察 (けいさつ), 警官 (けいかん).</span></div></div></div></div>① Tiến bộ 3 Mock. ② Chiến lược cuối.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Chữa Mock 3; chốt chiến lược phòng thi; viết Kanji 職, 王, 識, 警 × 5 dòng.</div>
+  </div>
+
+  <div class="week-divider">Tuần 24 · 3 buổi · Kanji 331-370 + Final review + Final checkpoint + Kanji cuối</div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 70 · T3</span><h3 class="lesson-title">Kanji 331-370 + Tổng ôn Kanji Master + Đọc nhanh + Kanji 優 (ƯU), 投 (ĐẦU), 局 (CỤC)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Ôn cuối 370 Kanji; đọc nhanh; Kanji 優, 投, 局.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji cuối.</td></tr>
+      <tr><td class="tb-time">10-50p</td><td class="tb-act">Tổng ôn 370 Kanji theo nhóm</td><td class="tb-content">① 6 nhóm: con người, hành động, thời gian, xã hội, tự nhiên, học tập. ② Drill nhanh từng nhóm.</td></tr>
+      <tr><td class="tb-time">50-70p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">優</div><div class="kanji-info"><b>ƯU</b><span class="kanji-yomi">On: ユウ · Kun: やさ(しい)</span><span class="kanji-mean">Ưu, dịu dàng</span><span class="kanji-mnemo">優しい (やさしい), 優秀 (ゆうしゅう), 優勝 (ゆうしょう).</span></div></div><div class="kanji-item"><div class="kanji-char">投</div><div class="kanji-info"><b>ĐẦU</b><span class="kanji-yomi">On: トウ · Kun: な(げる)</span><span class="kanji-mean">Ném, đầu tư</span><span class="kanji-mnemo">投げる (なげる), 投票 (とうひょう - bỏ phiếu).</span></div></div><div class="kanji-item"><div class="kanji-char">局</div><div class="kanji-info"><b>CỤC</b><span class="kanji-yomi">On: キョク</span><span class="kanji-mean">Cục, đài</span><span class="kanji-mnemo">郵便局 (ゆうびんきょく - bưu điện), 結局 (けっきょく).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">70-100p</td><td class="tb-act">Đọc nhanh 2 đoạn N3</td><td class="tb-content">① 2 đoạn 250 + 350 chữ - tốc độ.</td></tr>
+      <tr><td class="tb-time">100-120p</td><td class="tb-act">Tổng kết</td><td class="tb-content">① Bảng 370 Kanji checklist.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn 370 Kanji hoàn chỉnh; viết Kanji 優, 投, 局 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-head"><span class="lesson-num">Buổi 71 · T5</span><h3 class="lesson-title">Final Listening Review - dạng yếu nhất + Kanji 難 (NAN), 種 (CHỦNG)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Ôn dạng nghe yếu nhất của từng học viên; Kanji 難, 種.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-10p</td><td class="tb-act">Khởi động</td><td class="tb-content">① Drill Kanji.</td></tr>
+      <tr><td class="tb-time">10-55p</td><td class="tb-act">Listening review cá nhân hóa</td><td class="tb-content">① Mỗi học viên luyện dạng yếu nhất (1-4 trong 5 Mondai). ② Giáo viên hỗ trợ từng nhóm.</td></tr>
+      <tr><td class="tb-time">55-75p</td><td class="tb-act">KANJI MỚI</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">難</div><div class="kanji-info"><b>NAN</b><span class="kanji-yomi">On: ナン · Kun: むずか(しい)</span><span class="kanji-mean">Khó</span><span class="kanji-mnemo">難しい (むずかしい), 困難 (こんなん).</span></div></div><div class="kanji-item"><div class="kanji-char">種</div><div class="kanji-info"><b>CHỦNG</b><span class="kanji-yomi">On: シュ · Kun: たね</span><span class="kanji-mean">Chủng, loại</span><span class="kanji-mnemo">種類 (しゅるい - loại), 人種 (じんしゅ).</span></div></div></div></div></td></tr>
+      <tr><td class="tb-time">75-105p</td><td class="tb-act">Chữa + tổng kết</td><td class="tb-content">① Chốt 3 nhóm yếu nhất.</td></tr>
+      <tr><td class="tb-time">105-120p</td><td class="tb-act">Tâm lý phòng thi</td><td class="tb-content">① Kế hoạch 7 ngày cuối.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>BTVN:</strong> Ôn nhẹ dạng yếu; viết Kanji 難, 種 × 5 dòng.</div>
+  </div>
+
+  <div class="lesson-card minitest">
+    <div class="lesson-head"><span class="lesson-num">Buổi 72 · T7 · FINAL CHECKPOINT</span><h3 class="lesson-title">Final Checkpoint + Chiến lược phòng thi + Tổng kết khóa + Kanji 念 (NIỆM), 寄 (KÝ), 商 (THƯƠNG)</h3><p class="lesson-goal"><strong>Mục tiêu:</strong> Mock thi cuối, chốt sổ tay trước thi, tổng kết khóa; Kanji 念, 寄, 商.</p></div>
+    <table class="timebox">
+      <tr><td class="tb-time">0-15p</td><td class="tb-act">Tổng kết khóa - 6 tháng</td><td class="tb-content">① Nhìn lại 72 buổi + 370 Kanji. ② Trao chứng nhận. ③ Mỗi học viên 1 chia sẻ.</td></tr>
+      <tr><td class="tb-time">15-65p</td><td class="tb-act">Final mini-Mock 50p</td><td class="tb-content">① Mô phỏng đề thi (gọn). ② Chữa ngay.</td></tr>
+      <tr><td class="tb-time">65-85p</td><td class="tb-act">KANJI MỚI + sổ tay trước thi</td><td class="tb-content"><div class="kanji-card"><div class="kanji-card-title">Kanji hôm nay</div><div class="kanji-grid"><div class="kanji-item"><div class="kanji-char">念</div><div class="kanji-info"><b>NIỆM</b><span class="kanji-yomi">On: ネン</span><span class="kanji-mean">Niệm, tưởng</span><span class="kanji-mnemo">残念 (ざんねん - tiếc), 記念 (きねん).</span></div></div><div class="kanji-item"><div class="kanji-char">寄</div><div class="kanji-info"><b>KÝ</b><span class="kanji-yomi">On: キ · Kun: よ(る)</span><span class="kanji-mean">Ghé, gửi</span><span class="kanji-mnemo">寄る (よる - ghé qua), 寄付 (きふ).</span></div></div><div class="kanji-item"><div class="kanji-char">商</div><div class="kanji-info"><b>THƯƠNG</b><span class="kanji-yomi">On: ショウ · Kun: あきな(う)</span><span class="kanji-mean">Thương mại</span><span class="kanji-mnemo">商売 (しょうばい), 商品 (しょうひん - sản phẩm).</span></div></div></div></div>① Sổ tay: 50 từ + 30 Kanji + 25 mẫu NP + 10 lỗi cá nhân.</td></tr>
+      <tr><td class="tb-time">85-115p</td><td class="tb-act">Chiến lược 3 phần</td><td class="tb-content">① Moji-Goi (30p, 35 câu): 50s/câu. ② Bunpou-Dokkai (70p, 39 câu): NP trước, đọc sau. ③ Choukai (40p, 28 câu).</td></tr>
+      <tr><td class="tb-time">115-120p</td><td class="tb-act">Chốt &amp; chúc</td><td class="tb-content">① Lời chúc. ② Phổ biến khóa N2.</td></tr>
+    </table>
+    <div class="lesson-hw"><strong>Kế hoạch 7 ngày trước thi:</strong> 30-60p/ngày, không học mới, xem sổ tay, shadowing 5 đoạn quen, ngủ 7-8h, ăn lành mạnh, ngày thi ăn nhẹ 2h trước, đến sớm 30p.</div>
+  </div>
+</section>
+
+<!-- PHỤ LỤC -->
+<section class="doc-section" id="section-4">
+  <div class="section-head" data-mark="+"><span class="section-kicker">Phụ lục</span><h2>Bảng tổng hợp 370 Kanji N3, checklist &amp; rubric</h2></div>
+
+  <h3>Bảng phân bổ Shinkanzen N3 + Kanji theo giai đoạn</h3>
+  <table>
+    <thead><tr><th>Giai đoạn</th><th>Tuần</th><th>Số buổi</th><th>Trọng tâm</th><th>Sản phẩm đầu ra</th></tr></thead>
+    <tbody>
+      <tr><td><strong>GĐ1 - Tích lũy</strong></td><td>Tuần 1-12</td><td>36 buổi</td><td>21 bài TV + 12 bài NP Shinkanzen + 4 mốc 実力を試そう + 2 Mini Test + 1 Checkpoint. ~150 Kanji.</td><td>Có khung kiến thức N3 vững; sổ lỗi cá nhân ≥ 50 mục.</td></tr>
+      <tr><td><strong>GĐ2 - Bứt tốc</strong></td><td>Tuần 13-24</td><td>36 buổi</td><td>Kanji Master 370 chữ (240 còn lại) + Đọc + Nghe + 2 Mini Test kỹ năng + 3 Full Mock + Final Checkpoint.</td><td>Tăng tốc xử lý đề; chiến lược thi rõ ràng; ≥ 95/180 Mock 3.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Checklist hoàn thành khóa N3 (72 buổi)</h3>
+  <div class="callout-box">
+    <strong>Học viên đạt yêu cầu khi:</strong>
+    <ul>
+      <li>✔ Hoàn thành 21 bài TV + 12 bài NP Shinkanzen + 4 mốc 実力を試そう.</li>
+      <li>✔ Đọc-viết 370 Kanji N3 Kanji Master.</li>
+      <li>✔ Có sổ lỗi cá nhân ≥ 80 mục đã chữa.</li>
+      <li>✔ Làm 3 Full Mock + chữa toàn bộ.</li>
+      <li>✔ Tham gia ≥ 80% buổi (58/72).</li>
+      <li>✔ Đạt ≥ 95/180 Mock 3 (= điểm an toàn N3).</li>
+    </ul>
+  </div>
+
+  <h3>Rubric đánh giá N3 (có Kanji)</h3>
+  <table>
+    <thead><tr><th style="width:18%">Tiêu chí</th><th>Xuất sắc (4)</th><th>Tốt (3)</th><th>Đạt (2)</th><th>Cần hỗ trợ (1)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Kanji N3 (370)</strong></td><td>Nhận ≥ 330 + viết ≥ 250.</td><td>270 nhận + 200 viết.</td><td>220 nhận + 150 viết.</td><td>&lt; 220 hoặc &lt; 150 viết.</td></tr>
+      <tr><td><strong>Từ vựng</strong></td><td>≥ 95% Shinkanzen TV.</td><td>≥ 85%.</td><td>≥ 70%.</td><td>&lt; 70%.</td></tr>
+      <tr><td><strong>Ngữ pháp</strong></td><td>50/56 mẫu NP Shinkanzen.</td><td>40/56.</td><td>30/56.</td><td>&lt; 30.</td></tr>
+      <tr><td><strong>Đọc hiểu</strong></td><td>350 chữ/8p, ≥ 90%.</td><td>350/10p, ≥ 75%.</td><td>280/10p, ≥ 60%.</td><td>&lt; 60% hoặc &gt; 12p.</td></tr>
+      <tr><td><strong>Nghe hiểu</strong></td><td>≥ 24/28 Choukai.</td><td>20-23.</td><td>16-19.</td><td>&lt; 16.</td></tr>
+      <tr><td><strong>Tốc độ làm bài</strong></td><td>Đúng giờ + 5p kiểm tra.</td><td>Đúng giờ.</td><td>Trễ 5p.</td><td>Trễ &gt; 10p.</td></tr>
+      <tr><td><strong>Sổ lỗi</strong></td><td>80+ mục có chữa, tái kiểm 7 ngày.</td><td>60+ mục.</td><td>40+ mục.</td><td>&lt; 40.</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer-card">
+    <p><strong>Trí Lữ Nihongo</strong> · Giáo án chi tiết JLPT N3 · 72 buổi + 370 Kanji N3 · Shinkanzen Master N3</p>
+    <p>"Học chắc - Luyện sâu - Thi tự tin" — 合格 N3 và sử dụng tiếng Nhật tự tin hơn trong đời sống hằng ngày.</p>
+  </div>
+</section>
+
+</main>
+</div>
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="giao-an-jlpt-n3"></script>
+</body></html>
