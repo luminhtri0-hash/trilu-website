@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lộ trình chinh phục JLPT N1 - 7 Tháng</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm 13mm 16mm 13mm;
+    }
+
+    :root {
+      --paper: #fffdfa;
+      --paper-2: #fff8f0;
+      --surface: #f7f0e8;
+      --surface-2: #f2e5d8;
+      --ink: #1e2430;
+      --muted: #626875;
+      --soft-muted: #858b96;
+      --accent: #6e1831;
+      --accent-deep: #3f0c1d;
+      --accent-2: #9b7a38;
+      --accent-3: #c7ab70;
+      --line: #dfcfbb;
+      --line-2: #eadfce;
+      --callout: #fcf6ee;
+      --success: #315f4b;
+      --shadow: 0 18px 46px rgba(60, 38, 19, 0.08);
+      --shadow-soft: 0 10px 26px rgba(60, 38, 19, 0.05);
+      --radius-xl: 30px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(155, 122, 56, 0.08), transparent 28%),
+        radial-gradient(circle at 86% 12%, rgba(110, 24, 49, 0.08), transparent 24%),
+        linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+      font-family: Inter, "Noto Sans CJK JP", "Noto Sans JP", "Noto Sans", "Segoe UI", Arial, sans-serif;
+      line-height: 1.75;
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ruby {
+      ruby-position: over;
+      font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+      font-weight: 700;
+    }
+
+    rt {
+      font-size: 0.58em;
+      color: #6c7079;
+      font-weight: 500;
+    }
+
+    p {
+      margin: 0 0 14px;
+    }
+
+    strong {
+      color: var(--accent-deep);
+    }
+
+    .page-shell {
+      width: min(1150px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 30px 0 76px;
+    }
+
+    .cover {
+      position: relative;
+      overflow: hidden;
+      min-height: 610px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255,255,255,0.10), transparent 23%),
+        radial-gradient(circle at 88% 20%, rgba(199,171,112,0.25), transparent 18%),
+        linear-gradient(135deg, #4f0f24 0%, #6e1831 38%, #3a0f1b 100%);
+      color: #fff;
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      padding: 68px 72px 58px;
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 22px;
+      pointer-events: none;
+    }
+
+    .cover::after {
+      content: "N1";
+      position: absolute;
+      right: 44px;
+      bottom: 18px;
+      font-family: "EB Garamond", "Noto Serif CJK JP", "Noto Serif", Georgia, serif;
+      font-size: 224px;
+      line-height: 0.8;
+      font-weight: 700;
+      color: rgba(255,255,255,0.055);
+      letter-spacing: -0.08em;
+    }
+
+    .cover-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      width: fit-content;
+      padding: 10px 16px;
+      border: 1px solid rgba(255,255,255,0.16);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cover-badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent-3);
+      box-shadow: 0 0 0 5px rgba(199,171,112,0.14);
+    }
+
+    .cover-title {
+      position: relative;
+      z-index: 1;
+      margin: 28px 0 18px;
+      font-family: "EB Garamond", "Noto Serif CJK JP", "Noto Serif", Georgia, serif;
+      font-size: clamp(44px, 6.2vw, 72px);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      font-weight: 700;
+      max-width: 880px;
+    }
+
+    .cover-subtitle {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      font-size: 16px;
+      color: rgba(255,255,255,0.88);
+      margin: 0 0 26px;
+    }
+
+    .metric-row {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin: 26px 0 34px;
+    }
+
+    .metric-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .metric-chip::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: rgba(199,171,112,0.95);
+    }
+
+    .cover-quote {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      max-width: 650px;
+      padding: 22px 0 0 26px;
+      border-top: 1px solid rgba(255,255,255,0.18);
+      border-left: 3px solid rgba(199,171,112,0.7);
+      font-family: "EB Garamond", "Noto Serif CJK JP", "Noto Serif", Georgia, serif;
+      font-style: italic;
+      font-size: 24px;
+      line-height: 1.35;
+      color: rgba(255,255,255,0.90);
+    }
+
+    .cover-meta {
+      position: relative;
+      z-index: 1;
+      margin-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.76);
+    }
+
+    .toc-panel {
+      margin: 26px 0 34px;
+      background: linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96));
+      border: 1px solid rgba(155,122,56,0.20);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      padding: 28px 30px;
+    }
+
+    .panel-overline {
+      display: block;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 11px;
+      font-weight: 800;
+      color: var(--accent-2);
+    }
+
+    .toc-title,
+    .section-head h2,
+    .editorial-title,
+    .phase-title {
+      font-family: "EB Garamond", "Noto Serif CJK JP", "Noto Serif", Georgia, serif;
+    }
+
+    .toc-title {
+      margin: 0 0 6px;
+      font-size: 36px;
+      line-height: 1.05;
+      color: var(--accent);
+    }
+
+    .toc-subtitle {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .toc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .toc-item {
+      display: block;
+      color: inherit;
+      padding: 18px 18px 16px;
+      background: linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%);
+      border: 1px solid var(--line-2);
+      border-radius: var(--radius-md);
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .toc-item:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-soft);
+      border-color: rgba(155,122,56,0.35);
+      text-decoration: none;
+    }
+
+    .toc-item-number {
+      display: block;
+      margin-bottom: 6px;
+      font-family: "EB Garamond", "Noto Serif CJK JP", "Noto Serif", Georgia, serif;
+      font-size: 32px;
+      line-height: 1;
+      color: var(--accent-2);
+    }
+
+    .toc-item-title {
+      display: block;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .toc-item-summary {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.55;
+    }
+
+    .document {
+      background: var(--paper);
+      border: 1px solid rgba(155,122,56,0.16);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 34px 44px 52px;
+    }
+
+    .doc-section {
+      margin: 0 0 34px;
+      scroll-margin-top: 28px;
+    }
+
+    .doc-section + .doc-section {
+      padding-top: 6px;
+    }
+
+    .section-head {
+      position: relative;
+      overflow: hidden;
+      margin: 12px 0 18px;
+      padding: 18px 24px 18px 22px;
+      border-radius: 22px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.09), transparent 36%),
+        linear-gradient(135deg, #57132a 0%, #6e1831 52%, #7f3b52 100%);
+      color: #fff;
+    }
+
+    .section-head::after {
+      content: attr(data-mark);
+      position: absolute;
+      right: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: "EB Garamond", "Noto Serif CJK JP", "Noto Serif", Georgia, serif;
+      font-size: 62px;
+      line-height: 1;
+      color: rgba(255,255,255,0.12);
+      font-weight: 700;
+    }
+
+    .section-kicker {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 800;
+      color: rgba(255,255,255,0.76);
+    }
+
+    .section-head h2 {
+      margin: 0;
+      color: #fff;
+      font-size: 32px;
+      line-height: 1.12;
+      font-weight: 700;
+      max-width: 84%;
+    }
+
+    .section-intro {
+      font-size: 15px;
+      color: #3b4250;
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      margin: 28px 0 12px;
+      padding-left: 14px;
+      border-left: 4px solid var(--accent-2);
+      color: var(--accent);
+      font-size: 19px;
+      line-height: 1.35;
+      font-weight: 850;
+    }
+
+    h4 {
+      display: inline-block;
+      margin: 18px 0 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, #fffdf9 0%, #f7efe3 100%);
+      color: #674c1b;
+      font-size: 14px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .editorial-note {
+      margin: 18px 0 22px;
+      padding: 22px 24px;
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(199,171,112,0.16), transparent 28%),
+        linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+      border: 1px solid rgba(155,122,56,0.20);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .editorial-title {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 27px;
+      line-height: 1.1;
+      font-weight: 700;
+    }
+
+    .callout-box {
+      margin: 18px 0 22px;
+      padding: 18px 20px 18px 22px;
+      border: 1px solid #e7d7be;
+      border-left: 6px solid var(--accent-2);
+      border-radius: var(--radius-md);
+      background: linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .callout-box strong:first-child {
+      color: var(--accent);
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0,1fr));
+      gap: 12px;
+      margin: 18px 0 22px;
+    }
+
+    .mini-card {
+      border: 1px solid var(--line-2);
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fffefd 0%, #fbf4ea 100%);
+      padding: 16px 16px 15px;
+      box-shadow: 0 8px 18px rgba(60,38,19,0.04);
+    }
+
+    .mini-card .label {
+      display: block;
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-size: 10px;
+      font-weight: 850;
+      margin-bottom: 6px;
+    }
+
+    .mini-card .value {
+      display: block;
+      color: var(--accent);
+      font-size: 20px;
+      line-height: 1.2;
+      font-weight: 850;
+    }
+
+    .mini-card .desc {
+      display: block;
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.5;
+      margin-top: 6px;
+    }
+
+    ol,
+    ul {
+      margin: 0 0 16px;
+      padding-left: 22px;
+    }
+
+    li {
+      margin: 0 0 8px;
+    }
+
+    li::marker {
+      color: var(--accent-2);
+      font-weight: 800;
+    }
+
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 24px;
+      counter-reset: pillar;
+    }
+
+    .pillar-grid > li {
+      position: relative;
+      margin: 0;
+      padding: 17px 18px 17px 58px;
+      background: linear-gradient(180deg, #fffefd 0%, #fbf4ea 100%);
+      border: 1px solid var(--line-2);
+      border-radius: 18px;
+      box-shadow: 0 8px 18px rgba(60,38,19,0.04);
+      min-height: 118px;
+    }
+
+    .pillar-grid > li::before {
+      counter-increment: pillar;
+      content: counter(pillar, decimal-leading-zero);
+      position: absolute;
+      left: 16px;
+      top: 18px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, var(--accent-2) 0%, #7f642d 100%);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 850;
+    }
+
+    .pillar-grid strong {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .phase-grid {
+      display: grid;
+      grid-template-columns: 1.22fr 0.78fr;
+      gap: 16px;
+      margin: 18px 0 24px;
+    }
+
+    .phase-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid var(--line-2);
+      background: linear-gradient(180deg, #fffefd 0%, #fbf4ea 100%);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 22px 20px;
+    }
+
+    .phase-card::after {
+      content: attr(data-phase);
+      position: absolute;
+      right: 14px;
+      bottom: -18px;
+      color: rgba(155,122,56,0.10);
+      font-family: "EB Garamond", "Noto Serif CJK JP", "Noto Serif", Georgia, serif;
+      font-weight: 700;
+      font-size: 86px;
+      line-height: 1;
+    }
+
+    .phase-title {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 29px;
+      line-height: 1.12;
+    }
+
+    .phase-card p,
+    .phase-card ul {
+      position: relative;
+      z-index: 1;
+    }
+
+    .table-shell {
+      margin: 16px 0 24px;
+      overflow-x: auto;
+      border-radius: 18px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      background: #fff;
+      border: 1px solid var(--line-2);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      font-size: 13px;
+    }
+
+    th,
+    td {
+      padding: 12px 13px;
+      border-right: 1px solid var(--line-2);
+      border-bottom: 1px solid var(--line-2);
+      vertical-align: top;
+    }
+
+    th:last-child,
+    td:last-child {
+      border-right: none;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    thead th {
+      background: linear-gradient(180deg, #fcf5ea 0%, #f2e3cf 100%);
+      color: var(--accent);
+      font-weight: 850;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    tbody tr:nth-child(even) td {
+      background: #fffaf4;
+    }
+
+    tbody tr:hover td {
+      background: #fff6eb;
+    }
+
+    .data-table .week {
+      font-weight: 850;
+      color: var(--accent);
+      white-space: nowrap;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4px 9px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .status.core {
+      background: #f4e6d5;
+      color: #765723;
+      border: 1px solid #e3c99f;
+    }
+
+    .status.complete {
+      background: #edf5ef;
+      color: var(--success);
+      border: 1px solid #cadfce;
+    }
+
+    .status.review {
+      background: #f7ebef;
+      color: var(--accent);
+      border: 1px solid #e4c9d2;
+    }
+
+    .time-block {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 14px;
+      margin: 18px 0 22px;
+    }
+
+    .time-card {
+      border: 1px solid var(--line-2);
+      border-radius: 20px;
+      padding: 18px 20px;
+      background: linear-gradient(180deg, #fffefd 0%, #fbf4ea 100%);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .time-card .day {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      margin-bottom: 8px;
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 850;
+    }
+
+    .time-card .hour {
+      color: var(--accent-2);
+      font-size: 13px;
+      white-space: nowrap;
+    }
+
+    .time-card .book {
+      display: inline-block;
+      margin: 8px 0 10px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--line-2);
+      color: var(--accent-deep);
+      font-weight: 800;
+      font-size: 12.5px;
+    }
+
+    .timeline-list {
+      list-style: none;
+      padding: 0;
+      margin: 18px 0 22px;
+      border-left: 2px solid var(--line);
+    }
+
+    .timeline-list li {
+      position: relative;
+      margin: 0 0 16px;
+      padding-left: 24px;
+    }
+
+    .timeline-list li::before {
+      content: "";
+      position: absolute;
+      left: -7px;
+      top: 8px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 5px rgba(155,122,56,0.13);
+    }
+
+    .timeline-list strong {
+      color: var(--accent);
+    }
+
+    .routine-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+      gap: 14px;
+      margin: 18px 0 22px;
+    }
+
+    .routine-card {
+      border-radius: 18px;
+      border: 1px solid var(--line-2);
+      background: #fff;
+      padding: 16px 17px;
+      box-shadow: 0 8px 18px rgba(60,38,19,0.04);
+    }
+
+    .routine-card strong {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .footnote {
+      color: var(--muted);
+      font-size: 12.5px;
+      line-height: 1.6;
+    }
+
+    .footer-card {
+      margin-top: 24px;
+      padding: 24px;
+      border-top: 1px solid var(--line-2);
+      border-radius: 22px;
+      background: linear-gradient(180deg, #fffefd 0%, #f7efe5 100%);
+      text-align: center;
+    }
+
+    .footer-card strong {
+      display: block;
+      color: var(--accent);
+      font-family: "EB Garamond", "Noto Serif CJK JP", "Noto Serif", Georgia, serif;
+      font-size: 28px;
+      line-height: 1.15;
+      margin-bottom: 8px;
+    }
+
+    @media screen and (max-width: 980px) {
+      .page-shell {
+        width: min(100% - 28px, 1150px);
+        padding: 18px 0 42px;
+      }
+
+      .cover {
+        min-height: auto;
+        padding: 44px 28px 40px;
+      }
+
+      .cover-meta {
+        flex-direction: column;
+      }
+
+      .toc-grid,
+      .pillar-grid,
+      .mini-grid,
+      .routine-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .phase-grid,
+      .time-block {
+        grid-template-columns: 1fr;
+      }
+
+      .document {
+        padding: 24px 20px 34px;
+      }
+
+      .section-head h2 {
+        max-width: 100%;
+      }
+
+      .section-head::after {
+        display: none;
+      }
+    }
+
+    @media print {
+      body {
+        background: #fff;
+        font-size: 12px;
+      }
+
+      .page-shell {
+        width: auto;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .cover,
+      .toc-panel,
+      .document {
+        box-shadow: none;
+      }
+
+      .cover {
+        page-break-after: always;
+        break-after: page;
+        border-radius: 18px;
+        padding: 48px 46px 42px;
+      }
+
+      .toc-panel {
+        page-break-after: always;
+        break-after: page;
+        margin: 0 0 20px;
+        border-radius: 16px;
+      }
+
+      .document {
+        border: none;
+        border-radius: 0;
+        padding: 0;
+      }
+
+      .section-head {
+        break-after: avoid;
+        page-break-after: avoid;
+        margin-top: 18px;
+      }
+
+      .table-shell {
+        overflow: visible;
+        break-inside: auto;
+      }
+
+      table {
+        box-shadow: none;
+        border-radius: 0;
+        page-break-inside: auto;
+      }
+
+      tr,
+      td,
+      th {
+        break-inside: avoid;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page-shell">
+    <section class="cover" id="top">
+      <div class="cover-badge"><span class="dot"></span>Premium JLPT N1 Academic Roadmap</div>
+      <h1 class="cover-title">Lộ trình chinh phục JLPT N1 - 7 Tháng</h1>
+      <p class="cover-subtitle">
+        Một cẩm nang học thuật cao cấp dành cho học viên đặt mục tiêu bứt phá N1 bằng hệ giáo trình
+        <strong style="color:#fff;">Shinkanzen Master N1</strong> và <strong style="color:#fff;">Kanji Master</strong>:
+        học sâu, luyện đều, tổng ôn có chiến lược, và tiến tới năng lực sử dụng tiếng Nhật ở cấp độ chuyên nghiệp.
+      </p>
+
+      <div class="metric-row">
+        <span class="metric-chip">7 tháng chiến lược</span>
+        <span class="metric-chip">5,5 tháng xây nền N1</span>
+        <span class="metric-chip">1,5 tháng tổng ôn đề</span>
+        <span class="metric-chip">T7 &amp; CN • 13h Việt Nam</span>
+        <span class="metric-chip">120-180 phút / buổi</span>
+      </div>
+
+      <blockquote class="cover-quote">
+        “N1 không chỉ là một chứng chỉ. Đó là năng lực đọc, nghe, phân tích và phản hồi tiếng Nhật ở tầng sâu nhất.”
+      </blockquote>
+
+      <div class="cover-meta">
+        <div>Giáo trình: Shinkanzen Master N1 + Kanji Master</div>
+        <div>Thiết kế cho người học nghiêm túc, cần tiến độ rõ ràng và tiêu chuẩn cao</div>
+      </div>
+    </section>
+
+    <nav class="toc-panel" aria-label="Mục lục">
+      <span class="panel-overline">Điều hướng nhanh</span>
+      <h2 class="toc-title">Mục lục lộ trình</h2>
+      <p class="toc-subtitle">
+        Các phần được tổ chức như một cẩm nang editorial: dễ đọc, rõ nhịp học, có bảng tiến độ cụ thể cho từng tuần của Giai đoạn 1.
+      </p>
+
+      <div class="toc-grid">
+        <a class="toc-item" href="#overview">
+          <span class="toc-item-number">I</span>
+          <span class="toc-item-title">Tổng quan chiến lược</span>
+          <span class="toc-item-summary">Khung 7 tháng, giáo trình, cấu trúc 2 giai đoạn và nguyên tắc triển khai.</span>
+        </a>
+
+        <a class="toc-item" href="#vision">
+          <span class="toc-item-number">II</span>
+          <span class="toc-item-title">Kỳ vọng &amp; tầm nhìn</span>
+          <span class="toc-item-summary">Chuẩn đầu ra về từ vựng, ngữ pháp, đọc hiểu, nghe hiểu và năng lực học thuật.</span>
+        </a>
+
+        <a class="toc-item" href="#schedule">
+          <span class="toc-item-number">III</span>
+          <span class="toc-item-title">Lịch học cố định</span>
+          <span class="toc-item-summary">Thứ 7 học từ vựng, Chủ Nhật học ngữ pháp, thời lượng 120-180 phút mỗi buổi.</span>
+        </a>
+
+        <a class="toc-item" href="#phase-one">
+          <span class="toc-item-number">IV</span>
+          <span class="toc-item-title">Giai đoạn 1: 5,5 tháng</span>
+          <span class="toc-item-summary">Bảng tiến độ 22 tuần cho 15 bài từ vựng và 21 bài ngữ pháp.</span>
+        </a>
+
+        <a class="toc-item" href="#phase-two">
+          <span class="toc-item-number">V</span>
+          <span class="toc-item-title">Giai đoạn 2: 1,5 tháng</span>
+          <span class="toc-item-summary">Tổng ôn đề, tăng tốc nghe hiểu, đọc hiểu và hoàn thiện chiến thuật thi.</span>
+        </a>
+
+        <a class="toc-item" href="#discipline">
+          <span class="toc-item-number">VI</span>
+          <span class="toc-item-title">Kỷ luật học tập</span>
+          <span class="toc-item-summary">Cơ chế tự học giữa tuần, ôn tập ngắt quãng và tiêu chuẩn hoàn thành.</span>
+        </a>
+      </div>
+    </nav>
+
+    <main class="document">
+      <section class="doc-section" id="overview">
+        <div class="section-head" data-mark="I">
+          <span class="section-kicker">Phần 1</span>
+          <h2>Tổng quan chiến lược 7 tháng</h2>
+        </div>
+
+        <p class="section-intro">
+          Lộ trình này được thiết kế cho học viên đã có nền tảng N2 tương đối vững và muốn tiến lên
+          <ruby>日本語能力試験<rt>にほんごのうりょくしけん</rt></ruby> N1 bằng phương pháp học có kiểm soát:
+          học mới có chiều sâu, chữa bài có hệ thống, và tổng ôn bằng dữ liệu điểm số.
+        </p>
+
+        <div class="mini-grid">
+          <div class="mini-card">
+            <span class="label">Tổng thời gian</span>
+            <span class="value">7 tháng</span>
+            <span class="desc">Chia thành giai đoạn xây nền và giai đoạn tăng tốc luyện đề.</span>
+          </div>
+
+          <div class="mini-card">
+            <span class="label">Giai đoạn 1</span>
+            <span class="value">5,5 tháng</span>
+            <span class="desc">Cày sâu từ vựng, ngữ pháp và Hán tự.</span>
+          </div>
+
+          <div class="mini-card">
+            <span class="label">Giai đoạn 2</span>
+            <span class="value">1,5 tháng</span>
+            <span class="desc">Tổng ôn đề, tăng tốc nghe hiểu và đọc hiểu.</span>
+          </div>
+
+          <div class="mini-card">
+            <span class="label">Trục giáo trình</span>
+            <span class="value">N1 Core</span>
+            <span class="desc">Shinkanzen Master N1 và Kanji Master.</span>
+          </div>
+        </div>
+
+        <div class="phase-grid">
+          <article class="phase-card" data-phase="01">
+            <h3 class="phase-title">Giai đoạn 1: Xây nền học thuật N1</h3>
+            <p>
+              Trong 5,5 tháng đầu, trọng tâm là nắm chắc <ruby>語彙<rt>ごい</rt></ruby>,
+              <ruby>文法<rt>ぶんぽう</rt></ruby> và <ruby>漢字<rt>かんじ</rt></ruby>.
+              Mỗi cuối tuần học 2 buổi cố định: Thứ 7 dành cho Từ vựng, Chủ Nhật dành cho Ngữ pháp.
+            </p>
+            <ul>
+              <li><strong>Shinkanzen Từ vựng N1:</strong> 15 bài, hoàn tất lý thuyết trong 15 tuần, sau đó chuyển sang ôn tập, kiểm tra và củng cố sắc thái.</li>
+              <li><strong>Shinkanzen Ngữ pháp N1:</strong> 21 bài, triển khai trong 21 tuần, tuần 22 dùng để tổng rà soát ngữ pháp trọng yếu.</li>
+              <li><strong>Kanji Master:</strong> học song hành theo cụm âm Hán, trường nghĩa, chữ dễ nhầm và từ ghép N1.</li>
+            </ul>
+          </article>
+
+          <article class="phase-card" data-phase="02">
+            <h3 class="phase-title">Giai đoạn 2: Tổng ôn &amp; bứt tốc</h3>
+            <p>
+              1,5 tháng cuối là giai đoạn chuyển từ “biết kiến thức” sang “làm bài đúng trong áp lực thời gian”.
+              Học viên luyện đề định kỳ, phân tích lỗi và tăng tốc hai kỹ năng có tính quyết định:
+              <ruby>聴解<rt>ちょうかい</rt></ruby> và <ruby>読解<rt>どっかい</rt></ruby>.
+            </p>
+            <ul>
+              <li>Luyện đề mô phỏng JLPT N1 theo thời gian thật.</li>
+              <li>Rà soát điểm yếu theo ma trận lỗi: từ vựng, ngữ pháp, đọc dài, nghe tình huống.</li>
+              <li>Hoàn thiện chiến thuật phân bổ thời gian trong phòng thi.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="editorial-note">
+          <h2 class="editorial-title">Nguyên tắc vận hành khóa học</h2>
+          <p>
+            Mỗi buổi học không chỉ “đi qua giáo trình”, mà phải tạo ra năng lực tái sử dụng. Học viên cần hiểu vì sao một cấu trúc được dùng,
+            sắc thái của từ vựng nằm ở đâu, và cách nhận diện bẫy trong đề thi. Đây là lộ trình học theo tiêu chuẩn
+            <ruby>精読<rt>せいどく</rt></ruby> - đọc kỹ, <ruby>精聴<rt>せいちょう</rt></ruby> - nghe kỹ, và
+            <ruby>反復<rt>はんぷく</rt></ruby> - lặp lại có chiến lược.
+          </p>
+        </div>
+      </section>
+
+      <section class="doc-section" id="vision">
+        <div class="section-head" data-mark="II">
+          <span class="section-kicker">Phần 2</span>
+          <h2>Kỳ vọng &amp; tầm nhìn sau khóa học</h2>
+        </div>
+
+        <p class="section-intro">
+          Đầu ra của khóa học không dừng ở việc “thi đỗ”. Mục tiêu là hình thành năng lực tiếng Nhật cao cấp,
+          đủ để đọc tài liệu chuyên môn, theo dõi thảo luận học thuật và làm việc trong môi trường chuyên nghiệp tại Nhật Bản.
+        </p>
+
+        <ol class="pillar-grid">
+          <li>
+            <strong>Thành thạo ngữ pháp N1</strong>
+            Nắm chắc cấu trúc cao cấp, phân biệt sắc thái gần nghĩa, nhận diện bẫy đảo ngữ, lược bỏ và văn phong trang trọng.
+          </li>
+
+          <li>
+            <strong>Làm chủ từ vựng học thuật</strong>
+            Tăng vốn từ ở tầng trừu tượng, xã hội, kinh tế, nghiên cứu, hành chính và truyền thông chuyên sâu.
+          </li>
+
+          <li>
+            <strong>Đọc hiểu tài liệu phức tạp</strong>
+            Có khả năng xử lý bài luận dài, văn bản nghị luận, tài liệu chuyên ngành và đoạn văn có lập luận nhiều tầng.
+          </li>
+
+          <li>
+            <strong>Đạt kết quả xuất sắc JLPT N1</strong>
+            Không chỉ nhắm mức vừa đủ đỗ, mà hướng tới điểm số ổn định thông qua luyện đề, chữa lỗi và kiểm soát thời gian.
+          </li>
+
+          <li>
+            <strong>Nâng cấp nghe hiểu</strong>
+            Nghe được hội thoại tốc độ tự nhiên, bài nói có ngữ cảnh ẩn, quan điểm gián tiếp và chuyển ý nhanh.
+          </li>
+
+          <li>
+            <strong>Sẵn sàng học tập và làm việc tại Nhật</strong>
+            Phát triển năng lực giao tiếp, trình bày và phân tích đủ để làm việc chuyên nghiệp hoặc nghiên cứu chuyên sâu.
+          </li>
+        </ol>
+
+        <div class="callout-box">
+          <strong>Cam kết học thuật:</strong>
+          Lộ trình này yêu cầu học viên duy trì kỷ luật tự học giữa tuần. Buổi học cuối tuần là nơi tiếp nhận kiến thức, sửa lỗi và định hướng;
+          sự bứt phá thật sự đến từ việc ôn tập đều đặn, ghi chú lỗi sai và chủ động đọc-nghe ngoài giờ.
+        </div>
+      </section>
+
+      <section class="doc-section" id="schedule">
+        <div class="section-head" data-mark="III">
+          <span class="section-kicker">Phần 3</span>
+          <h2>Lịch học cố định cuối tuần</h2>
+        </div>
+
+        <p class="section-intro">
+          Lịch học được cố định vào cuối tuần để tạo nhịp học bền vững. Giờ học dùng chuẩn Việt Nam và quy đổi sang giờ Nhật Bản,
+          giúp học viên ở cả hai quốc gia dễ tham gia.
+        </p>
+
+        <div class="time-block">
+          <article class="time-card">
+            <div class="day">
+              <span>Thứ 7 - Từ vựng</span>
+              <span class="hour">13h00 VN • 15h00 JP</span>
+            </div>
+            <span class="book">Shinkanzen Master N1 - Từ vựng</span>
+            <p>
+              Mỗi buổi học <strong>1 bài lý thuyết mới</strong> và <strong>sửa chi tiết 1,5 bài tập</strong>.
+              Trọng tâm là sắc thái từ, collocation, bối cảnh sử dụng và bẫy chọn đáp án.
+            </p>
+            <p class="footnote">Thời lượng: 120-180 phút / buổi, tùy độ khó bài và số lượng lỗi cần phân tích.</p>
+          </article>
+
+          <article class="time-card">
+            <div class="day">
+              <span>Chủ Nhật - Ngữ pháp</span>
+              <span class="hour">13h00 VN • 15h00 JP</span>
+            </div>
+            <span class="book">Shinkanzen Master N1 - Ngữ pháp</span>
+            <p>
+              Mỗi buổi học <strong>1 bài lý thuyết mới</strong> và <strong>sửa chi tiết 1,5 bài tập</strong>.
+              Trọng tâm là điều kiện dùng, sắc thái văn viết, mức độ trang trọng và cấu trúc dễ nhầm.
+            </p>
+            <p class="footnote">Thời lượng: 120-180 phút / buổi, có phần kiểm tra nhanh ở đầu hoặc cuối buổi.</p>
+          </article>
+        </div>
+
+        <h3>Cấu trúc một buổi học tiêu chuẩn</h3>
+        <div class="routine-grid">
+          <div class="routine-card">
+            <strong>1. Kích hoạt kiến thức</strong>
+            Kiểm tra nhanh 10-15 phút: từ vựng, mẫu câu, Hán tự hoặc bài tập đã giao từ tuần trước.
+          </div>
+
+          <div class="routine-card">
+            <strong>2. Học bài mới</strong>
+            Giảng lý thuyết trọng tâm, giải nghĩa sắc thái, phân tích ví dụ và mở rộng ngữ cảnh sử dụng.
+          </div>
+
+          <div class="routine-card">
+            <strong>3. Sửa bài 1,5 bài tập</strong>
+            Chữa chi tiết từng lỗi, phân loại lỗi theo kiến thức, tư duy đề và kỹ năng đọc-nghe.
+          </div>
+        </div>
+      </section>
+
+      <section class="doc-section" id="phase-one">
+        <div class="section-head" data-mark="IV">
+          <span class="section-kicker">Phần 4</span>
+          <h2>Giai đoạn 1 - 5,5 tháng: Cày sâu Từ vựng, Ngữ pháp và Hán tự</h2>
+        </div>
+
+        <p class="section-intro">
+          Giai đoạn 1 được mô phỏng trong 22 tuần. Từ vựng có 15 bài nên hoàn tất bài mới ở tuần 15, sau đó chuyển sang vòng ôn tập,
+          kiểm tra sắc thái và luyện ứng dụng. Ngữ pháp có 21 bài nên học mới đến tuần 21, tuần 22 tổng rà soát và chuẩn bị bước sang luyện đề.
+        </p>
+
+        <div class="callout-box">
+          <strong>Quy tắc tiến độ bắt buộc:</strong>
+          Thứ 7 học <strong>1 bài từ vựng mới + sửa 1,5 bài tập</strong>. Chủ Nhật học
+          <strong>1 bài ngữ pháp mới + sửa 1,5 bài tập</strong>. Với các tuần sau khi hoàn tất bài mới,
+          thời lượng được chuyển sang ôn tập hồi quy, chữa bài tổng hợp và kiểm tra năng lực ứng dụng.
+        </div>
+
+        <div class="table-shell">
+          <table class="data-table" aria-label="Bảng tiến độ giai đoạn 1">
+            <thead>
+              <tr>
+                <th style="width: 8%;">Tuần</th>
+                <th style="width: 22%;">Thứ 7 - Từ vựng N1</th>
+                <th style="width: 22%;">Chữa bài Từ vựng</th>
+                <th style="width: 22%;">Chủ Nhật - Ngữ pháp N1</th>
+                <th style="width: 22%;">Chữa bài Ngữ pháp</th>
+                <th style="width: 14%;">Kanji Master &amp; nhiệm vụ tự học</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="week">Tuần 1</td>
+                <td><span class="status core">Bài mới</span><br>Shinkanzen Từ vựng: Bài 1</td>
+                <td>Sửa chi tiết Bài tập 1 + nửa đầu Bài tập 2</td>
+                <td><span class="status core">Bài mới</span><br>Shinkanzen Ngữ pháp: Bài 1</td>
+                <td>Sửa chi tiết Bài tập 1 + nửa đầu Bài tập 2</td>
+                <td>Kanji Master: nhóm <ruby>語彙<rt>ごい</rt></ruby> nền tảng, lập sổ lỗi cá nhân.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 2</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 2</td>
+                <td>Sửa nửa cuối Bài tập 2 + Bài tập 3</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 2</td>
+                <td>Sửa nửa cuối Bài tập 2 + Bài tập 3</td>
+                <td>Kanji: nhóm chữ có âm Hán Việt gần âm On'yomi; ôn SRS 3 lượt.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 3</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 3</td>
+                <td>Sửa Bài tập 4 + nửa đầu Bài tập 5</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 3</td>
+                <td>Sửa Bài tập 4 + nửa đầu Bài tập 5</td>
+                <td>Kanji: chữ đồng âm khác nghĩa, ghi ví dụ theo cụm từ.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 4</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 4</td>
+                <td>Sửa nửa cuối Bài tập 5 + Bài tập 6</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 4</td>
+                <td>Sửa nửa cuối Bài tập 5 + Bài tập 6</td>
+                <td>Kanji: bộ thủ thường gặp ở N1; kiểm tra 50 chữ đầu.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 5</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 5</td>
+                <td>Sửa Bài tập 7 + nửa đầu Bài tập 8</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 5</td>
+                <td>Sửa Bài tập 7 + nửa đầu Bài tập 8</td>
+                <td>Kanji: nhóm học thuật, hành chính, xã hội; viết câu ví dụ.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 6</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 6</td>
+                <td>Sửa nửa cuối Bài tập 8 + Bài tập 9</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 6</td>
+                <td>Sửa nửa cuối Bài tập 8 + Bài tập 9</td>
+                <td>Kanji: nhóm <ruby>抽象語<rt>ちゅうしょうご</rt></ruby>; phân biệt nghĩa trừu tượng.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 7</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 7</td>
+                <td>Sửa Bài tập 10 + nửa đầu Bài tập 11</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 7</td>
+                <td>Sửa Bài tập 10 + nửa đầu Bài tập 11</td>
+                <td>Kanji: chữ dễ nhầm hình; luyện nhận diện nhanh 5 phút/ngày.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 8</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 8</td>
+                <td>Sửa nửa cuối Bài tập 11 + Bài tập 12</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 8</td>
+                <td>Sửa nửa cuối Bài tập 11 + Bài tập 12</td>
+                <td>Kanji: nhóm động từ ghép N1; tạo bảng “từ - sắc thái - ví dụ”.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 9</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 9</td>
+                <td>Sửa Bài tập 13 + nửa đầu Bài tập 14</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 9</td>
+                <td>Sửa Bài tập 13 + nửa đầu Bài tập 14</td>
+                <td>Kanji: nhóm danh từ học thuật; đọc đoạn ngắn có từ mục tiêu.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 10</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 10</td>
+                <td>Sửa nửa cuối Bài tập 14 + Bài tập 15</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 10</td>
+                <td>Sửa nửa cuối Bài tập 14 + Bài tập 15</td>
+                <td>Kanji: kiểm tra giữa chặng 1; lọc 80 chữ yếu nhất để ôn lại.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 11</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 11</td>
+                <td>Sửa Bài tập 16 + nửa đầu Bài tập 17</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 11</td>
+                <td>Sửa Bài tập 16 + nửa đầu Bài tập 17</td>
+                <td>Kanji: nhóm từ báo chí, xã luận, chính sách và quan hệ xã hội.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 12</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 12</td>
+                <td>Sửa nửa cuối Bài tập 17 + Bài tập 18</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 12</td>
+                <td>Sửa nửa cuối Bài tập 17 + Bài tập 18</td>
+                <td>Kanji: phân biệt âm On'yomi gần nhau; luyện đọc to từ ghép.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 13</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 13</td>
+                <td>Sửa Bài tập 19 + nửa đầu Bài tập 20</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 13</td>
+                <td>Sửa Bài tập 19 + nửa đầu Bài tập 20</td>
+                <td>Kanji: nhóm <ruby>形声<rt>けいせい</rt></ruby>; học theo thanh phù và ý phù.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 14</td>
+                <td><span class="status core">Bài mới</span><br>Từ vựng: Bài 14</td>
+                <td>Sửa nửa cuối Bài tập 20 + Bài tập 21</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 14</td>
+                <td>Sửa nửa cuối Bài tập 20 + Bài tập 21</td>
+                <td>Kanji: luyện nối Kanji - từ ghép - câu ví dụ - ngữ cảnh đọc.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 15</td>
+                <td><span class="status complete">Hoàn tất bài mới</span><br>Từ vựng: Bài 15</td>
+                <td>Sửa Bài tập 22 + nửa đầu Bài tập 23</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 15</td>
+                <td>Sửa Bài tập 22 + nửa đầu Bài tập 23</td>
+                <td>Kanji: tổng kiểm tra vòng 1; phân loại lỗi đọc, nghĩa, chữ gần giống.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 16</td>
+                <td><span class="status review">Ôn tập</span><br>Từ vựng Bài 1-3: sắc thái, cặp dễ nhầm, collocation</td>
+                <td>Sửa nửa cuối Bài tập 23 + Bài tập 24; mini test 30 câu</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 16</td>
+                <td>Sửa nửa cuối Bài tập 23 + Bài tập 24</td>
+                <td>Kanji: ôn chữ trong bài đọc ngắn; ghi lại từ chưa phản xạ được.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 17</td>
+                <td><span class="status review">Ôn tập</span><br>Từ vựng Bài 4-6: nghĩa gần nhau và từ vựng nghị luận</td>
+                <td>Chữa đề từ vựng chuyên đề + phân tích bẫy chọn đáp án</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 17</td>
+                <td>Sửa Bài tập 25 + nửa đầu Bài tập 26</td>
+                <td>Kanji: nhóm chữ trong văn bản xã luận; luyện đọc 2 đoạn dài.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 18</td>
+                <td><span class="status review">Ôn tập</span><br>Từ vựng Bài 7-9: từ trừu tượng, phó từ, biểu hiện cố định</td>
+                <td>Chữa bài tổng hợp Bài 7-9 + mini test tốc độ</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 18</td>
+                <td>Sửa nửa cuối Bài tập 26 + Bài tập 27</td>
+                <td>Kanji: kiểm tra phản xạ đọc âm; sửa lỗi bằng flashcard cá nhân.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 19</td>
+                <td><span class="status review">Ôn tập</span><br>Từ vựng Bài 10-12: chủ đề xã hội, nghề nghiệp, học thuật</td>
+                <td>Chữa bài tổng hợp Bài 10-12 + bài đọc chứa từ mục tiêu</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 19</td>
+                <td>Sửa Bài tập 28 + nửa đầu Bài tập 29</td>
+                <td>Kanji: nhóm từ chuyên ngành; luyện đoán nghĩa qua Hán tự.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 20</td>
+                <td><span class="status review">Ôn tập</span><br>Từ vựng Bài 13-15: tổng hợp từ khó, từ hiếm, từ dễ nhiễu</td>
+                <td>Chữa bài tổng hợp Bài 13-15 + kiểm tra 45 phút</td>
+                <td><span class="status core">Bài mới</span><br>Ngữ pháp: Bài 20</td>
+                <td>Sửa nửa cuối Bài tập 29 + Bài tập 30</td>
+                <td>Kanji: tổng kiểm tra vòng 2; lập danh sách 100 từ ưu tiên.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 21</td>
+                <td><span class="status review">Tổng rà soát</span><br>Từ vựng toàn sách: đề tổng hợp 60-80 câu</td>
+                <td>Chữa đề tổng hợp, phân loại lỗi theo 4 nhóm: nghĩa, sắc thái, ngữ cảnh, phản xạ</td>
+                <td><span class="status complete">Hoàn tất bài mới</span><br>Ngữ pháp: Bài 21</td>
+                <td>Sửa Bài tập 31 + nửa đầu Bài tập 32</td>
+                <td>Kanji: luyện đọc văn bản dài có mật độ Kanji cao.</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 22</td>
+                <td><span class="status review">Chốt GĐ1</span><br>Từ vựng: mock test chuyên đề + chữa sâu</td>
+                <td>Sửa nửa cuối Bài tập 32 + đề tổng hợp; hoàn thiện sổ lỗi từ vựng</td>
+                <td><span class="status review">Chốt GĐ1</span><br>Ngữ pháp Bài 1-21: tổng hệ thống hóa</td>
+                <td>Chữa đề ngữ pháp tổng hợp; lập bản đồ cấu trúc dễ nhầm</td>
+                <td>Kanji: rà soát lần cuối trước GĐ2; chuyển sang ứng dụng trong đề đọc-nghe.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Logic phân bổ 15 bài Từ vựng và 21 bài Ngữ pháp</h3>
+        <ul class="timeline-list">
+          <li>
+            <strong>Tuần 1-15:</strong> hoàn tất 15 bài mới của Shinkanzen Từ vựng N1. Mỗi tuần có một bài mới, đồng thời chữa 1,5 bài tập để bảo đảm học viên hiểu cách dùng và lỗi sai.
+          </li>
+          <li>
+            <strong>Tuần 16-20:</strong> Từ vựng chuyển sang vòng ôn theo cụm 3 bài, tập trung vào sắc thái và bẫy đáp án; Ngữ pháp tiếp tục học bài mới từ Bài 16 đến Bài 20.
+          </li>
+          <li>
+            <strong>Tuần 21:</strong> Từ vựng làm đề tổng hợp toàn sách; Ngữ pháp hoàn tất Bài 21.
+          </li>
+          <li>
+            <strong>Tuần 22:</strong> tổng kết Giai đoạn 1, chốt sổ lỗi, kiểm tra năng lực ứng dụng và chuẩn bị bước vào Giai đoạn 2.
+          </li>
+        </ul>
+      </section>
+
+      <section class="doc-section" id="phase-two">
+        <div class="section-head" data-mark="V">
+          <span class="section-kicker">Phần 5</span>
+          <h2>Giai đoạn 2 - 1,5 tháng: Tổng ôn luyện đề, tăng tốc Nghe hiểu và Đọc hiểu</h2>
+        </div>
+
+        <p class="section-intro">
+          Khi kiến thức nền đã được bao phủ, trọng tâm chuyển sang năng lực thi thật: xử lý đề dưới áp lực thời gian,
+          tối ưu chiến thuật làm bài, tăng độ bền đọc hiểu và cải thiện phản xạ nghe ở cấp độ N1.
+        </p>
+
+        <div class="table-shell">
+          <table class="data-table" aria-label="Bảng kế hoạch giai đoạn 2">
+            <thead>
+              <tr>
+                <th style="width: 12%;">Tuần</th>
+                <th style="width: 25%;">Trọng tâm Từ vựng - Ngữ pháp</th>
+                <th style="width: 25%;">Đọc hiểu</th>
+                <th style="width: 25%;">Nghe hiểu</th>
+                <th style="width: 13%;">Đánh giá</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <td class="week">Tuần 23</td>
+                <td>Đề tổng hợp chuyên đề: từ vựng, Kanji, ngữ pháp; phân tích lỗi theo dạng câu hỏi.</td>
+                <td>Luyện đọc trung - dài, xác định luận điểm, từ khóa chuyển ý và thái độ tác giả.</td>
+                <td>Nghe tình huống ngắn; luyện bắt mục đích, điều kiện, yêu cầu hành động.</td>
+                <td><span class="status review">Mock nhỏ</span><br>60-90 phút</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 24</td>
+                <td>Ôn cấu trúc dễ nhầm, từ đồng nghĩa, từ trái nghĩa và collocation N1.</td>
+                <td>Luyện bài đọc dài; kỹ thuật bỏ qua chi tiết nhiễu và giữ mạch lập luận.</td>
+                <td>Nghe hội thoại dài; ghi chú nhanh và dự đoán đáp án trước khi chọn.</td>
+                <td><span class="status review">Phân tích lỗi</span><br>Sổ lỗi cá nhân</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 25</td>
+                <td>Làm đề JLPT N1 full set phần ngôn ngữ; chữa sâu các câu sai.</td>
+                <td>Đề đọc hiểu theo thời gian thật; luyện chiến thuật chọn thứ tự làm bài.</td>
+                <td>Đề nghe theo thời gian thật; luyện duy trì tập trung đến cuối bài.</td>
+                <td><span class="status core">Mock test</span><br>Full section</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 26</td>
+                <td>Rà soát 150-200 mục yếu nhất từ GĐ1; luyện phản xạ nhanh.</td>
+                <td>Đọc văn bản nghị luận, xã luận, bài giải thích chuyên môn; đo tốc độ đọc.</td>
+                <td>Nghe bài nói có quan điểm ẩn, phủ định kép, điều kiện thay đổi.</td>
+                <td><span class="status review">Tăng tốc</span><br>Kiểm tra thời gian</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 27</td>
+                <td>Tổng ôn ngữ pháp theo nhóm chức năng: nhấn mạnh, phủ định, điều kiện, suy luận, đánh giá.</td>
+                <td>Luyện đề đọc khó; tập trung câu hỏi ý chính, ý đồ tác giả và sắp xếp thông tin.</td>
+                <td>Luyện nghe hỗn hợp; giảm phụ thuộc transcript, tăng khả năng nghe một lần.</td>
+                <td><span class="status core">Mock test</span><br>Toàn bài</td>
+              </tr>
+
+              <tr>
+                <td class="week">Tuần 28</td>
+                <td>Chốt sổ lỗi cuối cùng; chỉ ôn phần có khả năng tăng điểm trực tiếp.</td>
+                <td>Làm đề nhẹ, giữ nhịp đọc, tránh quá tải trước kỳ thi.</td>
+                <td>Nghe duy trì mỗi ngày; ưu tiên độ ổn định và tâm lý phòng thi.</td>
+                <td><span class="status complete">Final review</span><br>Sẵn sàng thi</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="editorial-note">
+          <h2 class="editorial-title">Chiến thuật then chốt của Giai đoạn 2</h2>
+          <p>
+            Không luyện đề một cách cơ học. Mỗi đề phải để lại dữ liệu: sai vì thiếu từ, sai vì đọc vội, sai vì không nhận ra cấu trúc,
+            hay sai vì mất tập trung khi nghe. Khi nguyên nhân sai được gọi tên, điểm số mới có thể tăng ổn định.
+          </p>
+        </div>
+      </section>
+
+      <section class="doc-section" id="discipline">
+        <div class="section-head" data-mark="VI">
+          <span class="section-kicker">Phần 6</span>
+          <h2>Kỷ luật học tập và tiêu chuẩn hoàn thành</h2>
+        </div>
+
+        <p class="section-intro">
+          JLPT N1 là một kỳ thi đòi hỏi tích lũy dài hơi. Vì vậy, ngoài hai buổi học cuối tuần, học viên cần duy trì chu trình tự học giữa tuần
+          để kiến thức không bị “rơi tự do” sau mỗi buổi học.
+        </p>
+
+        <h3>Lịch tự học khuyến nghị giữa tuần</h3>
+        <div class="table-shell">
+          <table class="data-table" aria-label="Lịch tự học giữa tuần">
+            <thead>
+              <tr>
+                <th>Ngày</th>
+                <th>Nhiệm vụ chính</th>
+                <th>Thời lượng gợi ý</th>
+                <th>Chuẩn hoàn thành</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="week">Thứ 2</td>
+                <td>Ôn lại từ vựng và ngữ pháp đã học cuối tuần; cập nhật sổ lỗi.</td>
+                <td>45-60 phút</td>
+                <td>Nhớ lại được ví dụ, nghĩa và điều kiện dùng mà không nhìn đáp án.</td>
+              </tr>
+              <tr>
+                <td class="week">Thứ 3</td>
+                <td>Kanji Master: học chữ mới, từ ghép và âm đọc trọng tâm.</td>
+                <td>45-60 phút</td>
+                <td>Đọc được từ ghép trong câu, không chỉ nhận mặt chữ rời rạc.</td>
+              </tr>
+              <tr>
+                <td class="week">Thứ 4</td>
+                <td>Làm bài tập bổ sung từ vựng hoặc ngữ pháp theo phần vừa học.</td>
+                <td>60 phút</td>
+                <td>Ghi rõ lý do đúng/sai cho từng câu khó.</td>
+              </tr>
+              <tr>
+                <td class="week">Thứ 5</td>
+                <td>Đọc hiểu ngắn hoặc trung bình; gạch luận điểm và từ nối.</td>
+                <td>45-75 phút</td>
+                <td>Tóm tắt được ý chính bằng 3-5 câu tiếng Việt hoặc tiếng Nhật.</td>
+              </tr>
+              <tr>
+                <td class="week">Thứ 6</td>
+                <td>Nghe hiểu duy trì; shadowing đoạn ngắn và rà lại transcript.</td>
+                <td>30-60 phút</td>
+                <td>Nghe lại lần 2-3 và xác định được thông tin quyết định đáp án.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Tiêu chuẩn hoàn thành mỗi tuần</h3>
+        <ul class="timeline-list">
+          <li>
+            <strong>Hoàn thành bài học mới:</strong> hiểu nghĩa, cách dùng, ví dụ và các điểm dễ nhầm của bài từ vựng hoặc ngữ pháp trong tuần.
+          </li>
+          <li>
+            <strong>Hoàn thành bài tập đã giao:</strong> không chỉ làm xong, mà phải biết lý do sai và ghi lại dạng lỗi.
+          </li>
+          <li>
+            <strong>Duy trì Kanji Master:</strong> học chữ trong từ ghép và câu; ưu tiên nhận diện trong ngữ cảnh đọc hiểu.
+          </li>
+          <li>
+            <strong>Cập nhật sổ lỗi:</strong> mỗi lỗi phải có 3 thành phần: câu sai, nguyên nhân sai, cách sửa để không lặp lại.
+          </li>
+          <li>
+            <strong>Giữ nhịp nghe - đọc:</strong> ít nhất 3 lần/tuần để tránh tình trạng chỉ mạnh kiến thức giấy nhưng yếu phản xạ thi thật.
+          </li>
+        </ul>
+
+        <div class="callout-box">
+          <strong>Thông điệp cuối:</strong>
+          N1 là cuộc chơi của chiều sâu và độ bền. Khi học viên đi đều theo lộ trình này, từng bài Shinkanzen không còn là các trang sách rời rạc,
+          mà trở thành một hệ thống năng lực: hiểu sâu, đọc chắc, nghe tỉnh táo và làm bài có chiến lược.
+        </div>
+      </section>
+
+      <footer class="footer-card">
+        <strong>Hành trình N1 bắt đầu bằng một lịch học nghiêm túc.</strong>
+        <p>
+          7 tháng không phải là khoảng thời gian dài nếu học tùy hứng, nhưng là đủ mạnh nếu mỗi tuần đều có mục tiêu,
+          mỗi lỗi sai đều được xử lý, và mỗi buổi học đều tiến gần hơn tới chuẩn
+          <ruby>上級日本語<rt>じょうきゅうにほんご</rt></ruby>.
+        </p>
+      </footer>
+    </main>
+  </div>
+
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="lo-trinh-jlpt-n1-html"></script>
+</body>
+</html>

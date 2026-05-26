@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>Lộ trình chinh phục JLPT N5 trong 3 tháng - Premium Editorial</title>
+  <style>
+
+@page {
+  size: A4;
+  margin: 15mm 14mm 16mm 14mm;
+}
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#6e1831;
+  --accent-2:#9b7a38;
+  --accent-3:#c7ab70;
+  --line:#dfcfbb;
+  --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{
+  scroll-behavior:smooth;
+}
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(110,24,49,0.08), transparent 22%),
+    linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Noto Sans Thai", "Segoe UI", sans-serif;
+  line-height:1.75;
+  font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{
+  max-width:1150px;
+  margin:0 auto;
+  padding:30px 24px 76px;
+}
+.cover{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 36%, #3a0f1b 100%);
+  color:#fff;
+  border-radius:30px;
+  box-shadow:var(--shadow);
+  padding:64px 68px 56px;
+}
+.cover::before{
+  content:"";
+  position:absolute;
+  top:18px;
+  right:18px;
+  bottom:18px;
+  left:18px;
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:22px;
+}
+.cover::after{
+  content:"";
+  position:absolute;
+  right:-80px;
+  top:-90px;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%);
+}
+.cover-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 16px;
+  border:1px solid rgba(255,255,255,0.16);
+  border-radius:999px;
+  background:rgba(255,255,255,0.08);
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  font-size:11px;
+  font-weight:700;
+  position:relative;
+  z-index:1;
+}
+.cover-badge .dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent-3);
+  box-shadow:0 0 0 5px rgba(199,171,112,0.14);
+}
+.cover-title{
+  position:relative;
+  z-index:1;
+  margin:26px 0 16px;
+  font-family: "EB Garamond", "Noto Serif CJK JP", serif;
+  font-weight:700;
+  font-size:56px;
+  line-height:1.04;
+  letter-spacing:-0.02em;
+  max-width:12.5ch;
+}
+.cover-subtitle{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  font-size:16px;
+  color:rgba(255,255,255,0.88);
+  margin:0 0 26px;
+}
+.metric-row{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:26px 0 34px;
+}
+.metric-chip{
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+}
+.cover-quote{
+  position:relative;
+  z-index:1;
+  margin:0;
+  max-width:560px;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,0.18);
+  font-style:italic;
+  font-size:16px;
+  color:rgba(255,255,255,0.86);
+}
+.cover-meta{
+  position:relative;
+  z-index:1;
+  margin-top:28px;
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  font-size:13px;
+  color:rgba(255,255,255,0.76);
+}
+.toc-panel{
+  margin:26px 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96));
+  border:1px solid rgba(155,122,56,0.20);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{
+  display:block;
+  margin-bottom:8px;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  font-size:11px;
+  font-weight:700;
+  color:var(--accent-2);
+}
+.toc-title{
+  margin:0 0 6px;
+  font-family:"EB Garamond", "Noto Serif CJK JP", serif;
+  font-size:34px;
+  line-height:1.1;
+  color:var(--accent);
+}
+.toc-subtitle{
+  margin:0 0 20px;
+  color:var(--muted);
+  font-size:14px;
+}
+.toc-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:16px;
+}
+.toc-item{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  padding:18px 18px 16px;
+  background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%);
+  border:1px solid var(--line-2);
+  border-radius:18px;
+}
+.toc-item-number{
+  display:block;
+  margin-bottom:6px;
+  font-family:"EB Garamond", "Noto Serif CJK JP", serif;
+  font-size:32px;
+  line-height:1;
+  color:var(--accent-2);
+}
+.toc-item-title{
+  display:block;
+  font-weight:700;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+.toc-item-summary{
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.55;
+}
+.document{
+  background:var(--paper);
+  border:1px solid rgba(155,122,56,0.16);
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  padding:34px 44px 52px;
+}
+.doc-section{
+  margin:0 0 28px;
+}
+.doc-section + .doc-section{
+  padding-top:6px;
+}
+.section-head{
+  position:relative;
+  overflow:hidden;
+  margin:12px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #57132a 0%, #6e1831 52%, #7f3b52 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark);
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:"EB Garamond", "Noto Serif CJK JP", serif;
+  font-size:56px;
+  line-height:1;
+  color:rgba(255,255,255,0.12);
+}
+.section-kicker{
+  display:block;
+  margin-bottom:8px;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  font-weight:700;
+  color:rgba(255,255,255,0.76);
+}
+.section-head h2{
+  margin:0;
+  color:#fff;
+  background:none;
+  padding:0;
+  border-radius:0;
+  font-family:"EB Garamond", "Noto Serif CJK JP", serif;
+  font-size:31px;
+  line-height:1.15;
+  text-transform:none;
+}
+.section-intro{
+  font-size:15px;
+  color:#3b4250;
+}
+p{
+  margin:0 0 14px;
+}
+h3{
+  margin:28px 0 12px;
+  padding-left:14px;
+  border-left:4px solid var(--accent-2);
+  color:var(--accent);
+  font-size:18px;
+  line-height:1.35;
+  font-weight:800;
+}
+h4{
+  display:inline-block;
+  margin:18px 0 10px;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, #fffdf9 0%, #f7efe3 100%);
+  color:#674c1b;
+  font-size:14px;
+  line-height:1.35;
+  font-weight:700;
+}
+.callout-box{
+  margin:18px 0 22px;
+  padding:18px 20px 18px 22px;
+  border:1px solid #e7d7be;
+  border-left:6px solid var(--accent-2);
+  border-radius:18px;
+  background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+  box-shadow:0 10px 24px rgba(60, 38, 19, 0.05);
+}
+.callout-box strong:first-child{
+  color:var(--accent);
+}
+ol, ul{
+  margin:0 0 16px;
+  padding-left:22px;
+}
+li{
+  margin:0 0 8px;
+}
+li::marker{
+  color:var(--accent-2);
+  font-weight:700;
+}
+.pillar-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:12px 14px;
+  list-style:none;
+  padding:0;
+  margin:18px 0 24px;
+  counter-reset:pillar;
+}
+.pillar-grid > li{
+  position:relative;
+  margin:0;
+  padding:16px 18px 16px 58px;
+  background:linear-gradient(180deg, #fffefd 0%, #fbf4ea 100%);
+  border:1px solid var(--line-2);
+  border-radius:18px;
+  box-shadow:0 8px 18px rgba(60,38,19,0.04);
+  min-height:76px;
+}
+.pillar-grid > li::before{
+  counter-increment:pillar;
+  content:counter(pillar, decimal-leading-zero);
+  position:absolute;
+  left:16px;
+  top:16px;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, var(--accent-2) 0%, #7f642d 100%);
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+}
+.table-shell{
+  margin:16px 0 24px;
+}
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  background:#fff;
+  border:1px solid var(--line-2);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 26px rgba(60, 38, 19, 0.05);
+  font-size:13px;
+}
+thead{
+  display:table-header-group;
+}
+th, td{
+  padding:12px 13px;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+  vertical-align:middle;
+}
+th:last-child, td:last-child{
+  border-right:none;
+}
+tbody tr:last-child td{
+  border-bottom:none;
+}
+thead th{
+  background:linear-gradient(180deg, #fcf5ea 0%, #f2e3cf 100%);
+  color:var(--accent);
+  font-weight:800;
+}
+tbody tr:nth-child(even) td{
+  background:#fffaf4;
+}
+table.table-dense{
+  font-size:12px;
+}
+table.table-ultra-dense{
+  font-size:11px;
+}
+tr.group-row td{
+  background:linear-gradient(90deg, #6e1831 0%, #834a61 100%) !important;
+  color:#fff;
+  font-weight:800;
+  text-align:center;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+ruby{
+  ruby-position:over;
+  font-family:"Noto Sans CJK JP", "Noto Serif CJK JP", sans-serif;
+}
+rt{
+  font-size:0.58em;
+  color:#6c7079;
+}
+.course-banner{
+  margin:26px 0 28px;
+  padding:26px 28px 30px;
+  border-radius:24px;
+  border:1px solid rgba(155,122,56,0.20);
+  background:
+    radial-gradient(circle at top right, rgba(199,171,112,0.18), transparent 22%),
+    linear-gradient(135deg, #fffdfa 0%, #f9efe4 100%);
+  box-shadow:0 14px 32px rgba(60,38,19,0.06);
+}
+.course-banner h3{
+  border-left:none;
+  padding-left:0;
+  margin-top:0;
+  margin-bottom:10px;
+  font-size:26px;
+  font-family:"EB Garamond", "Noto Serif CJK JP", serif;
+}
+.course-banner .intro{
+  color:#3b4250;
+  margin-bottom:18px;
+}
+.price-grid{
+  display:grid;
+  grid-template-columns:repeat(5, minmax(0,1fr));
+  gap:12px;
+  margin:16px 0 20px;
+}
+.price-card, .combo-card{
+  padding:14px 14px 16px;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid var(--line-2);
+  box-shadow:0 8px 16px rgba(60,38,19,0.04);
+}
+.price-card .level{
+  display:block;
+  font-weight:800;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+.old-price{
+  color:#8b8f98;
+  text-decoration:line-through;
+  font-size:13px;
+}
+.new-price{
+  display:block;
+  margin-top:4px;
+  color:#a12d34;
+  font-size:18px;
+  font-weight:800;
+}
+.combo-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:14px;
+  margin-top:18px;
+}
+.combo-card strong{
+  display:block;
+  margin-bottom:8px;
+  color:#674c1b;
+}
+.combo-card.featured{
+  background:linear-gradient(180deg, #fff8ef 0%, #f9e7d1 100%);
+  border-color:#d9bb88;
+}
+.cta-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-top:20px;
+  padding-top:18px;
+  border-top:1px solid var(--line-2);
+}
+.cta-button{
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:999px;
+  text-decoration:none;
+  background:linear-gradient(135deg, #6e1831 0%, #8a2d49 100%);
+  color:#fff !important;
+  font-weight:800;
+  letter-spacing:0.03em;
+}
+.community-card{
+  margin:0 0 30px;
+  padding:22px 24px;
+  border-radius:20px;
+  border:1px solid var(--line-2);
+  background:linear-gradient(180deg, #fffefd 0%, #f7efe5 100%);
+}
+.community-card h3{
+  border-left:none;
+  padding-left:0;
+  margin:0 0 8px;
+}
+.community-card p{
+  margin-bottom:10px;
+}
+.community-card .cta-button{
+  padding:10px 18px;
+  font-size:13px;
+}
+.appendix-box{
+  margin:0 0 20px;
+  border:1px solid var(--line-2);
+  border-radius:20px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 10px 24px rgba(60,38,19,0.05);
+}
+.appendix-title{
+  padding:14px 18px;
+  background:linear-gradient(90deg, #fff9f0 0%, #f1e2ce 100%);
+  color:var(--accent);
+  font-weight:800;
+  border-bottom:1px solid var(--line-2);
+}
+.appendix-content{
+  padding:18px 20px 22px;
+  font-family:"Noto Serif CJK JP", "Noto Sans CJK JP", serif;
+  font-size:17px;
+  line-height:1.95;
+  letter-spacing:0.06em;
+  color:#333a43;
+  overflow-wrap:anywhere;
+}
+.appendix-box[data-level="N1"] .appendix-content{
+  font-size:15px;
+  line-height:1.9;
+}
+.appendix-box[data-level="N2"] .appendix-content,
+.appendix-box[data-level="N3"] .appendix-content{
+  font-size:16px;
+}
+.footer-card{
+  margin-top:24px;
+  padding-top:24px;
+  border-top:1px solid var(--line-2);
+}
+.footer-pillbar{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  text-align:center;
+}
+.footer-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid var(--line-2);
+  background:#fff;
+  color:var(--accent) !important;
+  text-decoration:none;
+  font-weight:700;
+}
+a{
+  color:var(--accent);
+}
+.text-link{
+  color:var(--accent);
+}
+small, .muted{
+  color:var(--muted);
+}
+.print-note{
+  font-size:12px;
+  color:var(--muted);
+}
+@media screen and (max-width: 960px){
+  .page-shell{padding:18px 16px 42px}
+  .cover{padding:44px 28px 40px}
+  .cover-title{font-size:42px}
+  .toc-grid{grid-template-columns:1fr}
+  .document{padding:24px 20px 34px}
+  .pillar-grid{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .combo-grid{grid-template-columns:1fr}
+  .cta-row{flex-direction:column; align-items:flex-start}
+}
+@media print{
+  body{
+    background:#fff;
+    font-size:12px;
+  }
+  .page-shell{
+    max-width:none;
+    margin:0;
+    padding:0;
+  }
+  .cover, .toc-panel, .document{
+    box-shadow:none;
+  }
+  .cover{
+    page-break-after:always;
+    break-after:page;
+    border-radius:18px;
+    padding:48px 46px 42px;
+  }
+  .toc-panel{
+    page-break-after:always;
+    break-after:page;
+    margin:0 0 20px;
+    border-radius:16px;
+  }
+  .document{
+    border:none;
+    border-radius:0;
+    padding:0;
+  }
+  .section-head{
+    break-after:avoid;
+    page-break-after:avoid;
+    margin-top:18px;
+  }
+  h3, h4, p, ul, ol, .callout-box{
+    orphans:3;
+    widows:3;
+  }
+  .table-shell{
+    overflow:visible;
+    break-inside:auto;
+  }
+  table{
+    box-shadow:none;
+    border-radius:0;
+    page-break-inside:auto;
+  }
+  tr, td, th{
+    break-inside:avoid;
+  }
+  .price-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  a{
+    text-decoration:none;
+  }
+}
+
+.table-shell{overflow-x:auto;}
+.source-note{font-size:12px;color:var(--muted);margin-top:10px;}
+.study-rhythm{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0 24px;}
+.rhythm-card{padding:14px 14px 16px;border-radius:18px;background:#fff;border:1px solid var(--line-2);box-shadow:0 8px 16px rgba(60,38,19,0.04);}
+.rhythm-card strong{display:block;margin-bottom:6px;color:var(--accent);}
+@media screen and (max-width: 960px){.study-rhythm{grid-template-columns:1fr;}}
+
+  </style>
+</head>
+<body>
+
+<div class="page-shell">
+  <section class="cover">
+    <div class="cover-badge"><span class="dot"></span>JLPT N5 • Premium Roadmap</div>
+    <h1 class="cover-title">Lộ trình chinh phục JLPT N5 trong 3 tháng</h1>
+    <p class="cover-subtitle">
+      Kế hoạch 12 tuần dành cho người Việt mới bắt đầu học tiếng Nhật: 10 tuần học dứt điểm 25 bài Minna no Nihongo Sơ cấp 1, 2 tuần luyện đề và hiệu chỉnh chiến thuật phòng thi.
+    </p>
+    <div class="metric-row">
+      <span class="metric-chip">12 tuần kỷ luật</span>
+      <span class="metric-chip">25 bài Minna no Nihongo</span>
+      <span class="metric-chip">2.5 bài/tuần</span>
+      <span class="metric-chip">Từ vựng - Ngữ pháp - Kanji - Nghe</span>
+      <span class="metric-chip">2 tuần luyện đề thực chiến</span>
+    </div>
+    <blockquote class="cover-quote">
+      N5 không khó vì kiến thức quá sâu; N5 khó vì người học mới thường thiếu nhịp học ổn định. Hãy biến 12 tuần này thành một hệ thống, không phải một lời hứa.
+    </blockquote>
+    <div class="cover-meta">
+      <div>Thiết kế theo chuẩn Premium Editorial</div>
+      <div>Trọng tâm: rõ tiến độ, rõ đầu ra, rõ tiêu chuẩn đạt</div>
+    </div>
+  </section>
+
+  <nav class="toc-panel">
+    <span class="panel-overline">Điều hướng nhanh</span>
+    <h2 class="toc-title">Mục lục lộ trình</h2>
+    <p class="toc-subtitle">Mỗi phần được thiết kế như một chặng học độc lập: có mục tiêu, nhịp vận hành, tiêu chuẩn hoàn thành và nhiệm vụ kiểm tra.</p>
+    <div class="toc-grid">
+      <a class="toc-item" href="#section-1">
+        <span class="toc-item-number">I</span>
+        <span class="toc-item-title">Chiến lược cốt lõi</span>
+        <span class="toc-item-summary">Cách phối hợp Từ vựng, Ngữ pháp, Kanji và Nghe hiểu để không học lệch kỹ năng.</span>
+      </a>
+      <a class="toc-item" href="#section-2">
+        <span class="toc-item-number">II</span>
+        <span class="toc-item-title">Nhịp học tiêu chuẩn</span>
+        <span class="toc-item-summary">Cấu trúc một ngày học, một bài học và một tuần học để giữ tiến độ 2-3 bài/tuần.</span>
+      </a>
+      <a class="toc-item" href="#section-3">
+        <span class="toc-item-number">III</span>
+        <span class="toc-item-title">10 tuần học 25 bài Minna</span>
+        <span class="toc-item-summary">Bảng phân bổ chi tiết theo tuần, trọng tâm ngữ pháp và nhiệm vụ Kanji/Nghe đi kèm.</span>
+      </a>
+      <a class="toc-item" href="#section-4">
+        <span class="toc-item-number">IV</span>
+        <span class="toc-item-title">2 tuần luyện đề &amp; tổng ôn</span>
+        <span class="toc-item-summary">Kế hoạch 14 ngày để làm quen cấu trúc đề, căn thời gian, chữa lỗi và ổn định tâm lý.</span>
+      </a>
+      <a class="toc-item" href="#section-5">
+        <span class="toc-item-number">V</span>
+        <span class="toc-item-title">Bảng kiểm soát lỗi</span>
+        <span class="toc-item-summary">Cách ghi lỗi sai để biến mỗi đề luyện thành dữ liệu cải thiện điểm số.</span>
+      </a>
+      <a class="toc-item" href="#section-6">
+        <span class="toc-item-number">VI</span>
+        <span class="toc-item-title">Lời kết phòng thi</span>
+        <span class="toc-item-summary">Chiến thuật giữ nhịp, xử lý câu khó và bước vào phòng thi với tâm thế chủ động.</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="document">
+    <section class="doc-section" id="section-1">
+      <div class="section-head" data-mark="I">
+        <span class="section-kicker">Giai đoạn nền tảng</span>
+        <h2>Chiến lược học kết hợp bốn trụ cột</h2>
+      </div>
+
+      <p class="section-intro">
+        Người mới học N5 không nên học từng mảng rời rạc. Mỗi bài Minna cần được xử lý như một “đơn vị năng lực”: biết từ, hiểu mẫu câu, nhận diện Kanji cơ bản, nghe được hội thoại ngắn và tự nói lại được một phiên bản đơn giản.
+      </p>
+
+      <ol class="pillar-grid">
+        <li>
+          <strong>Từ vựng đi trước ngữ pháp.</strong><br/>
+          Trước khi học mẫu câu, học tối thiểu 70% từ mới của bài. Không chỉ nhìn nghĩa Việt; phải đọc to, nghe âm, đặt cụm ngắn.
+        </li>
+        <li>
+          <strong>Ngữ pháp học bằng thao tác.</strong><br/>
+          Mỗi mẫu câu phải có ba thao tác: nhận diện, biến đổi, tự đặt câu. Không tính là đã học nếu chỉ chép công thức.
+        </li>
+        <li>
+          <strong>Kanji học theo nhóm nghĩa.</strong><br/>
+          N5 chỉ cần nền móng: số đếm, ngày tháng, phương hướng, người, học tập, thời gian, tự nhiên. Ưu tiên nhận diện và đọc trong từ vựng.
+        </li>
+        <li>
+          <strong>Nghe hiểu học từ âm thanh thật.</strong><br/>
+          Nghe cùng bài đang học. Một hội thoại ngắn phải được nghe ít nhất 5 lượt: đoán ý, mở transcript, shadowing, trả lời câu hỏi, nghe lại không nhìn.
+        </li>
+        <li>
+          <strong>Ôn tập theo vòng lặp 1-3-7.</strong><br/>
+          Từ và mẫu câu mới cần được chạm lại sau 1 ngày, 3 ngày, 7 ngày. Đây là “hàng rào chống quên”, không phải phần phụ.
+        </li>
+        <li>
+          <strong>Đầu ra nhỏ nhưng bắt buộc.</strong><br/>
+          Mỗi bài hoàn thành phải để lại: 20 từ nhớ chắc, 8-10 câu tự đặt, 1 đoạn hội thoại đọc trôi, 1 mini-test đạt tối thiểu 70%.
+        </li>
+      </ol>
+
+      <div class="highlight-box callout-box">
+        <strong>Nguyên tắc thực chiến:</strong>
+        Đừng học theo cảm giác “hôm nay mình học khá nhiều”. Hãy học theo bằng chứng: số từ nhớ được khi che nghĩa, số câu đặt đúng, số lỗi nghe còn lại sau khi nghe lần thứ năm, và điểm mini-test sau mỗi cụm bài.
+      </div>
+
+      <h3>Chuẩn đầu ra sau 12 tuần</h3>
+      <div class="table-shell">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width:22%">Mảng năng lực</th>
+              <th style="width:38%">Chuẩn cần đạt</th>
+              <th style="width:40%">Cách tự kiểm tra</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Từ vựng</strong></td>
+              <td>Nắm khoảng 800-900 từ/cụm từ căn bản trong 25 bài Minna và bộ từ N5 thường gặp.</td>
+              <td>Che nghĩa Việt, đọc to tiếng Nhật, đặt được cụm ngắn hoặc câu ngắn trong 5 giây/từ.</td>
+            </tr>
+            <tr>
+              <td><strong>Ngữ pháp</strong></td>
+              <td>Nắm các mẫu nền tảng: thể ます, て, ない, 辞書形, た, 普通形, bổ nghĩa danh từ, điều kiện cơ bản.</td>
+              <td>Làm bài biến đổi thể động từ và bài điền trợ từ/mẫu câu, đạt tối thiểu 75% trước tuần 11.</td>
+            </tr>
+            <tr>
+              <td><strong>Kanji</strong></td>
+              <td>Nhận diện khoảng 80 Kanji N5 trong từ quen thuộc; đọc được các nhóm số, ngày, phương hướng, người, học tập.</td>
+              <td>Nhìn Kanji trong từ ghép đơn giản và đọc được: 日曜日, 学生, 日本, 入口, 電車, 先生.</td>
+            </tr>
+            <tr>
+              <td><strong>Nghe hiểu</strong></td>
+              <td>Nghe được câu chào hỏi, thời gian, mua bán, hỏi đường, sở thích, lời mời, sinh hoạt hằng ngày.</td>
+              <td>Nghe đoạn 30-60 giây, ghi lại từ khóa, chọn đáp án, sau đó shadowing được 70% tốc độ mẫu.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-2">
+      <div class="section-head" data-mark="II">
+        <span class="section-kicker">Giai đoạn vận hành</span>
+        <h2>Nhịp học tiêu chuẩn cho người mới bắt đầu</h2>
+      </div>
+
+      <p class="section-intro">
+        Lộ trình này giả định nhịp học bền vững: 6 ngày/tuần, mỗi ngày 90-120 phút. Nếu ngày quá bận, vẫn phải giữ “phiên tối thiểu” 45 phút để không đứt mạch.
+      </p>
+
+      <div class="highlight-box callout-box">
+        <strong>Phiên tối thiểu 45 phút:</strong>
+        15 phút ôn từ bằng active recall, 15 phút luyện một mẫu ngữ pháp bằng 5 câu tự đặt, 10 phút nghe lại hội thoại bài đang học, 5 phút ghi lỗi. Không học bài mới trong phiên tối thiểu; mục tiêu là giữ nhịp và chống quên.
+      </div>
+
+      <div class="study-rhythm">
+        <div class="rhythm-card"><strong>Buổi 1</strong>Từ vựng + phát âm + nghe thô hội thoại.</div>
+        <div class="rhythm-card"><strong>Buổi 2</strong>Ngữ pháp + đặt câu + trợ từ trọng tâm.</div>
+        <div class="rhythm-card"><strong>Buổi 3</strong>Bài tập + shadowing + mini-test.</div>
+        <div class="rhythm-card"><strong>Cuối tuần</strong>Vá lỗi, ôn vòng 1-3-7, kiểm tra tích lũy.</div>
+      </div>
+
+      <h3>Cấu trúc một bài Minna trong 2-3 ngày</h3>
+      <div class="table-shell">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width:20%">Chặng</th>
+              <th style="width:32%">Việc phải làm</th>
+              <th style="width:28%">Đầu ra bắt buộc</th>
+              <th style="width:20%">Tiêu chuẩn qua bài</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Ngày mở bài</strong></td>
+              <td>Học từ vựng, đọc ví dụ, nghe hội thoại một lượt không nhìn sách, đánh dấu từ chưa nghe ra.</td>
+              <td>Danh sách 20-30 từ trọng tâm, 5 cụm từ dễ dùng trong đời sống.</td>
+              <td>Đọc đúng tối thiểu 70% từ mới.</td>
+            </tr>
+            <tr>
+              <td><strong>Ngày ngữ pháp</strong></td>
+              <td>Học mẫu câu chính, phân tích trợ từ, luyện biến đổi câu, đặt câu cá nhân hóa.</td>
+              <td>8-10 câu tự đặt, có ít nhất 2 câu liên quan bản thân.</td>
+              <td>Không sai trợ từ ở các mẫu chính.</td>
+            </tr>
+            <tr>
+              <td><strong>Ngày khóa bài</strong></td>
+              <td>Làm bài tập, nghe lại hội thoại, shadowing, kiểm tra từ vựng và ngữ pháp.</td>
+              <td>Mini-test 15-20 câu, bảng lỗi sai, 1 đoạn hội thoại đọc trôi.</td>
+              <td>Đạt 70% trở lên mới chuyển bài tiếp.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Nhịp một tuần khi học 2-3 bài</h3>
+      <div class="table-shell">
+        <table class="data-table table-dense">
+          <thead>
+            <tr>
+              <th style="width:16%">Ngày</th>
+              <th style="width:28%">Nhiệm vụ chính</th>
+              <th style="width:28%">Nhiệm vụ phụ</th>
+              <th style="width:28%">Điểm kiểm soát</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Thứ 2</strong></td><td>Mở bài mới: từ vựng + mẫu câu 1</td><td>Nghe hội thoại 3 lượt</td><td>Đọc từ mới không ngập ngừng</td></tr>
+            <tr><td><strong>Thứ 3</strong></td><td>Ngữ pháp + bài tập mẫu câu</td><td>Kanji 8-10 chữ hoặc 10 từ có Kanji</td><td>Đặt 8 câu đúng trợ từ</td></tr>
+            <tr><td><strong>Thứ 4</strong></td><td>Khóa bài 1, mở bài 2</td><td>Shadowing 10 phút</td><td>Mini-test bài 1 đạt 70%</td></tr>
+            <tr><td><strong>Thứ 5</strong></td><td>Ngữ pháp bài 2 + luyện đọc ngắn</td><td>Ôn vòng 1-3-7</td><td>Làm đúng bài biến đổi thể</td></tr>
+            <tr><td><strong>Thứ 6</strong></td><td>Khóa bài 2, nếu tuần có 3 bài thì mở bài 3</td><td>Nghe phân biệt từ khóa</td><td>Không để quá 15 từ đỏ/từ chưa nhớ</td></tr>
+            <tr><td><strong>Thứ 7</strong></td><td>Hoàn tất bài 3 hoặc tổng ôn 2 bài</td><td>Làm quiz 30-40 câu</td><td>Tổng điểm tuần đạt 70-75%</td></tr>
+            <tr><td><strong>Chủ nhật</strong></td><td>Không nhồi bài mới</td><td>Sửa lỗi, nghe nhẹ, chuẩn bị tuần sau</td><td>Chốt danh sách lỗi còn tồn</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-3">
+      <div class="section-head" data-mark="III">
+        <span class="section-kicker">Giai đoạn học kiến thức mới</span>
+        <h2>10 tuần học dứt điểm 25 bài Minna no Nihongo Sơ cấp 1</h2>
+      </div>
+
+      <p class="section-intro">
+        Tốc độ trung bình là 2.5 bài/tuần. Các tuần có 3 bài được đặt ở những cụm kiến thức còn tương đối tuyến tính; các tuần có 2 bài dành cho những điểm ngữ pháp cần thời gian hấp thụ như tính từ, thể て, thể ない, thể từ điển, bổ nghĩa danh từ và văn thường.
+      </p>
+
+      <div class="highlight-box callout-box">
+        <strong>Đường đỏ của 10 tuần đầu:</strong>
+        Không được “chạy bài” bằng cách chỉ xem lời giải. Mỗi bài phải có mini-test, mỗi tuần phải có một buổi sửa lỗi, và mỗi cụm 5 bài phải có một bài kiểm tra tích lũy. Nếu điểm dưới 70%, giảm tốc độ trong 1-2 ngày để vá lỗi trước khi học tiếp.
+      </div>
+
+      <div class="table-shell">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width: 12%">Tuần</th>
+              <th style="width: 18%">Bài Minna</th>
+              <th style="width: 42%">Trọng tâm Ngữ pháp/Từ vựng</th>
+              <th style="width: 28%">Nhiệm vụ Nghe/Kanji đi kèm</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-size:1.15em; font-weight:bold; text-align:center">Tuần 1</td>
+              <td><strong>Bài 1-2</strong><br/><span class="muted">Kèm Hiragana/Katakana</span></td>
+              <td style="line-height:1.8">
+                • Bảng chữ Hiragana/Katakana: đọc, viết, phân biệt âm dài, âm ngắt, âm ghép<br/>
+                • 私は N です / N じゃありません / N ですか<br/>
+                • これ・それ・あれ, この・その・あの, N の N<br/>
+                • Từ vựng: quốc tịch, nghề nghiệp, đồ vật lớp học, chào hỏi căn bản
+              </td>
+              <td style="line-height:1.8">
+                • Nghe chào hỏi và tự giới thiệu 5 lượt/ngày<br/>
+                • Kanji: 一 二 三 四 五 六 七 八 九 十, 人, 日, 本<br/>
+                • Đầu tuần chưa ép tốc độ; ưu tiên phát âm kana chuẩn
+              </td>
+            </tr>
+
+            <tr>
+              <td style="font-size:1.15em; font-weight:bold; text-align:center">Tuần 2</td>
+              <td><strong>Bài 3-5</strong></td>
+              <td style="line-height:1.8">
+                • ここ・そこ・あそこ, こちら・そちら・あちら<br/>
+                • Thời gian: 今, 何時, 何分, ～から～まで<br/>
+                • Động từ ます/ません/ました/ませんでした<br/>
+                • Đi lại: 行きます・来ます・帰ります, trợ từ へ, で, と<br/>
+                • Từ vựng: địa điểm, thời gian, phương tiện, ngày tháng
+              </td>
+              <td style="line-height:1.8">
+                • Nghe hỏi giờ, hỏi địa điểm, hội thoại đi đâu/bằng gì<br/>
+                • Kanji: 時, 分, 半, 月, 火, 水, 木, 金, 土<br/>
+                • Viết lịch cá nhân 5 câu/ngày bằng mẫu đã học
+              </td>
+            </tr>
+
+            <tr>
+              <td style="font-size:1.15em; font-weight:bold; text-align:center">Tuần 3</td>
+              <td><strong>Bài 6-7</strong></td>
+              <td style="line-height:1.8">
+                • Động từ tha động với を: 食べます, 飲みます, 見ます<br/>
+                • Địa điểm hành động với で<br/>
+                • Lời mời: ～ませんか / ～ましょう<br/>
+                • Công cụ/phương tiện: はしで食べます, 日本語で話します<br/>
+                • あげます・もらいます, もう Vました
+              </td>
+              <td style="line-height:1.8">
+                • Nghe lời mời, phản hồi đồng ý/từ chối lịch sự<br/>
+                • Kanji: 食, 飲, 見, 書, 読, 話, 聞<br/>
+                • Shadowing hội thoại mua/quà tặng 10 phút/ngày
+              </td>
+            </tr>
+
+            <tr>
+              <td style="font-size:1.15em; font-weight:bold; text-align:center">Tuần 4</td>
+              <td><strong>Bài 8-10</strong></td>
+              <td style="line-height:1.8">
+                • Tính từ い/な: hiện tại, phủ định, quá khứ cơ bản<br/>
+                • 好き・嫌い・上手・下手, わかります, あります<br/>
+                • Lý do với から<br/>
+                • Tồn tại: あります・います, vị trí của vật/người<br/>
+                • Từ vựng: tính chất, sở thích, gia đình, đồ vật trong phòng
+              </td>
+              <td style="line-height:1.8">
+                • Nghe mô tả người/vật/phòng; vẽ sơ đồ theo nội dung nghe<br/>
+                • Kanji: 上, 下, 中, 外, 前, 後, 右, 左, 間<br/>
+                • Bài kiểm tra tích lũy bài 1-10 cuối tuần
+              </td>
+            </tr>
+
+            <tr>
+              <td style="font-size:1.15em; font-weight:bold; text-align:center">Tuần 5</td>
+              <td><strong>Bài 11-12</strong></td>
+              <td style="line-height:1.8">
+                • Số lượng, bộ đếm, tần suất: ひとつ, ふたり, ～回, ～時間<br/>
+                • So sánh: ～より, どちらが, ～が一番<br/>
+                • Tính từ và danh từ ở quá khứ<br/>
+                • Từ vựng: số đếm, thời lượng, du lịch, món ăn, thời tiết
+              </td>
+              <td style="line-height:1.8">
+                • Nghe số lượng/giá tiền/thời gian; ghi nhanh con số<br/>
+                • Kanji: 百, 千, 万, 円, 年, 何, 先, 生<br/>
+                • Tự nói 1 phút: “Tuần này tôi học bao lâu?”
+              </td>
+            </tr>
+
+            <tr>
+              <td style="font-size:1.15em; font-weight:bold; text-align:center">Tuần 6</td>
+              <td><strong>Bài 13-15</strong></td>
+              <td style="line-height:1.8">
+                • Mong muốn: N がほしい, Vたいです<br/>
+                • Đi làm gì: Vます bỏ ます + に行きます<br/>
+                • Thể て: Vてください, Vています, Vましょうか<br/>
+                • Cho phép/cấm đoán: Vてもいいですか, Vてはいけません<br/>
+                • Từ vựng: mua sắm, hoạt động, yêu cầu, quy định
+              </td>
+              <td style="line-height:1.8">
+                • Nghe yêu cầu/ngăn cấm trong lớp học, cửa hàng, nhà ga<br/>
+                • Kanji: 買, 行, 来, 帰, 車, 電, 駅<br/>
+                • Làm bảng chuyển thể て cho toàn bộ động từ đã học
+              </td>
+            </tr>
+
+            <tr>
+              <td style="font-size:1.15em; font-weight:bold; text-align:center">Tuần 7</td>
+              <td><strong>Bài 16-17</strong></td>
+              <td style="line-height:1.8">
+                • Nối hành động bằng thể て: Vて、Vて、それから<br/>
+                • Vてから: làm xong A rồi B<br/>
+                • Nối tính từ/danh từ trong mô tả<br/>
+                • Thể ない: Vないでください, Vなければなりません, Vなくてもいいです<br/>
+                • Từ vựng: sinh hoạt, sức khỏe, việc phải làm, quy tắc
+              </td>
+              <td style="line-height:1.8">
+                • Nghe hướng dẫn trình tự; ghi lại 3 bước chính<br/>
+                • Kanji: 休, 早, 起, 寝, 使, 止<br/>
+                • Bài kiểm tra tích lũy bài 11-17 cuối tuần
+              </td>
+            </tr>
+
+            <tr>
+              <td style="font-size:1.15em; font-weight:bold; text-align:center">Tuần 8</td>
+              <td><strong>Bài 18-20</strong></td>
+              <td style="line-height:1.8">
+                • Thể từ điển: Vる/Vう/Vく/Vす/Vつ/Vぬ/Vむ/Vぶ<br/>
+                • Vことができます, 趣味は V辞書形ことです<br/>
+                • Vるまえに / Nのまえに<br/>
+                • Thể た: Vたことがあります, Vたり Vたりします, Vたら<br/>
+                • Văn thường: 普通形 trong nói/viết thân mật
+              </td>
+              <td style="line-height:1.8">
+                • Nghe kể kinh nghiệm, sở thích, việc từng làm<br/>
+                • Kanji: 学, 校, 友, 名, 語, 国, 毎<br/>
+                • Lập bảng 4 thể: ます・て・ない・辞書形・た
+              </td>
+            </tr>
+
+            <tr>
+              <td style="font-size:1.15em; font-weight:bold; text-align:center">Tuần 9</td>
+              <td><strong>Bài 21-22</strong></td>
+              <td style="line-height:1.8">
+                • Ý kiến: ～と思います<br/>
+                • Trích dẫn: ～と言います<br/>
+                • ～でしょう dùng để xác nhận/dự đoán nhẹ<br/>
+                • Bổ nghĩa danh từ bằng mệnh đề thường: 私が昨日買った本<br/>
+                • Từ vựng: tin tức đơn giản, ý kiến, sự kiện, đồ vật mô tả
+              </td>
+              <td style="line-height:1.8">
+                • Nghe câu có ý kiến và trích dẫn; phân biệt ai nói gì<br/>
+                • Kanji: 思, 言, 会, 事, 物, 新, 古<br/>
+                • Viết 8 câu bổ nghĩa danh từ, không dùng tiếng Việt hóa cấu trúc
+              </td>
+            </tr>
+
+            <tr>
+              <td style="font-size:1.15em; font-weight:bold; text-align:center">Tuần 10</td>
+              <td><strong>Bài 23-25</strong></td>
+              <td style="line-height:1.8">
+                • ～とき: khi làm gì/khi như thế nào<br/>
+                • V辞書形と: làm A thì B xảy ra<br/>
+                • Cho/nhận hành động: Vてあげます・Vてもらいます・Vてくれます<br/>
+                • Điều kiện: Vたら / Adjたら / Nだったら<br/>
+                • Dù/cho dù: Vても / Adjても / Nでも
+              </td>
+              <td style="line-height:1.8">
+                • Nghe tình huống giúp đỡ, chỉ đường, điều kiện đơn giản<br/>
+                • Kanji: 道, 近, 遠, 雨, 天, 気, 白, 青, 赤<br/>
+                • Thi thử nội bộ bài 1-25 trước khi bước sang tuần luyện đề
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Các mốc kiểm tra trong 10 tuần đầu</h3>
+      <div class="combo-grid">
+        <div class="combo-card">
+          <strong>Sau tuần 4</strong>
+          Hoàn tất bài 1-10. Phải đọc trôi Hiragana/Katakana, nắm câu danh từ, động từ ます, tính từ và tồn tại あります/います.
+        </div>
+        <div class="combo-card">
+          <strong>Sau tuần 7</strong>
+          Hoàn tất bài 11-17. Phải xử lý được số lượng, so sánh, thể て và thể ない. Đây là giai đoạn dễ “rơi nhịp” nhất.
+        </div>
+        <div class="combo-card featured">
+          <strong>Sau tuần 10</strong>
+          Hoàn tất bài 1-25. Phải có bảng lỗi cá nhân, danh sách từ đỏ, bảng chuyển thể động từ và ít nhất 2 đề mini tổng hợp.
+        </div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-4">
+      <div class="section-head" data-mark="IV">
+        <span class="section-kicker">Giai đoạn luyện đề</span>
+        <h2>2 tuần tổng ôn, căn thời gian và chữa lỗi sai</h2>
+      </div>
+
+      <p class="section-intro">
+        Hai tuần cuối không dùng để học lan man thêm tài liệu mới. Đây là giai đoạn chuyển từ “biết kiến thức” sang “làm đúng trong thời gian thi”. Theo trang chính thức JLPT, N5 có ba phần thi: Language Knowledge/Vocabulary 20 phút, Grammar・Reading 40 phút và Listening 30 phút.
+      </p>
+      <p class="source-note">Nguồn cấu trúc đề: <a href="https://www.jlpt.jp/sp/e/guideline/testsections.html" target="_blank" rel="noopener">JLPT - Test Sections and Test Times</a>.</p>
+
+      <div class="highlight-box callout-box">
+        <strong>Quy tắc luyện đề:</strong>
+        Làm đề mà không chữa lỗi chỉ là đo điểm, không phải tăng điểm. Sau mỗi đề, thời gian chữa phải dài ít nhất bằng 1.5 lần thời gian làm đề. Mỗi lỗi cần được gắn nhãn: sai từ vựng, sai Kanji, sai trợ từ, sai chia thể, đọc thiếu ngữ cảnh, nghe mất từ khóa, hoặc mất thời gian.
+      </div>
+
+      <h3>Tuần 11: Tổng ôn có hệ thống</h3>
+      <div class="table-shell">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width:14%">Ngày</th>
+              <th style="width:25%">Trọng tâm</th>
+              <th style="width:39%">Nhiệm vụ thực chiến</th>
+              <th style="width:22%">Tiêu chuẩn hoàn thành</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 1</td><td>Chẩn đoán năng lực</td><td>Làm một đề N5 rút gọn hoặc đề mô phỏng theo đúng thứ tự: Từ vựng → Ngữ pháp/Đọc → Nghe. Không tra cứu khi làm.</td><td>Có điểm từng phần và danh sách 20 lỗi lớn nhất.</td></tr>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 2</td><td>Từ vựng &amp; Kanji</td><td>Quét lại từ bài 1-12. Chia thẻ thành 3 nhóm: nhớ chắc, lưỡng lự, không nhớ. Tập trung nhóm lưỡng lự và không nhớ.</td><td>Giảm nhóm “không nhớ” xuống dưới 40 từ.</td></tr>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 3</td><td>Ngữ pháp bài 1-12</td><td>Làm bài điền trợ từ, chia thì ます, phủ định, quá khứ, tính từ, so sánh. Viết lại câu sai bằng tay.</td><td>Đúng tối thiểu 75%; lỗi trợ từ phải có ví dụ sửa.</td></tr>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 4</td><td>Ngữ pháp bài 13-25</td><td>Ôn Vたい, thể て, ない, 辞書形, た, 普通形, bổ nghĩa danh từ, とき, たら, ても.</td><td>Lập bảng chuyển thể 30 động từ thông dụng.</td></tr>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 5</td><td>Đọc hiểu ngắn</td><td>Làm 6-8 đoạn đọc N5 ngắn. Trước khi chọn đáp án, gạch chân: chủ ngữ, thời gian, địa điểm, phủ định, câu hỏi.</td><td>Không mất quá 4-5 phút cho một đoạn ngắn.</td></tr>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 6</td><td>Nghe hiểu chuyên sâu</td><td>Nghe 6-10 đoạn ngắn. Mỗi đoạn theo quy trình: nghe không nhìn → ghi từ khóa → nghe kèm transcript → shadowing → nghe lại.</td><td>Nghe lại lần cuối hiểu được ý chính 80%.</td></tr>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 7</td><td>Mini Mock Test 1</td><td>Làm đề mô phỏng 60-70% độ dài đề thật. Sau đó chữa lỗi theo bảng lỗi, không chỉ xem đáp án.</td><td>Biết rõ 3 nhóm lỗi đang kéo điểm xuống.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Tuần 12: Luyện đề, khóa lỗi và ổn định tâm lý</h3>
+      <div class="table-shell">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width:14%">Ngày</th>
+              <th style="width:25%">Trọng tâm</th>
+              <th style="width:39%">Nhiệm vụ thực chiến</th>
+              <th style="width:22%">Tiêu chuẩn hoàn thành</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 8</td><td>Full Mock Test 1</td><td>Làm một đề đầy đủ theo đúng thời gian: 20 phút từ vựng, 40 phút ngữ pháp/đọc, 30 phút nghe. Không dừng giữa phần nghe.</td><td>Có điểm, thời gian dư/thiếu và bảng lỗi chi tiết.</td></tr>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 9</td><td>Chữa đề theo cụm lỗi</td><td>Không làm đề mới. Gom lỗi thành nhóm: Kanji, từ gần nghĩa, trợ từ, thể động từ, đọc thiếu điều kiện, nghe mất chủ thể.</td><td>Mỗi nhóm lỗi có 5 câu luyện bù.</td></tr>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 10</td><td>Tăng tốc phần Từ vựng</td><td>Luyện nhận diện Kanji/từ vựng bằng đồng hồ bấm giờ. Mỗi câu không sa lầy quá lâu; câu khó đánh dấu rồi quay lại.</td><td>Hoàn thành phần từ vựng trong 18-20 phút.</td></tr>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 11</td><td>Tăng độ chắc phần Ngữ pháp/Đọc</td><td>Làm bài sắp xếp câu, điền mẫu câu, đọc đoạn ngắn. Với mỗi câu sai, viết lý do sai bằng tiếng Việt ngắn gọn.</td><td>Không sai lặp lại cùng một mẫu quá 2 lần.</td></tr>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 12</td><td>Full Mock Test 2</td><td>Làm đề đầy đủ lần hai. Mục tiêu không phải “học thêm” mà là kiểm tra khả năng giữ nhịp và giảm lỗi cũ.</td><td>Điểm tăng hoặc lỗi cũ giảm rõ rệt so với Ngày 8.</td></tr>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 13</td><td>Khóa danh sách đỏ</td><td>Ôn toàn bộ từ đỏ, Kanji đỏ, mẫu ngữ pháp đỏ. Không mở chủ đề mới. Chỉ làm bài ngắn để giữ cảm giác đề.</td><td>Danh sách đỏ còn tối đa 20-30 mục thật sự khó.</td></tr>
+            <tr><td style="font-weight:bold; text-align:center">Ngày 14</td><td>Ổn định trước thi</td><td>Nghe nhẹ 15-20 phút, đọc lại bảng lỗi, chuẩn bị giấy tờ, bút, đồng hồ, tuyến đường. Ngủ sớm, không cày đề khuya.</td><td>Tâm lý ổn, biết chiến thuật làm bài, không thêm áp lực mới.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-5">
+      <div class="section-head" data-mark="V">
+        <span class="section-kicker">Giai đoạn hiệu chỉnh</span>
+        <h2>Bảng kiểm soát lỗi sai để tăng điểm thật</h2>
+      </div>
+
+      <p class="section-intro">
+        Điểm N5 thường không tăng vì người học làm quá nhiều đề nhưng không phân tích lỗi. Bảng dưới đây là hệ thống bắt buộc dùng từ tuần 4 đến tuần 12.
+      </p>
+
+      <div class="table-shell">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width:22%">Loại lỗi</th>
+              <th style="width:30%">Dấu hiệu nhận biết</th>
+              <th style="width:30%">Cách sửa trong 24 giờ</th>
+              <th style="width:18%">Bài kiểm tra lại</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Sai từ vựng</strong></td><td>Nhìn từ thấy quen nhưng không nhớ nghĩa, hoặc nhầm hai từ gần âm.</td><td>Tạo thẻ mới gồm từ, câu ví dụ, âm thanh. Đọc to 5 lần và đặt 2 câu.</td><td>Che nghĩa sau 24 giờ.</td></tr>
+            <tr><td><strong>Sai Kanji</strong></td><td>Đọc nhầm 日/月/火, 上/下/中, 先/生, 電/車, 学/校.</td><td>Gắn Kanji vào từ, không học chữ đơn lẻ. Ví dụ: 日曜日, 電車, 学校.</td><td>Đọc 20 từ có Kanji.</td></tr>
+            <tr><td><strong>Sai trợ từ</strong></td><td>Nhầm は/が, を/で, に/へ, と/で, の trong cụm danh từ.</td><td>Viết lại câu sai thành 3 câu mới cùng cấu trúc. Gạch chân chức năng của trợ từ.</td><td>10 câu điền trợ từ.</td></tr>
+            <tr><td><strong>Sai chia thể</strong></td><td>Không chuyển được て/ない/辞書形/た, đặc biệt nhóm 1.</td><td>Lập bảng 30 động từ: ます形 → て形 → ない形 → 辞書形 → た形.</td><td>Chia thể trong 5 phút.</td></tr>
+            <tr><td><strong>Sai đọc hiểu</strong></td><td>Đọc từng chữ nhưng không nắm ai làm gì, khi nào, ở đâu, phủ định hay khẳng định.</td><td>Trước khi trả lời, khoanh thời gian, chủ thể, hành động, phủ định và câu hỏi.</td><td>2 đoạn đọc ngắn có bấm giờ.</td></tr>
+            <tr><td><strong>Sai nghe</strong></td><td>Nghe được vài từ nhưng mất câu hỏi chính hoặc nhầm người nói.</td><td>Nghe lại theo vai: ai nói, muốn gì, chọn gì, thời gian nào. Sau đó shadowing.</td><td>Nghe lại không transcript.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="highlight-box callout-box">
+        <strong>Công thức ghi lỗi 1 dòng:</strong>
+        “Tôi sai vì ___; dấu hiệu đúng là ___; lần sau gặp dạng này tôi sẽ nhìn ___ trước.” Ví dụ: “Tôi sai vì thấy で là nghĩ ngay phương tiện; dấu hiệu đúng là hành động xảy ra tại địa điểm; lần sau tôi sẽ hỏi: đây là phương tiện hay nơi diễn ra hành động?”
+      </div>
+
+      <h3>Chuẩn điểm tối thiểu khi luyện đề</h3>
+      <div class="table-shell">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width:26%">Hạng mục</th>
+              <th style="width:34%">Mốc chính thức cần biết</th>
+              <th style="width:40%">Mốc luyện tập an toàn</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Tổng điểm N5</strong></td>
+              <td>Tổng điểm tối đa 180; điểm đỗ tổng thể là 80.</td>
+              <td>Khi luyện đề, nên hướng tới vùng 95-110 để có biên an toàn.</td>
+            </tr>
+            <tr>
+              <td><strong>Language Knowledge・Reading</strong></td>
+              <td>Thang điểm 0-120; điểm sàn phần này là 38.</td>
+              <td>Không để phần này dưới 50 trong 2 đề liên tiếp.</td>
+            </tr>
+            <tr>
+              <td><strong>Listening</strong></td>
+              <td>Thang điểm 0-60; điểm sàn phần nghe là 19.</td>
+              <td>Không để nghe dưới 25; nghe thấp thường kéo tâm lý rất mạnh.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="source-note">Nguồn điểm số và cách chia scoring sections: <a href="https://www.jlpt.jp/sp/e/guideline/results.html" target="_blank" rel="noopener">JLPT - Scoring Sections, Pass or Fail, Score Report</a>.</p>
+    </section>
+
+    <section class="doc-section" id="section-6">
+      <div class="section-head" data-mark="VI">
+        <span class="section-kicker">Giai đoạn về đích</span>
+        <h2>Lời kết: tâm lý phòng thi và lời chúc</h2>
+      </div>
+
+      <p class="section-intro">
+        Phòng thi không phải nơi để chứng minh rằng bạn biết mọi thứ. Phòng thi là nơi bạn thực hiện đúng những gì đã luyện: đọc yêu cầu, giữ thời gian, bỏ qua câu kẹt, quay lại khi còn thời gian và không để một câu khó phá nhịp toàn bài.
+      </p>
+
+      <div class="highlight-box callout-box">
+        <strong>Chiến thuật trong ngày thi:</strong>
+        Vào phần Từ vựng, câu nào không nhận ra sau vài giây thì đánh dấu và đi tiếp. Vào phần Ngữ pháp/Đọc, đọc câu hỏi trước khi đọc đoạn. Vào phần Nghe, tuyệt đối không tiếc câu vừa qua; âm thanh đã đi qua thì buông ngay để bắt câu tiếp theo. Điểm số đến từ sự ổn định, không đến từ sự hoàn hảo.
+      </div>
+
+      <section class="course-banner">
+        <span class="panel-overline">Thông điệp cuối</span>
+        <h3>N5 là bài kiểm tra của nhịp học, không chỉ của trí nhớ</h3>
+        <p class="intro">
+          Nếu bạn đi đủ 12 tuần, hoàn thành 25 bài Minna, chữa lỗi thật và luyện đề đúng thời gian, bạn sẽ bước vào kỳ thi với một lợi thế rất rõ: bạn biết mình mạnh ở đâu, yếu ở đâu, và phải xử lý từng phần như thế nào. Đó là sự tự tin có căn cứ.
+        </p>
+        <div class="combo-grid">
+          <div class="combo-card">
+            <strong>Trước khi thi 7 ngày</strong>
+            Không mở tài liệu mới. Chỉ ôn bảng lỗi, từ đỏ, Kanji đỏ, mẫu ngữ pháp hay sai và nghe nhẹ mỗi ngày.
+          </div>
+          <div class="combo-card">
+            <strong>Trước khi thi 1 ngày</strong>
+            Chuẩn bị giấy tờ, bút, đường đi, giờ có mặt. Ngủ đủ. Đừng biến một đêm cuối thành 12 tuần học bù.
+          </div>
+          <div class="combo-card featured">
+            <strong>Trong phòng thi</strong>
+            Làm câu chắc trước, câu khó sau. Giữ tay đều, mắt tỉnh, tâm bình. Bạn không cần hoàn hảo; bạn cần ổn định.
+          </div>
+        </div>
+      </section>
+
+      <p>
+        Chúc bạn hoàn thành N5 với phong thái kỷ luật, sáng rõ và bình tĩnh. Hãy xem từng tuần như một viên gạch nhỏ: không hào nhoáng, nhưng đặt đúng vị trí thì sau 3 tháng sẽ thành một nền móng vững chắc cho N4, N3 và hành trình tiếng Nhật dài hạn.
+      </p>
+    </section>
+
+    <footer class="footer-card">
+      <div class="footer-links footer-pillbar">
+        <span class="footer-pill">JLPT N5 • 12 tuần</span>
+        <span class="footer-pill">25 bài Minna no Nihongo</span>
+        <span class="footer-pill">Premium Editorial Roadmap</span>
+      </div>
+      <p class="print-note" style="text-align:center; margin-top:14px;">
+        Bản HTML được thiết kế để mở trực tiếp trên trình duyệt và có thể in ra PDF bằng lệnh Print.
+      </p>
+    </footer>
+  </main>
+</div>
+
+
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="lo-trinh-jlpt-n5-html"></script>
+</body>
+</html>

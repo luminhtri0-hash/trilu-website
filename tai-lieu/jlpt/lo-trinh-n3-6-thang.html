@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Cẩm nang Lộ trình JLPT N3 Premium - 6 Tháng | Bản chỉnh theo từng bài</title>
+<style>
+@page {
+  size: A4;
+  margin: 15mm 14mm 16mm 14mm;
+}
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#6e1831;
+  --accent-2:#9b7a38;
+  --accent-3:#c7ab70;
+  --line:#dfcfbb;
+  --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{
+  scroll-behavior:smooth;
+}
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(110,24,49,0.08), transparent 22%),
+    linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Noto Sans Thai", "Segoe UI", sans-serif;
+  line-height:1.75;
+  font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{
+  max-width:1150px;
+  margin:0 auto;
+  padding:30px 24px 76px;
+}
+.cover{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 36%, #3a0f1b 100%);
+  color:#fff;
+  border-radius:30px;
+  box-shadow:var(--shadow);
+  padding:64px 68px 56px;
+}
+.cover::before{
+  content:"";
+  position:absolute;
+  top:18px;
+  right:18px;
+  bottom:18px;
+  left:18px;
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:22px;
+}
+.cover::after{
+  content:"";
+  position:absolute;
+  right:-80px;
+  top:-90px;
+  width:260px;
+  height:260px;
+  border-radius:50%;
+  background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%);
+}
+.cover-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 16px;
+  border:1px solid rgba(255,255,255,0.16);
+  border-radius:999px;
+  background:rgba(255,255,255,0.08);
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  font-size:11px;
+  font-weight:700;
+  position:relative;
+  z-index:1;
+}
+.cover-badge .dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent-3);
+  box-shadow:0 0 0 5px rgba(199,171,112,0.14);
+}
+.cover-title{
+  position:relative;
+  z-index:1;
+  margin:26px 0 16px;
+  font-family: "EB Garamond", "Noto Serif CJK JP", serif;
+  font-weight:700;
+  font-size:56px;
+  line-height:1.04;
+  letter-spacing:-0.02em;
+  max-width:12.5ch;
+}
+.cover-subtitle{
+  position:relative;
+  z-index:1;
+  max-width:760px;
+  font-size:16px;
+  color:rgba(255,255,255,0.88);
+  margin:0 0 26px;
+}
+.metric-row{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:26px 0 34px;
+}
+.metric-chip{
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+}
+.cover-quote{
+  position:relative;
+  z-index:1;
+  margin:0;
+  max-width:560px;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,0.18);
+  font-style:italic;
+  font-size:16px;
+  color:rgba(255,255,255,0.86);
+}
+.cover-meta{
+  position:relative;
+  z-index:1;
+  margin-top:28px;
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  font-size:13px;
+  color:rgba(255,255,255,0.76);
+}
+.toc-panel{
+  margin:26px 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96));
+  border:1px solid rgba(155,122,56,0.20);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{
+  display:block;
+  margin-bottom:8px;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  font-size:11px;
+  font-weight:700;
+  color:var(--accent-2);
+}
+.toc-title{
+  margin:0 0 6px;
+  font-family:"EB Garamond", "Noto Serif CJK JP", serif;
+  font-size:34px;
+  line-height:1.1;
+  color:var(--accent);
+}
+.toc-subtitle{
+  margin:0 0 20px;
+  color:var(--muted);
+  font-size:14px;
+}
+.toc-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:16px;
+}
+.toc-item{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  padding:18px 18px 16px;
+  background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%);
+  border:1px solid var(--line-2);
+  border-radius:18px;
+}
+.toc-item-number{
+  display:block;
+  margin-bottom:6px;
+  font-family:"EB Garamond", "Noto Serif CJK JP", serif;
+  font-size:32px;
+  line-height:1;
+  color:var(--accent-2);
+}
+.toc-item-title{
+  display:block;
+  font-weight:700;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+.toc-item-summary{
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.55;
+}
+.document{
+  background:var(--paper);
+  border:1px solid rgba(155,122,56,0.16);
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  padding:34px 44px 52px;
+}
+.doc-section{
+  margin:0 0 28px;
+}
+.doc-section + .doc-section{
+  padding-top:6px;
+}
+.section-head{
+  position:relative;
+  overflow:hidden;
+  margin:12px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #57132a 0%, #6e1831 52%, #7f3b52 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark);
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:"EB Garamond", "Noto Serif CJK JP", serif;
+  font-size:56px;
+  line-height:1;
+  color:rgba(255,255,255,0.12);
+}
+.section-kicker{
+  display:block;
+  margin-bottom:8px;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  font-weight:700;
+  color:rgba(255,255,255,0.76);
+}
+.section-head h2{
+  margin:0;
+  color:#fff;
+  background:none;
+  padding:0;
+  border-radius:0;
+  font-family:"EB Garamond", "Noto Serif CJK JP", serif;
+  font-size:31px;
+  line-height:1.15;
+  text-transform:none;
+}
+.section-intro{
+  font-size:15px;
+  color:#3b4250;
+}
+p{
+  margin:0 0 14px;
+}
+h3{
+  margin:28px 0 12px;
+  padding-left:14px;
+  border-left:4px solid var(--accent-2);
+  color:var(--accent);
+  font-size:18px;
+  line-height:1.35;
+  font-weight:800;
+}
+h4{
+  display:inline-block;
+  margin:18px 0 10px;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, #fffdf9 0%, #f7efe3 100%);
+  color:#674c1b;
+  font-size:14px;
+  line-height:1.35;
+  font-weight:700;
+}
+.callout-box{
+  margin:18px 0 22px;
+  padding:18px 20px 18px 22px;
+  border:1px solid #e7d7be;
+  border-left:6px solid var(--accent-2);
+  border-radius:18px;
+  background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+  box-shadow:0 10px 24px rgba(60, 38, 19, 0.05);
+}
+.callout-box strong:first-child{
+  color:var(--accent);
+}
+ol, ul{
+  margin:0 0 16px;
+  padding-left:22px;
+}
+li{
+  margin:0 0 8px;
+}
+li::marker{
+  color:var(--accent-2);
+  font-weight:700;
+}
+.pillar-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:12px 14px;
+  list-style:none;
+  padding:0;
+  margin:18px 0 24px;
+  counter-reset:pillar;
+}
+.pillar-grid > li{
+  position:relative;
+  margin:0;
+  padding:16px 18px 16px 58px;
+  background:linear-gradient(180deg, #fffefd 0%, #fbf4ea 100%);
+  border:1px solid var(--line-2);
+  border-radius:18px;
+  box-shadow:0 8px 18px rgba(60,38,19,0.04);
+  min-height:76px;
+}
+.pillar-grid > li::before{
+  counter-increment:pillar;
+  content:counter(pillar, decimal-leading-zero);
+  position:absolute;
+  left:16px;
+  top:16px;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, var(--accent-2) 0%, #7f642d 100%);
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+}
+.table-shell{
+  margin:16px 0 24px;
+}
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  background:#fff;
+  border:1px solid var(--line-2);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 26px rgba(60, 38, 19, 0.05);
+  font-size:13px;
+}
+thead{
+  display:table-header-group;
+}
+th, td{
+  padding:12px 13px;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+  vertical-align:middle;
+}
+th:last-child, td:last-child{
+  border-right:none;
+}
+tbody tr:last-child td{
+  border-bottom:none;
+}
+thead th{
+  background:linear-gradient(180deg, #fcf5ea 0%, #f2e3cf 100%);
+  color:var(--accent);
+  font-weight:800;
+}
+tbody tr:nth-child(even) td{
+  background:#fffaf4;
+}
+table.table-dense{
+  font-size:12px;
+}
+table.table-ultra-dense{
+  font-size:11px;
+}
+tr.group-row td{
+  background:linear-gradient(90deg, #6e1831 0%, #834a61 100%) !important;
+  color:#fff;
+  font-weight:800;
+  text-align:center;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+}
+ruby{
+  ruby-position:over;
+  font-family:"Noto Sans CJK JP", "Noto Serif CJK JP", sans-serif;
+}
+rt{
+  font-size:0.58em;
+  color:#6c7079;
+}
+.course-banner{
+  margin:26px 0 28px;
+  padding:26px 28px 30px;
+  border-radius:24px;
+  border:1px solid rgba(155,122,56,0.20);
+  background:
+    radial-gradient(circle at top right, rgba(199,171,112,0.18), transparent 22%),
+    linear-gradient(135deg, #fffdfa 0%, #f9efe4 100%);
+  box-shadow:0 14px 32px rgba(60,38,19,0.06);
+}
+.course-banner h3{
+  border-left:none;
+  padding-left:0;
+  margin-top:0;
+  margin-bottom:10px;
+  font-size:26px;
+  font-family:"EB Garamond", "Noto Serif CJK JP", serif;
+}
+.course-banner .intro{
+  color:#3b4250;
+  margin-bottom:18px;
+}
+.price-grid{
+  display:grid;
+  grid-template-columns:repeat(5, minmax(0,1fr));
+  gap:12px;
+  margin:16px 0 20px;
+}
+.price-card, .combo-card{
+  padding:14px 14px 16px;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid var(--line-2);
+  box-shadow:0 8px 16px rgba(60,38,19,0.04);
+}
+.price-card .level{
+  display:block;
+  font-weight:800;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+.old-price{
+  color:#8b8f98;
+  text-decoration:line-through;
+  font-size:13px;
+}
+.new-price{
+  display:block;
+  margin-top:4px;
+  color:#a12d34;
+  font-size:18px;
+  font-weight:800;
+}
+.combo-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:14px;
+  margin-top:18px;
+}
+.combo-card strong{
+  display:block;
+  margin-bottom:8px;
+  color:#674c1b;
+}
+.combo-card.featured{
+  background:linear-gradient(180deg, #fff8ef 0%, #f9e7d1 100%);
+  border-color:#d9bb88;
+}
+.cta-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  margin-top:20px;
+  padding-top:18px;
+  border-top:1px solid var(--line-2);
+}
+.cta-button{
+  display:inline-block;
+  padding:12px 24px;
+  border-radius:999px;
+  text-decoration:none;
+  background:linear-gradient(135deg, #6e1831 0%, #8a2d49 100%);
+  color:#fff !important;
+  font-weight:800;
+  letter-spacing:0.03em;
+}
+.community-card{
+  margin:0 0 30px;
+  padding:22px 24px;
+  border-radius:20px;
+  border:1px solid var(--line-2);
+  background:linear-gradient(180deg, #fffefd 0%, #f7efe5 100%);
+}
+.community-card h3{
+  border-left:none;
+  padding-left:0;
+  margin:0 0 8px;
+}
+.community-card p{
+  margin-bottom:10px;
+}
+.community-card .cta-button{
+  padding:10px 18px;
+  font-size:13px;
+}
+.appendix-box{
+  margin:0 0 20px;
+  border:1px solid var(--line-2);
+  border-radius:20px;
+  overflow:hidden;
+  background:#fff;
+  box-shadow:0 10px 24px rgba(60,38,19,0.05);
+}
+.appendix-title{
+  padding:14px 18px;
+  background:linear-gradient(90deg, #fff9f0 0%, #f1e2ce 100%);
+  color:var(--accent);
+  font-weight:800;
+  border-bottom:1px solid var(--line-2);
+}
+.appendix-content{
+  padding:18px 20px 22px;
+  font-family:"Noto Serif CJK JP", "Noto Sans CJK JP", serif;
+  font-size:17px;
+  line-height:1.95;
+  letter-spacing:0.06em;
+  color:#333a43;
+  overflow-wrap:anywhere;
+}
+.appendix-box[data-level="N1"] .appendix-content{
+  font-size:15px;
+  line-height:1.9;
+}
+.appendix-box[data-level="N2"] .appendix-content,
+.appendix-box[data-level="N3"] .appendix-content{
+  font-size:16px;
+}
+.footer-card{
+  margin-top:24px;
+  padding-top:24px;
+  border-top:1px solid var(--line-2);
+}
+.footer-pillbar{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  text-align:center;
+}
+.footer-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid var(--line-2);
+  background:#fff;
+  color:var(--accent) !important;
+  text-decoration:none;
+  font-weight:700;
+}
+a{
+  color:var(--accent);
+}
+.text-link{
+  color:var(--accent);
+}
+small, .muted{
+  color:var(--muted);
+}
+.print-note{
+  font-size:12px;
+  color:var(--muted);
+}
+@media screen and (max-width: 960px){
+  .page-shell{padding:18px 16px 42px}
+  .cover{padding:44px 28px 40px}
+  .cover-title{font-size:42px}
+  .toc-grid{grid-template-columns:1fr}
+  .document{padding:24px 20px 34px}
+  .pillar-grid{grid-template-columns:1fr}
+  .price-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .combo-grid{grid-template-columns:1fr}
+  .cta-row{flex-direction:column; align-items:flex-start}
+}
+@media print{
+  body{
+    background:#fff;
+    font-size:12px;
+  }
+  .page-shell{
+    max-width:none;
+    margin:0;
+    padding:0;
+  }
+  .cover, .toc-panel, .document{
+    box-shadow:none;
+  }
+  .cover{
+    page-break-after:always;
+    break-after:page;
+    border-radius:18px;
+    padding:48px 46px 42px;
+  }
+  .toc-panel{
+    page-break-after:always;
+    break-after:page;
+    margin:0 0 20px;
+    border-radius:16px;
+  }
+  .document{
+    border:none;
+    border-radius:0;
+    padding:0;
+  }
+  .section-head{
+    break-after:avoid;
+    page-break-after:avoid;
+    margin-top:18px;
+  }
+  h3, h4, p, ul, ol, .callout-box{
+    orphans:3;
+    widows:3;
+  }
+  .table-shell{
+    overflow:visible;
+    break-inside:auto;
+  }
+  table{
+    box-shadow:none;
+    border-radius:0;
+    page-break-inside:auto;
+  }
+  tr, td, th{
+    break-inside:avoid;
+  }
+  .price-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }
+  a{
+    text-decoration:none;
+  }
+}
+</style>
+</head>
+<body>
+<div class="page-shell">
+  <section class="cover">
+    <div class="cover-badge"><span class="dot"></span>Trí Lữ Nihongo • Premium N3 Roadmap</div>
+    <h1 class="cover-title">Cẩm nang Lộ trình JLPT N3 Premium</h1>
+    <p class="cover-subtitle">Lộ trình 6 tháng được thiết kế theo tinh thần <ruby>合格<rt>ごうかく</rt></ruby>: học chắc nền tảng, luyện đều kỹ năng, tích lũy phản xạ nghe - đọc và bước vào phòng thi với chiến lược rõ ràng.</p>
+    <div class="metric-row">
+      <span class="metric-chip">Khai giảng 25/5</span>
+      <span class="metric-chip">6 tháng • 24 tuần học chính</span>
+      <span class="metric-chip">Thứ 3 - Thứ 5 - Thứ 7</span>
+      <span class="metric-chip">19h00 VN • 21h00 NB</span>
+      <span class="metric-chip">120 phút/buổi</span>
+    </div>
+    <blockquote class="cover-quote">Không học để đi thật nhanh. Học để mỗi tuần đều tiến bộ, mỗi tháng đều nhìn thấy mình gần hơn với N3.</blockquote>
+    <div class="cover-meta">
+      <div>Giáo trình: Shinkanzen Master N3 &amp; Kanji Master</div>
+      <div>Từ vựng • Ngữ pháp • Đọc hiểu • Nghe hiểu • Kanji • Luyện đề</div>
+    </div>
+  </section>
+
+  <nav class="toc-panel">
+    <span class="panel-overline">Điều hướng nhanh</span>
+    <h2 class="toc-title">Mục lục lộ trình</h2>
+    <p class="toc-subtitle">Toàn bộ chương trình được chia thành hai giai đoạn lớn: tích lũy kiến thức nền tảng trong 3 tháng đầu và bứt tốc kỹ năng - luyện đề trong 3 tháng cuối.</p>
+    <div class="toc-grid">
+      <a class="toc-item" href="#section-1">
+        <span class="toc-item-number">I</span>
+        <span class="toc-item-title">Tổng quan &amp; Kỳ vọng</span>
+        <span class="toc-item-summary">Mục tiêu đầu ra, tinh thần học tập, giáo trình sử dụng và các trụ cột năng lực cần đạt sau 6 tháng.</span>
+      </a>
+      <a class="toc-item" href="#section-2">
+        <span class="toc-item-number">II</span>
+        <span class="toc-item-title">Giai đoạn 1: Từ vựng &amp; Ngữ pháp</span>
+        <span class="toc-item-summary">12 tuần đầu hoàn thành 21 bài Từ vựng, 4 mốc kiểm tra và 12 bài Ngữ pháp theo đúng tên bài trong sách.</span>
+      </a>
+      <a class="toc-item" href="#section-3">
+        <span class="toc-item-number">III</span>
+        <span class="toc-item-title">Giai đoạn 2: Kỹ năng &amp; Luyện đề</span>
+        <span class="toc-item-summary">12 tuần cuối rèn Đọc hiểu, Nghe hiểu, Kanji, tốc độ xử lý đề và chiến lược làm bài thi thật.</span>
+      </a>
+      <a class="toc-item" href="#section-4">
+        <span class="toc-item-number">IV</span>
+        <span class="toc-item-title">Thông tin lớp học</span>
+        <span class="toc-item-summary">Khung giờ, cấu trúc một buổi học, cách nộp bài, sửa bài và cơ chế theo dõi tiến bộ cá nhân.</span>
+      </a>
+    </div>
+  </nav>
+
+  <main class="document">
+    <section class="doc-section" id="section-1">
+      <div class="section-head" data-mark="I"><span class="section-kicker">Phần 1</span><h2>Tổng quan &amp; Kỳ vọng</h2></div>
+      <p class="section-intro">Chương trình JLPT N3 6 tháng được xây dựng cho học viên muốn vượt qua kỳ thi đồng thời sử dụng tiếng Nhật tự nhiên hơn trong đời sống hằng ngày. Trọng tâm không chỉ là “học hết sách”, mà là biến kiến thức thành năng lực đọc, nghe, diễn đạt và phản xạ.</p>
+
+      <ol class="pillar-grid">
+        <li><strong>Nắm chắc Từ vựng N3:</strong> Hoàn thành 21 bài Shinkanzen Master N3 Từ vựng, biết dùng từ trong ngữ cảnh câu và đoạn văn.</li>
+        <li><strong>Hoàn thành Ngữ pháp N3:</strong> Học đủ 12 bài Shinkanzen Master N3 Ngữ pháp, phân biệt sắc thái và luyện đặt câu ứng dụng.</li>
+        <li><strong>Tăng tốc <ruby>読解<rt>どっかい</rt></ruby>:</strong> Đọc được đoạn văn ngắn, trung bình, văn bản thông báo và bài quan điểm ở chuẩn N3.</li>
+        <li><strong>Nâng lực <ruby>聴解<rt>ちょうかい</rt></ruby>:</strong> Nghe bắt ý chính, chi tiết quan trọng, mục đích hội thoại và phản ứng phù hợp trong giao tiếp.</li>
+        <li><strong>Củng cố <ruby>漢字<rt>かんじ</rt></ruby>:</strong> Học Kanji Master theo nhóm nghĩa, âm đọc, từ ghép và câu ví dụ để tránh học rời rạc.</li>
+        <li><strong>Sẵn sàng thi thật:</strong> Luyện đề theo thời gian chuẩn, biết quản trị điểm yếu, tốc độ và tâm lý phòng thi.</li>
+      </ol>
+
+      <div class="highlight-box callout-box"><strong>Triết lý đào tạo:</strong> Mỗi buổi học cần có ba tầng kết quả: hiểu kiến thức mới, sửa được lỗi cũ và biết tự học phần tiếp theo. Vì vậy, lộ trình luôn kết hợp bài mới, bài tập, chữa lỗi, kiểm tra ngắn và nhật ký lỗi cá nhân.</div>
+
+      <h3>Giáo trình sử dụng</h3>
+      <div class="table-shell">
+        <table class="data-table">
+          <thead><tr><th>Nhóm năng lực</th><th>Giáo trình chính</th><th>Vai trò trong lộ trình</th></tr></thead>
+          <tbody>
+            <tr><td>Từ vựng</td><td>Shinkanzen Master N3 Từ vựng</td><td>Hoàn thành 21 bài trong Giai đoạn 1; tái sử dụng xuyên suốt Giai đoạn 2 qua đọc, nghe và luyện đề.</td></tr>
+            <tr><td>Ngữ pháp</td><td>Shinkanzen Master N3 Ngữ pháp</td><td>Hoàn thành 12 bài trong 12 tuần đầu; sang Giai đoạn 2 chuyển sang phân biệt mẫu câu, xử lý bẫy đề và viết câu ứng dụng.</td></tr>
+            <tr><td>Đọc hiểu</td><td>Shinkanzen Master N3 Đọc hiểu</td><td>Rèn kỹ thuật đọc câu chủ đề, liên kết logic, ý tác giả, quét thông tin và quản trị thời gian.</td></tr>
+            <tr><td>Nghe hiểu</td><td>Shinkanzen Master N3 Nghe hiểu</td><td>Luyện nghe theo dạng câu hỏi, nhận diện ngữ cảnh, mục đích hội thoại, chi tiết số liệu và phản hồi tự nhiên.</td></tr>
+            <tr><td>Kanji</td><td>Kanji Master</td><td>Học theo cụm âm đọc, bộ phận cấu tạo, từ ghép và ví dụ thực tế; ưu tiên Kanji thường gặp trong đề N3.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Cấu trúc 6 tháng</h3>
+      <div class="table-shell">
+        <table class="data-table">
+          <thead><tr><th>Giai đoạn</th><th>Thời lượng</th><th>Trọng tâm</th><th>Kết quả cần đạt</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Giai đoạn 1</strong></td><td>Tuần 1 - 12</td><td>Từ vựng 21 bài, Ngữ pháp 12 bài, bài tập và kiểm tra nền tảng.</td><td>Có khung kiến thức N3 vững để bắt đầu đọc - nghe - luyện đề có hệ thống.</td></tr>
+            <tr><td><strong>Giai đoạn 2</strong></td><td>Tuần 13 - 24</td><td>Đọc hiểu, Nghe hiểu, Kanji, luyện đề từng phần và đề tổng hợp.</td><td>Tăng tốc xử lý bài thi, giảm lỗi lặp lại, hoàn thiện chiến lược thi thật.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-2">
+      <div class="section-head" data-mark="II"><span class="section-kicker">Phần 2</span><h2>Lịch học Giai đoạn 1: Từ vựng &amp; Ngữ pháp theo từng bài</h2></div>
+      <p class="section-intro">Giai đoạn 1 kéo dài 12 tuần, bám đúng danh sách bài của Shinkanzen Master N3: <strong>21 bài Từ vựng</strong>, <strong>4 mốc kiểm tra từ vựng</strong> và <strong>12 bài Ngữ pháp</strong>. Thứ 3 và Thứ 7 ưu tiên Từ vựng; Thứ 5 đi đều từng bài Ngữ pháp. Các mốc <em>実力を試そう</em> được tích hợp sau khi hoàn thành đúng nhóm bài tương ứng.</p>
+
+      <div class="highlight-box callout-box"><strong>Nguyên tắc sửa lộ trình:</strong> Không ghi chung chung “Bài 01, Bài 02” nữa, mà gắn rõ tên bài tiếng Nhật, nghĩa tiếng Việt, trang sách và nhóm kiểm tra. Những buổi kiểm tra trong sách không tách thành bài mới riêng nếu làm chậm tiến độ, mà được đưa vào cuối buổi sau khi chốt nhóm bài.</div>
+
+      <h3>Danh sách Từ vựng Shinkanzen N3 theo đúng thứ tự sách</h3>
+      <div class="table-shell">
+        <table class="data-table table-dense">
+          <thead><tr><th>Bài / Mục</th><th>Tiếng Nhật</th><th>Tiếng Việt</th><th>Trang</th></tr></thead>
+          <tbody>
+            <tr><td>1課</td><td>人間関係1：家族と友達、性格</td><td>Mối quan hệ con người 1: Gia đình và bạn bè, tính cách</td><td>2</td></tr>
+<tr><td>2課</td><td>人間関係2：付き合い、気持ち</td><td>Mối quan hệ con người 2: Mối quan hệ, cảm xúc</td><td>6</td></tr>
+<tr><td>3課</td><td>生活1：毎日の生活</td><td>Cuộc sống 1: Cuộc sống sinh hoạt thường ngày</td><td>10</td></tr>
+<tr><td>4課</td><td>生活2：食生活</td><td>Cuộc sống 2: Thói quen ăn uống</td><td>14</td></tr>
+<tr><td>5課</td><td>生活3：家</td><td>Cuộc sống 3: Nhà</td><td>18</td></tr>
+<tr class="group-row"><td>Kiểm tra</td><td>実力を試そう (1課〜5課)</td><td>Kiểm tra năng lực (từ bài 1 đến bài 5)</td><td>22</td></tr>
+<tr><td>6課</td><td>体1：美容、健康</td><td>Cơ thể 1: Sắc đẹp và sức khỏe</td><td>24</td></tr>
+<tr><td>7課</td><td>体2：病気</td><td>Cơ thể 2: Bệnh tật</td><td>28</td></tr>
+<tr><td>8課</td><td>趣味と旅行1：スポーツ、芸術</td><td>Sở thích và du lịch 1: Thể thao, nghệ thuật</td><td>32</td></tr>
+<tr><td>9課</td><td>趣味と旅行2：ファッション</td><td>Sở thích và du lịch 2: Thời trang</td><td>36</td></tr>
+<tr><td>10課</td><td>趣味と旅行3：旅行</td><td>Sở thích và du lịch 3: Du lịch</td><td>40</td></tr>
+<tr class="group-row"><td>Kiểm tra</td><td>実力を試そう (6課〜10課)</td><td>Kiểm tra năng lực (từ bài 6 đến bài 10)</td><td>44</td></tr>
+<tr><td>11課</td><td>教育1：学校生活 (小中高)</td><td>Giáo dục 1: Cuộc sống ở trường học (tiểu học, trung học, phổ thông)</td><td>46</td></tr>
+<tr><td>12課</td><td>教育2：学校生活 (大学)</td><td>Giáo dục 2: Cuộc sống ở trường học (đại học)</td><td>50</td></tr>
+<tr><td>13課</td><td>仕事1：仕事</td><td>Công việc 1: Công việc</td><td>54</td></tr>
+<tr><td>14課</td><td>仕事2：コンピューター、郵便、電話など</td><td>Công việc 2: Máy tính, bưu phẩm, điện thoại</td><td>58</td></tr>
+<tr class="group-row"><td>Kiểm tra</td><td>実力を試そう (11課〜14課)</td><td>Kiểm tra năng lực (từ bài 11 đến bài 14)</td><td>62</td></tr>
+<tr><td>15課</td><td>社会1：事件、事故</td><td>Xã hội 1: Vụ việc và tai nạn</td><td>64</td></tr>
+<tr><td>16課</td><td>社会2：政治、経済</td><td>Xã hội 2: Chính trị và kinh tế</td><td>68</td></tr>
+<tr><td>17課</td><td>社会3：行事、宗教</td><td>Xã hội 3: Sự kiện lễ hội, tôn giáo</td><td>72</td></tr>
+<tr><td>18課</td><td>自然1：季節と天気、地理</td><td>Tự nhiên 1: Mùa và thời tiết, địa lý</td><td>76</td></tr>
+<tr><td>19課</td><td>自然2：植物、動物など</td><td>Tự nhiên 2: Thực vật, động vật</td><td>80</td></tr>
+<tr class="group-row"><td>Kiểm tra</td><td>実力を試そう (15課〜19課)</td><td>Kiểm tra năng lực (từ bài 15 đến bài 19)</td><td>84</td></tr>
+<tr><td>20課</td><td>数と量</td><td>Số và lượng</td><td>86</td></tr>
+<tr><td>21課</td><td>時間</td><td>Thời gian</td><td>90</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Bảng tiến độ 12 tuần đầu đã chỉnh theo từng bài</h3>
+      <div class="table-shell">
+        <table class="data-table table-ultra-dense">
+          <thead><tr><th>Tuần</th><th>Thứ 3<br/>Từ vựng</th><th>Thứ 5<br/>Ngữ pháp</th><th>Thứ 7<br/>Từ vựng</th><th>Đầu ra trong tuần</th></tr></thead>
+          <tbody>
+            <tr><td>Tuần 1</td><td><strong>1課</strong> — 人間関係1：家族と友達、性格<br/><small>Mối quan hệ con người 1: Gia đình và bạn bè, tính cách • tr. 2</small></td><td><strong>Bài 01</strong><br/><small>Thời điểm: 〜うちに／〜間／〜間に／〜てからでないと／〜ところだ</small></td><td><strong>2課</strong> — 人間関係2：付き合い、気持ち<br/><small>Mối quan hệ con người 2: Mối quan hệ, cảm xúc • tr. 6</small></td><td>Thiết lập sổ lỗi; học cách ghi từ theo chủ đề, ví dụ và collocation.</td></tr>
+<tr><td>Tuần 2</td><td><strong>3課</strong> — 生活1：毎日の生活<br/><small>Cuộc sống 1: Cuộc sống sinh hoạt thường ngày • tr. 10</small></td><td><strong>Bài 02</strong><br/><small>Cách thức & mức độ: 〜とおり／〜によって／〜たびに／〜ほど／〜ついでに</small></td><td><strong>4課</strong> — 生活2：食生活<br/><small>Cuộc sống 2: Thói quen ăn uống • tr. 14</small></td><td>Tập đặt câu ngắn với từ vựng sinh hoạt và mẫu ngữ pháp chỉ cách thức/mức độ.</td></tr>
+<tr><td>Tuần 3</td><td><strong>5課</strong> — 生活3：家<br/><small>Cuộc sống 3: Nhà • tr. 18</small><br/><small>Cuối buổi chốt nhóm 1課〜5課.</small></td><td><strong>Bài 03</strong><br/><small>Mức độ & lựa chọn: 〜くらい・ほど／〜くらいなら／〜に限る</small></td><td><strong>6課</strong> — 体1：美容、健康<br/><small>Cơ thể 1: Sắc đẹp và sức khỏe • tr. 24</small></td><td>Tích hợp <strong>実力を試そう (1課〜5課)</strong> tr. 22 để kiểm tra nhóm từ vựng 1-5.</td></tr>
+<tr><td>Tuần 4</td><td><strong>7課</strong> — 体2：病気<br/><small>Cơ thể 2: Bệnh tật • tr. 28</small></td><td><strong>Bài 04</strong><br/><small>Đối lập & thay thế: 〜に対して／〜反面／〜一方／〜というより／〜代わりに</small></td><td><strong>8課</strong> — 趣味と旅行1：スポーツ、芸術<br/><small>Sở thích và du lịch 1: Thể thao, nghệ thuật • tr. 32</small></td><td>Mini test 1: Từ vựng 1-8 và Ngữ pháp 1-4; sửa lỗi phân biệt mẫu gần nghĩa.</td></tr>
+<tr><td>Tuần 5</td><td><strong>9課</strong> — 趣味と旅行2：ファッション<br/><small>Sở thích và du lịch 2: Thời trang • tr. 36</small></td><td><strong>Bài 05</strong><br/><small>Nguyên nhân: 〜ため／〜によって／〜ことから／〜おかげで・せいで／〜のだから</small></td><td><strong>10課</strong> — 趣味と旅行3：旅行<br/><small>Sở thích và du lịch 3: Du lịch • tr. 40</small><br/><small>Cuối buổi chốt nhóm 6課〜10課.</small></td><td>Tích hợp <strong>実力を試そう (6課〜10課)</strong> tr. 44; gom lỗi theo chủ đề sở thích, thời trang, du lịch.</td></tr>
+<tr><td>Tuần 6</td><td><strong>11課</strong> — 教育1：学校生活 (小中高)<br/><small>Giáo dục 1: Cuộc sống ở trường học (tiểu học, trung học, phổ thông) • tr. 46</small></td><td><strong>Bài 06</strong><br/><small>Điều kiện: 〜なら／〜ては／〜さえ〜ば／たとえ〜ても／ば・たら・なら</small></td><td><strong>12課</strong> — 教育2：学校生活 (大学)<br/><small>Giáo dục 2: Cuộc sống ở trường học (đại học) • tr. 50</small></td><td>Ứng dụng từ vựng giáo dục vào đoạn đọc ngắn; luyện điều kiện ば・たら・なら trong ngữ cảnh.</td></tr>
+<tr><td>Tuần 7</td><td><strong>13課</strong> — 仕事1：仕事<br/><small>Công việc 1: Công việc • tr. 54</small></td><td><strong>Bài 07</strong><br/><small>Truyền đạt: 〜ということだ／〜と言われている／〜とか／〜って／〜という</small></td><td><strong>14課</strong> — 仕事2：コンピューター、郵便、電話など<br/><small>Công việc 2: Máy tính, bưu phẩm, điện thoại • tr. 58</small><br/><small>Cuối buổi chốt nhóm 11課〜14課.</small></td><td>Tích hợp <strong>実力を試そう (11課〜14課)</strong> tr. 62; luyện từ vựng công việc, máy tính, bưu phẩm, điện thoại.</td></tr>
+<tr><td>Tuần 8</td><td><strong>15課</strong> — 社会1：事件、事故<br/><small>Xã hội 1: Vụ việc và tai nạn • tr. 64</small></td><td><strong>Bài 08</strong><br/><small>Phủ định một phần: 〜はずがない／〜とは限らない／〜わけではない／〜ないことはない</small></td><td><strong>16課</strong> — 社会2：政治、経済<br/><small>Xã hội 2: Chính trị và kinh tế • tr. 68</small></td><td>Mini test 2: Từ vựng 9-16 và Ngữ pháp 5-8; sửa lỗi suy luận và phủ định một phần.</td></tr>
+<tr><td>Tuần 9</td><td><strong>17課</strong> — 社会3：行事、宗教<br/><small>Xã hội 3: Sự kiện lễ hội, tôn giáo • tr. 72</small></td><td><strong>Bài 09</strong><br/><small>Mong muốn & xin phép: 〜てもらいたい／〜させてもらいたい／〜といい・ばいい・たらいい</small></td><td><strong>18課</strong> — 自然1：季節と天気、地理<br/><small>Tự nhiên 1: Mùa và thời tiết, địa lý • tr. 76</small></td><td>Luyện đọc câu dài theo chủ đề xã hội, sự kiện, tôn giáo, thời tiết và địa lý.</td></tr>
+<tr><td>Tuần 10</td><td><strong>19課</strong> — 自然2：植物、動物など<br/><small>Tự nhiên 2: Thực vật, động vật • tr. 80</small><br/><small>Cuối buổi chốt nhóm 15課〜19課.</small></td><td><strong>Bài 10</strong><br/><small>Mệnh lệnh & khuyên nhủ: 命令形／禁止形／〜こと／〜べきだ／〜たらどう</small></td><td><strong>20課</strong> — 数と量<br/><small>Số và lượng • tr. 86</small></td><td>Tích hợp <strong>実力を試そう (15課〜19課)</strong> tr. 84; bắt đầu gom lỗi số lượng, tự nhiên và xã hội.</td></tr>
+<tr><td>Tuần 11</td><td><strong>21課</strong> — 時間<br/><small>Thời gian • tr. 90</small></td><td><strong>Bài 11</strong><br/><small>Quyết định & ý định: 〜ことにする／〜ようにする／〜(よ)うとする／〜つもりだ</small></td><td><strong>Tổng ôn Từ vựng 1課〜21課</strong><br/><small>Rà từ yếu, từ gần nghĩa, từ theo Kanji và bài tập còn tồn.</small></td><td>Chốt đủ 21 bài Từ vựng; lập danh sách từ yếu cần ôn hằng ngày.</td></tr>
+<tr><td>Tuần 12</td><td><strong>Tổng ôn Từ vựng 1課〜21課</strong><br/><small>Bài đọc ứng dụng + kiểm tra từ theo chủ đề.</small></td><td><strong>Bài 12</strong><br/><small>Kính ngữ: お・ご／おVになる／おVします／ございます／よろしいでしょうか</small></td><td><strong>Checkpoint Giai đoạn 1</strong><br/><small>Từ vựng 1課〜21課 + Ngữ pháp Bài 1〜12.</small></td><td>Chốt đủ 12 bài Ngữ pháp; đánh giá năng lực trước khi chuyển sang Đọc hiểu, Nghe hiểu, Kanji và luyện đề.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Tóm tắt Ngữ pháp Shinkanzen N3 theo từng bài</h3>
+      <div class="table-shell">
+        <table class="data-table table-dense">
+          <thead><tr><th>Bài</th><th>Trọng tâm</th><th>Mẫu ngữ pháp cần nắm</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Bài 1</strong></td><td>Thời điểm và tiến trình hành động</td><td><ul><li>〜うちに: Trong lúc trạng thái chưa thay đổi, tranh thủ làm hoặc xảy ra sự việc ngoài dự tính.</li><li>〜間: Trong khi V1 kéo dài, V2 diễn ra suốt khoảng thời gian ấy.</li><li>〜間に: Trong khi V1 kéo dài, V2 xảy ra trong một khoảng ngắn.</li><li>〜てからでないと・〜てからでなければ: Chưa làm V1 xong thì không thể làm V2.</li><li>〜ところだ: Vるところ = sắp làm; Vているところ = đang làm; Vたところ = vừa mới làm xong.</li></ul></td></tr>
+<tr><td><strong>Bài 2</strong></td><td>Cách thức, tùy trường hợp, lặp lại và mức độ tăng tiến</td><td><ul><li>〜とおり／〜どおり: Làm V2 đúng như V1/N.</li><li>〜によって・〜によっては: Tùy theo N, kết quả khác nhau; 〜によっては nêu một trường hợp cụ thể.</li><li>〜たびに: Cứ mỗi lần V1 thì V2 cũng xảy ra.</li><li>（〜ば）〜ほど／（〜なら）〜ほど／〜ほど: Càng… càng…</li><li>〜ついでに: Nhân tiện làm V1, làm luôn V2.</li></ul></td></tr>
+<tr><td><strong>Bài 3</strong></td><td>So sánh mức độ và lựa chọn tốt hơn</td><td><ul><li>〜くらい・〜ぐらい・〜ほど: Đến mức…</li><li>〜くらい…はない・〜ほど…はない: Không gì bằng…, chủ quan cho là nhất.</li><li>〜くらいなら・〜ぐらいなら: Nếu phải A thì thà B còn hơn.</li><li>〜に限る: … là tốt nhất.</li></ul></td></tr>
+<tr><td><strong>Bài 4</strong></td><td>Đối lập, so sánh và thay thế</td><td><ul><li>〜に対して: Đối với N hoặc so sánh đối lập.</li><li>〜反面: Một sự việc có hai mặt đối lập.</li><li>〜一方（で）: Hai mặt khác nhau, có thể đối lập hoặc song song.</li><li>〜というより: Nói A không đúng, phải nói B đúng hơn.</li><li>〜代わりに: Thay vì…, thay cho…, bù lại.</li></ul></td></tr>
+<tr><td><strong>Bài 5</strong></td><td>Nguyên nhân, lý do và căn cứ</td><td><ul><li>〜ためだ・〜ため（に）: Vì nguyên nhân khách quan nên dẫn đến kết quả.</li><li>〜によって…・〜による: Do… nên, cách nói nguyên nhân trang trọng.</li><li>〜から…・〜ことから…: Vì… dựa trên căn cứ sự thật, suy ra kết quả.</li><li>〜おかげで／〜せいで: Nhờ… mang nghĩa tích cực / Tại… mang nghĩa tiêu cực.</li><li>〜のだから…: Vì là sự thật hiển nhiên nên…; thường dùng khi khuyên nhủ, mong muốn.</li></ul></td></tr>
+<tr><td><strong>Bài 6</strong></td><td>Điều kiện, giả định và nhượng bộ</td><td><ul><li>〜(の)なら: Nếu là…; dựa trên thông tin đã nghe/biết.</li><li>〜ては…・〜(の)では…: Nếu ở trạng thái đó thì dẫn đến kết quả xấu.</li><li>〜さえ〜ば…／〜さえ…なら…: Chỉ cần… là đủ.</li><li>たとえ〜ても／でも: Dù cho… vẫn…</li><li>〜ば・〜たら・〜なら: ば = điều kiện tự nhiên, ít ý chí vế sau; たら = giả định thoải mái, vế sau có thể có ý chí/mệnh lệnh; なら = dựa trên thông tin trước để đưa ra đề nghị/ý kiến.</li></ul></td></tr>
+<tr><td><strong>Bài 7</strong></td><td>Truyền đạt thông tin và định nghĩa</td><td><ul><li>〜ということだ・〜とのことだ: Nghe nói…; cách nói trang trọng.</li><li>〜と言われている: Người ta nói rằng…; dùng cho dư luận/nhận định chung.</li><li>〜とか: Nghe đâu…; thông tin không chắc.</li><li>〜って: Văn nói, nghĩa là “nghe nói…” hoặc “…nói là…”.</li><li>〜という: Gọi là…; dùng để giải thích, định nghĩa.</li></ul></td></tr>
+<tr><td><strong>Bài 8</strong></td><td>Phủ định, ngoại lệ và thừa nhận một phần</td><td><ul><li>〜はずがない・〜わけがない: Chắc chắn không…</li><li>〜とは限らない: Không hẳn là…; có ngoại lệ.</li><li>〜わけではない／〜というわけではない／〜のではない: Không hẳn, không phải tất cả…</li><li>〜ないことはない: Không phải là không…; có khả năng nhưng không chắc.</li><li>〜ことは〜が…: Đúng là… nhưng…; thừa nhận rồi giảm nhẹ.</li></ul></td></tr>
+<tr><td><strong>Bài 9</strong></td><td>Mong muốn, xin phép và lời khuyên</td><td><ul><li>〜てもらいたい・〜ていただきたい・〜てほしい: Muốn ai đó làm/không làm; 〜ていただきたい lịch sự hơn, 〜てほしい thân mật hơn.</li><li>〜（さ）せてもらいたい・〜させていただきたい・〜させてほしい: Muốn được cho phép mình làm gì.</li><li>〜といい・〜ばいい・〜たらいい: Ước gì…; hoặc dùng để khuyên “nên…”, “thử… xem sao”.</li></ul></td></tr>
+<tr><td><strong>Bài 10</strong></td><td>Mệnh lệnh, quy tắc, khuyên nhủ</td><td><ul><li>命令形（しろ）・禁止形（〜な）: Ra lệnh, cấm đoán; sắc thái thô, nam tính.</li><li>〜こと: Ra quy tắc, nghĩa là “phải…”, “không được…”.</li><li>〜べきだ・〜べきではない: Nên/không nên; mang tính đạo lý, trách nhiệm.</li><li>〜たらどう: Gợi ý nhẹ nhàng “sao không thử…?”.</li></ul></td></tr>
+<tr><td><strong>Bài 11</strong></td><td>Quyết định, thói quen và ý định</td><td><ul><li>〜ことにする: Quyết định cá nhân.</li><li>〜ことにしている: Duy trì thói quen đã quyết định trước.</li><li>〜ようにする: Cố gắng tạo thói quen.</li><li>〜ようにしている: Luôn nỗ lực duy trì thói quen.</li><li>〜(よ)うとする: Định làm, sắp làm, cố làm nhưng chưa thành.</li><li>〜つもりだ: Cứ tưởng…; nhầm lẫn giữa suy nghĩ và thực tế.</li></ul></td></tr>
+<tr><td><strong>Bài 12</strong></td><td>Kính ngữ, khiêm nhường ngữ và lịch sự ngữ</td><td><ul><li>Danh từ, tính từ, phó từ: お + từ thuần Nhật / ご + từ Hán.</li><li>Động từ tôn kính: bị động để kính trọng như 行く→行かれる; おVます(bỏ ます)+になる; động từ kính ngữ đặc biệt như いらっしゃる, ご覧になる.</li><li>Khiêm nhường ngữ: おVします / ごNします; thêm いたします để lịch sự hơn.</li><li>Lịch sự ngữ: あります→ございます; です→でございます; いいですか→よろしいでしょうか。</li></ul></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Chuẩn đầu ra cuối Giai đoạn 1</h3>
+      <ul>
+        <li>Hoàn thành chính xác <strong>21/21 bài Từ vựng</strong>, gồm các nhóm chủ đề từ <strong>人間関係</strong> đến <strong>時間</strong>.</li>
+        <li>Hoàn thành đúng <strong>4 mốc kiểm tra Từ vựng</strong>: 1課〜5課, 6課〜10課, 11課〜14課, 15課〜19課.</li>
+        <li>Hoàn thành <strong>12/12 bài Ngữ pháp</strong>, có bảng tóm tắt mẫu câu, sắc thái nghĩa và ví dụ ứng dụng cho từng bài.</li>
+        <li>Mỗi học viên có sổ lỗi cá nhân gồm: từ dễ nhầm, mẫu ngữ pháp dễ sai, câu ví dụ mẫu và lịch ôn lại.</li>
+        <li>Checkpoint cuối giai đoạn được dùng để chia nhóm hỗ trợ: cần củng cố nền tảng, cần tăng tốc kỹ năng hoặc sẵn sàng luyện đề.</li>
+      </ul>
+    </section>
+
+
+    <section class="doc-section" id="section-3">
+      <div class="section-head" data-mark="III"><span class="section-kicker">Phần 3</span><h2>Lịch học Giai đoạn 2: Nghe, Đọc, Kanji &amp; Luyện đề</h2></div>
+      <p class="section-intro">Giai đoạn 2 kéo dài 12 tuần cuối. Mục tiêu là chuyển kiến thức đã học thành năng lực xử lý đề thi: đọc nhanh hơn, nghe chắc hơn, nhận diện Kanji tốt hơn và biết chọn chiến lược làm bài phù hợp với điểm mạnh của từng học viên.</p>
+      <div class="highlight-box callout-box"><strong>Phân bổ chuyên môn:</strong> Thứ 3 ưu tiên Kanji và Đọc hiểu; Thứ 5 ưu tiên Nghe hiểu và phản xạ hội thoại; Thứ 7 dành cho luyện đề, chữa đề, quản trị thời gian và tái ôn các lỗi lớn.</div>
+
+      <h3>Chiến lược 12 tuần cuối</h3>
+      <div class="table-shell">
+        <table class="data-table table-dense">
+          <thead><tr><th>Tuần</th><th>Thứ 3<br/>Kanji &amp; Đọc hiểu</th><th>Thứ 5<br/>Nghe hiểu</th><th>Thứ 7<br/>Luyện đề &amp; sửa lỗi</th><th>Mục tiêu trọng tâm</th></tr></thead>
+          <tbody>
+            <tr><td>Tuần 13</td><td>Kanji 001-030; kỹ thuật đọc câu chủ đề và từ khóa.</td><td>Nghe bắt yêu cầu câu hỏi, nhân vật, bối cảnh.</td><td>Mini set Đọc hiểu ngắn + chữa lỗi từ vựng.</td><td>Chuyển từ học kiến thức sang xử lý văn bản thật.</td></tr>
+            <tr><td>Tuần 14</td><td>Kanji 031-060; đọc đoạn ngắn, xác định ý chính.</td><td>Nghe hội thoại ngắn, phân biệt thông tin chính - phụ.</td><td>Bài tập tích hợp Từ vựng + Ngữ pháp + Đọc ngắn.</td><td>Tăng độ chính xác khi gặp câu hỏi suy luận đơn giản.</td></tr>
+            <tr><td>Tuần 15</td><td>Kanji 061-090; đọc thông báo, email, ghi chú.</td><td>Nghe tình huống đời sống: hỏi đường, lịch hẹn, mua bán.</td><td>Mini test kỹ năng 1 và chữa theo nhật ký lỗi.</td><td>Rèn khả năng quét thông tin nhanh và không bỏ sót điều kiện.</td></tr>
+            <tr><td>Tuần 16</td><td>Kanji 091-120; đọc đoạn so sánh và ý kiến cá nhân.</td><td>Nghe lý do, cảm xúc, thái độ và ý định của người nói.</td><td>Luyện đề từng phần: Ngôn ngữ tri thức + Đọc hiểu.</td><td>Nhận diện bẫy diễn đạt khác từ nhưng cùng ý.</td></tr>
+            <tr><td>Tuần 17</td><td>Kanji 121-150; đọc đoạn trung bình, nối logic bằng từ liên kết.</td><td>Nghe bài nói có nhiều bước hành động.</td><td>Chữa đề đọc theo chiến lược: câu nào làm trước, câu nào bỏ qua.</td><td>Ổn định tốc độ đọc và giảm lỗi do đọc thiếu điều kiện.</td></tr>
+            <tr><td>Tuần 18</td><td>Kanji 151-180; đọc đoạn dài, xác định lập luận tác giả.</td><td>Nghe chi tiết số liệu, thời gian, địa điểm, lựa chọn.</td><td>Mini test kỹ năng 2: Đọc trung bình + Nghe tình huống.</td><td>Nâng sức bền khi xử lý bài dài và thông tin liên tục.</td></tr>
+            <tr><td>Tuần 19</td><td>Kanji 181-210; đọc bảng biểu, quảng cáo, thông tin thực dụng.</td><td>Nghe hội thoại có phương án bị loại trừ.</td><td>Luyện đề Nghe hiểu theo dạng câu hỏi và chữa transcript.</td><td>Biết dự đoán nội dung trước khi nghe và kiểm chứng khi nghe.</td></tr>
+            <tr><td>Tuần 20</td><td>Kanji 211-240; đọc tổng hợp nhiều đoạn ngắn.</td><td>Nghe bài nói giải thích, thông báo, chỉ dẫn.</td><td>Section mock: Ngôn ngữ tri thức + Đọc hiểu trong thời gian giới hạn.</td><td>Làm quen áp lực thời gian và kỹ thuật phân bổ phút thi.</td></tr>
+            <tr><td>Tuần 21</td><td>Kanji 241-270; rà soát từ Kanji hay sai trong đề.</td><td>Listening mock 1: nghe theo format đề thi.</td><td>Full mock 1 + chữa lỗi theo nhóm điểm mất.</td><td>Xác định điểm mạnh - yếu thực tế sau đề tổng hợp đầu tiên.</td></tr>
+            <tr><td>Tuần 22</td><td>Kanji 271-300; đọc lại các chủ đề yếu.</td><td>Shadowing chọn lọc: câu phản ứng, câu kết luận, từ nối.</td><td>Full mock 2 + lập kế hoạch vá lỗi 7 ngày.</td><td>Giảm lỗi lặp lại, đặc biệt ở từ gần nghĩa và nghe chi tiết.</td></tr>
+            <tr><td>Tuần 23</td><td>Kanji 301-330; tổng ôn âm đọc và từ ghép trọng điểm.</td><td>Listening speed drill: nghe một lần, ghi ý chính, chọn đáp án.</td><td>Full mock 3 + chữa đề chiến lược.</td><td>Đẩy tốc độ, ổn định tâm lý và kỹ thuật bỏ qua câu khó.</td></tr>
+            <tr><td>Tuần 24</td><td>Kanji 331-370; tổng ôn Kanji Master và đọc nhanh.</td><td>Final listening review: dạng yếu nhất của từng học viên.</td><td>Final checkpoint: mô phỏng thi thật + định hướng ôn nước rút.</td><td>Hoàn thiện chiến lược thi, danh sách lỗi cuối cùng và kế hoạch tự ôn.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Nguyên tắc luyện đề chuyên nghiệp</h3>
+      <ol>
+        <li><strong>Làm đề có mục đích:</strong> Không làm càng nhiều càng tốt; mỗi đề phải chỉ ra một nhóm lỗi cần sửa.</li>
+        <li><strong>Chữa đề sâu hơn làm đề:</strong> Với mỗi câu sai, học viên ghi lại lý do sai: không biết từ, hiểu sai ngữ pháp, đọc thiếu điều kiện, nghe nhầm chi tiết hay quản trị thời gian kém.</li>
+        <li><strong>Tái kiểm tra sau 7 ngày:</strong> Các câu sai quan trọng được đưa vào bài kiểm tra ngắn tuần kế tiếp để đảm bảo lỗi không lặp lại.</li>
+        <li><strong>Giữ nhịp đầu ra:</strong> Mỗi tuần cần có ít nhất một sản phẩm đo được: mini test, transcript đã chữa, bảng Kanji yếu hoặc đề mô phỏng.</li>
+      </ol>
+    </section>
+
+    <section class="doc-section" id="section-4">
+      <div class="section-head" data-mark="IV"><span class="section-kicker">Phần 4</span><h2>Thông tin lớp học</h2></div>
+      <p class="section-intro">Lớp học được vận hành theo mô hình kỷ luật mềm: lịch rõ ràng, bài tập đều, sửa lỗi kỹ và luôn có phản hồi để học viên biết mình đang tiến bộ ở đâu.</p>
+
+      <div class="table-shell">
+        <table class="data-table">
+          <thead><tr><th>Hạng mục</th><th>Thông tin triển khai</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Ngày khai giảng</strong></td><td>25/5. Buổi khai giảng dùng để định hướng lộ trình, phổ biến cách nộp bài và thiết lập nhịp tự học; các buổi chính khóa bám theo lịch Thứ 3 - Thứ 5 - Thứ 7.</td></tr>
+            <tr><td><strong>Lịch học cố định</strong></td><td>Thứ 3, Thứ 5, Thứ 7 hằng tuần.</td></tr>
+            <tr><td><strong>Khung giờ</strong></td><td>19h00 giờ Việt Nam, tương ứng 21h00 giờ Nhật Bản.</td></tr>
+            <tr><td><strong>Thời lượng</strong></td><td>120 phút mỗi buổi, gồm ôn bài cũ, học bài mới, luyện ứng dụng, sửa bài và giao nhiệm vụ tự học.</td></tr>
+            <tr><td><strong>Nộp bài</strong></td><td>Bài tập được nộp lên nhóm lớp hoặc hệ thống học tập theo hướng dẫn của giáo viên. Khuyến nghị nộp trước buổi học kế tiếp tối thiểu 12 giờ để được rà lỗi đầy đủ.</td></tr>
+            <tr><td><strong>Sửa bài</strong></td><td>Sửa theo hai tầng: sửa lỗi chung trên lớp và phản hồi cá nhân cho lỗi lặp lại. Các lỗi quan trọng được đưa vào “sổ lỗi N3” để tái kiểm tra.</td></tr>
+            <tr><td><strong>Kiểm tra định kỳ</strong></td><td>Mini test ở Tuần 4, Tuần 8, checkpoint Tuần 12, các bài mock ở Tuần 21 - 24.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Cấu trúc 120 phút của một buổi học</h3>
+      <div class="table-shell">
+        <table class="data-table">
+          <thead><tr><th>Thời lượng</th><th>Hoạt động</th><th>Mục đích</th></tr></thead>
+          <tbody>
+            <tr><td>10 phút</td><td>Khởi động và kiểm tra nhanh</td><td>Kích hoạt kiến thức cũ, phát hiện lỗi cần xử lý trong buổi.</td></tr>
+            <tr><td>35 phút</td><td>Giảng bài mới</td><td>Hiểu trọng tâm bài học, cách dùng, bẫy thường gặp và ví dụ mẫu.</td></tr>
+            <tr><td>30 phút</td><td>Luyện ứng dụng có hướng dẫn</td><td>Biến kiến thức thành kỹ năng chọn đáp án, đặt câu, nghe - đọc theo ngữ cảnh.</td></tr>
+            <tr><td>35 phút</td><td>Sửa bài tập và chữa lỗi</td><td>Sửa sâu lỗi sai, giải thích vì sao sai và cách tránh lặp lại.</td></tr>
+            <tr><td>10 phút</td><td>Giao bài và định hướng tự học</td><td>Chốt nhiệm vụ, lịch ôn, yêu cầu nộp bài và mục tiêu buổi kế tiếp.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="highlight-box callout-box"><strong>Cam kết học tập:</strong> Học viên nên dành tối thiểu 30-45 phút tự học mỗi ngày ngoài giờ lên lớp. Việc đỗ N3 không đến từ một buổi học thật dài, mà đến từ nhịp học đều, sửa lỗi thật kỹ và không bỏ rơi những phần mình từng sai.</div>
+
+      <section class="course-banner">
+        <span class="panel-overline">Tinh thần lớp học</span>
+        <h3>Học chắc - Luyện sâu - Thi tự tin</h3>
+        <p class="intro">Trí Lữ Nihongo định hướng lớp N3 như một hành trình có người dẫn đường: kiến thức được chia nhỏ, bài tập được theo dõi, lỗi sai được ghi nhận và mỗi học viên đều có chiến lược tiến bộ riêng.</p>
+        <div class="combo-grid">
+          <div class="combo-card"><strong>Giai đoạn 1</strong><p>Tích lũy nền tảng qua 21 bài Từ vựng và 12 bài Ngữ pháp.</p></div>
+          <div class="combo-card"><strong>Giai đoạn 2</strong><p>Chuyển kiến thức thành kỹ năng Đọc hiểu, Nghe hiểu, Kanji và luyện đề.</p></div>
+          <div class="combo-card featured"><strong>Đích đến</strong><p><ruby>合格<rt>ごうかく</rt></ruby> N3 và sử dụng tiếng Nhật tự tin hơn trong đời sống hằng ngày.</p></div>
+        </div>
+      </section>
+    </section>
+
+    <footer class="footer-card">
+      <div class="footer-links footer-pillbar">
+        <a class="footer-pill text-link" href="https://trilu.edu.vn" target="_blank">Website: trilu.edu.vn</a>
+        <a class="footer-pill text-link" href="https://www.facebook.com/profile.php?id=100094293860608" target="_blank">Fanpage: Trí Lữ Nihon Go</a>
+        <a class="footer-pill text-link" href="https://www.facebook.com/share/g/1ESihza9ys/" target="_blank">Group: Động Tiếng Nhật</a>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="lo-trinh-jlpt-n3-html"></script>
+</body>
+</html>
