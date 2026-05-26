@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Lộ trình Kaiwa tiếng Nhật N3 sơ cấp - 4 tháng</title>
+<style>
+@page{size:A4;margin:15mm 14mm 16mm 14mm;}
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#6e1831;
+  --accent-2:#9b7a38;
+  --accent-3:#c7ab70;
+  --line:#dfcfbb;
+  --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --good:#285f44;
+  --shadow:0 18px 46px rgba(60,38,19,0.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(110,24,49,0.08), transparent 22%),
+    linear-gradient(180deg,#f6efe8 0%,#f1ebe4 100%);
+  font-family:Inter,"Noto Sans CJK JP","Noto Sans JP","Noto Sans Thai","Segoe UI",Arial,sans-serif;
+  line-height:1.72;
+  font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent)}
+p{margin:0 0 14px;}
+ul,ol{margin:0 0 16px;padding-left:22px;}
+li{margin:0 0 8px;}
+li::marker{color:var(--accent-2);font-weight:800;}
+.page-shell{max-width:1150px;margin:0 auto;padding:30px 24px 76px;}
+.cover{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%,rgba(255,255,255,0.09),transparent 22%),
+    radial-gradient(circle at 88% 20%,rgba(199,171,112,0.24),transparent 16%),
+    linear-gradient(135deg,#4f0f24 0%,#6e1831 36%,#3a0f1b 100%);
+  color:#fff;border-radius:30px;box-shadow:var(--shadow);padding:64px 68px 56px;
+}
+.cover::before{content:"";position:absolute;inset:18px;border:1px solid rgba(255,255,255,0.12);border-radius:22px;}
+.cover::after{content:"";position:absolute;right:-80px;top:-90px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(199,171,112,0.52) 0%,rgba(199,171,112,0.08) 48%,transparent 68%);}
+.cover-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 16px;border:1px solid rgba(255,255,255,0.16);border-radius:999px;background:rgba(255,255,255,0.08);letter-spacing:.16em;text-transform:uppercase;font-size:11px;font-weight:800;position:relative;z-index:1;}
+.cover-badge .dot{width:8px;height:8px;border-radius:50%;background:var(--accent-3);box-shadow:0 0 0 5px rgba(199,171,112,.14);}
+.cover-title{position:relative;z-index:1;margin:26px 0 16px;font-family:"EB Garamond","Noto Serif CJK JP",Georgia,serif;font-weight:700;font-size:56px;line-height:1.04;letter-spacing:-.02em;max-width:14ch;}
+.cover-subtitle{position:relative;z-index:1;max-width:800px;font-size:16px;color:rgba(255,255,255,.88);margin:0 0 26px;}
+.metric-row{position:relative;z-index:1;display:flex;flex-wrap:wrap;gap:12px;margin:26px 0 34px;}
+.metric-chip{padding:10px 16px;border-radius:999px;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.08);color:#fff;font-size:13px;font-weight:700;}
+.cover-quote{position:relative;z-index:1;margin:0;max-width:660px;padding-top:22px;border-top:1px solid rgba(255,255,255,.18);font-style:italic;font-size:16px;color:rgba(255,255,255,.86);}
+.cover-meta{position:relative;z-index:1;margin-top:28px;display:flex;justify-content:space-between;gap:24px;font-size:13px;color:rgba(255,255,255,.76);}
+.toc-panel{margin:26px 0 34px;background:linear-gradient(180deg,rgba(255,253,250,.96),rgba(252,246,238,.96));border:1px solid rgba(155,122,56,.20);border-radius:24px;box-shadow:var(--shadow);padding:28px 30px;}
+.panel-overline{display:block;margin-bottom:8px;text-transform:uppercase;letter-spacing:.18em;font-size:11px;font-weight:800;color:var(--accent-2);}
+.toc-title{margin:0 0 6px;font-family:"EB Garamond","Noto Serif CJK JP",Georgia,serif;font-size:34px;line-height:1.1;color:var(--accent);}
+.toc-subtitle{margin:0 0 20px;color:var(--muted);font-size:14px;}
+.toc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.toc-item{display:block;text-decoration:none;color:inherit;padding:18px 18px 16px;background:linear-gradient(180deg,#fffefd 0%,#fcf6ee 100%);border:1px solid var(--line-2);border-radius:18px;transition:transform .18s ease,box-shadow .18s ease;}
+.toc-item:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(60,38,19,.08);}
+.toc-item-number{display:block;margin-bottom:6px;font-family:"EB Garamond","Noto Serif CJK JP",Georgia,serif;font-size:32px;line-height:1;color:var(--accent-2);}
+.toc-item-title{display:block;font-weight:800;color:var(--accent);margin-bottom:6px;}
+.toc-item-summary{display:block;color:var(--muted);font-size:13px;line-height:1.55;}
+.document{background:var(--paper);border:1px solid rgba(155,122,56,.16);border-radius:28px;box-shadow:var(--shadow);padding:34px 44px 52px;}
+.doc-section{margin:0 0 32px;}
+.doc-section + .doc-section{padding-top:6px;}
+.section-head{position:relative;overflow:hidden;margin:12px 0 18px;padding:18px 24px 18px 22px;border-radius:22px;background:linear-gradient(90deg,rgba(255,255,255,.08),transparent 36%),linear-gradient(135deg,#57132a 0%,#6e1831 52%,#7f3b52 100%);color:#fff;}
+.section-head::after{content:attr(data-mark);position:absolute;right:18px;top:50%;transform:translateY(-50%);font-family:"EB Garamond","Noto Serif CJK JP",Georgia,serif;font-size:56px;line-height:1;color:rgba(255,255,255,.12);}
+.section-kicker{display:block;margin-bottom:8px;font-size:11px;text-transform:uppercase;letter-spacing:.18em;font-weight:800;color:rgba(255,255,255,.76);}
+.section-head h2{margin:0;color:#fff;background:none;padding:0;border-radius:0;font-family:"EB Garamond","Noto Serif CJK JP",Georgia,serif;font-size:31px;line-height:1.15;text-transform:none;}
+.section-intro{font-size:15px;color:#3b4250;}
+h3{margin:28px 0 12px;padding-left:14px;border-left:4px solid var(--accent-2);color:var(--accent);font-size:18px;line-height:1.35;font-weight:900;}
+h4{display:inline-block;margin:18px 0 10px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);background:linear-gradient(180deg,#fffdf9 0%,#f7efe3 100%);color:#674c1b;font-size:14px;line-height:1.35;font-weight:800;}
+.callout-box{margin:18px 0 22px;padding:18px 20px 18px 22px;border:1px solid #e7d7be;border-left:6px solid var(--accent-2);border-radius:18px;background:linear-gradient(180deg,#fffdf9 0%,#fbf3e8 100%);box-shadow:0 10px 24px rgba(60,38,19,.05);}
+.callout-box strong:first-child{color:var(--accent);}
+.grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin:18px 0 24px;}
+.grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:18px 0 24px;}
+.info-card{padding:17px 18px;border-radius:18px;background:linear-gradient(180deg,#fffefd 0%,#fbf4ea 100%);border:1px solid var(--line-2);box-shadow:0 8px 18px rgba(60,38,19,.04);}
+.info-card strong{display:block;color:var(--accent);font-weight:900;margin-bottom:6px;}
+.info-card .jp{font-family:"Noto Sans JP","Noto Sans CJK JP",sans-serif;color:#2f3540;}
+.pillar-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 14px;list-style:none;padding:0;margin:18px 0 24px;counter-reset:pillar;}
+.pillar-grid>li{position:relative;margin:0;padding:16px 18px 16px 58px;background:linear-gradient(180deg,#fffefd 0%,#fbf4ea 100%);border:1px solid var(--line-2);border-radius:18px;box-shadow:0 8px 18px rgba(60,38,19,.04);min-height:76px;}
+.pillar-grid>li::before{counter-increment:pillar;content:counter(pillar,decimal-leading-zero);position:absolute;left:16px;top:16px;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,var(--accent-2) 0%,#7f642d 100%);color:#fff;font-size:12px;font-weight:900;}
+.table-shell{margin:16px 0 24px;overflow-x:auto;}
+table{width:100%;border-collapse:separate;border-spacing:0;background:#fff;border:1px solid var(--line-2);border-radius:18px;overflow:hidden;box-shadow:0 10px 26px rgba(60,38,19,.05);font-size:13px;}
+th,td{padding:12px 13px;border-right:1px solid var(--line-2);border-bottom:1px solid var(--line-2);vertical-align:top;}
+th:last-child,td:last-child{border-right:none;}
+tbody tr:last-child td{border-bottom:none;}
+thead th{background:linear-gradient(180deg,#fcf5ea 0%,#f2e3cf 100%);color:var(--accent);font-weight:900;vertical-align:middle;}
+tbody tr:nth-child(even) td{background:#fffaf4;}
+.table-dense{font-size:12.5px;}
+.group-row td{background:linear-gradient(90deg,#6e1831 0%,#834a61 100%) !important;color:#fff;font-weight:900;text-align:center;letter-spacing:.08em;text-transform:uppercase;}
+.jp{font-family:"Noto Sans JP","Yu Gothic","Hiragino Sans",sans-serif;}
+.month-banner{margin:28px 0 18px;padding:24px 26px;border-radius:24px;background:radial-gradient(circle at top right,rgba(199,171,112,.18),transparent 22%),linear-gradient(135deg,#fffdfa 0%,#f9efe4 100%);border:1px solid rgba(155,122,56,.20);box-shadow:0 14px 32px rgba(60,38,19,.06);}
+.month-banner h3{border-left:none;padding-left:0;margin:0 0 8px;font-family:"EB Garamond","Noto Serif CJK JP",Georgia,serif;font-size:27px;color:var(--accent);}
+.month-banner p{margin:0;color:#3b4250;}
+.week-card{margin:18px 0 20px;border:1px solid var(--line-2);border-radius:20px;overflow:hidden;background:#fff;box-shadow:0 10px 24px rgba(60,38,19,.05);}
+.week-title{padding:14px 18px;background:linear-gradient(90deg,#fff9f0 0%,#f1e2ce 100%);color:var(--accent);font-weight:900;border-bottom:1px solid var(--line-2);}
+.week-content{padding:18px 20px 22px;}
+.badge-row{display:flex;flex-wrap:wrap;gap:8px;margin:8px 0 14px;}
+.badge{display:inline-flex;align-items:center;padding:6px 10px;border-radius:999px;border:1px solid var(--line-2);background:#fffdf9;color:#674c1b;font-size:12px;font-weight:800;}
+.dialogue{margin:16px 0 20px;padding:18px 20px;border-radius:18px;background:#fff;border:1px solid var(--line-2);box-shadow:0 10px 20px rgba(60,38,19,.04);}
+.dialogue p{margin:0 0 9px;}
+.dialogue .speaker{font-weight:900;color:var(--accent);}
+.rubric-score{font-weight:900;color:var(--accent);text-align:center;white-space:nowrap;}
+.footer-card{margin-top:24px;padding-top:24px;border-top:1px solid var(--line-2);}
+.footer-pillbar{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;text-align:center;}
+.footer-pill{display:inline-flex;align-items:center;justify-content:center;padding:10px 16px;border-radius:999px;border:1px solid var(--line-2);background:#fff;color:var(--accent)!important;text-decoration:none;font-weight:800;}
+.print-note{font-size:12px;color:var(--muted);}
+@media screen and (max-width:960px){
+  .page-shell{padding:18px 16px 42px}.cover{padding:44px 28px 40px}.cover-title{font-size:42px}.toc-grid,.pillar-grid,.grid-2,.grid-3{grid-template-columns:1fr}.document{padding:24px 20px 34px}.cover-meta{flex-direction:column}
+}
+@media print{
+  body{background:#fff;font-size:12px}.page-shell{max-width:none;margin:0;padding:0}.cover,.toc-panel,.document{box-shadow:none}.cover{page-break-after:always;break-after:page;border-radius:18px;padding:48px 46px 42px}.toc-panel{page-break-after:always;break-after:page;margin:0 0 20px;border-radius:16px}.document{border:none;border-radius:0;padding:0}.section-head{break-after:avoid;page-break-after:avoid;margin-top:18px}h3,h4,p,ul,ol,.callout-box{orphans:3;widows:3}.table-shell{overflow:visible;break-inside:auto}table{box-shadow:none;border-radius:0;page-break-inside:auto}tr,td,th{break-inside:avoid}.week-card,.info-card,.month-banner{break-inside:avoid}a{text-decoration:none}.toc-item:hover{transform:none;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="page-shell">
+  <section class="cover">
+    <div class="cover-badge"><span class="dot"></span>Trí Lữ Nihongo • Kaiwa Curriculum</div>
+    <h1 class="cover-title">Lộ trình Kaiwa tiếng Nhật N3 sơ cấp</h1>
+    <p class="cover-subtitle">Chương trình 4 tháng dành cho học viên đã nắm nền N4, bắt đầu lên N3 nhưng phản xạ nghe-nói còn chậm. Trọng tâm là Shadowing, Role-play, phản xạ nhanh và ứng dụng ngữ pháp N3 vào tình huống giao tiếp thật.</p>
+    <div class="metric-row">
+      <span class="metric-chip">4 tháng</span>
+      <span class="metric-chip">48 buổi</span>
+      <span class="metric-chip">3 buổi / tuần</span>
+      <span class="metric-chip">120 phút / buổi</span>
+      <span class="metric-chip">Lớp 6 học viên</span>
+      <span class="metric-chip">100% Kaiwa</span>
+    </div>
+    <blockquote class="cover-quote">Nạp ít — luyện nhiều — đổi tình huống liên tục — sửa lỗi có trọng tâm — ghi âm để thấy tiến bộ.</blockquote>
+    <div class="cover-meta">
+      <div>Phiên bản trình bày cao cấp, tối ưu để xem trên màn hình và in PDF.</div>
+      <div>Không luyện đề JLPT • Không Dokkai • Không Kanji chuyên sâu</div>
+    </div>
+  </section>
+
+  <nav class="toc-panel">
+    <span class="panel-overline">Điều hướng nhanh</span>
+    <h2 class="toc-title">Mục lục lộ trình</h2>
+    <p class="toc-subtitle">Các khối nội dung được chia theo mục tiêu đầu ra, cấu trúc buổi học, lộ trình từng tháng và hệ thống đánh giá tiến bộ.</p>
+    <div class="toc-grid">
+      <a class="toc-item" href="#overview"><span class="toc-item-number">I</span><span class="toc-item-title">Tổng quan lộ trình</span><span class="toc-item-summary">Năng lực Kaiwa đầu ra sau 4 tháng và nguyên tắc thiết kế lớp 6 người.</span></a>
+      <a class="toc-item" href="#lesson-structure"><span class="toc-item-number">II</span><span class="toc-item-title">Cấu trúc chuẩn 1 buổi 120 phút</span><span class="toc-item-summary">Phân bổ thời gian chi tiết để học viên nói tối thiểu 70% thời lượng.</span></a>
+      <a class="toc-item" href="#month-1"><span class="toc-item-number">III</span><span class="toc-item-title">Tháng 1: Phản xạ & đời sống</span><span class="toc-item-summary">Small talk, xin lỗi, nhờ vả, từ chối, xử lý tình huống hằng ngày.</span></a>
+      <a class="toc-item" href="#month-2"><span class="toc-item-number">IV</span><span class="toc-item-title">Tháng 2: Kể chuyện & giải thích</span><span class="toc-item-summary">Nói thành đoạn 1–2 phút, kể trải nghiệm, giải thích cách làm và đưa lời khuyên.</span></a>
+      <a class="toc-item" href="#month-3"><span class="toc-item-number">V</span><span class="toc-item-title">Tháng 3: Công sở & debate nhẹ</span><span class="toc-item-summary">Báo cáo, phỏng vấn part-time, thương lượng và thảo luận nhóm.</span></a>
+      <a class="toc-item" href="#month-4"><span class="toc-item-number">VI</span><span class="toc-item-title">Tháng 4: Tích hợp thực chiến</span><span class="toc-item-summary">Role-play tổng hợp, project nhóm, thuyết trình cá nhân và Q&A.</span></a>
+      <a class="toc-item" href="#assessment"><span class="toc-item-number">VII</span><span class="toc-item-title">Phương pháp đánh giá</span><span class="toc-item-summary">Rubric 100 điểm, kiểm tra hàng tháng và Kaiwa Progress Sheet cá nhân.</span></a>
+      <a class="toc-item" href="#core-activities"><span class="toc-item-number">VIII</span><span class="toc-item-title">Hoạt động chủ lực</span><span class="toc-item-summary">Shadowing 3 tầng, role-play 3 vòng, phản xạ 3 giây, observer card.</span></a>
+    </div>
+  </nav>
+
+  <main class="document">
+    <section class="doc-section" id="overview">
+      <div class="section-head" data-mark="I"><span class="section-kicker">Phần 1</span><h2>Tổng quan lộ trình</h2></div>
+      <p class="section-intro">Lớp Kaiwa N3 sơ cấp này được thiết kế cho người học đã có nền N4 nhưng chưa đủ phản xạ để giao tiếp tự nhiên. Sau 4 tháng, học viên không chỉ “biết thêm mẫu câu”, mà phải có thể bước vào tình huống giao tiếp thật, phản ứng được, duy trì được và kết thúc được một cách lịch sự.</p>
+
+      <h3>Năng lực Kaiwa đầu ra sau 4 tháng</h3>
+      <div class="table-shell">
+        <table>
+          <thead><tr><th>Năng lực</th><th>Mục tiêu đầu ra</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Phản xạ giao tiếp</strong></td><td>Trả lời câu hỏi quen thuộc trong 3–5 giây, biết hỏi lại, biết kéo dài hội thoại bằng câu hỏi ngược.</td></tr>
+            <tr><td><strong>Hội thoại đời sống</strong></td><td>Xử lý các tình huống xin lỗi, nhờ vả, từ chối, hỏi đường, đặt lịch, đổi món, giải thích sự cố.</td></tr>
+            <tr><td><strong>Hội thoại công sở / part-time</strong></td><td>Báo đến muộn, xin đổi ca, hỏi việc cần làm, báo cáo tiến độ, xin lỗi vì lỗi nhỏ, trao đổi với senpai hoặc quản lý.</td></tr>
+            <tr><td><strong>Thuyết trình ngắn</strong></td><td>Trình bày 3–5 phút về bản thân, kinh nghiệm, kế hoạch, chủ đề xã hội nhẹ; trả lời Q&A đơn giản.</td></tr>
+            <tr><td><strong>Thảo luận nhóm</strong></td><td>Tham gia thảo luận nhóm 3 hoặc nhóm 6 người, biết đồng ý, phản đối nhẹ, đưa lý do, hỏi lại và tổng kết.</td></tr>
+            <tr><td><strong>Ngữ pháp N3 trong nói</strong></td><td>Dùng được các mẫu N3 thông dụng trong giao tiếp: <span class="jp">〜ようにする, 〜てしまう, 〜わけではない, 〜べき, 〜たほうがいい, 〜かもしれない, 〜はず, 〜ところ, 〜ばかり, 〜によると, 〜みたい／ようだ</span>.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Nguyên tắc thiết kế lớp 6 học viên</h3>
+      <ol class="pillar-grid">
+        <li><strong>3 cặp song song:</strong> A-B, C-D, E-F để tăng tối đa thời gian nói và giảm thời gian chờ.</li>
+        <li><strong>2 nhóm 3 người:</strong> dùng cho thảo luận, mini-debate, tình huống công sở có nhiều vai trò.</li>
+        <li><strong>1 nhóm 6 người:</strong> dùng cho phản xạ nhanh, role-play dây chuyền, họp nhóm giả lập.</li>
+        <li><strong>Luân phiên vai trò:</strong> người nói chính, người phản hồi, người quan sát, người ghi lỗi, người đặt câu hỏi, người tổng kết.</li>
+        <li><strong>Học viên nói tối thiểu 70%:</strong> giáo viên không giảng dài, chỉ mẫu hóa, kích hoạt và sửa lỗi trọng điểm.</li>
+        <li><strong>Tình huống luôn có biến thể:</strong> cùng một mẫu câu nhưng đổi người nói, mục tiêu, mức độ lịch sự và áp lực thời gian.</li>
+      </ol>
+    </section>
+
+    <section class="doc-section" id="lesson-structure">
+      <div class="section-head" data-mark="II"><span class="section-kicker">Phần 2</span><h2>Cấu trúc chuẩn của 1 buổi học 120 phút</h2></div>
+      <p class="section-intro">Một buổi học Kaiwa N3 sơ cấp cần có nhịp rõ ràng: kích hoạt phản xạ, nạp mẫu câu vừa đủ, luyện nhịp nói bằng shadowing, rồi đưa vào role-play có biến thể. Tránh giảng lý thuyết dài vì mục tiêu chính là mở miệng và ứng biến.</p>
+
+      <div class="table-shell">
+        <table>
+          <thead><tr><th>Thời gian</th><th>Hoạt động</th><th>Mục tiêu</th><th>Cách tận dụng lớp 6 người</th></tr></thead>
+          <tbody>
+            <tr><td><strong>0–10’</strong></td><td>Warm-up: 今日の一言 / Câu hỏi mở đầu</td><td>Kích hoạt phản xạ, giảm ngại nói.</td><td>6 học viên nói vòng tròn, mỗi người 30–45 giây; người kế tiếp phải hỏi lại 1 câu.</td></tr>
+            <tr><td><strong>10–25’</strong></td><td>Phản xạ nhanh</td><td>Tập trả lời trong 3–5 giây.</td><td>Giáo viên đưa thẻ tình huống; học viên trả lời theo vòng. Người trả lời xong gọi tên bạn khác và đặt câu hỏi tiếp.</td></tr>
+            <tr><td><strong>25–45’</strong></td><td>Input ngắn: mẫu câu + tình huống</td><td>Nạp 2–3 cấu trúc N3 dùng ngay trong hội thoại.</td><td>Không giảng dài. Giáo viên đưa mẫu, học viên thay thông tin cá nhân theo cặp.</td></tr>
+            <tr><td><strong>45–65’</strong></td><td>Shadowing</td><td>Luyện nhịp nói, ngữ điệu, nối âm, phản xạ nghe-nhại.</td><td>3 vòng: nghe hiểu → nhại âm → nói theo cặp. Một người đọc/nhại, một người kiểm tra nhịp.</td></tr>
+            <tr><td><strong>65–100’</strong></td><td>Role-play chính</td><td>Biến mẫu câu thành hội thoại thật.</td><td>3 cặp diễn đồng thời. Sau mỗi 7–8 phút đổi bạn, đổi vai, đổi điều kiện tình huống.</td></tr>
+            <tr><td><strong>100–112’</strong></td><td>Feedback có trọng tâm</td><td>Sửa lỗi nhưng không làm học viên sợ nói.</td><td>Mỗi cặp nhận: 1 điểm tốt, 1 lỗi cần sửa, 1 cách nói tự nhiên hơn.</td></tr>
+            <tr><td><strong>112–120’</strong></td><td>Output cuối buổi</td><td>Chốt năng lực nói.</td><td>Mỗi học viên ghi âm 45–60 giây hoặc thực hiện mini-dialogue 1 phút với bạn.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-box"><strong>Tỉ lệ thời gian nói đề xuất:</strong> Trong 120 phút, giáo viên chỉ nên nói/mẫu hóa/sửa lỗi khoảng 25–30 phút. Học viên nói cá nhân, theo cặp, theo nhóm khoảng 85–95 phút.</div>
+    </section>
+
+    <section class="doc-section" id="month-1">
+      <div class="section-head" data-mark="III"><span class="section-kicker">Phần 3</span><h2>Tháng 1: Kích hoạt phản xạ và hội thoại đời sống</h2></div>
+      <div class="month-banner"><h3>Mục tiêu tháng 1</h3><p>Chuyển học viên từ trạng thái “biết mẫu câu nhưng nói chậm” sang “có thể phản ứng được trong tình huống quen thuộc”. Trọng tâm là nói ngắn, đúng ý, đúng phép lịch sự; chưa yêu cầu diễn đạt dài.</p></div>
+
+      <h3>Chủ điểm và cấu trúc N3 ưu tiên</h3>
+      <div class="grid-2">
+        <div class="info-card"><strong>Chủ điểm giao tiếp</strong>Chào hỏi tự nhiên, small talk, hỏi lại khi chưa nghe rõ, xin lỗi, giải thích lý do, nhờ vả, xin phép, từ chối khéo, xử lý tình huống ở quán ăn, cửa hàng, ga tàu, lớp học, nơi làm thêm.</div>
+        <div class="info-card"><strong>Cấu trúc trọng tâm</strong><span class="jp">〜んです／〜てしまいました／〜ようにします／〜てもらえませんか／〜ていただけませんか／〜ことになっています／〜ことにしました／〜たほうがいいです／〜かもしれません／〜はずです／〜わけではありません</span></div>
+      </div>
+
+      <div class="week-card"><div class="week-title">Tuần 1: Khởi động phản xạ — hỏi, đáp, hỏi lại</div><div class="week-content">
+        <div class="badge-row"><span class="badge">Small talk</span><span class="badge">聞き返し</span><span class="badge">Follow-up question</span></div>
+        <p><strong>Tình huống trọng tâm:</strong> gặp bạn mới, nói về lịch học/làm thêm, sở thích, thói quen, mục tiêu học tiếng Nhật.</p>
+        <p><strong>Kỹ năng:</strong> trả lời ngắn nhưng không cụt; biết hỏi lại; biết kéo dài hội thoại.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">最近〜ようになりました。／日本語を話すために〜しています。／もう少しゆっくり言ってもらえませんか。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Speed conversation: 6 người đứng thành vòng, mỗi người hỏi bạn khác 1 câu. Trọng tâm là phản xạ trả lời trong 5 giây.</li><li><strong>Buổi 2:</strong> Shadowing đoạn hội thoại tự giới thiệu N3 sơ cấp, sau đó thay thông tin cá nhân.</li><li><strong>Buổi 3:</strong> Pair-work 3 cặp: “Gặp bạn mới ở lớp tiếng Nhật”. Sau 8 phút đổi bạn, đổi nhiệm vụ: hỏi thêm, xác nhận, phản hồi.</li></ul>
+        <p><strong>Output cuối tuần:</strong> mỗi học viên tự giới thiệu 90 giây và trả lời 3 câu hỏi bất ngờ từ bạn học.</p>
+      </div></div>
+
+      <div class="week-card"><div class="week-title">Tuần 2: Xin lỗi, giải thích sự cố, hứa cải thiện</div><div class="week-content">
+        <div class="badge-row"><span class="badge">Apology</span><span class="badge">〜てしまう</span><span class="badge">〜ようにする</span></div>
+        <p><strong>Tình huống trọng tâm:</strong> đi học muộn, đi làm muộn, quên tài liệu, gửi nhầm tin nhắn, lỡ hẹn.</p>
+        <p><strong>Kỹ năng:</strong> xin lỗi đúng mức, giải thích ngắn gọn, không đổ lỗi, đưa giải pháp.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">〜てしまいました。／〜ようにします。／〜かもしれません。／〜はずだったんですが…。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Shadowing hội thoại xin lỗi. Luyện nhịp: xin lỗi → lý do → hướng xử lý.</li><li><strong>Buổi 2:</strong> Role-play 3 cặp: nhân viên part-time đi muộn, học viên quên bài, bạn lỡ hẹn.</li><li><strong>Buổi 3:</strong> “Apology chain”: 6 người tạo chuỗi tình huống. A gây lỗi, B phản hồi, C đưa lời khuyên, D hỏi thêm, E tổng kết, F đổi tình huống.</li></ul>
+        <p><strong>Output cuối tuần:</strong> role-play 2 phút: xin lỗi vì đến muộn và xin hướng xử lý.</p>
+        <h4>Ví dụ minh họa: Xin lỗi khi đi làm muộn</h4>
+        <div class="dialogue jp">
+          <p><span class="speaker">店長:</span> どうしたんですか。</p>
+          <p><span class="speaker">学生:</span> 申し訳ありません。電車が遅れてしまって、20分遅刻してしまいました。</p>
+          <p><span class="speaker">店長:</span> 連絡はしましたか。</p>
+          <p><span class="speaker">学生:</span> はい、途中でメッセージを送りました。次からはもっと早く出るようにします。</p>
+          <p><span class="speaker">店長:</span> 分かりました。今日は急いで準備してください。</p>
+          <p><span class="speaker">学生:</span> はい。ご迷惑をおかけして、申し訳ありません。</p>
+        </div>
+        <p><strong>Điểm luyện nói:</strong> không chỉ nói “すみません” rồi im lặng. Cần đủ 4 bước: xin lỗi → lý do → xác nhận đã xử lý → hứa cải thiện.</p>
+      </div></div>
+
+      <div class="week-card"><div class="week-title">Tuần 3: Nhờ vả, xin phép, từ chối khéo</div><div class="week-content">
+        <div class="badge-row"><span class="badge">Request</span><span class="badge">Refusal</span><span class="badge">Politeness</span></div>
+        <p><strong>Tình huống trọng tâm:</strong> nhờ bạn gửi tài liệu, xin đổi ca làm, từ chối lời mời của senpai, xin phép nghỉ.</p>
+        <p><strong>Kỹ năng:</strong> nói lịch sự, đưa lý do vừa đủ, giữ quan hệ.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">〜ていただけませんか。／〜てもよろしいでしょうか。／せっかくですが…。／〜わけではないんですが…。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Drill phản xạ: giáo viên đưa yêu cầu, học viên phải xin phép hoặc từ chối trong 1–2 câu.</li><li><strong>Buổi 2:</strong> Role-play theo cặp: người nhờ vả, người từ chối; sau đó đổi vai.</li><li><strong>Buổi 3:</strong> Nhóm 3 người: một senpai mời, một kohai từ chối, một người quan sát mức độ lịch sự và tự nhiên.</li></ul>
+        <p><strong>Output cuối tuần:</strong> mỗi học viên xử lý 2 tình huống: một tình huống nhờ vả, một tình huống từ chối.</p>
+        <h4>Ví dụ minh họa: Từ chối khéo lời mời của senpai</h4>
+        <div class="dialogue jp">
+          <p><span class="speaker">先輩:</span> 今日、バイトのあとでご飯に行かない？</p>
+          <p><span class="speaker">後輩:</span> 誘っていただいてありがとうございます。行きたいんですが、明日までにレポートを出さなければならなくて…。</p>
+          <p><span class="speaker">先輩:</span> そっか。忙しいんだね。</p>
+          <p><span class="speaker">後輩:</span> はい。参加したくないわけではないんですが、今日は難しそうです。また今度ぜひ誘ってください。</p>
+          <p><span class="speaker">先輩:</span> 分かった。また今度ね。</p>
+          <p><span class="speaker">後輩:</span> ありがとうございます。</p>
+        </div>
+        <p><strong>Công thức mềm:</strong> cảm ơn → muốn đi nhưng có lý do → phủ định hiểu lầm → hẹn lần sau.</p>
+      </div></div>
+
+      <div class="week-card"><div class="week-title">Tuần 4: Xử lý tình huống đời sống</div><div class="week-content">
+        <div class="badge-row"><span class="badge">Restaurant</span><span class="badge">Station</span><span class="badge">Customer service</span></div>
+        <p><strong>Tình huống trọng tâm:</strong> gọi món, đổi món, hỏi đường, hỏi giờ tàu, mua đồ bị lỗi, đặt lịch hẹn.</p>
+        <p><strong>Kỹ năng:</strong> mô tả vấn đề, hỏi thông tin, xác nhận lại, cảm ơn.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">〜みたいです。／〜かもしれません。／〜てもらえませんか。／確認してもいいですか。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Shadowing các đoạn hội thoại ở cửa hàng, nhà hàng, ga tàu.</li><li><strong>Buổi 2:</strong> 3 cặp role-play: khách hàng — nhân viên. Mỗi cặp xử lý 3 tình huống.</li><li><strong>Buổi 3:</strong> Role-play marathon: 6 học viên xoay qua 6 thẻ tình huống, mỗi tình huống 2 phút.</li></ul>
+        <p><strong>Output cuối tháng:</strong> kiểm tra Kaiwa tháng 1: bốc thăm 1 tình huống đời sống + 1 tình huống xin lỗi/từ chối.</p>
+      </div></div>
+    </section>
+
+    <section class="doc-section" id="month-2">
+      <div class="section-head" data-mark="IV"><span class="section-kicker">Phần 4</span><h2>Tháng 2: Kể chuyện, giải thích, duy trì hội thoại dài hơn</h2></div>
+      <div class="month-banner"><h3>Mục tiêu tháng 2</h3><p>Học viên bắt đầu nói thành đoạn dài hơn: từ câu đơn sang đoạn 1–2 phút. Trọng tâm là kể trải nghiệm, giải thích lý do, mô tả quá trình, đưa ví dụ.</p></div>
+
+      <h3>Chủ điểm và cấu trúc N3 ưu tiên</h3>
+      <div class="grid-2">
+        <div class="info-card"><strong>Chủ điểm giao tiếp</strong>Kể trải nghiệm đáng nhớ, nói về thói quen đã thay đổi, kể một lần gặp rắc rối, giải thích cách làm một việc, gợi ý địa điểm/món ăn/cách học/cách chuẩn bị phỏng vấn.</div>
+        <div class="info-card"><strong>Cấu trúc trọng tâm</strong><span class="jp">〜ようになりました／〜ようにしています／〜ところです／〜たばかりです／〜ばかりしています／〜ために／〜によって／〜みたいです／〜ようです／〜そうです／〜のではないかと思います</span></div>
+      </div>
+
+      <div class="week-card"><div class="week-title">Tuần 5: Nói về thay đổi của bản thân</div><div class="week-content">
+        <p><strong>Tình huống trọng tâm:</strong> trước đây và bây giờ: học tiếng Nhật, sinh hoạt, giao tiếp, công việc, sức khỏe.</p>
+        <p><strong>Kỹ năng:</strong> so sánh quá khứ — hiện tại, nói sự tiến bộ, nói thói quen mới.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">前は〜でしたが、今は〜ようになりました。／毎日〜ようにしています。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Shadowing đoạn “日本語が少し話せるようになりました”.</li><li><strong>Buổi 2:</strong> Pair interview: mỗi cặp phỏng vấn nhau về 3 thay đổi trong 1 năm qua.</li><li><strong>Buổi 3:</strong> Group sharing 3 người: mỗi người nói 2 phút, 2 người còn lại hỏi follow-up.</li></ul>
+        <p><strong>Output cuối tuần:</strong> bài nói 2 phút: <span class="jp">最近できるようになったこと</span>.</p>
+      </div></div>
+
+      <div class="week-card"><div class="week-title">Tuần 6: Kể chuyện rắc rối hoặc thất bại nhỏ</div><div class="week-content">
+        <p><strong>Tình huống trọng tâm:</strong> lạc đường, quên lịch, mua nhầm đồ, hiểu nhầm tin nhắn, gặp lỗi khi đi làm.</p>
+        <p><strong>Kỹ năng:</strong> kể chuyện có trình tự: bối cảnh → sự cố → cảm xúc → cách xử lý → bài học.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">〜ところでした。／〜てしまいました。／〜はずだったんですが…。／〜ようにします。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Story shadowing: nghe và nhại một câu chuyện ngắn 60–90 giây.</li><li><strong>Buổi 2:</strong> Story dice: học viên bốc 3 thẻ “địa điểm — sự cố — cảm xúc” rồi kể chuyện.</li><li><strong>Buổi 3:</strong> 2 nhóm 3 người: một người kể, hai người đóng vai người nghe và phải hỏi ít nhất 3 câu.</li></ul>
+        <p><strong>Output cuối tuần:</strong> kể lại một lần gặp rắc rối trong 2 phút, không nhìn giấy.</p>
+      </div></div>
+
+      <div class="week-card"><div class="week-title">Tuần 7: Giải thích cách làm và đưa lời khuyên</div><div class="week-content">
+        <p><strong>Tình huống trọng tâm:</strong> cách học tiếng Nhật, cách chuẩn bị phỏng vấn, cách tiết kiệm tiền, cách làm quen bạn Nhật.</p>
+        <p><strong>Kỹ năng:</strong> giải thích theo bước, đưa lời khuyên nhẹ, nói tùy trường hợp.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">〜ために、〜したほうがいいです。／人によって違いますが…。／〜ようにしたほうがいいと思います。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Drill: “Muốn làm X thì nên làm gì?” Học viên trả lời nhanh bằng <span class="jp">〜ために</span>.</li><li><strong>Buổi 2:</strong> Pair coaching: một người nêu vấn đề, một người tư vấn 3 bước.</li><li><strong>Buổi 3:</strong> Nhóm 3 người: “相談室”. Một người có vấn đề, hai người đưa lời khuyên khác nhau.</li></ul>
+        <p><strong>Output cuối tuần:</strong> mini advice talk: <span class="jp">日本語を上手に話すために、何をしたほうがいいですか。</span></p>
+      </div></div>
+
+      <div class="week-card"><div class="week-title">Tuần 8: Tóm tắt thông tin ngắn và nói cảm nghĩ</div><div class="week-content">
+        <p><strong>Tình huống trọng tâm:</strong> thói quen giới trẻ, làm thêm, giao thông, văn hóa xếp hàng, cách dùng điện thoại, học online.</p>
+        <p><strong>Kỹ năng:</strong> tóm tắt ngắn, nói ý kiến cá nhân, hỏi ý kiến bạn.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">〜によると、〜そうです。／私は〜のではないかと思います。／たしかに〜ですが、〜。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Shadowing đoạn tóm tắt 45–60 giây.</li><li><strong>Buổi 2:</strong> Pair summary: một người đọc/nghe thông tin ngắn, sau đó kể lại cho bạn.</li><li><strong>Buổi 3:</strong> Group talk 2 nhóm 3 người: mỗi nhóm chọn 1 chủ đề nhẹ, thảo luận 8 phút, 1 người tổng kết.</li></ul>
+        <p><strong>Output cuối tháng:</strong> kiểm tra Kaiwa tháng 2: kể chuyện 2 phút + trả lời 3 câu hỏi follow-up.</p>
+      </div></div>
+    </section>
+
+    <section class="doc-section" id="month-3">
+      <div class="section-head" data-mark="V"><span class="section-kicker">Phần 5</span><h2>Tháng 3: Giao tiếp công sở, phỏng vấn part-time và debate nhẹ</h2></div>
+      <div class="month-banner"><h3>Mục tiêu tháng 3</h3><p>Chuyển từ hội thoại đời sống sang hội thoại có mục đích rõ ràng: báo cáo, xin ý kiến, thương lượng, trình bày quan điểm. Tháng này bắt đầu tăng độ khó bằng mini-debate và tình huống có áp lực.</p></div>
+
+      <h3>Chủ điểm và cấu trúc N3 ưu tiên</h3>
+      <div class="grid-2">
+        <div class="info-card"><strong>Chủ điểm giao tiếp</strong><span class="jp">報連相</span>: báo cáo — liên lạc — xin tư vấn; phỏng vấn part-time; trao đổi với senpai/quản lý; xin đổi lịch, xin nghỉ, xin giúp đỡ; góp ý hoặc phàn nàn nhẹ; thảo luận nhóm về chủ đề xã hội đơn giản.</div>
+        <div class="info-card"><strong>Cấu trúc trọng tâm</strong><span class="jp">〜べきです／〜たほうがいいです／〜のに／〜わけではありません／〜からといって、〜とは限りません／〜として／〜について／〜によると／〜という意見があります／〜ことは〜が、〜</span></div>
+      </div>
+
+      <div class="week-card"><div class="week-title">Tuần 9: Báo cáo, liên lạc, xin tư vấn</div><div class="week-content">
+        <p><strong>Tình huống trọng tâm:</strong> báo cáo công việc đã xong, báo sự cố, hỏi việc tiếp theo, xin tư vấn khi không biết xử lý.</p>
+        <p><strong>Kỹ năng:</strong> nói ngắn, rõ, đúng thứ tự; không vòng vo.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">〜について報告します。／今、〜しているところです。／確認していただけませんか。／どうすればよろしいでしょうか。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Shadowing mẫu <span class="jp">報連相</span>: “報告します → 問題があります → 相談してもよろしいでしょうか”.</li><li><strong>Buổi 2:</strong> 3 cặp: nhân viên — quản lý. Một người báo cáo, một người hỏi chi tiết.</li><li><strong>Buổi 3:</strong> Nhóm 3 người: nhân viên mới, senpai, quản lý. Tình huống có vấn đề phát sinh.</li></ul>
+        <p><strong>Output cuối tuần:</strong> role-play 3 phút: báo cáo lỗi nhỏ trong ca làm và xin hướng xử lý.</p>
+      </div></div>
+
+      <div class="week-card"><div class="week-title">Tuần 10: Phỏng vấn part-time và tự giới thiệu có mục tiêu</div><div class="week-content">
+        <p><strong>Tình huống trọng tâm:</strong> phỏng vấn làm thêm ở quán ăn, combini, khách sạn, cửa hàng, trung tâm tiếng Việt/Nhật.</p>
+        <p><strong>Kỹ năng:</strong> giới thiệu bản thân, nói điểm mạnh, lịch làm được, lý do ứng tuyển, kinh nghiệm.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">〜として働いたことがあります。／〜には自信があります。／〜ようにしています。／〜のではないかと思います。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Shadowing câu trả lời phỏng vấn: lý do ứng tuyển, điểm mạnh, lịch làm.</li><li><strong>Buổi 2:</strong> Mock interview 3 cặp: interviewer — applicant. Sau 10 phút đổi vai.</li><li><strong>Buổi 3:</strong> Panel interview: 2 nhóm 3 người. Hai người phỏng vấn, một người ứng tuyển.</li></ul>
+        <p><strong>Output cuối tuần:</strong> mỗi học viên trả lời 5 câu hỏi phỏng vấn không nhìn giấy.</p>
+        <div class="callout-box"><strong>Câu hỏi phỏng vấn gợi ý:</strong><br><span class="jp">自己紹介をお願いします。／どうしてこの仕事に応募しましたか。／週に何日働けますか。／日本語で接客できますか。／忙しい時、どうしますか。／失敗した時、どうしますか。</span></div>
+      </div></div>
+
+      <div class="week-card"><div class="week-title">Tuần 11: Thương lượng, góp ý, phàn nàn nhẹ</div><div class="week-content">
+        <p><strong>Tình huống trọng tâm:</strong> xin đổi ca, nhắc bạn làm việc chưa đúng, phản hồi khi món ăn/đồ mua có vấn đề, trao đổi khi bị hiểu lầm.</p>
+        <p><strong>Kỹ năng:</strong> nói thẳng nhưng không thô; biết dùng câu đệm và làm mềm ý.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">〜ことは〜んですが、〜。／〜わけではないんですが、〜。／できれば〜していただけませんか。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Drill làm mềm câu: từ câu trực tiếp thành câu lịch sự hơn.</li><li><strong>Buổi 2:</strong> 3 cặp role-play: khách hàng — nhân viên, kohai — senpai, bạn cùng nhóm.</li><li><strong>Buổi 3:</strong> “Difficult conversation lab”: mỗi cặp xử lý một tình huống khó, sau đó diễn lại bản tự nhiên hơn.</li></ul>
+        <p><strong>Output cuối tuần:</strong> role-play 3 phút: xin đổi ca làm nhưng không làm phiền người khác quá mức.</p>
+      </div></div>
+
+      <div class="week-card"><div class="week-title">Tuần 12: Debate nhẹ và thảo luận nhóm</div><div class="week-content">
+        <p><strong>Tình huống trọng tâm:</strong> có nên vừa học vừa làm thêm, có nên dùng điện thoại khi ăn, học online có tốt hơn học trực tiếp không, có nên mặc đồng phục không.</p>
+        <p><strong>Kỹ năng:</strong> nêu ý kiến, đưa lý do, đồng ý/phản đối nhẹ, hỏi lại, tổng kết.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">私は〜と思います。理由は〜からです。／たしかに〜ですが、〜。／〜からといって、〜とは限りません。／〜べきだと思います。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Opinion drill: mỗi người nói 30 giây theo công thức “ý kiến → lý do → ví dụ”.</li><li><strong>Buổi 2:</strong> 2 nhóm 3 người: nhóm A ủng hộ, nhóm B phản đối. Sau đó đổi lập trường.</li><li><strong>Buổi 3:</strong> Mini-debate 6 người: 2 người ủng hộ, 2 người phản đối, 1 moderator, 1 summarizer.</li></ul>
+        <p><strong>Output cuối tháng:</strong> kiểm tra Kaiwa tháng 3: phỏng vấn part-time + mini-debate nhóm 3 người.</p>
+        <div class="callout-box"><strong>Công thức debate cho N3 sơ cấp:</strong><br><span class="jp">意見: 私は〜に賛成です／反対です。<br>理由: 理由は〜からです。<br>例: 例えば、〜。<br>相手への反応: たしかに〜ですが、私は〜と思います。<br>まとめ: ですから、〜したほうがいいと思います。</span></div>
+      </div></div>
+    </section>
+
+    <section class="doc-section" id="month-4">
+      <div class="section-head" data-mark="VI"><span class="section-kicker">Phần 6</span><h2>Tháng 4: Tích hợp thực chiến và trình bày cá nhân</h2></div>
+      <div class="month-banner"><h3>Mục tiêu tháng 4</h3><p>Tháng cuối tập trung tích hợp: học viên xử lý hội thoại không còn theo một mẫu cố định. Trọng tâm là nói tự nhiên hơn, phản ứng linh hoạt hơn, biết sửa khi nói sai và biết duy trì hội thoại nhóm.</p></div>
+
+      <h3>Kỹ năng ngôn ngữ ưu tiên</h3>
+      <div class="table-shell">
+        <table>
+          <thead><tr><th>Nhóm</th><th>Ứng dụng</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Liên kết ý</strong></td><td><span class="jp">それで、つまり、ただ、それに、だから、しかし、たしかに</span></td></tr>
+            <tr><td><strong>Làm mềm ý</strong></td><td><span class="jp">〜と思うんですが、〜てもよろしいでしょうか、できれば〜</span></td></tr>
+            <tr><td><strong>Sửa lỗi khi nói</strong></td><td><span class="jp">すみません、もう一度言います。／つまり、〜という意味です。</span></td></tr>
+            <tr><td><strong>Duy trì hội thoại</strong></td><td><span class="jp">どう思いますか。／どうしてですか。／具体的には？</span></td></tr>
+            <tr><td><strong>Tổng hợp N3</strong></td><td><span class="jp">〜ようにする, 〜てしまう, 〜わけではない, 〜べき, 〜たほうがいい, 〜ところ, 〜ばかり, 〜によると, 〜みたい／ようだ</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="week-card"><div class="week-title">Tuần 13: Role-play tổng hợp đời sống và công việc</div><div class="week-content">
+        <p><strong>Tình huống trọng tâm:</strong> đi muộn + xin lỗi + xin đổi ca; mua nhầm đồ + giải thích + xin đổi; hẹn gặp + từ chối + đề xuất lịch khác.</p>
+        <p><strong>Kỹ năng:</strong> kết hợp nhiều chức năng giao tiếp trong một hội thoại.</p>
+        <ul><li><strong>Buổi 1:</strong> Role-play 3 cặp với tình huống có 2 bước: ví dụ xin lỗi trước, sau đó xin hỗ trợ.</li><li><strong>Buổi 2:</strong> Tình huống bất ngờ: giữa hội thoại giáo viên thêm “biến cố” để học viên ứng biến.</li><li><strong>Buổi 3:</strong> 2 nhóm 3 người: giải quyết một vấn đề nhóm, sau đó báo cáo kết quả.</li></ul>
+        <p><strong>Output cuối tuần:</strong> role-play 4 phút có ít nhất 3 chức năng: xin lỗi, giải thích, đề xuất giải pháp.</p>
+      </div></div>
+
+      <div class="week-card"><div class="week-title">Tuần 14: Project Kaiwa — lập kế hoạch và thuyết phục</div><div class="week-content">
+        <p><strong>Tình huống trọng tâm:</strong> lên kế hoạch du lịch ngắn, tổ chức tiệc lớp, chọn nơi làm thêm, chọn phương pháp học, chuẩn bị sự kiện.</p>
+        <p><strong>Kỹ năng:</strong> đề xuất, so sánh lựa chọn, phản biện nhẹ, đi đến quyết định chung.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">〜ほうがいいと思います。／〜によって違います。／〜ことは〜ですが、〜。／〜という意見もあります。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Nhóm 3 người lập kế hoạch theo tiêu chí: ngân sách, thời gian, lợi ích, rủi ro.</li><li><strong>Buổi 2:</strong> Hai nhóm 3 người thuyết phục nhau chọn phương án của nhóm mình.</li><li><strong>Buổi 3:</strong> Mỗi nhóm trình bày 3 phút, nhóm còn lại đặt câu hỏi phản biện.</li></ul>
+        <p><strong>Output cuối tuần:</strong> group presentation 3 phút + Q&A 3 phút.</p>
+      </div></div>
+
+      <div class="week-card"><div class="week-title">Tuần 15: Thuyết trình cá nhân và Q&A</div><div class="week-content">
+        <p><strong>Tình huống trọng tâm:</strong> mục tiêu tiếng Nhật, kinh nghiệm làm thêm, văn hóa Nhật khiến mình bất ngờ, kế hoạch tương lai.</p>
+        <p><strong>Kỹ năng:</strong> nói có mở bài — thân bài — kết luận; trả lời câu hỏi không chuẩn bị.</p>
+        <p><strong>Mẫu câu:</strong> <span class="jp">今日は〜について話します。／理由は二つあります。／具体的には〜。／まとめると〜。</span></p>
+        <ul><li><strong>Buổi 1:</strong> Shadowing bài thuyết trình mẫu 2 phút, phân tích cấu trúc nói.</li><li><strong>Buổi 2:</strong> Pair rehearsal: một người thuyết trình, một người đặt câu hỏi và ghi feedback.</li><li><strong>Buổi 3:</strong> Thuyết trình thử trước nhóm 3 người, sau đó nâng cấp câu trả lời Q&A.</li></ul>
+        <p><strong>Output cuối tuần:</strong> bản thuyết trình cá nhân 3–4 phút, không đọc nguyên văn.</p>
+      </div></div>
+
+      <div class="week-card"><div class="week-title">Tuần 16: Tổng ôn thực chiến và kiểm tra cuối khóa</div><div class="week-content">
+        <p><strong>Tình huống trọng tâm:</strong> tổng hợp đời sống, part-time, công sở, thảo luận nhóm, thuyết trình.</p>
+        <p><strong>Kỹ năng:</strong> ứng biến, tự sửa lỗi, duy trì hội thoại, nói có logic.</p>
+        <ul><li><strong>Buổi 1:</strong> Role-play marathon: 6 học viên xoay qua nhiều tình huống, mỗi tình huống 3 phút.</li><li><strong>Buổi 2:</strong> Final rehearsal: thuyết trình cá nhân + role-play bất ngờ + feedback cá nhân.</li><li><strong>Buổi 3:</strong> Kiểm tra cuối khóa: thuyết trình 5 phút, Q&A, role-play, group discussion.</li></ul>
+        <p><strong>Output cuối khóa:</strong> hồ sơ Kaiwa cá nhân gồm ghi âm tháng 1, tháng 2, tháng 3, tháng 4 để thấy tiến bộ rõ ràng.</p>
+      </div></div>
+    </section>
+
+    <section class="doc-section" id="assessment">
+      <div class="section-head" data-mark="VII"><span class="section-kicker">Phần 7</span><h2>Phương pháp đánh giá sự tiến bộ</h2></div>
+      <p class="section-intro">Đánh giá trong lớp Kaiwa không dựa vào bài đọc hay bài viết, mà dựa vào hiệu suất giao tiếp thực tế: phản xạ, độ trôi chảy, tương tác, cách dùng mẫu câu, phát âm, khả năng hoàn thành nhiệm vụ và thái độ khi bí từ.</p>
+
+      <h3>Rubric đánh giá hàng tháng</h3>
+      <div class="table-shell">
+        <table>
+          <thead><tr><th>Tiêu chí</th><th>Điểm</th><th>Mô tả</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Phản xạ</strong></td><td class="rubric-score">20</td><td>Trả lời nhanh, ít im lặng dài, biết hỏi lại khi chưa hiểu.</td></tr>
+            <tr><td><strong>Độ trôi chảy</strong></td><td class="rubric-score">20</td><td>Nói được thành cụm/câu/đoạn, không dừng quá nhiều.</td></tr>
+            <tr><td><strong>Tương tác</strong></td><td class="rubric-score">20</td><td>Biết hỏi tiếp, phản hồi, đồng ý, phản đối nhẹ, kéo dài hội thoại.</td></tr>
+            <tr><td><strong>Sử dụng mẫu câu N3</strong></td><td class="rubric-score">15</td><td>Dùng được cấu trúc đã học trong tình huống thật, không chỉ đọc thuộc.</td></tr>
+            <tr><td><strong>Phát âm và ngữ điệu</strong></td><td class="rubric-score">10</td><td>Nhịp nói, trọng âm, ngữ điệu tự nhiên hơn qua shadowing.</td></tr>
+            <tr><td><strong>Hoàn thành nhiệm vụ</strong></td><td class="rubric-score">10</td><td>Xử lý đúng yêu cầu tình huống: xin lỗi, từ chối, báo cáo, thuyết phục.</td></tr>
+            <tr><td><strong>Tự sửa lỗi và thái độ</strong></td><td class="rubric-score">5</td><td>Biết nói lại, sửa câu, không bỏ cuộc khi bí từ.</td></tr>
+            <tr><td><strong>Tổng</strong></td><td class="rubric-score">100</td><td>Điểm đánh giá tiến bộ hàng tháng.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Đánh giá sau từng tháng</h3>
+      <div class="grid-2">
+        <div class="info-card"><strong>Cuối tháng 1: Role-play đời sống</strong>6 học viên chia 3 cặp. Mỗi cặp bốc thăm 2 tình huống: xin lỗi vì đi làm muộn, từ chối lời mời của senpai, nhờ bạn gửi tài liệu, đổi món ở nhà hàng, xin phép nghỉ, hỏi lại vì không nghe rõ.</div>
+        <div class="info-card"><strong>Cuối tháng 2: Kể chuyện + follow-up</strong>Mỗi học viên nói 2 phút về một trải nghiệm cá nhân, sau đó nhận 3 câu hỏi từ bạn học. Chấm trình tự kể, độ dài phát ngôn, cách trả lời câu hỏi.</div>
+        <div class="info-card"><strong>Cuối tháng 3: Mock interview + debate</strong>Học viên tham gia phỏng vấn part-time và mini-debate nhóm 3 người. Chấm rõ ý, lý do, ví dụ, phản hồi ý kiến người khác.</div>
+        <div class="info-card"><strong>Cuối tháng 4: Kiểm tra tổng hợp</strong>Thuyết trình cá nhân 5 phút, Q&A 3 phút, role-play bất ngờ 4 phút/cặp, group discussion 10 phút/nhóm 3 người.</div>
+      </div>
+
+      <h3>Yêu cầu đạt cuối khóa</h3>
+      <ul class="pillar-grid">
+        <li>Nói được 5 phút với dàn ý, không đọc nguyên văn.</li>
+        <li>Xử lý được role-play bất ngờ bằng câu đơn giản nhưng rõ ý.</li>
+        <li>Biết xin lỗi, nhờ vả, từ chối, báo cáo, đưa ý kiến.</li>
+        <li>Dùng được ít nhất 8–10 mẫu câu N3 trong giao tiếp tự nhiên.</li>
+        <li>Biết phản hồi người khác: hỏi lại, xác nhận, đồng ý, phản đối nhẹ.</li>
+        <li>Có bản ghi âm tiến bộ qua 4 tháng để tự nhận diện sự thay đổi.</li>
+      </ul>
+
+      <h3>Kaiwa Progress Sheet cá nhân</h3>
+      <div class="table-shell">
+        <table>
+          <thead><tr><th>Mục theo dõi</th><th>Cách ghi nhận</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Thời gian phản hồi</strong></td><td>Mất bao lâu để trả lời câu hỏi đơn giản: 3 giây, 5 giây, hơn 10 giây.</td></tr>
+            <tr><td><strong>Độ dài phát ngôn</strong></td><td>Trả lời 1 câu, 2–3 câu hay nói được thành đoạn.</td></tr>
+            <tr><td><strong>Số lần hỏi lại</strong></td><td>Có biết dùng <span class="jp">もう一度お願いします</span>, <span class="jp">どういう意味ですか</span> không.</td></tr>
+            <tr><td><strong>Số mẫu N3 dùng tự nhiên</strong></td><td>Ghi lại mẫu đã dùng đúng trong role-play.</td></tr>
+            <tr><td><strong>Lỗi lặp lại</strong></td><td>Ví dụ: thiếu trợ từ, sai thể lịch sự, nói quá trực tiếp, không kết thúc câu.</td></tr>
+            <tr><td><strong>Điểm mạnh cá nhân</strong></td><td>Ví dụ: phát âm tốt, phản xạ nhanh, biết đặt câu hỏi, nói có cảm xúc.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="core-activities">
+      <div class="section-head" data-mark="VIII"><span class="section-kicker">Phần 8</span><h2>Hoạt động chủ lực nên lặp lại suốt 4 tháng</h2></div>
+
+      <h3>1. Shadowing 3 tầng</h3>
+      <div class="table-shell"><table><thead><tr><th>Tầng</th><th>Cách làm</th></tr></thead><tbody><tr><td><strong>Tầng 1: Nghe hiểu ý</strong></td><td>Học viên nghe đoạn hội thoại ngắn, nắm tình huống và cảm xúc.</td></tr><tr><td><strong>Tầng 2: Nhại âm</strong></td><td>Nhại theo tốc độ chậm, chú ý ngữ điệu, nhịp và điểm ngắt.</td></tr><tr><td><strong>Tầng 3: Biến đổi cá nhân</strong></td><td>Dùng cùng cấu trúc nhưng thay bằng thông tin của bản thân.</td></tr></tbody></table></div>
+      <div class="callout-box"><strong>Ví dụ biến đổi:</strong><br><span class="jp">次からもっと早く来るようにします。<br>次から忘れないようにします。<br>次から先に連絡するようにします。<br>次からメモするようにします。</span></div>
+
+      <h3>2. Role-play 3 vòng</h3>
+      <div class="table-shell"><table><thead><tr><th>Vòng</th><th>Mục tiêu</th></tr></thead><tbody><tr><td><strong>Vòng 1: Có khung mẫu</strong></td><td>Học viên nhìn mẫu và nói để giảm áp lực.</td></tr><tr><td><strong>Vòng 2: Chỉ có từ khóa</strong></td><td>Học viên phải tự nối câu.</td></tr><tr><td><strong>Vòng 3: Tình huống biến đổi</strong></td><td>Giáo viên thêm điều kiện mới để luyện ứng biến.</td></tr></tbody></table></div>
+      <p><strong>Ví dụ biến đổi:</strong> ban đầu là “Bạn xin lỗi vì đi làm muộn”. Vòng 3 có thể thêm: quản lý hơi giận, bạn đã quên báo trước, bạn cần xin đổi ca luôn, hoặc bạn muốn đề xuất ở lại làm thêm để bù.</p>
+
+      <h3>3. Phản xạ nhanh “3 giây”</h3>
+      <div class="dialogue jp">
+        <p><span class="speaker">先生:</span> 今日はバイトに行けません。どう言いますか。</p>
+        <p><span class="speaker">学生:</span> 申し訳ありません。今日は体調が悪くて、休ませていただけませんか。</p>
+        <p><span class="speaker">先生:</span> 友達にノートを借りたいです。</p>
+        <p><span class="speaker">学生:</span> すみません、ノートを見せてもらえませんか。</p>
+        <p><span class="speaker">先生:</span> 先輩の誘いを断ってください。</p>
+        <p><span class="speaker">学生:</span> 誘っていただいてありがとうございます。でも、今日は用事があって…。</p>
+      </div>
+
+      <h3>4. Observer Card cho lớp 6 người</h3>
+      <div class="table-shell"><table><thead><tr><th>Mục quan sát</th><th>Câu hỏi</th></tr></thead><tbody><tr><td><strong>自然さ</strong></td><td>Câu nào nghe tự nhiên?</td></tr><tr><td><strong>丁寧さ</strong></td><td>Câu nào đủ lịch sự?</td></tr><tr><td><strong>反応</strong></td><td>Người nói có phản hồi lại ý của đối phương không?</td></tr><tr><td><strong>N3表現</strong></td><td>Có dùng được mẫu N3 nào?</td></tr><tr><td><strong>改善点</strong></td><td>Nếu nói lại, nên sửa câu nào?</td></tr></tbody></table></div>
+
+      <div class="callout-box"><strong>Kết luận vận hành:</strong> Với học viên đầu N3, vấn đề lớn nhất thường không phải “không biết ngữ pháp”, mà là biết nhưng không bật ra được, sợ sai nên nói chậm, dùng câu quá cứng như trong sách và không biết phản hồi khi đối phương nói ngoài dự đoán. Vì vậy, lớp Kaiwa cần biến ngữ pháp N3 thành công cụ giao tiếp thực tế.</div>
+    </section>
+
+    <footer class="footer-card">
+      <div class="footer-pillbar">
+        <span class="footer-pill">Lộ trình Kaiwa N3 sơ cấp</span>
+        <span class="footer-pill">4 tháng • 48 buổi</span>
+        <span class="footer-pill">Shadowing • Role-play • Phản xạ nhanh</span>
+      </div>
+      <p class="print-note" style="text-align:center;margin-top:14px">Tài liệu được thiết kế để dùng cho lớp 6 học viên, tập trung hoàn toàn vào giao tiếp ứng dụng.</p>
+    </footer>
+  </main>
+</div>
+
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="kaiwa-n3-4-thang"></script>
+</body>
+</html>

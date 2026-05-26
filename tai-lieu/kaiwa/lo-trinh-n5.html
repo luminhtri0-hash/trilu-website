@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Lộ trình Kaiwa N5 - Phiên bản trình bày cao cấp</title>
+<style>
+@page {
+  size: A4;
+  margin: 15mm 14mm 16mm 14mm;
+}
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#6e1831;
+  --accent-2:#9b7a38;
+  --accent-3:#c7ab70;
+  --line:#dfcfbb;
+  --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --success:#245b46;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(110,24,49,0.08), transparent 22%),
+    linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Noto Sans JP", "Noto Sans Thai", "Segoe UI", sans-serif;
+  line-height:1.75;
+  font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent);}
+.page-shell{
+  max-width:1150px;
+  margin:0 auto;
+  padding:30px 24px 76px;
+}
+.cover{
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 36%, #3a0f1b 100%);
+  color:#fff;
+  border-radius:30px;
+  box-shadow:var(--shadow);
+  padding:64px 68px 56px;
+}
+.cover::before{
+  content:"";
+  position:absolute;
+  top:18px;
+  right:18px;
+  bottom:18px;
+  left:18px;
+  border:1px solid rgba(255,255,255,0.12);
+  border-radius:22px;
+}
+.cover::after{
+  content:"会話";
+  position:absolute;
+  right:-30px;
+  top:10px;
+  font-family:"Noto Serif CJK JP", "Yu Mincho", serif;
+  font-size:168px;
+  line-height:1;
+  color:rgba(199,171,112,0.12);
+  transform:rotate(-8deg);
+}
+.cover-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  padding:10px 16px;
+  border:1px solid rgba(255,255,255,0.16);
+  border-radius:999px;
+  background:rgba(255,255,255,0.08);
+  letter-spacing:0.16em;
+  text-transform:uppercase;
+  font-size:11px;
+  font-weight:700;
+  position:relative;
+  z-index:1;
+}
+.cover-badge .dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--accent-3);
+  box-shadow:0 0 0 5px rgba(199,171,112,0.14);
+}
+.cover-title{
+  position:relative;
+  z-index:1;
+  margin:26px 0 16px;
+  font-family:"EB Garamond", "Noto Serif CJK JP", "Georgia", serif;
+  font-weight:700;
+  font-size:56px;
+  line-height:1.04;
+  letter-spacing:-0.02em;
+  max-width:14ch;
+}
+.cover-subtitle{
+  position:relative;
+  z-index:1;
+  max-width:790px;
+  font-size:16px;
+  color:rgba(255,255,255,0.88);
+  margin:0 0 26px;
+}
+.metric-row{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:26px 0 34px;
+}
+.metric-chip{
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(255,255,255,0.08);
+  color:#fff;
+  font-size:13px;
+  font-weight:600;
+}
+.cover-quote{
+  position:relative;
+  z-index:1;
+  margin:0;
+  max-width:680px;
+  padding-top:22px;
+  border-top:1px solid rgba(255,255,255,0.18);
+  font-style:italic;
+  font-size:16px;
+  color:rgba(255,255,255,0.86);
+}
+.cover-meta{
+  position:relative;
+  z-index:1;
+  margin-top:28px;
+  display:flex;
+  justify-content:space-between;
+  gap:24px;
+  font-size:13px;
+  color:rgba(255,255,255,0.76);
+}
+.toc-panel{
+  margin:26px 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96));
+  border:1px solid rgba(155,122,56,0.20);
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{
+  display:block;
+  margin-bottom:8px;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  font-size:11px;
+  font-weight:700;
+  color:var(--accent-2);
+}
+.toc-title{
+  margin:0 0 6px;
+  font-family:"EB Garamond", "Noto Serif CJK JP", "Georgia", serif;
+  font-size:34px;
+  line-height:1.1;
+  color:var(--accent);
+}
+.toc-subtitle{
+  margin:0 0 20px;
+  color:var(--muted);
+  font-size:14px;
+}
+.toc-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0, 1fr));
+  gap:16px;
+}
+.toc-item{
+  display:block;
+  text-decoration:none;
+  color:inherit;
+  padding:18px 18px 16px;
+  background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%);
+  border:1px solid var(--line-2);
+  border-radius:18px;
+}
+.toc-item-number{
+  display:block;
+  margin-bottom:6px;
+  font-family:"EB Garamond", "Noto Serif CJK JP", "Georgia", serif;
+  font-size:32px;
+  line-height:1;
+  color:var(--accent-2);
+}
+.toc-item-title{
+  display:block;
+  font-weight:700;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+.toc-item-summary{
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.55;
+}
+.document{
+  background:var(--paper);
+  border:1px solid rgba(155,122,56,0.16);
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  padding:34px 44px 52px;
+}
+.doc-section{margin:0 0 30px;}
+.doc-section + .doc-section{padding-top:6px;}
+.section-head{
+  position:relative;
+  overflow:hidden;
+  margin:12px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #57132a 0%, #6e1831 52%, #7f3b52 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark);
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  font-family:"EB Garamond", "Noto Serif CJK JP", "Georgia", serif;
+  font-size:56px;
+  line-height:1;
+  color:rgba(255,255,255,0.12);
+}
+.section-kicker{
+  display:block;
+  margin-bottom:8px;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:0.18em;
+  font-weight:700;
+  color:rgba(255,255,255,0.76);
+}
+.section-head h2{
+  margin:0;
+  color:#fff;
+  background:none;
+  padding:0;
+  border-radius:0;
+  font-family:"EB Garamond", "Noto Serif CJK JP", "Georgia", serif;
+  font-size:31px;
+  line-height:1.15;
+}
+.section-intro{font-size:15px;color:#3b4250;}
+p{margin:0 0 14px;}
+h3{
+  margin:28px 0 12px;
+  padding-left:14px;
+  border-left:4px solid var(--accent-2);
+  color:var(--accent);
+  font-size:18px;
+  line-height:1.35;
+  font-weight:800;
+}
+h4{
+  display:inline-block;
+  margin:18px 0 10px;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  background:linear-gradient(180deg, #fffdf9 0%, #f7efe3 100%);
+  color:#674c1b;
+  font-size:14px;
+  line-height:1.35;
+  font-weight:700;
+}
+.callout-box{
+  margin:18px 0 22px;
+  padding:18px 20px 18px 22px;
+  border:1px solid #e7d7be;
+  border-left:6px solid var(--accent-2);
+  border-radius:18px;
+  background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+  box-shadow:0 10px 24px rgba(60, 38, 19, 0.05);
+}
+.callout-box strong:first-child{color:var(--accent);}
+ol, ul{margin:0 0 16px;padding-left:22px;}
+li{margin:0 0 8px;}
+li::marker{color:var(--accent-2);font-weight:700;}
+.pillar-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:12px 14px;
+  list-style:none;
+  padding:0;
+  margin:18px 0 24px;
+  counter-reset:pillar;
+}
+.pillar-grid > li{
+  position:relative;
+  margin:0;
+  padding:16px 18px 16px 58px;
+  background:linear-gradient(180deg, #fffefd 0%, #fbf4ea 100%);
+  border:1px solid var(--line-2);
+  border-radius:18px;
+  box-shadow:0 8px 18px rgba(60,38,19,0.04);
+  min-height:76px;
+}
+.pillar-grid > li::before{
+  counter-increment:pillar;
+  content:counter(pillar, decimal-leading-zero);
+  position:absolute;
+  left:16px;
+  top:16px;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, var(--accent-2) 0%, #7f642d 100%);
+  color:#fff;
+  font-size:12px;
+  font-weight:800;
+}
+.table-shell{
+  margin:16px 0 24px;
+  overflow-x:auto;
+}
+table{
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  background:#fff;
+  border:1px solid var(--line-2);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 26px rgba(60, 38, 19, 0.05);
+  font-size:13px;
+}
+thead{display:table-header-group;}
+th, td{
+  padding:12px 13px;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+  vertical-align:top;
+}
+th:last-child, td:last-child{border-right:none;}
+tbody tr:last-child td{border-bottom:none;}
+thead th{
+  background:linear-gradient(180deg, #fcf5ea 0%, #f2e3cf 100%);
+  color:var(--accent);
+  font-weight:800;
+}
+tbody tr:nth-child(even) td{background:#fffaf4;}
+.table-dense{font-size:12px;}
+.table-ultra-dense{font-size:11px;}
+.week-cell, .lesson-cell{
+  text-align:center;
+  font-weight:800;
+  color:var(--accent);
+  white-space:nowrap;
+}
+.review-row td{
+  background:linear-gradient(180deg, #fff8ef 0%, #f9ead8 100%) !important;
+}
+.jp-text{
+  font-family:"Noto Sans CJK JP", "Yu Gothic", "Hiragino Sans", "Segoe UI", sans-serif;
+  line-height:1.85;
+}
+.kpi-grid{
+  display:grid;
+  grid-template-columns:repeat(4, minmax(0,1fr));
+  gap:12px;
+  margin:18px 0 22px;
+}
+.kpi-card{
+  padding:16px 16px 14px;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid var(--line-2);
+  box-shadow:0 8px 16px rgba(60,38,19,0.04);
+}
+.kpi-card strong{
+  display:block;
+  font-family:"EB Garamond", "Georgia", serif;
+  font-size:30px;
+  color:var(--accent);
+  line-height:1;
+  margin-bottom:6px;
+}
+.kpi-card span{font-size:12px;color:var(--muted);font-weight:700;}
+.activity-grid{
+  display:grid;
+  grid-template-columns:repeat(2, minmax(0,1fr));
+  gap:14px;
+  margin:18px 0 24px;
+}
+.activity-card{
+  position:relative;
+  padding:18px 20px 18px 66px;
+  border:1px solid var(--line-2);
+  border-radius:20px;
+  background:linear-gradient(180deg, #fffefd 0%, #f7efe5 100%);
+  box-shadow:0 10px 24px rgba(60,38,19,0.05);
+  min-height:178px;
+}
+.activity-card h3{
+  border-left:none;
+  padding-left:0;
+  margin:0 0 8px;
+  font-size:18px;
+}
+.activity-number{
+  position:absolute;
+  left:18px;
+  top:18px;
+  width:34px;
+  height:34px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(180deg, var(--accent-2) 0%, #7f642d 100%);
+  color:#fff;
+  font-weight:800;
+  font-size:12px;
+}
+.card-grid-3{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0,1fr));
+  gap:14px;
+  margin:18px 0 24px;
+}
+.mini-card{
+  padding:18px 18px 16px;
+  border-radius:18px;
+  border:1px solid var(--line-2);
+  background:linear-gradient(180deg, #fffefd 0%, #fbf4ea 100%);
+  box-shadow:0 8px 18px rgba(60,38,19,0.04);
+}
+.mini-card strong{
+  display:block;
+  color:var(--accent);
+  margin-bottom:6px;
+}
+.muted{color:var(--muted);}
+.course-banner{
+  margin:26px 0 28px;
+  padding:26px 28px 30px;
+  border-radius:24px;
+  border:1px solid rgba(155,122,56,0.20);
+  background:
+    radial-gradient(circle at top right, rgba(199,171,112,0.18), transparent 22%),
+    linear-gradient(135deg, #fffdfa 0%, #f9efe4 100%);
+  box-shadow:0 14px 32px rgba(60,38,19,0.06);
+}
+.course-banner h3{
+  border-left:none;
+  padding-left:0;
+  margin-top:0;
+  margin-bottom:10px;
+  font-size:26px;
+  font-family:"EB Garamond", "Noto Serif CJK JP", "Georgia", serif;
+}
+.checklist{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:12px;
+  margin:16px 0 22px;
+}
+.check-item{
+  padding:14px 16px;
+  border-radius:16px;
+  border:1px solid var(--line-2);
+  background:#fff;
+  box-shadow:0 8px 16px rgba(60,38,19,0.04);
+}
+.check-item::before{
+  content:"✓";
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:22px;
+  height:22px;
+  margin-right:8px;
+  border-radius:50%;
+  background:rgba(36,91,70,0.10);
+  color:var(--success);
+  font-weight:900;
+}
+.footer-card{
+  margin-top:24px;
+  padding-top:24px;
+  border-top:1px solid var(--line-2);
+}
+.footer-pillbar{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:12px;
+  text-align:center;
+}
+.footer-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 16px;
+  border-radius:999px;
+  border:1px solid var(--line-2);
+  background:#fff;
+  color:var(--accent) !important;
+  text-decoration:none;
+  font-weight:700;
+}
+.print-note{font-size:12px;color:var(--muted);}
+@media screen and (max-width: 960px){
+  .page-shell{padding:18px 16px 42px}
+  .cover{padding:44px 28px 40px}
+  .cover-title{font-size:42px}
+  .cover-meta{flex-direction:column}
+  .toc-grid,.pillar-grid,.activity-grid,.checklist{grid-template-columns:1fr}
+  .document{padding:24px 20px 34px}
+  .kpi-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card-grid-3{grid-template-columns:1fr}
+}
+@media print{
+  body{background:#fff;font-size:12px;}
+  .page-shell{max-width:none;margin:0;padding:0;}
+  .cover, .toc-panel, .document{box-shadow:none;}
+  .cover{page-break-after:always;break-after:page;border-radius:18px;padding:48px 46px 42px;}
+  .toc-panel{page-break-after:always;break-after:page;margin:0 0 20px;border-radius:16px;}
+  .document{border:none;border-radius:0;padding:0;}
+  .section-head{break-after:avoid;page-break-after:avoid;margin-top:18px;}
+  h3, h4, p, ul, ol, .callout-box{orphans:3;widows:3;}
+  .table-shell{overflow:visible;break-inside:auto;}
+  table{box-shadow:none;border-radius:0;page-break-inside:auto;}
+  tr, td, th{break-inside:avoid;}
+  .kpi-grid{grid-template-columns:repeat(4,minmax(0,1fr));}
+  .activity-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  a{text-decoration:none;}
+}
+</style>
+</head>
+<body>
+<div class="page-shell">
+  <section class="cover">
+    <div class="cover-badge"><span class="dot"></span>Trí Lữ Nihongo • Kaiwa Curriculum</div>
+    <h1 class="cover-title">Lộ trình Kaiwa N5 trong 12 tuần</h1>
+    <p class="cover-subtitle">Phiên bản trình bày cao cấp dành cho lớp giao tiếp tiếng Nhật sơ cấp N5: tối đa hóa thời gian nói, xoay cặp liên tục, luyện phản xạ nhanh và bám sát tình huống sinh hoạt thật tại Nhật Bản.</p>
+    <div class="metric-row">
+      <span class="metric-chip">12 tuần</span>
+      <span class="metric-chip">36 buổi</span>
+      <span class="metric-chip">120 phút/buổi</span>
+      <span class="metric-chip">6 học viên</span>
+      <span class="metric-chip">Kaiwa thực chiến</span>
+    </div>
+    <blockquote class="cover-quote">Mỗi buổi học chỉ có một mục tiêu: học viên phải dùng được tiếng Nhật trong một tình huống thật.</blockquote>
+    <div class="cover-meta"><div>Trình độ: Sơ cấp N5</div><div>Thiết kế cho nhóm nhỏ: 3 cặp đôi hoặc 2 nhóm ba người</div></div>
+  </section>
+
+  <nav class="toc-panel">
+    <span class="panel-overline">Điều hướng nhanh</span>
+    <h2 class="toc-title">Mục lục</h2>
+    <p class="toc-subtitle">Các khối nội dung được tổ chức theo kiểu handbook: dễ đọc trên màn hình, đẹp khi in PDF và thuận tiện dùng trong vận hành lớp học.</p>
+    <div class="toc-grid">
+      <a class="toc-item" href="#section-1"><span class="toc-item-number">I</span><span class="toc-item-title">Tổng quan khóa Kaiwa N5</span><span class="toc-item-summary">Mục tiêu, nguyên tắc vận hành và chỉ số thiết kế cho lớp 6 học viên.</span></a>
+      <a class="toc-item" href="#section-2"><span class="toc-item-number">II</span><span class="toc-item-title">Cấu trúc chuẩn 120 phút</span><span class="toc-item-summary">Time-box chi tiết cho warm-up, nạp mẫu câu, drill, role-play và feedback.</span></a>
+      <a class="toc-item" href="#section-3"><span class="toc-item-number">III</span><span class="toc-item-title">Lộ trình 12 tuần / 36 buổi</span><span class="toc-item-summary">Bảng chương trình đi từ giới thiệu bản thân đến mua sắm, hỏi đường, ăn uống, công việc và khám bệnh.</span></a>
+      <a class="toc-item" href="#section-4"><span class="toc-item-number">IV</span><span class="toc-item-title">Hoạt động cho lớp 6 người</span><span class="toc-item-summary">5 hình thức luyện nói liên tục: xoay cặp, triad role-play, mission cards, information gap và circle chain.</span></a>
+      <a class="toc-item" href="#section-5"><span class="toc-item-number">V</span><span class="toc-item-title">Vận hành, bài tập và sửa lỗi</span><span class="toc-item-summary">Cách giữ lớp không bị lý thuyết hóa, tập trung vào nhiệm vụ giao tiếp chính của từng buổi.</span></a>
+      <a class="toc-item" href="#section-6"><span class="toc-item-number">VI</span><span class="toc-item-title">Chuẩn đầu ra và rubric</span><span class="toc-item-summary">Tiêu chí đánh giá cuối khóa theo năng lực nói thật, không thiên về luyện thi JLPT.</span></a>
+    </div>
+  </nav>
+
+  <main class="document">
+    <section class="doc-section" id="section-1">
+      <div class="section-head" data-mark="I"><span class="section-kicker">Tổng quan</span><h2>Tổng quan khóa Kaiwa tiếng Nhật N5</h2></div>
+      <p class="section-intro">Khóa học được thiết kế cho người học sơ cấp muốn giao tiếp được trong đời sống hằng ngày tại Nhật Bản hoặc khi làm việc với người Nhật. Trọng tâm không phải là nhồi ngữ pháp hay luyện đề, mà là hình thành phản xạ nói, nghe hiểu câu quen thuộc và xử lý tình huống thật.</p>
+      <div class="kpi-grid">
+        <div class="kpi-card"><strong>3</strong><span>tháng học liên tục</span></div>
+        <div class="kpi-card"><strong>36</strong><span>buổi Kaiwa ứng dụng</span></div>
+        <div class="kpi-card"><strong>120</strong><span>phút cho mỗi buổi</span></div>
+        <div class="kpi-card"><strong>70–80%</strong><span>thời gian học viên nói</span></div>
+      </div>
+      <h3>Nguyên tắc thiết kế lớp học</h3>
+      <ol class="pillar-grid">
+        <li><strong>Nói trước, phân tích sau.</strong><br/>Mỗi mẫu câu phải được dùng trong tình huống thật trước khi giải thích sâu.</li>
+        <li><strong>Không giảng quá 15 phút liên tục.</strong><br/>Giáo viên dẫn dắt, đưa mẫu, sửa lỗi; học viên là người nói chính.</li>
+        <li><strong>Tận dụng lớp 6 người.</strong><br/>Luân chuyển partner liên tục qua 3 cặp đôi hoặc 2 nhóm ba người.</li>
+        <li><strong>Mỗi buổi có một nhiệm vụ giao tiếp chính.</strong><br/>Ví dụ: mua được đồ, hỏi được đường, gọi được món, rủ được bạn.</li>
+        <li><strong>Sửa lỗi ít nhưng trúng.</strong><br/>Ưu tiên lỗi ảnh hưởng giao tiếp: phát âm, mẫu câu chính, sự lịch sự.</li>
+        <li><strong>Phản xạ sinh tồn là bắt buộc.</strong><br/>Học viên phải biết nói: 「もう一度お願いします。」, 「ゆっくりお願いします。」, 「わかりません。」</li>
+      </ol>
+      <div class="callout-box"><strong>Định hướng đầu ra:</strong> Sau 12 tuần, học viên có thể duy trì hội thoại ngắn 2–4 phút trong các tình huống quen thuộc như chào hỏi, mua sắm, gọi món, hỏi đường, hẹn lịch, báo vấn đề và nói triệu chứng cơ bản.</div>
+    </section>
+
+    <section class="doc-section" id="section-2">
+      <div class="section-head" data-mark="II"><span class="section-kicker">Time-box</span><h2>Cấu trúc chuẩn của một buổi học 120 phút</h2></div>
+      <p class="section-intro">Khung giờ dưới đây giữ nhịp lớp nhanh, tránh giáo viên độc thoại và đảm bảo học viên liên tục dùng tiếng Nhật. Với lớp 6 người, các hoạt động nên được xoay giữa vòng tròn 6 người, 3 cặp đôi và 2 nhóm ba người.</p>
+      <div class="table-shell">
+        <table class="data-table">
+          <thead><tr><th>Thời lượng</th><th>Hoạt động</th><th>Mục tiêu</th><th>Cách tổ chức cho lớp 6 người</th></tr></thead>
+          <tbody><tr><td><strong>0–10 phút</strong></td><td>Warm-up phản xạ</td><td>Kích hoạt tiếng Nhật, ôn mẫu cũ</td><td>Vòng tròn 6 người. Mỗi người hỏi người bên cạnh 1 câu, sau đó đổi chiều.</td></tr>
+<tr><td><strong>10–25 phút</strong></td><td>Cung cấp từ vựng/mẫu câu ứng dụng</td><td>Nạp ngôn ngữ cần dùng trong tình huống hôm nay</td><td>Giáo viên giới thiệu tối đa 8–12 từ/cụm và 3–5 mẫu câu. Không giảng quá 15 phút liên tục.</td></tr>
+<tr><td><strong>25–40 phút</strong></td><td>Pronunciation &amp; Pattern Drill</td><td>Chuẩn hóa phát âm, nhịp điệu, ngữ điệu</td><td>Cả lớp lặp theo nhịp, sau đó chia 3 cặp. Luyện thay thế từ: A hỏi, B trả lời, đổi vai liên tục.</td></tr>
+<tr><td><strong>40–60 phút</strong></td><td>Pair Drill luân chuyển</td><td>Tạo phản xạ hỏi – đáp nhanh</td><td>3 cặp luyện hội thoại ngắn. Sau mỗi 5 phút đổi partner. Mỗi học viên được nói với ít nhất 3 người khác nhau.</td></tr>
+<tr><td><strong>60–65 phút</strong></td><td>Reset nhanh</td><td>Nghỉ ngắn, chuẩn bị tình huống</td><td>Giáo viên ghi nhanh 3 lỗi phổ biến lên bảng, sửa bằng ví dụ ngắn.</td></tr>
+<tr><td><strong>65–85 phút</strong></td><td>Guided Role-play</td><td>Thực hành có khung gợi ý</td><td>Chia thành 2 nhóm ba người. Mỗi nhóm có 3 vai: người A, người B, người quan sát. Sau mỗi lượt đổi vai.</td></tr>
+<tr><td><strong>85–105 phút</strong></td><td>Free Role-play / Mission Task</td><td>Dùng tiếng Nhật để hoàn thành nhiệm vụ thật</td><td>3 cặp hoặc 2 nhóm ba người nhận thẻ tình huống: mua đồ ở combini, hỏi đường, gọi món, rủ bạn đi ăn.</td></tr>
+<tr><td><strong>105–115 phút</strong></td><td>Mini Performance &amp; Feedback</td><td>Tự tin nói trước nhóm nhỏ, nhận sửa lỗi</td><td>2–3 cặp biểu diễn hội thoại 1–2 phút. Giáo viên sửa theo 3 điểm: phát âm, mẫu câu, tự nhiên.</td></tr>
+<tr><td><strong>115–120 phút</strong></td><td>Tổng kết &amp; nhiệm vụ về nhà</td><td>Chốt mẫu câu, duy trì luyện nói ngoài lớp</td><td>Mỗi học viên nói 1 câu “hôm nay tôi dùng được câu nào”. Giao nhiệm vụ ghi âm 30–60 giây.</td></tr></tbody>
+        </table>
+      </div>
+      <div class="callout-box"><strong>Tỉ lệ khuyến nghị:</strong> 70–80% thời gian học viên nói, 20–30% thời gian giáo viên hướng dẫn, sửa lỗi và tạo tình huống.</div>
+    </section>
+
+    <section class="doc-section" id="section-3">
+      <div class="section-head" data-mark="III"><span class="section-kicker">12 tuần</span><h2>Lộ trình chi tiết 36 buổi Kaiwa N5</h2></div>
+      <p class="section-intro">Chương trình đi từ nhận diện bản thân và giao tiếp trong lớp đến các tình huống sinh hoạt thực tế tại Nhật: combini, nhà hàng, ga tàu, công ty, nhà ở, phòng khám và xử lý sự cố.</p>
+      <div class="table-shell">
+        <table class="data-table table-dense">
+          <thead><tr><th style="width:6%">Tuần</th><th style="width:6%">Buổi</th><th style="width:20%">Chủ đề Giao tiếp</th><th style="width:33%">Từ vựng / Mẫu câu trọng tâm</th><th style="width:35%">Hoạt động lớp học dành cho 6 người</th></tr></thead>
+          <tbody><tr class="week-1"><td class="week-cell">1</td><td class="lesson-cell">1</td><td><strong>Chào hỏi và làm quen lần đầu</strong></td><td class="jp-text">「はじめまして。」, 「〜です。」, 「ベトナム人です。」, 「よろしくお願いします。」, おはようございます, こんにちは, こんばんは</td><td>Vòng tròn giới thiệu tên: 6 người đứng thành vòng tròn, lần lượt chào – giới thiệu – bắt tay/trao thẻ tên. Sau đó đổi vị trí và giới thiệu lại với người mới.</td></tr>
+<tr class="week-1"><td class="week-cell"></td><td class="lesson-cell">2</td><td><strong>Hỏi tên, quốc tịch, quê quán</strong></td><td class="jp-text">「お名前は？」, 「どこから来ましたか。」, 「ハノイから来ました。」, 「〜人です。」, 「〜から来ました。」</td><td>3 cặp phỏng vấn nhanh: mỗi cặp hỏi – đáp 3 câu cơ bản, sau 5 phút đổi partner. Cuối buổi mỗi học viên giới thiệu lại một bạn khác.</td></tr>
+<tr class="week-1"><td class="week-cell"></td><td class="lesson-cell">3</td><td><strong>Ngôn ngữ sinh tồn trong lớp học</strong></td><td class="jp-text">「もう一度お願いします。」, 「ゆっくりお願いします。」, 「わかりません。」, 「大丈夫です。」, 「これは日本語で何ですか。」</td><td>Survival Japanese Game: giáo viên cố tình nói nhanh hoặc đưa đồ vật. Học viên phải dùng câu phù hợp để yêu cầu nhắc lại, nói chậm, hoặc hỏi tên đồ vật.</td></tr>
+<tr class="week-2"><td class="week-cell">2</td><td class="lesson-cell">1</td><td><strong>Nghề nghiệp và nơi làm việc/học tập</strong></td><td class="jp-text">会社員, 学生, 先生, エンジニア, 店員, 「お仕事は何ですか。」, 「会社員です。」, 「〜で働いています。」</td><td>Name card exchange: 6 người nhận thẻ vai giả: nhân viên công ty, sinh viên, kỹ sư, giáo viên. Di chuyển quanh lớp, chào hỏi và hỏi nghề nghiệp.</td></tr>
+<tr class="week-2"><td class="week-cell"></td><td class="lesson-cell">2</td><td><strong>Gia đình và người thân</strong></td><td class="jp-text">家族, 父, 母, 兄, 姉, 弟, 妹, 「家族は何人ですか。」, 「父と母がいます。」, 「兄が一人います。」</td><td>Family interview: chia 3 cặp, hỏi về gia đình. Sau đó ghép thành 2 nhóm ba người, mỗi người giới thiệu gia đình của partner.</td></tr>
+<tr class="week-2"><td class="week-cell"></td><td class="lesson-cell">3</td><td><strong>Số điện thoại, tuổi, ngày sinh</strong></td><td class="jp-text">数字 0–100, 電話番号, 誕生日, 「何歳ですか。」, 「電話番号は何番ですか。」, 「誕生日はいつですか。」</td><td>Information Gap: mỗi học viên có một thẻ thông tin bị thiếu. Phải hỏi các bạn còn lại để hoàn thành bảng thông tin.</td></tr>
+<tr class="week-3"><td class="week-cell">3</td><td class="lesson-cell">1</td><td><strong>Thời gian, thứ, lịch trong ngày</strong></td><td class="jp-text">何時, 何曜日, 月曜日〜日曜日, 「今何時ですか。」, 「何時から何時までですか。」, 「9時から5時までです。」</td><td>Schedule Chain: 6 người ngồi vòng tròn. Người 1 hỏi giờ, người 2 trả lời và hỏi người tiếp theo. Tăng tốc dần để luyện phản xạ.</td></tr>
+<tr class="week-3"><td class="week-cell"></td><td class="lesson-cell">2</td><td><strong>Thói quen hằng ngày</strong></td><td class="jp-text">起きます, 寝ます, 食べます, 飲みます, 行きます, 帰ります, 「7時に起きます。」, 「会社へ行きます。」</td><td>Daily Routine Pair Rotation: 3 cặp hỏi lịch sinh hoạt. Sau mỗi lượt đổi partner. Mỗi người phải kể lại 1 thói quen của bạn mình.</td></tr>
+<tr class="week-3"><td class="week-cell"></td><td class="lesson-cell">3</td><td><strong>Sở thích và điều thích/không thích</strong></td><td class="jp-text">趣味, 音楽, 映画, 旅行, スポーツ, 料理, 「〜が好きです。」, 「〜があまり好きじゃありません。」, 「趣味は〜です。」</td><td>Find Someone Who: học viên đi quanh lớp tìm người thích cùng món/hoạt động. Ví dụ: 「映画が好きですか。」 Ai tìm được nhiều điểm chung nhất sẽ trình bày.</td></tr>
+<tr class="week-4"><td class="week-cell">4</td><td class="lesson-cell">1</td><td><strong>Mua đồ ở combini/siêu thị</strong></td><td class="jp-text">これ, それ, あれ, おにぎり, 水, コーヒー, 弁当, 「これをください。」, 「いくらですか。」, 「袋をお願いします。」</td><td>Combini Role-play: chia 3 cặp khách – nhân viên. Mỗi cặp có tiền giả và sản phẩm giả. Sau 5 phút đổi vai, đổi cửa hàng.</td></tr>
+<tr class="week-4"><td class="week-cell"></td><td class="lesson-cell">2</td><td><strong>Mua quần áo/đồ dùng đơn giản</strong></td><td class="jp-text">サイズ, 色, 白, 黒, 赤, 青, 安い, 高い, 「このTシャツはいくらですか。」, 「Mサイズはありますか。」, 「試着してもいいですか。」</td><td>Shopping Station: 2 nhóm ba người. Một người bán hàng, hai người mua. Người mua phải hỏi giá, màu, size và quyết định mua/không mua.</td></tr>
+<tr class="week-4 review-row"><td class="week-cell"></td><td class="lesson-cell">3</td><td><strong>Review 1: Giới thiệu – lịch sinh hoạt – mua sắm</strong></td><td class="jp-text">Ôn: 「〜です。」, 「〜から来ました。」, 「〜が好きです。」, 「これをください。」, 「いくらですか。」</td><td>Mini Market Mission: lớp biến thành khu chợ nhỏ. 3 người bán, 3 người mua. Sau 10 phút đổi vai. Mỗi học viên phải mua ít nhất 3 món và tự giới thiệu với người bán.</td></tr>
+<tr class="week-5"><td class="week-cell">5</td><td class="lesson-cell">1</td><td><strong>Vào nhà hàng và gọi món</strong></td><td class="jp-text">レストラン, メニュー, 水, ご飯, ラーメン, カレー, 「何名様ですか。」, 「2人です。」, 「メニューをお願いします。」, 「これをお願いします。」</td><td>Restaurant Role-play: chia 2 nhóm ba người: nhân viên – khách 1 – khách 2. Luyện vào quán, xin menu, gọi món, cảm ơn.</td></tr>
+<tr class="week-5"><td class="week-cell"></td><td class="lesson-cell">2</td><td><strong>Nói khẩu vị và yêu cầu món ăn</strong></td><td class="jp-text">辛い, 甘い, 熱い, 冷たい, 肉, 魚, 野菜, アレルギー, 「辛いですか。」, 「肉は食べられません。」, 「おすすめは何ですか。」</td><td>Menu Negotiation: mỗi nhóm ba người có menu khác nhau. Học viên phải hỏi món phù hợp với sở thích, dị ứng hoặc món không ăn được.</td></tr>
+<tr class="week-5"><td class="week-cell"></td><td class="lesson-cell">3</td><td><strong>Thanh toán ở quán ăn/café</strong></td><td class="jp-text">お会計, レジ, 現金, カード, 別々, 一緒, 「お会計をお願いします。」, 「カードでお願いします。」, 「別々でお願いします。」</td><td>Café Simulation: 3 cặp thực hành gọi đồ uống, hỏi giá, thanh toán riêng/chung. Cuối buổi ghép 6 người thành một nhóm đi café giả lập.</td></tr>
+<tr class="week-6"><td class="week-cell">6</td><td class="lesson-cell">1</td><td><strong>Hỏi địa điểm trong thành phố</strong></td><td class="jp-text">駅, コンビニ, 病院, トイレ, 銀行, 郵便局, 「駅はどこですか。」, 「コンビニはありますか。」</td><td>Town Map Pair Work: mỗi cặp có bản đồ khác nhau. Một người hỏi địa điểm, người kia chỉ trên bản đồ. Sau đó đổi bản đồ và đổi partner.</td></tr>
+<tr class="week-6"><td class="week-cell"></td><td class="lesson-cell">2</td><td><strong>Chỉ đường cơ bản</strong></td><td class="jp-text">まっすぐ, 右, 左, 前, 後ろ, 隣, 近く, 「まっすぐ行ってください。」, 「右に曲がってください。」, 「駅の隣です。」</td><td>Human Map: dùng lớp học làm bản đồ. 6 học viên đứng ở các vị trí: ga, combini, bệnh viện. Một người hỏi đường, một người hướng dẫn đi thật.</td></tr>
+<tr class="week-6"><td class="week-cell"></td><td class="lesson-cell">3</td><td><strong>Đi tàu/xe buýt ở Nhật</strong></td><td class="jp-text">電車, バス, 駅, 何番線, 切符, ICカード, 「新宿までいくらですか。」, 「何番線ですか。」, 「この電車は東京へ行きますか。」</td><td>Station Mission: 2 nhóm ba người: khách, nhân viên ga, người quan sát. Tình huống: mua vé, hỏi tuyến, hỏi sân ga, xác nhận tàu.</td></tr>
+<tr class="week-7"><td class="week-cell">7</td><td class="lesson-cell">1</td><td><strong>Hẹn lịch và hỏi thời gian rảnh</strong></td><td class="jp-text">今日, 明日, 週末, 土曜日, 日曜日, 暇, 忙しい, 「土曜日は空いていますか。」, 「何時がいいですか。」</td><td>Calendar Matching: mỗi học viên có lịch rảnh/bận khác nhau. Nhiệm vụ là tìm một người có cùng thời gian rảnh để hẹn gặp.</td></tr>
+<tr class="week-7"><td class="week-cell"></td><td class="lesson-cell">2</td><td><strong>Rủ rê, đồng ý, từ chối lịch sự</strong></td><td class="jp-text">映画, ご飯, カフェ, 買い物, 「一緒にご飯を食べませんか。」, 「いいですね。」, 「すみません、ちょっと…。」, 「また今度お願いします。」</td><td>Invitation Speed Dating: 6 người chia 2 hàng đối diện. Một bên rủ, một bên đồng ý hoặc từ chối lịch sự. Sau mỗi lượt đổi người.</td></tr>
+<tr class="week-7"><td class="week-cell"></td><td class="lesson-cell">3</td><td><strong>Lên kế hoạch cuối tuần</strong></td><td class="jp-text">公園, 映画館, レストラン, 天気, 暑い, 寒い, 雨, 「どこへ行きますか。」, 「何をしますか。」, 「日曜日に映画を見ます。」</td><td>Weekend Plan Meeting: chia 2 nhóm ba người. Mỗi nhóm phải thống nhất kế hoạch cuối tuần: đi đâu, mấy giờ, làm gì, ăn gì.</td></tr>
+<tr class="week-8"><td class="week-cell">8</td><td class="lesson-cell">1</td><td><strong>Giao tiếp cơ bản nơi làm việc</strong></td><td class="jp-text">お疲れさまです, お先に失礼します, すみません, ありがとうございます, 手伝います, 「手伝ってください。」, 「少し待ってください。」</td><td>Office Mini Role-play: 2 nhóm ba người: senpai, nhân viên mới, người quan sát. Luyện chào hỏi, nhờ giúp đỡ, xin chờ, kết thúc ngày làm việc.</td></tr>
+<tr class="week-8"><td class="week-cell"></td><td class="lesson-cell">2</td><td><strong>Nơi ở và khu vực xung quanh nhà</strong></td><td class="jp-text">アパート, 部屋, 家賃, 駅, 近い, 遠い, 静か, 便利, 「どこに住んでいますか。」, 「駅から近いです。」, 「静かで便利です。」</td><td>My Room / My Town Talk: 3 cặp hỏi về nơi ở. Sau đó mỗi học viên giới thiệu ngắn: “Tôi sống ở đâu, gần gì, có tiện không.”</td></tr>
+<tr class="week-8 review-row"><td class="week-cell"></td><td class="lesson-cell">3</td><td><strong>Review 2: Một tuần đầu sống ở Nhật</strong></td><td class="jp-text">Ôn: chào hỏi, mua sắm, gọi món, hỏi đường, rủ rê, nơi ở, công việc</td><td>First Week in Japan Mission: 6 trạm tình huống: gặp hàng xóm, mua đồ, hỏi đường, gọi món, rủ bạn, nhờ đồng nghiệp giúp. Học viên xoay trạm theo cặp.</td></tr>
+<tr class="week-9"><td class="week-cell">9</td><td class="lesson-cell">1</td><td><strong>Xin phép và nhờ vả trong đời sống</strong></td><td class="jp-text">写真, トイレ, コピー, 窓, 「〜てもいいですか。」, 「写真を撮ってもいいですか。」, 「トイレを使ってもいいですか。」, 「〜てください。」</td><td>Permission Cards: mỗi học viên bốc thẻ hành động. Phải đi hỏi 3 bạn: có được chụp ảnh, mở cửa sổ, dùng đồ, ngồi đây không.</td></tr>
+<tr class="week-9"><td class="week-cell"></td><td class="lesson-cell">2</td><td><strong>Khi gặp vấn đề: hỏng, mất, không hiểu</strong></td><td class="jp-text">困っています, 壊れています, ありません, なくしました, 「すみません、困っています。」, 「かばんをなくしました。」, 「どうしたらいいですか。」</td><td>Trouble Clinic: 2 nhóm ba người. Một người gặp vấn đề, một người hỗ trợ, một người quan sát. Đổi vai sau mỗi tình huống.</td></tr>
+<tr class="week-9"><td class="week-cell"></td><td class="lesson-cell">3</td><td><strong>Gọi điện/nhắn tin đơn giản</strong></td><td class="jp-text">電話, メッセージ, LINE, 今, 後で, 「今、電話してもいいですか。」, 「後でお願いします。」, 「メッセージを送ります。」</td><td>Phone Back-to-Back: 3 cặp ngồi quay lưng để không nhìn khẩu hình. Luyện gọi điện xin phép, hẹn giờ gọi lại, gửi tin nhắn.</td></tr>
+<tr class="week-10"><td class="week-cell">10</td><td class="lesson-cell">1</td><td><strong>Nói triệu chứng khi bị bệnh</strong></td><td class="jp-text">頭, お腹, のど, 熱, 痛い, 咳, 「頭が痛いです。」, 「熱があります。」, 「病院へ行きたいです。」</td><td>Symptom Guessing: một học viên bốc thẻ triệu chứng và diễn tả bằng tiếng Nhật đơn giản. Partner hỏi thêm: đau ở đâu, từ khi nào, có sốt không.</td></tr>
+<tr class="week-10"><td class="week-cell"></td><td class="lesson-cell">2</td><td><strong>Ở phòng khám/nhà thuốc</strong></td><td class="jp-text">病院, 薬, 保険証, 受付, 1日3回, 「いつからですか。」, 「昨日からです。」, 「薬をください。」, 「保険証があります。」</td><td>Clinic Role-play: 2 nhóm ba người: bệnh nhân, lễ tân/bác sĩ, người quan sát. Luyện tiếp nhận, hỏi triệu chứng, hướng dẫn uống thuốc.</td></tr>
+<tr class="week-10"><td class="week-cell"></td><td class="lesson-cell">3</td><td><strong>Tình huống khẩn cấp và đồ thất lạc</strong></td><td class="jp-text">交番, 警察, 財布, パスポート, 助けてください, 「財布をなくしました。」, 「交番はどこですか。」, 「助けてください。」</td><td>Lost Item Mission: một nửa lớp đóng vai người mất đồ, nửa còn lại là cảnh sát/nhân viên ga. Sau đó đổi vai. Tập nói chậm, rõ, đủ thông tin.</td></tr>
+<tr class="week-11"><td class="week-cell">11</td><td class="lesson-cell">1</td><td><strong>Kể việc đã làm hôm qua/cuối tuần</strong></td><td class="jp-text">昨日, 週末, 食べました, 行きました, 見ました, 買いました, 「昨日何をしましたか。」, 「映画を見ました。」, 「何もしませんでした。」</td><td>Weekend Report Circle: 6 người ngồi vòng tròn. Mỗi người kể 3 câu về hôm qua/cuối tuần. Người bên cạnh phải hỏi thêm 1 câu.</td></tr>
+<tr class="week-11"><td class="week-cell"></td><td class="lesson-cell">2</td><td><strong>Du lịch và trải nghiệm đơn giản</strong></td><td class="jp-text">京都, 大阪, 温泉, 写真, お土産, 楽しい, おいしい, 「京都へ行きました。」, 「写真を撮りました。」, 「とても楽しかったです。」</td><td>Travel Photo Talk: dùng ảnh giả/ảnh cá nhân. 3 cặp hỏi – đáp: đi đâu, ăn gì, mua gì, cảm thấy thế nào.</td></tr>
+<tr class="week-11"><td class="week-cell"></td><td class="lesson-cell">3</td><td><strong>Đưa ý kiến và gợi ý đơn giản</strong></td><td class="jp-text">おすすめ, 便利, 安い, 高い, おいしい, 有名, 「おすすめは何ですか。」, 「この店はおいしいです。」, 「駅に近いから便利です。」</td><td>Best Choice Debate: chia 2 nhóm ba người. Mỗi nhóm chọn nhà hàng/địa điểm tốt nhất từ 3 lựa chọn và thuyết phục nhóm còn lại bằng câu đơn giản.</td></tr>
+<tr class="week-12 review-row"><td class="week-cell">12</td><td class="lesson-cell">1</td><td><strong>Tổng ôn theo trạm tình huống</strong></td><td class="jp-text">Ôn toàn bộ mẫu câu: giới thiệu, mua sắm, gọi món, hỏi đường, hẹn lịch, phòng khám, nhờ vả</td><td>6 Situation Stations: mỗi học viên đi qua 6 trạm: combini, nhà hàng, ga tàu, công ty, phòng khám, nhà bạn. Mỗi trạm nói 2–3 phút.</td></tr>
+<tr class="week-12"><td class="week-cell"></td><td class="lesson-cell">2</td><td><strong>Chuẩn bị bài Kaiwa cuối khóa</strong></td><td class="jp-text">Tập nối câu, phản xạ hỏi lại: 「もう一度お願いします。」, 「それは何ですか。」, 「いいですね。」, 「大丈夫です。」</td><td>Final Role-play Coaching: 3 cặp luyện tình huống bốc thăm. Giáo viên sửa phát âm, tốc độ, độ tự nhiên. Người quan sát dùng checklist đơn giản.</td></tr>
+<tr class="week-12 review-row"><td class="week-cell"></td><td class="lesson-cell">3</td><td><strong>Final Kaiwa Challenge</strong></td><td class="jp-text">Tổng hợp toàn khóa</td><td>Random Role-play Test: mỗi cặp bốc thăm 2 tình huống bất kỳ, ví dụ: hỏi đường + mua đồ, gọi món + hẹn gặp, bị bệnh + xin nghỉ. Mỗi lượt 3–4 phút, sau đó nhận feedback tích cực và kế hoạch luyện tiếp.</td></tr></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-4">
+      <div class="section-head" data-mark="IV"><span class="section-kicker">Activities</span><h2>Phương pháp và hoạt động cho lớp 6 người</h2></div>
+      <p class="section-intro">Các hoạt động dưới đây được thiết kế để học viên nói liên tục, đổi bạn luyện thường xuyên và có nhiệm vụ rõ ràng trong từng lượt hội thoại.</p>
+      <div class="activity-grid"><div class="activity-card"><div class="activity-number">01</div><h3>Partner Rotation 3–3</h3><p>Chia lớp thành 3 cặp. Sau mỗi 5–7 phút, học viên đổi partner theo vòng. Cách này phù hợp với giới thiệu bản thân, hỏi sở thích, hỏi lịch rảnh, mua sắm và gọi món.</p><p class="muted"><strong>Lợi ích:</strong> Học viên không bị quen một giọng nói duy nhất; mỗi buổi có thể nói với 3–5 partner khác nhau.</p></div>
+<div class="activity-card"><div class="activity-number">02</div><h3>Triad Role-play: Người nói – Người đáp – Người quan sát</h3><p>Chia lớp thành 2 nhóm ba người. Trong mỗi nhóm có A là khách/người hỏi, B là nhân viên/người trả lời, C là người quan sát bằng checklist. Sau mỗi lượt đổi vai.</p><p class="muted"><strong>Lợi ích:</strong> Rất mạnh cho tình huống nhà hàng, phòng khám, hỏi đường, công ty, nhà thuốc và báo mất đồ.</p></div>
+<div class="activity-card"><div class="activity-number">03</div><h3>Mission Cards</h3><p>Giáo viên chuẩn bị thẻ nhiệm vụ. Mỗi học viên hoặc mỗi cặp bốc một thẻ và phải hoàn thành nhiệm vụ bằng tiếng Nhật.</p><p class="muted"><strong>Lợi ích:</strong> Biến mẫu câu thành hành động giao tiếp thật, không chỉ lặp hội thoại có sẵn.</p></div>
+<div class="activity-card"><div class="activity-number">04</div><h3>Information Gap cho 3 cặp</h3><p>Mỗi cặp nhận hai phiếu thông tin khác nhau. A có thông tin B thiếu và ngược lại; cả hai phải hỏi – đáp để hoàn thành phiếu.</p><p class="muted"><strong>Lợi ích:</strong> Phù hợp với hỏi số điện thoại, lịch rảnh, giá sản phẩm, bản đồ, thông tin nhà hàng.</p></div>
+<div class="activity-card"><div class="activity-number">05</div><h3>Circle Chain Kaiwa</h3><p>6 học viên đứng hoặc ngồi vòng tròn. Người 1 hỏi người 2, người 2 trả lời rồi hỏi người 3. Tiếp tục đến người 6, sau đó đổi chiều hoặc tăng tốc.</p><p class="muted"><strong>Lợi ích:</strong> Tốt cho warm-up đầu giờ, ôn phản xạ cuối giờ và luyện mở rộng câu.</p></div></div>
+      <h3>Mission Cards mẫu</h3>
+      <div class="callout-box">
+        <ul><li>Bạn đang ở combini. Hãy mua nước, cơm nắm và hỏi có túi không.</li>
+<li>Bạn bị lạc ở ga. Hãy hỏi đường đến bệnh viện.</li>
+<li>Bạn muốn rủ bạn đi ăn vào thứ Bảy nhưng bạn ấy bận.</li>
+<li>Bạn bị đau bụng và cần nói với bác sĩ.</li>
+<li>Bạn mất ví và cần hỏi đường đến đồn cảnh sát.</li>
+<li>Bạn muốn xin phép chụp ảnh ở cửa hàng hoặc trong lớp.</li></ul>
+      </div>
+      <h3>Checklist quan sát khi đóng vai nhóm ba người</h3>
+      <div class="checklist">
+        <div class="check-item">Chào hỏi tự nhiên</div>
+        <div class="check-item">Dùng đúng mẫu câu chính</div>
+        <div class="check-item">Nói đủ to, rõ và có ngắt nhịp</div>
+        <div class="check-item">Biết hỏi lại khi không hiểu</div>
+        <div class="check-item">Có phản hồi ngắn: 「いいですね」, 「そうですか」</div>
+        <div class="check-item">Kết thúc hội thoại lịch sự</div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-5">
+      <div class="section-head" data-mark="V"><span class="section-kicker">Classroom Management</span><h2>Gợi ý vận hành lớp để đạt hiệu quả cao</h2></div>
+      <div class="course-banner">
+        <span class="panel-overline">Nguyên tắc một buổi</span>
+        <h3>Một buổi = một nhiệm vụ giao tiếp chính</h3>
+        <p>Buổi mua sắm phải kết thúc bằng việc học viên mua được đồ. Buổi hỏi đường phải kết thúc bằng việc học viên hỏi và chỉ đường được. Buổi nhà hàng phải kết thúc bằng việc vào quán, gọi món và thanh toán được.</p>
+      </div>
+      <h3>Sửa lỗi theo nguyên tắc “ít nhưng trúng”</h3>
+      <p>Không nên ngắt học viên liên tục trong lúc role-play. Giáo viên ghi lỗi lại, sau đó sửa theo nhóm: lỗi phát âm, lỗi mẫu câu và lỗi giao tiếp.</p>
+      <div class="table-shell">
+        <table>
+          <thead><tr><th>Học viên nói</th><th>Sửa tự nhiên hơn</th><th>Điểm cần nhấn</th></tr></thead>
+          <tbody>
+            <tr><td class="jp-text">私 ベトナム 来ました。</td><td class="jp-text">ベトナムから来ました。</td><td>Thiếu 「から」</td></tr>
+            <tr><td class="jp-text">これ いくら？</td><td class="jp-text">これはいくらですか。</td><td>Lịch sự hóa câu hỏi</td></tr>
+            <tr><td class="jp-text">もう一度。</td><td class="jp-text">もう一度お願いします。</td><td>Thêm 「お願いします」</td></tr>
+            <tr><td class="jp-text">トイレ どこ？</td><td class="jp-text">トイレはどこですか。</td><td>Hoàn chỉnh mẫu câu hỏi</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Bài tập về nhà nên là bài nói ngắn</h3>
+      <div class="card-grid-3">
+        <div class="mini-card"><strong>Ghi âm 30 giây</strong>Giới thiệu bản thân hoặc nói lịch sinh hoạt trong ngày.</div>
+        <div class="mini-card"><strong>Voice message với partner</strong>Rủ đi ăn, hỏi lịch rảnh hoặc luyện gọi món qua tin nhắn thoại.</div>
+        <div class="mini-card"><strong>Video 1 phút</strong>Đóng vai mua đồ, hỏi đường hoặc nói triệu chứng cơ bản.</div>
+      </div>
+      <div class="callout-box"><strong>Không nên giao quá nặng:</strong> Khóa này là Kaiwa N5, vì vậy bài tập nên ưu tiên ghi âm, quay video, chuẩn bị câu hỏi và luyện hội thoại ngắn; không biến thành khóa đọc hiểu hoặc luyện Kanji.</div>
+    </section>
+
+    <section class="doc-section" id="section-6">
+      <div class="section-head" data-mark="VI"><span class="section-kicker">Assessment</span><h2>Chuẩn đầu ra và rubric đánh giá Kaiwa cuối khóa</h2></div>
+      <p class="section-intro">Đánh giá cuối khóa nên dựa trên khả năng hoàn thành nhiệm vụ giao tiếp, không dựa trên việc học viên nhớ được bao nhiêu lý thuyết.</p>
+      <h3>Chuẩn đầu ra sau 12 tuần</h3>
+      <div class="table-shell">
+        <table>
+          <thead><tr><th style="width:28%">Năng lực</th><th>Mô tả cụ thể</th></tr></thead>
+          <tbody><tr><td><strong>Giới thiệu bản thân</strong></td><td>Nói tên, quốc tịch, nghề nghiệp, nơi ở, sở thích bằng câu đơn giản.</td></tr>
+<tr><td><strong>Giao tiếp sinh hoạt</strong></td><td>Mua đồ, hỏi giá, gọi món, thanh toán, hỏi nhà vệ sinh, hỏi đường.</td></tr>
+<tr><td><strong>Hẹn lịch và rủ rê</strong></td><td>Hỏi thời gian rảnh, rủ đi ăn/xem phim, đồng ý hoặc từ chối lịch sự.</td></tr>
+<tr><td><strong>Xử lý khó khăn</strong></td><td>Nói không hiểu, yêu cầu nhắc lại, hỏi chậm hơn, báo mất đồ, nhờ giúp đỡ.</td></tr>
+<tr><td><strong>Giao tiếp y tế cơ bản</strong></td><td>Nói triệu chứng, hỏi thuốc, hiểu hướng dẫn đơn giản như số lần uống thuốc.</td></tr>
+<tr><td><strong>Phản xạ hội thoại</strong></td><td>Duy trì hội thoại ngắn 2–4 phút theo tình huống quen thuộc.</td></tr>
+<tr><td><strong>Phát âm</strong></td><td>Nói rõ hơn về trường âm, âm ngắt, âm ん, nhịp câu và cách lên xuống giọng cơ bản.</td></tr></tbody>
+        </table>
+      </div>
+      <h3>Rubric đánh giá Final Kaiwa Challenge</h3>
+      <div class="table-shell">
+        <table>
+          <thead><tr><th style="width:28%">Tiêu chí</th><th>Mức đạt yêu cầu</th></tr></thead>
+          <tbody><tr><td><strong>Phát âm</strong></td><td>Nói đủ rõ để người nghe hiểu, ít lỗi gây hiểu nhầm.</td></tr>
+<tr><td><strong>Mẫu câu</strong></td><td>Dùng được các mẫu chính trong tình huống thực tế.</td></tr>
+<tr><td><strong>Từ vựng</strong></td><td>Có đủ vốn từ cho các chủ đề sinh hoạt cơ bản.</td></tr>
+<tr><td><strong>Phản xạ</strong></td><td>Trả lời được không cần chuẩn bị quá lâu, biết hỏi lại khi chưa hiểu.</td></tr>
+<tr><td><strong>Tự nhiên/lịch sự</strong></td><td>Biết chào hỏi, cảm ơn, xin lỗi, kết thúc hội thoại phù hợp.</td></tr>
+<tr><td><strong>Hoàn thành nhiệm vụ</strong></td><td>Mua được đồ, gọi được món, hỏi được đường, đặt được lịch, nói được vấn đề.</td></tr></tbody>
+        </table>
+      </div>
+      <div class="callout-box"><strong>Gợi ý bài kiểm tra cuối:</strong> Mỗi cặp bốc thăm 2 tình huống bất kỳ, ví dụ: hỏi đường + mua đồ, gọi món + hẹn gặp, bị bệnh + xin nghỉ. Mỗi lượt 3–4 phút, sau đó nhận feedback theo rubric.</div>
+    </section>
+
+    <footer class="footer-card">
+      <div class="footer-pillbar">
+        <span class="footer-pill">Kaiwa N5 • 12 tuần</span>
+        <span class="footer-pill">Thiết kế cho lớp 6 học viên</span>
+        <span class="footer-pill">Tập trung phản xạ giao tiếp</span>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="lo-trinh-kaiwa-n5-html"></script>
+</body>
+</html>

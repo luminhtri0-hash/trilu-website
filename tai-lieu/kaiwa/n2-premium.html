@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Lộ trình Kaiwa N2 - Phiên bản trình bày cao cấp</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 15mm 14mm 16mm 14mm;
+    }
+    :root{
+      --paper:#fffdfa;
+      --paper-2:#fff8f0;
+      --surface:#f7f0e8;
+      --surface-2:#f2e5d8;
+      --ink:#1e2430;
+      --muted:#5f6470;
+      --accent:#6e1831;
+      --accent-2:#9b7a38;
+      --accent-3:#c7ab70;
+      --line:#dfcfbb;
+      --line-2:#eadfce;
+      --callout:#fcf6ee;
+      --success:#315f4b;
+      --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;}
+    body{
+      margin:0;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+        radial-gradient(circle at 85% 14%, rgba(110,24,49,0.08), transparent 22%),
+        linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+      font-family: Inter, "Noto Sans CJK JP", "Noto Sans JP", "Noto Sans Thai", "Segoe UI", Arial, sans-serif;
+      line-height:1.75;
+      font-size:14px;
+      -webkit-font-smoothing:antialiased;
+    }
+    .page-shell{
+      max-width:1150px;
+      margin:0 auto;
+      padding:30px 24px 76px;
+    }
+    .cover{
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+        radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),
+        linear-gradient(135deg, #4f0f24 0%, #6e1831 36%, #3a0f1b 100%);
+      color:#fff;
+      border-radius:30px;
+      box-shadow:var(--shadow);
+      padding:64px 68px 56px;
+    }
+    .cover::before{
+      content:"";
+      position:absolute;
+      top:18px; right:18px; bottom:18px; left:18px;
+      border:1px solid rgba(255,255,255,0.12);
+      border-radius:22px;
+    }
+    .cover::after{
+      content:"";
+      position:absolute;
+      right:-80px;
+      top:-90px;
+      width:260px;
+      height:260px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%);
+    }
+    .cover-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 16px;
+      border:1px solid rgba(255,255,255,0.16);
+      border-radius:999px;
+      background:rgba(255,255,255,0.08);
+      letter-spacing:0.16em;
+      text-transform:uppercase;
+      font-size:11px;
+      font-weight:700;
+      position:relative;
+      z-index:1;
+    }
+    .cover-badge .dot{
+      width:8px; height:8px;
+      border-radius:50%;
+      background:var(--accent-3);
+      box-shadow:0 0 0 5px rgba(199,171,112,0.14);
+    }
+    .cover-title{
+      position:relative;
+      z-index:1;
+      margin:26px 0 16px;
+      font-family:"EB Garamond", "Noto Serif CJK JP", Georgia, serif;
+      font-weight:700;
+      font-size:56px;
+      line-height:1.04;
+      letter-spacing:-0.02em;
+      max-width:13ch;
+    }
+    .cover-subtitle{
+      position:relative;
+      z-index:1;
+      max-width:780px;
+      font-size:16px;
+      color:rgba(255,255,255,0.88);
+      margin:0 0 26px;
+    }
+    .metric-row{
+      position:relative;
+      z-index:1;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin:26px 0 34px;
+    }
+    .metric-chip{
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.16);
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+      font-size:13px;
+      font-weight:600;
+    }
+    .cover-quote{
+      position:relative;
+      z-index:1;
+      margin:0;
+      max-width:620px;
+      padding-top:22px;
+      border-top:1px solid rgba(255,255,255,0.18);
+      font-style:italic;
+      font-size:16px;
+      color:rgba(255,255,255,0.86);
+    }
+    .cover-meta{
+      position:relative;
+      z-index:1;
+      margin-top:28px;
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      font-size:13px;
+      color:rgba(255,255,255,0.76);
+    }
+    .toc-panel{
+      margin:26px 0 34px;
+      background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96));
+      border:1px solid rgba(155,122,56,0.20);
+      border-radius:24px;
+      box-shadow:var(--shadow);
+      padding:28px 30px;
+    }
+    .panel-overline{
+      display:block;
+      margin-bottom:8px;
+      text-transform:uppercase;
+      letter-spacing:0.18em;
+      font-size:11px;
+      font-weight:700;
+      color:var(--accent-2);
+    }
+    .toc-title{
+      margin:0 0 6px;
+      font-family:"EB Garamond", "Noto Serif CJK JP", Georgia, serif;
+      font-size:34px;
+      line-height:1.1;
+      color:var(--accent);
+    }
+    .toc-subtitle{
+      margin:0 0 20px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .toc-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0, 1fr));
+      gap:16px;
+    }
+    .toc-item{
+      display:block;
+      text-decoration:none;
+      color:inherit;
+      padding:18px 18px 16px;
+      background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%);
+      border:1px solid var(--line-2);
+      border-radius:18px;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .toc-item:hover{
+      transform:translateY(-2px);
+      box-shadow:0 12px 26px rgba(60,38,19,0.08);
+    }
+    .toc-item-number{
+      display:block;
+      margin-bottom:6px;
+      font-family:"EB Garamond", "Noto Serif CJK JP", Georgia, serif;
+      font-size:32px;
+      line-height:1;
+      color:var(--accent-2);
+    }
+    .toc-item-title{
+      display:block;
+      font-weight:800;
+      color:var(--accent);
+      margin-bottom:6px;
+    }
+    .toc-item-summary{
+      display:block;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
+    }
+    .document{
+      background:var(--paper);
+      border:1px solid rgba(155,122,56,0.16);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      padding:34px 44px 52px;
+    }
+    .doc-section{margin:0 0 30px;}
+    .doc-section + .doc-section{padding-top:6px;}
+    .section-head{
+      position:relative;
+      overflow:hidden;
+      margin:12px 0 18px;
+      padding:18px 24px 18px 22px;
+      border-radius:22px;
+      background:
+        linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+        linear-gradient(135deg, #57132a 0%, #6e1831 52%, #7f3b52 100%);
+      color:#fff;
+    }
+    .section-head::after{
+      content:attr(data-mark);
+      position:absolute;
+      right:18px;
+      top:50%;
+      transform:translateY(-50%);
+      font-family:"EB Garamond", "Noto Serif CJK JP", Georgia, serif;
+      font-size:56px;
+      line-height:1;
+      color:rgba(255,255,255,0.12);
+    }
+    .section-kicker{
+      display:block;
+      margin-bottom:8px;
+      font-size:11px;
+      text-transform:uppercase;
+      letter-spacing:0.18em;
+      font-weight:700;
+      color:rgba(255,255,255,0.76);
+    }
+    .section-head h2{
+      margin:0;
+      color:#fff;
+      background:none;
+      padding:0;
+      border-radius:0;
+      font-family:"EB Garamond", "Noto Serif CJK JP", Georgia, serif;
+      font-size:31px;
+      line-height:1.15;
+      text-transform:none;
+      max-width:88%;
+    }
+    .section-intro{font-size:15px;color:#3b4250;}
+    p{margin:0 0 14px;}
+    h3{
+      margin:28px 0 12px;
+      padding-left:14px;
+      border-left:4px solid var(--accent-2);
+      color:var(--accent);
+      font-size:18px;
+      line-height:1.35;
+      font-weight:800;
+    }
+    h4{
+      display:inline-block;
+      margin:18px 0 10px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:linear-gradient(180deg, #fffdf9 0%, #f7efe3 100%);
+      color:#674c1b;
+      font-size:14px;
+      line-height:1.35;
+      font-weight:800;
+    }
+    ol, ul{margin:0 0 16px; padding-left:22px;}
+    li{margin:0 0 8px;}
+    li::marker{color:var(--accent-2);font-weight:700;}
+    strong{color:#301f22;}
+    a{color:var(--accent);}
+    .muted{color:var(--muted);}
+    .callout-box{
+      margin:18px 0 22px;
+      padding:18px 20px 18px 22px;
+      border:1px solid #e7d7be;
+      border-left:6px solid var(--accent-2);
+      border-radius:18px;
+      background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+      box-shadow:0 10px 24px rgba(60, 38, 19, 0.05);
+    }
+    .callout-box strong:first-child{color:var(--accent);}
+    .note-box{
+      margin:16px 0 20px;
+      padding:16px 18px;
+      border-radius:18px;
+      border:1px solid rgba(49,95,75,0.22);
+      border-left:6px solid var(--success);
+      background:linear-gradient(180deg, #fbfffc 0%, #f1f8f3 100%);
+    }
+    .pillar-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px 14px;
+      list-style:none;
+      padding:0;
+      margin:18px 0 24px;
+      counter-reset:pillar;
+    }
+    .pillar-grid > li{
+      position:relative;
+      margin:0;
+      padding:16px 18px 16px 58px;
+      background:linear-gradient(180deg, #fffefd 0%, #fbf4ea 100%);
+      border:1px solid var(--line-2);
+      border-radius:18px;
+      box-shadow:0 8px 18px rgba(60,38,19,0.04);
+      min-height:78px;
+    }
+    .pillar-grid > li::before{
+      counter-increment:pillar;
+      content:counter(pillar, decimal-leading-zero);
+      position:absolute;
+      left:16px;
+      top:16px;
+      width:30px;
+      height:30px;
+      border-radius:50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:linear-gradient(180deg, var(--accent-2) 0%, #7f642d 100%);
+      color:#fff;
+      font-size:12px;
+      font-weight:800;
+    }
+    .card-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:14px;
+      margin:18px 0 24px;
+    }
+    .feature-card, .activity-card, .week-card{
+      padding:16px 18px;
+      border-radius:18px;
+      background:linear-gradient(180deg, #fffefd 0%, #fbf4ea 100%);
+      border:1px solid var(--line-2);
+      box-shadow:0 8px 18px rgba(60,38,19,0.04);
+    }
+    .feature-card .eyebrow, .activity-card .eyebrow, .week-card .eyebrow{
+      display:block;
+      color:var(--accent-2);
+      text-transform:uppercase;
+      letter-spacing:0.14em;
+      font-size:10px;
+      font-weight:800;
+      margin-bottom:5px;
+    }
+    .feature-card strong, .activity-card strong, .week-card strong{
+      display:block;
+      color:var(--accent);
+      font-size:15px;
+      margin-bottom:6px;
+    }
+    .feature-card p, .activity-card p, .week-card p{font-size:13px;color:#3b4250;margin:0;}
+    .table-shell{margin:16px 0 24px; overflow:auto;}
+    table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      background:#fff;
+      border:1px solid var(--line-2);
+      border-radius:18px;
+      overflow:hidden;
+      box-shadow:0 10px 26px rgba(60, 38, 19, 0.05);
+      font-size:13px;
+    }
+    th, td{
+      padding:12px 13px;
+      border-right:1px solid var(--line-2);
+      border-bottom:1px solid var(--line-2);
+      vertical-align:top;
+    }
+    th:last-child, td:last-child{border-right:none;}
+    tbody tr:last-child td{border-bottom:none;}
+    thead th{
+      background:linear-gradient(180deg, #fcf5ea 0%, #f2e3cf 100%);
+      color:var(--accent);
+      font-weight:800;
+      vertical-align:middle;
+    }
+    tbody tr:nth-child(even) td{background:#fffaf4;}
+    .table-dense{font-size:12px;}
+    tr.group-row td{
+      background:linear-gradient(90deg, #6e1831 0%, #834a61 100%) !important;
+      color:#fff;
+      font-weight:800;
+      text-align:center;
+      letter-spacing:0.08em;
+      text-transform:uppercase;
+    }
+    .timeline-table td:first-child{font-weight:800;color:var(--accent);white-space:nowrap;}
+    .session-time{font-weight:800;color:var(--accent);white-space:nowrap;}
+    .tag-list{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin:8px 0 0;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding:4px 9px;
+      border-radius:999px;
+      background:#fff;
+      border:1px solid var(--line-2);
+      color:#674c1b;
+      font-size:12px;
+      font-weight:700;
+    }
+    .grammar-bank{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin:16px 0 24px;
+    }
+    .grammar-card{
+      border:1px solid var(--line-2);
+      border-radius:18px;
+      background:#fff;
+      padding:14px 16px;
+      box-shadow:0 8px 18px rgba(60,38,19,0.04);
+    }
+    .grammar-card .function{
+      color:var(--accent);
+      font-weight:800;
+      margin-bottom:4px;
+    }
+    .grammar-card .pattern{
+      display:inline-block;
+      margin:4px 0 6px;
+      padding:4px 9px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#fff8ef;
+      color:#674c1b;
+      font-weight:800;
+      font-family:"Noto Sans JP", "Noto Sans CJK JP", sans-serif;
+    }
+    .jp{
+      font-family:"Noto Sans JP", "Noto Sans CJK JP", "Yu Gothic", Meiryo, sans-serif;
+      letter-spacing:0.01em;
+    }
+    ruby{ruby-position:over;font-family:"Noto Sans CJK JP", "Noto Sans JP", sans-serif;}
+    rt{font-size:0.58em;color:#6c7079;}
+    .month-banner{
+      margin:26px 0 26px;
+      padding:24px 26px 26px;
+      border-radius:24px;
+      border:1px solid rgba(155,122,56,0.20);
+      background:
+        radial-gradient(circle at top right, rgba(199,171,112,0.18), transparent 22%),
+        linear-gradient(135deg, #fffdfa 0%, #f9efe4 100%);
+      box-shadow:0 14px 32px rgba(60,38,19,0.06);
+    }
+    .month-banner h3{
+      border-left:none;
+      padding-left:0;
+      margin-top:0;
+      margin-bottom:10px;
+      font-size:26px;
+      font-family:"EB Garamond", "Noto Serif CJK JP", Georgia, serif;
+    }
+    .week-card h4{
+      display:block;
+      border:0;
+      background:none;
+      padding:0;
+      margin:0 0 8px;
+      color:var(--accent);
+      font-size:15px;
+    }
+    .week-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+      margin:18px 0 24px;
+    }
+    .week-card ul{padding-left:18px;margin-bottom:0;}
+    .rubric-grid{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:12px;
+      margin:16px 0 24px;
+    }
+    .rubric-card{
+      padding:14px;
+      border-radius:18px;
+      border:1px solid var(--line-2);
+      background:#fff;
+    }
+    .rubric-card strong{color:var(--accent);}
+    .footer-card{
+      margin-top:28px;
+      padding-top:24px;
+      border-top:1px solid var(--line-2);
+    }
+    .footer-pillbar{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
+      text-align:center;
+    }
+    .footer-pill{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:10px 16px;
+      border-radius:999px;
+      border:1px solid var(--line-2);
+      background:#fff;
+      color:var(--accent) !important;
+      text-decoration:none;
+      font-weight:700;
+    }
+    .print-note{font-size:12px;color:var(--muted);}
+    @media screen and (max-width: 960px){
+      .page-shell{padding:18px 16px 42px}
+      .cover{padding:44px 28px 40px}
+      .cover-title{font-size:42px}
+      .toc-grid,.pillar-grid,.grammar-bank,.week-grid{grid-template-columns:1fr}
+      .document{padding:24px 20px 34px}
+      .card-grid{grid-template-columns:1fr}
+      .rubric-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .cover-meta{flex-direction:column;gap:8px}
+    }
+    @media print{
+      body{background:#fff;font-size:12px;}
+      .page-shell{max-width:none;margin:0;padding:0;}
+      .cover,.toc-panel,.document{box-shadow:none;}
+      .cover{page-break-after:always;break-after:page;border-radius:18px;padding:48px 46px 42px;}
+      .toc-panel{page-break-after:always;break-after:page;margin:0 0 20px;border-radius:16px;}
+      .document{border:none;border-radius:0;padding:0;}
+      .section-head{break-after:avoid;page-break-after:avoid;margin-top:18px;}
+      h3,h4,p,ul,ol,.callout-box,.note-box{orphans:3;widows:3;}
+      .table-shell{overflow:visible;break-inside:auto;}
+      table{box-shadow:none;border-radius:0;page-break-inside:auto;}
+      tr,td,th{break-inside:avoid;}
+      .week-card,.feature-card,.activity-card,.grammar-card,.rubric-card{break-inside:avoid;}
+      a{text-decoration:none;}
+    }
+  </style>
+</head>
+<body>
+<div class="page-shell">
+  <section class="cover" id="top">
+    <div class="cover-badge"><span class="dot"></span>Kaiwa N2 • Premium Curriculum</div>
+    <h1 class="cover-title">Lộ trình Kaiwa N2 trong 4 tháng</h1>
+    <p class="cover-subtitle">Bản thiết kế chương trình giao tiếp tiếng Nhật trung - cao cấp dành cho lớp nhóm nhỏ 6 học viên: thực chiến, giàu tương tác, ưu tiên ứng dụng ngữ pháp N2 trong đời sống, công việc, phỏng vấn, báo cáo và thảo luận chuyên sâu.</p>
+    <div class="metric-row">
+      <span class="metric-chip">4 tháng</span>
+      <span class="metric-chip">48 buổi / 96 giờ</span>
+      <span class="metric-chip">3 buổi / tuần</span>
+      <span class="metric-chip">120 phút / buổi</span>
+      <span class="metric-chip">6 học viên</span>
+      <span class="metric-chip">70%+ thời lượng nói</span>
+    </div>
+    <blockquote class="cover-quote">Mục tiêu không phải là “biết nhiều mẫu N2”, mà là dùng được tiếng Nhật N2 để suy nghĩ, phản ứng, thương lượng, phản biện và thể hiện bản thân trong tình huống thật.</blockquote>
+    <div class="cover-meta">
+      <div>Thiết kế theo hướng Kaiwa ứng dụng, không luyện đề JLPT</div>
+      <div>Phiên bản HTML editorial cao cấp</div>
+    </div>
+  </section>
+
+  <nav class="toc-panel">
+    <span class="panel-overline">Điều hướng nhanh</span>
+    <h2 class="toc-title">Mục lục</h2>
+    <p class="toc-subtitle">Các phần được tổ chức theo logic triển khai lớp học: mục tiêu đầu ra, cấu trúc buổi học, lộ trình từng tháng, hoạt động nhóm 6 người và đánh giá.</p>
+    <div class="toc-grid">
+      <a class="toc-item" href="#section-1"><span class="toc-item-number">I</span><span class="toc-item-title">Tổng quan lộ trình</span><span class="toc-item-summary">Mục tiêu sau 4 tháng, trục năng lực và chủ đề trọng tâm từng tháng.</span></a>
+      <a class="toc-item" href="#section-2"><span class="toc-item-number">II</span><span class="toc-item-title">Cấu trúc 1 buổi học 120 phút</span><span class="toc-item-summary">Phân bổ thời gian, vai trò giáo viên, tỉ lệ nói của học viên và cách vận hành lớp 6 người.</span></a>
+      <a class="toc-item" href="#section-3"><span class="toc-item-number">III</span><span class="toc-item-title">Tháng 1: Nói mạch lạc</span><span class="toc-item-summary">Ý kiến cá nhân, trải nghiệm, lý do, so sánh và phản ứng tự nhiên.</span></a>
+      <a class="toc-item" href="#section-4"><span class="toc-item-number">IV</span><span class="toc-item-title">Tháng 2: Business Kaiwa</span><span class="toc-item-summary">Báo cáo, từ chối, xin lỗi, thương lượng, xử lý khách hàng và họp công sở.</span></a>
+      <a class="toc-item" href="#section-5"><span class="toc-item-number">V</span><span class="toc-item-title">Tháng 3: Debate & xã hội</span><span class="toc-item-summary">Thảo luận tin tức, lập luận, phản biện lịch sự và nhìn vấn đề đa chiều.</span></a>
+      <a class="toc-item" href="#section-6"><span class="toc-item-number">VI</span><span class="toc-item-title">Tháng 4: Interview & Presentation</span><span class="toc-item-summary">Phỏng vấn, thuyết trình, dự án cuối khóa và xử lý Q&A.</span></a>
+      <a class="toc-item" href="#section-7"><span class="toc-item-number">VII</span><span class="toc-item-title">Đánh giá & duy trì động lực</span><span class="toc-item-summary">Rubric giữa khóa, cuối khóa, portfolio, phrase bank và kế hoạch luyện tiếp.</span></a>
+      <a class="toc-item" href="#section-8"><span class="toc-item-number">VIII</span><span class="toc-item-title">Kho hoạt động cho lớp 6 người</span><span class="toc-item-summary">Các format tương tác giúp 100% học viên nói liên tục trong mỗi buổi.</span></a>
+    </div>
+  </nav>
+
+  <main class="document">
+    <section class="doc-section" id="section-1">
+      <div class="section-head" data-mark="I"><span class="section-kicker">Phần 1</span><h2>Tổng quan lộ trình</h2></div>
+      <p class="section-intro">Lộ trình này được thiết kế cho người đã hoàn thành N3 hoặc đang học N2, muốn đưa ngữ pháp và từ vựng N2 vào giao tiếp thực tế thay vì chỉ nhận diện trong bài thi.</p>
+      <div class="note-box"><strong>Nguyên tắc lõi:</strong> Mỗi cấu trúc N2 phải được gắn với một chức năng giao tiếp cụ thể: trình bày ý kiến, giải thích nguyên nhân, từ chối khéo, xin lỗi, phản biện, thương lượng, báo cáo hoặc kết luận.</div>
+      <h3>Mục tiêu đầu ra sau 4 tháng</h3>
+      <ol class="pillar-grid">
+        <li><strong>Trình bày quan điểm rõ ràng</strong><br/>Nói theo khung ý kiến → lý do → ví dụ → kết luận, kéo dài 2-5 phút tùy nhiệm vụ.</li>
+        <li><strong>Dùng N2 trong hội thoại thật</strong><br/>Biến mẫu câu trên giấy thành phản xạ nói tự nhiên trong roleplay, meeting và debate.</li>
+        <li><strong>Xử lý tình huống khó</strong><br/>Từ chối, xin lỗi, phàn nàn, báo cáo lỗi, thương lượng deadline và giải thích hiểu nhầm.</li>
+        <li><strong>Thảo luận và phản biện</strong><br/>Đặt câu hỏi sâu, nối ý, phản biện lịch sự và bảo vệ quan điểm bằng ví dụ cụ thể.</li>
+        <li><strong>Thuyết trình và Q&A</strong><br/>Thực hiện presentation 3-5 phút, xử lý câu hỏi làm rõ, câu hỏi phản biện và câu hỏi tình huống.</li>
+        <li><strong>Tăng bản lĩnh giao tiếp</strong><br/>Giảm ngập ngừng, biết câu giờ tự nhiên, tự sửa lỗi và duy trì hội thoại nhiều lượt.</li>
+      </ol>
+      <h3>Chủ đề trọng tâm từng tháng</h3>
+      <div class="table-shell">
+        <table>
+          <thead><tr><th>Tháng</th><th>Trọng tâm giao tiếp</th><th>Năng lực chính</th><th>Sản phẩm cuối tháng</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Tháng 1</strong></td><td>Ý kiến cá nhân, trải nghiệm, giải thích lý do, so sánh và phản hồi tự nhiên</td><td>Nói mạch lạc, mở rộng câu, nối ý, dùng N2 trong hội thoại đời sống nâng cao</td><td>Personal Opinion Speech 2 phút</td></tr>
+            <tr><td><strong>Tháng 2</strong></td><td>Giao tiếp công việc, từ chối, xin lỗi, báo cáo, thương lượng, xử lý khách hàng</td><td>Business kaiwa, kính ngữ thực dụng, xử lý tình huống áp lực</td><td>Roleplay business 5 phút + đánh giá giữa khóa</td></tr>
+            <tr><td><strong>Tháng 3</strong></td><td>Tin tức, vấn đề xã hội, tranh luận, phản biện, quan điểm đa chiều</td><td>Debate, critical thinking, nói có lập luận và phản ứng linh hoạt</td><td>Panel discussion / debate 20 phút</td></tr>
+            <tr><td><strong>Tháng 4</strong></td><td>Phỏng vấn, thuyết trình, dự án nhóm, Q&A</td><td>Presentation, interview, tổng hợp năng lực nói N2</td><td>Final interview + group project presentation</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Ngân hàng mẫu N2 theo chức năng giao tiếp</h3>
+      <div class="grammar-bank">
+        <div class="grammar-card"><div class="function">Nêu điều kiện</div><span class="pattern jp">〜ない限り / 〜限り</span><p class="jp">チーム全員が納得しない限り、この案を進めるべきではないと思います。</p></div>
+        <div class="grammar-card"><div class="function">Đánh giá từ một góc nhìn</div><span class="pattern jp">〜から見ると / 〜からすると</span><p class="jp">お客様の反応からすると、説明が少し分かりにくかったかもしれません。</p></div>
+        <div class="grammar-card"><div class="function">Nói xu hướng</div><span class="pattern jp">〜傾向がある / 〜つつある</span><p class="jp">最近は、働き方の自由を重視する人が増える傾向があります。</p></div>
+        <div class="grammar-card"><div class="function">Từ chối khéo</div><span class="pattern jp">〜たい気持ちはあるのですが / 〜かねます</span><p class="jp">お引き受けしたい気持ちはあるのですが、今回は対応いたしかねます。</p></div>
+        <div class="grammar-card"><div class="function">Giải thích bất đắc dĩ</div><span class="pattern jp">〜ざるを得ない</span><p class="jp">納期が近いため、今回は優先順位を変更せざるを得ません。</p></div>
+        <div class="grammar-card"><div class="function">Phản biện lịch sự</div><span class="pattern jp">確かに〜ですが / 〜とは限りません</span><p class="jp">確かに一理ありますが、必ずしもそうとは限らないと思います。</p></div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-2">
+      <div class="section-head" data-mark="II"><span class="section-kicker">Phần 2</span><h2>Cấu trúc tiêu chuẩn cho 1 buổi học 120 phút</h2></div>
+      <p class="section-intro">Mỗi buổi học được thiết kế như một “phòng tập giao tiếp”: input ngắn, output nhiều, feedback chọn lọc và lặp lại có nâng cấp.</p>
+      <div class="callout-box"><strong>Tỉ lệ vận hành đề xuất:</strong> Giáo viên nói tối đa 25-30% thời lượng. Học viên nói tối thiểu 70%. Lớp 6 người được chia liên tục thành 3 cặp, 2 nhóm 3 người và một vòng thảo luận 6 người.</div>
+      <div class="table-shell">
+        <table class="timeline-table">
+          <thead><tr><th>Thời lượng</th><th>Hoạt động</th><th>Mục đích</th><th>Format lớp 6 người</th></tr></thead>
+          <tbody>
+            <tr><td class="session-time">0-10 phút</td><td><strong>Warm-up phản xạ</strong></td><td>Kích hoạt chủ đề, buộc học viên nói ngay từ đầu buổi</td><td>3 cặp, đổi bạn sau 5 phút</td></tr>
+            <tr><td class="session-time">10-25 phút</td><td><strong>Input ngữ cảnh + mẫu N2</strong></td><td>Cung cấp tình huống, cụm từ, mẫu câu và cách dùng tự nhiên</td><td>Giáo viên demo ngắn, học viên đoán chức năng</td></tr>
+            <tr><td class="session-time">25-40 phút</td><td><strong>Controlled Practice</strong></td><td>Luyện chính xác trước khi nói tự do: substitution drill, shadowing, mini-dialogue</td><td>3 cặp luyện mẫu, đổi vai liên tục</td></tr>
+            <tr><td class="session-time">40-60 phút</td><td><strong>Pair Roleplay 1</strong></td><td>Ứng dụng mẫu vào tình huống ngắn, tăng phản xạ hai chiều</td><td>3 cặp, mỗi cặp 2 vai, đổi vai sau 7 phút</td></tr>
+            <tr><td class="session-time">60-70 phút</td><td><strong>Feedback nhanh</strong></td><td>Chỉnh lỗi chọn lọc, nâng câu N3 lên câu N2</td><td>Cả lớp nhìn mẫu lỗi chung, không ngắt lời quá nhiều</td></tr>
+            <tr><td class="session-time">70-90 phút</td><td><strong>Group Task</strong></td><td>Giải quyết vấn đề, thương lượng, chuẩn bị lập luận</td><td>2 nhóm 3 người, mỗi người có vai trò riêng</td></tr>
+            <tr><td class="session-time">90-108 phút</td><td><strong>Output Challenge</strong></td><td>Trình bày, tranh luận, phản biện hoặc roleplay mở rộng</td><td>Nhóm 6 người hoặc 2 nhóm đối đầu</td></tr>
+            <tr><td class="session-time">108-118 phút</td><td><strong>Feedback cá nhân hóa</strong></td><td>Mỗi học viên nhận 1 điểm mạnh, 1 lỗi cần sửa, 1 mẫu nên dùng</td><td>Giáo viên + peer feedback theo checklist</td></tr>
+            <tr><td class="session-time">118-120 phút</td><td><strong>Exit Speaking Task</strong></td><td>Nói 20-30 giây để chốt nội dung và tạo cam kết luyện tập</td><td>6 lượt nói nhanh, không sửa dài</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Công thức biến “ngữ pháp chết” thành “ngữ pháp sống”</h3>
+      <ol class="pillar-grid">
+        <li><strong>Chức năng trước, thuật ngữ sau</strong><br/>Không bắt đầu bằng “mẫu này nghĩa là…”, mà bắt đầu bằng “khi muốn từ chối khéo, ta dùng…”.</li>
+        <li><strong>Một mẫu, nhiều tình huống</strong><br/>Cùng một cấu trúc được dùng trong đời sống, công việc, debate và phỏng vấn.</li>
+        <li><strong>Nói lại có nâng cấp</strong><br/>Học viên nói lần 1, nhận feedback, rồi nói lại lần 2 với yêu cầu tự nhiên hơn.</li>
+        <li><strong>Feedback không làm vỡ mạch nói</strong><br/>Chỉ ngắt khi sai nghĩa nghiêm trọng; còn lại ghi chú và sửa sau hoạt động.</li>
+      </ol>
+    </section>
+
+    <section class="doc-section" id="section-3">
+      <div class="section-head" data-mark="III"><span class="section-kicker">Tháng 1</span><h2>Nói mạch lạc về bản thân, quan điểm và trải nghiệm</h2></div>
+      <div class="month-banner">
+        <span class="panel-overline">Mục tiêu tháng</span>
+        <h3>Đưa học viên từ “trả lời ngắn” lên “nói có cấu trúc”</h3>
+        <p>Học viên luyện nói từ 30 giây lên 1-2 phút, biết nối ý, thêm lý do, ví dụ, so sánh và kết luận. Trọng tâm là dùng N2 để diễn đạt quan điểm cá nhân một cách tự nhiên.</p>
+      </div>
+      <h3>Lộ trình tuần theo tuần</h3>
+      <div class="week-grid">
+        <div class="week-card"><span class="eyebrow">Tuần 1 • Buổi 1-3</span><h4>Nâng cấp hội thoại N3 lên N2</h4><ul><li><strong>Buổi 1:</strong> Tự giới thiệu chuyên sâu: giá trị cá nhân, điểm mạnh, điểm yếu, mục tiêu.</li><li><strong>Buổi 2:</strong> Kể trải nghiệm và bài học: thất bại, thay đổi quan điểm, quyết định khó.</li><li><strong>Buổi 3:</strong> Trình bày ý kiến cá nhân về học tập, công việc, làm việc từ xa.</li></ul><div class="tag-list"><span class="tag jp">〜をきっかけに</span><span class="tag jp">〜につれて</span><span class="tag jp">〜ものの</span><span class="tag jp">〜から見ると</span></div></div>
+        <div class="week-card"><span class="eyebrow">Tuần 2 • Buổi 4-6</span><h4>Giải thích, so sánh và đánh giá</h4><ul><li><strong>Buổi 4:</strong> So sánh lựa chọn: công ty lớn/startup, online/offline, Nhật/VN.</li><li><strong>Buổi 5:</strong> Ưu nhược điểm của AI, teamwork, văn hóa tăng ca.</li><li><strong>Buổi 6:</strong> Mini discussion: tiện lợi hay tính người, cái nào nên ưu tiên?</li></ul><div class="tag-list"><span class="tag jp">〜に比べて</span><span class="tag jp">〜一方で</span><span class="tag jp">〜反面</span><span class="tag jp">〜傾向がある</span></div></div>
+        <div class="week-card"><span class="eyebrow">Tuần 3 • Buổi 7-9</span><h4>Phản ứng tự nhiên và mở rộng hội thoại</h4><ul><li><strong>Buổi 7:</strong> Hỏi sâu: cụ thể là gì, vì sao nghĩ vậy, có ví dụ không?</li><li><strong>Buổi 8:</strong> Đồng ý, đồng ý một phần, nghi ngờ, phản đối lịch sự.</li><li><strong>Buổi 9:</strong> Hội thoại 3 phút không ngắt về áp lực, bằng cấp, thay đổi.</li></ul><div class="tag-list"><span class="tag jp">確かに〜ですが</span><span class="tag jp">別の見方をすると</span><span class="tag jp">〜とは限らない</span></div></div>
+        <div class="week-card"><span class="eyebrow">Tuần 4 • Buổi 10-12</span><h4>Tổng hợp tháng 1</h4><ul><li><strong>Buổi 10:</strong> Personal Opinion Speech 2 phút.</li><li><strong>Buổi 11:</strong> Group discussion: trong công việc, điều quan trọng nhất là năng lực, quan hệ hay lương?</li><li><strong>Buổi 12:</strong> Feedback Clinic: nói lần 1, chỉnh, nói lại lần 2.</li></ul><div class="tag-list"><span class="tag">Speech 2 phút</span><span class="tag">Peer feedback</span><span class="tag">Before-After Speaking</span></div></div>
+      </div>
+      <h3>Hoạt động tối ưu cho 6 học viên</h3>
+      <div class="card-grid">
+        <div class="activity-card"><span class="eyebrow">3 cặp</span><strong>Opinion Rotation</strong><p>3 cặp thảo luận cùng một câu hỏi, đổi bạn sau mỗi vòng. Mỗi lần đổi, học viên phải dùng thêm một mẫu N2 mới.</p></div>
+        <div class="activity-card"><span class="eyebrow">2 nhóm 3</span><strong>Fishbowl 3-3</strong><p>3 người nói, 3 người quan sát bằng checklist: câu nối, câu hỏi sâu, phản biện, mẫu N2 tự nhiên.</p></div>
+        <div class="activity-card"><span class="eyebrow">6 người</span><strong>Rebuild My Answer</strong><p>Mỗi học viên nói câu N3 ngắn, cả lớp cùng nâng cấp thành câu N2 tự nhiên và lịch sự hơn.</p></div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-4">
+      <div class="section-head" data-mark="IV"><span class="section-kicker">Tháng 2</span><h2>Business Kaiwa: báo cáo, từ chối, xin lỗi và thương lượng</h2></div>
+      <div class="month-banner">
+        <span class="panel-overline">Mục tiêu tháng</span>
+        <h3>Xử lý tình huống công việc bằng tiếng Nhật lịch sự và thực tế</h3>
+        <p>Học viên luyện business kaiwa ở mức ứng dụng: báo cáo tiến độ, liên lạc - trao đổi, xin lỗi sự cố, từ chối khéo, thương lượng deadline, xử lý phàn nàn và tham gia meeting.</p>
+      </div>
+      <h3>Lộ trình tuần theo tuần</h3>
+      <div class="week-grid">
+        <div class="week-card"><span class="eyebrow">Tuần 5 • Buổi 13-15</span><h4>Báo cáo, liên lạc, họp công việc</h4><ul><li><strong>Buổi 13:</strong> Báo cáo tiến độ dự án chậm, giải thích nguyên nhân và đề xuất giải pháp.</li><li><strong>Buổi 14:</strong> Hou-ren-sou: khi nào báo cáo, khi nào xin ý kiến, khi nào tự xử lý.</li><li><strong>Buổi 15:</strong> Meeting mini chọn phương án cải thiện quy trình làm việc.</li></ul><div class="tag-list"><span class="tag jp">〜次第で</span><span class="tag jp">〜ところです</span><span class="tag jp">〜見込みです</span><span class="tag jp">〜恐れがあります</span></div></div>
+        <div class="week-card"><span class="eyebrow">Tuần 6 • Buổi 16-18</span><h4>Từ chối, xin lỗi và nhờ vả</h4><ul><li><strong>Buổi 16:</strong> Từ chối tăng ca, yêu cầu ngoài phạm vi, đề xuất không phù hợp.</li><li><strong>Buổi 17:</strong> Xin lỗi vì gửi nhầm tài liệu, trễ deadline, phản hồi chậm.</li><li><strong>Buổi 18:</strong> Nhờ hỗ trợ và thương lượng deadline.</li></ul><div class="tag-list"><span class="tag jp">〜かねます</span><span class="tag jp">〜わけにはいきません</span><span class="tag jp">〜にもかかわらず</span><span class="tag jp">〜ていただけないでしょうか</span></div></div>
+        <div class="week-card"><span class="eyebrow">Tuần 7 • Buổi 19-21</span><h4>Phàn nàn, khách hàng và hiểu nhầm</h4><ul><li><strong>Buổi 19:</strong> Khách hàng phàn nàn dịch vụ/sản phẩm/thanh toán.</li><li><strong>Buổi 20:</strong> Nhân viên đáp lại phàn nàn: xin lỗi, giải thích, đề xuất phương án.</li><li><strong>Buổi 21:</strong> Xử lý hiểu nhầm yêu cầu và trách nhiệm.</li></ul><div class="tag-list"><span class="tag jp">〜はずなのに</span><span class="tag jp">確認いたしましたところ</span><span class="tag jp">〜という認識でした</span><span class="tag jp">〜をめぐって</span></div></div>
+        <div class="week-card"><span class="eyebrow">Tuần 8 • Buổi 22-24</span><h4>Business simulation & đánh giá giữa khóa</h4><ul><li><strong>Buổi 22:</strong> Họp xử lý khủng hoảng nhỏ: dự án trễ, khách hàng không hài lòng.</li><li><strong>Buổi 23:</strong> Mock Business Call: xin lỗi, xác nhận lịch, báo thay đổi.</li><li><strong>Buổi 24:</strong> Đánh giá giữa khóa: báo cáo 2 phút + roleplay 3 phút.</li></ul><div class="tag-list"><span class="tag">6-role meeting</span><span class="tag">Back-to-back call</span><span class="tag">Midterm speaking</span></div></div>
+      </div>
+      <h3>Mẫu câu business cần dùng thành phản xạ</h3>
+      <div class="table-shell">
+        <table class="table-dense">
+          <thead><tr><th>Tình huống</th><th>Mẫu câu khuyến nghị</th><th>Ví dụ tự nhiên</th></tr></thead>
+          <tbody>
+            <tr><td>Báo cáo tiến độ</td><td class="jp">現在〜しているところです / 〜見込みです</td><td class="jp">現在、資料を確認しているところです。来週中には完了する見込みです。</td></tr>
+            <tr><td>Từ chối khéo</td><td class="jp">お引き受けしたい気持ちはあるのですが / 〜かねます</td><td class="jp">お引き受けしたい気持ちはあるのですが、今回は対応いたしかねます。</td></tr>
+            <tr><td>Xin lỗi sự cố</td><td class="jp">確認不足により / 再発防止に努めます</td><td class="jp">確認不足によりご迷惑をおかけしました。今後、再発防止に努めます。</td></tr>
+            <tr><td>Thương lượng deadline</td><td class="jp">〜を調整していただくことは可能でしょうか</td><td class="jp">大変恐縮ですが、締切を一日調整していただくことは可能でしょうか。</td></tr>
+            <tr><td>Xử lý phàn nàn</td><td class="jp">確認いたしましたところ / 代替案として</td><td class="jp">確認いたしましたところ、配送時に手違いがございました。代替案として、再発送いたします。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-5">
+      <div class="section-head" data-mark="V"><span class="section-kicker">Tháng 3</span><h2>Thảo luận tin tức, vấn đề xã hội và phản biện chuyên sâu</h2></div>
+      <div class="month-banner">
+        <span class="panel-overline">Mục tiêu tháng</span>
+        <h3>Từ “nói ý kiến” sang “bảo vệ quan điểm bằng lập luận”</h3>
+        <p>Học viên học cách tóm tắt tin tức, phân tích nguyên nhân - hệ quả, nhìn vấn đề từ nhiều phía, phản biện lịch sự và duy trì thảo luận nhóm dài hơn.</p>
+      </div>
+      <h3>Lộ trình tuần theo tuần</h3>
+      <div class="week-grid">
+        <div class="week-card"><span class="eyebrow">Tuần 9 • Buổi 25-27</span><h4>Tin tức và xu hướng xã hội</h4><ul><li><strong>Buổi 25:</strong> Tóm tắt tin tức bằng lời của mình: AI, lao động, già hóa, giá cả.</li><li><strong>Buổi 26:</strong> Giải thích nguyên nhân và hệ quả của một hiện tượng xã hội.</li><li><strong>Buổi 27:</strong> Thảo luận: AI sẽ cướp việc hay hỗ trợ con người?</li></ul><div class="tag-list"><span class="tag jp">〜によると</span><span class="tag jp">〜にともなって</span><span class="tag jp">〜につながる</span><span class="tag jp">〜つつある</span></div></div>
+        <div class="week-card"><span class="eyebrow">Tuần 10 • Buổi 28-30</span><h4>Debate căn bản đến nâng cao</h4><ul><li><strong>Buổi 28:</strong> Cấu trúc lập luận: claim - reason - example - conclusion.</li><li><strong>Buổi 29:</strong> Phản biện lịch sự và câu chuyển ý mềm.</li><li><strong>Buổi 30:</strong> Debate mini: làm thêm, remote work, bằng cấp, AI trong giáo dục.</li></ul><div class="tag-list"><span class="tag jp">〜べきだ</span><span class="tag jp">〜と言える</span><span class="tag jp">〜のではないでしょうか</span><span class="tag jp">必ずしも〜とは言えない</span></div></div>
+        <div class="week-card"><span class="eyebrow">Tuần 11 • Buổi 31-33</span><h4>Vấn đề xã hội và quan điểm đa chiều</h4><ul><li><strong>Buổi 31:</strong> Giáo dục và áp lực thành tích.</li><li><strong>Buổi 32:</strong> Lao động, tăng ca, ổn định và成果主義.</li><li><strong>Buổi 33:</strong> Công nghệ, quyền riêng tư, phụ thuộc AI.</li></ul><div class="tag-list"><span class="tag jp">〜に限らず</span><span class="tag jp">〜を問わず</span><span class="tag jp">〜かねない</span><span class="tag jp">〜一方で</span></div></div>
+        <div class="week-card"><span class="eyebrow">Tuần 12 • Buổi 34-36</span><h4>Tổng hợp thảo luận chuyên sâu</h4><ul><li><strong>Buổi 34:</strong> Panel discussion: năng lực cần thiết nhất trong xã hội tương lai.</li><li><strong>Buổi 35:</strong> Deep Discussion Clinic: sửa lập luận yếu, thêm ví dụ, tránh nói vòng.</li><li><strong>Buổi 36:</strong> Đánh giá kỹ năng thảo luận 20 phút.</li></ul><div class="tag-list"><span class="tag">Panel 6 vai</span><span class="tag">Weak argument repair</span><span class="tag">Discussion assessment</span></div></div>
+      </div>
+      <h3>Khung nói debate N2</h3>
+      <div class="table-shell">
+        <table>
+          <thead><tr><th>Bước</th><th>Chức năng</th><th>Mẫu câu gợi ý</th></tr></thead>
+          <tbody>
+            <tr><td><strong>1. 主張</strong></td><td>Nêu quan điểm</td><td class="jp">私は〜べきだと思います。/ 〜のではないでしょうか。</td></tr>
+            <tr><td><strong>2. 理由</strong></td><td>Nêu lý do</td><td class="jp">その理由は、〜という点にあります。</td></tr>
+            <tr><td><strong>3. 具体例</strong></td><td>Đưa ví dụ</td><td class="jp">具体例を挙げると、〜です。</td></tr>
+            <tr><td><strong>4. 反対意見</strong></td><td>Thừa nhận ý kiến khác</td><td class="jp">確かに〜という考え方もあります。</td></tr>
+            <tr><td><strong>5. 反論</strong></td><td>Phản biện lịch sự</td><td class="jp">しかし、別の視点から見ると、〜とは限りません。</td></tr>
+            <tr><td><strong>6. 結論</strong></td><td>Kết luận</td><td class="jp">以上のことから、私は〜と考えます。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-6">
+      <div class="section-head" data-mark="VI"><span class="section-kicker">Tháng 4</span><h2>Phỏng vấn, thuyết trình và dự án cuối khóa</h2></div>
+      <div class="month-banner">
+        <span class="panel-overline">Mục tiêu tháng</span>
+        <h3>Tổng hợp năng lực Kaiwa N2 thành sản phẩm giao tiếp hoàn chỉnh</h3>
+        <p>Tháng cuối tập trung vào self-branding, phỏng vấn, presentation 3-5 phút, Q&A và dự án nhóm. Học viên phải vừa nói có cấu trúc, vừa xử lý câu hỏi bất ngờ.</p>
+      </div>
+      <h3>Lộ trình tuần theo tuần</h3>
+      <div class="week-grid">
+        <div class="week-card"><span class="eyebrow">Tuần 13 • Buổi 37-39</span><h4>Interview & self-branding</h4><ul><li><strong>Buổi 37:</strong> Tự giới thiệu, lý do ứng tuyển, điểm mạnh/yếu, mục tiêu.</li><li><strong>Buổi 38:</strong> Trả lời câu hỏi khó: nghỉ việc, thất bại, mâu thuẫn, điểm yếu.</li><li><strong>Buổi 39:</strong> Mock interview vòng 1 theo format 2 phỏng vấn - 1 ứng viên - 3 quan sát.</li></ul><div class="tag-list"><span class="tag jp">〜を通して</span><span class="tag jp">〜をきっかけに</span><span class="tag jp">〜からこそ</span><span class="tag">STAR Method</span></div></div>
+        <div class="week-card"><span class="eyebrow">Tuần 14 • Buổi 40-42</span><h4>Presentation kỹ năng</h4><ul><li><strong>Buổi 40:</strong> Cấu trúc bài thuyết trình 3 phút: dẫn nhập, bối cảnh, luận điểm, ví dụ, kết luận.</li><li><strong>Buổi 41:</strong> Q&A: câu hỏi làm rõ, phản biện, mở rộng, tình huống.</li><li><strong>Buổi 42:</strong> Presentation vòng 1 và feedback.</li></ul><div class="tag-list"><span class="tag jp">本日お話ししたいテーマは</span><span class="tag jp">具体例を挙げると</span><span class="tag jp">補足させていただくと</span></div></div>
+        <div class="week-card"><span class="eyebrow">Tuần 15 • Buổi 43-45</span><h4>Dự án cuối khóa</h4><ul><li><strong>Buổi 43:</strong> Chọn đề tài: cải thiện môi trường làm việc, dịch vụ mới, AI, giáo dục.</li><li><strong>Buổi 44:</strong> Chuẩn bị lập luận và dự đoán phản biện.</li><li><strong>Buổi 45:</strong> Rehearsal: nhóm 1 trình bày, nhóm 2 đóng vai hội đồng phản biện.</li></ul><div class="tag-list"><span class="tag">2 nhóm 3</span><span class="tag">Counterargument Swap</span><span class="tag">Slide-less Pitch</span></div></div>
+        <div class="week-card"><span class="eyebrow">Tuần 16 • Buổi 46-48</span><h4>Đánh giá cuối khóa và reflection</h4><ul><li><strong>Buổi 46:</strong> Final Interview cá nhân 8-10 phút.</li><li><strong>Buổi 47:</strong> Group Project Presentation 8-10 phút + Q&A.</li><li><strong>Buổi 48:</strong> Reflection, peer appreciation và kế hoạch luyện 30 ngày.</li></ul><div class="tag-list"><span class="tag">Final interview</span><span class="tag">Project Q&A</span><span class="tag">Growth speech</span></div></div>
+      </div>
+      <h3>Khung presentation 3-5 phút</h3>
+      <div class="table-shell">
+        <table class="table-dense">
+          <thead><tr><th>Phần</th><th>Mục tiêu</th><th>Mẫu câu Nhật</th></tr></thead>
+          <tbody>
+            <tr><td>導入</td><td>Nêu chủ đề và tạo bối cảnh</td><td class="jp">本日お話ししたいテーマは〜です。</td></tr>
+            <tr><td>背景</td><td>Giải thích vì sao chủ đề đáng nói</td><td class="jp">まず背景として、〜という状況があります。</td></tr>
+            <tr><td>主張</td><td>Nêu quan điểm chính</td><td class="jp">私が特に注目したいのは、〜という点です。</td></tr>
+            <tr><td>理由</td><td>Đưa lý do</td><td class="jp">その理由は大きく二つあります。</td></tr>
+            <tr><td>具体例</td><td>Đưa ví dụ thực tế</td><td class="jp">具体例を挙げると、〜です。</td></tr>
+            <tr><td>まとめ</td><td>Kết luận và thông điệp</td><td class="jp">以上のことから、私は〜が重要だと考えます。</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-7">
+      <div class="section-head" data-mark="VII"><span class="section-kicker">Đánh giá</span><h2>Phương pháp đánh giá và duy trì động lực</h2></div>
+      <p class="section-intro">Đánh giá trong khóa Kaiwa N2 không dựa trên giải đề, mà dựa trên khả năng dùng tiếng Nhật trong nhiệm vụ nói thật: báo cáo, thảo luận, phản biện, phỏng vấn và trình bày.</p>
+      <h3>Đánh giá giữa khóa - sau buổi 24</h3>
+      <div class="callout-box"><strong>Nhiệm vụ:</strong> Mỗi học viên thực hiện 2 phần: business speaking task 2 phút và roleplay 3 phút. Ví dụ: báo cáo tiến độ trễ, xin lỗi khách hàng, từ chối yêu cầu, thương lượng deadline.</div>
+      <div class="rubric-grid">
+        <div class="rubric-card"><strong>Fluency</strong><p>Nói liên tục, ít ngập ngừng, biết câu giờ tự nhiên.</p></div>
+        <div class="rubric-card"><strong>N2 Usage</strong><p>Dùng mẫu N2 đúng chức năng, không gượng ép.</p></div>
+        <div class="rubric-card"><strong>Interaction</strong><p>Nghe, phản hồi, hỏi lại, nối ý thay vì độc thoại.</p></div>
+        <div class="rubric-card"><strong>Business Politeness</strong><p>Mức lịch sự phù hợp với cấp trên, khách hàng, đồng nghiệp.</p></div>
+      </div>
+      <h3>Đánh giá cuối khóa - buổi 46 đến 48</h3>
+      <div class="table-shell">
+        <table>
+          <thead><tr><th>Thành phần</th><th>Tỷ trọng gợi ý</th><th>Nội dung</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Final Interview</strong></td><td>30%</td><td>Trả lời cá nhân, xử lý câu hỏi bất ngờ, self-branding.</td></tr>
+            <tr><td><strong>Group Project Presentation</strong></td><td>30%</td><td>Trình bày nhóm, Q&A, logic, tương tác và phân vai.</td></tr>
+            <tr><td><strong>Discussion Performance</strong></td><td>20%</td><td>Chủ động tham gia, phản biện lịch sự, đặt câu hỏi sâu.</td></tr>
+            <tr><td><strong>Progress Portfolio</strong></td><td>20%</td><td>So sánh ghi âm đầu khóa - cuối khóa, tự đánh giá và kế hoạch luyện tiếp.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Cơ chế duy trì động lực</h3>
+      <div class="card-grid">
+        <div class="feature-card"><span class="eyebrow">Portfolio</span><strong>Speaking Portfolio</strong><p>Lưu bản ghi âm buổi 1, cuối mỗi tháng và cuối khóa để học viên nghe thấy sự tiến bộ của chính mình.</p></div>
+        <div class="feature-card"><span class="eyebrow">Phrase Bank</span><strong>Personal N2 Phrase Bank</strong><p>Mỗi học viên có ngân hàng câu theo chức năng: đồng ý, phản đối, xin lỗi, từ chối, báo cáo, kết luận.</p></div>
+        <div class="feature-card"><span class="eyebrow">Challenge</span><strong>Monthly Speaking Challenge</strong><p>Tháng 1 speech 2 phút, tháng 2 roleplay business, tháng 3 debate, tháng 4 presentation + Q&A.</p></div>
+      </div>
+    </section>
+
+    <section class="doc-section" id="section-8">
+      <div class="section-head" data-mark="VIII"><span class="section-kicker">Kho hoạt động</span><h2>Hoạt động tương tác nhóm thiết kế riêng cho lớp 6 người</h2></div>
+      <p class="section-intro">Sĩ số 6 người là lợi thế lớn: đủ nhỏ để từng người nói nhiều, đủ đông để tạo thảo luận đa chiều và mô phỏng tình huống công việc có nhiều vai.</p>
+      <div class="table-shell">
+        <table>
+          <thead><tr><th>Hoạt động</th><th>Cách tổ chức</th><th>Phù hợp với</th><th>Lợi ích</th></tr></thead>
+          <tbody>
+            <tr><td><strong>3-Pair Rotation</strong></td><td>Chia 3 cặp, luyện 6-8 phút rồi đổi bạn. Lặp lại cùng nhiệm vụ với yêu cầu nâng cấp.</td><td>Từ chối, xin lỗi, phỏng vấn, giải thích quan điểm.</td><td>Mỗi học viên nói nhiều lần và tốt dần qua từng vòng.</td></tr>
+            <tr><td><strong>2 Groups of 3</strong></td><td>2 nhóm chuẩn bị quan điểm hoặc phương án, sau đó trình bày và chất vấn nhau.</td><td>Debate, business meeting, problem solving, project.</td><td>Không ai bị ẩn trong nhóm; mỗi người có vai trò rõ.</td></tr>
+            <tr><td><strong>Fishbowl 3-3</strong></td><td>3 người thảo luận, 3 người quan sát bằng checklist; sau đó đổi vai.</td><td>Discussion, phản biện, sửa lỗi giao tiếp.</td><td>Người quan sát vẫn học chủ động, feedback cụ thể hơn.</td></tr>
+            <tr><td><strong>Six-Role Simulation</strong></td><td>6 học viên nhận 6 vai trong một case: leader, khách hàng, kỹ thuật, quản lý, phản đối, trung gian.</td><td>Khủng hoảng công sở, khách hàng phàn nàn, họp chọn phương án.</td><td>Tạo hội thoại nhiều chiều và buộc học viên phản ứng linh hoạt.</td></tr>
+            <tr><td><strong>Rebuttal Chain</strong></td><td>Học viên 1 nêu ý kiến, học viên 2 phản biện, học viên 3 phản biện tiếp đến người thứ 6.</td><td>Debate, xã hội, công nghệ, giáo dục.</td><td>Luyện nghe - nói - phản biện theo chuỗi, không ai được đứng ngoài.</td></tr>
+            <tr><td><strong>Peer Feedback Triangle</strong></td><td>Nhóm 3: một người nói, một người nghe nội dung, một người nghe ngữ pháp/mẫu câu.</td><td>Speech, presentation, interview.</td><td>Feedback có trọng tâm, không sửa quá nhiều lỗi một lúc.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>Nguyên tắc feedback cho lớp Kaiwa N2</h3>
+      <ol class="pillar-grid">
+        <li><strong>Không ngắt quá nhiều</strong><br/>Ưu tiên giữ mạch nói; sửa sau khi hoạt động kết thúc.</li>
+        <li><strong>Mỗi lần chỉ chọn vài điểm</strong><br/>1 lỗi ngữ pháp, 1 lỗi giao tiếp, 1 mẫu câu nên thêm.</li>
+        <li><strong>Luôn có phiên bản nâng cấp</strong><br/>Không chỉ nói “sai”, mà đưa câu N2 tự nhiên hơn để học viên nói lại.</li>
+        <li><strong>Feedback phải đo được</strong><br/>Ví dụ: giảm ngập ngừng, thêm câu nối, dùng ít nhất 3 mẫu N2, đặt 2 câu hỏi sâu.</li>
+      </ol>
+      <div class="callout-box"><strong>Kết luận:</strong> Khóa học này không biến N2 thành một danh sách mẫu câu phải nhớ. Nó biến N2 thành công cụ giao tiếp: nói rõ hơn, hỏi sâu hơn, từ chối khéo hơn, phản biện lịch sự hơn và thể hiện bản thân tự tin hơn.</div>
+    </section>
+
+    <footer class="footer-card">
+      <div class="footer-pillbar">
+        <a class="footer-pill" href="#top">Quay lại đầu trang</a>
+        <span class="footer-pill">Kaiwa N2 • 4 tháng • 48 buổi</span>
+        <span class="footer-pill">Thiết kế cho lớp 6 học viên</span>
+      </div>
+      <p class="print-note" style="text-align:center;margin-top:16px;">Gợi ý sử dụng: mở file trên trình duyệt, in hoặc xuất PDF với khổ A4 để giữ bố cục editorial.</p>
+    </footer>
+  </main>
+</div>
+
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="kaiwa-n2-premium"></script>
+</body>
+</html>
