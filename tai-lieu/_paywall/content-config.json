@@ -5,9 +5,18 @@
     "note": "Anh có thể sửa file này hoặc dùng /tai-lieu/_paywall/admin.html để điều chỉnh phân quyền từng tài liệu."
   },
   "tiers": {
-    "FREE": { "label": "Miễn phí", "color": "#666" },
-    "PLUS": { "label": "Plus", "color": "#B89568" },
-    "PRO":  { "label": "Pro",  "color": "#8B3A2E" }
+    "FREE": {
+      "label": "Miễn phí",
+      "color": "#666"
+    },
+    "PLUS": {
+      "label": "Plus",
+      "color": "#B89568"
+    },
+    "PRO": {
+      "label": "Pro",
+      "color": "#8B3A2E"
+    }
   },
   "defaultTier": "FREE",
   "documents": {
@@ -161,15 +170,145 @@
       "selector": "section.lesson, .buoi",
       "url": "/tai-lieu/kaiwa/giao-an-n2.html"
     },
-    "pdf-lo-trinh-jlpt-n5": { "title": "Lộ trình JLPT N5 (PDF)", "category": "Lộ trình", "tier": "FREE", "freeUnits": -1, "unitLabel": "trang", "totalUnits": 1, "type": "pdf", "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-jlpt-n5.pdf" },
-    "pdf-lo-trinh-jlpt-n4": { "title": "Lộ trình JLPT N4 (PDF)", "category": "Lộ trình", "tier": "PLUS", "freeUnits": 0, "unitLabel": "trang", "totalUnits": 1, "type": "pdf", "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-jlpt-n4.pdf" },
-    "pdf-lo-trinh-jlpt-n3": { "title": "Lộ trình JLPT N3 (PDF)", "category": "Lộ trình", "tier": "PLUS", "freeUnits": 0, "unitLabel": "trang", "totalUnits": 1, "type": "pdf", "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-jlpt-n3.pdf" },
-    "pdf-lo-trinh-jlpt-n2": { "title": "Lộ trình JLPT N2 (PDF)", "category": "Lộ trình", "tier": "PLUS", "freeUnits": 0, "unitLabel": "trang", "totalUnits": 1, "type": "pdf", "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-jlpt-n2.pdf" },
-    "pdf-lo-trinh-jlpt-n1": { "title": "Lộ trình JLPT N1 (PDF)", "category": "Lộ trình", "tier": "PRO", "freeUnits": 0, "unitLabel": "trang", "totalUnits": 1, "type": "pdf", "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-jlpt-n1.pdf" },
-    "pdf-lo-trinh-kaiwa-n5": { "title": "Lộ trình Kaiwa N5 (PDF)", "category": "Lộ trình", "tier": "FREE", "freeUnits": -1, "unitLabel": "trang", "totalUnits": 1, "type": "pdf", "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-kaiwa-n5.pdf" },
-    "pdf-lo-trinh-kaiwa-n4": { "title": "Lộ trình Kaiwa N4 (PDF)", "category": "Lộ trình", "tier": "PLUS", "freeUnits": 0, "unitLabel": "trang", "totalUnits": 1, "type": "pdf", "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-kaiwa-n4.pdf" },
-    "pdf-lo-trinh-kaiwa-n3": { "title": "Lộ trình Kaiwa N3 (PDF)", "category": "Lộ trình", "tier": "PLUS", "freeUnits": 0, "unitLabel": "trang", "totalUnits": 1, "type": "pdf", "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-kaiwa-n3.pdf" },
-    "pdf-lo-trinh-kaiwa-n2": { "title": "Lộ trình Kaiwa N2 (PDF)", "category": "Lộ trình", "tier": "PRO", "freeUnits": 0, "unitLabel": "trang", "totalUnits": 1, "type": "pdf", "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-kaiwa-n2.pdf" },
-    "pdf-tu-dien-gs-nvk": { "title": "Từ điển GS Nguyễn Văn Khang (PDF gốc 18MB)", "category": "Từ điển", "tier": "PRO", "freeUnits": 0, "unitLabel": "trang", "totalUnits": 1, "type": "pdf", "url": "/tai-lieu/pdf-tu-dien/tu-dien-gs-nvk.pdf" }
+    "pdf-lo-trinh-jlpt-n5": {
+      "title": "Lộ trình JLPT N5 (PDF)",
+      "category": "Lộ trình",
+      "tier": "FREE",
+      "freeUnits": -1,
+      "unitLabel": "trang",
+      "totalUnits": 1,
+      "type": "pdf",
+      "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-jlpt-n5.pdf"
+    },
+    "pdf-lo-trinh-jlpt-n4": {
+      "title": "Lộ trình JLPT N4 (PDF)",
+      "category": "Lộ trình",
+      "tier": "PLUS",
+      "freeUnits": 0,
+      "unitLabel": "trang",
+      "totalUnits": 1,
+      "type": "pdf",
+      "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-jlpt-n4.pdf"
+    },
+    "pdf-lo-trinh-jlpt-n3": {
+      "title": "Lộ trình JLPT N3 (PDF)",
+      "category": "Lộ trình",
+      "tier": "PLUS",
+      "freeUnits": 0,
+      "unitLabel": "trang",
+      "totalUnits": 1,
+      "type": "pdf",
+      "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-jlpt-n3.pdf"
+    },
+    "pdf-lo-trinh-jlpt-n2": {
+      "title": "Lộ trình JLPT N2 (PDF)",
+      "category": "Lộ trình",
+      "tier": "PLUS",
+      "freeUnits": 0,
+      "unitLabel": "trang",
+      "totalUnits": 1,
+      "type": "pdf",
+      "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-jlpt-n2.pdf"
+    },
+    "pdf-lo-trinh-jlpt-n1": {
+      "title": "Lộ trình JLPT N1 (PDF)",
+      "category": "Lộ trình",
+      "tier": "PRO",
+      "freeUnits": 0,
+      "unitLabel": "trang",
+      "totalUnits": 1,
+      "type": "pdf",
+      "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-jlpt-n1.pdf"
+    },
+    "pdf-lo-trinh-kaiwa-n5": {
+      "title": "Lộ trình Kaiwa N5 (PDF)",
+      "category": "Lộ trình",
+      "tier": "FREE",
+      "freeUnits": -1,
+      "unitLabel": "trang",
+      "totalUnits": 1,
+      "type": "pdf",
+      "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-kaiwa-n5.pdf"
+    },
+    "pdf-lo-trinh-kaiwa-n4": {
+      "title": "Lộ trình Kaiwa N4 (PDF)",
+      "category": "Lộ trình",
+      "tier": "PLUS",
+      "freeUnits": 0,
+      "unitLabel": "trang",
+      "totalUnits": 1,
+      "type": "pdf",
+      "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-kaiwa-n4.pdf"
+    },
+    "pdf-lo-trinh-kaiwa-n3": {
+      "title": "Lộ trình Kaiwa N3 (PDF)",
+      "category": "Lộ trình",
+      "tier": "PLUS",
+      "freeUnits": 0,
+      "unitLabel": "trang",
+      "totalUnits": 1,
+      "type": "pdf",
+      "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-kaiwa-n3.pdf"
+    },
+    "pdf-lo-trinh-kaiwa-n2": {
+      "title": "Lộ trình Kaiwa N2 (PDF)",
+      "category": "Lộ trình",
+      "tier": "PRO",
+      "freeUnits": 0,
+      "unitLabel": "trang",
+      "totalUnits": 1,
+      "type": "pdf",
+      "url": "/tai-lieu/pdf-lo-trinh/lo-trinh-kaiwa-n2.pdf"
+    },
+    "shinkanzen-n1-goi": {
+      "title": "Shinkanzen Master N1 — Từ vựng (Goi) Full",
+      "category": "JLPT",
+      "tier": "PRO",
+      "freeUnits": 3,
+      "unitLabel": "bài",
+      "totalUnits": 30,
+      "selector": "section.lesson, tbody",
+      "url": "/tai-lieu/jlpt/shinkanzen-n1-goi.html"
+    },
+    "shinkanzen-n2-goi": {
+      "title": "Shinkanzen Master N2 — Từ vựng (Goi) Full",
+      "category": "JLPT",
+      "tier": "PLUS",
+      "freeUnits": 5,
+      "unitLabel": "bài",
+      "totalUnits": 30,
+      "selector": "section.lesson, tbody",
+      "url": "/tai-lieu/jlpt/shinkanzen-n2-goi.html"
+    },
+    "minna-n5-tu-vung": {
+      "title": "Minna no Nihongo N5 — Từ vựng (Visual)",
+      "category": "Từ vựng",
+      "tier": "PLUS",
+      "freeUnits": 5,
+      "unitLabel": "bài",
+      "totalUnits": 25,
+      "selector": "section.lesson, tbody",
+      "url": "/tai-lieu/jlpt/minna-n5-tu-vung.html"
+    },
+    "minna-n5-bunpou": {
+      "title": "Minna no Nihongo N5 — Ngữ pháp",
+      "category": "Ngữ pháp",
+      "tier": "PLUS",
+      "freeUnits": 5,
+      "unitLabel": "bài",
+      "totalUnits": 25,
+      "selector": "section.lesson",
+      "url": "/tai-lieu/jlpt/minna-n5-bunpou.html"
+    },
+    "minna-n4-bunpou": {
+      "title": "Minna no Nihongo N4 — Ngữ pháp",
+      "category": "Ngữ pháp",
+      "tier": "PLUS",
+      "freeUnits": 5,
+      "unitLabel": "bài",
+      "totalUnits": 25,
+      "selector": "section.lesson",
+      "url": "/tai-lieu/jlpt/minna-n4-bunpou.html"
+    }
   }
 }
