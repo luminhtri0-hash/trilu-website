@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Minna no Nihongo N5 — Bunpou (Ngữ pháp) — Trí Lữ Nihongo</title>
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffefb; --paper-2:#fff8ec;
+  --surface:#f3f9ee; --surface-2:#e9f3df;
+  --ink:#22332a; --muted:#5a6a5e;
+  --accent:#2f7d4f; --accent-dark:#1e5a37;
+  --accent-2:#e08a2b; --accent-3:#f5c878;
+  --line:#cfe2c0; --line-2:#e3eddb;
+  --callout:#fff7e8;
+  --green:#2f7d4f; --teal:#2d8a8a;
+  --plum:#8a4f9b; --terra:#cf6b2e;
+  --rose:#c84367; --navy:#2f6ba6;
+  --correct:#2f7d4f; --wrong:#c84367;
+  --shadow:0 18px 46px rgba(40, 90, 50, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{ margin:0; color:var(--ink); background:radial-gradient(circle at top left, rgba(47,125,79,0.10), transparent 26%), radial-gradient(circle at 85% 14%, rgba(224,138,43,0.10), transparent 22%), linear-gradient(180deg, #f4f8ee 0%, #fcf6e8 100%); font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif; line-height:1.75; font-size:14.5px; -webkit-font-smoothing:antialiased; }
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+.cover{ position:relative; overflow:hidden; background:radial-gradient(circle at 18% 18%, rgba(255,255,255,0.10), transparent 22%), radial-gradient(circle at 88% 20%, rgba(245,200,120,0.28), transparent 18%), linear-gradient(135deg, #1e5a37 0%, #2f7d4f 36%, #144a2b 100%); color:#fff; border-radius:30px; box-shadow:var(--shadow); padding:60px 64px 50px; margin-bottom:26px; }
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.14); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(245,200,120,0.55) 0%, rgba(245,200,120,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.08); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.18); border-radius:999px; background:rgba(255,255,255,0.10); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(245,200,120,0.18); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.88); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.90); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.18); background:rgba(255,255,255,0.10); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.20); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.82); flex-wrap:wrap; }
+
+.toc-panel{ margin:0 0 34px; background:linear-gradient(180deg, rgba(255,254,251,0.96), rgba(255,248,236,0.96)); border:1px solid rgba(47,125,79,0.22); border-radius:24px; box-shadow:var(--shadow); padding:28px 30px; }
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:14px 16px; background:linear-gradient(180deg, #ffffff 0%, #fdf7eb 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(47,125,79,0.45); box-shadow:0 12px 24px rgba(40,90,50,0.08); }
+.toc-item-number{ display:inline-block; min-width:34px; padding:2px 8px; margin-right:8px; border-radius:8px; background:linear-gradient(180deg, var(--accent-2), #b66d22); color:#fff; font-weight:800; font-size:11px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:13.5px; font-family:"Noto Serif CJK JP",serif; }
+.toc-item-summary{ display:block; margin-top:5px; color:var(--muted); font-size:12px; line-height:1.45; }
+
+.document{ background:var(--paper); border:1px solid rgba(47,125,79,0.18); border-radius:28px; box-shadow:var(--shadow); padding:0 0 40px; margin-bottom:40px; overflow:hidden; }
+.lesson-banner{ position:relative; overflow:hidden; padding:30px 44px 28px; background:radial-gradient(circle at 88% 30%, rgba(245,200,120,0.32), transparent 26%), linear-gradient(135deg, #1e5a37 0%, #2f7d4f 50%, #144a2b 100%); color:#fff; }
+.lesson-banner::after{ content:"文法"; position:absolute; right:-10px; bottom:-50px; font-family:"Noto Serif CJK JP",serif; font-weight:900; font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.08); line-height:1; pointer-events:none; }
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.78); margin-bottom:8px; }
+.lesson-banner h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:30px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:14px; color:rgba(255,255,255,0.86); }
+.doc-body{ padding:30px 44px 10px; }
+
+.grammar-card{ margin:24px 0; background:#fff; border:1px solid var(--line-2); border-radius:20px; overflow:hidden; box-shadow:0 10px 26px rgba(40,90,50,0.06); }
+.gc-head{ display:flex; align-items:center; gap:14px; padding:18px 24px; background:linear-gradient(90deg, rgba(47,125,79,0.08), rgba(245,200,120,0.08)); border-bottom:2px solid var(--accent); }
+.gc-num{ flex-shrink:0; width:46px; height:46px; border-radius:50%; background:linear-gradient(135deg, var(--accent) 0%, #4aa06b 100%); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:19px; font-family:"EB Garamond",serif; box-shadow:0 4px 12px rgba(47,125,79,0.28); }
+.gc-title{ font-family:"Noto Serif CJK JP",serif; font-size:23px; font-weight:700; color:var(--accent); flex:1; }
+.gc-title .gc-meaning{ display:block; font-family:Inter,sans-serif; font-size:13.5px; color:var(--accent-2); font-style:italic; font-weight:600; margin-top:2px; }
+.gc-body{ padding:22px 26px; }
+
+.gc-section{ margin-bottom:20px; }
+.gc-section:last-child{ margin-bottom:0; }
+.gc-label{ display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#fff; padding:3px 10px; border-radius:5px; margin-bottom:8px; }
+.gc-label.lbl-struct{ background:var(--green); }
+.gc-label.lbl-explain{ background:var(--navy); }
+.gc-label.lbl-example{ background:var(--accent-2); }
+.gc-label.lbl-note{ background:var(--terra); }
+.gc-label.lbl-compare{ background:var(--plum); }
+.gc-label.lbl-table{ background:var(--teal); }
+
+.struct-box{ background:linear-gradient(180deg, #f3f9ed, #e7f2dc); border:1px solid #c8dab1; border-left:4px solid var(--green); border-radius:10px; padding:13px 17px; font-family:"Noto Serif CJK JP",serif; font-size:15px; color:#2c4a2d; line-height:1.9; }
+.struct-box code{ background:rgba(47,125,79,0.12); padding:2px 7px; border-radius:4px; font-family:"Noto Serif CJK JP",serif; color:var(--green); font-weight:700; }
+.struct-box .arrow{ color:var(--accent-2); font-weight:700; margin:0 4px; }
+
+.explain-box{ background:linear-gradient(180deg, #f3f8fd, #e6f0fa); border:1px solid #c6dbef; border-left:4px solid var(--navy); border-radius:10px; padding:13px 17px; font-size:14px; line-height:1.75; color:#1f3a52; }
+.explain-box strong{ color:var(--navy); }
+
+.conjug-table{ width:100%; border-collapse:separate; border-spacing:0; background:#fff; border:1px solid #c6dbef; border-radius:12px; overflow:hidden; font-size:13.5px; }
+.conjug-table th{ background:linear-gradient(180deg, #2d8a8a, #1f6b6b); color:#fff; padding:9px 12px; text-align:left; font-weight:700; font-size:12.5px; }
+.conjug-table th.center{ text-align:center; }
+.conjug-table td{ padding:8px 12px; border-top:1px solid #eaf1ec; font-family:"Noto Serif CJK JP",serif; font-size:14px; }
+.conjug-table td.romaji{ color:var(--muted); font-family:Inter,sans-serif; font-size:11.5px; font-style:italic; }
+.conjug-table td.note-cell{ font-family:Inter,sans-serif; font-size:12.5px; color:#5a4520; }
+.conjug-table tr:nth-child(even) td{ background:#f7fbf7; }
+.conjug-table .group-g1{ background:#fff5e6 !important; }
+.conjug-table .group-g2{ background:#e8f5e8 !important; }
+.conjug-table .group-g3{ background:#f0e8f5 !important; }
+.conjug-table .highlight{ color:var(--accent); font-weight:700; background:rgba(245,200,120,0.20); padding:0 4px; border-radius:3px; }
+
+.examples-list{ display:flex; flex-direction:column; gap:11px; }
+.ex-box{ background:linear-gradient(180deg, #fffefb, #fcf3e3); border-left:4px solid var(--accent-2); padding:14px 17px; border-radius:0 12px 12px 0; }
+.ex-jp{ font-size:16px; color:#222; margin-bottom:5px; line-height:2.05; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10.5px; color:#888; font-family:sans-serif; font-weight:500; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(245,200,120,0.30); padding:0 3px; border-radius:3px; }
+.ex-romaji{ font-size:11.5px; color:#9b7a3a; font-style:italic; line-height:1.5; margin:2px 0 6px; font-family:Inter,sans-serif; letter-spacing:0.01em; }
+.ex-vn{ font-size:13.5px; color:#3a5040; font-weight:500; line-height:1.6; padding-top:8px; border-top:1px dotted #d4e0c8; margin-top:6px; }
+.ex-vn::before{ content:"→ "; color:var(--accent-2); font-weight:700; }
+
+.note-box{ background:linear-gradient(180deg, #fff6ee, #fbe9d4); border:1px solid #ecc89e; border-left:4px solid var(--terra); border-radius:10px; padding:13px 17px; font-size:13.5px; line-height:1.7; color:#6a3e1c; }
+.note-box strong{ color:var(--terra); }
+
+.compare-box{ background:linear-gradient(180deg, #faf3fc, #ecdef2); border:1px solid #d8c4e6; border-left:4px solid var(--plum); border-radius:10px; padding:13px 17px; font-size:13.5px; line-height:1.75; color:#3f2a52; }
+.compare-box strong{ color:var(--plum); }
+.compare-box .cmp-item{ margin:6px 0; padding-left:14px; position:relative; }
+.compare-box .cmp-item::before{ content:"◆"; position:absolute; left:0; color:var(--plum); }
+.compare-box .cmp-jp{ font-family:"Noto Serif CJK JP",serif; font-weight:700; color:var(--plum); }
+
+.tip-box{ background:linear-gradient(180deg, #eef8f3, #d8eee2); border:1px solid #b5dcc6; border-left:4px solid var(--teal); border-radius:10px; padding:13px 17px; font-size:13.5px; line-height:1.7; color:#1f4a3a; }
+.tip-box strong{ color:var(--teal); }
+
+.exercise-block{ margin:20px 0 6px; background:linear-gradient(180deg, #fffdf6 0%, #fbf2dc 100%); border:1px solid #e7d5a6; border-radius:16px; overflow:hidden; box-shadow:0 4px 10px rgba(60,90,38,0.05); }
+.exercise-banner{ display:flex; align-items:center; gap:12px; padding:13px 20px; background:linear-gradient(90deg, var(--rose) 0%, #d65176 100%); color:#fff; }
+.exercise-icon{ width:36px; height:36px; flex-shrink:0; background:rgba(255,255,255,0.20); border:1px solid rgba(255,255,255,0.32); color:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:15.5px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:11.5px; color:rgba(255,255,255,0.85); font-weight:500; font-style:italic; margin-top:1px; }
+.exercise-body{ padding:15px 22px; }
+
+.ex-q{ padding:11px 0; border-bottom:1px dotted #e6d4a8; }
+.ex-q:last-child{ border-bottom:none; }
+.q-stem{ font-size:14.5px; line-height:1.9; font-family:"Noto Serif CJK JP",serif; color:#222; }
+.q-stem .qnum{ display:inline-block; min-width:22px; font-weight:800; color:var(--rose); margin-right:4px; font-family:"EB Garamond",sans-serif; font-size:15px; }
+.q-stem .q-blank{ display:inline-block; min-width:60px; padding:0 8px; border-bottom:1.5px solid #b08850; color:#b08850; font-family:"Noto Serif CJK JP",serif; font-weight:700; text-align:center; }
+.q-romaji{ font-size:11.5px; color:#9b7a3a; font-style:italic; margin:2px 0 4px 26px; }
+
+.q-options{ display:grid; grid-template-columns:repeat(2, 1fr); gap:7px; margin:9px 0 0 24px; }
+.q-opt{ padding:7px 13px; background:#fff; border:1px solid #e0d3a8; border-radius:9px; cursor:pointer; font-family:"Noto Serif CJK JP",serif; font-size:14px; transition:all 0.15s; display:flex; align-items:center; gap:6px; color:#4a3a20; }
+.q-opt::before{ content:attr(data-mark); color:var(--rose); font-weight:800; font-family:"EB Garamond",sans-serif; min-width:18px; }
+.q-opt:hover{ background:#fff5e8; border-color:#b08850; }
+.q-opt.correct{ background:linear-gradient(180deg, #e8f5e8, #d4edd4); border-color:var(--correct); color:var(--correct); font-weight:700; }
+.q-opt.correct::before{ color:var(--correct); }
+.q-opt.correct::after{ content:"✓"; margin-left:auto; color:var(--correct); font-weight:800; }
+.q-opt.wrong{ background:linear-gradient(180deg, #fce4e6, #f8d7da); border-color:var(--wrong); color:var(--wrong); }
+.q-opt.wrong::before{ color:var(--wrong); }
+.q-opt.wrong::after{ content:"✗"; margin-left:auto; color:var(--wrong); font-weight:800; }
+
+.q-foot{ display:flex; align-items:center; gap:8px; margin-top:7px; margin-left:24px; flex-wrap:wrap; }
+.vn-toggle{ display:inline-flex; align-items:center; gap:4px; padding:3px 11px; background:transparent; border:1px dashed #b08850; border-radius:999px; color:#6e5230; font-size:11px; cursor:pointer; transition:all 0.15s; font-family:inherit; font-weight:600; letter-spacing:0.04em; }
+.vn-toggle:hover{ background:#fff5e8; border-style:solid; border-color:#9b7a38; }
+.vn-toggle::before{ content:"訳"; font-family:"Noto Serif CJK JP",serif; font-size:11px; margin-right:2px; color:#9b7a38; }
+.vn-toggle.shown{ background:#fff5e8; border-style:solid; border-color:#9b7a38; color:#4a3010; }
+.q-vn{ font-size:13px; color:#5a4a30; font-style:italic; padding:6px 12px; background:#fef9ee; border-radius:8px; margin-top:6px; margin-left:24px; }
+.q-vn.collapsed{ display:none; }
+
+.answer-detail{ display:none; padding:7px 13px; background:#fef9ee; border:1px dashed #c7ab70; border-radius:8px; font-size:12.5px; color:#5a4520; margin-top:6px; margin-left:24px; line-height:1.55; }
+.answer-detail.shown{ display:block; }
+.answer-detail strong{ color:var(--accent); }
+
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  .gc-body{ padding:16px 18px; }
+  .q-options{ grid-template-columns:1fr; }
+  .conjug-table{ font-size:12.5px; }
+  .conjug-table td, .conjug-table th{ padding:6px 8px; }
+}
+@media print {
+  body{ background:#fff; font-size:12px; }
+  .page-shell{ padding:0; max-width:none; }
+  .cover{ page-break-after:always; box-shadow:none; }
+  .toc-panel{ page-break-after:always; }
+  .document{ page-break-before:always; box-shadow:none; }
+  .vn-toggle{ display:none; }
+  .q-vn, .q-vn.collapsed{ display:block !important; }
+  .answer-detail{ display:block !important; }
+}
+</style>
+</head>
+<body>
+<div class="page-shell">
+
+<section class="cover">
+  <span class="cover-mark" aria-hidden="true">五級</span>
+  <div class="cover-badge"><span class="dot"></span>Trí Lữ Nihongo • Biên soạn: Lữ Minh Trí</div>
+  <h1 class="cover-title">Ngữ pháp N5<br/>みんなの日本語 1～25課</h1>
+  <div class="cover-jp">初級文法まとめ — Sơ cấp 1</div>
+  <p class="cover-subtitle">Phiên bản <strong style="color:#f5c878">dành cho người mới bắt đầu</strong>: có <strong>romaji</strong> dưới ví dụ, <strong>bảng chia động từ/tính từ</strong> chi tiết, dịch tiếng Việt <strong>hiện sẵn</strong>. Bài tập trắc nghiệm 4 đáp án có giải thích cuối câu.</p>
+  <div class="metric-row">
+    <span class="metric-chip">12 Bài học</span>
+    <span class="metric-chip">~48 mẫu ngữ pháp</span>
+    <span class="metric-chip">Có Romaji</span>
+    <span class="metric-chip">Bảng chia động từ</span>
+    <span class="metric-chip">Trắc nghiệm có giải thích</span>
+  </div>
+  <div class="cover-meta">
+    <div>Phù hợp lớp học sơ cấp và tự học tại nhà</div>
+    <div>Nguồn: みんなの日本語 初級I (Lessons 1–25)</div>
+  </div>
+</section>
+
+<nav class="toc-panel">
+  <span class="panel-overline">Điều hướng nhanh</span>
+  <h2 class="toc-title">Mục lục 12 bài ngữ pháp N5</h2>
+  <p class="toc-subtitle">Mỗi bài có 3–4 mẫu ngữ pháp · Bấm vào đáp án trong bài tập để chấm và xem giải thích.</p>
+  <div class="toc-grid">
+    <a class="toc-item" href="#lesson-1"><span class="toc-item-number">01</span><span class="toc-item-title">名詞文 です</span><span class="toc-item-summary">Câu danh từ với です・じゃありません・の</span></a>
+    <a class="toc-item" href="#lesson-2"><span class="toc-item-number">02</span><span class="toc-item-title">これ・それ・あれ</span><span class="toc-item-summary">Đại từ chỉ định &amp; địa điểm</span></a>
+    <a class="toc-item" href="#lesson-3"><span class="toc-item-number">03</span><span class="toc-item-title">数字・時間</span><span class="toc-item-summary">Số đếm, giờ, thứ, ngày, lượng từ</span></a>
+    <a class="toc-item" href="#lesson-4"><span class="toc-item-number">04</span><span class="toc-item-title">動詞 ます形</span><span class="toc-item-summary">Thể ます/ません/ました — 3 nhóm động từ</span></a>
+    <a class="toc-item" href="#lesson-5"><span class="toc-item-number">05</span><span class="toc-item-title">助詞 (Trợ từ)</span><span class="toc-item-summary">は・が・を・に・で・へ・と・も・の</span></a>
+    <a class="toc-item" href="#lesson-6"><span class="toc-item-number">06</span><span class="toc-item-title">形容詞</span><span class="toc-item-summary">Tính từ い・な — chia thể và tu sức</span></a>
+    <a class="toc-item" href="#lesson-7"><span class="toc-item-number">07</span><span class="toc-item-title">比較</span><span class="toc-item-summary">So sánh より・ほうが・一番</span></a>
+    <a class="toc-item" href="#lesson-8"><span class="toc-item-number">08</span><span class="toc-item-title">あります・います</span><span class="toc-item-summary">Tồn tại &amp; vị trí (trên/dưới/trong...)</span></a>
+    <a class="toc-item" href="#lesson-9"><span class="toc-item-number">09</span><span class="toc-item-title">願望・目的</span><span class="toc-item-summary">～たい・がほしい・に行きます (mục đích)</span></a>
+    <a class="toc-item" href="#lesson-10"><span class="toc-item-number">10</span><span class="toc-item-title">て形</span><span class="toc-item-summary">てください・ています・てもいい・てはいけません</span></a>
+    <a class="toc-item" href="#lesson-11"><span class="toc-item-number">11</span><span class="toc-item-title">ない形・た形</span><span class="toc-item-summary">ないでください・なければ・たことがある・たり</span></a>
+    <a class="toc-item" href="#lesson-12"><span class="toc-item-number">12</span><span class="toc-item-title">辞書形・普通形</span><span class="toc-item-summary">ことができます・とき・と思います・修飾</span></a>
+  </div>
+</nav>
+
+<!-- ================= LESSON 1 ================= -->
+<article class="document" id="lesson-1">
+<div class="lesson-banner"><span class="lesson-kicker">1課 — Bài 1 · 名詞文 です</span><h2>Câu danh từ với です</h2><div class="lesson-sub">4 mẫu: N1はN2です / じゃありません / ですか / N1のN2</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">N1 は N2 です<span class="gc-meaning">N1 là N2 (khẳng định lịch sự)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>N1</code> ＋ <code>は</code> ＋ <code>N2</code> ＋ <code>です</code><br/><span style="color:#5a6a5e; font-size:13px">Trợ từ <code>は</code> (đọc là <strong>wa</strong>) đánh dấu chủ đề. <code>です</code> là động từ giúp lịch sự, không có nghĩa thực.</span></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Đây là mẫu câu cơ bản nhất tiếng Nhật: "<strong>A là B</strong>". Dùng để giới thiệu bản thân, nghề nghiệp, quốc tịch, hoặc nói đồ vật là gì. Ví dụ: <strong>わたしはがくせいです。</strong> (Tôi là học sinh.)</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①わたし<span class="target">は</span>マイク<span class="target">です</span>。</div><div class="ex-romaji">Watashi wa Maiku desu.</div><div class="ex-vn">Tôi là Mike.</div></div>
+<div class="ex-box"><div class="ex-jp">②サントス<span class="target">さんは</span><ruby>会社員<rt>かいしゃいん</rt></ruby><span class="target">です</span>。</div><div class="ex-romaji">Santosu-san wa kaishain desu.</div><div class="ex-vn">Anh Santos là nhân viên công ty.</div></div>
+<div class="ex-box"><div class="ex-jp">③わたし<span class="target">は</span>ベトナム<ruby>人<rt>じん</rt></ruby><span class="target">です</span>。</div><div class="ex-romaji">Watashi wa Betonamu-jin desu.</div><div class="ex-vn">Tôi là người Việt Nam.</div></div>
+</div></div>
+<div class="gc-section"><span class="gc-label lbl-note">Ghi chú quan trọng</span><div class="note-box">• Trợ từ <strong>は</strong> khi làm trợ từ thì đọc là <strong>"wa"</strong>, không phải "ha".<br/>• Người Nhật thường lược bỏ <strong>わたしは</strong> khi đã rõ chủ ngữ.<br/>• <strong>さん</strong> thêm sau tên người khác (≈ "anh/chị/cô"). Không thêm sau tên mình.</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập NはNです</h4><span class="ex-subtitle">3 câu — Bấm vào đáp án để chấm</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>わたし____<ruby>学生<rt>がくせい</rt></ruby>です。</div><div class="q-romaji">Watashi ___ gakusei desu.</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">は</span><span class="q-opt" data-mark="②" data-correct="false">を</span><span class="q-opt" data-mark="③" data-correct="false">が</span><span class="q-opt" data-mark="④" data-correct="false">に</span></div>
+<div class="answer-detail"><strong>Đáp án: ① は</strong> — Trợ từ <strong>は</strong> đánh dấu chủ đề câu, đọc là "wa".</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>ミラーさんはアメリカ<ruby>人<rt>じん</rt></ruby>____。</div><div class="q-romaji">Miraa-san wa amerika-jin ___.</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">は</span><span class="q-opt" data-mark="②" data-correct="true">です</span><span class="q-opt" data-mark="③" data-correct="false">の</span><span class="q-opt" data-mark="④" data-correct="false">ます</span></div>
+<div class="answer-detail"><strong>Đáp án: ② です</strong> — Câu danh từ kết thúc bằng <strong>です</strong> để lịch sự.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>____はベトナム<ruby>人<rt>じん</rt></ruby>です。</div><div class="q-romaji">___ wa Betonamu-jin desu.</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">わたし</span><span class="q-opt" data-mark="②" data-correct="false">わたしさん</span><span class="q-opt" data-mark="③" data-correct="false">あなたさん</span><span class="q-opt" data-mark="④" data-correct="false">わたしの</span></div>
+<div class="answer-detail"><strong>Đáp án: ① わたし</strong> — Không thêm <strong>さん</strong> sau tên/đại từ chỉ bản thân.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">N1 は N2 じゃありません<span class="gc-meaning">N1 không phải là N2 (phủ định)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>N1</code> は <code>N2</code> <span class="arrow">→</span> <code>じゃありません</code> (thông dụng)<br/><code>N1</code> は <code>N2</code> <span class="arrow">→</span> <code>ではありません</code> (trang trọng, văn viết)</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Phủ định của <strong>です</strong> là <strong>じゃありません</strong> (nói chuyện hàng ngày) hoặc <strong>ではありません</strong> (trang trọng). <strong>じゃ</strong> là dạng rút gọn của <strong>では</strong>.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①わたしは<ruby>学生<rt>がくせい</rt></ruby><span class="target">じゃありません</span>。<ruby>会社員<rt>かいしゃいん</rt></ruby>です。</div><div class="ex-romaji">Watashi wa gakusei ja arimasen. Kaishain desu.</div><div class="ex-vn">Tôi không phải học sinh. Tôi là nhân viên công ty.</div></div>
+<div class="ex-box"><div class="ex-jp">②サントスさんは<ruby>先生<rt>せんせい</rt></ruby><span class="target">じゃありません</span>。</div><div class="ex-romaji">Santosu-san wa sensei ja arimasen.</div><div class="ex-vn">Anh Santos không phải là giáo viên.</div></div>
+<div class="ex-box"><div class="ex-jp">③これは<ruby>本<rt>ほん</rt></ruby><span class="target">ではありません</span>。ノートです。</div><div class="ex-romaji">Kore wa hon de wa arimasen. Nooto desu.</div><div class="ex-vn">Đây không phải quyển sách. Đây là quyển vở.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập じゃありません</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>わたしは<ruby>日本人<rt>にほんじん</rt></ruby>____。ベトナム<ruby>人<rt>じん</rt></ruby>です。</div><div class="q-romaji">Watashi wa nihon-jin ___. Betonamu-jin desu.</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">です</span><span class="q-opt" data-mark="②" data-correct="true">じゃありません</span><span class="q-opt" data-mark="③" data-correct="false">じゃあります</span><span class="q-opt" data-mark="④" data-correct="false">ありません</span></div>
+<div class="answer-detail"><strong>Đáp án: ② じゃありません</strong> — Phủ định của です. Không có dạng "じゃあります".</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>これは<ruby>電話<rt>でんわ</rt></ruby>____。カメラです。</div><div class="q-romaji">Kore wa denwa ___. Kamera desu.</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">ではありません</span><span class="q-opt" data-mark="②" data-correct="false">ではあります</span><span class="q-opt" data-mark="③" data-correct="false">じゃです</span><span class="q-opt" data-mark="④" data-correct="false">ありません</span></div>
+<div class="answer-detail"><strong>Đáp án: ① ではありません</strong> — Dạng trang trọng của じゃありません.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>「ミラーさんは<ruby>先生<rt>せんせい</rt></ruby>ですか。」「いいえ、____。」</div><div class="q-romaji">Miraa-san wa sensei desu ka. — Iie, ___.</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">そうです</span><span class="q-opt" data-mark="②" data-correct="true">先生じゃありません</span><span class="q-opt" data-mark="③" data-correct="false">先生です</span><span class="q-opt" data-mark="④" data-correct="false">先生でした</span></div>
+<div class="answer-detail"><strong>Đáp án: ② 先生じゃありません</strong> — Sau いいえ (không) thì phải dùng câu phủ định.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">N1 は N2 ですか<span class="gc-meaning">N1 có phải là N2 không? (câu hỏi)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">Câu khẳng định ＋ <code>か</code> <span class="arrow">→</span> Câu hỏi<br/>Trả lời: <code>はい、〜です</code> (Vâng) / <code>いいえ、〜じゃありません</code> (Không)</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Tiếng Nhật <strong>không cần đảo trật tự</strong>. Chỉ cần thêm <strong>か</strong> vào cuối câu. Trong văn viết, dùng dấu「。」sau か (không dùng dấu ?).</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①「ミラーさんは<ruby>会社員<rt>かいしゃいん</rt></ruby><span class="target">ですか</span>。」「<strong>はい</strong>、<ruby>会社員<rt>かいしゃいん</rt></ruby>です。」</div><div class="ex-romaji">Miraa-san wa kaishain desu ka. — Hai, kaishain desu.</div><div class="ex-vn">"Anh Miller là nhân viên công ty phải không?" — "Vâng, đúng vậy."</div></div>
+<div class="ex-box"><div class="ex-jp">②「サントスさんは<ruby>学生<rt>がくせい</rt></ruby><span class="target">ですか</span>。」「<strong>いいえ</strong>、<ruby>学生<rt>がくせい</rt></ruby>じゃありません。」</div><div class="ex-romaji">Santosu-san wa gakusei desu ka. — Iie, gakusei ja arimasen.</div><div class="ex-vn">"Anh Santos là học sinh phải không?" — "Không, anh ấy không phải học sinh."</div></div>
+<div class="ex-box"><div class="ex-jp">③あの<ruby>方<rt>かた</rt></ruby>は<strong>どなた</strong><span class="target">ですか</span>。</div><div class="ex-romaji">Ano kata wa donata desu ka.</div><div class="ex-vn">Vị kia là ai vậy ạ? (どなた = ai, lịch sự hơn だれ)</div></div>
+</div></div>
+<div class="gc-section"><span class="gc-label lbl-note">Ghi chú</span><div class="note-box">Khi hỏi <strong>"hay là"</strong> (chọn một trong hai), dùng: <strong>N1 ですか、N2 ですか</strong>. Vd: コーヒーですか、お<ruby>茶<rt>ちゃ</rt></ruby>ですか。(Anh dùng cà phê hay trà?)</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập câu hỏi か</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>あなたは<ruby>学生<rt>がくせい</rt></ruby>です____。</div><div class="q-romaji">Anata wa gakusei desu ___.</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">よ</span><span class="q-opt" data-mark="②" data-correct="false">ね</span><span class="q-opt" data-mark="③" data-correct="true">か</span><span class="q-opt" data-mark="④" data-correct="false">の</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ か</strong> — Trợ từ kết câu tạo câu hỏi.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>「ミラーさんは<ruby>日本人<rt>にほんじん</rt></ruby>ですか。」「____、アメリカ<ruby>人<rt>じん</rt></ruby>です。」</div><div class="q-romaji">Miraa-san wa nihon-jin desu ka. — ___, amerika-jin desu.</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">はい</span><span class="q-opt" data-mark="②" data-correct="true">いいえ</span><span class="q-opt" data-mark="③" data-correct="false">そうです</span><span class="q-opt" data-mark="④" data-correct="false">どうも</span></div>
+<div class="answer-detail"><strong>Đáp án: ② いいえ</strong> — Vế sau là phủ định (アメリカ人 chứ không phải 日本人).</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>あの<ruby>方<rt>かた</rt></ruby>は____ですか。</div><div class="q-romaji">Ano kata wa ___ desu ka.</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">なん</span><span class="q-opt" data-mark="②" data-correct="true">どなた</span><span class="q-opt" data-mark="③" data-correct="false">どこ</span><span class="q-opt" data-mark="④" data-correct="false">いつ</span></div>
+<div class="answer-detail"><strong>Đáp án: ② どなた</strong> — Hỏi về người (lịch sự).</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">4</div><div class="gc-title">N1 の N2<span class="gc-meaning">N1 thuộc về / của N2 (sở hữu, định ngữ)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>N1</code> ＋ <code>の</code> ＋ <code>N2</code><br/>3 nghĩa chính: (1) <strong>sở hữu</strong>, (2) <strong>thuộc về tổ chức</strong>, (3) <strong>tu sức/giải thích</strong>.</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Trợ từ <strong>の</strong> nối hai danh từ. N2 là cái chính, N1 bổ nghĩa cho N2.<br/>• わたし<strong>の</strong>かばん = cặp <strong>của</strong> tôi<br/>• IMC<strong>の</strong>ミラーさん = anh Miller <strong>thuộc</strong> IMC<br/>• <ruby>日本語<rt>にほんご</rt></ruby><strong>の</strong><ruby>本<rt>ほん</rt></ruby> = sách <strong>tiếng Nhật</strong></div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①これはわたし<span class="target">の</span><ruby>本<rt>ほん</rt></ruby>です。</div><div class="ex-romaji">Kore wa watashi no hon desu.</div><div class="ex-vn">Đây là sách của tôi.</div></div>
+<div class="ex-box"><div class="ex-jp">②ミラーさんはIMC<span class="target">の</span><ruby>社員<rt>しゃいん</rt></ruby>です。</div><div class="ex-romaji">Miraa-san wa IMC no shain desu.</div><div class="ex-vn">Anh Miller là nhân viên của công ty IMC.</div></div>
+<div class="ex-box"><div class="ex-jp">③これは<ruby>日本語<rt>にほんご</rt></ruby><span class="target">の</span><ruby>雑誌<rt>ざっし</rt></ruby>です。</div><div class="ex-romaji">Kore wa nihongo no zasshi desu.</div><div class="ex-vn">Đây là tạp chí tiếng Nhật.</div></div>
+</div></div>
+<div class="gc-section"><span class="gc-label lbl-note">Ghi chú</span><div class="note-box">Khi N2 đã rõ trong ngữ cảnh, có thể <strong>lược bỏ</strong>:<br/>「これはだれの<ruby>傘<rt>かさ</rt></ruby>ですか。」「わたし<strong>の</strong>です。」(của tôi — không cần lặp 傘)</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập NのN</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>これはミラーさん____<ruby>傘<rt>かさ</rt></ruby>です。</div><div class="q-romaji">Kore wa Miraa-san ___ kasa desu.</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">は</span><span class="q-opt" data-mark="②" data-correct="false">が</span><span class="q-opt" data-mark="③" data-correct="true">の</span><span class="q-opt" data-mark="④" data-correct="false">に</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ の</strong> — Diễn tả sở hữu "của".</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>「これはだれのかばんですか。」「ミラーさん____です。」</div><div class="q-romaji">— Miraa-san ___ desu.</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">は</span><span class="q-opt" data-mark="②" data-correct="true">の</span><span class="q-opt" data-mark="③" data-correct="false">のかばん</span><span class="q-opt" data-mark="④" data-correct="false">に</span></div>
+<div class="answer-detail"><strong>Đáp án: ② の</strong> — Lược bỏ danh từ かばん vì đã rõ. ③ không sai nghĩa nhưng dài thừa.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>これは<ruby>日本語<rt>にほんご</rt></ruby>____<ruby>本<rt>ほん</rt></ruby>です。</div><div class="q-romaji">Kore wa nihongo ___ hon desu.</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">の</span><span class="q-opt" data-mark="②" data-correct="false">は</span><span class="q-opt" data-mark="③" data-correct="false">で</span><span class="q-opt" data-mark="④" data-correct="false">に</span></div>
+<div class="answer-detail"><strong>Đáp án: ① の</strong> — Nối "tiếng Nhật" + "sách" → "sách tiếng Nhật".</div></div>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ================= LESSON 2 ================= -->
+<article class="document" id="lesson-2">
+<div class="lesson-banner"><span class="lesson-kicker">2課 — Bài 2 · 指示詞</span><h2>Đại từ chỉ định &amp; địa điểm</h2><div class="lesson-sub">4 mẫu: これ・それ・あれ / この・その・あの+N / ここ・そこ・あそこ / こちら・そちら・あちら</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">これ・それ・あれ・どれ<span class="gc-meaning">Cái này / cái đó / cái kia / cái nào (đứng độc lập)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">Bảng đối chiếu</span>
+<table class="conjug-table">
+<tr><th>Từ</th><th>Romaji</th><th>Khoảng cách</th><th>Ý nghĩa</th></tr>
+<tr><td><span class="highlight">これ</span></td><td class="romaji">kore</td><td>Gần người nói</td><td>Cái này (ở chỗ tôi)</td></tr>
+<tr><td><span class="highlight">それ</span></td><td class="romaji">sore</td><td>Gần người nghe</td><td>Cái đó (ở chỗ bạn)</td></tr>
+<tr><td><span class="highlight">あれ</span></td><td class="romaji">are</td><td>Xa cả hai</td><td>Cái kia (xa cả hai)</td></tr>
+<tr><td><span class="highlight">どれ</span></td><td class="romaji">dore</td><td>Câu hỏi</td><td>Cái nào? (chọn ≥3)</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Đây là đại từ chỉ vật, <strong>đứng độc lập</strong> (không có danh từ kèm theo). Dùng để chỉ vào đồ vật và hỏi/trả lời "Cái này/đó/kia là gì?".</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<span class="target">これ</span>は<ruby>本<rt>ほん</rt></ruby>です。</div><div class="ex-romaji">Kore wa hon desu.</div><div class="ex-vn">Đây là quyển sách.</div></div>
+<div class="ex-box"><div class="ex-jp">②<span class="target">それ</span>はだれのかばんですか。</div><div class="ex-romaji">Sore wa dare no kaban desu ka.</div><div class="ex-vn">Cái cặp đó (ở chỗ bạn) là của ai?</div></div>
+<div class="ex-box"><div class="ex-jp">③<span class="target">あれ</span>は<ruby>富士山<rt>ふじさん</rt></ruby>です。</div><div class="ex-romaji">Are wa Fujisan desu.</div><div class="ex-vn">Cái kia là núi Phú Sĩ.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập これ・それ・あれ</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>(tay cầm vật) ____は<ruby>本<rt>ほん</rt></ruby>です。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">これ</span><span class="q-opt" data-mark="②" data-correct="false">それ</span><span class="q-opt" data-mark="③" data-correct="false">あれ</span><span class="q-opt" data-mark="④" data-correct="false">どれ</span></div>
+<div class="answer-detail"><strong>Đáp án: ① これ</strong> — Vật ở chỗ người nói → これ.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>(chỉ vật xa cả hai) ____は<ruby>銀行<rt>ぎんこう</rt></ruby>です。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">これ</span><span class="q-opt" data-mark="②" data-correct="false">それ</span><span class="q-opt" data-mark="③" data-correct="true">あれ</span><span class="q-opt" data-mark="④" data-correct="false">どれ</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ あれ</strong> — Vật xa cả hai → あれ.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>「____がミラーさんの<ruby>傘<rt>かさ</rt></ruby>ですか。」「あの<ruby>青<rt>あお</rt></ruby>いのです。」</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">なに</span><span class="q-opt" data-mark="②" data-correct="false">だれ</span><span class="q-opt" data-mark="③" data-correct="true">どれ</span><span class="q-opt" data-mark="④" data-correct="false">どこ</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ どれ</strong> — "Cái nào" (chọn từ nhiều cái) → どれ.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">この・その・あの・どの ＋ N<span class="gc-meaning">N này / N đó / N kia / N nào (đi kèm danh từ)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>この・その・あの・どの</code> + <code>N</code> + は + ... + です。<br/><span style="color:#5a6a5e; font-size:13px">Khác với これ/それ/あれ, các từ này <strong>luôn đi kèm danh từ</strong> phía sau.</span></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Quy tắc dễ nhớ: <strong>これ → この + N</strong>. Khi muốn nói rõ là vật gì (sách này, cái cặp đó, người kia), dùng nhóm này.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<span class="target">この</span><ruby>本<rt>ほん</rt></ruby>はわたしのです。</div><div class="ex-romaji">Kono hon wa watashi no desu.</div><div class="ex-vn">Quyển sách này là của tôi.</div></div>
+<div class="ex-box"><div class="ex-jp">②<span class="target">その</span>かばんはミラーさんのです。</div><div class="ex-romaji">Sono kaban wa Miraa-san no desu.</div><div class="ex-vn">Cái cặp đó là của anh Miller.</div></div>
+<div class="ex-box"><div class="ex-jp">③<span class="target">あの</span><ruby>方<rt>かた</rt></ruby>はどなたですか。</div><div class="ex-romaji">Ano kata wa donata desu ka.</div><div class="ex-vn">Vị (người) kia là ai vậy ạ?</div></div>
+</div></div>
+<div class="gc-section"><span class="gc-label lbl-compare">Phân biệt</span>
+<div class="compare-box">
+<div class="cmp-item"><span class="cmp-jp">これ</span> = "Cái này" (đứng một mình). 例: これは本です。</div>
+<div class="cmp-item"><span class="cmp-jp">この + N</span> = "N này" (kèm danh từ). 例: この本は…</div>
+<div class="cmp-item">SAI: ❌ <s>これ本</s>　ĐÚNG: ✓ <strong>この本</strong></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập この・その・あの</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>____<ruby>本<rt>ほん</rt></ruby>はわたしのです。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">これ</span><span class="q-opt" data-mark="②" data-correct="true">この</span><span class="q-opt" data-mark="③" data-correct="false">それ</span><span class="q-opt" data-mark="④" data-correct="false">あれ</span></div>
+<div class="answer-detail"><strong>Đáp án: ② この</strong> — Có danh từ <strong>本</strong> đi sau → dùng この, không phải これ.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>____はだれの<ruby>傘<rt>かさ</rt></ruby>ですか。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">これ</span><span class="q-opt" data-mark="②" data-correct="false">この</span><span class="q-opt" data-mark="③" data-correct="false">そん</span><span class="q-opt" data-mark="④" data-correct="false">あん</span></div>
+<div class="answer-detail"><strong>Đáp án: ① これ</strong> — Trước trợ từ は (không có N) → これ.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>____<ruby>人<rt>ひと</rt></ruby>はサントスさんです。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">あれ</span><span class="q-opt" data-mark="②" data-correct="true">あの</span><span class="q-opt" data-mark="③" data-correct="false">あち</span><span class="q-opt" data-mark="④" data-correct="false">あちら</span></div>
+<div class="answer-detail"><strong>Đáp án: ② あの</strong> — Đi kèm danh từ 人 → あの.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">ここ・そこ・あそこ・どこ<span class="gc-meaning">Ở đây / ở đó / ở kia / ở đâu (chỉ địa điểm)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">Bảng đối chiếu</span>
+<table class="conjug-table">
+<tr><th>Từ</th><th>Romaji</th><th>Ý nghĩa</th><th>Ví dụ</th></tr>
+<tr><td><span class="highlight">ここ</span></td><td class="romaji">koko</td><td>Chỗ này (chỗ tôi)</td><td>ここはトイレです。</td></tr>
+<tr><td><span class="highlight">そこ</span></td><td class="romaji">soko</td><td>Chỗ đó (chỗ bạn)</td><td>そこは事務所です。</td></tr>
+<tr><td><span class="highlight">あそこ</span></td><td class="romaji">asoko</td><td>Chỗ kia (xa cả hai)</td><td>あそこは銀行です。</td></tr>
+<tr><td><span class="highlight">どこ</span></td><td class="romaji">doko</td><td>Chỗ nào?</td><td>トイレはどこですか。</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<span class="target">ここ</span>は<ruby>教室<rt>きょうしつ</rt></ruby>です。</div><div class="ex-romaji">Koko wa kyoushitsu desu.</div><div class="ex-vn">Đây (chỗ này) là phòng học.</div></div>
+<div class="ex-box"><div class="ex-jp">②トイレは<span class="target">どこ</span>ですか。</div><div class="ex-romaji">Toire wa doko desu ka.</div><div class="ex-vn">Nhà vệ sinh ở đâu?</div></div>
+<div class="ex-box"><div class="ex-jp">③ミラーさんは<span class="target">あそこ</span>です。</div><div class="ex-romaji">Miraa-san wa asoko desu.</div><div class="ex-vn">Anh Miller ở đằng kia.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ここ・そこ・あそこ</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>「トイレは____ですか。」「2<ruby>階<rt>かい</rt></ruby>です。」</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">どこ</span><span class="q-opt" data-mark="②" data-correct="false">どれ</span><span class="q-opt" data-mark="③" data-correct="false">どなた</span><span class="q-opt" data-mark="④" data-correct="false">なん</span></div>
+<div class="answer-detail"><strong>Đáp án: ① どこ</strong> — Hỏi địa điểm "ở đâu".</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>(chỉ chỗ ngay người nói) ____は<ruby>会議室<rt>かいぎしつ</rt></ruby>です。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">ここ</span><span class="q-opt" data-mark="②" data-correct="false">そこ</span><span class="q-opt" data-mark="③" data-correct="false">あそこ</span><span class="q-opt" data-mark="④" data-correct="false">これ</span></div>
+<div class="answer-detail"><strong>Đáp án: ① ここ</strong> — Chỗ người nói đang đứng → ここ.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>(chỉ tòa nhà xa) ____は<ruby>大学<rt>だいがく</rt></ruby>です。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">ここ</span><span class="q-opt" data-mark="②" data-correct="false">そこ</span><span class="q-opt" data-mark="③" data-correct="true">あそこ</span><span class="q-opt" data-mark="④" data-correct="false">あの</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ あそこ</strong> — Chỗ xa cả hai → あそこ.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">4</div><div class="gc-title">こちら・そちら・あちら・どちら<span class="gc-meaning">Phía này / phía đó / phía kia / phía nào (lịch sự)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Là dạng <strong>lịch sự hơn</strong> của ここ/そこ/あそこ/どこ. Cũng dùng để chỉ <strong>người</strong> (ngôi thứ 3, lịch sự).<br/>• Chỉ địa điểm trang trọng (cửa hàng, công ty): "phía này, phía đó"<br/>• Chỉ người lịch sự: "vị này, vị đó"</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<span class="target">こちら</span>はミラーさんです。</div><div class="ex-romaji">Kochira wa Miraa-san desu.</div><div class="ex-vn">Đây là anh Miller. (giới thiệu lịch sự)</div></div>
+<div class="ex-box"><div class="ex-jp">②エレベーターは<span class="target">あちら</span>です。</div><div class="ex-romaji">Erebeetaa wa achira desu.</div><div class="ex-vn">Thang máy ở phía kia ạ.</div></div>
+<div class="ex-box"><div class="ex-jp">③お<ruby>国<rt>くに</rt></ruby>は<span class="target">どちら</span>ですか。</div><div class="ex-romaji">O-kuni wa dochira desu ka.</div><div class="ex-vn">Quý vị từ nước nào ạ? (lịch sự hơn どこ)</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập こちら系</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>「お<ruby>国<rt>くに</rt></ruby>は____ですか。」「ベトナムです。」</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">どこ</span><span class="q-opt" data-mark="②" data-correct="true">どちら</span><span class="q-opt" data-mark="③" data-correct="false">どれ</span><span class="q-opt" data-mark="④" data-correct="false">どなた</span></div>
+<div class="answer-detail"><strong>Đáp án: ② どちら</strong> — Khi có お đầu (お国 lịch sự), dùng どちら cho lịch sự. どこ cũng đúng nhưng kém lịch sự.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>____はわたしの<ruby>母<rt>はは</rt></ruby>です。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">これ</span><span class="q-opt" data-mark="②" data-correct="false">ここ</span><span class="q-opt" data-mark="③" data-correct="true">こちら</span><span class="q-opt" data-mark="④" data-correct="false">この</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ こちら</strong> — Giới thiệu người → dùng こちら (lịch sự). Không dùng これ (vật) hay ここ (chỗ).</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>「お<ruby>手洗<rt>てあら</rt></ruby>いは____ですか。」「あちらです。」</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">どちら</span><span class="q-opt" data-mark="②" data-correct="false">どれ</span><span class="q-opt" data-mark="③" data-correct="false">なに</span><span class="q-opt" data-mark="④" data-correct="false">どなた</span></div>
+<div class="answer-detail"><strong>Đáp án: ① どちら</strong> — Hỏi chỗ "nhà vệ sinh ở đâu ạ" lịch sự.</div></div>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ================= LESSON 3 ================= -->
+<article class="document" id="lesson-3">
+<div class="lesson-banner"><span class="lesson-kicker">3課 — Bài 3 · 数字・時間</span><h2>Số đếm, giờ, thứ &amp; lượng từ</h2><div class="lesson-sub">4 nội dung: Số đếm 1-100 / Giờ phút / Thứ-Ngày-Tháng / Lượng từ (人・本・枚...)</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">Số đếm cơ bản 1～100<span class="gc-meaning">数字 (Suuji) — Số đếm thuần Nhật &amp; Hán-Nhật</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">Bảng số 1-10</span>
+<table class="conjug-table">
+<tr><th class="center">Số</th><th>Hán-Nhật (chuẩn)</th><th class="romaji">Romaji</th><th>Thuần Nhật</th><th class="romaji">Romaji</th></tr>
+<tr><td class="center"><strong>1</strong></td><td>いち</td><td class="romaji">ichi</td><td>ひとつ</td><td class="romaji">hitotsu</td></tr>
+<tr><td class="center"><strong>2</strong></td><td>に</td><td class="romaji">ni</td><td>ふたつ</td><td class="romaji">futatsu</td></tr>
+<tr><td class="center"><strong>3</strong></td><td>さん</td><td class="romaji">san</td><td>みっつ</td><td class="romaji">mittsu</td></tr>
+<tr><td class="center"><strong>4</strong></td><td>し / よん</td><td class="romaji">shi / yon</td><td>よっつ</td><td class="romaji">yottsu</td></tr>
+<tr><td class="center"><strong>5</strong></td><td>ご</td><td class="romaji">go</td><td>いつつ</td><td class="romaji">itsutsu</td></tr>
+<tr><td class="center"><strong>6</strong></td><td>ろく</td><td class="romaji">roku</td><td>むっつ</td><td class="romaji">muttsu</td></tr>
+<tr><td class="center"><strong>7</strong></td><td>しち / なな</td><td class="romaji">shichi / nana</td><td>ななつ</td><td class="romaji">nanatsu</td></tr>
+<tr><td class="center"><strong>8</strong></td><td>はち</td><td class="romaji">hachi</td><td>やっつ</td><td class="romaji">yattsu</td></tr>
+<tr><td class="center"><strong>9</strong></td><td>く / きゅう</td><td class="romaji">ku / kyuu</td><td>ここのつ</td><td class="romaji">kokonotsu</td></tr>
+<tr><td class="center"><strong>10</strong></td><td>じゅう</td><td class="romaji">juu</td><td>とお</td><td class="romaji">too</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Cách ghép số lớn</span><div class="explain-box"><strong>11–99</strong>: Đọc thập phân + số đơn vị. Vd 25 = に + じゅう + ご = にじゅうご (ni-juu-go).<br/><strong>100</strong> = ひゃく (hyaku) · <strong>1000</strong> = せん (sen) · <strong>10000</strong> = いちまん (ichi-man).<br/>⚠️ Lưu ý 300 = さんびゃく, 600 = ろっぴゃく, 800 = はっぴゃく (có biến âm).</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①この<ruby>本<rt>ほん</rt></ruby>は<span class="target">2,500</span><ruby>円<rt>えん</rt></ruby>です。</div><div class="ex-romaji">Kono hon wa nisen gohyaku en desu.</div><div class="ex-vn">Quyển sách này giá 2.500 yên.</div></div>
+<div class="ex-box"><div class="ex-jp">②わたしは<span class="target">25</span><ruby>歳<rt>さい</rt></ruby>です。</div><div class="ex-romaji">Watashi wa nijuu-go sai desu.</div><div class="ex-vn">Tôi 25 tuổi.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">〜時 〜分 (Giờ và phút)<span class="gc-meaning">Giờ — 何時 (mấy giờ?)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">Bảng giờ đặc biệt</span>
+<table class="conjug-table">
+<tr><th>Giờ</th><th>Cách đọc</th><th class="romaji">Romaji</th><th>Phút</th><th>Cách đọc</th><th class="romaji">Romaji</th></tr>
+<tr><td>1時</td><td>いちじ</td><td class="romaji">ichi-ji</td><td>1分</td><td>いっぷん</td><td class="romaji">ip-pun</td></tr>
+<tr><td>4時</td><td><span class="highlight">よじ</span></td><td class="romaji">yo-ji ⚠</td><td>3分</td><td>さんぷん</td><td class="romaji">san-pun</td></tr>
+<tr><td>7時</td><td><span class="highlight">しちじ</span></td><td class="romaji">shichi-ji</td><td>4分</td><td>よんぷん</td><td class="romaji">yon-pun</td></tr>
+<tr><td>9時</td><td><span class="highlight">くじ</span></td><td class="romaji">ku-ji ⚠</td><td>6分</td><td>ろっぷん</td><td class="romaji">rop-pun</td></tr>
+<tr><td>何時?</td><td>なんじ</td><td class="romaji">nan-ji</td><td>何分?</td><td>なんぷん</td><td class="romaji">nan-pun</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>今<rt>いま</rt></ruby><span class="target">9時30分</span>です。</div><div class="ex-romaji">Ima ku-ji sanjuppun desu.</div><div class="ex-vn">Bây giờ là 9 giờ 30 phút.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>銀行<rt>ぎんこう</rt></ruby>は9時から3時<span class="target">まで</span>です。</div><div class="ex-romaji">Ginkou wa ku-ji kara san-ji made desu.</div><div class="ex-vn">Ngân hàng (mở cửa) từ 9 giờ đến 3 giờ.</div></div>
+<div class="ex-box"><div class="ex-jp">③「<ruby>今<rt>いま</rt></ruby><span class="target">何時</span>ですか。」「7時です。」</div><div class="ex-romaji">Ima nan-ji desu ka. — Shichi-ji desu.</div><div class="ex-vn">"Bây giờ mấy giờ?" — "7 giờ."</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập Giờ</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>4時 đọc là:</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">しじ</span><span class="q-opt" data-mark="②" data-correct="false">よんじ</span><span class="q-opt" data-mark="③" data-correct="true">よじ</span><span class="q-opt" data-mark="④" data-correct="false">ようじ</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ よじ</strong> — 4時 là từ đặc biệt, đọc là <strong>よじ</strong> (không phải よん・し).</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>会社は9時____5時です。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">に</span><span class="q-opt" data-mark="②" data-correct="false">と</span><span class="q-opt" data-mark="③" data-correct="true">から</span><span class="q-opt" data-mark="④" data-correct="false">まで</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ から</strong> — Cấu trúc <strong>〜から〜まで</strong> (từ ~ đến ~). Đây cần "từ" → から.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>「<ruby>今<rt>いま</rt></ruby>____ですか。」「3時です。」</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">なに</span><span class="q-opt" data-mark="②" data-correct="true">なんじ</span><span class="q-opt" data-mark="③" data-correct="false">いつ</span><span class="q-opt" data-mark="④" data-correct="false">どこ</span></div>
+<div class="answer-detail"><strong>Đáp án: ② なんじ</strong> — Hỏi giờ "mấy giờ" → 何時.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">曜日 · 月日 (Thứ &amp; ngày tháng)<span class="gc-meaning">Yōbi / Tsukihi — Thứ trong tuần, ngày, tháng</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">Thứ trong tuần</span>
+<table class="conjug-table">
+<tr><th>Thứ 2</th><th>Thứ 3</th><th>Thứ 4</th><th>Thứ 5</th><th>Thứ 6</th><th>Thứ 7</th><th>CN</th></tr>
+<tr><td>げつようび</td><td>かようび</td><td>すいようび</td><td>もくようび</td><td>きんようび</td><td>どようび</td><td>にちようび</td></tr>
+<tr><td class="romaji">getsu-</td><td class="romaji">ka-</td><td class="romaji">sui-</td><td class="romaji">moku-</td><td class="romaji">kin-</td><td class="romaji">do-</td><td class="romaji">nichi-</td></tr>
+<tr><td>月曜日</td><td>火曜日</td><td>水曜日</td><td>木曜日</td><td>金曜日</td><td>土曜日</td><td>日曜日</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Ngày &amp; tháng</span><div class="explain-box"><strong>Tháng</strong>: 1月 (いちがつ), 2月 (にがつ)... 12月 (じゅうにがつ). Đặc biệt: 4月 = <strong>しがつ</strong>, 7月 = <strong>しちがつ</strong>, 9月 = <strong>くがつ</strong>.<br/><strong>Ngày 1-10</strong> dùng thuần Nhật: 1日 = ついたち, 2日 = ふつか, 3日 = みっか, 4日 = よっか, 5日 = いつか, 6日 = むいか, 7日 = なのか, 8日 = ようか, 9日 = ここのか, 10日 = とおか.<br/><strong>11日 trở lên</strong>: số + にち. Đặc biệt: 14日 = じゅうよっか, 20日 = はつか, 24日 = にじゅうよっか.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>今日<rt>きょう</rt></ruby>は<span class="target">5月20日</span> (ごがつ はつか) <span class="target">月曜日</span>です。</div><div class="ex-romaji">Kyou wa go-gatsu hatsuka getsu-youbi desu.</div><div class="ex-vn">Hôm nay là thứ Hai, ngày 20 tháng 5.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>誕生日<rt>たんじょうび</rt></ruby>は<span class="target">何月何日</span>ですか。</div><div class="ex-romaji">Tanjoubi wa nan-gatsu nan-nichi desu ka.</div><div class="ex-vn">Sinh nhật bạn là ngày tháng nào?</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">4</div><div class="gc-title">助数詞 (Lượng từ)<span class="gc-meaning">Joshuushi — Đếm vật theo loại: 人・本・枚・つ・台...</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">Các lượng từ phổ biến</span>
+<table class="conjug-table">
+<tr><th>Lượng từ</th><th>Đếm cái gì?</th><th>1</th><th>2</th><th>3</th><th>Bao nhiêu?</th></tr>
+<tr><td><span class="highlight">〜つ</span></td><td>Vật chung chung</td><td>ひとつ</td><td>ふたつ</td><td>みっつ</td><td>いくつ</td></tr>
+<tr><td><span class="highlight">〜人</span> (にん)</td><td>Người</td><td>ひとり</td><td>ふたり</td><td>さんにん</td><td>なんにん</td></tr>
+<tr><td><span class="highlight">〜本</span> (ほん)</td><td>Vật dài (bút, chai)</td><td>いっぽん</td><td>にほん</td><td>さんぼん</td><td>なんぼん</td></tr>
+<tr><td><span class="highlight">〜枚</span> (まい)</td><td>Vật mỏng (giấy, đĩa)</td><td>いちまい</td><td>にまい</td><td>さんまい</td><td>なんまい</td></tr>
+<tr><td><span class="highlight">〜台</span> (だい)</td><td>Máy móc (xe, máy tính)</td><td>いちだい</td><td>にだい</td><td>さんだい</td><td>なんだい</td></tr>
+<tr><td><span class="highlight">〜杯</span> (はい)</td><td>Cốc, ly nước</td><td>いっぱい</td><td>にはい</td><td>さんばい</td><td>なんばい</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Vị trí trong câu</span><div class="explain-box">Lượng từ <strong>đứng sau danh từ</strong>, sau trợ từ を:<br/><code>N を [số + lượng từ] V</code><br/>Vd: りんごを<strong>みっつ</strong>ください。(Cho tôi 3 quả táo.)</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①コーヒーを<span class="target">2つ</span>ください。</div><div class="ex-romaji">Koohii o futatsu kudasai.</div><div class="ex-vn">Cho tôi 2 ly cà phê.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>家族<rt>かぞく</rt></ruby>は<span class="target">4人</span>です。</div><div class="ex-romaji">Kazoku wa yo-nin desu.</div><div class="ex-vn">Gia đình tôi có 4 người.</div></div>
+<div class="ex-box"><div class="ex-jp">③ビールを<span class="target">3本</span>と<ruby>水<rt>みず</rt></ruby>を<span class="target">2杯</span>お<ruby>願<rt>ねが</rt></ruby>いします。</div><div class="ex-romaji">Biiru o san-bon to mizu o ni-hai onegai shimasu.</div><div class="ex-vn">Cho tôi 3 chai bia và 2 cốc nước.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập lượng từ</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>りんごを____ください。 (3 quả)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">さん</span><span class="q-opt" data-mark="②" data-correct="true">みっつ</span><span class="q-opt" data-mark="③" data-correct="false">さんぼん</span><span class="q-opt" data-mark="④" data-correct="false">さんだい</span></div>
+<div class="answer-detail"><strong>Đáp án: ② みっつ</strong> — Quả táo (vật chung chung) → dùng 〜つ. Không phải 〜本 (vật dài) hay 〜台 (máy móc).</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>家族<rt>かぞく</rt></ruby>は____です。 (2 người)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">につ</span><span class="q-opt" data-mark="②" data-correct="false">にこ</span><span class="q-opt" data-mark="③" data-correct="true">ふたり</span><span class="q-opt" data-mark="④" data-correct="false">にじん</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ ふたり</strong> — 2 người dùng đặc biệt <strong>ふたり</strong>, không phải ににん.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>車<rt>くるま</rt></ruby>が____あります。 (1 chiếc)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">ひとつ</span><span class="q-opt" data-mark="②" data-correct="false">いちにん</span><span class="q-opt" data-mark="③" data-correct="false">いっぽん</span><span class="q-opt" data-mark="④" data-correct="true">いちだい</span></div>
+<div class="answer-detail"><strong>Đáp án: ④ いちだい</strong> — Xe hơi (máy móc) → dùng 〜台.</div></div>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ================= LESSON 4 ================= -->
+<article class="document" id="lesson-4">
+<div class="lesson-banner"><span class="lesson-kicker">4課 — Bài 4 · 動詞 ます形</span><h2>Động từ thể ます — 3 nhóm động từ</h2><div class="lesson-sub">4 nội dung: 3 nhóm động từ / ます・ません / ました・ませんでした / ましょう・ませんか</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">3 nhóm động từ tiếng Nhật<span class="gc-meaning">Group I, II, III — Phân loại để chia thể</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">Bảng nhận biết 3 nhóm</span>
+<table class="conjug-table">
+<tr><th>Nhóm</th><th>Đặc điểm</th><th>Ví dụ (辞書形 → ます形)</th><th class="romaji">Romaji</th></tr>
+<tr class="group-g1"><td><strong>Nhóm I (G1)</strong> 五段</td><td>Kết thúc bằng <strong>u/ku/su/tsu/nu/bu/mu/ru</strong> (trừ những đuôi của G2)</td><td>かく → かきます<br/>のむ → のみます<br/>かう → かいます</td><td class="romaji">kaku → kakimasu<br/>nomu → nomimasu<br/>kau → kaimasu</td></tr>
+<tr class="group-g2"><td><strong>Nhóm II (G2)</strong> 一段</td><td>Kết thúc bằng <strong>iru / eru</strong> (chữ trước る là i hoặc e)</td><td>たべる → たべます<br/>みる → みます<br/>おきる → おきます</td><td class="romaji">taberu → tabemasu<br/>miru → mimasu<br/>okiru → okimasu</td></tr>
+<tr class="group-g3"><td><strong>Nhóm III (G3)</strong> 不規則</td><td>Chỉ có <strong>2 động từ</strong>: する và 来る</td><td>する → します<br/>来る → 来ます<br/>勉強する → 勉強します</td><td class="romaji">suru → shimasu<br/>kuru → kimasu</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-note">Ngoại lệ cần nhớ</span><div class="note-box">Một số động từ <strong>kết thúc bằng iru/eru</strong> nhưng vẫn thuộc <strong>Nhóm I</strong>:<br/>• <strong>かえる</strong> (về nhà) → かえります<br/>• <strong>はいる</strong> (vào) → はいります<br/>• <strong>はしる</strong> (chạy) → はしります<br/>• <strong>きる</strong> (cắt) → きります<br/>• <strong>しる</strong> (biết) → しります</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">Vます / Vません — Hiện tại &amp; tương lai<span class="gc-meaning">Làm / Không làm (hiện tại - tương lai, lịch sự)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">Khẳng định: <code>V-ます</code><br/>Phủ định: <code>V-ません</code><br/>Hiểu là <strong>"thường xuyên làm"</strong> hoặc <strong>"sẽ làm trong tương lai"</strong>.</div></div>
+<div class="gc-section"><span class="gc-label lbl-table">Bảng chia 6 động từ thông dụng</span>
+<table class="conjug-table">
+<tr><th>Nghĩa</th><th>辞書形</th><th>Vます</th><th>Vません</th><th>Nhóm</th></tr>
+<tr class="group-g1"><td>uống</td><td>のむ</td><td><span class="highlight">のみます</span></td><td>のみません</td><td>G1</td></tr>
+<tr class="group-g1"><td>viết</td><td>かく</td><td><span class="highlight">かきます</span></td><td>かきません</td><td>G1</td></tr>
+<tr class="group-g1"><td>mua</td><td>かう</td><td><span class="highlight">かいます</span></td><td>かいません</td><td>G1</td></tr>
+<tr class="group-g2"><td>ăn</td><td>たべる</td><td><span class="highlight">たべます</span></td><td>たべません</td><td>G2</td></tr>
+<tr class="group-g2"><td>xem</td><td>みる</td><td><span class="highlight">みます</span></td><td>みません</td><td>G2</td></tr>
+<tr class="group-g3"><td>làm</td><td>する</td><td><span class="highlight">します</span></td><td>しません</td><td>G3</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>毎朝<rt>まいあさ</rt></ruby>コーヒーを<span class="target">のみます</span>。</div><div class="ex-romaji">Maiasa koohii o nomimasu.</div><div class="ex-vn">Sáng nào tôi cũng uống cà phê.</div></div>
+<div class="ex-box"><div class="ex-jp">②あした<ruby>映画<rt>えいが</rt></ruby>を<span class="target">みます</span>。</div><div class="ex-romaji">Ashita eiga o mimasu.</div><div class="ex-vn">Ngày mai tôi sẽ xem phim.</div></div>
+<div class="ex-box"><div class="ex-jp">③わたしはおさけを<span class="target">のみません</span>。</div><div class="ex-romaji">Watashi wa o-sake o nomimasen.</div><div class="ex-vn">Tôi không uống rượu.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">Vました / Vませんでした — Quá khứ<span class="gc-meaning">Đã làm / Đã không làm (quá khứ, lịch sự)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">Quá khứ KĐ: <code>V-ました</code> <span class="arrow">←</span> đổi từ V-ます<br/>Quá khứ PĐ: <code>V-ませんでした</code> <span class="arrow">←</span> đổi từ V-ません</div></div>
+<div class="gc-section"><span class="gc-label lbl-table">Bảng 4 thì hoàn chỉnh</span>
+<table class="conjug-table">
+<tr><th>Thì</th><th>Khẳng định</th><th>Phủ định</th></tr>
+<tr><td><strong>Hiện tại/Tương lai</strong></td><td><span class="highlight">食べます</span> (sẽ ăn)</td><td>食べません (không ăn)</td></tr>
+<tr><td><strong>Quá khứ</strong></td><td><span class="highlight">食べました</span> (đã ăn)</td><td>食べませんでした (đã không ăn)</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①きのう<ruby>映画<rt>えいが</rt></ruby>を<span class="target">見ました</span>。</div><div class="ex-romaji">Kinou eiga o mimashita.</div><div class="ex-vn">Hôm qua tôi đã xem phim.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>朝<rt>あさ</rt></ruby>ごはんを<span class="target">食べませんでした</span>。</div><div class="ex-romaji">Asagohan o tabemasen deshita.</div><div class="ex-vn">Tôi đã không ăn sáng.</div></div>
+<div class="ex-box"><div class="ex-jp">③おととい<ruby>友<rt>とも</rt></ruby>だちに<span class="target">会いました</span>。</div><div class="ex-romaji">Ototoi tomodachi ni aimashita.</div><div class="ex-vn">Hôm kia tôi đã gặp bạn.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập Vます/Vました</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>あした<ruby>東京<rt>とうきょう</rt></ruby>へ____。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">行きます</span><span class="q-opt" data-mark="②" data-correct="false">行きました</span><span class="q-opt" data-mark="③" data-correct="false">行きません</span><span class="q-opt" data-mark="④" data-correct="false">行く</span></div>
+<div class="answer-detail"><strong>Đáp án: ① 行きます</strong> — Thì tương lai (あした = ngày mai) → V-ます.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>きのう<ruby>勉強<rt>べんきょう</rt></ruby>____。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">します</span><span class="q-opt" data-mark="②" data-correct="false">しません</span><span class="q-opt" data-mark="③" data-correct="true">しませんでした</span><span class="q-opt" data-mark="④" data-correct="false">します</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ しませんでした</strong> — きのう (hôm qua) + phủ định quá khứ → ませんでした.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>毎日<rt>まいにち</rt></ruby><ruby>新聞<rt>しんぶん</rt></ruby>を____。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">読みます</span><span class="q-opt" data-mark="②" data-correct="false">読みました</span><span class="q-opt" data-mark="③" data-correct="false">読みませんでした</span><span class="q-opt" data-mark="④" data-correct="false">読みんです</span></div>
+<div class="answer-detail"><strong>Đáp án: ① 読みます</strong> — 毎日 (mỗi ngày, thường xuyên) → hiện tại V-ます.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">4</div><div class="gc-title">Vませんか / Vましょう — Đề nghị &amp; rủ rê<span class="gc-meaning">Cùng làm ~ nhé! / Bạn có làm ~ không?</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>V-ませんか</code> = "Cùng làm ~ không?" — <strong>rủ rê lịch sự</strong><br/><code>V-ましょう</code> = "Hãy cùng ~ nào!" — <strong>đề nghị/đồng ý</strong><br/><code>V-ましょうか</code> = "Mình ~ nhé?" — <strong>đề xuất nhẹ</strong></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box"><strong>ませんか</strong> rủ ai cùng làm gì đó (lịch sự hơn, vì là câu hỏi). <strong>ましょう</strong> tỏ ý sẵn sàng cùng làm (đáp lại ませんか) hoặc kêu gọi.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①「いっしょにお<ruby>茶<rt>ちゃ</rt></ruby>を<span class="target">飲みませんか</span>。」「ええ、<span class="target">飲みましょう</span>。」</div><div class="ex-romaji">Issho ni o-cha o nomimasen ka. — Ee, nomimashou.</div><div class="ex-vn">"Cùng uống trà nhé?" — "Vâng, uống thôi!"</div></div>
+<div class="ex-box"><div class="ex-jp">②あした<ruby>映画<rt>えいが</rt></ruby>を<span class="target">見ませんか</span>。</div><div class="ex-romaji">Ashita eiga o mimasen ka.</div><div class="ex-vn">Ngày mai mình đi xem phim nhé?</div></div>
+<div class="ex-box"><div class="ex-jp">③コーヒーを<span class="target">飲みましょうか</span>。</div><div class="ex-romaji">Koohii o nomimashou ka.</div><div class="ex-vn">Mình uống cà phê nhé?</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ませんか・ましょう</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>いっしょに<ruby>食事<rt>しょくじ</rt></ruby>____。 (Cùng ăn nhé?)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">します</span><span class="q-opt" data-mark="②" data-correct="true">しませんか</span><span class="q-opt" data-mark="③" data-correct="false">しました</span><span class="q-opt" data-mark="④" data-correct="false">しないか</span></div>
+<div class="answer-detail"><strong>Đáp án: ② しませんか</strong> — Rủ rê "cùng làm nhé?" → V-ませんか.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>「コーヒーを飲みませんか。」「ええ、____。」</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">飲みません</span><span class="q-opt" data-mark="②" data-correct="false">飲みます</span><span class="q-opt" data-mark="③" data-correct="true">飲みましょう</span><span class="q-opt" data-mark="④" data-correct="false">飲みました</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ 飲みましょう</strong> — Đáp lại ませんか bằng ましょう (đồng ý cùng làm).</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>あついですね。<ruby>窓<rt>まど</rt></ruby>を<ruby>開<rt>あ</rt></ruby>け____。 (Mở cửa sổ nhé?)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">ます</span><span class="q-opt" data-mark="②" data-correct="false">ません</span><span class="q-opt" data-mark="③" data-correct="true">ましょうか</span><span class="q-opt" data-mark="④" data-correct="false">ました</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ ましょうか</strong> — Đề xuất nhẹ "Mình mở nhé?" → ましょうか.</div></div>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ================= LESSON 5 ================= -->
+<article class="document" id="lesson-5">
+<div class="lesson-banner"><span class="lesson-kicker">5課 — Bài 5 · 助詞</span><h2>Trợ từ cơ bản tiếng Nhật</h2><div class="lesson-sub">4 nhóm: は・が・も (chủ đề/chủ ngữ) / を (tân ngữ) / に・へ・で (nơi-hướng) / と・や・の (liệt kê-sở hữu)</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">は・が・も — Chủ đề &amp; chủ ngữ<span class="gc-meaning">は (wa) chủ đề / が chủ ngữ thông tin mới / も "cũng"</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">So sánh は・が・も</span>
+<table class="conjug-table">
+<tr><th>Trợ từ</th><th>Vai trò</th><th>Khi nào dùng</th><th>Ví dụ</th></tr>
+<tr><td><span class="highlight">は</span> (wa)</td><td>Đánh dấu <strong>chủ đề</strong></td><td>Thông tin đã biết / muốn nói về</td><td>わたし<strong>は</strong>学生です。</td></tr>
+<tr><td><span class="highlight">が</span></td><td>Đánh dấu <strong>chủ ngữ</strong></td><td>Thông tin mới, sau từ hỏi なに/だれ</td><td>だれ<strong>が</strong>来ますか。</td></tr>
+<tr><td><span class="highlight">も</span></td><td>"Cũng"</td><td>Thêm thông tin tương tự</td><td>わたし<strong>も</strong>学生です。</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①わたし<span class="target">は</span>ベトナム<ruby>人<rt>じん</rt></ruby>です。</div><div class="ex-romaji">Watashi wa Betonamu-jin desu.</div><div class="ex-vn">Tôi là người Việt Nam. (giới thiệu bản thân)</div></div>
+<div class="ex-box"><div class="ex-jp">②あそこに<ruby>犬<rt>いぬ</rt></ruby><span class="target">が</span>います。</div><div class="ex-romaji">Asoko ni inu ga imasu.</div><div class="ex-vn">Đằng kia có con chó. (giới thiệu vật/việc mới)</div></div>
+<div class="ex-box"><div class="ex-jp">③わたし<span class="target">も</span><ruby>学生<rt>がくせい</rt></ruby>です。</div><div class="ex-romaji">Watashi mo gakusei desu.</div><div class="ex-vn">Tôi cũng là học sinh.</div></div>
+</div></div>
+<div class="gc-section"><span class="gc-label lbl-note">Mẹo phân biệt は vs が</span><div class="note-box">Khi <strong>câu trả lời</strong> chứa thông tin mới, thông thường ta dùng <strong>が</strong>:<br/>「だれ<strong>が</strong>パーティーに来ますか。」「ミラーさん<strong>が</strong>来ます。」<br/>Khi đã biết về Miller-san rồi và muốn nói thêm về anh ấy, dùng <strong>は</strong>:<br/>「ミラーさん<strong>は</strong>来ません。」</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">を — Tân ngữ trực tiếp<span class="gc-meaning">を (o) — đánh dấu đối tượng của hành động</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>N (tân ngữ)</code> ＋ <code>を</code> ＋ <code>V (động từ tác động)</code><br/><span style="color:#5a6a5e; font-size:13px">⚠️ <strong>を</strong> chỉ được dùng làm trợ từ, đọc là <strong>"o"</strong>.</span></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Trợ từ <strong>を</strong> đứng giữa danh từ và động từ, chỉ ra <strong>danh từ là đối tượng nhận hành động</strong>. Ăn <strong>cái gì</strong>? — Cơm. → ごはん<strong>を</strong>食べます。</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①ごはん<span class="target">を</span><ruby>食<rt>た</rt></ruby>べます。</div><div class="ex-romaji">Gohan o tabemasu.</div><div class="ex-vn">Tôi ăn cơm.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>新聞<rt>しんぶん</rt></ruby><span class="target">を</span><ruby>読<rt>よ</rt></ruby>みます。</div><div class="ex-romaji">Shinbun o yomimasu.</div><div class="ex-vn">Tôi đọc báo.</div></div>
+<div class="ex-box"><div class="ex-jp">③テレビ<span class="target">を</span><ruby>見<rt>み</rt></ruby>ます。</div><div class="ex-romaji">Terebi o mimasu.</div><div class="ex-vn">Tôi xem TV.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập を</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>コーヒー____<ruby>飲<rt>の</rt></ruby>みます。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">は</span><span class="q-opt" data-mark="②" data-correct="false">が</span><span class="q-opt" data-mark="③" data-correct="true">を</span><span class="q-opt" data-mark="④" data-correct="false">に</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ を</strong> — Tân ngữ trực tiếp (uống cái gì? → cà phê).</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>あした<ruby>本<rt>ほん</rt></ruby>____<ruby>買<rt>か</rt></ruby>います。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">は</span><span class="q-opt" data-mark="②" data-correct="false">が</span><span class="q-opt" data-mark="③" data-correct="true">を</span><span class="q-opt" data-mark="④" data-correct="false">で</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ を</strong> — Mua cái gì? → 本.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>毎朝<rt>まいあさ</rt></ruby><ruby>新聞<rt>しんぶん</rt></ruby>____<ruby>読<rt>よ</rt></ruby>みます。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">に</span><span class="q-opt" data-mark="②" data-correct="false">で</span><span class="q-opt" data-mark="③" data-correct="true">を</span><span class="q-opt" data-mark="④" data-correct="false">へ</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ を</strong> — Đọc cái gì? → 新聞.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">に・へ・で — Nơi chốn &amp; hướng<span class="gc-meaning">に điểm đến/thời điểm / へ hướng đến / で nơi diễn ra hành động</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">So sánh に・へ・で</span>
+<table class="conjug-table">
+<tr><th>Trợ từ</th><th>Vai trò chính</th><th>Ví dụ</th><th class="romaji">Romaji</th></tr>
+<tr><td><span class="highlight">に</span></td><td>Điểm đến cụ thể / thời điểm / nơi tồn tại</td><td>学校<strong>に</strong>行きます<br/>7時<strong>に</strong>起きます<br/>机の上<strong>に</strong>本があります</td><td class="romaji">gakkou ni ikimasu<br/>7-ji ni okimasu</td></tr>
+<tr><td><span class="highlight">へ</span> (e)</td><td>Hướng đến (gần giống に)</td><td>東京<strong>へ</strong>行きます</td><td class="romaji">Toukyou e ikimasu</td></tr>
+<tr><td><span class="highlight">で</span></td><td>Nơi diễn ra <strong>hành động</strong> / phương tiện</td><td>レストラン<strong>で</strong>食べます<br/>バス<strong>で</strong>行きます</td><td class="romaji">resutoran de tabemasu<br/>basu de ikimasu</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích chi tiết</span><div class="explain-box">• <strong>に・へ</strong>: dùng với động từ di chuyển (行く/来る/帰る). Cả hai gần như tương đương, へ nhấn mạnh hướng.<br/>• <strong>で</strong>: dùng khi hành động <strong>xảy ra tại đó</strong> (ăn ở nhà hàng, học ở trường, làm việc ở công ty).<br/>• <strong>に thời điểm</strong>: chỉ dùng với mốc thời gian cụ thể (giờ, ngày), không dùng với きょう・あした.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①あした<ruby>大阪<rt>おおさか</rt></ruby><span class="target">へ</span>行きます。</div><div class="ex-romaji">Ashita Oosaka e ikimasu.</div><div class="ex-vn">Ngày mai tôi đi Osaka.</div></div>
+<div class="ex-box"><div class="ex-jp">②レストラン<span class="target">で</span>ごはんを食べます。</div><div class="ex-romaji">Resutoran de gohan o tabemasu.</div><div class="ex-vn">Tôi ăn cơm ở nhà hàng.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>毎朝<rt>まいあさ</rt></ruby>7<ruby>時<rt>じ</rt></ruby><span class="target">に</span><ruby>起<rt>お</rt></ruby>きます。</div><div class="ex-romaji">Maiasa shichi-ji ni okimasu.</div><div class="ex-vn">Sáng nào tôi cũng dậy lúc 7 giờ.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập に・へ・で</h4><span class="ex-subtitle">4 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>あした<ruby>学校<rt>がっこう</rt></ruby>____<ruby>行<rt>い</rt></ruby>きます。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">を</span><span class="q-opt" data-mark="②" data-correct="false">で</span><span class="q-opt" data-mark="③" data-correct="true">へ</span><span class="q-opt" data-mark="④" data-correct="false">が</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ へ</strong> — Hướng đến (đi đến trường). に cũng đúng.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>図書館<rt>としょかん</rt></ruby>____<ruby>勉強<rt>べんきょう</rt></ruby>します。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">へ</span><span class="q-opt" data-mark="②" data-correct="false">に</span><span class="q-opt" data-mark="③" data-correct="true">で</span><span class="q-opt" data-mark="④" data-correct="false">を</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ で</strong> — Nơi diễn ra hành động "học" → で.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>8時____<ruby>会社<rt>かいしゃ</rt></ruby>へ行きます。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">に</span><span class="q-opt" data-mark="②" data-correct="false">で</span><span class="q-opt" data-mark="③" data-correct="false">へ</span><span class="q-opt" data-mark="④" data-correct="false">を</span></div>
+<div class="answer-detail"><strong>Đáp án: ① に</strong> — Mốc thời gian cụ thể (8時) → に.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">4.</span>バス____<ruby>大学<rt>だいがく</rt></ruby>へ行きます。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">に</span><span class="q-opt" data-mark="②" data-correct="true">で</span><span class="q-opt" data-mark="③" data-correct="false">へ</span><span class="q-opt" data-mark="④" data-correct="false">を</span></div>
+<div class="answer-detail"><strong>Đáp án: ② で</strong> — Phương tiện di chuyển → で.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">4</div><div class="gc-title">と・や・の — Liệt kê &amp; nối<span class="gc-meaning">と liệt kê hết / や liệt kê đại diện / の nối danh từ</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">So sánh と vs や</span>
+<table class="conjug-table">
+<tr><th>Trợ từ</th><th>Cách dùng</th><th>Ví dụ</th><th>Nghĩa</th></tr>
+<tr><td><span class="highlight">と</span></td><td>Liệt kê <strong>hết</strong> (đầy đủ)</td><td>パン<strong>と</strong>ぎゅうにゅう</td><td>bánh mì và sữa (chỉ 2 thứ này)</td></tr>
+<tr><td><span class="highlight">や</span></td><td>Liệt kê <strong>vài</strong> (đại diện, còn nữa)</td><td>パン<strong>や</strong>ぎゅうにゅう(など)</td><td>bánh mì, sữa,... (còn nhiều thứ khác)</td></tr>
+<tr><td><span class="highlight">の</span></td><td>Nối 2 danh từ (sở hữu/tu sức)</td><td>わたし<strong>の</strong>かばん</td><td>cặp của tôi</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①パン<span class="target">と</span>たまごを<ruby>買<rt>か</rt></ruby>いました。</div><div class="ex-romaji">Pan to tamago o kaimashita.</div><div class="ex-vn">Tôi mua bánh mì và trứng (chỉ 2 thứ).</div></div>
+<div class="ex-box"><div class="ex-jp">②スーパーでパン<span class="target">や</span>たまご(など)を<ruby>買<rt>か</rt></ruby>いました。</div><div class="ex-romaji">Suupaa de pan ya tamago (nado) o kaimashita.</div><div class="ex-vn">Ở siêu thị tôi mua bánh mì, trứng (và nhiều thứ khác).</div></div>
+<div class="ex-box"><div class="ex-jp">③これは<ruby>日本<rt>にほん</rt></ruby><span class="target">の</span><ruby>本<rt>ほん</rt></ruby>です。</div><div class="ex-romaji">Kore wa nihon no hon desu.</div><div class="ex-vn">Đây là sách của Nhật.</div></div>
+</div></div>
+<div class="gc-section"><span class="gc-label lbl-compare">Phân biệt</span>
+<div class="compare-box">
+<div class="cmp-item"><span class="cmp-jp">と</span>: dùng cho danh từ <strong>(không dùng nối tính từ/động từ)</strong>. "A và B".</div>
+<div class="cmp-item"><span class="cmp-jp">や</span>: cũng chỉ nối danh từ. "A, B,... (đại diện)".</div>
+<div class="cmp-item"><span class="cmp-jp">の</span>: nối 2 danh từ thành một cụm, mang nghĩa sở hữu/tu sức.</div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập と・や・の</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>パン____ぎゅうにゅうを<ruby>買<rt>か</rt></ruby>いました。 (chỉ 2 thứ)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">と</span><span class="q-opt" data-mark="②" data-correct="false">や</span><span class="q-opt" data-mark="③" data-correct="false">の</span><span class="q-opt" data-mark="④" data-correct="false">で</span></div>
+<div class="answer-detail"><strong>Đáp án: ① と</strong> — Liệt kê đầy đủ "và" (chỉ 2 thứ).</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>スーパーでパン____ぎゅうにゅうなどを<ruby>買<rt>か</rt></ruby>いました。 (đại diện)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">と</span><span class="q-opt" data-mark="②" data-correct="true">や</span><span class="q-opt" data-mark="③" data-correct="false">の</span><span class="q-opt" data-mark="④" data-correct="false">に</span></div>
+<div class="answer-detail"><strong>Đáp án: ② や</strong> — Có など phía sau → liệt kê đại diện "や〜など".</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>これはミラーさん____<ruby>本<rt>ほん</rt></ruby>です。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">と</span><span class="q-opt" data-mark="②" data-correct="false">や</span><span class="q-opt" data-mark="③" data-correct="true">の</span><span class="q-opt" data-mark="④" data-correct="false">で</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ の</strong> — Sở hữu "của" → の.</div></div>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ================= LESSON 6 ================= -->
+<article class="document" id="lesson-6">
+<div class="lesson-banner"><span class="lesson-kicker">6課 — Bài 6 · 形容詞</span><h2>Tính từ tiếng Nhật (い・な)</h2><div class="lesson-sub">4 nội dung: い形容詞 / な形容詞 / Tu sức danh từ / Tính từ + て nối câu</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">い形容詞 — Tính từ đuôi い<span class="gc-meaning">I-keiyoushi — Chia 4 thì</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-explain">Nhận biết</span><div class="explain-box">Tính từ <strong>い</strong>: kết thúc bằng <strong>い</strong> (không có な phía trước). Vd: たかい (cao/đắt), やすい (rẻ), おおきい (to), あつい (nóng).<br/><strong>Ngoại lệ duy nhất</strong>: <strong>きれい</strong> (đẹp/sạch) là tính từ な, không phải い!</div></div>
+<div class="gc-section"><span class="gc-label lbl-table">Bảng chia (たかい — đắt)</span>
+<table class="conjug-table">
+<tr><th>Thì</th><th>Khẳng định</th><th>Phủ định</th></tr>
+<tr><td><strong>Hiện tại</strong></td><td><span class="highlight">たかいです</span><br/><span class="romaji">takai desu</span></td><td>たか<span class="highlight">くないです</span>／たか<span class="highlight">くありません</span><br/><span class="romaji">takaku nai desu / takaku arimasen</span></td></tr>
+<tr><td><strong>Quá khứ</strong></td><td>たか<span class="highlight">かったです</span><br/><span class="romaji">takakatta desu</span></td><td>たか<span class="highlight">くなかったです</span>／たか<span class="highlight">くありませんでした</span><br/><span class="romaji">takaku nakatta desu / takaku arimasen deshita</span></td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-note">Quy tắc chia: bỏ い, thêm đuôi</span><div class="note-box">Bỏ <strong>い</strong> cuối, sau đó:<br/>• Phủ định hiện tại: + <strong>くないです</strong><br/>• Quá khứ KĐ: + <strong>かったです</strong><br/>• Quá khứ PĐ: + <strong>くなかったです</strong><br/>⚠️ <strong>いい (tốt)</strong> chia bất quy tắc: いい → よくない → よかった → よくなかった (dùng gốc よ-).</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①このコーヒーは<span class="target">あついです</span>。</div><div class="ex-romaji">Kono koohii wa atsui desu.</div><div class="ex-vn">Cốc cà phê này nóng.</div></div>
+<div class="ex-box"><div class="ex-jp">②きのうの<ruby>映画<rt>えいが</rt></ruby>は<span class="target">おもしろくなかったです</span>。</div><div class="ex-romaji">Kinou no eiga wa omoshiroku nakatta desu.</div><div class="ex-vn">Phim hôm qua không thú vị.</div></div>
+<div class="ex-box"><div class="ex-jp">③この<ruby>本<rt>ほん</rt></ruby>は<span class="target">よかったです</span>。</div><div class="ex-romaji">Kono hon wa yokatta desu.</div><div class="ex-vn">Quyển sách này hay (đã đọc xong và cảm thấy hay).</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">な形容詞 — Tính từ đuôi な<span class="gc-meaning">Na-keiyoushi — Chia như danh từ + です</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-explain">Nhận biết</span><div class="explain-box">Tính từ <strong>な</strong>: không kết thúc bằng い (hoặc kết thúc bằng い nhưng là ngoại lệ như きれい, ゆうめい). Cách chia <strong>giống danh từ</strong> + です. Khi đứng trước danh từ thì cần thêm な.</div></div>
+<div class="gc-section"><span class="gc-label lbl-table">Bảng chia (しずか — yên tĩnh)</span>
+<table class="conjug-table">
+<tr><th>Thì</th><th>Khẳng định</th><th>Phủ định</th></tr>
+<tr><td><strong>Hiện tại</strong></td><td><span class="highlight">しずかです</span><br/><span class="romaji">shizuka desu</span></td><td><span class="highlight">しずかじゃありません</span><br/><span class="romaji">shizuka ja arimasen</span></td></tr>
+<tr><td><strong>Quá khứ</strong></td><td><span class="highlight">しずかでした</span><br/><span class="romaji">shizuka deshita</span></td><td><span class="highlight">しずかじゃありませんでした</span><br/><span class="romaji">shizuka ja arimasen deshita</span></td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①この<ruby>部屋<rt>へや</rt></ruby>は<span class="target">きれいです</span>。</div><div class="ex-romaji">Kono heya wa kirei desu.</div><div class="ex-vn">Phòng này sạch/đẹp.</div></div>
+<div class="ex-box"><div class="ex-jp">②きのうのパーティーは<span class="target">にぎやかでした</span>。</div><div class="ex-romaji">Kinou no paatii wa nigiyaka deshita.</div><div class="ex-vn">Buổi tiệc hôm qua náo nhiệt/vui.</div></div>
+<div class="ex-box"><div class="ex-jp">③この<ruby>町<rt>まち</rt></ruby>は<span class="target">しずかじゃありません</span>。</div><div class="ex-romaji">Kono machi wa shizuka ja arimasen.</div><div class="ex-vn">Thành phố này không yên tĩnh.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">Tính từ + N (Tu sức danh từ)<span class="gc-meaning">Cách đặt tính từ trước danh từ</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">い形容詞: <code>たかい</code> + <code>本</code> <span class="arrow">→</span> <code>たかい本</code> (giữ nguyên)<br/>な形容詞: <code>きれい</code> + <code>な</code> + <code>花</code> <span class="arrow">→</span> <code>きれいな花</code> (thêm な)</div></div>
+<div class="gc-section"><span class="gc-label lbl-table">So sánh trật tự</span>
+<table class="conjug-table">
+<tr><th>Tính từ</th><th>Khi đứng cuối câu</th><th>Khi đứng trước N</th></tr>
+<tr><td>い形容詞 (たかい)</td><td>この本は<strong>たかいです</strong>。</td><td><strong>たかい本</strong>です。</td></tr>
+<tr><td>な形容詞 (きれい)</td><td>この<ruby>花<rt>はな</rt></ruby>は<strong>きれいです</strong>。</td><td><strong>きれいな花</strong>です。</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①これは<span class="target">あたらしい</span>カメラです。</div><div class="ex-romaji">Kore wa atarashii kamera desu.</div><div class="ex-vn">Đây là chiếc máy ảnh mới.</div></div>
+<div class="ex-box"><div class="ex-jp">②あれは<span class="target">ゆうめいな</span>レストランです。</div><div class="ex-romaji">Are wa yuumei na resutoran desu.</div><div class="ex-vn">Đằng kia là nhà hàng nổi tiếng.</div></div>
+<div class="ex-box"><div class="ex-jp">③<span class="target">きれいな</span><ruby>花<rt>はな</rt></ruby>ですね。</div><div class="ex-romaji">Kirei na hana desu ne.</div><div class="ex-vn">Hoa đẹp nhỉ!</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập tu sức danh từ</h4><span class="ex-subtitle">4 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>これは____カメラです。 (mới)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">あたらしい</span><span class="q-opt" data-mark="②" data-correct="false">あたらしいな</span><span class="q-opt" data-mark="③" data-correct="false">あたらしくの</span><span class="q-opt" data-mark="④" data-correct="false">あたらしの</span></div>
+<div class="answer-detail"><strong>Đáp án: ① あたらしい</strong> — Tính từ い giữ nguyên khi tu sức danh từ.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>____<ruby>花<rt>はな</rt></ruby>ですね。 (đẹp — きれい)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">きれい</span><span class="q-opt" data-mark="②" data-correct="true">きれいな</span><span class="q-opt" data-mark="③" data-correct="false">きれいの</span><span class="q-opt" data-mark="④" data-correct="false">きれいで</span></div>
+<div class="answer-detail"><strong>Đáp án: ② きれいな</strong> — きれい là tính từ な, trước danh từ thêm な.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>ミラーさんは____<ruby>人<rt>ひと</rt></ruby>です。 (tốt — いい)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">いい</span><span class="q-opt" data-mark="②" data-correct="false">いいな</span><span class="q-opt" data-mark="③" data-correct="false">よい</span><span class="q-opt" data-mark="④" data-correct="false">よく</span></div>
+<div class="answer-detail"><strong>Đáp án: ① いい</strong> — Tính từ い (いい/よい). Khi tu sức N thường dùng いい giữ nguyên.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">4.</span>きのうのコンサートは____。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">よいでした</span><span class="q-opt" data-mark="②" data-correct="true">よかったです</span><span class="q-opt" data-mark="③" data-correct="false">いいでした</span><span class="q-opt" data-mark="④" data-correct="false">いかったです</span></div>
+<div class="answer-detail"><strong>Đáp án: ② よかったです</strong> — いい/よい quá khứ chia bất quy tắc: よかった (không phải いかった).</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">4</div><div class="gc-title">Tính từ + て nối câu<span class="gc-meaning">Nối 2 đặc tính: vừa A vừa B</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">い形容詞: たか<span class="arrow">い</span> <span class="arrow">→</span> <code>たかくて</code><br/>な形容詞: しずか<span class="arrow"></span> <span class="arrow">→</span> <code>しずかで</code><br/>名詞: 学生 <span class="arrow">→</span> <code>学生で</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Khi muốn liệt kê <strong>nhiều tính chất</strong> của cùng một chủ ngữ. Lưu ý: い形容詞 đổi <strong>い → くて</strong>, な形容詞 và danh từ thêm <strong>で</strong>.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①この<ruby>部屋<rt>へや</rt></ruby>は<span class="target">ひろくて</span>きれいです。</div><div class="ex-romaji">Kono heya wa hirokute kirei desu.</div><div class="ex-vn">Căn phòng này rộng và đẹp.</div></div>
+<div class="ex-box"><div class="ex-jp">②ミラーさんはハンサム<span class="target">で</span><ruby>親切<rt>しんせつ</rt></ruby>です。</div><div class="ex-romaji">Miraa-san wa hansamu de shinsetsu desu.</div><div class="ex-vn">Anh Miller đẹp trai và tốt bụng.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>富士山<rt>ふじさん</rt></ruby>は<span class="target">たかくて</span>きれいです。</div><div class="ex-romaji">Fujisan wa takakute kirei desu.</div><div class="ex-vn">Núi Phú Sĩ cao và đẹp.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập 〜くて／〜で</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>あの<ruby>店<rt>みせ</rt></ruby>はやす____おいしいです。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">で</span><span class="q-opt" data-mark="②" data-correct="true">くて</span><span class="q-opt" data-mark="③" data-correct="false">いて</span><span class="q-opt" data-mark="④" data-correct="false">な</span></div>
+<div class="answer-detail"><strong>Đáp án: ② くて</strong> — やすい (い形) → やすくて.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>この<ruby>町<rt>まち</rt></ruby>はしずか____きれいです。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">で</span><span class="q-opt" data-mark="②" data-correct="false">くて</span><span class="q-opt" data-mark="③" data-correct="false">な</span><span class="q-opt" data-mark="④" data-correct="false">の</span></div>
+<div class="answer-detail"><strong>Đáp án: ① で</strong> — しずか (な形) → しずかで.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>ミラーさんはアメリカ<ruby>人<rt>じん</rt></ruby>____エンジニアです。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">くて</span><span class="q-opt" data-mark="②" data-correct="true">で</span><span class="q-opt" data-mark="③" data-correct="false">な</span><span class="q-opt" data-mark="④" data-correct="false">いて</span></div>
+<div class="answer-detail"><strong>Đáp án: ② で</strong> — Danh từ (アメリカ人) → アメリカ人で.</div></div>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ================= LESSON 7 ================= -->
+<article class="document" id="lesson-7">
+<div class="lesson-banner"><span class="lesson-kicker">7課 — Bài 7 · 比較</span><h2>Câu so sánh</h2><div class="lesson-sub">4 mẫu: AはBより〜 / AよりBのほうが〜 / AとBとどちらが〜 / 〜の中で〜が一番〜</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">A は B より 〜です<span class="gc-meaning">A ~ hơn B (so sánh đơn giản)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>A</code> は <code>B</code> より <code>[Tính từ]</code> です。<br/>"A thì hơn B (về mặt nào đó)"</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>東京<rt>とうきょう</rt></ruby>は<ruby>大阪<rt>おおさか</rt></ruby><span class="target">より</span>おおきいです。</div><div class="ex-romaji">Toukyou wa Oosaka yori ookii desu.</div><div class="ex-vn">Tokyo to hơn Osaka.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>飛行機<rt>ひこうき</rt></ruby>は<ruby>新幹線<rt>しんかんせん</rt></ruby><span class="target">より</span>はやいです。</div><div class="ex-romaji">Hikouki wa shinkansen yori hayai desu.</div><div class="ex-vn">Máy bay nhanh hơn tàu Shinkansen.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">A より B のほうが 〜です<span class="gc-meaning">B ~ hơn A (nhấn mạnh B)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>A</code> より <code>B</code> のほうが <code>[Tính từ]</code> です。<br/>"So với A thì B (phía B) ~ hơn"</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Mẫu này tương tự "AはBより〜" nhưng <strong>nhấn mạnh B</strong>. Trật tự đảo: nói B trước, A sau (làm so sánh).</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①コーヒー<span class="target">より</span>こうちゃ<span class="target">のほうが</span>すきです。</div><div class="ex-romaji">Koohii yori koucha no hou ga suki desu.</div><div class="ex-vn">Tôi thích trà hơn (so với cà phê).</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>夏<rt>なつ</rt></ruby><span class="target">より</span><ruby>冬<rt>ふゆ</rt></ruby><span class="target">のほうが</span>すきです。</div><div class="ex-romaji">Natsu yori fuyu no hou ga suki desu.</div><div class="ex-vn">Tôi thích mùa đông hơn mùa hè.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">A と B とどちらが 〜ですか<span class="gc-meaning">Giữa A và B, cái nào ~ hơn? (câu hỏi)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">Câu hỏi: <code>A</code> と <code>B</code> とどちらが <code>[Tính từ]</code> ですか。<br/>Trả lời: <code>A/B</code> のほうが <code>[Tính từ]</code> です。</div></div>
+<div class="gc-section"><span class="gc-label lbl-note">Ghi chú</span><div class="note-box">Khi so sánh <strong>2 thứ</strong> trong câu hỏi, luôn dùng <strong>どちら</strong> (cái nào trong 2), <strong>không dùng どれ</strong> (どれ = chọn từ ≥3).</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①「<ruby>夏<rt>なつ</rt></ruby><span class="target">と</span><ruby>冬<rt>ふゆ</rt></ruby><span class="target">とどちらが</span>すきですか。」「<ruby>冬<rt>ふゆ</rt></ruby><span class="target">のほうが</span>すきです。」</div><div class="ex-romaji">Natsu to fuyu to dochira ga suki desu ka. — Fuyu no hou ga suki desu.</div><div class="ex-vn">"Bạn thích mùa hè hay mùa đông hơn?" — "Tôi thích mùa đông hơn."</div></div>
+<div class="ex-box"><div class="ex-jp">②「サッカー<span class="target">と</span>やきゅう<span class="target">とどちらが</span>おもしろいですか。」「サッカー<span class="target">のほうが</span>おもしろいです。」</div><div class="ex-romaji">Sakkaa to yakyuu to dochira ga omoshiroi desu ka. — Sakkaa no hou ga omoshiroi desu.</div><div class="ex-vn">"Bóng đá và bóng chày, môn nào thú vị hơn?" — "Bóng đá thú vị hơn."</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">4</div><div class="gc-title">〜の中で 〜が一番 〜です<span class="gc-meaning">Trong số ~, ~ là ~ nhất (so sánh nhất)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">[N (nhóm)] <code>の中で</code> [N cụ thể] <code>が一番</code> <code>[Tính từ]</code> <code>です</code>。<br/>"Trong số [nhóm], [N cụ thể] là [tính từ] nhất"</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①スポーツ<span class="target">の中で</span>サッカー<span class="target">が一番</span>すきです。</div><div class="ex-romaji">Supootsu no naka de sakkaa ga ichiban suki desu.</div><div class="ex-vn">Trong các môn thể thao, tôi thích bóng đá nhất.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>家族<rt>かぞく</rt></ruby><span class="target">の中で</span><ruby>父<rt>ちち</rt></ruby><span class="target">が一番</span>せがたかいです。</div><div class="ex-romaji">Kazoku no naka de chichi ga ichiban se ga takai desu.</div><div class="ex-vn">Trong gia đình, bố tôi cao nhất.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>日本<rt>にほん</rt></ruby><span class="target">で</span>どこ<span class="target">が一番</span>すきですか。</div><div class="ex-romaji">Nihon de doko ga ichiban suki desu ka.</div><div class="ex-vn">Ở Nhật, bạn thích nơi nào nhất?</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập So sánh</h4><span class="ex-subtitle">4 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>東京<rt>とうきょう</rt></ruby>は<ruby>大阪<rt>おおさか</rt></ruby>____おおきいです。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">より</span><span class="q-opt" data-mark="②" data-correct="false">のほうが</span><span class="q-opt" data-mark="③" data-correct="false">が</span><span class="q-opt" data-mark="④" data-correct="false">で</span></div>
+<div class="answer-detail"><strong>Đáp án: ① より</strong> — Mẫu AはBより〜.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>「コーヒーとこうちゃ____どちらがすきですか。」</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">が</span><span class="q-opt" data-mark="②" data-correct="true">と</span><span class="q-opt" data-mark="③" data-correct="false">に</span><span class="q-opt" data-mark="④" data-correct="false">より</span></div>
+<div class="answer-detail"><strong>Đáp án: ② と</strong> — Mẫu AとB<strong>と</strong>どちらが〜.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>スポーツの中でサッカーが____すきです。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">もっと</span><span class="q-opt" data-mark="②" data-correct="true">一番</span><span class="q-opt" data-mark="③" data-correct="false">より</span><span class="q-opt" data-mark="④" data-correct="false">のほうが</span></div>
+<div class="answer-detail"><strong>Đáp án: ② 一番</strong> — So sánh nhất "nhất" → 一番 (いちばん).</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">4.</span>「<ruby>夏<rt>なつ</rt></ruby>と<ruby>冬<rt>ふゆ</rt></ruby>とどちらがすきですか。」「<ruby>冬<rt>ふゆ</rt></ruby>____すきです。」</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">より</span><span class="q-opt" data-mark="②" data-correct="true">のほうが</span><span class="q-opt" data-mark="③" data-correct="false">が一番</span><span class="q-opt" data-mark="④" data-correct="false">は</span></div>
+<div class="answer-detail"><strong>Đáp án: ② のほうが</strong> — Trả lời so sánh 2 thứ → "Bのほうが〜".</div></div>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ================= LESSON 8 ================= -->
+<article class="document" id="lesson-8">
+<div class="lesson-banner"><span class="lesson-kicker">8課 — Bài 8 · 存在</span><h2>あります・います — Tồn tại &amp; Vị trí</h2><div class="lesson-sub">4 nội dung: NがNにあります / NがNにいます / NはNにあります／います / 位置 (trên/dưới/trong)</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">あります vs います — Khác biệt cơ bản<span class="gc-meaning">あります = vật vô tri / います = người &amp; động vật</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">So sánh あります vs います</span>
+<table class="conjug-table">
+<tr><th>Động từ</th><th>Dùng cho</th><th>Ví dụ</th><th>Nghĩa</th></tr>
+<tr><td><span class="highlight">あります</span></td><td>Vật vô tri (sách, máy, cây cỏ, sự kiện)</td><td>本があります</td><td>Có quyển sách</td></tr>
+<tr><td><span class="highlight">います</span></td><td>Người, động vật (sinh vật chuyển động)</td><td>犬がいます</td><td>Có con chó</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-note">Ngoại lệ &amp; lưu ý</span><div class="note-box">• Cây cỏ vẫn dùng <strong>あります</strong> (vì không tự di chuyển).<br/>• Côn trùng, cá vẫn dùng <strong>います</strong> (sinh vật).<br/>• Xe taxi đang chở khách: 「タクシーが<strong>います</strong>」 — coi như có người trên xe.</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">N1 が N2 に あります／います<span class="gc-meaning">Có N1 ở N2 (giới thiệu vật mới ở đâu đó)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>[Nơi chốn N2]</code> に <code>[Vật/người N1]</code> が <code>あります／います</code><br/>"Tại N2, có N1"</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>が<span class="target">あります</span>。</div><div class="ex-romaji">Tsukue no ue ni hon ga arimasu.</div><div class="ex-vn">Trên bàn có quyển sách.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>公園<rt>こうえん</rt></ruby>に<ruby>子<rt>こ</rt></ruby>どもが<span class="target">います</span>。</div><div class="ex-romaji">Kouen ni kodomo ga imasu.</div><div class="ex-vn">Trong công viên có trẻ con.</div></div>
+<div class="ex-box"><div class="ex-jp">③きょう<ruby>会議<rt>かいぎ</rt></ruby>が<span class="target">あります</span>。</div><div class="ex-romaji">Kyou kaigi ga arimasu.</div><div class="ex-vn">Hôm nay có cuộc họp.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">N1 は N2 に あります／います<span class="gc-meaning">N1 ở (vị trí) N2 (đã biết N1, hỏi về vị trí)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>[N1 đã biết]</code> は <code>[Nơi chốn N2]</code> に <code>あります／います</code><br/>"N1 thì ở N2"</div></div>
+<div class="gc-section"><span class="gc-label lbl-compare">Phân biệt với mẫu trên</span>
+<div class="compare-box">
+<div class="cmp-item"><span class="cmp-jp">N2 に N1 が あります</span>: <strong>Tại N2 có N1</strong> (giới thiệu thông tin mới về N1).<br/>例: ここに<strong>銀行</strong>があります。(Ở đây có ngân hàng)</div>
+<div class="cmp-item"><span class="cmp-jp">N1 は N2 に あります</span>: <strong>N1 thì ở N2</strong> (đã biết về N1, nói vị trí).<br/>例: <strong>銀行</strong>はあそこにあります。(Ngân hàng thì ở đằng kia)</div>
+</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①ミラーさん<span class="target">は</span><ruby>事務所<rt>じむしょ</rt></ruby>に<span class="target">います</span>。</div><div class="ex-romaji">Miraa-san wa jimusho ni imasu.</div><div class="ex-vn">Anh Miller (đang) ở văn phòng.</div></div>
+<div class="ex-box"><div class="ex-jp">②トイレ<span class="target">は</span>2<ruby>階<rt>かい</rt></ruby>に<span class="target">あります</span>。</div><div class="ex-romaji">Toire wa ni-kai ni arimasu.</div><div class="ex-vn">Nhà vệ sinh ở tầng 2.</div></div>
+<div class="ex-box"><div class="ex-jp">③お<ruby>父<rt>とう</rt></ruby>さん<span class="target">は</span>どこに<span class="target">いますか</span>。</div><div class="ex-romaji">O-tou-san wa doko ni imasu ka.</div><div class="ex-vn">Bố cậu ở đâu thế?</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">4</div><div class="gc-title">位置 (Vị trí) — 上・下・中・前・後ろ...<span class="gc-meaning">Trên / dưới / trong / trước / sau / cạnh / giữa</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">Bảng từ chỉ vị trí</span>
+<table class="conjug-table">
+<tr><th>Từ vị trí</th><th>Romaji</th><th>Nghĩa</th><th>Từ vị trí</th><th>Romaji</th><th>Nghĩa</th></tr>
+<tr><td><span class="highlight">上</span> (うえ)</td><td class="romaji">ue</td><td>Trên</td><td><span class="highlight">下</span> (した)</td><td class="romaji">shita</td><td>Dưới</td></tr>
+<tr><td><span class="highlight">中</span> (なか)</td><td class="romaji">naka</td><td>Trong</td><td><span class="highlight">外</span> (そと)</td><td class="romaji">soto</td><td>Ngoài</td></tr>
+<tr><td><span class="highlight">前</span> (まえ)</td><td class="romaji">mae</td><td>Trước</td><td><span class="highlight">後ろ</span> (うしろ)</td><td class="romaji">ushiro</td><td>Sau</td></tr>
+<tr><td><span class="highlight">右</span> (みぎ)</td><td class="romaji">migi</td><td>Phải</td><td><span class="highlight">左</span> (ひだり)</td><td class="romaji">hidari</td><td>Trái</td></tr>
+<tr><td><span class="highlight">横</span> (よこ)/となり</td><td class="romaji">yoko/tonari</td><td>Bên cạnh</td><td><span class="highlight">間</span> (あいだ)</td><td class="romaji">aida</td><td>Giữa</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-struct">Cách dùng</span><div class="struct-box"><code>N1</code> の <code>[Vị trí]</code> に <code>N2</code> が <code>あります／います</code><br/>"Ở [vị trí] của N1, có N2"</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>机<rt>つくえ</rt></ruby>の<span class="target">上</span>にペンがあります。</div><div class="ex-romaji">Tsukue no ue ni pen ga arimasu.</div><div class="ex-vn">Trên bàn có cây bút.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>銀行<rt>ぎんこう</rt></ruby>の<span class="target">となり</span>にコンビニがあります。</div><div class="ex-romaji">Ginkou no tonari ni konbini ga arimasu.</div><div class="ex-vn">Bên cạnh ngân hàng có cửa hàng tiện lợi.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>本<rt>ほん</rt></ruby>と<ruby>本<rt>ほん</rt></ruby>の<span class="target">間</span>にノートがあります。</div><div class="ex-romaji">Hon to hon no aida ni nooto ga arimasu.</div><div class="ex-vn">Giữa hai quyển sách có quyển vở.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập あります・います・vị trí</h4><span class="ex-subtitle">4 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>が____。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">あります</span><span class="q-opt" data-mark="②" data-correct="false">います</span><span class="q-opt" data-mark="③" data-correct="false">です</span><span class="q-opt" data-mark="④" data-correct="false">いきます</span></div>
+<div class="answer-detail"><strong>Đáp án: ① あります</strong> — Sách = vật vô tri → あります.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>教室<rt>きょうしつ</rt></ruby>に<ruby>学生<rt>がくせい</rt></ruby>が____。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">あります</span><span class="q-opt" data-mark="②" data-correct="true">います</span><span class="q-opt" data-mark="③" data-correct="false">です</span><span class="q-opt" data-mark="④" data-correct="false">なります</span></div>
+<div class="answer-detail"><strong>Đáp án: ② います</strong> — Học sinh = người → います.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>「ミラーさんはどこに____か。」「<ruby>事務所<rt>じむしょ</rt></ruby>です。」</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">あります</span><span class="q-opt" data-mark="②" data-correct="true">います</span><span class="q-opt" data-mark="③" data-correct="false">です</span><span class="q-opt" data-mark="④" data-correct="false">します</span></div>
+<div class="answer-detail"><strong>Đáp án: ② います</strong> — Hỏi vị trí của người → います.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">4.</span><ruby>銀行<rt>ぎんこう</rt></ruby>____となりにコンビニがあります。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">に</span><span class="q-opt" data-mark="②" data-correct="false">で</span><span class="q-opt" data-mark="③" data-correct="true">の</span><span class="q-opt" data-mark="④" data-correct="false">と</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ の</strong> — Cấu trúc: N の [vị trí] に〜. "Bên cạnh ngân hàng" → 銀行のとなりに.</div></div>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ================= LESSON 9 ================= -->
+<article class="document" id="lesson-9">
+<div class="lesson-banner"><span class="lesson-kicker">9課 — Bài 9 · 願望・目的</span><h2>Mong muốn &amp; Mục đích</h2><div class="lesson-sub">4 mẫu: V-たいです / Nがほしい / V-ますに行きます / Nに行きます (mục đích)</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">V-たいです<span class="gc-meaning">Tôi muốn ~ (làm gì đó)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">V-<span style="color:#c84367; font-weight:700">ます</span> <span class="arrow">→</span> bỏ ます, thêm <code>たいです</code><br/>Phủ định: <code>たくないです</code> · Quá khứ: <code>たかったです</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-table">Bảng chia (食べる)</span>
+<table class="conjug-table">
+<tr><th>Thì</th><th>Khẳng định</th><th>Phủ định</th></tr>
+<tr><td>Hiện tại</td><td><span class="highlight">食べたいです</span> (muốn ăn)</td><td>食べたくないです (không muốn ăn)</td></tr>
+<tr><td>Quá khứ</td><td>食べたかったです (đã muốn ăn)</td><td>食べたくなかったです</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-note">Lưu ý</span><div class="note-box">• <strong>Trợ từ を có thể đổi thành が</strong>: 水<strong>を</strong>飲みたい = 水<strong>が</strong>飲みたい (đều đúng).<br/>• Mẫu này chỉ dùng <strong>cho ngôi 1 (bản thân)</strong>. Hỏi ngôi 2 (bạn). KHÔNG dùng cho ngôi 3 (anh ấy/cô ấy) — phải dùng 〜たがっている.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>日本<rt>にほん</rt></ruby>へ<span class="target">行きたいです</span>。</div><div class="ex-romaji">Nihon e ikitai desu.</div><div class="ex-vn">Tôi muốn đi Nhật.</div></div>
+<div class="ex-box"><div class="ex-jp">②きょうは<ruby>勉強<rt>べんきょう</rt></ruby><span class="target">したくない</span>です。</div><div class="ex-romaji">Kyou wa benkyou shitakunai desu.</div><div class="ex-vn">Hôm nay tôi không muốn học.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>子<rt>こ</rt></ruby>どもの<ruby>時<rt>とき</rt></ruby>、パイロットに<span class="target">なりたかったです</span>。</div><div class="ex-romaji">Kodomo no toki, pairotto ni naritakatta desu.</div><div class="ex-vn">Hồi nhỏ tôi đã muốn trở thành phi công.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">N が ほしいです<span class="gc-meaning">Tôi muốn (có) ~ (một vật/người gì đó)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>N</code> <code>が</code> <code>ほしいです</code> (muốn có N)<br/>Phủ định: <code>ほしくないです</code> · Quá khứ: <code>ほしかったです</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box"><strong>ほしい</strong> là tính từ い (chia như tính từ い). Chỉ <strong>danh từ</strong> (vật, không phải động từ). Cũng <strong>chỉ dùng cho ngôi 1/2</strong>.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>新<rt>あたら</rt></ruby>しいパソコン<span class="target">が</span><span class="target">ほしいです</span>。</div><div class="ex-romaji">Atarashii pasokon ga hoshii desu.</div><div class="ex-vn">Tôi muốn có máy tính mới.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>今<rt>いま</rt></ruby>、<ruby>何<rt>なに</rt></ruby><span class="target">が</span><span class="target">ほしいですか</span>。</div><div class="ex-romaji">Ima, nani ga hoshii desu ka.</div><div class="ex-vn">Bây giờ bạn muốn gì?</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>子<rt>こ</rt></ruby>どもの<ruby>時<rt>とき</rt></ruby>、<ruby>犬<rt>いぬ</rt></ruby>が<span class="target">ほしかったです</span>。</div><div class="ex-romaji">Kodomo no toki, inu ga hoshikatta desu.</div><div class="ex-vn">Hồi nhỏ tôi đã muốn có một con chó.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">V-ます に 行きます／来ます／帰ります<span class="gc-meaning">Đi/đến/về để làm ~ (mục đích)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">[Nơi] へ V-<span style="color:#c84367; font-weight:700">ます</span> (bỏ ます) ＋ <code>に</code> ＋ <code>行きます／来ます／帰ります</code><br/>[Nơi] へ <code>N</code> ＋ <code>に</code> ＋ <code>行きます</code> (N chỉ hành động: 買い物・食事・勉強...)</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Diễn tả <strong>mục đích di chuyển</strong>. Trước に là <strong>thể ます bỏ ます</strong> hoặc <strong>danh từ hành động</strong>.<br/>• <ruby>図書館<rt>としょかん</rt></ruby>へ<strong>本を借りに</strong>行きます。(借ります → 借り)<br/>• デパートへ<strong>買い物に</strong>行きます。(買い物 là danh từ "việc mua sắm")</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>図書館<rt>としょかん</rt></ruby>へ<ruby>本<rt>ほん</rt></ruby>を<span class="target">借りに行きます</span>。</div><div class="ex-romaji">Toshokan e hon o kari ni ikimasu.</div><div class="ex-vn">Tôi đi thư viện để mượn sách.</div></div>
+<div class="ex-box"><div class="ex-jp">②デパートへ<span class="target">買い物に行きます</span>。</div><div class="ex-romaji">Depaato e kaimono ni ikimasu.</div><div class="ex-vn">Tôi đi trung tâm thương mại để mua sắm.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>日本<rt>にほん</rt></ruby>へ<span class="target">日本語を勉強しに来ました</span>。</div><div class="ex-romaji">Nihon e nihongo o benkyou shi ni kimashita.</div><div class="ex-vn">Tôi đến Nhật để học tiếng Nhật.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập 願望・目的</h4><span class="ex-subtitle">4 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>水<rt>みず</rt></ruby>が____。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">飲みます</span><span class="q-opt" data-mark="②" data-correct="true">飲みたいです</span><span class="q-opt" data-mark="③" data-correct="false">飲みません</span><span class="q-opt" data-mark="④" data-correct="false">飲みでしょう</span></div>
+<div class="answer-detail"><strong>Đáp án: ② 飲みたいです</strong> — Mong muốn "muốn uống" → V-たいです.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>新<rt>あたら</rt></ruby>しいかばん____ほしいです。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">を</span><span class="q-opt" data-mark="②" data-correct="true">が</span><span class="q-opt" data-mark="③" data-correct="false">は</span><span class="q-opt" data-mark="④" data-correct="false">に</span></div>
+<div class="answer-detail"><strong>Đáp án: ② が</strong> — ほしい đi với trợ từ が, không phải を.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>デパートへ____行きます。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">買い物を</span><span class="q-opt" data-mark="②" data-correct="true">買い物に</span><span class="q-opt" data-mark="③" data-correct="false">買い物で</span><span class="q-opt" data-mark="④" data-correct="false">買い物が</span></div>
+<div class="answer-detail"><strong>Đáp án: ② 買い物に</strong> — Mục đích di chuyển → N + に + 行きます.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">4.</span><ruby>本<rt>ほん</rt></ruby>を____に<ruby>図書館<rt>としょかん</rt></ruby>へ行きます。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">借ります</span><span class="q-opt" data-mark="②" data-correct="true">借り</span><span class="q-opt" data-mark="③" data-correct="false">借りた</span><span class="q-opt" data-mark="④" data-correct="false">借りる</span></div>
+<div class="answer-detail"><strong>Đáp án: ② 借り</strong> — Trước に dùng dạng V-ます bỏ ます (借ります → 借り).</div></div>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ================= LESSON 10 ================= -->
+<article class="document" id="lesson-10">
+<div class="lesson-banner"><span class="lesson-kicker">10課 — Bài 10 · て形</span><h2>Thể て và các ứng dụng</h2><div class="lesson-sub">4 mẫu: Cách chia て形 / V-てください / V-ています / V-てもいい・てはいけません</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">Cách chia thể て (Quy tắc Te-form)<span class="gc-meaning">Bảng quy tắc đổi V-ます → V-て</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">Bảng quy tắc đổi て形 (Nhóm I)</span>
+<table class="conjug-table">
+<tr><th>Đuôi ます形</th><th>Quy tắc</th><th>Ví dụ ます形</th><th>て形</th></tr>
+<tr class="group-g1"><td>〜<strong>き</strong>ます</td><td>き → いて</td><td>かきます (viết)</td><td><span class="highlight">かいて</span></td></tr>
+<tr class="group-g1"><td>〜<strong>ぎ</strong>ます</td><td>ぎ → いで</td><td>およぎます (bơi)</td><td><span class="highlight">およいで</span></td></tr>
+<tr class="group-g1"><td>〜<strong>し</strong>ます</td><td>し → して</td><td>はなします (nói)</td><td><span class="highlight">はなして</span></td></tr>
+<tr class="group-g1"><td>〜<strong>ち・い・り</strong>ます</td><td>→ って</td><td>かいます (mua)<br/>まちます (đợi)<br/>かえります (về)</td><td><span class="highlight">かって</span><br/><span class="highlight">まって</span><br/><span class="highlight">かえって</span></td></tr>
+<tr class="group-g1"><td>〜<strong>に・び・み</strong>ます</td><td>→ んで</td><td>のみます (uống)<br/>あそびます (chơi)<br/>しにます (chết)</td><td><span class="highlight">のんで</span><br/><span class="highlight">あそんで</span><br/><span class="highlight">しんで</span></td></tr>
+<tr class="group-g2"><td>Nhóm II (G2)</td><td>Bỏ ます, thêm て</td><td>たべます (ăn)<br/>みます (xem)</td><td><span class="highlight">たべて</span><br/><span class="highlight">みて</span></td></tr>
+<tr class="group-g3"><td>Nhóm III (G3)</td><td>Đặc biệt</td><td>します (làm)<br/>きます (đến)</td><td><span class="highlight">して</span><br/><span class="highlight">きて</span></td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-note">Ngoại lệ quan trọng</span><div class="note-box"><strong>いきます (đi) → いって</strong> (KHÔNG phải いいて). Phải nhớ đặc biệt!</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">V-てください<span class="gc-meaning">Xin hãy ~ (yêu cầu lịch sự)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">V-<code>て</code> + <code>ください</code><br/>"Xin hãy làm ~"</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①ここに<ruby>名前<rt>なまえ</rt></ruby>を<span class="target">書いてください</span>。</div><div class="ex-romaji">Koko ni namae o kaite kudasai.</div><div class="ex-vn">Xin hãy viết tên vào đây.</div></div>
+<div class="ex-box"><div class="ex-jp">②もういちど<span class="target">言ってください</span>。</div><div class="ex-romaji">Mou ichido itte kudasai.</div><div class="ex-vn">Xin nói lại một lần nữa.</div></div>
+<div class="ex-box"><div class="ex-jp">③ちょっと<span class="target">待ってください</span>。</div><div class="ex-romaji">Chotto matte kudasai.</div><div class="ex-vn">Xin đợi một chút.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">V-ています<span class="gc-meaning">Đang ~ / Trạng thái duy trì / Thói quen / Nghề nghiệp</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-explain">3 cách dùng</span><div class="explain-box"><strong>(1) Đang làm</strong> (động tác tiếp diễn): <ruby>今<rt>いま</rt></ruby>ごはんを食べ<strong>ています</strong>。<br/><strong>(2) Trạng thái sau khi xảy ra</strong>: 結婚し<strong>ています</strong> (đã/đang kết hôn), 知っ<strong>ています</strong> (đã/đang biết).<br/><strong>(3) Thói quen, nghề nghiệp</strong>: IMC で働い<strong>ています</strong>。(Tôi đang làm việc tại IMC.)</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>今<rt>いま</rt></ruby><ruby>新聞<rt>しんぶん</rt></ruby>を<span class="target">読んでいます</span>。</div><div class="ex-romaji">Ima shinbun o yonde imasu.</div><div class="ex-vn">Bây giờ tôi đang đọc báo.</div></div>
+<div class="ex-box"><div class="ex-jp">②ミラーさんは<ruby>結婚<rt>けっこん</rt></ruby>して<span class="target">います</span>。</div><div class="ex-romaji">Miraa-san wa kekkon shite imasu.</div><div class="ex-vn">Anh Miller đã/đang kết hôn (đã lập gia đình).</div></div>
+<div class="ex-box"><div class="ex-jp">③わたしはIMCで<span class="target">働いています</span>。</div><div class="ex-romaji">Watashi wa IMC de hataraite imasu.</div><div class="ex-vn">Tôi làm việc tại IMC (nghề nghiệp).</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">4</div><div class="gc-title">V-てもいいです / V-てはいけません<span class="gc-meaning">Cho phép / Cấm đoán</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">Cho phép: V-<code>て</code> + <code>もいいです</code> = "Có thể ~ được"<br/>Cấm đoán: V-<code>て</code> + <code>はいけません</code> = "Không được ~"</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①ここで<ruby>写真<rt>しゃしん</rt></ruby>を<span class="target">撮ってもいいですか</span>。</div><div class="ex-romaji">Koko de shashin o totte mo ii desu ka.</div><div class="ex-vn">Tôi có thể chụp ảnh ở đây không?</div></div>
+<div class="ex-box"><div class="ex-jp">②ここで<ruby>写真<rt>しゃしん</rt></ruby>を<span class="target">撮ってはいけません</span>。</div><div class="ex-romaji">Koko de shashin o totte wa ikemasen.</div><div class="ex-vn">Không được chụp ảnh ở đây.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>授業中<rt>じゅぎょうちゅう</rt></ruby>、<ruby>電話<rt>でんわ</rt></ruby>を<span class="target">使ってはいけません</span>。</div><div class="ex-romaji">Jugyou-chuu, denwa o tsukatte wa ikemasen.</div><div class="ex-vn">Trong giờ học, không được dùng điện thoại.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập て形</h4><span class="ex-subtitle">5 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>かきます → ____</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">かして</span><span class="q-opt" data-mark="②" data-correct="true">かいて</span><span class="q-opt" data-mark="③" data-correct="false">かって</span><span class="q-opt" data-mark="④" data-correct="false">かきて</span></div>
+<div class="answer-detail"><strong>Đáp án: ② かいて</strong> — き → いて (G1).</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>のみます → ____</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">のして</span><span class="q-opt" data-mark="②" data-correct="false">のって</span><span class="q-opt" data-mark="③" data-correct="true">のんで</span><span class="q-opt" data-mark="④" data-correct="false">のいて</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ のんで</strong> — み → んで (G1).</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>ちょっと<ruby>待<rt>ま</rt></ruby>って____。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">います</span><span class="q-opt" data-mark="②" data-correct="false">ました</span><span class="q-opt" data-mark="③" data-correct="true">ください</span><span class="q-opt" data-mark="④" data-correct="false">あります</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ ください</strong> — Yêu cầu "xin đợi" → てください.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">4.</span><ruby>今<rt>いま</rt></ruby><ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んで____。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">ます</span><span class="q-opt" data-mark="②" data-correct="true">います</span><span class="q-opt" data-mark="③" data-correct="false">ください</span><span class="q-opt" data-mark="④" data-correct="false">ありません</span></div>
+<div class="answer-detail"><strong>Đáp án: ② います</strong> — "Đang đọc" → ています.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">5.</span>ここでタバコを____。 (cấm)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">吸ってください</span><span class="q-opt" data-mark="②" data-correct="false">吸ってもいいです</span><span class="q-opt" data-mark="③" data-correct="true">吸ってはいけません</span><span class="q-opt" data-mark="④" data-correct="false">吸っています</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ 吸ってはいけません</strong> — Cấm "không được hút" → てはいけません.</div></div>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ================= LESSON 11 ================= -->
+<article class="document" id="lesson-11">
+<div class="lesson-banner"><span class="lesson-kicker">11課 — Bài 11 · ない形・た形</span><h2>Thể ない và thể た</h2><div class="lesson-sub">4 mẫu: Cách chia ない形 / V-ないでください・なければなりません / V-たことがあります / V-たり〜たりします</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">Cách chia ない形 (Nai-form)<span class="gc-meaning">Bảng quy tắc đổi V-ます → V-ない</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">Bảng quy tắc đổi ない形</span>
+<table class="conjug-table">
+<tr><th>Nhóm</th><th>Quy tắc</th><th>Ví dụ ます形</th><th>ない形</th></tr>
+<tr class="group-g1"><td><strong>G1</strong></td><td>Đổi đuôi -i thành -a + ない<br/>(きます → かない・のみます → のまない)</td><td>かきます<br/>のみます<br/>かいます</td><td><span class="highlight">かかない</span><br/><span class="highlight">のまない</span><br/><span class="highlight">かわない</span> ⚠</td></tr>
+<tr class="group-g2"><td><strong>G2</strong></td><td>Bỏ ます, thêm ない</td><td>たべます<br/>みます</td><td><span class="highlight">たべない</span><br/><span class="highlight">みない</span></td></tr>
+<tr class="group-g3"><td><strong>G3</strong></td><td>Đặc biệt</td><td>します<br/>きます</td><td><span class="highlight">しない</span><br/><span class="highlight">こない</span></td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-note">Ngoại lệ ⚠</span><div class="note-box">• G1 đuôi <strong>〜います → 〜わない</strong> (KHÔNG phải あない). Vd: かいます → かわない.<br/>• <strong>あります → ない</strong> (không phải あらない). Vd: 時間がありません = 時間がない.</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">V-ないでください / V-なければなりません<span class="gc-meaning">Xin đừng ~ / Phải ~ (bắt buộc)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">Đừng làm: V-<code>ない</code> + <code>でください</code><br/>Phải làm: V-<code>ない</code> bỏ い, thêm <code>ければなりません</code><br/>Không cần phải làm: V-<code>ない</code> bỏ い, thêm <code>くてもいいです</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①ここで<ruby>写真<rt>しゃしん</rt></ruby>を<span class="target">撮らないでください</span>。</div><div class="ex-romaji">Koko de shashin o toranai de kudasai.</div><div class="ex-vn">Xin đừng chụp ảnh ở đây.</div></div>
+<div class="ex-box"><div class="ex-jp">②あした<ruby>早<rt>はや</rt></ruby>く<span class="target">起きなければなりません</span>。</div><div class="ex-romaji">Ashita hayaku okinakereba narimasen.</div><div class="ex-vn">Ngày mai tôi phải dậy sớm.</div></div>
+<div class="ex-box"><div class="ex-jp">③あしたは<span class="target">来なくてもいいです</span>。</div><div class="ex-romaji">Ashita wa konakute mo ii desu.</div><div class="ex-vn">Ngày mai bạn không cần đến cũng được.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">V-た ことがあります<span class="gc-meaning">Đã từng ~ (kinh nghiệm)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">V-<code>た形</code> + <code>ことがあります</code> = "Đã từng làm ~"<br/>Phủ định: <code>ことがありません</code> = "Chưa từng ~"</div></div>
+<div class="gc-section"><span class="gc-label lbl-note">Cách chia た形</span><div class="note-box">Chia y hệt て形 nhưng đổi <strong>て→た, で→だ</strong>.<br/>Vd: 食べて → 食べた · 飲んで → 飲んだ · 行って → 行った.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>日本<rt>にほん</rt></ruby>へ<span class="target">行ったことがあります</span>。</div><div class="ex-romaji">Nihon e itta koto ga arimasu.</div><div class="ex-vn">Tôi đã từng đi Nhật.</div></div>
+<div class="ex-box"><div class="ex-jp">②すしを<span class="target">食べたことがあります</span>か。</div><div class="ex-romaji">Sushi o tabeta koto ga arimasu ka.</div><div class="ex-vn">Bạn đã từng ăn sushi chưa?</div></div>
+<div class="ex-box"><div class="ex-jp">③わたしは<ruby>馬<rt>うま</rt></ruby>に<span class="target">乗ったことがありません</span>。</div><div class="ex-romaji">Watashi wa uma ni notta koto ga arimasen.</div><div class="ex-vn">Tôi chưa từng cưỡi ngựa.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">4</div><div class="gc-title">V-たり、V-たり します<span class="gc-meaning">Lúc thì ~, lúc thì ~ (liệt kê đại diện hành động)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">V1-<code>た</code> + <code>り</code> + V2-<code>た</code> + <code>り</code> + <code>します</code><br/>"Lúc thì làm V1, lúc thì làm V2" (đại diện, còn nữa)</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Liệt kê 2 hành động <strong>đại diện</strong> (còn nhiều hành động khác), không cần theo thứ tự. Sắc thái: kể về <strong>nhiều việc</strong> đã/đang/sẽ làm.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>日曜日<rt>にちようび</rt></ruby>は<ruby>本<rt>ほん</rt></ruby>を<span class="target">読んだり</span>、<ruby>映画<rt>えいが</rt></ruby>を<span class="target">見たりします</span>。</div><div class="ex-romaji">Nichiyoubi wa hon o yondari, eiga o mitari shimasu.</div><div class="ex-vn">Chủ nhật tôi thì đọc sách, thì xem phim (và còn làm nhiều việc khác).</div></div>
+<div class="ex-box"><div class="ex-jp">②きのうは<ruby>友<rt>とも</rt></ruby>だちと<span class="target">話したり</span>、<ruby>歌<rt>うた</rt></ruby>を<span class="target">歌ったりしました</span>。</div><div class="ex-romaji">Kinou wa tomodachi to hanashitari, uta o utattari shimashita.</div><div class="ex-vn">Hôm qua tôi đã nói chuyện với bạn, hát hò v.v.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ない形・た形</h4><span class="ex-subtitle">4 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>かいます → ____ (ない形)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">かあない</span><span class="q-opt" data-mark="②" data-correct="false">かいない</span><span class="q-opt" data-mark="③" data-correct="true">かわない</span><span class="q-opt" data-mark="④" data-correct="false">かない</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ かわない</strong> — Đuôi 〜います → わない (không phải あない).</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>ここでタバコを____。 (xin đừng)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">吸ってください</span><span class="q-opt" data-mark="②" data-correct="true">吸わないでください</span><span class="q-opt" data-mark="③" data-correct="false">吸いません</span><span class="q-opt" data-mark="④" data-correct="false">吸ってはいけません</span></div>
+<div class="answer-detail"><strong>Đáp án: ② 吸わないでください</strong> — "Xin đừng hút" → ないでください.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>日本<rt>にほん</rt></ruby>へ____ことがあります。 (đã từng đi)</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">行く</span><span class="q-opt" data-mark="②" data-correct="false">行きます</span><span class="q-opt" data-mark="③" data-correct="true">行った</span><span class="q-opt" data-mark="④" data-correct="false">行って</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ 行った</strong> — Trước ことがあります dùng V-た形.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">4.</span><ruby>休<rt>やす</rt></ruby>みの<ruby>日<rt>ひ</rt></ruby>はテレビを見____、<ruby>音楽<rt>おんがく</rt></ruby>を聞いたりします。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">て</span><span class="q-opt" data-mark="②" data-correct="false">た</span><span class="q-opt" data-mark="③" data-correct="true">たり</span><span class="q-opt" data-mark="④" data-correct="false">ながら</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ たり</strong> — Mẫu V-たり、V-たり します.</div></div>
+</div></div>
+</div></div>
+
+</div></article>
+
+<!-- ================= LESSON 12 ================= -->
+<article class="document" id="lesson-12">
+<div class="lesson-banner"><span class="lesson-kicker">12課 — Bài 12 · 辞書形・普通形</span><h2>Thể từ điển &amp; thể thông thường</h2><div class="lesson-sub">4 mẫu: V-ることができます / 趣味は Vることです / V-とき・V-たとき / と思います・と言います・修飾</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">V-辞書形 ことができます<span class="gc-meaning">Có thể ~ / Biết làm ~ (khả năng)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">V-<code>辞書形</code> + <code>ことができます</code> = "Có thể làm ~"<br/><code>N</code> + <code>ができます</code> = "Biết / có thể làm N (kỹ năng)"</div></div>
+<div class="gc-section"><span class="gc-label lbl-note">Thể từ điển từ ます形</span><div class="note-box">G1: đổi đuôi -i thành -u (かきます → <strong>かく</strong>, のみます → <strong>のむ</strong>).<br/>G2: bỏ ます, thêm る (たべます → <strong>たべる</strong>).<br/>G3: します → <strong>する</strong>, きます → <strong>くる</strong>.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①わたしは<ruby>日本語<rt>にほんご</rt></ruby>を<span class="target">話すことができます</span>。</div><div class="ex-romaji">Watashi wa nihongo o hanasu koto ga dekimasu.</div><div class="ex-vn">Tôi có thể nói tiếng Nhật.</div></div>
+<div class="ex-box"><div class="ex-jp">②カードで<span class="target">払うことができます</span>か。</div><div class="ex-romaji">Kaado de harau koto ga dekimasu ka.</div><div class="ex-vn">Có thể thanh toán bằng thẻ không?</div></div>
+<div class="ex-box"><div class="ex-jp">③ミラーさんは<ruby>料理<rt>りょうり</rt></ruby>が<span class="target">できます</span>。</div><div class="ex-romaji">Miraa-san wa ryouri ga dekimasu.</div><div class="ex-vn">Anh Miller biết nấu ăn.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">わたしの趣味は V-辞書形 ことです<span class="gc-meaning">Sở thích của tôi là việc ~</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">わたしの<ruby>趣味<rt>しゅみ</rt></ruby>は <code>V-辞書形 こと</code> です。<br/>"こと" biến động từ thành cụm danh từ.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①わたしの<ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>映画<rt>えいが</rt></ruby>を<span class="target">見ることです</span>。</div><div class="ex-romaji">Watashi no shumi wa eiga o miru koto desu.</div><div class="ex-vn">Sở thích của tôi là xem phim.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>趣味<rt>しゅみ</rt></ruby>は<ruby>本<rt>ほん</rt></ruby>を<span class="target">読むことです</span>。</div><div class="ex-romaji">Shumi wa hon o yomu koto desu.</div><div class="ex-vn">Sở thích là đọc sách.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">V-辞書形／V-た とき<span class="gc-meaning">Khi ~ (chỉ thời điểm)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>V-辞書形 とき</code> = "Khi sắp ~ / Khi đang ~"<br/><code>V-た形 とき</code> = "Khi đã ~ xong"<br/><code>N + の + とき</code>、<code>イ形い + とき</code>、<code>ナ形な + とき</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Quan trọng: <strong>thì của V trước とき = thì của hành động</strong>, không phải thì của câu.<br/>• <ruby>食事<rt>しょくじ</rt></ruby>を<strong>する</strong>とき、「いただきます」と言います。(Trước khi ăn — chưa ăn)<br/>• <ruby>食事<rt>しょくじ</rt></ruby>を<strong>した</strong>とき、「ごちそうさま」と言います。(Sau khi ăn xong)</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>道<rt>みち</rt></ruby>を<span class="target">渡るとき</span>、<ruby>気<rt>き</rt></ruby>をつけてください。</div><div class="ex-romaji">Michi o wataru toki, ki o tsukete kudasai.</div><div class="ex-vn">Khi băng qua đường, hãy cẩn thận.</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>図書館<rt>としょかん</rt></ruby>へ<span class="target">行ったとき</span>、ミラーさんに<ruby>会<rt>あ</rt></ruby>いました。</div><div class="ex-romaji">Toshokan e itta toki, Miraa-san ni aimashita.</div><div class="ex-vn">Khi đã đi đến thư viện, tôi gặp anh Miller.</div></div>
+<div class="ex-box"><div class="ex-jp">③<span class="target">子どものとき</span>、よく<ruby>泣<rt>な</rt></ruby>きました。</div><div class="ex-romaji">Kodomo no toki, yoku nakimashita.</div><div class="ex-vn">Hồi nhỏ, tôi hay khóc.</div></div>
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">4</div><div class="gc-title">普通形 + と思います／と言いました<span class="gc-meaning">Nghĩ rằng ~ / Đã nói rằng ~ (thể thông thường)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-table">Bảng 普通形 (Thể thông thường — gốc dictionary)</span>
+<table class="conjug-table">
+<tr><th>Loại từ</th><th>Hiện tại KĐ</th><th>Hiện tại PĐ</th><th>Quá khứ KĐ</th><th>Quá khứ PĐ</th></tr>
+<tr><td>動詞</td><td>食べる</td><td>食べない</td><td>食べた</td><td>食べなかった</td></tr>
+<tr><td>イ形容詞</td><td>たかい</td><td>たかくない</td><td>たかかった</td><td>たかくなかった</td></tr>
+<tr><td>ナ形容詞</td><td>しずか<strong>だ</strong></td><td>しずかじゃない</td><td>しずか<strong>だった</strong></td><td>しずかじゃなかった</td></tr>
+<tr><td>名詞</td><td>学生<strong>だ</strong></td><td>学生じゃない</td><td>学生<strong>だった</strong></td><td>学生じゃなかった</td></tr>
+</table></div>
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>普通形</code> + <code>と思います</code> = "Tôi nghĩ rằng ~"<br/><code>普通形</code> + <code>と言いました</code> = "Đã nói rằng ~"</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①あした<ruby>雨<rt>あめ</rt></ruby>が<span class="target">降ると思います</span>。</div><div class="ex-romaji">Ashita ame ga furu to omoimasu.</div><div class="ex-vn">Tôi nghĩ ngày mai trời sẽ mưa.</div></div>
+<div class="ex-box"><div class="ex-jp">②ミラーさんは「あした<ruby>来<rt>き</rt></ruby>ない」<span class="target">と言いました</span>。</div><div class="ex-romaji">Miraa-san wa "ashita konai" to iimashita.</div><div class="ex-vn">Anh Miller nói "Ngày mai không đến".</div></div>
+<div class="ex-box"><div class="ex-jp">③この<ruby>料理<rt>りょうり</rt></ruby>は<span class="target">おいしいと思います</span>。</div><div class="ex-romaji">Kono ryouri wa oishii to omoimasu.</div><div class="ex-vn">Tôi nghĩ món này ngon.</div></div>
+</div></div>
+<div class="exercise-block">
+<div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập 辞書形・普通形</h4><span class="ex-subtitle">4 câu</span></div></div>
+<div class="exercise-body">
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>わたしは<ruby>料理<rt>りょうり</rt></ruby>を____ことができます。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">します</span><span class="q-opt" data-mark="②" data-correct="false">して</span><span class="q-opt" data-mark="③" data-correct="true">する</span><span class="q-opt" data-mark="④" data-correct="false">した</span></div>
+<div class="answer-detail"><strong>Đáp án: ③ する</strong> — Trước ことができます dùng V-辞書形.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>趣味は<ruby>歌<rt>うた</rt></ruby>を____ことです。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">歌います</span><span class="q-opt" data-mark="②" data-correct="true">歌う</span><span class="q-opt" data-mark="③" data-correct="false">歌った</span><span class="q-opt" data-mark="④" data-correct="false">歌って</span></div>
+<div class="answer-detail"><strong>Đáp án: ② 歌う</strong> — Trước こと dùng V-辞書形.</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>映画<rt>えいが</rt></ruby>を____とき、ポップコーンを<ruby>食<rt>た</rt></ruby>べます。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">見る</span><span class="q-opt" data-mark="②" data-correct="false">見た</span><span class="q-opt" data-mark="③" data-correct="false">見ます</span><span class="q-opt" data-mark="④" data-correct="false">見て</span></div>
+<div class="answer-detail"><strong>Đáp án: ① 見る</strong> — "Khi đang xem phim" → V-辞書形 + とき (chưa xem xong).</div></div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">4.</span>あしたは<ruby>雨<rt>あめ</rt></ruby>____と思います。</div>
+<div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">です</span><span class="q-opt" data-mark="②" data-correct="true">だ</span><span class="q-opt" data-mark="③" data-correct="false">なら</span><span class="q-opt" data-mark="④" data-correct="false">の</span></div>
+<div class="answer-detail"><strong>Đáp án: ② だ</strong> — Trước と思います dùng 普通形. Danh từ + だ.</div></div>
+</div></div>
+</div></div>
+
+</div></article>
+
+<div class="footer-card">
+  <strong>Trí Lữ Nihongo</strong> · Biên soạn cho mục đích học tập cá nhân<br/>
+  Nguồn ngữ pháp: みんなの日本語 初級I (Bài 1–25) — Tất cả ví dụ &amp; bài tập được biên soạn mới phù hợp với người Việt mới bắt đầu.
+</div>
+
+</div>
+<script>
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('vn-toggle')) {
+    const sibling = e.target.parentElement.nextElementSibling;
+    if (sibling && (sibling.classList.contains('ex-vn') || sibling.classList.contains('q-vn'))) {
+      sibling.classList.toggle('collapsed');
+      const isHidden = sibling.classList.contains('collapsed');
+      e.target.textContent = isHidden ? 'Xem dịch' : 'Ẩn dịch';
+      e.target.classList.toggle('shown', !isHidden);
+    }
+    return;
+  }
+  if (e.target.classList.contains('q-opt')) {
+    const opt = e.target;
+    const parent = opt.parentElement;
+    const isCorrect = opt.dataset.correct === 'true';
+    parent.querySelectorAll('.q-opt').forEach(o => { o.classList.remove('correct','wrong'); });
+    if (isCorrect) { opt.classList.add('correct'); }
+    else { opt.classList.add('wrong'); const c = parent.querySelector('.q-opt[data-correct="true"]'); if (c) c.classList.add('correct'); }
+    const q = opt.closest('.ex-q');
+    const d = q && q.querySelector('.answer-detail');
+    if (d) d.classList.add('shown');
+    return;
+  }
+});
+</script>
+
+<!-- TRILU_PAYWALL -->
+<script src="/tai-lieu/_paywall/paywall.js" data-doc-id="minna-n5-bunpou"></script>
+</body></html>
