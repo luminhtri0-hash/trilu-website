@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8"><title>Văn hoá — Trí Lữ Nihongo</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Sách về văn hoá, lễ hội, cuộc sống Nhật. Học từng bước, không nhồi nhét — đúng phong cách Trí Lữ."><meta name="theme-color" content="#1B3A6B">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Trí Lữ"><meta name="application-name" content="Trí Lữ Nihongo">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FBF6E8;--ink:#1B3A6B;--gold:#B89568;--sumi:#8B3A2E;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter Tight',-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--jp:'Noto Serif JP',serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+.wrap{max-width:1100px;margin:0 auto;padding:max(20px,env(safe-area-inset-top)) 24px max(40px,env(safe-area-inset-bottom))}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:8px 0 20px;border-bottom:1px solid rgba(184,149,104,0.25);margin-bottom:36px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;flex:1;min-width:0}
+.brand img{width:44px;height:44px;border-radius:11px;flex-shrink:0}
+.brand-name{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1}
+.brand-jp{font-family:var(--jp);font-size:11px;color:var(--gold);letter-spacing:0.22em;margin-top:4px}
+.back{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.2);border-radius:999px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.back:hover{background:var(--ink);color:var(--cream)}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.eyebrow .jp{font-family:var(--jp);color:var(--gold);letter-spacing:0.3em;margin-left:10px;font-weight:400;text-transform:none}
+h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6.5vw,68px);line-height:1.05;letter-spacing:-0.01em;margin-bottom:20px;font-weight:400}
+.lede{font-size:17px;line-height:1.65;color:rgba(27,58,107,0.78);margin-bottom:48px;max-width:680px}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-bottom:36px}
+.card{display:grid;grid-template-columns:64px 1fr 32px;gap:16px;align-items:center;padding:20px;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:18px;text-decoration:none;color:inherit;transition:all .25s;box-shadow:0 4px 12px rgba(27,58,107,0.04)}
+.card:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 10px 24px rgba(27,58,107,0.10)}
+.card-jp{font-family:var(--jp);font-size:42px;color:var(--gold);text-align:center;line-height:1;font-weight:700}
+.card-body{min-width:0}
+.card-jp-line{font-family:var(--jp);font-size:11px;color:var(--gold);letter-spacing:0.22em;margin-bottom:4px;font-weight:400}
+.card-title{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.2;margin-bottom:4px}
+.card-desc{font-size:13px;color:rgba(27,58,107,0.7);line-height:1.4}
+.card-arrow{font-family:var(--mono);font-size:18px;color:var(--gold);text-align:right}
+.note{font-size:14px;color:rgba(27,58,107,0.65);font-style:italic;padding:20px;background:rgba(184,149,104,0.08);border-radius:12px;line-height:1.6}
+.note a{color:var(--ink);text-decoration:underline;font-weight:500;font-style:normal;font-family:var(--mono);font-size:12px;letter-spacing:0.15em;text-transform:uppercase}
+
+.signup{margin:64px 0 32px;padding:32px;background:rgba(184,149,104,0.08);border:1px solid rgba(184,149,104,0.3);border-radius:18px}
+.signup-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
+.signup-title{font-family:var(--serif);font-size:32px;line-height:1.1;margin-bottom:12px;font-weight:400}
+.signup-title em{font-style:italic;color:var(--sumi)}
+.signup-lede{font-size:15px;line-height:1.6;color:rgba(27,58,107,0.78);margin-bottom:20px;max-width:560px}
+.signup-form{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:14px}
+.signup-form input{flex:1;min-width:200px;padding:14px 18px;border:1px solid rgba(27,58,107,0.2);border-radius:10px;font-family:var(--sans);font-size:15px;background:#fff;outline:none}
+.signup-form input:focus{border-color:var(--gold)}
+.signup-form button{background:var(--ink);color:var(--cream);border:none;padding:14px 24px;border-radius:10px;font-family:var(--mono);font-size:12px;letter-spacing:0.18em;cursor:pointer;font-weight:600;white-space:nowrap;transition:background .2s}
+.signup-form button:hover{background:#0F2545}
+.signup-note{font-size:12px;color:rgba(27,58,107,0.6)}
+.signup-note a{color:var(--ink);text-decoration:underline}
+@media(max-width:600px){.signup{padding:20px}.signup-title{font-size:24px}.signup-form{flex-direction:column}.signup-form button{padding:14px}}
+
+footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.25);font-family:var(--mono);font-size:11px;color:rgba(27,58,107,0.55);letter-spacing:0.15em;text-align:center}
+@media(max-width:600px){.wrap{padding-left:18px;padding-right:18px}.brand-name{font-size:17px}.back{padding:6px 10px;font-size:10px}h1{font-size:34px}.lede{font-size:15px;margin-bottom:32px}.cards{grid-template-columns:1fr;gap:12px}.card{padding:16px;grid-template-columns:48px 1fr 24px;gap:12px}.card-jp{font-size:32px}.card-title{font-size:17px}}
+</style></head>
+<body><div class="wrap">
+<nav class="nav"><a class="brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="brand-name">Trí Lữ · Nihongo</div><div class="brand-jp">智 旅 日 本 語</div></div></a><a href="/tai-lieu.html" class="back">← Tài liệu</a></nav>
+<div class="eyebrow">08 · VĂN HOÁ<span class="jp">文化資料</span></div>
+<h1>Văn hoá</h1>
+<p class="lede">Sách về văn hoá, lễ hội, cuộc sống Nhật. Học từng bước, không nhồi nhét — đúng phong cách Trí Lữ.</p>
+<div class="cards"><a class="card" href="/tai-lieu/van-hoa/giao-an.html"><div class="card-jp">教</div><div class="card-body"><div class="card-jp-line">教案</div><div class="card-title">Giáo án</div><div class="card-desc">Tài liệu giảng dạy chi tiết theo từng buổi</div></div><div class="card-arrow">→</div></a><a class="card" href="/tai-lieu/van-hoa/bai-hoc.html"><div class="card-jp">授</div><div class="card-body"><div class="card-jp-line">授業</div><div class="card-title">Bài học</div><div class="card-desc">Video, slide, audio các bài học</div></div><div class="card-arrow">→</div></a><a class="card" href="/tai-lieu/van-hoa/bai-tap.html"><div class="card-jp">練</div><div class="card-body"><div class="card-jp-line">練習</div><div class="card-title">Bài tập</div><div class="card-desc">Bài tập luyện kanji, từ vựng, ngữ pháp</div></div><div class="card-arrow">→</div></a><a class="card" href="/tai-lieu/van-hoa/flash-card.html"><div class="card-jp">札</div><div class="card-body"><div class="card-jp-line">単語カード</div><div class="card-title">Flash card</div><div class="card-desc">Học từ vựng theo carousel</div></div><div class="card-arrow">→</div></a><a class="card" href="/tai-lieu/van-hoa/de-thi.html"><div class="card-jp">試</div><div class="card-body"><div class="card-jp-line">過去問</div><div class="card-title">Đề thi mẫu</div><div class="card-desc">Đề thi các năm có đáp án</div></div><div class="card-arrow">→</div></a><a class="card" href="/tai-lieu/van-hoa/tai-lieu.html"><div class="card-jp">書</div><div class="card-body"><div class="card-jp-line">PDF資料</div><div class="card-title">Tài liệu PDF</div><div class="card-desc">Sách, sổ tay, cheat sheet tải về</div></div><div class="card-arrow">→</div></a></div><p class="note">Nội dung đang được biên soạn — cập nhật trong tháng tới. <a href="/lien-he.html">Đăng ký để nhận thông báo →</a></p>
+<section id="signup">
+<section class="signup">
+  <div class="signup-eyebrow">NEWSLETTER · 通信</div>
+  <h2 class="signup-title"><em>Đăng ký</em> nhận thông báo</h2>
+  <p class="signup-lede">Bài học mới, lộ trình cập nhật, sự kiện văn hoá — gửi đến email của bạn mỗi tuần. Không spam, hủy bất cứ lúc nào.</p>
+  <form class="signup-form" action="https://formsubmit.co/luminhtri0@gmail.com" method="POST" target="_blank">
+    <input type="hidden" name="_subject" value="Đăng ký nhận thông báo Trí Lữ Nihongo">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://trilu.edu.vn/?subscribed=1">
+    <input type="email" name="email" placeholder="email@cua-ban.com" required autocomplete="email">
+    <button type="submit">ĐĂNG KÝ →</button>
+  </form>
+  <p class="signup-note">Hoặc gọi Zalo <a href="https://zalo.me/0342390667">0342 390 667</a> · <a href="/lien-he.html">đăng ký tư vấn trực tiếp →</a></p>
+</section>
+</section>
+<footer>© MMXXVI · TRÍ LỮ NIHONGO · TRILU.EDU.VN</footer>
+</div></body></html>
