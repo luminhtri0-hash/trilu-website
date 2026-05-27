@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="vi"><head><meta charset="utf-8"><title>Đọc thơ Haiku — Trí Lữ Nihongo</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Sáng thứ bảy đọc Bashō, Buson, Issa. Học từng bước, không nhồi nhét — đúng phong cách Trí Lữ.">
+<meta name="description" content="Haiku (俳句) — thể thơ ngắn nhất thế giới, 17 âm tiết theo nhịp 5-7-5. Bashō, Buson, Issa, Shiki — từ vựng theo mùa và buổi đọc thơ thứ bảy.">
 <meta name="theme-color" content="#1B3A6B">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Trí Lữ"><meta name="application-name" content="Trí Lữ Nihongo">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:url" content="https://trilu.edu.vn/van-hoa/haiku.html">
 <meta property="og:title" content="Đọc thơ Haiku — Trí Lữ Nihongo">
-<meta property="og:description" content="Sáng thứ bảy đọc Bashō, Buson, Issa. Học từng bước, không nhồi nhét — đúng phong cách Trí Lữ.">
+<meta property="og:description" content="Haiku (俳句) — thể thơ ngắn nhất thế giới, 17 âm tiết theo nhịp 5-7-5. Bashō, Buson, Issa, Shiki — từ vựng theo mùa và buổi đọc thơ thứ bảy.">
 <meta property="og:image" content="https://trilu.edu.vn/icon-512.png">
 <meta property="og:site_name" content="Trí Lữ Nihongo">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Đọc thơ Haiku — Trí Lữ Nihongo">
-<meta name="twitter:description" content="Sáng thứ bảy đọc Bashō, Buson, Issa. Học từng bước, không nhồi nhét — đúng phong cách Trí Lữ.">
+<meta name="twitter:description" content="Haiku (俳句) — thể thơ ngắn nhất thế giới, 17 âm tiết theo nhịp 5-7-5. Bashō, Buson, Issa, Shiki — từ vựng theo mùa và buổi đọc thơ thứ bảy.">
 <meta name="twitter:image" content="https://trilu.edu.vn/icon-512.png">
 <link rel="canonical" href="https://trilu.edu.vn/van-hoa/haiku.html">
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
@@ -39,19 +39,45 @@ body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-heigh
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
 .eyebrow .jp{font-family:var(--jp);color:var(--gold);letter-spacing:0.3em;margin-left:10px;font-weight:400;text-transform:none}
 h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6.5vw,68px);line-height:1.05;letter-spacing:-0.01em;margin-bottom:20px;font-weight:400}
-.lede{font-size:17px;line-height:1.65;color:rgba(27,58,107,0.78);margin-bottom:48px;max-width:680px}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-bottom:36px}
-.card{display:grid;grid-template-columns:64px 1fr 32px;gap:16px;align-items:center;padding:20px;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:18px;text-decoration:none;color:inherit;transition:all .25s;box-shadow:0 4px 12px rgba(27,58,107,0.04)}
-.card:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 10px 24px rgba(27,58,107,0.10)}
-.card-jp{font-family:var(--jp);font-size:42px;color:var(--gold);text-align:center;line-height:1;font-weight:700}
+.lede{font-size:17px;line-height:1.65;color:rgba(27,58,107,0.78);margin-bottom:36px;max-width:680px}
+.hero-art{margin:0 0 48px;border-radius:18px;overflow:hidden;background:#FBF6E8;border:1px solid rgba(184,149,104,0.25);box-shadow:0 6px 20px rgba(27,58,107,0.06)}
+.hero-art svg{display:block;width:100%;height:auto}
+.section{margin:0 0 40px;max-width:760px}
+.section h2{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1.15;margin-bottom:14px;font-weight:400;color:var(--ink)}
+.section h2 em{color:var(--sumi)}
+.section h2 .jp{font-family:var(--jp);font-size:18px;font-style:normal;color:var(--gold);margin-left:12px;letter-spacing:0.2em}
+.section h3{font-family:var(--mono);font-size:12px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin:18px 0 10px;font-weight:600}
+.section p{font-size:16px;line-height:1.7;color:rgba(27,58,107,0.88);margin-bottom:12px}
+.section p strong{color:var(--ink);font-weight:600}
+.section ul{padding:0;margin:0 0 14px;list-style:none}
+.section ul li{padding:6px 0 6px 22px;position:relative;font-size:15px;line-height:1.6;color:rgba(27,58,107,0.85)}
+.section ul li::before{content:"·";position:absolute;left:6px;color:var(--gold);font-size:24px;line-height:1;top:2px}
+blockquote.haiku{border-left:3px solid var(--gold);padding:14px 0 14px 22px;margin:18px 0;font-family:var(--jp);font-size:22px;line-height:1.6;color:var(--ink);background:rgba(184,149,104,0.06)}
+blockquote.haiku .romaji{display:block;font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:0.15em;margin-top:6px}
+blockquote.haiku .gloss{display:block;font-family:var(--serif);font-style:italic;font-size:16px;color:rgba(27,58,107,0.78);margin-top:4px}
+.vocab{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:8px}
+.vocab .v{padding:12px 14px;background:#fff;border:1px solid rgba(184,149,104,0.25);border-radius:12px}
+.vocab .v-jp{font-family:var(--jp);font-size:18px;color:var(--ink);font-weight:600;line-height:1.3}
+.vocab .v-yomi{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:0.12em;margin:2px 0 4px}
+.vocab .v-vi{font-size:13px;color:rgba(27,58,107,0.78);line-height:1.4}
+.pull{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;color:var(--ink);padding:18px 22px;border-left:3px solid var(--sumi);margin:16px 0;background:rgba(139,58,46,0.04);border-radius:0 12px 12px 0}
+.read-more{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px;margin-top:8px}
+.read-more .r{padding:14px 16px;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:12px;text-decoration:none;color:var(--ink);transition:all .25s}
+.read-more .r:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 6px 16px rgba(27,58,107,0.06)}
+.read-more .r-type{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:4px}
+.read-more .r-title{font-family:var(--serif);font-style:italic;font-size:17px;line-height:1.3;margin-bottom:4px}
+.read-more .r-by{font-size:12px;color:rgba(27,58,107,0.6)}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:8px 0 36px}
+.card{display:grid;grid-template-columns:46px 1fr 24px;gap:12px;align-items:center;padding:14px 16px;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:14px;text-decoration:none;color:inherit;transition:all .25s}
+.card:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 6px 16px rgba(27,58,107,0.08)}
+.card-jp{font-family:var(--jp);font-size:28px;color:var(--gold);text-align:center;line-height:1;font-weight:700}
 .card-body{min-width:0}
-.card-jp-line{font-family:var(--jp);font-size:11px;color:var(--gold);letter-spacing:0.22em;margin-bottom:4px;font-weight:400}
-.card-title{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.2;margin-bottom:4px}
-.card-desc{font-size:13px;color:rgba(27,58,107,0.7);line-height:1.4}
-.card-arrow{font-family:var(--mono);font-size:18px;color:var(--gold);text-align:right}
-.note{font-size:14px;color:rgba(27,58,107,0.65);font-style:italic;padding:20px;background:rgba(184,149,104,0.08);border-radius:12px;line-height:1.6}
+.card-title{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.2;margin-bottom:2px}
+.card-desc{font-size:12px;color:rgba(27,58,107,0.7);line-height:1.4}
+.card-arrow{font-family:var(--mono);font-size:16px;color:var(--gold);text-align:right}
+.note{font-size:14px;color:rgba(27,58,107,0.65);font-style:italic;padding:18px 20px;background:rgba(184,149,104,0.08);border-radius:12px;line-height:1.6;margin-bottom:40px}
 .note a{color:var(--ink);text-decoration:underline;font-weight:500;font-style:normal;font-family:var(--mono);font-size:12px;letter-spacing:0.15em;text-transform:uppercase}
-.signup{margin:64px 0 32px;padding:32px;background:rgba(184,149,104,0.08);border:1px solid rgba(184,149,104,0.3);border-radius:18px}
+.signup{margin:48px 0 32px;padding:32px;background:rgba(184,149,104,0.08);border:1px solid rgba(184,149,104,0.3);border-radius:18px}
 .signup-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
 .signup-title{font-family:var(--serif);font-size:32px;line-height:1.1;margin-bottom:12px;font-weight:400}
 .signup-title em{font-style:italic;color:var(--sumi)}
@@ -69,20 +95,78 @@ h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6.5vw,68px);l
 .f-col a:hover{color:var(--ink);text-decoration:underline}
 .f-bot{padding:20px 0;border-top:1px solid rgba(184,149,104,0.25);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:11px;color:rgba(27,58,107,0.55);letter-spacing:0.12em}
 .f-bot em{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--gold);letter-spacing:0;text-transform:none}
-@media(max-width:600px){.wrap{padding-left:18px;padding-right:18px}body{padding-right:0}.brand-name{font-size:17px}.back{padding:6px 10px;font-size:10px}h1{font-size:34px}.lede{font-size:15px;margin-bottom:32px}.cards{grid-template-columns:1fr;gap:12px}.card{padding:16px;grid-template-columns:48px 1fr 24px;gap:12px}.card-jp{font-size:32px}.card-title{font-size:17px}.signup{padding:20px}.signup-title{font-size:24px}.signup-form{flex-direction:column}.signup-form button{padding:14px}.f-grid{grid-template-columns:1fr 1fr;gap:20px}.f-bot{flex-direction:column;align-items:flex-start;font-size:10px}}
+@media(max-width:600px){.wrap{padding-left:18px;padding-right:18px}body{padding-right:0}.brand-name{font-size:17px}.back{padding:6px 10px;font-size:10px}h1{font-size:34px}.lede{font-size:15px;margin-bottom:28px}.hero-art{margin-bottom:32px}.section h2{font-size:24px}.section h2 .jp{font-size:14px;display:block;margin:6px 0 0}.cards{grid-template-columns:1fr;gap:10px}.vocab{grid-template-columns:1fr 1fr;gap:8px}.read-more{grid-template-columns:1fr;gap:10px}.signup{padding:20px}.signup-title{font-size:24px}.signup-form{flex-direction:column}.signup-form button{padding:14px}.f-grid{grid-template-columns:1fr 1fr;gap:20px}.f-bot{flex-direction:column;align-items:flex-start;font-size:10px}}
 </style></head>
 <body><div class="wrap">
 <nav class="nav-top"><a class="brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="brand-name">Trí Lữ · Nihongo</div><div class="brand-jp">智 旅 日 本 語</div></div></a><a href="/van-hoa.html" class="back">← Văn hoá</a></nav>
-<div class="eyebrow">09 · ĐỌC THƠ HAIKU<span class="jp">俳句</span></div>
+<div class="eyebrow">09 · THƠ HAIKU<span class="jp">俳句</span></div>
 <h1>Đọc thơ Haiku</h1>
-<p class="lede">Sáng thứ bảy đọc Bashō, Buson, Issa. Học từng bước, không nhồi nhét — đúng phong cách Trí Lữ.</p>
-<div class="cards"><a class="card" href="/van-hoa/haiku/giao-an.html"><div class="card-jp">教</div><div class="card-body"><div class="card-jp-line">教案</div><div class="card-title">Giáo án</div><div class="card-desc">Tài liệu giảng dạy chi tiết theo từng buổi</div></div><div class="card-arrow">→</div></a><a class="card" href="/van-hoa/haiku/bai-hoc.html"><div class="card-jp">授</div><div class="card-body"><div class="card-jp-line">授業</div><div class="card-title">Bài học</div><div class="card-desc">Video, slide, audio các bài học</div></div><div class="card-arrow">→</div></a><a class="card" href="/van-hoa/haiku/bai-tap.html"><div class="card-jp">練</div><div class="card-body"><div class="card-jp-line">練習</div><div class="card-title">Bài tập</div><div class="card-desc">Bài tập luyện kanji, từ vựng, ngữ pháp</div></div><div class="card-arrow">→</div></a><a class="card" href="/van-hoa/haiku/flash-card.html"><div class="card-jp">札</div><div class="card-body"><div class="card-jp-line">単語カード</div><div class="card-title">Flash card</div><div class="card-desc">Học từ vựng theo carousel</div></div><div class="card-arrow">→</div></a><a class="card" href="/van-hoa/haiku/de-thi.html"><div class="card-jp">試</div><div class="card-body"><div class="card-jp-line">過去問</div><div class="card-title">Đề thi mẫu</div><div class="card-desc">Đề thi các năm có đáp án</div></div><div class="card-arrow">→</div></a><a class="card" href="/van-hoa/haiku/tai-lieu.html"><div class="card-jp">書</div><div class="card-body"><div class="card-jp-line">PDF資料</div><div class="card-title">Tài liệu PDF</div><div class="card-desc">Sách, sổ tay, cheat sheet tải về</div></div><div class="card-arrow">→</div></a></div><p class="note">Nội dung đang được biên soạn — cập nhật trong tháng tới. <a href="#signup">Đăng ký để nhận thông báo →</a></p>
+<p class="lede">Mười bảy âm tiết cho một mùa. Một con ếch, một ao xưa, một âm thanh nước.</p>
+<div class="hero-art"><svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Bamboo with falling sakura petals">
+<defs><linearGradient id="bg3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBF6E8"/><stop offset="1" stop-color="#F4DCD2"/></linearGradient></defs>
+<rect width="800" height="320" fill="url(#bg3)"/>
+<g stroke="#1B3A6B" stroke-width="3" fill="none" opacity="0.55"><path d="M80 320 L80 60"/><path d="M80 110 L60 100 L80 110 L100 100"/><path d="M80 170 L62 162 L80 170 L100 160"/><path d="M80 220 L60 210 L80 220 L102 212"/><path d="M150 320 L150 80"/><path d="M150 130 L132 120 L150 130 L168 120"/><path d="M150 190 L132 180 L150 190 L172 180"/></g>
+<text x="600" y="120" font-family="Noto Serif JP, serif" font-weight="700" font-size="200" text-anchor="middle" fill="#1B3A6B" opacity="0.9">俳</text>
+<g fill="#D88BA0" opacity="0.85"><path d="M240 60 q4 -8 10 -4 q-2 8 -10 4z"/><path d="M280 110 q4 -8 10 -4 q-2 8 -10 4z"/><path d="M340 90 q4 -8 10 -4 q-2 8 -10 4z"/><path d="M260 180 q4 -8 10 -4 q-2 8 -10 4z"/><path d="M310 240 q4 -8 10 -4 q-2 8 -10 4z"/><path d="M390 200 q4 -8 10 -4 q-2 8 -10 4z"/><path d="M420 80 q4 -8 10 -4 q-2 8 -10 4z"/><path d="M460 160 q4 -8 10 -4 q-2 8 -10 4z"/><path d="M500 260 q4 -8 10 -4 q-2 8 -10 4z"/></g>
+<g transform="translate(700,250)"><rect width="60" height="60" rx="4" fill="#8B3A2E"/><text x="30" y="42" font-family="Noto Serif JP, serif" font-weight="700" font-size="26" text-anchor="middle" fill="#FBF6E8">句</text></g>
+<text x="400" y="300" font-family="Cormorant Garamond, serif" font-style="italic" font-size="18" text-anchor="middle" fill="#B89568">— 5 · 7 · 5 — mười bảy âm tiết cho một mùa —</text>
+</svg></div>
+
+<section class="section">
+  <h2><em>Haiku là gì?</em><span class="jp">俳句</span></h2>
+  <p>Haiku là <strong>thể thơ ngắn nhất thế giới</strong> — chỉ 17 âm tiết chia theo nhịp <strong>5-7-5</strong>. Một bài haiku đúng nghĩa luôn có hai yếu tố:</p>
+  <ul>
+    <li><strong>Kigo (季語)</strong> — từ chỉ mùa. Mùa xuân có <em>sakura</em>, mùa hè có <em>semi</em> (ve sầu), mùa thu có <em>momiji</em> (lá đỏ), mùa đông có <em>yuki</em> (tuyết).</li>
+    <li><strong>Kireji (切れ字)</strong> — chữ ngắt, tạo khoảng lặng giữa hai hình ảnh. Trong tiếng Nhật là <em>ya, kana, keri</em>; trong tiếng Việt thường dịch là dấu gạch ngang.</li>
+  </ul>
+  <h3>Bốn bậc thầy</h3>
+  <ul>
+    <li><strong>Matsuo Bashō (松尾芭蕉, 1644-1694)</strong> — người nâng haiku lên tầm nghệ thuật.</li>
+    <li><strong>Yosa Buson (与謝蕪村, 1716-1784)</strong> — họa sĩ-thi sĩ, hình ảnh giàu sắc.</li>
+    <li><strong>Kobayashi Issa (小林一茶, 1763-1828)</strong> — haiku của lòng nhân hậu, đầy con vật nhỏ.</li>
+    <li><strong>Masaoka Shiki (正岡子規, 1867-1902)</strong> — hiện đại hoá haiku.</li>
+  </ul>
+</section>
+<section class="section">
+  <h2><em>Bài haiku nổi tiếng nhất</em></h2>
+  <p>Bài của Bashō, viết năm 1686:</p>
+  <blockquote class="haiku">
+    古池や 蛙飛び込む 水の音
+    <span class="romaji">furuike ya · kawazu tobikomu · mizu no oto</span>
+    <span class="gloss">Ao xưa — / con ếch nhảy vào / âm thanh nước.</span>
+  </blockquote>
+  <p>Mười bảy âm tiết. Một hình ảnh tĩnh (ao xưa), một chuyển động (ếch nhảy), một âm thanh (nước). Đó là cấu trúc kinh điển của haiku — và là cách Bashō dạy chúng ta nhìn thế giới: <strong>chú ý đến cái nhỏ, để thấy cái lớn</strong>.</p>
+</section>
+<section class="section">
+  <h2><em>Vì sao đáng học?</em></h2>
+  <p>Haiku dạy bạn <strong>"cảm" thiên nhiên Nhật</strong>. Học mùa qua haiku là cách nhanh nhất nắm bắt cảm thức Nhật về thời gian, vô thường (<em>mono no aware</em> 物の哀れ), và vẻ đẹp trong cái nhỏ bé.</p>
+  <p>Hơn nữa, haiku là <strong>cách tốt nhất để học từ vựng theo mùa</strong> — bộ từ rất rộng, rất Nhật, mà sách giáo khoa JLPT thường bỏ qua.</p>
+</section>
+<section class="section">
+  <h2><em>Từ vựng cốt lõi</em><span class="jp">季語の基本</span></h2>
+<div class="vocab"><div class="v"><div class="v-jp">俳句</div><div class="v-yomi">はいく · haiku</div><div class="v-vi">thể thơ 5-7-5</div></div><div class="v"><div class="v-jp">季語</div><div class="v-yomi">きご · kigo</div><div class="v-vi">từ chỉ mùa</div></div><div class="v"><div class="v-jp">切れ字</div><div class="v-yomi">きれじ · kireji</div><div class="v-vi">chữ ngắt</div></div><div class="v"><div class="v-jp">春</div><div class="v-yomi">はる · haru</div><div class="v-vi">mùa xuân</div></div><div class="v"><div class="v-jp">夏</div><div class="v-yomi">なつ · natsu</div><div class="v-vi">mùa hè</div></div><div class="v"><div class="v-jp">秋</div><div class="v-yomi">あき · aki</div><div class="v-vi">mùa thu</div></div><div class="v"><div class="v-jp">冬</div><div class="v-yomi">ふゆ · fuyu</div><div class="v-vi">mùa đông</div></div><div class="v"><div class="v-jp">桜</div><div class="v-yomi">さくら · sakura</div><div class="v-vi">hoa anh đào (kigo xuân)</div></div><div class="v"><div class="v-jp">蝉</div><div class="v-yomi">せみ · semi</div><div class="v-vi">ve sầu (kigo hè)</div></div><div class="v"><div class="v-jp">紅葉</div><div class="v-yomi">もみじ · momiji</div><div class="v-vi">lá đỏ (kigo thu)</div></div><div class="v"><div class="v-jp">雪</div><div class="v-yomi">ゆき · yuki</div><div class="v-vi">tuyết (kigo đông)</div></div><div class="v"><div class="v-jp">蛙</div><div class="v-yomi">かわず · kawazu</div><div class="v-vi">ếch (kigo xuân)</div></div></div>
+</section>
+<section class="section">
+  <h2><em>Tại Trí Lữ</em><span class="jp">智旅にて</span></h2>
+  <p><strong>Sáng thứ bảy hàng tuần</strong>, một thầy người Nhật đọc một haiku của Bashō, Buson hoặc Issa. Lớp dịch sang tiếng Việt, thảo luận hình ảnh, và cảm nhận kigo.</p>
+  <p><strong>Cuối tháng</strong>, mỗi học viên tự sáng tác một haiku bằng tiếng Nhật. Bài hay nhất được đăng trên Blog Trí Lữ và in trên thiệp gửi về cho phụ huynh học viên dưới 18 tuổi.</p>
+  <div class="pull">"Bạn không học haiku để thành nhà thơ. Bạn học để biết nhìn — và một khi đã biết nhìn, từ vựng tự đến."</div>
+</section>
+<section class="section">
+  <h2><em>Đọc thêm</em><span class="jp">推薦</span></h2>
+<div class="read-more"><div class="r"><div class="r-type">SÁCH</div><div class="r-title">The Narrow Road to the Deep North</div><div class="r-by">奥の細道 — Bashō · 1689</div></div><div class="r"><div class="r-type">SÁCH</div><div class="r-title">Haiku for Beginners</div><div class="r-by">David Coomler · Tuttle</div></div><div class="r"><div class="r-type">WEBSITE</div><div class="r-title">The Haiku Foundation</div><div class="r-by">thehaikufoundation.org</div></div><div class="r"><div class="r-type">APP</div><div class="r-title">Haiku of the Day</div><div class="r-by">iOS · Android · gửi 1 bài/ngày</div></div></div>
+</section>
+<section class="section">
+  <h2><em>Học chi tiết</em></h2>
+<div class="cards"><a class="card" href="/van-hoa/haiku/giao-an.html"><div class="card-jp">教</div><div class="card-body"><div class="card-title">Giáo án</div><div class="card-desc">Tài liệu giảng dạy chi tiết</div></div><div class="card-arrow">→</div></a><a class="card" href="/van-hoa/haiku/bai-hoc.html"><div class="card-jp">授</div><div class="card-body"><div class="card-title">Bài học</div><div class="card-desc">Video, slide, audio</div></div><div class="card-arrow">→</div></a><a class="card" href="/van-hoa/haiku/bai-tap.html"><div class="card-jp">練</div><div class="card-body"><div class="card-title">Bài tập</div><div class="card-desc">Luyện từ vựng theo chủ đề</div></div><div class="card-arrow">→</div></a><a class="card" href="/van-hoa/haiku/flash-card.html"><div class="card-jp">札</div><div class="card-body"><div class="card-title">Flash card</div><div class="card-desc">Học từ qua thẻ</div></div><div class="card-arrow">→</div></a><a class="card" href="/van-hoa/haiku/de-thi.html"><div class="card-jp">試</div><div class="card-body"><div class="card-title">Đề tham khảo</div><div class="card-desc">Tài liệu thi mẫu</div></div><div class="card-arrow">→</div></a><a class="card" href="/van-hoa/haiku/tai-lieu.html"><div class="card-jp">書</div><div class="card-body"><div class="card-title">Tài liệu PDF</div><div class="card-desc">Sách + cheat sheet</div></div><div class="card-arrow">→</div></a></div>
+</section>
+<p class="note">Tất cả tài liệu chi tiết đang được biên soạn — dự kiến cập nhật trong tháng tới. <a href="#signup">Đăng ký để nhận thông báo →</a></p>
 <section id="signup" class="signup">
   <div class="signup-eyebrow">NEWSLETTER · 通信</div>
   <h2 class="signup-title"><em>Đăng ký</em> nhận thông báo</h2>
   <p class="signup-lede">Bài học mới, lộ trình cập nhật, sự kiện văn hoá — gửi đến email của bạn mỗi tuần. Không spam, hủy bất cứ lúc nào.</p>
   <form class="signup-form" action="https://formsubmit.co/luminhtri0@gmail.com" method="POST" target="_blank">
-    <input type="hidden" name="_subject" value="Đăng ký nhận thông báo Trí Lữ Nihongo - Đọc thơ Haiku">
+    <input type="hidden" name="_subject" value="Đăng ký Trí Lữ Nihongo - Thơ Haiku">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_next" value="https://trilu.edu.vn/?subscribed=1">
     <input type="email" name="email" placeholder="email@cua-ban.com" required autocomplete="email">
