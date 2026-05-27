@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="vi"><head><meta charset="utf-8"><title>Flash card — Tài liệu Tài liệu EJU — Trí Lữ Nihongo</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Flash card Tài liệu EJU — Tài liệu — Trí Lữ Nihongo. Đang biên soạn nội dung.">
+<meta name="theme-color" content="#1B3A6B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Trí Lữ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://trilu.edu.vn/tai-lieu/eju/flash-card.html">
+<meta property="og:title" content="Flash card — Tài liệu EJU — Trí Lữ Nihongo">
+<meta property="og:description" content="Flash card Tài liệu EJU — đang biên soạn nội dung.">
+<meta property="og:image" content="https://trilu.edu.vn/icon-512.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FBF6E8;--ink:#1B3A6B;--gold:#B89568;--sumi:#8B3A2E;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter Tight',-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--jp:'Noto Serif JP',serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
+@media(min-width:769px){body{padding-right:230px}}
+.wrap{max-width:840px;margin:0 auto;padding:max(20px,env(safe-area-inset-top)) 24px max(40px,env(safe-area-inset-bottom))}
+.nav-top{display:flex;justify-content:space-between;align-items:center;padding:8px 0 20px;border-bottom:1px solid rgba(184,149,104,0.25);margin-bottom:36px;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;flex:1;min-width:0}
+.brand img{width:44px;height:44px;border-radius:11px;flex-shrink:0}
+.brand-name{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1}
+.brand-jp{font-family:var(--jp);font-size:11px;color:var(--gold);letter-spacing:0.22em;margin-top:4px}
+.back{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.2);border-radius:999px;white-space:nowrap;flex-shrink:0}
+.breadcrumb{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;color:rgba(27,58,107,0.55);text-transform:uppercase;margin-bottom:18px}
+.breadcrumb a{color:var(--gold);text-decoration:none}
+.breadcrumb a:hover{text-decoration:underline}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.eyebrow .jp{font-family:var(--jp);color:var(--gold);letter-spacing:0.3em;margin-left:10px;font-weight:400;text-transform:none}
+h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6vw,56px);line-height:1.05;margin-bottom:18px;font-weight:400}
+.lede{font-size:16px;line-height:1.65;color:rgba(27,58,107,0.78);margin-bottom:36px}
+.coming-soon{background:#fff;border:1px dashed rgba(184,149,104,0.5);border-radius:18px;padding:48px 32px;text-align:center;margin-bottom:36px}
+.coming-soon .kanji{font-family:var(--jp);font-size:84px;color:var(--gold);opacity:0.5;margin-bottom:16px;line-height:1}
+.coming-soon h2{font-family:var(--serif);font-style:italic;font-size:26px;margin-bottom:12px;font-weight:400}
+.coming-soon p{font-size:14px;color:rgba(27,58,107,0.7);max-width:480px;margin:0 auto 24px;line-height:1.6}
+.coming-soon .cta{display:inline-block;background:var(--ink);color:var(--cream);padding:14px 24px;border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-decoration:none;font-weight:700}
+.signup{margin:36px 0 24px;padding:28px;background:rgba(184,149,104,0.08);border:1px solid rgba(184,149,104,0.3);border-radius:18px}
+.signup-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;margin-bottom:8px}
+.signup-title{font-family:var(--serif);font-size:24px;line-height:1.1;margin-bottom:10px;font-weight:400}
+.signup-title em{font-style:italic;color:var(--sumi)}
+.signup-lede{font-size:14px;color:rgba(27,58,107,0.78);margin-bottom:16px}
+.signup-form{display:flex;gap:8px;flex-wrap:wrap}
+.signup-form input{flex:1;min-width:200px;padding:12px 16px;border:1px solid rgba(27,58,107,0.2);border-radius:10px;font-family:var(--sans);font-size:14px;background:#fff;outline:none}
+.signup-form button{background:var(--ink);color:var(--cream);border:none;padding:12px 20px;border-radius:10px;font-family:var(--mono);font-size:11px;letter-spacing:0.18em;cursor:pointer;font-weight:600;white-space:nowrap}
+.related{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-top:24px}
+.related a{padding:11px 14px;background:rgba(184,149,104,0.1);border-radius:10px;text-decoration:none;color:var(--ink);font-family:var(--mono);font-size:10.5px;letter-spacing:0.15em;text-align:center;font-weight:600;text-transform:uppercase;transition:all .2s}
+.related a:hover{background:var(--gold);color:var(--cream)}
+.related-title{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin:36px 0 14px}
+footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.25);font-family:var(--mono);font-size:11px;color:rgba(27,58,107,0.55);letter-spacing:0.12em;text-align:center}
+@media(max-width:600px){.wrap{padding-left:18px;padding-right:18px}body{padding-right:0}h1{font-size:32px}.coming-soon{padding:32px 20px}.coming-soon .kanji{font-size:64px}}
+</style></head>
+<body><div class="wrap">
+<nav class="nav-top"><a class="brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="brand-name">Trí Lữ · Nihongo</div><div class="brand-jp">智 旅 日 本 語</div></div></a><a href="/tai-lieu/eju.html" class="back">← Tài liệu EJU</a></nav>
+<div class="breadcrumb"><a href="/tai-lieu.html">Tài liệu</a> · <a href="/tai-lieu/eju.html">Tài liệu EJU</a> · Flash card</div>
+<div class="eyebrow">Tài liệu · Tài liệu EJU · FLASH CARD<span class="jp">札</span></div>
+<h1>Flash card</h1>
+<p class="lede">Flash card cho <strong>Tài liệu EJU</strong> — đang được biên soạn bởi đội ngũ sensei của Trí Lữ.</p>
+<div class="coming-soon">
+  <div class="kanji">札</div>
+  <h2><em>Đang biên soạn...</em></h2>
+  <p>Nội dung sẽ ra mắt trong thời gian sớm nhất. Đăng ký bên dưới để nhận thông báo ngay khi có bài học đầu tiên.</p>
+  <a href="#signup" class="cta">ĐĂNG KÝ NHẬN THÔNG BÁO →</a>
+</div>
+<section id="signup" class="signup">
+  <div class="signup-eyebrow">NEWSLETTER · 通信</div>
+  <h2 class="signup-title"><em>Đăng ký</em> nhận thông báo</h2>
+  <p class="signup-lede">Email khi flash card cho Tài liệu EJU ra mắt. Không spam.</p>
+  <form class="signup-form" action="https://formsubmit.co/luminhtri0@gmail.com" method="POST" target="_blank">
+    <input type="hidden" name="_subject" value="Đăng ký thông báo: Flash card - Tài liệu EJU">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://trilu.edu.vn/?subscribed=1">
+    <input type="email" name="email" placeholder="email@cua-ban.com" required>
+    <button type="submit">ĐĂNG KÝ →</button>
+  </form>
+</section>
+<div class="related-title">Khác trong Tài liệu EJU</div>
+<div class="related">
+  <a href="/tai-lieu/eju/giao-an.html">Giáo án</a><a href="/tai-lieu/eju/bai-hoc.html">Bài học</a><a href="/tai-lieu/eju/bai-tap.html">Bài tập</a><a href="/tai-lieu/eju/de-thi.html">Đề thi mẫu</a><a href="/tai-lieu/eju/tai-lieu.html">Tài liệu PDF</a>
+</div>
+<footer>© MMXXVI · TRÍ LỮ NIHONGO · TRILU.EDU.VN · <a href="https://zalo.me/0342390667" style="color:inherit">ZALO 0342 390 667</a></footer>
+</div>
+<script src="/nav.js" defer></script>
+</body></html>
