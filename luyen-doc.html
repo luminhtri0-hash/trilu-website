@@ -1,21 +1,21 @@
 <!DOCTYPE html>
 <html lang="vi"><head><meta charset="utf-8"><title>Luyện đọc — Trí Lữ Nihongo</title>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="description" content="Đọc thật — Asahi, Yomiuri, Murakami, Haiku. Học chữ qua văn cảnh sống, không phải nhồi.">
+<meta name="description" content="Đọc thật — Asahi, Yomiuri, Murakami, Haiku. Học chữ qua văn cảnh sống.">
 <meta name="theme-color" content="#1B3A6B">
 <meta name="apple-mobile-web-app-capable" content="yes"><meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Trí Lữ"><meta name="application-name" content="Trí Lữ Nihongo">
-<meta property="og:type" content="website">
+<meta property="og:type" content="article">
 <meta property="og:url" content="https://trilu.edu.vn/luyen-doc.html">
 <meta property="og:title" content="Luyện đọc — Trí Lữ Nihongo">
-<meta property="og:description" content="Đọc thật — Asahi, Yomiuri, Murakami, Haiku. Học chữ qua văn cảnh sống, không phải nhồi.">
+<meta property="og:description" content="Đọc thật — Asahi, Yomiuri, Murakami, Haiku. Học chữ qua văn cảnh sống.">
 <meta property="og:image" content="https://trilu.edu.vn/icon-512.png">
 <meta property="og:site_name" content="Trí Lữ Nihongo">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Luyện đọc — Trí Lữ Nihongo">
-<meta name="twitter:description" content="Đọc thật — Asahi, Yomiuri, Murakami, Haiku. Học chữ qua văn cảnh sống, không phải nhồi.">
+<meta name="twitter:description" content="Đọc thật — Asahi, Yomiuri, Murakami, Haiku. Học chữ qua văn cảnh sống.">
 <meta name="twitter:image" content="https://trilu.edu.vn/icon-512.png">
 <link rel="canonical" href="https://trilu.edu.vn/luyen-doc.html">
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
@@ -23,8 +23,7 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
-<style>
-:root{--cream:#FBF6E8;--ink:#1B3A6B;--gold:#B89568;--sumi:#8B3A2E;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter Tight',-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--jp:'Noto Serif JP',serif}
+<style>:root{--cream:#FBF6E8;--ink:#1B3A6B;--gold:#B89568;--sumi:#8B3A2E;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter Tight',-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--jp:'Noto Serif JP',serif}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
 @media(min-width:769px){body{padding-right:230px}}
@@ -39,19 +38,52 @@ body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-heigh
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
 .eyebrow .jp{font-family:var(--jp);color:var(--gold);letter-spacing:0.3em;margin-left:10px;font-weight:400;text-transform:none}
 h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6.5vw,68px);line-height:1.05;letter-spacing:-0.01em;margin-bottom:20px;font-weight:400}
-.lede{font-size:17px;line-height:1.65;color:rgba(27,58,107,0.78);margin-bottom:48px;max-width:680px}
-.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px;margin-bottom:36px}
-.card{display:grid;grid-template-columns:64px 1fr 32px;gap:16px;align-items:center;padding:20px;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:18px;text-decoration:none;color:inherit;transition:all .25s;box-shadow:0 4px 12px rgba(27,58,107,0.04)}
+.lede{font-size:17px;line-height:1.65;color:rgba(27,58,107,0.78);margin-bottom:36px;max-width:680px}
+.hero-art{margin:0 0 48px;border-radius:18px;overflow:hidden;background:#FBF6E8;border:1px solid rgba(184,149,104,0.25);box-shadow:0 6px 20px rgba(27,58,107,0.06)}
+.hero-art svg{display:block;width:100%;height:auto}
+.section{margin:0 0 40px;max-width:760px}
+.section h2{font-family:var(--serif);font-style:italic;font-size:30px;line-height:1.15;margin-bottom:14px;font-weight:400;color:var(--ink)}
+.section h2 em{color:var(--sumi)}
+.section h2 .jp{font-family:var(--jp);font-size:18px;font-style:normal;color:var(--gold);margin-left:12px;letter-spacing:0.2em}
+.section p{font-size:16px;line-height:1.7;color:rgba(27,58,107,0.88);margin-bottom:12px}
+.section p strong{color:var(--ink);font-weight:600}
+.section ul{padding:0;margin:0 0 14px;list-style:none}
+.section ul li{padding:6px 0 6px 22px;position:relative;font-size:15px;line-height:1.6;color:rgba(27,58,107,0.85)}
+.section ul li::before{content:"·";position:absolute;left:6px;color:var(--gold);font-size:24px;line-height:1;top:2px}
+.vocab{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:8px}
+.vocab .v{padding:12px 14px;background:#fff;border:1px solid rgba(184,149,104,0.25);border-radius:12px}
+.vocab .v-jp{font-family:var(--jp);font-size:18px;color:var(--ink);font-weight:600;line-height:1.3}
+.vocab .v-yomi{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:0.12em;margin:2px 0 4px}
+.vocab .v-vi{font-size:13px;color:rgba(27,58,107,0.78);line-height:1.4}
+.pull{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;color:var(--ink);padding:18px 22px;border-left:3px solid var(--sumi);margin:16px 0;background:rgba(139,58,46,0.04);border-radius:0 12px 12px 0}
+.sources{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:8px}
+.sources .src{padding:16px;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:14px;text-decoration:none;color:var(--ink);transition:all .25s;display:block}
+.sources .src:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 6px 16px rgba(27,58,107,0.06)}
+.src-level{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;background:rgba(184,149,104,0.12);padding:3px 8px;border-radius:4px;margin-bottom:8px}
+.src-name{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.2;margin-bottom:4px}
+.src-name .jp{font-family:var(--jp);font-size:14px;font-style:normal;color:var(--gold);margin-left:6px}
+.src-desc{font-size:13px;color:rgba(27,58,107,0.78);line-height:1.5;margin-top:6px}
+.src-url{font-family:var(--mono);font-size:11px;color:rgba(27,58,107,0.6);margin-top:8px;letter-spacing:0.05em}
+blockquote.passage{border-left:3px solid var(--gold);padding:14px 0 14px 22px;margin:18px 0;font-family:var(--jp);font-size:18px;line-height:1.8;color:var(--ink);background:rgba(184,149,104,0.06)}
+blockquote.passage .romaji{display:block;font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:0.15em;margin-top:8px;line-height:1.5}
+blockquote.passage .gloss{display:block;font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(27,58,107,0.78);margin-top:6px;line-height:1.5}
+.cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:8px 0 36px}
+.card{display:grid;grid-template-columns:56px 1fr 28px;gap:14px;align-items:center;padding:18px;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:16px;text-decoration:none;color:inherit;transition:all .25s;box-shadow:0 4px 12px rgba(27,58,107,0.04)}
 .card:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 10px 24px rgba(27,58,107,0.10)}
-.card-jp{font-family:var(--jp);font-size:42px;color:var(--gold);text-align:center;line-height:1;font-weight:700}
+.card-jp{font-family:var(--jp);font-size:38px;color:var(--gold);text-align:center;line-height:1;font-weight:700}
 .card-body{min-width:0}
 .card-jp-line{font-family:var(--jp);font-size:11px;color:var(--gold);letter-spacing:0.22em;margin-bottom:4px;font-weight:400}
-.card-title{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.2;margin-bottom:4px}
+.card-title{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.2;margin-bottom:4px}
 .card-desc{font-size:13px;color:rgba(27,58,107,0.7);line-height:1.4}
 .card-arrow{font-family:var(--mono);font-size:18px;color:var(--gold);text-align:right}
-.note{font-size:14px;color:rgba(27,58,107,0.65);font-style:italic;padding:20px;background:rgba(184,149,104,0.08);border-radius:12px;line-height:1.6}
+.subcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:8px 0 36px}
+.subcards .card{grid-template-columns:46px 1fr 24px;padding:14px 16px;border-radius:14px}
+.subcards .card-jp{font-size:28px}
+.subcards .card-title{font-size:16px}
+.subcards .card-desc{font-size:12px}
+.note{font-size:14px;color:rgba(27,58,107,0.65);font-style:italic;padding:18px 20px;background:rgba(184,149,104,0.08);border-radius:12px;line-height:1.6;margin-bottom:40px}
 .note a{color:var(--ink);text-decoration:underline;font-weight:500;font-style:normal;font-family:var(--mono);font-size:12px;letter-spacing:0.15em;text-transform:uppercase}
-.signup{margin:64px 0 32px;padding:32px;background:rgba(184,149,104,0.08);border:1px solid rgba(184,149,104,0.3);border-radius:18px}
+.signup{margin:48px 0 32px;padding:32px;background:rgba(184,149,104,0.08);border:1px solid rgba(184,149,104,0.3);border-radius:18px}
 .signup-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
 .signup-title{font-family:var(--serif);font-size:32px;line-height:1.1;margin-bottom:12px;font-weight:400}
 .signup-title em{font-style:italic;color:var(--sumi)}
@@ -69,20 +101,44 @@ h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6.5vw,68px);l
 .f-col a:hover{color:var(--ink);text-decoration:underline}
 .f-bot{padding:20px 0;border-top:1px solid rgba(184,149,104,0.25);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:11px;color:rgba(27,58,107,0.55);letter-spacing:0.12em}
 .f-bot em{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--gold);letter-spacing:0;text-transform:none}
-@media(max-width:600px){.wrap{padding-left:18px;padding-right:18px}body{padding-right:0}.brand-name{font-size:17px}.back{padding:6px 10px;font-size:10px}h1{font-size:34px}.lede{font-size:15px;margin-bottom:32px}.cards{grid-template-columns:1fr;gap:12px}.card{padding:16px;grid-template-columns:48px 1fr 24px;gap:12px}.card-jp{font-size:32px}.card-title{font-size:17px}.signup{padding:20px}.signup-title{font-size:24px}.signup-form{flex-direction:column}.signup-form button{padding:14px}.f-grid{grid-template-columns:1fr 1fr;gap:20px}.f-bot{flex-direction:column;align-items:flex-start;font-size:10px}}
-</style></head>
+@media(max-width:600px){.wrap{padding-left:18px;padding-right:18px}body{padding-right:0}.brand-name{font-size:17px}.back{padding:6px 10px;font-size:10px}h1{font-size:34px}.lede{font-size:15px;margin-bottom:28px}.hero-art{margin-bottom:32px}.section h2{font-size:24px}.section h2 .jp{font-size:14px;display:block;margin:6px 0 0}.cards{grid-template-columns:1fr;gap:12px}.vocab{grid-template-columns:1fr 1fr;gap:8px}.sources{grid-template-columns:1fr;gap:10px}.signup{padding:20px}.signup-title{font-size:24px}.signup-form{flex-direction:column}.signup-form button{padding:14px}.f-grid{grid-template-columns:1fr 1fr;gap:20px}.f-bot{flex-direction:column;align-items:flex-start;font-size:10px}}</style></head>
 <body><div class="wrap">
 <nav class="nav-top"><a class="brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="brand-name">Trí Lữ · Nihongo</div><div class="brand-jp">智 旅 日 本 語</div></div></a><a href="/" class="back">← Trang chủ</a></nav>
 <div class="eyebrow">06 · LUYỆN ĐỌC<span class="jp">読解</span></div>
 <h1>Luyện đọc</h1>
-<p class="lede">Đọc thật — Asahi, Yomiuri, Murakami, Haiku. Học chữ qua văn cảnh sống, không phải nhồi.</p>
-<div class="cards"><a class="card" href="/luyen-doc/tin-tuc.html"><div class="card-jp">新</div><div class="card-body"><div class="card-jp-line">ニュース</div><div class="card-title">Tin tức Nhật</div><div class="card-desc">NHK, Asahi, Yomiuri — giải thích từng câu khó</div></div><div class="card-arrow">→</div></a><a class="card" href="/luyen-doc/truyen.html"><div class="card-jp">物</div><div class="card-body"><div class="card-jp-line">短編小説</div><div class="card-title">Truyện ngắn</div><div class="card-desc">Murakami, Yoshimoto, Kawabata — đọc kèm dịch</div></div><div class="card-arrow">→</div></a><a class="card" href="/luyen-doc/haiku.html"><div class="card-jp">句</div><div class="card-body"><div class="card-jp-line">俳句·短歌</div><div class="card-title">Haiku & Tanka</div><div class="card-desc">Thơ truyền thống — Bashō, Buson, Issa</div></div><div class="card-arrow">→</div></a><a class="card" href="/luyen-doc/co-dien.html"><div class="card-jp">古</div><div class="card-body"><div class="card-jp-line">古典文学</div><div class="card-title">Văn học cổ điển</div><div class="card-desc">Genji Monogatari, Heike Monogatari — Nhật cổ</div></div><div class="card-arrow">→</div></a></div>
+<p class="lede">Bốn nguồn đọc thật — báo, truyện, thơ, cổ điển. Mỗi nguồn một lộ trình từ N5 đến N1.</p>
+<div class="hero-art"><svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reading practice"><defs><linearGradient id="bgH" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBF6E8"/><stop offset="1" stop-color="#F1E5C5"/></linearGradient></defs><rect width="800" height="320" fill="url(#bgH)"/><g transform="translate(400,180)"><rect x="-150" y="-90" width="300" height="180" rx="6" fill="#fff" stroke="#1B3A6B" stroke-width="2"/><line x1="-130" y1="-60" x2="130" y2="-60" stroke="#1B3A6B" stroke-width="1" opacity="0.5"/><line x1="-130" y1="-30" x2="130" y2="-30" stroke="#1B3A6B" stroke-width="1" opacity="0.5"/><line x1="-130" y1="0" x2="130" y2="0" stroke="#1B3A6B" stroke-width="1" opacity="0.5"/><line x1="-130" y1="30" x2="130" y2="30" stroke="#1B3A6B" stroke-width="1" opacity="0.5"/><line x1="-130" y1="60" x2="130" y2="60" stroke="#1B3A6B" stroke-width="1" opacity="0.5"/><text x="-110" y="-46" font-family="Noto Serif JP, serif" font-size="16" font-weight="700" fill="#1B3A6B">日本語の読解 — Luyện đọc</text><text x="-110" y="-16" font-family="Noto Serif JP, serif" font-size="14" fill="#1B3A6B" opacity="0.8">古池や 蛙飛び込む 水の音</text><text x="-110" y="14" font-family="Noto Serif JP, serif" font-size="14" fill="#1B3A6B" opacity="0.8">桜の花が咲いている春の朝</text><text x="-110" y="44" font-family="Noto Serif JP, serif" font-size="14" fill="#1B3A6B" opacity="0.8">murakami · yoshimoto · NHK</text><text x="-110" y="74" font-family="Noto Serif JP, serif" font-size="14" fill="#B89568" opacity="0.9">— đọc thật, không phải bài tập —</text></g><text x="80" y="76" font-family="Noto Serif JP, serif" font-size="72" font-weight="700" fill="#1B3A6B" opacity="0.85">読</text><g transform="translate(680,40)"><rect width="58" height="58" rx="4" fill="#8B3A2E"/><text x="29" y="42" font-family="Noto Serif JP, serif" font-weight="700" font-size="26" text-anchor="middle" fill="#FBF6E8">解</text></g><text x="400" y="302" font-family="Cormorant Garamond, serif" font-style="italic" font-size="17" text-anchor="middle" fill="#B89568">— 読書百遍 義自ら見る · đọc 100 lần, nghĩa tự hiện —</text></svg></div>
+
+<section class="section">
+  <h2><em>Đọc thật, học thật</em><span class="jp">読解</span></h2>
+  <p>Sách giáo khoa cho bạn 200 từ vựng/tuần — nhưng không dạy bạn <strong>cảm</strong> ngôn ngữ Nhật. Đọc văn bản thật — báo, truyện, thơ — mới cho bạn thứ đó.</p>
+  <div class="pull">"Một bài Asahi 5 phút mỗi sáng — 3 tháng sau, bạn đã đọc nhanh hơn 80% học viên cùng cấp."</div>
+  <p>Trang này chia tài nguyên đọc theo bốn nhóm. Mỗi nhóm có nguồn miễn phí + lời khuyên Trí Lữ:</p>
+</section>
+<div class="cards">
+  <a class="card" href="/luyen-doc/tin-tuc.html"><div class="card-jp">新</div><div class="card-body"><div class="card-jp-line">ニュース</div><div class="card-title">Tin tức Nhật</div><div class="card-desc">NHK Easy → Asahi → Yomiuri. Lộ trình N5 → N1</div></div><div class="card-arrow">→</div></a>
+  <a class="card" href="/luyen-doc/truyen.html"><div class="card-jp">物</div><div class="card-body"><div class="card-jp-line">短編小説</div><div class="card-title">Truyện ngắn</div><div class="card-desc">Murakami, Yoshimoto, Kawabata — kèm bản dịch</div></div><div class="card-arrow">→</div></a>
+  <a class="card" href="/luyen-doc/haiku.html"><div class="card-jp">句</div><div class="card-body"><div class="card-jp-line">俳句·短歌</div><div class="card-title">Haiku & Tanka</div><div class="card-desc">17-31 âm tiết — Bashō, Buson, Issa, Shiki</div></div><div class="card-arrow">→</div></a>
+  <a class="card" href="/luyen-doc/co-dien.html"><div class="card-jp">古</div><div class="card-body"><div class="card-jp-line">古典文学</div><div class="card-title">Văn học cổ điển</div><div class="card-desc">Genji, Heike, Makura no Sōshi — 1000 năm chữ Nhật</div></div><div class="card-arrow">→</div></a>
+</div>
+<section class="section">
+  <h2><em>Lộ trình đọc tại Trí Lữ</em></h2>
+  <ul>
+    <li><strong>N5</strong> — bắt đầu với <em>NHK News Easy</em> (3-5 câu mỗi bài, có furigana).</li>
+    <li><strong>N4</strong> — chuyển sang <em>News in Slow Japanese</em>, đọc truyện <em>Aozora Bunko</em> (sách miễn phí).</li>
+    <li><strong>N3</strong> — Asahi Digital phiên bản dễ, truyện ngắn Yoshimoto Banana.</li>
+    <li><strong>N2</strong> — Asahi/Yomiuri thật, Murakami, Kawabata.</li>
+    <li><strong>N1</strong> — báo kinh tế (Nikkei), văn học cổ điển có chú giải.</li>
+  </ul>
+  <p>Mỗi tuần Trí Lữ chọn <strong>một bài đọc</strong> phù hợp trình độ học viên, kèm <strong>10-15 từ vựng + lời dịch tiếng Việt + câu hỏi đọc hiểu</strong>. Đăng ký nhận qua email bên dưới.</p>
+</section>
+
 <section id="signup" class="signup">
   <div class="signup-eyebrow">NEWSLETTER · 通信</div>
-  <h2 class="signup-title"><em>Đăng ký</em> nhận thông báo</h2>
-  <p class="signup-lede">Bài học mới, lộ trình cập nhật, sự kiện văn hoá — gửi đến email của bạn mỗi tuần. Không spam, hủy bất cứ lúc nào.</p>
+  <h2 class="signup-title"><em>Đăng ký</em> nhận bài đọc tuần</h2>
+  <p class="signup-lede">Mỗi tuần một bài đọc — kèm từ vựng, dịch tiếng Việt, gợi ý đọc tiếp. Không spam, hủy bất cứ lúc nào.</p>
   <form class="signup-form" action="https://formsubmit.co/luminhtri0@gmail.com" method="POST" target="_blank">
-    <input type="hidden" name="_subject" value="Đăng ký nhận thông báo Trí Lữ Nihongo - Luyện đọc">
+    <input type="hidden" name="_subject" value="Đăng ký Luyện đọc Trí Lữ - Luyện đọc">
     <input type="hidden" name="_template" value="table">
     <input type="hidden" name="_next" value="https://trilu.edu.vn/?subscribed=1">
     <input type="email" name="email" placeholder="email@cua-ban.com" required autocomplete="email">
@@ -92,40 +148,12 @@ h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6.5vw,68px);l
 </section>
 <footer>
   <div class="f-grid">
-    <div class="f-col">
-      <h4>HỌC THUẬT</h4>
-      <a href="/jlpt.html">JLPT — 5 cấp N5-N1</a>
-      <a href="/kaiwa.html">Kaiwa — Hội thoại</a>
-      <a href="/eju.html">EJU — Du học thi</a>
-      <a href="/luyen-doc.html">Luyện đọc</a>
-    </div>
-    <div class="f-col">
-      <h4>SỰ NGHIỆP</h4>
-      <a href="/du-hoc.html">Du học Nhật Bản</a>
-      <a href="/viec-lam.html">Việc làm — TTS · Tokutei</a>
-      <a href="/viec-lam/ky-su.html">Kỹ sư · Phiên dịch</a>
-      <a href="/lien-he.html">Tư vấn miễn phí</a>
-    </div>
-    <div class="f-col">
-      <h4>TÀI NGUYÊN</h4>
-      <a href="/sensei.html">Về Trí Lữ</a>
-      <a href="/sensei.html">Sensei · 8 thầy cô</a>
-      <a href="/tra-cuu.html">Tra cứu từ điển</a>
-      <a href="/tai-lieu.html">Thư viện tài liệu</a>
-      <a href="/blog.html">Blog & Tạp chí</a>
-    </div>
-    <div class="f-col">
-      <h4>LIÊN HỆ</h4>
-      <a href="https://zalo.me/0342390667">Zalo · 0342 390 667</a>
-      <a href="https://www.facebook.com/" target="_blank">Facebook</a>
-      <a href="mailto:hello@trilu.edu.vn">hello@trilu.edu.vn</a>
-      <p>P. Cái Khế, TP Cần Thơ</p>
-    </div>
+    <div class="f-col"><h4>HỌC THUẬT</h4><a href="/jlpt.html">JLPT — 5 cấp N5-N1</a><a href="/kaiwa.html">Kaiwa — Hội thoại</a><a href="/eju.html">EJU — Du học thi</a><a href="/luyen-doc.html">Luyện đọc</a></div>
+    <div class="f-col"><h4>SỰ NGHIỆP</h4><a href="/du-hoc.html">Du học Nhật Bản</a><a href="/viec-lam.html">Việc làm — TTS · Tokutei</a><a href="/viec-lam/ky-su.html">Kỹ sư · Phiên dịch</a><a href="/lien-he.html">Tư vấn miễn phí</a></div>
+    <div class="f-col"><h4>TÀI NGUYÊN</h4><a href="/sensei.html">Về Trí Lữ</a><a href="/sensei.html">Sensei · 8 thầy cô</a><a href="/tra-cuu.html">Tra cứu từ điển</a><a href="/tai-lieu.html">Thư viện tài liệu</a><a href="/blog.html">Blog & Tạp chí</a></div>
+    <div class="f-col"><h4>LIÊN HỆ</h4><a href="https://zalo.me/0342390667">Zalo · 0342 390 667</a><a href="https://www.facebook.com/" target="_blank">Facebook</a><a href="mailto:hello@trilu.edu.vn">hello@trilu.edu.vn</a><p>P. Cái Khế, TP Cần Thơ</p></div>
   </div>
-  <div class="f-bot">
-    <span>© MMXXVI · TRÍ LỮ NIHONGO · TRILU.EDU.VN</span>
-    <em>Chinh phục tiếng Nhật — mở cửa tương lai.</em>
-  </div>
+  <div class="f-bot"><span>© MMXXVI · TRÍ LỮ NIHONGO · TRILU.EDU.VN</span><em>Chinh phục tiếng Nhật — mở cửa tương lai.</em></div>
 </footer>
 </div>
 <script src="/nav.js" defer></script>
