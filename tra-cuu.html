@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Tra cứu — Trí Lữ Nihongo</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Tra từ điển kanji, kana, romaji, tiếng Việt — Trí Lữ Nihongo">
+<meta name="theme-color" content="#1B3A6B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Trí Lữ">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root { --cream:#FBF6E8; --ink:#1B3A6B; --gold:#B89568; --sumi:#8B3A2E; --serif:'Cormorant Garamond',Georgia,serif; --sans:'Inter Tight',-apple-system,sans-serif; --mono:'JetBrains Mono',ui-monospace,monospace; --jp:'Noto Serif JP',serif; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:var(--sans); background:var(--cream); color:var(--ink); min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased; }
+.wrap { max-width:760px; margin:0 auto; padding:max(24px, env(safe-area-inset-top)) 22px max(40px, env(safe-area-inset-bottom)); }
+.nav { display:flex; justify-content:space-between; align-items:center; padding-bottom:24px; border-bottom:1px solid rgba(184,149,104,0.25); margin-bottom:48px; gap:16px; }
+.brand { display:flex; align-items:center; gap:14px; text-decoration:none; color:inherit; }
+.brand img { width:44px; height:44px; border-radius:11px; }
+.brand-name { font-family:var(--serif); font-style:italic; font-size:21px; line-height:1; }
+.brand-jp { font-family:var(--jp); font-size:11px; color:var(--gold); letter-spacing:0.22em; margin-top:5px; }
+.back { font-family:var(--mono); font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--ink); text-decoration:none; padding:8px 14px; border:1px solid rgba(27,58,107,0.2); border-radius:999px; transition:all .2s; }
+.back:hover { background:var(--ink); color:var(--cream); }
+.eyebrow { font-family:var(--mono); font-size:12px; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase; margin-bottom:14px; }
+.eyebrow .jp { font-family:var(--jp); color:var(--gold); letter-spacing:0.32em; margin-left:8px; font-weight:400; }
+h1 { font-family:var(--serif); font-style:italic; font-size:clamp(40px, 7vw, 64px); line-height:1.05; letter-spacing:-0.01em; margin-bottom:22px; font-weight:400; }
+.lede { font-size:17px; line-height:1.65; color:rgba(27,58,107,0.78); margin-bottom:42px; max-width:600px; }
+.search-card { background:#fff; border:1px solid rgba(184,149,104,0.35); border-radius:18px; padding:6px 6px 6px 22px; display:flex; align-items:stretch; gap:10px; box-shadow:0 8px 22px rgba(27,58,107,0.06); margin-bottom:18px; }
+.search-card .kicker { display:flex; align-items:center; font-family:var(--jp); font-size:24px; color:var(--ink); }
+.search-card input { flex:1; border:none; outline:none; font-family:var(--serif); font-style:italic; font-size:18px; color:var(--ink); background:transparent; padding:18px 8px; min-width:0; }
+.search-card input::placeholder { color:rgba(27,58,107,0.4); }
+.search-btn { background:var(--ink); color:var(--cream); border:none; padding:0 24px; border-radius:14px; font-family:var(--mono); font-size:11px; letter-spacing:0.2em; cursor:pointer; transition:transform .15s, background .2s; white-space:nowrap; }
+.search-btn:hover { background:#0F2545; }
+.search-btn:active { transform:scale(0.97); }
+.note { font-size:13px; color:rgba(27,58,107,0.55); margin-bottom:36px; font-style:italic; }
+.section-title { font-family:var(--mono); font-size:11px; letter-spacing:0.22em; color:var(--gold); text-transform:uppercase; margin:36px 0 16px; }
+.links { display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:10px; }
+.links a { display:flex; flex-direction:column; gap:4px; padding:16px 18px; background:rgba(184,149,104,0.08); border:1px solid transparent; border-radius:12px; text-decoration:none; color:var(--ink); transition:all .2s; }
+.links a:hover { background:rgba(184,149,104,0.18); border-color:rgba(184,149,104,0.4); transform:translateY(-2px); }
+.links a .name { font-family:var(--serif); font-style:italic; font-size:18px; }
+.links a .desc { font-family:var(--mono); font-size:10.5px; color:rgba(27,58,107,0.6); letter-spacing:0.12em; text-transform:uppercase; }
+.tools { display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:8px; margin-top:14px; }
+.tools a { padding:12px 14px; background:transparent; border:1px solid rgba(184,149,104,0.3); border-radius:10px; text-decoration:none; color:var(--ink); font-family:var(--mono); font-size:11px; letter-spacing:0.18em; text-align:center; transition:all .2s; }
+.tools a:hover { background:var(--gold); color:var(--cream); border-color:var(--gold); }
+footer { margin-top:64px; padding-top:24px; border-top:1px solid rgba(184,149,104,0.25); font-family:var(--mono); font-size:11px; color:rgba(27,58,107,0.55); letter-spacing:0.15em; text-align:center; }
+@media (max-width:600px) {
+  .nav { flex-direction:row; }
+  .brand-name { font-size:18px; }
+  .back { padding:6px 10px; font-size:10px; }
+  h1 { font-size:36px; }
+  .lede { font-size:15px; margin-bottom:28px; }
+  .search-card { flex-direction:column; padding:14px; gap:8px; align-items:stretch; }
+  .search-card .kicker { display:none; }
+  .search-card input { padding:14px 4px; font-size:16px; text-align:center; }
+  .search-btn { padding:14px; }
+  .links a { padding:14px 16px; }
+  .links a .name { font-size:16px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav class="nav">
+    <a class="brand" href="/">
+      <img src="/icon-180.png" alt="Trí Lữ Nihongo">
+      <div>
+        <div class="brand-name">Trí Lữ · Nihongo</div>
+        <div class="brand-jp">智 旅 日 本 語</div>
+      </div>
+    </a>
+    <a class="back" href="/">← Về trang</a>
+  </nav>
+  <div class="eyebrow">Tra cứu nhanh<span class="jp">検 索</span></div>
+  <h1><em>Một ô tìm —</em><br>biết cả ba.</h1>
+  <p class="lede">Từ vựng · ngữ pháp · kanji — gõ kanji, kana, romaji hoặc tiếng Việt, AI tự nhận diện. Kết nối từ điển Mazii (1.7M người dùng) — đối tác chính thức của Trí Lữ.</p>
+  <form class="search-card" onsubmit="event.preventDefault(); const q=document.getElementById('q').value.trim(); if(q) window.open('https://mazii.net/vi-VN/search/word/javi/'+encodeURIComponent(q),'_blank');">
+    <div class="kicker">検</div>
+    <input id="q" type="text" placeholder="Tra kanji · kana · romaji · tiếng Việt" autocomplete="off" autofocus>
+    <button type="submit" class="search-btn">MỞ TỪ ĐIỂN →</button>
+  </form>
+  <p class="note">Mẹo: gõ tiếng Việt như "đẹp", "đi học", "cảm ơn" — AI sẽ tự dịch sang Nhật.</p>
+  <div class="section-title">Hôm nay · Người học tra nhiều nhất</div>
+  <div class="links">
+    <a href="https://mazii.net/vi-VN/search/word/javi/%E6%A1%9C" target="_blank"><span class="name">桜 — sakura</span><span class="desc">01 · Hoa anh đào</span></a>
+    <a href="https://mazii.net/vi-VN/search/word/javi/%E7%B8%81" target="_blank"><span class="name">縁 — en</span><span class="desc">02 · Duyên</span></a>
+    <a href="https://mazii.net/vi-VN/search/word/javi/%E5%AD%A6%E6%A0%A1" target="_blank"><span class="name">学校 — gakkō</span><span class="desc">03 · Trường học</span></a>
+    <a href="https://mazii.net/vi-VN/search/word/javi/%E6%99%BA" target="_blank"><span class="name">智 — chi</span><span class="desc">04 · Trí tuệ</span></a>
+    <a href="https://mazii.net/vi-VN/search/word/javi/%E7%BE%8E%E3%81%97%E3%81%84" target="_blank"><span class="name">美しい — utsukushii</span><span class="desc">05 · Đẹp</span></a>
+  </div>
+  <div class="section-title">Công cụ khác</div>
+  <div class="tools">
+    <a href="https://mazii.net/" target="_blank">MAZII</a>
+    <a href="https://jisho.org/" target="_blank">JISHO</a>
+    <a href="https://takoboto.jp/" target="_blank">TAKOBOTO</a>
+    <a href="https://www.romajidesu.com/" target="_blank">ROMAJIDESU</a>
+    <a href="https://www.wadoku.de/" target="_blank">WADOKU</a>
+  </div>
+  <footer>© MMXXVI · TRÍ LỮ NIHONGO · TRILU.EDU.VN</footer>
+</div>
+</body>
+</html>
