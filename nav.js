@@ -26,3 +26,5 @@ function buildDesktop(){
 function run(){if(!document.body)return;ic();buildMobile();buildDesktop();}
 if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",run);else run();
 })();
+// Register service worker for PWA offline cache
+if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){});});}
