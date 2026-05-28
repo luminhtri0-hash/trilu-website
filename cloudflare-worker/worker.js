@@ -258,10 +258,11 @@ async function callGemini(env, prompt, { model } = {}) {
     generationConfig: {
       temperature: 0.2,
       topP: 0.9,
-      maxOutputTokens: 8192,
+      maxOutputTokens: 16384,
       responseMimeType: "application/json",
-      // Disable Gemini 3.x thinking mode → saves ~30-50% tokens, faster response
-      thinkingConfig: { thinkingBudget: 0 },
+      // Gemini 3.x thinking mode: enable with limited budget so JSON output isn't truncated.
+      // maxOutputTokens INCLUDES thinking tokens, so keep room (16384 - 4096 = 12288 for output)
+      thinkingConfig: { thinkingBudget: 4096 },
     },
   };
   const r = await fetch(url, {
