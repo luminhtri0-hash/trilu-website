@@ -232,11 +232,11 @@ async function quotaContext(req, env) {
 
 /* ─────────── monthly budget cap (hard $ limit) ───────────
    Counter key budget:YYYY-MM increments each Gemini call.
-   Default cap 40000 calls/month ≈ $44 (Flash @ ~700 tokens/call).
+   Default cap 150000 calls/month ≈ $150 (Flash @ ~700 tokens/call).
    Override via env MAX_API_CALLS_PER_MONTH. */
 
 async function checkAndBumpBudget(env) {
-  const max = parseInt(env.MAX_API_CALLS_PER_MONTH || "40000", 10);
+  const max = parseInt(env.MAX_API_CALLS_PER_MONTH || "150000", 10);
   const month = new Date().toISOString().slice(0, 7); // YYYY-MM
   const key = `budget:${month}`;
   const cur = parseInt((await env.QUOTA.get(key)) || "0", 10);
@@ -791,6 +791,165 @@ async function handleTTS(req, env) {
   });
 }
 
+/* ─────────── SRS (Spaced Repetition) ───────────
+   Simplified FSRS-lite. Per-user state stored in USERS namespace
+   under key `srs:<userId>:<word>` = { e, i, due, last, reps, lapses }
+   where:
+     e = ease factor (1.3 - 2.8)
+     i = interval in minutes
+     due = next review timestamp (ms)
+     last = last review timestamp (ms)
+     reps = total reviews
+     lapses = total "again" count
+   Also stores `srs:<userId>:_meta` = { streak, lastStudyDay, weekMinutes:[7] }
+*/
+
+const SRS_INITIAL_E = 2.5;
+
+function srsNextInterval(state, rating) {
+  // rating: again|hard|good|easy
+  const e = state.e || SRS_INITIAL_E;
+  const i = state.i || 0;
+  const reps = state.reps || 0;
+
+  let newE = e, newI = i, lapse = 0;
+
+  if (rating === "again") {
+    newE = Math.max(1.3, e - 0.2);
+    newI = 1; // 1 minute
+    lapse = 1;
+  } else if (rating === "hard") {
+    newE = Math.max(1.3, e - 0.15);
+    if (reps === 0) newI = 10; // 10 min
+    else newI = Math.max(10, Math.floor(i * 1.2));
+  } else if (rating === "good") {
+    if (reps === 0) newI = 24 * 60; // 1 day
+    else newI = Math.max(60, Math.floor(i * e));
+  } else if (rating === "easy") {
+    newE = Math.min(2.8, e + 0.15);
+    if (reps === 0) newI = 4 * 24 * 60; // 4 days
+    else newI = Math.max(4 * 24 * 60, Math.floor(i * e * 1.3));
+  }
+
+  return {
+    e: newE,
+    i: newI,
+    due: Date.now() + newI * 60 * 1000,
+    last: Date.now(),
+    reps: reps + 1,
+    lapses: (state.lapses || 0) + lapse,
+  };
+}
+
+function srsFormatInterval(minutes) {
+  if (minutes < 60) return `<${Math.max(1, minutes)}m`;
+  if (minutes < 24 * 60) return `${Math.round(minutes / 60)}h`;
+  if (minutes < 30 * 24 * 60) return `${Math.round(minutes / (24 * 60))}d`;
+  return `${Math.round(minutes / (30 * 24 * 60))}mo`;
+}
+
+async function handleSrsState(req, env) {
+  const sess = await getSession(req, env);
+  if (!sess) return err(401, "auth required");
+  const userId = sess.user.id;
+  const now = Date.now();
+  const todayKey = new Date().toISOString().slice(0, 10);
+
+  // List all SRS keys for this user
+  const prefix = `srs:${userId}:`;
+  let cursor;
+  let dueToday = 0, newToday = 0, hardToday = 0;
+  const dueWords = [];
+  let pages = 0;
+  while (true) {
+    const list = await env.USERS.list({ prefix, cursor, limit: 1000 });
+    pages++;
+    for (const k of list.keys) {
+      if (k.name === prefix + "_meta") continue;
+      const word = k.name.slice(prefix.length);
+      // Don't fetch each value here (too expensive). Use expiration/metadata.
+      // For now: bulk-fetch the small ones for due check.
+      try {
+        const v = await env.USERS.get(k.name, { type: "json" });
+        if (!v) continue;
+        if ((v.due || 0) <= now) {
+          dueToday++;
+          if (dueWords.length < 200) dueWords.push(word);
+          if ((v.lapses || 0) > 0 && v.last && (now - v.last) < 24 * 3600 * 1000) hardToday++;
+        }
+        if (!v.last) newToday++;
+      } catch {}
+    }
+    if (list.list_complete) break;
+    cursor = list.cursor;
+    if (pages > 20) break; // safety
+  }
+
+  // Load meta
+  let meta = { streak: 0, lastStudyDay: null, weekMinutes: [0,0,0,0,0,0,0] };
+  try {
+    const m = await env.USERS.get(prefix + "_meta", { type: "json" });
+    if (m) meta = { ...meta, ...m };
+  } catch {}
+
+  return json({
+    ok: true,
+    dueToday,
+    newToday,
+    hardToday,
+    streak: meta.streak,
+    weekMinutes: meta.weekMinutes,
+    dueWords,
+    generatedAt: now,
+  });
+}
+
+async function handleSrsReview(req, env) {
+  const sess = await getSession(req, env);
+  if (!sess) return err(401, "auth required");
+  const userId = sess.user.id;
+  const body = await req.json().catch(() => ({}));
+  const { word, rating } = body;
+  if (!word || !rating) return err(400, "word + rating required");
+  if (!["again","hard","good","easy"].includes(rating)) return err(400, "invalid rating");
+
+  const key = `srs:${userId}:${word}`;
+  const prev = (await env.USERS.get(key, { type: "json" })) || {};
+  const next = srsNextInterval(prev, rating);
+  await env.USERS.put(key, JSON.stringify(next));
+
+  // Update meta (streak, weekMinutes)
+  const metaKey = `srs:${userId}:_meta`;
+  const meta = (await env.USERS.get(metaKey, { type: "json" })) || {
+    streak: 0, lastStudyDay: null, weekMinutes: [0,0,0,0,0,0,0],
+  };
+  const todayKey = new Date().toISOString().slice(0, 10);
+  if (meta.lastStudyDay !== todayKey) {
+    // Check if yesterday → continue streak
+    const y = new Date(); y.setDate(y.getDate() - 1);
+    const ykey = y.toISOString().slice(0, 10);
+    if (meta.lastStudyDay === ykey) meta.streak = (meta.streak || 0) + 1;
+    else meta.streak = 1;
+    meta.lastStudyDay = todayKey;
+  }
+  // Bump today's minute (decorative — 1 review ≈ 0.1 min)
+  const dow = (new Date().getDay() + 6) % 7; // Mon=0
+  if (!meta.weekMinutes) meta.weekMinutes = [0,0,0,0,0,0,0];
+  meta.weekMinutes[dow] = (meta.weekMinutes[dow] || 0) + 0.1;
+  await env.USERS.put(metaKey, JSON.stringify(meta));
+
+  return json({
+    ok: true,
+    next: {
+      interval: next.i,
+      intervalLabel: srsFormatInterval(next.i),
+      due: next.due,
+      ease: next.e,
+      reps: next.reps,
+    },
+  });
+}
+
 /* ─────────── Admin stats (cache counts) ─────────── */
 async function handleAdminStats(req, env) {
   const counts = { word: 0, grammar: 0, translate: 0, tts: 0, other: 0, total: 0 };
@@ -814,7 +973,7 @@ async function handleAdminStats(req, env) {
   // Also read monthly budget counter
   const month = new Date().toISOString().slice(0, 7);
   const used = parseInt((await env.QUOTA.get(`budget:${month}`)) || "0", 10);
-  const max = parseInt(env.MAX_API_CALLS_PER_MONTH || "80000", 10);
+  const max = parseInt(env.MAX_API_CALLS_PER_MONTH || "150000", 10);
   return json({
     ok: true,
     cache_counts: counts,
@@ -872,6 +1031,9 @@ export default {
       else if (p === "/api/me")                   res = await handleMe(req, env);
       else if (p === "/api/tts")                  res = await handleTTS(req, env);
       else if (p === "/api/admin/stats")          res = await handleAdminStats(req, env);
+
+      else if (p === "/api/srs/state")            res = await handleSrsState(req, env);
+      else if (p === "/api/srs/review")           res = await handleSrsReview(req, env);
 
       else res = err(404, "not found");
 

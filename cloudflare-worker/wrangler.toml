@@ -1,6 +1,12 @@
 name = "trilu-dict-api"
 main = "worker.js"
 compatibility_date = "2025-05-01"
+workers_dev = true
+preview_urls = true
+
+# Smart placement: Cloudflare auto chọn region gần Gemini API (Asia/EU/US)
+[placement]
+mode = "smart"
 
 # Custom domain route — Cloudflare phải proxy trilu.edu.vn (orange cloud)
 routes = [
@@ -9,39 +15,52 @@ routes = [
 
 # ─────────── Vars (public, không bí mật) ───────────
 [vars]
-ALLOWED_ORIGIN = "https://trilu.edu.vn"
-COOKIE_DOMAIN  = ".trilu.edu.vn"
-GEMINI_MODEL   = "gemini-2.0-flash"
-QUOTA_ANON     = "10"
-QUOTA_USER     = "100"
-MAIL_FROM      = "Trí Lữ Nihongo <noreply@trilu.edu.vn>"
+ALLOWED_ORIGIN           = "https://trilu.edu.vn"
+COOKIE_DOMAIN            = ".trilu.edu.vn"
+
+# AI Gateway URL — bypass HKG block của Gemini API
+AI_GATEWAY_BASE          = "https://gateway.ai.cloudflare.com/v1/b1c38d8a66c07f34bcc9b671aadb7eb4/trilu-dict/google-ai-studio"
+
+# Models
+GEMINI_MODEL_PRO         = "gemini-3.5-flash"
+GEMINI_MODEL             = "gemini-3.5-flash"
+
+# Quotas (bỏ giới hạn để test thoải mái)
+QUOTA_ANON               = "9999"
+QUOTA_USER               = "9999"
+
+# Budget cap hằng tháng ($150 ≈ 150k Gemini Flash calls)
+MAX_API_CALLS_PER_MONTH  = "150000"
+
+# Magic-link email sender
+MAIL_FROM                = "Trí Lữ Nihongo <noreply@trilu.edu.vn>"
 
 # ─────────── KV namespaces ───────────
-# Sau khi tạo bằng `wrangler kv:namespace create`, paste id vào đây.
 [[kv_namespaces]]
 binding = "DICT_CACHE"
-id = "PASTE_DICT_CACHE_ID_HERE"
+id = "9ec69b2aedd14be9862407c79a051ae3"
 
 [[kv_namespaces]]
 binding = "QUOTA"
-id = "PASTE_QUOTA_ID_HERE"
+id = "10120832f9e04da0a538b3baf6c90c2f"
 
 [[kv_namespaces]]
 binding = "SESSIONS"
-id = "PASTE_SESSIONS_ID_HERE"
+id = "89b888ccb2cf472e9df06d787ad2a00e"
 
 [[kv_namespaces]]
 binding = "USERS"
-id = "PASTE_USERS_ID_HERE"
+id = "d8f190c382a04e049521589012a5e373"
 
 [[kv_namespaces]]
 binding = "MAGIC"
-id = "PASTE_MAGIC_ID_HERE"
+id = "a84a06700b6e40a5b1a2e143b79cca9c"
 
 # ─────────── Secrets (KHÔNG paste vào file này!) ───────────
-# Set bằng wrangler secret put:
+# Set bằng wrangler secret put (chỉ làm 1 lần đầu, đã set rồi):
 #   wrangler secret put GEMINI_API_KEY
+#   wrangler secret put TTS_API_KEY
 #   wrangler secret put GOOGLE_CLIENT_ID
 #   wrangler secret put GOOGLE_CLIENT_SECRET
 #   wrangler secret put RESEND_API_KEY
-#   wrangler secret put JWT_SECRET     # random 32+ ký tự, tự tạo
+#   wrangler secret put JWT_SECRET
