@@ -109,6 +109,29 @@ h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6vw,56px);lin
 .r-bd-link{font-family:var(--mono);font-size:8.5px;letter-spacing:0.1em;padding:3px 7px;border-radius:4px;background:rgba(27,58,107,0.06);color:rgba(27,58,107,0.7);text-decoration:none;font-weight:600;text-transform:uppercase}
 .r-bd-link:hover{background:rgba(27,58,107,0.18)}
 .r-bd-card:hover .r-bd-link{background:rgba(251,246,232,0.15);color:rgba(251,246,232,0.95)}
+/* Hán Việt header lên đầu */
+.r-hv-header{margin:6px 0 18px;padding:14px 18px;background:linear-gradient(135deg,rgba(139,58,46,0.06),rgba(184,149,104,0.08));border:1px solid rgba(139,58,46,0.18);border-radius:12px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.r-hv-label{font-family:var(--mono);font-size:10.5px;letter-spacing:0.22em;color:var(--sumi);text-transform:uppercase;font-weight:700;opacity:0.85}
+.r-hv-text{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--sumi);letter-spacing:0.01em;font-weight:500}
+.r-hv-mean{font-family:var(--serif);font-size:14px;color:rgba(139,58,46,0.7);font-style:italic;margin-left:4px}
+/* Stroke order */
+.stroke-section{margin-top:18px;padding-top:14px;border-top:1px solid rgba(184,149,104,0.18)}
+.stroke-section h3{font-family:var(--mono);font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:600;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.stroke-replay{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;padding:4px 10px;border-radius:999px;background:rgba(27,58,107,0.08);color:var(--ink);cursor:pointer;border:1px solid rgba(27,58,107,0.18);font-weight:600;text-transform:uppercase}
+.stroke-replay:hover{background:var(--ink);color:var(--cream)}
+.stroke-grid{display:flex;flex-wrap:wrap;gap:16px}
+.stroke-cell{background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:12px;padding:12px;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:148px}
+.stroke-cell-char{font-family:var(--jp);font-size:18px;color:var(--gold);font-weight:600}
+.stroke-svg-wrap{width:128px;height:128px;display:flex;align-items:center;justify-content:center;background:rgba(184,149,104,0.04);border-radius:8px;position:relative;overflow:hidden}
+.stroke-svg-wrap svg{width:100%;height:100%}
+.stroke-svg-wrap svg path{fill:none;stroke:var(--ink);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round}
+.stroke-svg-wrap svg g[id*="StrokeNumbers"]{display:none}
+.stroke-svg-wrap.show-nums svg g[id*="StrokeNumbers"]{display:initial}
+.stroke-svg-wrap.show-nums svg g[id*="StrokeNumbers"] text{font-size:8px;fill:var(--gold)!important;font-family:var(--mono)!important;font-weight:600}
+.stroke-cell-meta{font-family:var(--mono);font-size:9.5px;letter-spacing:0.12em;color:var(--gold);text-transform:uppercase;font-weight:600}
+.stroke-cell-toggle{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;padding:3px 8px;border-radius:4px;background:transparent;color:rgba(27,58,107,0.6);cursor:pointer;border:1px solid rgba(27,58,107,0.15);font-weight:600;text-transform:uppercase}
+.stroke-cell-toggle:hover{background:rgba(27,58,107,0.06)}
+@keyframes drawStroke{to{stroke-dashoffset:0}}
 .r-breakdown{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
 .r-bd-card{background:rgba(27,58,107,0.04);padding:10px 12px;border-radius:8px;border:1px solid rgba(184,149,104,0.2);text-decoration:none;color:inherit;display:block;cursor:pointer;transition:all .15s}
 .r-bd-card:hover{background:var(--gold);color:var(--cream);border-color:var(--gold);transform:translateY(-2px)}
@@ -451,6 +474,62 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
   function ttsBtn(text){
     return ` <button type="button" class="tts-btn" data-tts="${escapeHtml(text)}" data-tts-lang="ja-JP" title="Phát âm tiếng Nhật" aria-label="Phát âm">🔊</button>`;
   }
+  // ─────── KanjiVG stroke order loader ───────
+  const strokeCache = new Map();
+  async function loadStrokeSvg(kanji){
+    if(strokeCache.has(kanji)) return strokeCache.get(kanji);
+    const cp = kanji.codePointAt(0).toString(16).padStart(5,'0');
+    const url = `https://cdn.jsdelivr.net/gh/KanjiVG/kanjivg@master/kanji/${cp}.svg`;
+    try{
+      const r = await fetch(url);
+      if(!r.ok){ strokeCache.set(kanji, null); return null; }
+      const txt = await r.text();
+      strokeCache.set(kanji, txt);
+      return txt;
+    }catch(e){
+      strokeCache.set(kanji, null);
+      return null;
+    }
+  }
+  function animateStrokes(wrap, durPerStroke){
+    durPerStroke = durPerStroke || 0.7;
+    const paths = wrap.querySelectorAll('svg path');
+    let delay = 0;
+    paths.forEach(p => {
+      try{
+        const len = p.getTotalLength();
+        p.style.strokeDasharray = len;
+        p.style.strokeDashoffset = len;
+        p.style.animation = 'none';
+        // force reflow
+        void p.getBoundingClientRect();
+        p.style.animation = `drawStroke ${durPerStroke}s ease-out ${delay}s forwards`;
+      }catch(e){}
+      delay += durPerStroke;
+    });
+    return delay; // total duration
+  }
+  async function mountStrokeCell(cell, kanji){
+    const wrap = cell.querySelector('.stroke-svg-wrap');
+    if(!wrap) return;
+    wrap.innerHTML = '<div style="font-family:var(--mono);font-size:10px;color:var(--gold)">…</div>';
+    const svg = await loadStrokeSvg(kanji);
+    if(!svg){
+      wrap.innerHTML = `<div style="font-family:var(--mono);font-size:10px;color:var(--sumi);text-align:center;padding:8px">Không có dữ liệu nét</div>`;
+      return;
+    }
+    // Sanitize: strip XML decl + DOCTYPE
+    const clean = svg.replace(/<\?xml[^?]*\?>/g,'').replace(/<!DOCTYPE[^>]*>/g,'').trim();
+    wrap.innerHTML = clean;
+    const svgEl = wrap.querySelector('svg');
+    if(svgEl){
+      svgEl.removeAttribute('width');
+      svgEl.removeAttribute('height');
+      svgEl.setAttribute('preserveAspectRatio','xMidYMid meet');
+    }
+    requestAnimationFrame(() => animateStrokes(wrap));
+  }
+
   // Convert {kanji|reading} syntax → <ruby><rt> HTML. Other text is escaped normally.
   function renderRuby(s){
     if(!s) return '';
@@ -545,9 +624,34 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
             </div>`;
           }).join('')}</div>
         </div>` : '';
+      // Hán-Việt summary từ tổng hợp kanji_breakdown
+      const hvParts = (r.kanji_breakdown||[]).map(k => k.han_viet||'').filter(Boolean);
+      const hvText = hvParts.join(' ').trim();
+      const hvMeans = (r.kanji_breakdown||[]).map(k => k.han_meaning||'').filter(Boolean).join(' · ');
+      const hvHeader = hvText ? `
+        <div class="r-hv-header">
+          <span class="r-hv-label">Hán Việt</span>
+          <span class="r-hv-text">${escapeHtml(hvText)}</span>
+          ${hvMeans?`<span class="r-hv-mean">(${escapeHtml(hvMeans)})</span>`:''}
+        </div>` : '';
+      // Stroke order section — only if có kanji
+      const strokes = (r.kanji_breakdown||[]).length ? `
+        <div class="stroke-section">
+          <h3>Cách viết · 筆順
+            <button class="stroke-replay" type="button" data-stroke-replay="1">▶ Vẽ lại</button>
+            <button class="stroke-replay" type="button" data-stroke-nums="1">Hiện số nét</button>
+          </h3>
+          <div class="stroke-grid">${r.kanji_breakdown.map(k => `
+            <div class="stroke-cell">
+              <div class="stroke-cell-char">${escapeHtml(k.char)}</div>
+              <div class="stroke-svg-wrap" data-kanji="${escapeHtml(k.char)}"></div>
+              <div class="stroke-cell-meta">${k.strokes?k.strokes+' nét':''}${k.han_viet?' · '+escapeHtml(k.han_viet):''}</div>
+            </div>`).join('')}</div>
+        </div>` : '';
       return `
         <div class="r-card">
           <div class="r-meta">${chips}</div>
+          ${hvHeader}
           ${r.kanji ? `<div class="r-title">${escapeHtml(r.kanji)}</div>` : ''}
           ${r.reading_hiragana ? `<div class="r-reading">${escapeHtml(r.reading_hiragana)}</div>` : ''}
           ${r.reading_romaji ? `<div class="r-romaji">${escapeHtml(r.reading_romaji)}</div>` : ''}
@@ -559,10 +663,32 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
           ${examples ? `<div class="r-section"><h3>Ví dụ</h3>${examples}</div>` : ''}
           ${related}
           ${breakdown}
+          ${strokes}
         </div>`;
     }).join('');
     const note = data.note ? `<p class="note" style="margin-top:14px">${escapeHtml(data.note)}</p>` : '';
     out.innerHTML = items + note;
+    // Mount stroke order cells (lazy fetch KanjiVG)
+    out.querySelectorAll('.stroke-cell').forEach(cell => {
+      const wrap = cell.querySelector('.stroke-svg-wrap');
+      const kanji = wrap?.getAttribute('data-kanji');
+      if(kanji) mountStrokeCell(cell, kanji);
+    });
+    // Replay + show numbers handlers
+    out.querySelectorAll('[data-stroke-replay]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const section = btn.closest('.stroke-section');
+        section.querySelectorAll('.stroke-svg-wrap').forEach(w => animateStrokes(w));
+      });
+    });
+    out.querySelectorAll('[data-stroke-nums]').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const section = btn.closest('.stroke-section');
+        section.querySelectorAll('.stroke-svg-wrap').forEach(w => w.classList.toggle('show-nums'));
+      });
+    });
   }
 
   // ─────── render: GRAMMAR ───────
