@@ -245,7 +245,7 @@ async function callGemini(env, prompt, { model } = {}) {
     generationConfig: {
       temperature: 0.2,
       topP: 0.9,
-      maxOutputTokens: 4096,
+      maxOutputTokens: 8192,
       responseMimeType: "application/json",
       // Disable Gemini 3.x thinking mode → saves ~30-50% tokens, faster response
       thinkingConfig: { thinkingBudget: 0 },
