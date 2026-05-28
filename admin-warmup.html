@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Cache Warmup — Trí Lữ Admin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{--cream:#FBF6E8;--ink:#1B3A6B;--gold:#B89568;--sumi:#8B3A2E;--moss:#5C7A4B}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,sans-serif;background:var(--cream);color:var(--ink);padding:32px;line-height:1.5}
+.wrap{max-width:1000px;margin:0 auto}
+h1{font-size:28px;margin-bottom:8px}
+.sub{color:#666;margin-bottom:28px}
+.panel{background:#fff;border:1px solid #ddd;border-radius:12px;padding:24px;margin-bottom:20px}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+button{font-family:inherit;font-size:14px;padding:10px 20px;border-radius:8px;border:1px solid var(--ink);background:var(--ink);color:var(--cream);cursor:pointer;font-weight:600}
+button:hover{background:#0F2545}
+button:disabled{opacity:0.4;cursor:not-allowed}
+button.ghost{background:transparent;color:var(--ink)}
+button.danger{background:var(--sumi);border-color:var(--sumi)}
+input[type=number],input[type=text],select{font-family:inherit;font-size:14px;padding:8px 12px;border-radius:6px;border:1px solid #ccc;background:#fff}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:18px 0}
+.stat{padding:14px 18px;background:rgba(184,149,104,0.08);border-radius:10px}
+.stat-label{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:0.15em;margin-bottom:4px}
+.stat-val{font-size:22px;font-weight:700;color:var(--ink)}
+.stat.moss .stat-val{color:var(--moss)}
+.stat.sumi .stat-val{color:var(--sumi)}
+.stat.gold .stat-val{color:var(--gold)}
+.progress{height:8px;background:#eee;border-radius:999px;overflow:hidden;margin:10px 0}
+.progress-bar{height:100%;background:linear-gradient(90deg,var(--gold),var(--ink));transition:width 0.3s}
+.log{height:300px;overflow-y:auto;background:#1a1a1a;color:#0f0;font-family:'JetBrains Mono',ui-monospace,monospace;font-size:12px;padding:14px;border-radius:8px;line-height:1.4}
+.log .ok{color:#7CFC00}
+.log .err{color:#FF6347}
+.log .info{color:#87CEEB}
+.log .cached{color:#FFD700}
+.cat-checks{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.cat-row{display:flex;align-items:center;gap:8px;padding:8px 12px;background:#f5f0e0;border-radius:8px}
+.cat-row label{cursor:pointer;flex:1}
+.cat-row .count{font-family:'JetBrains Mono',monospace;font-size:11px;color:#888}
+.cost{font-family:'JetBrains Mono',monospace;color:var(--sumi);font-weight:700}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>🔥 Cache Warmup</h1>
+<p class="sub">Tiền-tạo cache cho ~3000+ từ vựng + ngữ pháp + TTS phổ biến. Mỗi entry lưu KV 1 năm. Sau khi xong, mọi user sau tra đều instant.</p>
+
+<div class="panel">
+<h3>1. Chọn danh mục</h3>
+<p class="sub" style="font-size:13px">Tổng = số queries. Cost ước tính 0.005-0.012 USD/query (Gemini 3.5 Flash + Hán-Việt + ruby + breakdown).</p>
+<div class="cat-checks" id="catChecks"></div>
+<div style="margin-top:14px;font-size:13px">
+<strong>Tổng queries chọn:</strong> <span id="totalSel">0</span> ·
+<strong>Cost ước tính:</strong> <span class="cost" id="totalCost">$0</span> ·
+<strong>Thời gian:</strong> <span id="totalTime">0 phút</span>
+</div>
+</div>
+
+<div class="panel">
+<h3>2. Cấu hình</h3>
+<div class="row">
+<label>API Base: <input type="text" id="apiBase" value="https://trilu-dict-api.luminhtri0.workers.dev" style="width:380px"></label>
+</div>
+<div class="row">
+<label>Delay mỗi call (ms): <input type="number" id="delay" value="100" min="0" max="2000" style="width:80px"></label>
+<label>Parallel: <input type="number" id="parallel" value="5" min="1" max="20" style="width:60px"></label>
+<label>Skip if already cached: <input type="checkbox" id="skipCached" checked></label>
+</div>
+</div>
+
+<div class="panel">
+<h3>3. Bắt đầu</h3>
+<div class="row">
+<button id="btnStart">▶ START WARMUP</button>
+<button id="btnPause" class="ghost" disabled>⏸ Pause</button>
+<button id="btnStop" class="danger" disabled>■ Stop</button>
+</div>
+<div class="stats">
+<div class="stat"><div class="stat-label">Done</div><div class="stat-val" id="sDone">0</div></div>
+<div class="stat moss"><div class="stat-label">Fresh (paid)</div><div class="stat-val" id="sFresh">0</div></div>
+<div class="stat gold"><div class="stat-label">Cache hits (free)</div><div class="stat-val" id="sCache">0</div></div>
+<div class="stat sumi"><div class="stat-label">Errors</div><div class="stat-val" id="sErr">0</div></div>
+<div class="stat"><div class="stat-label">Spent (~USD)</div><div class="stat-val" id="sCost">$0</div></div>
+<div class="stat"><div class="stat-label">Avg ms/call</div><div class="stat-val" id="sAvg">—</div></div>
+</div>
+<div class="progress"><div class="progress-bar" id="bar" style="width:0%"></div></div>
+<div class="log" id="log">[idle]</div>
+</div>
+</div>
+
+<script>
+// ============ QUERY LISTS ============
+
+// Top common Japanese vocabulary by JLPT level (curated, high-frequency)
+const N5_VOCAB = "食べる,飲む,行く,来る,する,見る,聞く,話す,話,買う,書く,読む,寝る,起きる,勉強する,働く,休む,洗う,入る,出る,待つ,立つ,座る,歩く,走る,泳ぐ,遊ぶ,終わる,始まる,知る,思う,分かる,できる,ある,いる,好き,嫌い,上手,下手,高い,低い,大きい,小さい,新しい,古い,暑い,寒い,暖かい,涼しい,忙しい,暇,面白い,つまらない,楽しい,悲しい,嬉しい,難しい,易しい,強い,弱い,長い,短い,近い,遠い,早い,遅い,安い,白い,黒い,赤い,青い,黄色い,茶色,緑,家,学校,会社,病院,駅,店,銀行,図書館,公園,教室,部屋,台所,風呂,トイレ,車,電車,バス,自転車,飛行機,船,犬,猫,鳥,魚,馬,牛,豚,人,男,女,子供,赤ちゃん,父,母,兄,姉,弟,妹,祖父,祖母,家族,友達,先生,学生,医者,お金,財布,鍵,傘,鞄,本,ペン,鉛筆,消しゴム,ノート,紙,新聞,雑誌,辞書,地図,写真,絵,音楽,映画,テレビ,ラジオ,電話,携帯,コンピューター,メール,手紙,切手,時計,眼鏡,帽子,服,シャツ,ズボン,靴,ベッド,机,椅子,水,お茶,コーヒー,ジュース,牛乳,ビール,酒,ご飯,パン,肉,野菜,果物,卵,米,塩,砂糖,味,年,月,日,時,分,秒,週,誕生日,今日,明日,昨日,朝,昼,夕方,夜,午前,午後,春,夏,秋,冬,雪,雨,風,雲,晴れ,曇り,空,海,山,川,湖,森,木,花,草,土,東,西,南,北,上,下,左,右,前,後,中,外,間,隣,自分,名前,言葉,意味,問題,答え,質問,声,音,匂い,光,色,形,数,量,重さ,長さ,広さ,部分,全部,半分,初め,終わり,真ん中,場所,所,町,村,国,世界,地図,道,角,信号,橋,駅前,公園,神社,寺,城,宿,旅館,ホテル,デパート,コンビニ,スーパー,郵便局,警察,消防署,本屋,薬局,八百屋,肉屋,魚屋,花屋,ガソリンスタンド,病気,薬,医者,看護師,健康,体,頭,顔,目,耳,鼻,口,歯,舌,首,肩,腕,手,指,胸,背中,腰,お腹,足,膝,休み,休憩,旅行,散歩,運動,試験,授業,教科書,宿題,問題,答え,計算,数学,英語,日本語,歴史,地理,科学,理科,音楽,体育,美術".split(",").map(s=>s.trim()).filter(Boolean);
+
+const N4_VOCAB = "計画,約束,決める,相談,注意,命令,許可,禁止,可能,不可能,希望,夢,目標,結果,原因,理由,目的,方法,手段,過程,進歩,変化,影響,関係,関心,興味,趣味,習慣,伝統,文化,社会,政治,経済,歴史,地理,自然,環境,産業,技術,科学,芸術,宗教,教育,研究,試験,合格,不合格,成功,失敗,努力,競争,協力,参加,出席,欠席,出発,到着,移動,旅行,観光,散歩,運動,運転,操作,利用,使用,活動,生活,人生,健康,病気,怪我,事故,危険,安全,安心,心配,不安,悲しみ,喜び,幸せ,感動,感謝,後悔,反省,決心,挑戦,夢中,感心,尊敬,敬意,信頼,信用,責任,義務,権利,自由,平等,正義,真実,嘘,秘密,誤解,理解,納得,意識,考え,意見,期待,予想,想像,現実,事実,状況,状態,条件,場所,位置,方向,距離,規模,規則,制度,方針,組織,団体,企業,工場,施設,機関,情報,連絡,知らせ,案内,報告,説明,紹介,挨拶,会話,議論,討論,発表,演説,講義,授業,会議,会合,集まり,予約,予定,計画,準備,用意,設備,材料,道具,機械,器具,部品,商品,製品,作品,本物,偽物,価値,価格,値段,費用,料金,代金,給料,収入,支出,貯金,投資,銀行,口座,通帳,現金,カード,小切手,商店,会社,事務所,工場,農場,牧場,海岸,湖畔,山頂,谷,平原,砂漠,氷山,森林,熱帯,温帯,寒帯".split(",").map(s=>s.trim()).filter(Boolean);
+
+const N3_VOCAB = "解決,問題,課題,目的,結論,意見,主張,反対,賛成,提案,選択,決定,判断,評価,印象,感想,意外,予想外,普通,特別,主要,重要,大切,必要,十分,完璧,完成,完了,終了,中止,延期,続行,継続,中断,進行,進歩,発展,成長,増加,減少,上昇,下降,変化,変動,変更,改善,改正,改革,革新,発明,発見,創造,設計,計画,予算,投資,経営,管理,運営,指導,指示,命令,依頼,要求,要望,願い,祈り,期待,希望,願望,夢,理想,目標,計画,戦略,方針,政策,規則,法律,制度,組織,団体,会員,職員,責任者,担当者,専門家,経験者,新入,初心者,熟練,技術,技能,能力,才能,個性,特徴,性格,性質,本質,内容,意味,価値,影響,効果,結果,成果,収穫,利益,損失,被害,事故,災害,危機,危険,安全,安心,信頼,信用,評判,名声,有名,無名,平凡,異常,普通,通常,標準,基準,規模,範囲,程度,程度,限界,限度,境界,境,中央,中心,周囲,周辺,内部,外部,表面,内側,外側,上部,下部,前方,後方,左側,右側,東側,西側,南側,北側".split(",").map(s=>s.trim()).filter(Boolean);
+
+const N2_VOCAB = "実現,達成,成功,失敗,挑戦,困難,障害,克服,解消,改善,維持,保持,確保,獲得,取得,入手,所有,占有,支配,管理,制御,操作,処理,対処,対応,適応,順応,慣れ,習慣,日常,普段,通常,正常,異常,例外,特殊,典型,代表,象徴,本質,根本,基本,基礎,原則,原理,法則,理論,概念,観念,思想,哲学,倫理,道徳,価値観,世界観,人生観,評価,判断,認識,理解,把握,把握,確認,検討,検査,調査,研究,分析,総合,合計,合算,平均,標準,基準,水準,程度,規模,範囲,限界,限度,可能性,確実性,必然性,偶然性,必要性,重要性,有効性,効率,効果,影響,作用,反応,反作用,相互,相互的,協力,協調,対立,矛盾,衝突,葛藤,緊張,緊迫,余裕,余地,空間,時間,期間,瞬間,即座".split(",").map(s=>s.trim()).filter(Boolean);
+
+const N1_VOCAB = "緻密,精密,綿密,周到,慎重,軽率,迂闊,顕著,著しい,甚だしい,膨大,莫大,些細,微妙,曖昧,明確,鮮明,鮮やか,華やか,豪華,質素,簡素,簡潔,煩雑,複雑,難解,容易,困難,辛抱,我慢,忍耐,忍ぶ,堪える,弁護,弁明,弁解,反論,反駁,反証,反映,反響,反応,反復,反芻,熟考,熟慮,熟知,精通,堪能,巧妙,巧緻,絶妙,絶倫,絶大,絶対,絶望,絶賛,絶句,絶交,絶滅,断絶,根絶,撲滅,根本,根源,起源,発端,端緒,糸口,手掛かり,目印,印象,様相,様式,形式,形態,形状,形跡,痕跡,軌跡,余韻,余波,余裕,余分,余剰,過剰,過度,過激,過敏,鋭敏,鋭利,巧緻,巧妙,巧手,腕前,手腕,手柄,功績,業績,実績,成績,成果,成就,達成".split(",").map(s=>s.trim()).filter(Boolean);
+
+const GRAMMAR_LIST = "～ばかり,～たばかり,～ばかりだ,～だけ,～しか,～のみ,～さえ,～まで,～から,～ので,～のに,～けど,～が,～ても,～でも,～ながら,～たり,～たら,～ば,～と,～なら,～たまま,～たって,～ては,～ては困る,～ては駄目,～ては良い,～てしまう,～ておく,～てある,～ている,～てくる,～ていく,～てくれる,～てあげる,～てもらう,～てください,～させる,～られる,～れる,～させられる,～ことができる,～ことがある,～ことになる,～ことにする,～ようになる,～ようにする,～ように,～ために,～ための,～とおりに,～通り,～ちゃう,～じゃう,～かもしれない,～にちがいない,～らしい,～そうだ,～ようだ,～みたい,～らしい,～はず,～べき,～なければならない,～なくちゃ,～なきゃ,～ないと,～たほうがいい,～ないほうがいい,～について,～に関して,～によって,～により,～によると,～にとって,～に対して,～に比べて,～に対する,～にしては,～にしても,～にしたがって,～につれて,～とともに,～と同時に,～うちに,～あいだ,～あいだに,～たびに,～ところ,～たところ,～ているところ,～ばかりに,～ものだから,～もので,～せいで,～おかげで,～にもかかわらず,～にしては,～のに,～わけだ,～わけではない,～わけがない,～はずがない,～に違いない,～かもしれない,～でしょう,～だろう,～と思う,～と考える,～と言う,～って,～なんて,～など,～とは,～って,～かどうか,～か,～やら,～にも,～には,～しか…ない,～たり…たり,～も…ば…も,～やすい,～にくい,～がたい,～かねる,～かねない,～がち,～気味,～め,～っぽい,～的,～風,～らしい".split(",").map(s=>s.trim()).filter(Boolean);
+
+// Common phrases for TTS
+const TTS_PHRASES = "こんにちは,おはようございます,こんばんは,さようなら,ありがとうございます,すみません,ごめんなさい,お疲れ様でした,失礼します,いただきます,ごちそうさまでした,はい,いいえ,お願いします,どうぞ,どういたしまして,はじめまして,よろしくお願いします,お元気ですか,元気です,大丈夫です,わかりました,わかりません,知りません,そうです,そうですか,そうですね,本当ですか,大変ですね,残念ですね,おめでとうございます,お誕生日おめでとう,メリークリスマス,新年おめでとうございます,お先に失礼します,ただいま,お帰りなさい,いってきます,いってらっしゃい,お休みなさい,きれいですね,かわいいですね,おいしいですね,楽しいです,嬉しいです,悲しいです,寂しいです,大丈夫ですか,お気をつけて,お大事に,頑張ってください,応援しています,ありがとう,ごめん,さよなら,ばいばい,やった,すごい,ひどい,ださい,おもしろい,つまらない,たのしい,かなしい,うれしい,さびしい,難しいです,簡単です,日本語が好きです,勉強しています,助けてください,もう一度言ってください,ゆっくり話してください,駅はどこですか,トイレはどこですか,いくらですか,何時ですか,今何時ですか,今日は何曜日ですか,お名前は何ですか,どこから来ましたか,何歳ですか,どちらに住んでいますか,お仕事は何ですか,趣味は何ですか,日本料理が好きです,寿司が大好きです,お腹が空きました,喉が渇きました,疲れました,眠いです,暑いです,寒いです,雨が降っています,雪が降っています,風が強いです,いい天気ですね,お会いできて嬉しいです,また会いましょう,連絡してください,メールしてください,電話してください".split(",").map(s=>s.trim()).filter(Boolean);
+
+const CATS = [
+  {key:'n5', label:'JLPT N5 vocabulary', items: N5_VOCAB, type:'word'},
+  {key:'n4', label:'JLPT N4 vocabulary', items: N4_VOCAB, type:'word'},
+  {key:'n3', label:'JLPT N3 vocabulary', items: N3_VOCAB, type:'word'},
+  {key:'n2', label:'JLPT N2 vocabulary', items: N2_VOCAB, type:'word'},
+  {key:'n1', label:'JLPT N1 vocabulary', items: N1_VOCAB, type:'word'},
+  {key:'gram', label:'Grammar patterns (N5–N1)', items: GRAMMAR_LIST, type:'grammar'},
+  {key:'tts', label:'TTS phrases (~$0.0008/each)', items: TTS_PHRASES, type:'tts'}
+];
+
+const COST_PER = {word:0.012, grammar:0.012, tts:0.0008};
+
+function el(id){return document.getElementById(id);}
+function log(msg, cls){const l=el('log'); const span=document.createElement('div'); span.className=cls||''; span.textContent='['+new Date().toLocaleTimeString()+'] '+msg; l.appendChild(span); l.scrollTop=l.scrollHeight;}
+
+function renderCats(){
+  const c=el('catChecks');
+  // Tick mặc định: N5, N4, N3, N2, N1, grammar — bỏ tick TTS
+  c.innerHTML = CATS.map((cat,i)=>`<div class="cat-row"><input type="checkbox" id="cat-${cat.key}" ${cat.key!=='tts'?'checked':''} data-key="${cat.key}"><label for="cat-${cat.key}">${cat.label}</label><span class="count">${cat.items.length}</span></div>`).join('');
+  c.querySelectorAll('input').forEach(i=>i.addEventListener('change',updateTotals));
+  updateTotals();
+}
+
+function getSelected(){
+  return CATS.filter(c=>el('cat-'+c.key).checked);
+}
+function updateTotals(){
+  const sel=getSelected();
+  let total=0,cost=0;
+  sel.forEach(c=>{total+=c.items.length; cost+=c.items.length*COST_PER[c.type];});
+  el('totalSel').textContent=total;
+  el('totalCost').textContent='$'+cost.toFixed(2);
+  const delay=+el('delay').value||100;
+  const par=+el('parallel').value||5;
+  const mins=Math.ceil(total*(delay+1500)/par/1000/60);
+  el('totalTime').textContent=mins+' phút';
+}
+el('delay')?.addEventListener('change',updateTotals);
+el('parallel')?.addEventListener('change',updateTotals);
+
+let state = {running:false, paused:false, done:0, fresh:0, cache:0, err:0, total:0, totalMs:0, queue:[]};
+
+async function callApi(item, base){
+  const t0=Date.now();
+  if(item.type==='word'||item.type==='grammar'){
+    const r=await fetch(base+'/api/'+item.type,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({query:item.q})});
+    const j=await r.json();
+    const ms=Date.now()-t0;
+    if(!r.ok) throw new Error((j.error||r.status)+' ('+ms+'ms)');
+    return {cached:j.cached, ms};
+  } else { // tts
+    const r=await fetch(base+'/api/tts',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({text:item.q,voice:'ja-JP-Neural2-B',rate:0.95})});
+    const ms=Date.now()-t0;
+    if(!r.ok) throw new Error('tts '+r.status+' ('+ms+'ms)');
+    const cached = r.headers.get('x-tts-cache')==='hit';
+    await r.arrayBuffer();
+    return {cached, ms};
+  }
+}
+
+function updateUI(){
+  el('sDone').textContent=state.done;
+  el('sFresh').textContent=state.fresh;
+  el('sCache').textContent=state.cache;
+  el('sErr').textContent=state.err;
+  const cost=state.fresh*0.012 + 0; // crude estimate
+  el('sCost').textContent='$'+cost.toFixed(2);
+  el('sAvg').textContent=state.done?Math.round(state.totalMs/state.done)+'ms':'—';
+  el('bar').style.width=(state.total?(state.done/state.total*100):0)+'%';
+}
+
+async function worker(base, delay){
+  while(state.running && state.queue.length){
+    if(state.paused){ await new Promise(r=>setTimeout(r,200)); continue; }
+    const item=state.queue.shift();
+    try{
+      const res=await callApi(item, base);
+      state.done++; state.totalMs+=res.ms;
+      if(res.cached){ state.cache++; log('⚡ CACHED '+item.type+' "'+item.q+'" '+res.ms+'ms','cached'); }
+      else { state.fresh++; log('✓ FRESH '+item.type+' "'+item.q+'" '+res.ms+'ms','ok'); }
+    }catch(e){
+      state.done++; state.err++;
+      log('✗ '+item.type+' "'+item.q+'" — '+e.message,'err');
+    }
+    updateUI();
+    if(delay) await new Promise(r=>setTimeout(r,delay));
+  }
+}
+
+async function start(){
+  if(state.running) return;
+  state={running:true,paused:false,done:0,fresh:0,cache:0,err:0,total:0,totalMs:0,queue:[]};
+  const sel=getSelected();
+  sel.forEach(c=>c.items.forEach(q=>state.queue.push({type:c.type,q})));
+  state.total=state.queue.length;
+  if(!state.total){ log('Chưa chọn category nào','err'); return; }
+  log('Starting warmup: '+state.total+' queries',  'info');
+  el('btnStart').disabled=true; el('btnPause').disabled=false; el('btnStop').disabled=false;
+  const base=el('apiBase').value.trim();
+  const delay=+el('delay').value||100;
+  const par=+el('parallel').value||5;
+  const workers=[];
+  for(let i=0;i<par;i++) workers.push(worker(base,delay));
+  await Promise.all(workers);
+  log('=== DONE === done='+state.done+' fresh='+state.fresh+' cached='+state.cache+' err='+state.err,'info');
+  state.running=false;
+  el('btnStart').disabled=false; el('btnPause').disabled=true; el('btnStop').disabled=true;
+}
+
+el('btnStart').addEventListener('click',start);
+el('btnPause').addEventListener('click',()=>{state.paused=!state.paused; el('btnPause').textContent=state.paused?'▶ Resume':'⏸ Pause';});
+el('btnStop').addEventListener('click',()=>{state.queue=[]; state.running=false; log('Stopped by user','err');});
+
+renderCats();
+</script>
+</body>
+</html>
