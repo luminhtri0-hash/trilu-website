@@ -30,8 +30,7 @@
  * Vars:
  *   ALLOWED_ORIGIN              = https://trilu.edu.vn
  *   COOKIE_DOMAIN               = .trilu.edu.vn
- *   GEMINI_MODEL                = gemini-2.5-flash   (word + grammar)
- *   GEMINI_MODEL_PRO            = gemini-2.5-pro     (translate — quality matters)
+ *   GEMINI_MODEL                = gemini-2.0-flash  (or gemini-2.5-flash)
  *   QUOTA_ANON                  = 10
  *   QUOTA_USER                  = 100
  */
@@ -218,11 +217,29 @@ async function quotaContext(req, env) {
   return { who: `ip:${await sha256Hex(ip)}`, limit: parseInt(env.QUOTA_ANON || "10", 10), user: null };
 }
 
+/* ─────────── monthly budget cap (hard $ limit) ───────────
+   Counter key budget:YYYY-MM increments each Gemini call.
+   Default cap 40000 calls/month ≈ $44 (Flash @ ~700 tokens/call).
+   Override via env MAX_API_CALLS_PER_MONTH. */
+
+async function checkAndBumpBudget(env) {
+  const max = parseInt(env.MAX_API_CALLS_PER_MONTH || "40000", 10);
+  const month = new Date().toISOString().slice(0, 7); // YYYY-MM
+  const key = `budget:${month}`;
+  const cur = parseInt((await env.QUOTA.get(key)) || "0", 10);
+  if (cur >= max) return { ok: false, used: cur, max };
+  // 40 day TTL (so next month rolls over cleanly)
+  await env.QUOTA.put(key, String(cur + 1), { expirationTtl: 60 * 60 * 24 * 40 });
+  return { ok: true, used: cur + 1, max };
+}
+
 /* ─────────── Gemini ─────────── */
 
 async function callGemini(env, prompt, { model } = {}) {
   const m = model || env.GEMINI_MODEL || "gemini-2.5-flash";
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${env.GEMINI_API_KEY}`;
+  // AI Gateway routes via CF US edges → bypass Hong Kong/region block on Gemini 3.x
+  const base = env.AI_GATEWAY_BASE || "https://generativelanguage.googleapis.com";
+  const url = `${base}/v1beta/models/${m}:generateContent?key=${env.GEMINI_API_KEY}`;
   const body = {
     contents: [{ role: "user", parts: [{ text: prompt }] }],
     generationConfig: {
@@ -230,6 +247,8 @@ async function callGemini(env, prompt, { model } = {}) {
       topP: 0.9,
       maxOutputTokens: 2048,
       responseMimeType: "application/json",
+      // Disable Gemini 3.x thinking mode → saves ~30-50% tokens, faster response
+      thinkingConfig: { thinkingBudget: 0 },
     },
   };
   const r = await fetch(url, {
@@ -456,7 +475,13 @@ async function handleDictLookup(req, env, type) {
     });
   }
 
-  // 3. Call Gemini — translate uses Pro for quality, word/grammar use Flash for speed+cost
+  // 3. Hard monthly budget cap — protect against runaway cost
+  const bud = await checkAndBumpBudget(env);
+  if (!bud.ok) {
+    return err(503, "service paused: monthly budget reached", { budget: bud });
+  }
+
+  // 4. Call Gemini — translate uses Pro for quality, word/grammar use Flash for speed+cost
   let result;
   try {
     const model = type === "translate"
