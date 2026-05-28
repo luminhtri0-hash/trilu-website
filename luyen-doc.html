@@ -10,13 +10,13 @@
 <meta property="og:url" content="https://trilu.edu.vn/luyen-doc.html">
 <meta property="og:title" content="Luyện đọc — Trí Lữ Nihongo">
 <meta property="og:description" content="Đọc thật — Asahi, Yomiuri, Murakami, Haiku. Học chữ qua văn cảnh sống.">
-<meta property="og:image" content="https://trilu.edu.vn/icon-512.png">
+<meta property="og:image" content="https://trilu.edu.vn/img/ld-sakura.jpg">
 <meta property="og:site_name" content="Trí Lữ Nihongo">
 <meta property="og:locale" content="vi_VN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Luyện đọc — Trí Lữ Nihongo">
 <meta name="twitter:description" content="Đọc thật — Asahi, Yomiuri, Murakami, Haiku. Học chữ qua văn cảnh sống.">
-<meta name="twitter:image" content="https://trilu.edu.vn/icon-512.png">
+<meta name="twitter:image" content="https://trilu.edu.vn/img/ld-sakura.jpg">
 <link rel="canonical" href="https://trilu.edu.vn/luyen-doc.html">
 <link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png">
@@ -50,23 +50,7 @@ h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6.5vw,68px);l
 .section ul{padding:0;margin:0 0 14px;list-style:none}
 .section ul li{padding:6px 0 6px 22px;position:relative;font-size:15px;line-height:1.6;color:rgba(27,58,107,0.85)}
 .section ul li::before{content:"·";position:absolute;left:6px;color:var(--gold);font-size:24px;line-height:1;top:2px}
-.vocab{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px;margin-top:8px}
-.vocab .v{padding:12px 14px;background:#fff;border:1px solid rgba(184,149,104,0.25);border-radius:12px}
-.vocab .v-jp{font-family:var(--jp);font-size:18px;color:var(--ink);font-weight:600;line-height:1.3}
-.vocab .v-yomi{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:0.12em;margin:2px 0 4px}
-.vocab .v-vi{font-size:13px;color:rgba(27,58,107,0.78);line-height:1.4}
 .pull{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.4;color:var(--ink);padding:18px 22px;border-left:3px solid var(--sumi);margin:16px 0;background:rgba(139,58,46,0.04);border-radius:0 12px 12px 0}
-.sources{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:8px}
-.sources .src{padding:16px;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:14px;text-decoration:none;color:var(--ink);transition:all .25s;display:block}
-.sources .src:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 6px 16px rgba(27,58,107,0.06)}
-.src-level{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;background:rgba(184,149,104,0.12);padding:3px 8px;border-radius:4px;margin-bottom:8px}
-.src-name{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1.2;margin-bottom:4px}
-.src-name .jp{font-family:var(--jp);font-size:14px;font-style:normal;color:var(--gold);margin-left:6px}
-.src-desc{font-size:13px;color:rgba(27,58,107,0.78);line-height:1.5;margin-top:6px}
-.src-url{font-family:var(--mono);font-size:11px;color:rgba(27,58,107,0.6);margin-top:8px;letter-spacing:0.05em}
-blockquote.passage{border-left:3px solid var(--gold);padding:14px 0 14px 22px;margin:18px 0;font-family:var(--jp);font-size:18px;line-height:1.8;color:var(--ink);background:rgba(184,149,104,0.06)}
-blockquote.passage .romaji{display:block;font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:0.15em;margin-top:8px;line-height:1.5}
-blockquote.passage .gloss{display:block;font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(27,58,107,0.78);margin-top:6px;line-height:1.5}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px;margin:8px 0 36px}
 .card{display:grid;grid-template-columns:56px 1fr 28px;gap:14px;align-items:center;padding:18px;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:16px;text-decoration:none;color:inherit;transition:all .25s;box-shadow:0 4px 12px rgba(27,58,107,0.04)}
 .card:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 10px 24px rgba(27,58,107,0.10)}
@@ -76,13 +60,28 @@ blockquote.passage .gloss{display:block;font-family:var(--serif);font-style:ital
 .card-title{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.2;margin-bottom:4px}
 .card-desc{font-size:13px;color:rgba(27,58,107,0.7);line-height:1.4}
 .card-arrow{font-family:var(--mono);font-size:18px;color:var(--gold);text-align:right}
-.subcards{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin:8px 0 36px}
-.subcards .card{grid-template-columns:46px 1fr 24px;padding:14px 16px;border-radius:14px}
-.subcards .card-jp{font-size:28px}
-.subcards .card-title{font-size:16px}
-.subcards .card-desc{font-size:12px}
-.note{font-size:14px;color:rgba(27,58,107,0.65);font-style:italic;padding:18px 20px;background:rgba(184,149,104,0.08);border-radius:12px;line-height:1.6;margin-bottom:40px}
-.note a{color:var(--ink);text-decoration:underline;font-weight:500;font-style:normal;font-family:var(--mono);font-size:12px;letter-spacing:0.15em;text-transform:uppercase}
+.featured-eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin:0 0 18px}
+.featured-eyebrow .jp{font-family:var(--jp);color:var(--gold);letter-spacing:0.3em;margin-left:10px;font-weight:400;text-transform:none}
+.articles{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin:8px 0 36px}
+.article{display:flex;flex-direction:column;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:16px;text-decoration:none;color:inherit;transition:all .25s;box-shadow:0 4px 12px rgba(27,58,107,0.04);overflow:hidden}
+.article:hover{transform:translateY(-3px);border-color:var(--gold);box-shadow:0 10px 24px rgba(27,58,107,0.10)}
+.article-img{aspect-ratio:4/3;background:rgba(184,149,104,0.08);overflow:hidden;position:relative}
+.article-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s}
+.article:hover .article-img img{transform:scale(1.04)}
+.article-badge{position:absolute;top:12px;left:12px;font-family:var(--mono);font-size:9px;letter-spacing:0.22em;color:var(--cream);background:rgba(27,58,107,0.85);padding:4px 8px;border-radius:4px;text-transform:uppercase;backdrop-filter:blur(4px)}
+.article-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:6px}
+.article-meta{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:10px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:6px}
+.article-meta .jp{font-family:var(--jp);letter-spacing:0.05em;text-transform:none}
+.article-level{background:var(--ink);color:var(--cream);padding:3px 7px;border-radius:4px;font-size:10px;letter-spacing:0.18em}
+.article-title-jp{font-family:var(--jp);font-size:18px;font-weight:600;color:var(--ink);line-height:1.45;margin-bottom:2px}
+.article-title-vi{font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(139,58,46,0.85);line-height:1.4;margin-bottom:8px}
+.article-desc{font-size:13px;color:rgba(27,58,107,0.72);line-height:1.55}
+.article-foot{display:flex;justify-content:space-between;align-items:center;margin-top:12px;padding-top:10px;border-top:1px solid rgba(184,149,104,0.18)}
+.article-cat{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;color:var(--ink);text-transform:uppercase;border:1px solid rgba(27,58,107,0.25);padding:4px 8px;border-radius:4px}
+.article-read{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;color:rgba(27,58,107,0.55);text-transform:uppercase}
+.all-articles-cta{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--cream);text-decoration:none;padding:14px 24px;border-radius:10px;font-family:var(--mono);font-size:12px;letter-spacing:0.22em;text-transform:uppercase;margin:0 auto 40px;transition:background .2s}
+.all-articles-cta:hover{background:#0F2545}
+.cta-wrap{display:flex;justify-content:center;margin-bottom:40px}
 .signup{margin:48px 0 32px;padding:32px;background:rgba(184,149,104,0.08);border:1px solid rgba(184,149,104,0.3);border-radius:18px}
 .signup-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.25em;color:var(--gold);text-transform:uppercase;margin-bottom:10px}
 .signup-title{font-family:var(--serif);font-size:32px;line-height:1.1;margin-bottom:12px;font-weight:400}
@@ -101,13 +100,58 @@ blockquote.passage .gloss{display:block;font-family:var(--serif);font-style:ital
 .f-col a:hover{color:var(--ink);text-decoration:underline}
 .f-bot{padding:20px 0;border-top:1px solid rgba(184,149,104,0.25);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-family:var(--mono);font-size:11px;color:rgba(27,58,107,0.55);letter-spacing:0.12em}
 .f-bot em{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--gold);letter-spacing:0;text-transform:none}
-@media(max-width:600px){.wrap{padding-left:18px;padding-right:18px}body{padding-right:0}.brand-name{font-size:17px}.back{padding:6px 10px;font-size:10px}h1{font-size:34px}.lede{font-size:15px;margin-bottom:28px}.hero-art{margin-bottom:32px}.section h2{font-size:24px}.section h2 .jp{font-size:14px;display:block;margin:6px 0 0}.cards{grid-template-columns:1fr;gap:12px}.vocab{grid-template-columns:1fr 1fr;gap:8px}.sources{grid-template-columns:1fr;gap:10px}.signup{padding:20px}.signup-title{font-size:24px}.signup-form{flex-direction:column}.signup-form button{padding:14px}.f-grid{grid-template-columns:1fr 1fr;gap:20px}.f-bot{flex-direction:column;align-items:flex-start;font-size:10px}}</style></head>
+@media(max-width:600px){.wrap{padding-left:18px;padding-right:18px}body{padding-right:0}.brand-name{font-size:17px}.back{padding:6px 10px;font-size:10px}h1{font-size:34px}.lede{font-size:15px;margin-bottom:28px}.hero-art{margin-bottom:32px}.section h2{font-size:24px}.section h2 .jp{font-size:14px;display:block;margin:6px 0 0}.cards,.articles{grid-template-columns:1fr;gap:14px}.signup{padding:20px}.signup-title{font-size:24px}.signup-form{flex-direction:column}.signup-form button{padding:14px}.f-grid{grid-template-columns:1fr 1fr;gap:20px}.f-bot{flex-direction:column;align-items:flex-start;font-size:10px}}</style></head>
 <body><div class="wrap">
 <nav class="nav-top"><a class="brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="brand-name">Trí Lữ · Nihongo</div><div class="brand-jp">智 旅 日 本 語</div></div></a><a href="/" class="back">← Trang chủ</a></nav>
 <div class="eyebrow">06 · LUYỆN ĐỌC<span class="jp">読解</span></div>
 <h1>Luyện đọc</h1>
 <p class="lede">Bốn nguồn đọc thật — báo, truyện, thơ, cổ điển. Mỗi nguồn một lộ trình từ N5 đến N1.</p>
-<div class="hero-art"><svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Reading practice"><defs><linearGradient id="bgH" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FBF6E8"/><stop offset="1" stop-color="#F1E5C5"/></linearGradient></defs><rect width="800" height="320" fill="url(#bgH)"/><g transform="translate(400,180)"><rect x="-150" y="-90" width="300" height="180" rx="6" fill="#fff" stroke="#1B3A6B" stroke-width="2"/><line x1="-130" y1="-60" x2="130" y2="-60" stroke="#1B3A6B" stroke-width="1" opacity="0.5"/><line x1="-130" y1="-30" x2="130" y2="-30" stroke="#1B3A6B" stroke-width="1" opacity="0.5"/><line x1="-130" y1="0" x2="130" y2="0" stroke="#1B3A6B" stroke-width="1" opacity="0.5"/><line x1="-130" y1="30" x2="130" y2="30" stroke="#1B3A6B" stroke-width="1" opacity="0.5"/><line x1="-130" y1="60" x2="130" y2="60" stroke="#1B3A6B" stroke-width="1" opacity="0.5"/><text x="-110" y="-46" font-family="Noto Serif JP, serif" font-size="16" font-weight="700" fill="#1B3A6B">日本語の読解 — Luyện đọc</text><text x="-110" y="-16" font-family="Noto Serif JP, serif" font-size="14" fill="#1B3A6B" opacity="0.8">古池や 蛙飛び込む 水の音</text><text x="-110" y="14" font-family="Noto Serif JP, serif" font-size="14" fill="#1B3A6B" opacity="0.8">桜の花が咲いている春の朝</text><text x="-110" y="44" font-family="Noto Serif JP, serif" font-size="14" fill="#1B3A6B" opacity="0.8">murakami · yoshimoto · NHK</text><text x="-110" y="74" font-family="Noto Serif JP, serif" font-size="14" fill="#B89568" opacity="0.9">— đọc thật, không phải bài tập —</text></g><text x="80" y="76" font-family="Noto Serif JP, serif" font-size="72" font-weight="700" fill="#1B3A6B" opacity="0.85">読</text><g transform="translate(680,40)"><rect width="58" height="58" rx="4" fill="#8B3A2E"/><text x="29" y="42" font-family="Noto Serif JP, serif" font-weight="700" font-size="26" text-anchor="middle" fill="#FBF6E8">解</text></g><text x="400" y="302" font-family="Cormorant Garamond, serif" font-style="italic" font-size="17" text-anchor="middle" fill="#B89568">— 読書百遍 義自ら見る · đọc 100 lần, nghĩa tự hiện —</text></svg></div>
+
+<div class="featured-eyebrow">● BÀI ĐỌC NỔI BẬT TUẦN NÀY<span class="jp">今週の特集</span></div>
+<div class="articles">
+  <a class="article" href="/luyen-doc/tin-tuc.html">
+    <div class="article-img">
+      <img src="/img/ld-sakura.jpg" alt="Hoa anh đào Kyoto" loading="lazy">
+      <span class="article-badge">● Mới</span>
+    </div>
+    <div class="article-body">
+      <div class="article-meta"><span><span class="jp">朝日新聞</span> · ASAHI</span><span class="article-level">N3</span></div>
+      <div class="article-title-jp">京都の桜、今年は早く咲き始めた</div>
+      <div class="article-title-vi">Hoa anh đào Kyoto năm nay nở sớm</div>
+      <div class="article-desc">Hoa anh đào Kyoto năm nay nở sớm hai tuần do thời tiết ấm bất thường.</div>
+      <div class="article-foot"><span class="article-cat">Văn hoá</span><span class="article-read">8' Đọc</span></div>
+    </div>
+  </a>
+  <a class="article" href="/luyen-doc/tin-tuc.html">
+    <div class="article-img">
+      <img src="/img/ld-dansoso.jpg" alt="Dân số Nhật Bản giảm" loading="lazy">
+      <span class="article-badge">● Mới</span>
+    </div>
+    <div class="article-body">
+      <div class="article-meta"><span>NHK · <span class="jp">ニュース</span></span><span class="article-level">N2</span></div>
+      <div class="article-title-jp">日本の人口、12年連続で減少</div>
+      <div class="article-title-vi">Dân số Nhật giảm liên tục 12 năm</div>
+      <div class="article-desc">Dân số Nhật Bản tiếp tục giảm năm thứ 12 liên tiếp.</div>
+      <div class="article-foot"><span class="article-cat">Xã hội</span><span class="article-read">12' Đọc</span></div>
+    </div>
+  </a>
+  <a class="article" href="/luyen-doc/tin-tuc.html">
+    <div class="article-img">
+      <img src="/img/ld-akutagawa.jpg" alt="AI viết tiểu thuyết đoạt giải Akutagawa" loading="lazy">
+      <span class="article-badge">● Mới</span>
+    </div>
+    <div class="article-body">
+      <div class="article-meta"><span><span class="jp">讀賣新聞</span> · YOMIURI</span><span class="article-level">N2</span></div>
+      <div class="article-title-jp">AIが書いた小説、芥川賞を受賞</div>
+      <div class="article-title-vi">Tiểu thuyết do AI viết đoạt giải Akutagawa</div>
+      <div class="article-desc">Lần đầu tiên một tiểu thuyết được sáng tác với hỗ trợ AI đoạt giải Akutagawa danh giá.</div>
+      <div class="article-foot"><span class="article-cat">Văn hoá</span><span class="article-read">10' Đọc</span></div>
+    </div>
+  </a>
+</div>
+<div class="cta-wrap">
+  <a class="all-articles-cta" href="/luyen-doc/tin-tuc.html">Đọc tất cả 12 bài →</a>
+</div>
 
 <section class="section">
   <h2><em>Đọc thật, học thật</em><span class="jp">読解</span></h2>
