@@ -96,7 +96,10 @@ h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6vw,56px);lin
 .r-related a{font-family:var(--jp);font-size:14px;color:var(--ink);background:rgba(184,149,104,0.1);padding:5px 11px;border-radius:6px;text-decoration:none;border:1px solid rgba(184,149,104,0.2);cursor:pointer}
 .r-related a:hover{background:var(--gold);color:var(--cream)}
 .r-breakdown{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
-.r-bd-card{background:rgba(27,58,107,0.04);padding:10px 12px;border-radius:8px;border:1px solid rgba(184,149,104,0.2)}
+.r-bd-card{background:rgba(27,58,107,0.04);padding:10px 12px;border-radius:8px;border:1px solid rgba(184,149,104,0.2);text-decoration:none;color:inherit;display:block;cursor:pointer;transition:all .15s}
+.r-bd-card:hover{background:var(--gold);color:var(--cream);border-color:var(--gold);transform:translateY(-2px)}
+.r-bd-card:hover .r-bd-char,.r-bd-card:hover .r-bd-mean{color:var(--cream)}
+.r-bd-card:hover .r-bd-read{color:rgba(251,246,232,0.85)}
 .r-bd-char{font-family:var(--jp);font-size:30px;color:var(--ink);font-weight:600;line-height:1;margin-bottom:4px}
 .r-bd-mean{font-family:var(--sans);font-size:12px;color:rgba(27,58,107,0.75);margin-bottom:4px}
 .r-bd-read{font-family:var(--mono);font-size:9.5px;color:var(--gold);letter-spacing:0.1em;line-height:1.35}
@@ -315,12 +318,66 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
       </a>
     `).join('');
   }
-  window.replayHistory = function(type, query){
-    const tab = $$('.tab').find(t => t.dataset.tab === type);
+  // Programmatic search — used by related words, history replay, kanji breakdown clicks.
+  // Direct invocation (no form dispatch) so it's reliable across browsers.
+  async function searchWord(q){
+    if(!q) return;
+    const tab = $$('.tab').find(t => t.dataset.tab === 'word');
     if(tab) tab.click();
-    if(type === 'word'){ $('#q-word').value = query; $('#form-word').dispatchEvent(new Event('submit')); }
-    else if(type === 'grammar'){ $('#q-grammar').value = query; $('#form-grammar').dispatchEvent(new Event('submit')); }
-    else { $('#q-translate').value = query; $('#form-translate').dispatchEvent(new Event('submit')); }
+    $('#q-word').value = q;
+    window.scrollTo({top: $('#panel-word').offsetTop - 20, behavior: 'smooth'});
+    setState('#out-word', 'loading', 'Đang tra "' + q + '"');
+    try{
+      const r = await apiCall('/api/word', {query: q});
+      renderWord($('#out-word'), r.data, r);
+      addHistory('word', q);
+      refreshMe();
+    }catch(err){
+      handleErr('#out-word', err);
+    }
+  }
+  async function searchGrammar(q){
+    if(!q) return;
+    const tab = $$('.tab').find(t => t.dataset.tab === 'grammar');
+    if(tab) tab.click();
+    $('#q-grammar').value = q;
+    window.scrollTo({top: $('#panel-grammar').offsetTop - 20, behavior: 'smooth'});
+    setState('#out-grammar', 'loading', 'Đang tra ngữ pháp "' + q + '"');
+    try{
+      const r = await apiCall('/api/grammar', {query: q});
+      renderGrammar($('#out-grammar'), r.data, r);
+      addHistory('grammar', q);
+      refreshMe();
+    }catch(err){
+      handleErr('#out-grammar', err);
+    }
+  }
+  async function searchTranslate(text, dir){
+    if(!text) return;
+    const tab = $$('.tab').find(t => t.dataset.tab === 'translate');
+    if(tab) tab.click();
+    $('#q-translate').value = text;
+    if(dir){ direction = dir; $$('#dir-toggle .dir-btn').forEach(b => b.classList.toggle('active', b.dataset.dir === dir)); }
+    window.scrollTo({top: $('#panel-translate').offsetTop - 20, behavior: 'smooth'});
+    setState('#out-translate', 'loading', 'Đang dịch (' + (direction==='vi->ja'?'VI→日':'日→VI') + ')');
+    try{
+      const r = await apiCall('/api/translate', {text, direction});
+      renderTranslate($('#out-translate'), r.data, r, direction);
+      addHistory('translate', text.length > 60 ? text.slice(0,58)+'…' : text);
+      refreshMe();
+    }catch(err){
+      handleErr('#out-translate', err);
+    }
+  }
+  // Expose as globals so inline onclick can call them
+  window.searchWord = searchWord;
+  window.searchGrammar = searchGrammar;
+  window.searchTranslate = searchTranslate;
+
+  window.replayHistory = function(type, query){
+    if(type === 'word') searchWord(query);
+    else if(type === 'grammar') searchGrammar(query);
+    else searchTranslate(query);
   };
   renderHistory();
 
@@ -354,18 +411,18 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
         </div>`).join('');
       const related = (r.related||[]).length ? `
         <div class="r-section">
-          <h3>Từ liên quan</h3>
-          <div class="r-related">${r.related.map(w => `<a onclick="replayHistory('word', ${JSON.stringify(w)}); return false;">${escapeHtml(w)}</a>`).join('')}</div>
+          <h3>Từ liên quan · click để tra</h3>
+          <div class="r-related">${r.related.map(w => `<a href="#" onclick="event.preventDefault(); searchWord(${JSON.stringify(w)});">${escapeHtml(w)}</a>`).join('')}</div>
         </div>` : '';
       const breakdown = (r.kanji_breakdown||[]).length ? `
         <div class="r-section">
-          <h3>Gốc kanji · 字源</h3>
+          <h3>Gốc kanji · 字源 — click để tra</h3>
           <div class="r-breakdown">${r.kanji_breakdown.map(k => `
-            <div class="r-bd-card">
+            <a class="r-bd-card" href="#" onclick="event.preventDefault(); searchWord(${JSON.stringify(k.char)});">
               <div class="r-bd-char">${escapeHtml(k.char)}</div>
               <div class="r-bd-mean">${escapeHtml(k.meaning||'')}</div>
               <div class="r-bd-read">${k.on?'on '+escapeHtml(k.on):''}${k.kun?(k.on?'<br>':'')+'kun '+escapeHtml(k.kun):''}</div>
-            </div>`).join('')}</div>
+            </a>`).join('')}</div>
         </div>` : '';
       return `
         <div class="r-card">
@@ -503,50 +560,10 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
   }
 
   // ─────── submit handlers ───────
-  $('#form-word').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const q = $('#q-word').value.trim();
-    if(!q) return;
-    setState('#out-word', 'loading', 'Đang tra "' + q + '"');
-    try{
-      const r = await apiCall('/api/word', {query: q});
-      renderWord($('#out-word'), r.data, r);
-      addHistory('word', q);
-      refreshMe();
-    }catch(err){
-      handleErr('#out-word', err);
-    }
-  });
-
-  $('#form-grammar').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const q = $('#q-grammar').value.trim();
-    if(!q) return;
-    setState('#out-grammar', 'loading', 'Đang tra ngữ pháp "' + q + '"');
-    try{
-      const r = await apiCall('/api/grammar', {query: q});
-      renderGrammar($('#out-grammar'), r.data, r);
-      addHistory('grammar', q);
-      refreshMe();
-    }catch(err){
-      handleErr('#out-grammar', err);
-    }
-  });
-
-  $('#form-translate').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const text = $('#q-translate').value.trim();
-    if(!text) return;
-    setState('#out-translate', 'loading', 'Đang dịch (' + (direction==='vi->ja'?'VI→日':'日→VI') + ')');
-    try{
-      const r = await apiCall('/api/translate', {text, direction});
-      renderTranslate($('#out-translate'), r.data, r, direction);
-      addHistory('translate', text.length > 60 ? text.slice(0,58)+'…' : text);
-      refreshMe();
-    }catch(err){
-      handleErr('#out-translate', err);
-    }
-  });
+  // Form submit handlers delegate to the same search helpers used by inline-click
+  $('#form-word').addEventListener('submit', (e) => { e.preventDefault(); searchWord($('#q-word').value.trim()); });
+  $('#form-grammar').addEventListener('submit', (e) => { e.preventDefault(); searchGrammar($('#q-grammar').value.trim()); });
+  $('#form-translate').addEventListener('submit', (e) => { e.preventDefault(); searchTranslate($('#q-translate').value.trim()); });
 
   function handleErr(target, err){
     if(err.status === 429){
