@@ -791,6 +791,38 @@ async function handleTTS(req, env) {
   });
 }
 
+/* ─────────── Admin stats (cache counts) ─────────── */
+async function handleAdminStats(req, env) {
+  const counts = { word: 0, grammar: 0, translate: 0, tts: 0, other: 0, total: 0 };
+  let cursor;
+  let pages = 0;
+  while (true) {
+    pages++;
+    const list = await env.DICT_CACHE.list({ limit: 1000, cursor });
+    for (const k of list.keys) {
+      counts.total++;
+      if (k.name.startsWith("word:")) counts.word++;
+      else if (k.name.startsWith("grammar:")) counts.grammar++;
+      else if (k.name.startsWith("translate:")) counts.translate++;
+      else if (k.name.startsWith("tts:")) counts.tts++;
+      else counts.other++;
+    }
+    if (list.list_complete) break;
+    cursor = list.cursor;
+    if (pages > 50) break; // safety
+  }
+  // Also read monthly budget counter
+  const month = new Date().toISOString().slice(0, 7);
+  const used = parseInt((await env.QUOTA.get(`budget:${month}`)) || "0", 10);
+  const max = parseInt(env.MAX_API_CALLS_PER_MONTH || "80000", 10);
+  return json({
+    ok: true,
+    cache_counts: counts,
+    budget_this_month: { used, max, remaining: Math.max(0, max - used) },
+    generated_at: new Date().toISOString(),
+  });
+}
+
 async function handleMe(req, env) {
   const sess = await getSession(req, env);
   const ctx = await quotaContext(req, env);
@@ -839,6 +871,7 @@ export default {
       else if (p === "/api/auth/logout")          res = await handleLogout(req, env);
       else if (p === "/api/me")                   res = await handleMe(req, env);
       else if (p === "/api/tts")                  res = await handleTTS(req, env);
+      else if (p === "/api/admin/stats")          res = await handleAdminStats(req, env);
 
       else res = err(404, "not found");
 
