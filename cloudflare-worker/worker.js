@@ -258,11 +258,11 @@ async function callGemini(env, prompt, { model } = {}) {
     generationConfig: {
       temperature: 0.2,
       topP: 0.9,
-      maxOutputTokens: 16384,
+      maxOutputTokens: 32768,
       responseMimeType: "application/json",
-      // Gemini 3.x thinking mode: enable with limited budget so JSON output isn't truncated.
-      // maxOutputTokens INCLUDES thinking tokens, so keep room (16384 - 4096 = 12288 for output)
-      thinkingConfig: { thinkingBudget: 4096 },
+      // Gemini 3.x: maxOutputTokens INCLUDES thinking. Reduce thinking → more room for JSON output.
+      // 32768 - 1024 thinking ≈ 31k for output (enough for word with 3+ kanji breakdown).
+      thinkingConfig: { thinkingBudget: 1024 },
     },
   };
   const r = await fetch(url, {
