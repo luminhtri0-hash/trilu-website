@@ -324,7 +324,7 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
       return;
     }
     el.innerHTML = h.map(x => `
-      <a class="history-item" onclick="replayHistory('${x.type}', ${JSON.stringify(x.query)}); return false;">
+      <a class="history-item" href="#" data-action="${escapeHtml(x.type)}" data-q="${escapeHtml(x.query)}">
         <span class="ht-type">${x.type === 'word'?'TỪ':x.type==='grammar'?'NGỮ':'DỊCH'}</span>
         ${escapeHtml(x.query.length > 24 ? x.query.slice(0,22)+'…' : x.query)}
       </a>
