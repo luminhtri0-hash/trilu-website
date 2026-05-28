@@ -46,6 +46,19 @@ input[type=number],input[type=text],select{font-family:inherit;font-size:14px;pa
 <p class="sub">Tiền-tạo cache cho ~3000+ từ vựng + ngữ pháp + TTS phổ biến. Mỗi entry lưu KV 1 năm. Sau khi xong, mọi user sau tra đều instant.</p>
 
 <div class="panel">
+<h3>📊 Kho lưu trữ hiện tại <button id="btnRefreshStats" class="ghost" style="font-size:12px;padding:4px 12px;margin-left:12px">↻ Refresh</button></h3>
+<div class="stats">
+<div class="stat moss"><div class="stat-label">Từ vựng cached</div><div class="stat-val" id="cWord">—</div></div>
+<div class="stat moss"><div class="stat-label">Ngữ pháp cached</div><div class="stat-val" id="cGrammar">—</div></div>
+<div class="stat gold"><div class="stat-label">Dịch câu cached</div><div class="stat-val" id="cTranslate">—</div></div>
+<div class="stat gold"><div class="stat-label">TTS audio cached</div><div class="stat-val" id="cTTS">—</div></div>
+<div class="stat"><div class="stat-label">Tổng entries</div><div class="stat-val" id="cTotal">—</div></div>
+<div class="stat sumi"><div class="stat-label">Budget tháng (Gemini calls)</div><div class="stat-val" id="cBudget">—</div></div>
+</div>
+<div style="font-size:12px;color:#888" id="cTime">Chưa tải</div>
+</div>
+
+<div class="panel">
 <h3>1. Chọn danh mục</h3>
 <p class="sub" style="font-size:13px">Tổng = số queries. Cost ước tính 0.005-0.012 USD/query (Gemini 3.5 Flash + Hán-Việt + ruby + breakdown).</p>
 <div class="cat-checks" id="catChecks"></div>
@@ -221,6 +234,30 @@ el('btnPause').addEventListener('click',()=>{state.paused=!state.paused; el('btn
 el('btnStop').addEventListener('click',()=>{state.queue=[]; state.running=false; log('Stopped by user','err');});
 
 renderCats();
+
+// ─── Stats fetcher ───
+async function refreshStats(){
+  const base=el('apiBase').value.trim();
+  el('cTime').textContent='Đang tải…';
+  try{
+    const r=await fetch(base+'/api/admin/stats');
+    if(!r.ok) throw new Error('HTTP '+r.status);
+    const j=await r.json();
+    el('cWord').textContent=j.cache_counts.word.toLocaleString();
+    el('cGrammar').textContent=j.cache_counts.grammar.toLocaleString();
+    el('cTranslate').textContent=j.cache_counts.translate.toLocaleString();
+    el('cTTS').textContent=j.cache_counts.tts.toLocaleString();
+    el('cTotal').textContent=j.cache_counts.total.toLocaleString();
+    el('cBudget').textContent=j.budget_this_month.used.toLocaleString()+' / '+j.budget_this_month.max.toLocaleString();
+    el('cTime').textContent='Cập nhật: '+new Date(j.generated_at).toLocaleTimeString();
+  }catch(e){
+    el('cTime').textContent='Lỗi: '+e.message;
+  }
+}
+el('btnRefreshStats').addEventListener('click', refreshStats);
+refreshStats();
+// Auto-refresh every 15s when warmup is running
+setInterval(()=>{if(state.running) refreshStats();}, 15000);
 </script>
 </body>
 </html>
