@@ -257,7 +257,10 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
   </div>
 
   <!-- HISTORY -->
-  <div class="section-title">Tra gần đây · 履歴</div>
+  <div class="section-title" style="justify-content:space-between">
+    <span style="display:flex;align-items:center;gap:10px"><span style="flex:0 0 24px;height:1px;background:var(--gold);opacity:0.5"></span>Tra gần đây · 履歴</span>
+    <button id="clearHistory" type="button" style="font-family:var(--mono);font-size:10px;letter-spacing:0.14em;padding:5px 12px;border-radius:999px;background:transparent;color:var(--sumi);cursor:pointer;border:1px solid rgba(139,58,46,0.25);font-weight:600;text-transform:uppercase">Xoá lịch sử</button>
+  </div>
   <div id="history" class="history">
     <p class="note" style="grid-column:1/-1">Chưa có lịch sử. Bắt đầu tra ở trên.</p>
   </div>
@@ -415,23 +418,35 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
     else searchTranslate(query);
   };
 
-  // ─────── TTS speaker (Japanese) ───────
-  function speak(text, lang){
-    if(!('speechSynthesis' in window)) return;
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance(text);
-    u.lang = lang || 'ja-JP';
-    u.rate = 0.85;
-    // Prefer a Japanese voice if available
-    const voices = speechSynthesis.getVoices();
-    const jaVoice = voices.find(v => v.lang === 'ja-JP') || voices.find(v => v.lang.startsWith('ja'));
-    if(jaVoice && (lang||'ja-JP').startsWith('ja')) u.voice = jaVoice;
-    speechSynthesis.speak(u);
-  }
-  // pre-load voices (some browsers need this kick)
-  if('speechSynthesis' in window){
-    speechSynthesis.getVoices();
-    speechSynthesis.onvoiceschanged = () => speechSynthesis.getVoices();
+  // ─────── TTS speaker (Google Cloud Neural2 — Studio quality) ───────
+  // Fallback to Web Speech API if Cloud TTS fails.
+  let currentAudio = null;
+  async function speak(text, lang){
+    if(!text) return;
+    // Stop any currently playing audio
+    if(currentAudio){ try{ currentAudio.pause(); currentAudio.src=''; }catch{} currentAudio=null; }
+    if('speechSynthesis' in window) speechSynthesis.cancel();
+    try{
+      const r = await fetch(API_BASE + '/api/tts', {
+        method: 'POST',
+        headers: {'content-type':'application/json'},
+        body: JSON.stringify({text, voice: 'ja-JP-Neural2-B', rate: 0.95})
+      });
+      if(!r.ok) throw new Error('tts ' + r.status);
+      const blob = await r.blob();
+      const url = URL.createObjectURL(blob);
+      currentAudio = new Audio(url);
+      currentAudio.onended = () => URL.revokeObjectURL(url);
+      await currentAudio.play();
+    }catch(e){
+      // Fallback to native Web Speech API
+      if('speechSynthesis' in window){
+        const u = new SpeechSynthesisUtterance(text);
+        u.lang = lang || 'ja-JP';
+        u.rate = 0.85;
+        speechSynthesis.speak(u);
+      }
+    }
   }
 
   // ─────── Global event delegation (reliable click handler) ───────
@@ -560,6 +575,15 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
     return out;
   }
   renderHistory();
+  // Clear history button
+  const clearBtn = document.getElementById('clearHistory');
+  if(clearBtn){
+    clearBtn.addEventListener('click', () => {
+      if(!confirm('Xoá toàn bộ lịch sử tra cứu trên thiết bị này?')) return;
+      try{ localStorage.removeItem(HIST_KEY); }catch{}
+      renderHistory();
+    });
+  }
 
   // ─────── helpers ───────
   function escapeHtml(s){
