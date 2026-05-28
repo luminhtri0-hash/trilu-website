@@ -758,8 +758,9 @@ async function handleTTS(req, env) {
   const bud = await checkAndBumpBudget(env);
   if (!bud.ok) return err(503, "monthly budget reached", { budget: bud });
 
-  // Call Google Cloud TTS
-  const url = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${env.GEMINI_API_KEY}`;
+  // Call Google Cloud TTS — uses dedicated TTS_API_KEY if available (different restriction class from Gemini)
+  const ttsKey = env.TTS_API_KEY || env.GEMINI_API_KEY;
+  const url = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${ttsKey}`;
   const reqBody = {
     input: { text },
     voice: { languageCode: "ja-JP", name: voice },
