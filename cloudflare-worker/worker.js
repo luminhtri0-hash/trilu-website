@@ -727,6 +727,69 @@ async function handleLogout(req, env) {
   });
 }
 
+/* ─────────── Google Cloud TTS proxy ─────────── */
+// High-quality Japanese voice: ja-JP-Neural2-B (Studio-grade WaveNet)
+// Cost: ~$16/1M chars for Neural2 — extremely cheap with cache.
+async function handleTTS(req, env) {
+  if (req.method !== "POST") return err(405, "method not allowed");
+  let body;
+  try { body = await req.json(); } catch { return err(400, "invalid json"); }
+  const text = (body.text || "").trim();
+  if (!text) return err(400, "missing text");
+  if (text.length > 500) return err(400, "text too long (max 500 chars)");
+
+  const voice = (body.voice || "ja-JP-Neural2-B").trim();
+  const rate = Math.min(1.5, Math.max(0.5, parseFloat(body.rate || "0.95")));
+  const cacheKey = `tts:${voice}:${rate}:${await sha256Hex(text)}`;
+
+  // Cache hit?
+  const cached = await env.DICT_CACHE.get(cacheKey, { type: "arrayBuffer" });
+  if (cached) {
+    return new Response(cached, {
+      headers: {
+        "content-type": "audio/mpeg",
+        "cache-control": "public, max-age=31536000, immutable",
+        "x-tts-cache": "hit",
+      },
+    });
+  }
+
+  // Budget guard
+  const bud = await checkAndBumpBudget(env);
+  if (!bud.ok) return err(503, "monthly budget reached", { budget: bud });
+
+  // Call Google Cloud TTS
+  const url = `https://texttospeech.googleapis.com/v1/text:synthesize?key=${env.GEMINI_API_KEY}`;
+  const reqBody = {
+    input: { text },
+    voice: { languageCode: "ja-JP", name: voice },
+    audioConfig: { audioEncoding: "MP3", speakingRate: rate, pitch: 0, sampleRateHertz: 24000 },
+  };
+  const r = await fetch(url, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(reqBody) });
+  if (!r.ok) {
+    const t = await r.text();
+    return err(502, "tts error: " + t.slice(0, 200));
+  }
+  const data = await r.json();
+  if (!data.audioContent) return err(502, "tts: no audio");
+
+  // base64 → ArrayBuffer
+  const bin = atob(data.audioContent);
+  const buf = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) buf[i] = bin.charCodeAt(i);
+
+  // Cache audio
+  await env.DICT_CACHE.put(cacheKey, buf.buffer, { expirationTtl: CACHE_TTL });
+
+  return new Response(buf.buffer, {
+    headers: {
+      "content-type": "audio/mpeg",
+      "cache-control": "public, max-age=31536000, immutable",
+      "x-tts-cache": "miss",
+    },
+  });
+}
+
 async function handleMe(req, env) {
   const sess = await getSession(req, env);
   const ctx = await quotaContext(req, env);
@@ -774,6 +837,7 @@ export default {
       else if (p === "/api/auth/google/callback") res = await handleGoogleCallback(req, env);
       else if (p === "/api/auth/logout")          res = await handleLogout(req, env);
       else if (p === "/api/me")                   res = await handleMe(req, env);
+      else if (p === "/api/tts")                  res = await handleTTS(req, env);
 
       else res = err(404, "not found");
 
