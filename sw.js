@@ -1,5 +1,5 @@
-// Trí Lữ Nihongo Service Worker v3
-const CACHE = 'trilu-v3';
+// Trí Lữ Nihongo Service Worker v4
+const CACHE = 'trilu-v4';
 const APP_SHELL = ['/icon-32.png','/icon-180.png','/icon-192.png','/icon-512.png','/manifest.json','/nav.js','/offline.html'];
 
 self.addEventListener('install', e => {
@@ -14,9 +14,9 @@ self.addEventListener('fetch', e => {
   const req = e.request;
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
-  if (url.origin !== self.location.origin) return; // skip cross-origin
+  if (url.origin !== self.location.origin) return;
 
-  // HTML pages: ALWAYS go to network, no cache fallback for stale-while-online
+  // HTML: always network, no cache
   if (req.mode === 'navigate' || (req.headers.get('accept') || '').includes('text/html')) {
     e.respondWith(
       fetch(req, {cache: 'no-store'}).catch(() => caches.match(req).then(r => r || caches.match('/offline.html')))
