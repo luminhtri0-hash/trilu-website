@@ -47,6 +47,19 @@ const json = (data, init = {}) =>
     headers: { "content-type": "application/json; charset=utf-8", ...(init.headers || {}) },
   });
 
+// Wrap any response with CORS headers so trilu.edu.vn frontend can call workers.dev backend
+function withCORS(res, env, reqOrigin) {
+  const allowed = env.ALLOWED_ORIGIN || "https://trilu.edu.vn";
+  // accept both production origin and wildcard prefix (e.g. preview deploys)
+  const origin = reqOrigin || allowed;
+  const ok = origin === allowed || origin === "https://www.trilu.edu.vn" || (origin && origin.endsWith(".trilu.edu.vn"));
+  const h = new Headers(res.headers);
+  h.set("access-control-allow-origin", ok ? origin : allowed);
+  h.set("access-control-allow-credentials", "true");
+  h.set("vary", "origin");
+  return new Response(res.body, { status: res.status, statusText: res.statusText, headers: h });
+}
+
 const err = (status, msg, extra = {}) => json({ ok: false, error: msg, ...extra }, { status });
 
 const html = (body, init = {}) =>
@@ -720,38 +733,40 @@ export default {
   async fetch(req, env) {
     const url = new URL(req.url);
     const p = url.pathname;
+    const reqOrigin = req.headers.get("origin") || "";
 
-    // CORS preflight (only if a cross-origin client somehow hits us)
+    // CORS preflight
     if (req.method === "OPTIONS") {
-      return new Response(null, {
+      return withCORS(new Response(null, {
         status: 204,
         headers: {
-          "access-control-allow-origin": env.ALLOWED_ORIGIN || "*",
           "access-control-allow-methods": "GET,POST,OPTIONS",
           "access-control-allow-headers": "content-type",
-          "access-control-allow-credentials": "true",
           "access-control-max-age": "86400",
         },
-      });
+      }), env, reqOrigin);
     }
 
     try {
-      if (p === "/api/health") return json({ ok: true, t: Date.now() });
+      let res;
+      if (p === "/api/health") res = json({ ok: true, t: Date.now() });
 
-      if (p === "/api/word")      return await handleDictLookup(req, env, "word");
-      if (p === "/api/grammar")   return await handleDictLookup(req, env, "grammar");
-      if (p === "/api/translate") return await handleDictLookup(req, env, "translate");
+      else if (p === "/api/word")      res = await handleDictLookup(req, env, "word");
+      else if (p === "/api/grammar")   res = await handleDictLookup(req, env, "grammar");
+      else if (p === "/api/translate") res = await handleDictLookup(req, env, "translate");
 
-      if (p === "/api/auth/magic-link")      return await handleMagicLink(req, env);
-      if (p === "/api/auth/verify")          return await handleVerifyMagic(req, env);
-      if (p === "/api/auth/google")          return await handleGoogleStart(req, env);
-      if (p === "/api/auth/google/callback") return await handleGoogleCallback(req, env);
-      if (p === "/api/auth/logout")          return await handleLogout(req, env);
-      if (p === "/api/me")                   return await handleMe(req, env);
+      else if (p === "/api/auth/magic-link")      res = await handleMagicLink(req, env);
+      else if (p === "/api/auth/verify")          res = await handleVerifyMagic(req, env);
+      else if (p === "/api/auth/google")          res = await handleGoogleStart(req, env);
+      else if (p === "/api/auth/google/callback") res = await handleGoogleCallback(req, env);
+      else if (p === "/api/auth/logout")          res = await handleLogout(req, env);
+      else if (p === "/api/me")                   res = await handleMe(req, env);
 
-      return err(404, "not found");
+      else res = err(404, "not found");
+
+      return withCORS(res, env, reqOrigin);
     } catch (e) {
-      return err(500, "internal: " + (e.message || String(e)));
+      return withCORS(err(500, "internal: " + (e.message || String(e))), env, reqOrigin);
     }
   },
 };
