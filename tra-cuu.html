@@ -132,6 +132,16 @@ h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6vw,56px);lin
 .stroke-cell-toggle{font-family:var(--mono);font-size:9px;letter-spacing:0.1em;padding:3px 8px;border-radius:4px;background:transparent;color:rgba(27,58,107,0.6);cursor:pointer;border:1px solid rgba(27,58,107,0.15);font-weight:600;text-transform:uppercase}
 .stroke-cell-toggle:hover{background:rgba(27,58,107,0.06)}
 @keyframes drawStroke{to{stroke-dashoffset:0}}
+/* Grammar pattern tabs ở đầu khi có nhiều patterns */
+.g-pattern-tabs{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:24px;padding:18px 22px;background:linear-gradient(135deg,rgba(27,58,107,0.04),rgba(184,149,104,0.06));border:1px solid rgba(184,149,104,0.25);border-radius:14px}
+.g-pattern-tabs-label{font-family:var(--mono);font-size:11px;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);font-weight:600;align-self:center;margin-right:8px}
+.g-pattern-tab{font-family:var(--jp);font-size:18px;color:var(--ink);background:#fff;border:1px solid rgba(184,149,104,0.35);padding:10px 18px;border-radius:10px;cursor:pointer;font-weight:500;display:inline-flex;align-items:center;gap:8px;transition:all .15s;line-height:1.2}
+.g-pattern-tab:hover{background:rgba(184,149,104,0.12);border-color:var(--gold);transform:translateY(-1px)}
+.g-pattern-tab.active{background:var(--ink);color:var(--cream);border-color:var(--ink);box-shadow:0 4px 12px rgba(27,58,107,0.18)}
+.g-pattern-tab-jlpt{font-family:var(--mono);font-size:9.5px;letter-spacing:0.12em;padding:3px 7px;border-radius:999px;background:rgba(184,149,104,0.18);color:var(--gold);font-weight:700}
+.g-pattern-tab.active .g-pattern-tab-jlpt{background:var(--gold);color:var(--ink)}
+.g-pattern-card{animation:fadeIn .25s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
 .r-breakdown{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px}
 .r-bd-card{background:rgba(27,58,107,0.04);padding:18px 20px;border-radius:12px;border:1px solid rgba(184,149,104,0.22);text-decoration:none;color:inherit;display:block;cursor:pointer;transition:all .15s}
 .r-bd-card:hover{background:var(--gold);color:var(--cream);border-color:var(--gold);transform:translateY(-2px)}
@@ -746,7 +756,17 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
       return;
     }
     const cacheTag = meta.cached ? `<span class="chip" title="Cache hit">⚡ CACHED</span>` : '';
-    const items = data.patterns.map(p => {
+    // Tabs ở đầu khi có nhiều pattern
+    const tabsHTML = data.patterns.length > 1 ? `
+      <div class="g-pattern-tabs">
+        <span class="g-pattern-tabs-label">${data.patterns.length} mẫu liên quan</span>
+        ${data.patterns.map((p, i) => `
+          <button type="button" class="g-pattern-tab ${i === 0 ? 'active' : ''}" data-pattern-idx="${i}">
+            ${escapeHtml(p.pattern||'')}
+            ${p.jlpt ? `<span class="g-pattern-tab-jlpt">${escapeHtml(p.jlpt)}</span>` : ''}
+          </button>`).join('')}
+      </div>` : '';
+    const cards = data.patterns.map((p, i) => {
       const chips = [cacheTag, p.jlpt ? `<span class="chip jlpt">${p.jlpt}</span>` : ''].filter(Boolean).join('');
       const examples = (p.examples||[]).map(e => {
         const ja = e.ja_ruby ? renderRuby(e.ja_ruby) : escapeHtml(e.ja||'');
@@ -783,21 +803,31 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
           ${p.structure.map(s => `<div style="font-family:var(--jp);font-size:15px;padding:6px 10px;background:rgba(184,149,104,0.06);border-radius:6px;margin-bottom:4px">${escapeHtml(s)}</div>`).join('')}
         </div>` : '';
       return `
-        <div class="r-card">
-          <div class="r-meta">${chips}</div>
-          <div class="r-title" style="font-size:clamp(36px,5vw,52px)">${escapeHtml(p.pattern)}</div>
-          <div class="r-section" style="border:none;padding-top:0;margin-top:8px">
-            <div class="r-meanings">${escapeHtml(p.meaning_vi || '')}</div>
+        <div class="g-pattern-card" data-pattern-idx="${i}" style="display:${i===0?'block':'none'}">
+          <div class="r-card">
+            <div class="r-meta">${chips}</div>
+            <div class="r-title" style="font-size:clamp(36px,5vw,52px)">${escapeHtml(p.pattern)}</div>
+            <div class="r-section" style="border:none;padding-top:0;margin-top:8px">
+              <div class="r-meanings">${escapeHtml(p.meaning_vi || '')}</div>
+            </div>
+            ${compareChips}
+            ${p.usage ? `<div class="r-section"><h3>Cách dùng</h3><p style="font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.6;color:rgba(27,58,107,0.9)">${escapeHtml(p.usage)}</p></div>` : ''}
+            ${structure}
+            ${examples ? `<div class="r-section"><h3>Ví dụ</h3>${examples}</div>` : ''}
+            ${compare}
+            ${mistakes}
           </div>
-          ${compareChips}
-          ${p.usage ? `<div class="r-section"><h3>Cách dùng</h3><p style="font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.6;color:rgba(27,58,107,0.9)">${escapeHtml(p.usage)}</p></div>` : ''}
-          ${structure}
-          ${examples ? `<div class="r-section"><h3>Ví dụ</h3>${examples}</div>` : ''}
-          ${compare}
-          ${mistakes}
         </div>`;
     }).join('');
-    out.innerHTML = items;
+    out.innerHTML = tabsHTML + cards;
+    // Tab switch handlers
+    out.querySelectorAll('.g-pattern-tab').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const idx = btn.getAttribute('data-pattern-idx');
+        out.querySelectorAll('.g-pattern-tab').forEach(t => t.classList.toggle('active', t.getAttribute('data-pattern-idx') === idx));
+        out.querySelectorAll('.g-pattern-card').forEach(c => c.style.display = c.getAttribute('data-pattern-idx') === idx ? 'block' : 'none');
+      });
+    });
   }
 
   // ─────── render: TRANSLATE ───────
