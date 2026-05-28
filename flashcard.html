@@ -1,0 +1,1428 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no">
+  <title>Trí Lữ Flashcard — Học Nhật bằng thẻ ghi nhớ</title>
+
+  <meta name="theme-color" content="#1B3A6B">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Trí Lữ Flashcard">
+
+  <link rel="icon" href="/icon-180.png">
+  <link rel="apple-touch-icon" href="/icon-180.png">
+  <link rel="manifest" href="/manifest.json">
+
+  <meta name="description" content="Học từ vựng, ngữ pháp tiếng Nhật theo bài Minna no Nihongo + Shin Kanzen với thẻ ghi nhớ FSRS — Trí Lữ Nihongo.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700;900&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter+Tight:wght@400;500;600;700&family=Be+Vietnam+Pro:wght@300;400;500;600;700&display=swap">
+
+  <style>
+    /* ------- reset + base ------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin:0; padding:0; height:100%; overscroll-behavior:none; }
+    body {
+      background: #F4ECD8;
+      color: #2E2A22;
+      font-family: "Be Vietnam Pro", system-ui, -apple-system, sans-serif;
+      font-feature-settings: "ss01";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    button { font-family: inherit; }
+    a { color: inherit; text-decoration: none; }
+    [hidden] { display: none !important; }
+
+    /* loader */
+    .boot {
+      position: fixed; inset: 0; display:flex; align-items:center; justify-content:center;
+      background:#F4ECD8; z-index: 10;
+      transition: opacity .3s ease;
+    }
+    .boot.gone { opacity:0; pointer-events:none; }
+    .boot-mark {
+      width:88px; height:88px; border-radius:50%;
+      background:#1B3A6B; display:grid; place-items:center; position:relative;
+      box-shadow: 0 2px 16px -6px rgba(27,58,107,.35);
+      animation: bootPulse 1.6s ease-in-out infinite;
+    }
+    .boot-mark::before {
+      content:""; position:absolute; inset:7px;
+      border-radius:50%; border:1px solid #B89568;
+    }
+    .boot-mark span {
+      font-family:"Noto Serif JP", serif; font-weight:900; font-size:48px; color:#B89568;
+      line-height:1; transform: translateY(-2px);
+    }
+    @keyframes bootPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.04); }
+    }
+
+    /* mobile-first viewport */
+    #root { min-height: 100vh; min-height: 100dvh; display:flex; flex-direction:column; }
+
+    /* app frame: phone mockup on desktop, full screen on mobile */
+    .app-frame {
+      flex: 1;
+      width: 100%;
+      max-width: 100vw;
+      min-height: 100vh;
+      min-height: 100dvh;
+      position: relative;
+      overflow: hidden;
+      color: #2E2A22;
+    }
+    @media (min-width: 640px) {
+      body { display:flex; align-items:center; justify-content:center; padding:24px; }
+      #root { min-height: auto; }
+      .app-frame {
+        width: 390px;
+        height: 844px;
+        max-height: 90vh;
+        min-height: auto;
+        border-radius: 36px;
+        box-shadow:
+          0 0 0 1px rgba(46,42,34,.06),
+          0 30px 60px -20px rgba(46,42,34,.25),
+          0 60px 120px -40px rgba(46,42,34,.18);
+        border: 8px solid #2E2A22;
+      }
+    }
+
+    /* hide native scrollbars but keep functional */
+    .scroll { overflow-y: auto; overflow-x: hidden; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+    .scroll::-webkit-scrollbar { width: 4px; }
+    .scroll::-webkit-scrollbar-thumb { background: #D6C8A8; border-radius:2px; }
+
+    /* card flip animation */
+    .flip-card { perspective: 1600px; }
+    .flip-inner { position: absolute; inset:0; transition: transform .6s cubic-bezier(.22,.61,.36,1); transform-style: preserve-3d; }
+    .flip-inner.is-flipped { transform: rotateY(180deg); }
+    .flip-face { position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; }
+    .flip-face.back { transform: rotateY(180deg); }
+
+    /* keyboard hint pill */
+    .kbd {
+      display:inline-block; min-width:18px; padding:0 6px;
+      font-family: "JetBrains Mono", ui-monospace, monospace;
+      font-size:10px; color:#5C544A;
+      border:1px solid #D6C8A8; border-bottom-width:2px; border-radius:3px;
+      background:#FBF6E9; line-height:18px; text-align:center;
+    }
+
+    .ruby-rt { font-size: 0.42em; letter-spacing: 1px; color: #5C544A; }
+  </style>
+</head>
+<body>
+  <div class="boot" id="boot"><div class="boot-mark"><span>智</span></div></div>
+  <div id="root"></div>
+
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel" data-presets="react">
+'use strict';
+const { useState, useEffect, useRef, useMemo, useCallback } = React;
+
+// ============================================================
+// API base — workers.dev for now (route trilu.edu.vn/api/* sẽ fix sau)
+// ============================================================
+const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+  ? 'https://trilu-dict-api.luminhtri0.workers.dev'
+  : 'https://trilu-dict-api.luminhtri0.workers.dev';
+
+async function api(path, opts = {}) {
+  const r = await fetch(API_BASE + path, {
+    credentials: 'include',
+    ...opts,
+    headers: { 'content-type': 'application/json', ...(opts.headers||{}) },
+  });
+  const j = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(j.error || ('HTTP ' + r.status));
+  return j;
+}
+
+// ============================================================
+// Design tokens (from shared.jsx)
+// ============================================================
+const TRILU = {
+  cream: '#F4ECD8', creamHi: '#FBF6E9', creamLo: '#EBE0C4',
+  ink: '#2E2A22', inkSoft: '#5C544A', inkMute: '#8E8474',
+  rule: '#D6C8A8',
+  vermillion: '#C7553A', vermillionDeep: '#A8442D',
+  indigo: '#1B3A6B', gold: '#B89568', moss: '#6F7F4E',
+  again: '#A8442D', hard: '#B5824A', good: '#6F7F4E', easy: '#1B3A6B',
+};
+
+const washiBg = (opacity = 0.35) => ({
+  backgroundColor: TRILU.cream,
+  backgroundImage:
+    `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'>` +
+    `<filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/>` +
+    `<feColorMatrix values='0 0 0 0 0.18  0 0 0 0 0.16  0 0 0 0 0.13  0 0 0 ${opacity} 0'/></filter>` +
+    `<rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>")`,
+});
+
+// ============================================================
+// Atoms — InkRule, VerticalKanji, Hanko, BrandMark
+// ============================================================
+function InkRule({ width = 56, style = {} }) {
+  return (
+    <svg width={width} height="6" viewBox="0 0 56 6" style={style}>
+      <path d="M1 3 Q14 1 28 3 T55 3" stroke={TRILU.ink} strokeWidth="1.2" strokeLinecap="round" fill="none" opacity="0.7"/>
+    </svg>
+  );
+}
+
+function VerticalKanji({ text, size = 11, color, style = {} }) {
+  return (
+    <div style={{
+      writingMode: 'vertical-rl', textOrientation: 'upright',
+      fontFamily: '"Noto Serif JP", serif',
+      fontSize: size, letterSpacing: 4,
+      color: color || TRILU.inkMute,
+      ...style,
+    }}>{text}</div>
+  );
+}
+
+function Hanko({ text = '智', size = 36, style = {} }) {
+  return (
+    <div style={{
+      width: size, height: size, display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
+      background: TRILU.vermillion, color: '#F8EFD9',
+      fontFamily: '"Noto Serif JP", serif', fontWeight: 700,
+      fontSize: size * 0.42, lineHeight: 1, borderRadius: 4,
+      boxShadow: 'inset 0 0 0 2px #F4ECD8, inset 0 0 0 3px #C7553A',
+      letterSpacing: -1, ...style,
+    }}>{text}</div>
+  );
+}
+
+function BrandBadge({ size = 56, showDots = true }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 512 512" style={{ display: 'block', flexShrink: 0 }}>
+      <circle cx="256" cy="256" r="256" fill="#1B3A6B"/>
+      <circle cx="256" cy="256" r="230" fill="none" stroke="#B89568" strokeWidth="4"/>
+      {showDots && (
+        <g fill="#B89568">
+          <circle cx="256" cy="18"  r="8"/>
+          <circle cx="494" cy="256" r="8"/>
+          <circle cx="256" cy="494" r="8"/>
+          <circle cx="18"  cy="256" r="8"/>
+        </g>
+      )}
+      <text x="256" y="380" textAnchor="middle"
+        fontFamily='"Noto Serif JP", serif' fontWeight="900" fontSize="340"
+        fill="#B89568">智</text>
+    </svg>
+  );
+}
+
+function BrandWordmark({ size = 18, align = 'left' }) {
+  return (
+    <div style={{
+      display: 'flex', flexDirection: 'column', lineHeight: 1,
+      alignItems: align === 'center' ? 'center' : 'flex-start',
+    }}>
+      <span style={{
+        fontFamily: '"Cormorant Garamond", serif', fontWeight: 600,
+        color: '#B89568', fontSize: size, letterSpacing: '0.02em',
+      }}>Trí Lữ</span>
+      <span style={{
+        fontFamily: '"Inter Tight", "Be Vietnam Pro", sans-serif',
+        fontWeight: 600, color: '#1B3A6B',
+        fontSize: Math.round(size * 0.6), textTransform: 'uppercase',
+        letterSpacing: '0.18em', marginTop: Math.round(size * 0.25),
+      }}>Flashcard</span>
+    </div>
+  );
+}
+
+function BrandMark({ size = 44, layout = 'horizontal' }) {
+  if (layout === 'stacked') {
+    return (
+      <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: Math.round(size * 0.22) }}>
+        <BrandBadge size={size} />
+        <BrandWordmark size={Math.round(size * 0.4)} align="center" />
+      </div>
+    );
+  }
+  return (
+    <div style={{ display: 'inline-flex', alignItems: 'center', gap: Math.round(size * 0.28) }}>
+      <BrandBadge size={size} />
+      <BrandWordmark size={Math.round(size * 0.4)} />
+    </div>
+  );
+}
+
+// ============================================================
+// Status bar (mobile mockup) — only on desktop preview
+// ============================================================
+function StatusBar({ time = '9:41' }) {
+  const isPhoneFrame = window.matchMedia && window.matchMedia('(min-width: 640px)').matches;
+  if (!isPhoneFrame) return null;
+  return (
+    <div style={{
+      height: 44, padding: '0 22px', display: 'flex',
+      alignItems: 'center', justifyContent: 'space-between',
+      fontSize: 14, fontWeight: 600, color: TRILU.ink, letterSpacing: 0.2,
+    }}>
+      <span>{time}</span>
+      <div style={{ display: 'flex', gap: 6, alignItems: 'center', opacity: 0.85 }}>
+        <svg width="17" height="11" viewBox="0 0 17 11"><g fill={TRILU.ink}>
+          <rect x="0" y="7" width="3" height="4" rx="0.5"/>
+          <rect x="5" y="5" width="3" height="6" rx="0.5"/>
+          <rect x="10" y="2" width="3" height="9" rx="0.5"/>
+        </g></svg>
+        <svg width="15" height="11" viewBox="0 0 15 11" fill="none">
+          <path d="M7.5 2C9.7 2 11.7 2.8 13.2 4.1" stroke={TRILU.ink} strokeWidth="1.2" strokeLinecap="round"/>
+          <path d="M7.5 5C8.9 5 10.2 5.5 11.2 6.3" stroke={TRILU.ink} strokeWidth="1.2" strokeLinecap="round"/>
+          <circle cx="7.5" cy="8.5" r="1.1" fill={TRILU.ink}/>
+        </svg>
+        <svg width="26" height="11" viewBox="0 0 26 11">
+          <rect x="0.5" y="0.5" width="22" height="10" rx="2.5" fill="none" stroke={TRILU.ink} strokeOpacity="0.5"/>
+          <rect x="2" y="2" width="16" height="7" rx="1.2" fill={TRILU.ink}/>
+          <rect x="23" y="3.5" width="2" height="4" rx="0.5" fill={TRILU.ink} fillOpacity="0.5"/>
+        </svg>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// TabBar — bottom navigation
+// ============================================================
+function TabBar({ active, onNav }) {
+  const items = [
+    { id: 'home',    label: 'Trang chính', icon: '宅' },
+    { id: 'library', label: 'Bộ thẻ',      icon: '冊' },
+    { id: 'stats',   label: 'Tiến độ',     icon: '進' },
+    { id: 'profile', label: 'Cá nhân',     icon: '我' },
+  ];
+  return (
+    <div style={{
+      position: 'absolute', bottom: 0, left: 0, right: 0,
+      height: 'calc(76px + env(safe-area-inset-bottom, 0px))',
+      padding: '8px 12px calc(22px + env(safe-area-inset-bottom, 0px))',
+      background: 'rgba(244, 236, 216, 0.92)',
+      backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
+      borderTop: `1px solid ${TRILU.rule}`,
+      display: 'flex', justifyContent: 'space-around',
+      zIndex: 5,
+    }}>
+      {items.map(it => (
+        <button key={it.id}
+          onClick={() => onNav && onNav(it.id)}
+          style={{
+            border: 'none', background: 'none', cursor: 'pointer',
+            display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
+            color: it.id === active ? TRILU.ink : TRILU.inkMute,
+            flex: 1, padding: 0,
+          }}>
+          <div style={{
+            fontFamily: '"Noto Serif JP", serif', fontSize: 18,
+            color: it.id === active ? TRILU.vermillion : TRILU.inkMute,
+          }}>{it.icon}</div>
+          <div style={{ fontSize: 9, letterSpacing: 1, textTransform: 'uppercase', fontWeight: it.id === active ? 600 : 400 }}>
+            {it.label}
+          </div>
+        </button>
+      ))}
+    </div>
+  );
+}
+
+// ============================================================
+// HOME / DASHBOARD
+// ============================================================
+function HomeScreen({ user, srsStats, decks, onStart, onNav, onOpenDeck }) {
+  const due = srsStats?.due || 0;
+  const newCards = srsStats?.new || 0;
+  const hard = srsStats?.hard || 0;
+  const streak = srsStats?.streak || 0;
+  const today = new Date();
+  const dow = today.getDay(); // 0..6, 0=Sun
+  const todayIdx = (dow + 6) % 7; // Monday=0
+  const week = srsStats?.weekMinutes || [0,0,0,0,0,0,0];
+
+  const dateLabel = today.toLocaleDateString('vi-VN', { weekday: 'long' });
+  const jpDate = (() => {
+    const m = today.getMonth() + 1;
+    const d = today.getDate();
+    const kanjiNum = (n) => '〇一二三四五六七八九十'[n] || String(n);
+    const num = (n) => n >= 10 && n < 20 ? '十' + (n === 10 ? '' : kanjiNum(n - 10))
+                       : n >= 20 && n < 30 ? '二十' + (n === 20 ? '' : kanjiNum(n - 20))
+                       : n >= 30 ? '三十' + (n === 30 ? '' : kanjiNum(n - 30))
+                       : kanjiNum(n);
+    return num(m) + '月' + num(d) + '日';
+  })();
+  const greeting = (() => {
+    const h = today.getHours();
+    if (h < 5) return 'Chào đêm khuya';
+    if (h < 11) return 'Chào buổi sáng';
+    if (h < 14) return 'Chào buổi trưa';
+    if (h < 18) return 'Chào buổi chiều';
+    return 'Chào buổi tối';
+  })();
+  const userInitial = (user?.name || user?.email || 'M').charAt(0).toUpperCase();
+
+  return (
+    <div className="app-frame scroll" style={{ ...washiBg(0.4), paddingBottom: 96 }}>
+      <StatusBar/>
+      {/* Header */}
+      <div style={{ padding: '12px 24px 0', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <BrandMark size={40} />
+        <button onClick={() => onNav && onNav('profile')} style={{
+          width: 36, height: 36, borderRadius: '50%', cursor: 'pointer',
+          background: TRILU.creamHi, border: `1px solid ${TRILU.rule}`,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontFamily: '"Noto Serif JP", serif', fontSize: 14, fontWeight: 600,
+          color: TRILU.indigo,
+        }}>{userInitial}</button>
+      </div>
+
+      {/* Greeting */}
+      <div style={{ padding: '24px 24px 0' }}>
+        <div style={{
+          fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase',
+        }}>
+          {dateLabel.replace(/^./, c => c.toUpperCase())} · <span style={{ fontFamily: '"Noto Serif JP", serif', letterSpacing: 1 }}>{jpDate}</span>
+        </div>
+        <div style={{
+          fontFamily: '"Noto Serif JP", serif',
+          fontSize: 24, fontWeight: 500, color: TRILU.ink,
+          marginTop: 8, letterSpacing: 0.3,
+        }}>
+          {greeting}{user?.name ? ', ' + user.name : ''}.
+        </div>
+        <InkRule width={48} style={{ marginTop: 10 }} />
+      </div>
+
+      {/* Today hero */}
+      <div style={{
+        margin: '24px 20px 0', padding: '22px 22px 20px',
+        background: TRILU.creamHi, border: `1px solid ${TRILU.rule}`,
+        borderRadius: 4, position: 'relative',
+      }}>
+        <VerticalKanji text="本日" style={{ position: 'absolute', top: 18, right: 18 }} />
+        <div style={{ fontSize: 10, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>Hôm nay</div>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, marginTop: 14 }}>
+          <span style={{
+            fontFamily: '"Noto Serif JP", serif', fontSize: 64, fontWeight: 500,
+            color: TRILU.ink, lineHeight: 1, letterSpacing: -1,
+          }}>{due}</span>
+          <span style={{ fontSize: 14, color: TRILU.inkSoft, lineHeight: 1.4 }}>
+            thẻ cần<br/>ôn tập
+          </span>
+        </div>
+        <div style={{
+          marginTop: 18, paddingTop: 14,
+          borderTop: `1px dashed ${TRILU.rule}`,
+          display: 'flex', justifyContent: 'space-between',
+        }}>
+          <Stat label="Đến hạn" value={Math.max(0, due - newCards)} color={TRILU.indigo} />
+          <Stat label="Thẻ mới" value={newCards} color={TRILU.moss} />
+          <Stat label="Khó" value={hard} color={TRILU.vermillion} />
+        </div>
+        <button onClick={onStart} disabled={!due} style={{
+          marginTop: 18, width: '100%', height: 48,
+          background: due ? TRILU.vermillion : TRILU.rule,
+          color: '#F8EFD9', border: 'none', borderRadius: 3,
+          fontSize: 14, fontWeight: 600, letterSpacing: 1.5,
+          textTransform: 'uppercase', cursor: due ? 'pointer' : 'not-allowed',
+          display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
+        }}>
+          {due ? 'Bắt đầu ôn tập' : 'Chưa có thẻ đến hạn'}
+          {due > 0 && <svg width="14" height="10" viewBox="0 0 14 10"><path d="M0 5h12M8 1l4 4-4 4" stroke="#F8EFD9" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+        </button>
+      </div>
+
+      {/* Week */}
+      <div style={{ padding: '24px 24px 0' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+          <div style={{ fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>Tuần này</div>
+          <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 13, color: TRILU.ink }}>
+            <span style={{ color: TRILU.vermillion, fontWeight: 600 }}>{streak}</span>
+            <span style={{ color: TRILU.inkMute, marginLeft: 6, fontFamily: '"Be Vietnam Pro"', fontSize: 11 }}>ngày liên tiếp</span>
+          </div>
+        </div>
+        <div style={{ marginTop: 14, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', height: 56 }}>
+          {week.map((v, i) => (
+            <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, width: 28 }}>
+              <div style={{
+                width: 8, height: Math.max(6, v * 5 + 6),
+                background: i === todayIdx ? TRILU.vermillion : (i < todayIdx ? TRILU.ink : TRILU.rule),
+                opacity: i === todayIdx ? 1 : (i < todayIdx ? 0.7 : 1),
+                borderRadius: 1,
+              }}/>
+              <div style={{
+                fontSize: 10, color: i === todayIdx ? TRILU.ink : TRILU.inkMute,
+                fontWeight: i === todayIdx ? 600 : 400, letterSpacing: 0.5,
+              }}>{['T2','T3','T4','T5','T6','T7','CN'][i]}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Recent decks */}
+      {decks && decks.length > 0 && (
+        <div style={{ padding: '22px 24px 0' }}>
+          <div style={{
+            fontSize: 11, letterSpacing: 3, color: TRILU.inkMute,
+            textTransform: 'uppercase', marginBottom: 12,
+          }}>
+            Bộ thẻ đang học
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
+            {decks.slice(0, 3).map(d => (
+              <DeckRow key={d.id} deck={d} onClick={() => onOpenDeck && onOpenDeck(d)} />
+            ))}
+          </div>
+        </div>
+      )}
+
+      <TabBar active="home" onNav={onNav} />
+    </div>
+  );
+}
+
+function Stat({ label, value, color }) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+      <span style={{ fontSize: 10, color: TRILU.inkMute, letterSpacing: 1, textTransform: 'uppercase' }}>{label}</span>
+      <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 22, fontWeight: 500, color, lineHeight: 1 }}>{value}</span>
+    </div>
+  );
+}
+
+function DeckRow({ deck, onClick }) {
+  const pct = deck.total > 0 ? deck.done / deck.total : 0;
+  const accent = deck.accent || TRILU.indigo;
+  return (
+    <button onClick={onClick} style={{
+      display: 'flex', alignItems: 'center', gap: 14,
+      padding: '12px 14px',
+      background: TRILU.creamHi, border: `1px solid ${TRILU.rule}`,
+      borderRadius: 3, cursor: 'pointer', width: '100%', textAlign: 'left',
+    }}>
+      <div style={{
+        width: 44, height: 44, flexShrink: 0,
+        background: TRILU.cream, border: `1px solid ${TRILU.rule}`,
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        fontFamily: '"Noto Serif JP", serif', fontSize: 24,
+        color: accent, fontWeight: 500,
+      }}>{deck.kanji}</div>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+          <span style={{
+            fontSize: 9, letterSpacing: 1.5, fontWeight: 700,
+            color: accent, padding: '2px 6px',
+            border: `1px solid ${accent}`, borderRadius: 2,
+          }}>{deck.level}</span>
+          <span style={{ fontSize: 14, color: TRILU.ink, fontWeight: 500 }}>{deck.name}</span>
+        </div>
+        <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ flex: 1, height: 2, background: TRILU.rule, borderRadius: 1, overflow: 'hidden' }}>
+            <div style={{ width: `${pct*100}%`, height: '100%', background: accent }}/>
+          </div>
+          <span style={{ fontSize: 10, color: TRILU.inkMute, fontVariantNumeric: 'tabular-nums' }}>
+            {deck.done}/{deck.total}
+          </span>
+        </div>
+      </div>
+    </button>
+  );
+}
+
+// ============================================================
+// LIBRARY
+// ============================================================
+function LibraryScreen({ decks, onOpenDeck, onNav }) {
+  const [track, setTrack] = useState('JLPT');
+  const [level, setLevel] = useState('N5');
+
+  const TRACK_LEVELS = { JLPT: ['N5','N4','N3','N2','N1'], BJT: ['BJT'], 'Tùy chỉnh': [] };
+
+  const filtered = useMemo(() => {
+    if (!decks) return [];
+    return decks.filter(d => {
+      if (track === 'JLPT') return d.track === 'JLPT' && d.level === level;
+      if (track === 'BJT')  return d.track === 'BJT';
+      return d.track === 'CUSTOM';
+    });
+  }, [decks, track, level]);
+
+  return (
+    <div className="app-frame scroll" style={{ ...washiBg(0.4), paddingBottom: 96 }}>
+      <StatusBar/>
+      <div style={{ padding: '16px 24px 0' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <div>
+            <div style={{ fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>Thư viện</div>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginTop: 4 }}>
+              <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 28, fontWeight: 500, color: TRILU.ink, letterSpacing: 0.3 }}>Bộ thẻ</span>
+              <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 16, color: TRILU.inkMute, letterSpacing: 2 }}>単語帳</span>
+            </div>
+          </div>
+        </div>
+        <InkRule width={48} style={{ marginTop: 12 }} />
+      </div>
+
+      <div style={{ padding: '20px 24px 0', display: 'flex', gap: 24, borderBottom: `1px solid ${TRILU.rule}`, margin: '20px 0 0' }}>
+        {['JLPT','BJT','Tùy chỉnh'].map(t => (
+          <button key={t} onClick={() => setTrack(t)} style={{
+            background: 'none', border: 'none', cursor: 'pointer',
+            padding: '0 0 12px', position: 'relative',
+            fontSize: 13, fontWeight: track === t ? 600 : 400,
+            color: track === t ? TRILU.ink : TRILU.inkMute, letterSpacing: 0.5,
+          }}>
+            {t}
+            {track === t && (
+              <div style={{ position: 'absolute', bottom: -1, left: 0, right: 0, height: 2, background: TRILU.vermillion }}/>
+            )}
+          </button>
+        ))}
+      </div>
+
+      {(TRACK_LEVELS[track]||[]).length > 1 && (
+        <div style={{ padding: '16px 24px 4px', display: 'flex', gap: 8, overflowX: 'auto' }}>
+          {TRACK_LEVELS[track].map(l => {
+            const active = l === level;
+            return (
+              <button key={l} onClick={() => setLevel(l)} style={{
+                background: active ? TRILU.ink : 'transparent',
+                color: active ? TRILU.creamHi : TRILU.inkSoft,
+                border: `1px solid ${active ? TRILU.ink : TRILU.rule}`,
+                padding: '7px 14px', borderRadius: 100, cursor: 'pointer',
+                fontSize: 12, fontWeight: 600, letterSpacing: 1, flexShrink: 0,
+              }}>{l}</button>
+            );
+          })}
+        </div>
+      )}
+
+      <div style={{ padding: '14px 24px 8px', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+        <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase' }}>
+          {filtered.length} bộ thẻ {track === 'JLPT' ? `· ${level}` : ''}
+        </div>
+      </div>
+
+      <div style={{ padding: '0 20px' }}>
+        {filtered.length === 0 && (
+          <div style={{ padding: '60px 20px', textAlign:'center', color: TRILU.inkMute, fontSize: 13 }}>
+            Chưa có bộ thẻ cho lựa chọn này.
+          </div>
+        )}
+        {filtered.map(d => <DeckCard key={d.id} deck={d} onClick={() => onOpenDeck && onOpenDeck(d)} />)}
+      </div>
+
+      <TabBar active="library" onNav={onNav} />
+    </div>
+  );
+}
+
+function DeckCard({ deck, onClick }) {
+  const pct = deck.total > 0 ? deck.done / deck.total : 0;
+  const complete = deck.total > 0 && deck.done === deck.total;
+  return (
+    <button onClick={onClick} style={{
+      display: 'flex', alignItems: 'center', gap: 16,
+      padding: '14px 4px', width: '100%', textAlign: 'left',
+      borderBottom: `1px solid ${TRILU.rule}`,
+      background: 'transparent', border: 'none',
+      borderBottomWidth: 1, borderBottomStyle: 'solid', borderBottomColor: TRILU.rule,
+      cursor: 'pointer',
+    }}>
+      <div style={{
+        position: 'relative',
+        width: 52, height: 52, flexShrink: 0,
+        background: complete ? TRILU.moss : TRILU.creamHi,
+        border: `1px solid ${complete ? TRILU.moss : TRILU.rule}`,
+        borderRadius: 3,
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+        fontFamily: '"Noto Serif JP", serif', fontSize: 28,
+        color: complete ? TRILU.creamHi : TRILU.ink, fontWeight: 500,
+      }}>
+        {deck.kanji}
+        {deck.dueCount > 0 && (
+          <div style={{
+            position: 'absolute', top: -4, right: -4,
+            width: 8, height: 8, borderRadius: '50%', background: TRILU.vermillion,
+            border: `1px solid ${TRILU.cream}`,
+          }}/>
+        )}
+      </div>
+      <div style={{ flex: 1, minWidth: 0 }}>
+        <div style={{ fontSize: 14, color: TRILU.ink, fontWeight: 500, letterSpacing: 0.2 }}>{deck.name}</div>
+        <div style={{ fontSize: 11, color: TRILU.inkMute, marginTop: 2, letterSpacing: 0.3 }}>{deck.sub}</div>
+        <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', gap: 10 }}>
+          <div style={{ flex: 1, height: 2, background: TRILU.rule, overflow: 'hidden' }}>
+            <div style={{ width: `${pct * 100}%`, height: '100%', background: complete ? TRILU.moss : TRILU.ink, opacity: complete ? 1 : 0.8 }}/>
+          </div>
+          <span style={{
+            fontFamily: '"Noto Serif JP", serif', fontSize: 11,
+            color: complete ? TRILU.moss : TRILU.inkSoft,
+            fontVariantNumeric: 'tabular-nums', letterSpacing: 0.5,
+            minWidth: 44, textAlign: 'right',
+          }}>
+            {complete ? '完了' : `${deck.done}/${deck.total}`}
+          </span>
+        </div>
+      </div>
+    </button>
+  );
+}
+
+// ============================================================
+// STUDY SESSION
+// ============================================================
+const renderRuby = (text) => {
+  if (!text) return null;
+  // Parse {kanji|reading} → ruby tags
+  const parts = [];
+  let i = 0;
+  let key = 0;
+  while (i < text.length) {
+    const open = text.indexOf('{', i);
+    if (open === -1) { parts.push(text.slice(i)); break; }
+    if (open > i) parts.push(text.slice(i, open));
+    const close = text.indexOf('}', open);
+    if (close === -1) { parts.push(text.slice(open)); break; }
+    const inner = text.slice(open+1, close);
+    const pipe = inner.indexOf('|');
+    if (pipe === -1) {
+      parts.push(<span key={key++}>{inner}</span>);
+    } else {
+      const base = inner.slice(0, pipe);
+      const rt = inner.slice(pipe+1);
+      parts.push(<ruby key={key++}>{base}<rt className="ruby-rt">{rt}</rt></ruby>);
+    }
+    i = close + 1;
+  }
+  return parts;
+};
+
+function StudyScreen({ session, onExit, onRate, onShowMenu }) {
+  const [flipped, setFlipped] = useState(false);
+  const [audioPlaying, setAudioPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const current = session.index;
+  const total = session.total;
+  const card = session.cards[current];
+
+  // Reset flip on card change
+  useEffect(() => { setFlipped(false); }, [current]);
+
+  // Keyboard shortcuts
+  useEffect(() => {
+    const handler = (e) => {
+      if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); setFlipped(f => !f); }
+      else if (flipped && ['1','2','3','4'].includes(e.key)) {
+        const ratings = ['again','hard','good','easy'];
+        onRate && onRate(ratings[parseInt(e.key,10)-1]);
+      } else if (e.key === 'Escape') {
+        onExit && onExit();
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, [flipped, onRate, onExit]);
+
+  const playAudio = useCallback(async (text) => {
+    if (!text) return;
+    try {
+      setAudioPlaying(true);
+      const r = await fetch(API_BASE + '/api/tts', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ text, voice: 'ja-JP-Neural2-B', rate: 0.95 }),
+      });
+      if (!r.ok) throw new Error('tts ' + r.status);
+      const buf = await r.arrayBuffer();
+      const blob = new Blob([buf], { type: 'audio/mpeg' });
+      const url = URL.createObjectURL(blob);
+      if (audioRef.current) {
+        audioRef.current.src = url;
+        await audioRef.current.play().catch(()=>{});
+      }
+    } catch (e) {
+      console.warn('TTS failed', e);
+    } finally {
+      setAudioPlaying(false);
+    }
+  }, []);
+
+  // Auto-play audio on flip-back
+  useEffect(() => {
+    if (flipped && card && card.word) playAudio(card.word);
+  }, [flipped]);
+
+  if (!card) {
+    return (
+      <div className="app-frame" style={{ ...washiBg(0.4), display:'grid', placeItems:'center' }}>
+        <div style={{ textAlign:'center', padding: 40 }}>
+          <BrandBadge size={64}/>
+          <div style={{ marginTop: 24, fontFamily:'"Noto Serif JP", serif', fontSize: 20, color: TRILU.ink }}>Đang tải thẻ…</div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="app-frame flip-card" style={{ ...washiBg(0.4), position:'relative' }}>
+      <StatusBar/>
+
+      {/* Top bar */}
+      <div style={{
+        padding: '12px 20px 0', display: 'flex',
+        alignItems: 'center', justifyContent: 'space-between', gap: 14,
+      }}>
+        <button onClick={onExit} style={{
+          width: 36, height: 36, border: `1px solid ${TRILU.rule}`,
+          background: 'transparent', borderRadius: 3, cursor: 'pointer',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <svg width="12" height="12" viewBox="0 0 12 12">
+            <path d="M2 2 L10 10 M10 2 L2 10" stroke={TRILU.ink} strokeWidth="1.4" strokeLinecap="round"/>
+          </svg>
+        </button>
+        <div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: 6 }}>
+          <div style={{ display: 'flex', gap: 3 }}>
+            {Array.from({ length: total }).map((_, i) => (
+              <div key={i} style={{
+                flex: 1, height: 2,
+                background: i < current ? TRILU.ink : (i === current ? TRILU.vermillion : TRILU.rule),
+                opacity: i < current ? 0.65 : 1,
+              }}/>
+            ))}
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+            <span style={{ fontSize: 10, letterSpacing: 2, color: TRILU.inkMute, textTransform: 'uppercase' }}>
+              {session.deckLabel || 'Phiên ôn tập'}
+            </span>
+            <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 11, color: TRILU.ink, fontVariantNumeric: 'tabular-nums' }}>
+              {String(current + 1).padStart(2,'0')} <span style={{ color: TRILU.inkMute }}>/ {total}</span>
+            </span>
+          </div>
+        </div>
+        <button onClick={onShowMenu} style={{
+          width: 36, height: 36, border: `1px solid ${TRILU.rule}`,
+          background: 'transparent', borderRadius: 3, cursor: 'pointer',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <svg width="14" height="3" viewBox="0 0 14 3">
+            <circle cx="2" cy="1.5" r="1.3" fill={TRILU.ink}/>
+            <circle cx="7" cy="1.5" r="1.3" fill={TRILU.ink}/>
+            <circle cx="12" cy="1.5" r="1.3" fill={TRILU.ink}/>
+          </svg>
+        </button>
+      </div>
+
+      {/* Card */}
+      <div
+        onClick={() => setFlipped(f => !f)}
+        style={{
+          margin: '28px 20px 0',
+          height: 'min(60vh, 482px)',
+          position: 'relative',
+          cursor: 'pointer',
+        }}
+      >
+        <div className={"flip-inner" + (flipped ? ' is-flipped' : '')}>
+          <div className="flip-face" style={{
+            background: TRILU.creamHi, border: `1px solid ${TRILU.rule}`,
+            borderRadius: 4, boxShadow: '0 1px 0 rgba(46,42,34,0.04), 0 12px 24px -16px rgba(46,42,34,0.18)',
+            overflow: 'hidden',
+          }}>
+            <Hanko text={card.word[0] || '智'} size={28} style={{ position: 'absolute', top: 16, left: 16, opacity: 0.92 }} />
+            <VerticalKanji text={'第' + (current + 1).toString().padStart(2,'0')} style={{ position: 'absolute', top: 18, right: 18, letterSpacing: 2 }} />
+            <CardFront card={card} onPlayAudio={(e)=>{ e.stopPropagation(); playAudio(card.word); }} />
+            <div style={{ position: 'absolute', bottom: 18, left: 0, right: 0, textAlign: 'center', fontSize: 10, letterSpacing: 2, color: TRILU.inkMute, textTransform: 'uppercase' }}>
+              Chạm để xem nghĩa
+            </div>
+          </div>
+          <div className="flip-face back" style={{
+            background: TRILU.creamHi, border: `1px solid ${TRILU.rule}`,
+            borderRadius: 4, boxShadow: '0 1px 0 rgba(46,42,34,0.04), 0 12px 24px -16px rgba(46,42,34,0.18)',
+            overflow: 'hidden',
+          }}>
+            <CardBack card={card} onPlayAudio={(text, e)=>{ e?.stopPropagation?.(); playAudio(text); }} />
+            <div style={{ position: 'absolute', bottom: 18, left: 0, right: 0, textAlign: 'center', fontSize: 10, letterSpacing: 2, color: TRILU.inkMute, textTransform: 'uppercase' }}>
+              Chạm để gập lại
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Rating buttons */}
+      <div style={{
+        position: 'absolute', bottom: 'calc(24px + env(safe-area-inset-bottom, 0px))',
+        left: 20, right: 20,
+        display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 6,
+        opacity: flipped ? 1 : 0.35, transition: 'opacity 0.25s',
+        pointerEvents: flipped ? 'auto' : 'none',
+      }}>
+        <RateBtn label="Lại" sub={card.intervals?.again || '<1m'} kbd="1" color={TRILU.again} onClick={() => onRate('again')} />
+        <RateBtn label="Khó" sub={card.intervals?.hard || '6m'} kbd="2" color={TRILU.hard} onClick={() => onRate('hard')} />
+        <RateBtn label="Tốt" sub={card.intervals?.good || '1d'} kbd="3" color={TRILU.good} onClick={() => onRate('good')} />
+        <RateBtn label="Dễ" sub={card.intervals?.easy || '4d'} kbd="4" color={TRILU.easy} onClick={() => onRate('easy')} />
+      </div>
+
+      <audio ref={audioRef} preload="auto"/>
+    </div>
+  );
+}
+
+function CardFront({ card, onPlayAudio }) {
+  return (
+    <div style={{
+      position: 'absolute', inset: 0,
+      display: 'flex', flexDirection: 'column',
+      alignItems: 'center', justifyContent: 'center',
+      padding: 30, textAlign: 'center',
+    }}>
+      {card.reading && (
+        <div style={{
+          fontFamily: '"Noto Serif JP", serif',
+          fontSize: 14, letterSpacing: 8, color: TRILU.inkSoft, marginBottom: 6,
+        }}>{card.reading}</div>
+      )}
+      <div style={{
+        fontFamily: '"Noto Serif JP", serif',
+        fontSize: card.word.length > 4 ? 80 : 140,
+        fontWeight: 500, color: TRILU.ink, lineHeight: 1, letterSpacing: -2,
+      }}>{card.word}</div>
+      <InkRule width={64} style={{ marginTop: 28 }} />
+      <div style={{
+        marginTop: 18, fontSize: 11, color: TRILU.inkMute,
+        letterSpacing: 2.5, textTransform: 'uppercase',
+      }}>
+        {card.pos || 'Từ vựng'}
+      </div>
+      <button onClick={onPlayAudio} aria-label="Phát âm" style={{
+        position:'absolute', top: 18, right: 60,
+        width: 36, height: 36, border: `1px solid ${TRILU.rule}`,
+        background: TRILU.creamHi, borderRadius: 3, cursor: 'pointer',
+        display: 'flex', alignItems: 'center', justifyContent: 'center',
+      }}>
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M2 5 L4.5 5 L8 2 L8 12 L4.5 9 L2 9 Z" fill={TRILU.ink}/>
+          <path d="M10.5 4.5 Q12 7 10.5 9.5" stroke={TRILU.ink} strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+        </svg>
+      </button>
+    </div>
+  );
+}
+
+function CardBack({ card, onPlayAudio }) {
+  const example = card.examples?.[0];
+  return (
+    <div className="scroll" style={{
+      position: 'absolute', inset: 0,
+      display: 'flex', flexDirection: 'column',
+      padding: '60px 26px 80px',
+    }}>
+      <div style={{
+        display: 'flex', alignItems: 'baseline', gap: 14,
+        paddingBottom: 16, borderBottom: `1px solid ${TRILU.rule}`,
+      }}>
+        <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 40, color: TRILU.ink, lineHeight: 1 }}>{card.word}</div>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          {card.reading && (
+            <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 14, color: TRILU.inkSoft, letterSpacing: 2 }}>{card.reading}</span>
+          )}
+          {card.romaji && (
+            <span style={{ fontSize: 11, color: TRILU.inkMute, letterSpacing: 1, fontStyle: 'italic', marginTop: 2 }}>{card.romaji}</span>
+          )}
+        </div>
+        <button onClick={(e)=>onPlayAudio(card.word, e)} aria-label="Phát âm" style={{
+          marginLeft: 'auto', width: 32, height: 32,
+          border: `1px solid ${TRILU.rule}`, background: 'transparent',
+          borderRadius: 3, cursor: 'pointer',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M2 5 L4.5 5 L8 2 L8 12 L4.5 9 L2 9 Z" fill={TRILU.ink}/>
+            <path d="M10.5 4.5 Q12 7 10.5 9.5" stroke={TRILU.ink} strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+          </svg>
+        </button>
+      </div>
+
+      {card.hanViet && (
+        <div style={{ marginTop: 14 }}>
+          <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase', marginBottom: 4 }}>Hán Việt</div>
+          <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: 18, color: TRILU.indigo, fontWeight: 600, letterSpacing: 0.5 }}>
+            {card.hanViet}
+          </div>
+        </div>
+      )}
+
+      <div style={{ marginTop: 18 }}>
+        <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase', marginBottom: 6 }}>Nghĩa</div>
+        <div style={{
+          fontFamily: '"Noto Serif JP", serif',
+          fontSize: 20, color: TRILU.ink, fontWeight: 500,
+          lineHeight: 1.4, letterSpacing: 0.3,
+        }}>
+          {card.meaning || 'Đang tải nghĩa…'}
+        </div>
+      </div>
+
+      {example && (
+        <div style={{
+          marginTop: 18, padding: '16px 14px 14px',
+          background: TRILU.cream,
+          borderLeft: `2px solid ${TRILU.vermillion}`,
+          position: 'relative',
+        }}>
+          <div style={{
+            display:'flex', justifyContent:'space-between', alignItems:'baseline',
+            marginBottom: 8,
+          }}>
+            <div style={{ fontSize: 9, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase' }}>例文 · Ví dụ</div>
+            <button onClick={(e)=>onPlayAudio(example.ja, e)} aria-label="Phát âm câu" style={{
+              width: 24, height: 24, border: `1px solid ${TRILU.rule}`,
+              background: TRILU.creamHi, borderRadius: 2, cursor: 'pointer',
+              display: 'flex', alignItems: 'center', justifyContent: 'center',
+            }}>
+              <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
+                <path d="M2 5 L4.5 5 L8 2 L8 12 L4.5 9 L2 9 Z" fill={TRILU.ink}/>
+                <path d="M10.5 4.5 Q12 7 10.5 9.5" stroke={TRILU.ink} strokeWidth="1.2" strokeLinecap="round" fill="none"/>
+              </svg>
+            </button>
+          </div>
+          <div style={{
+            fontFamily: '"Noto Serif JP", serif',
+            fontSize: 17, color: TRILU.ink, lineHeight: 1.5,
+          }}>
+            {example.furigana ? renderRuby(example.furigana) : example.ja}
+          </div>
+          {example.vi && (
+            <div style={{ marginTop: 8, fontSize: 13, color: TRILU.inkSoft, lineHeight: 1.4 }}>
+              {example.vi}
+            </div>
+          )}
+        </div>
+      )}
+
+      {(card.tags || []).length > 0 && (
+        <div style={{ marginTop: 16, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
+          {card.tags.map(t => (
+            <span key={t} style={{
+              fontFamily: '"Noto Serif JP", serif', fontSize: 10,
+              padding: '3px 8px', border: `1px solid ${TRILU.rule}`,
+              color: TRILU.inkSoft, letterSpacing: 1, borderRadius: 2,
+            }}>{t}</span>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
+function RateBtn({ label, sub, color, kbd, onClick }) {
+  return (
+    <button onClick={onClick} style={{
+      background: TRILU.creamHi,
+      border: `1px solid ${color}`, borderTop: `2px solid ${color}`,
+      borderRadius: 3, padding: '12px 4px 10px',
+      display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3,
+      cursor: 'pointer', position: 'relative',
+    }}>
+      <span style={{ fontSize: 13, fontWeight: 600, color: TRILU.ink, letterSpacing: 0.5 }}>{label}</span>
+      <span style={{
+        fontSize: 10, color, fontFamily: '"Noto Serif JP", serif',
+        fontVariantNumeric: 'tabular-nums', letterSpacing: 0.5,
+      }}>{sub}</span>
+      {kbd && <span className="kbd" style={{ position: 'absolute', top: -8, right: 4 }}>{kbd}</span>}
+    </button>
+  );
+}
+
+// ============================================================
+// SESSION SUMMARY (after a session completes)
+// ============================================================
+function SummaryScreen({ summary, onContinue, onNav }) {
+  return (
+    <div className="app-frame" style={{ ...washiBg(0.4), display:'flex', flexDirection:'column', padding: '40px 24px 24px' }}>
+      <StatusBar/>
+      <div style={{ flex: 1, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', textAlign:'center' }}>
+        <BrandBadge size={72}/>
+        <div style={{ marginTop: 24, fontFamily: '"Noto Serif JP", serif', fontSize: 26, color: TRILU.ink }}>
+          Hoàn thành phiên ôn tập
+        </div>
+        <InkRule width={64} style={{ marginTop: 14 }}/>
+
+        <div style={{
+          marginTop: 28, padding: '22px 18px',
+          background: TRILU.creamHi, border: `1px solid ${TRILU.rule}`,
+          borderRadius: 4, width: '100%', maxWidth: 340,
+          display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 18,
+        }}>
+          <Stat label="Thẻ đã ôn" value={summary.total} color={TRILU.indigo}/>
+          <Stat label="Đúng" value={Math.round(summary.accuracy * 100) + '%'} color={TRILU.moss}/>
+          <Stat label="Thời gian" value={Math.ceil(summary.timeMs/60000) + 'p'} color={TRILU.ink}/>
+          <Stat label="Streak" value={summary.streak + ' ngày'} color={TRILU.vermillion}/>
+        </div>
+      </div>
+
+      <button onClick={onContinue} style={{
+        width: '100%', height: 48,
+        background: TRILU.vermillion, color: '#F8EFD9',
+        border: 'none', borderRadius: 3,
+        fontSize: 14, fontWeight: 600, letterSpacing: 1.5,
+        textTransform: 'uppercase', cursor: 'pointer',
+      }}>
+        Tiếp tục
+      </button>
+    </div>
+  );
+}
+
+// ============================================================
+// LOGIN PROMPT — when not authenticated
+// ============================================================
+function LoginPrompt() {
+  return (
+    <div className="app-frame" style={{ ...washiBg(0.4), display:'grid', placeItems:'center', padding: 32, textAlign:'center' }}>
+      <div>
+        <BrandMark size={80} layout="stacked"/>
+        <InkRule width={48} style={{ marginTop: 24 }}/>
+        <p style={{ marginTop: 16, fontSize: 14, color: TRILU.inkSoft, lineHeight: 1.6, maxWidth: 280 }}>
+          Đăng nhập để lưu tiến độ học và đồng bộ thẻ ghi nhớ trên mọi thiết bị.
+        </p>
+        <div style={{ marginTop: 24, display: 'flex', flexDirection: 'column', gap: 12 }}>
+          <a href="/tra-cuu/login.html?next=/flashcard.html" style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            height: 48, padding: '0 24px',
+            background: TRILU.vermillion, color: '#F8EFD9',
+            border: 'none', borderRadius: 3,
+            fontSize: 14, fontWeight: 600, letterSpacing: 1.5,
+            textTransform: 'uppercase', cursor: 'pointer',
+          }}>Đăng nhập</a>
+          <a href="/" style={{
+            fontSize: 12, color: TRILU.inkMute, letterSpacing: 0.5,
+          }}>Quay về trang chủ</a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// LESSON PICKER (inside a deck/level group)
+// ============================================================
+function LessonPicker({ deckGroup, onPickLesson, onBack }) {
+  return (
+    <div className="app-frame scroll" style={{ ...washiBg(0.4), paddingBottom: 96 }}>
+      <StatusBar/>
+      <div style={{ padding: '16px 24px 0', display: 'flex', alignItems: 'center', gap: 14 }}>
+        <button onClick={onBack} style={{
+          width: 36, height: 36, border: `1px solid ${TRILU.rule}`,
+          background: 'transparent', borderRadius: 3, cursor: 'pointer',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+        }}>
+          <svg width="14" height="14" viewBox="0 0 14 14"><path d="M9 2L3 7l6 5" stroke={TRILU.ink} strokeWidth="1.4" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </button>
+        <div>
+          <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase' }}>Chọn bài</div>
+          <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 20, color: TRILU.ink, marginTop: 4, letterSpacing: 0.3 }}>
+            {deckGroup.label}
+          </div>
+        </div>
+      </div>
+
+      <InkRule width={48} style={{ margin: '14px 0 0 24px' }}/>
+
+      <div style={{ padding: '20px 20px 0', display: 'flex', flexDirection: 'column', gap: 6 }}>
+        {deckGroup.lessons.map((lesson, i) => {
+          const due = lesson.due || 0;
+          const newC = lesson.newCount || lesson.words.length;
+          return (
+            <button key={lesson.id} onClick={() => onPickLesson(lesson)} style={{
+              display: 'flex', alignItems: 'center', gap: 14,
+              padding: '12px 14px',
+              background: TRILU.creamHi, border: `1px solid ${TRILU.rule}`,
+              borderRadius: 3, cursor: 'pointer', width: '100%', textAlign: 'left',
+            }}>
+              <div style={{
+                width: 36, height: 36, flexShrink: 0,
+                background: TRILU.cream, border: `1px solid ${TRILU.rule}`,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontFamily: '"Noto Serif JP", serif', fontSize: 14,
+                color: TRILU.indigo, fontWeight: 700,
+              }}>{i + 1}</div>
+              <div style={{ flex: 1, minWidth: 0 }}>
+                <div style={{ fontSize: 13, color: TRILU.ink, fontWeight: 500, whiteSpace:'nowrap', overflow:'hidden', textOverflow:'ellipsis' }}>
+                  {lesson.label}
+                </div>
+                <div style={{ fontSize: 11, color: TRILU.inkMute, marginTop: 2 }}>
+                  {lesson.words.length} từ
+                  {due > 0 && <span style={{ marginLeft: 6, color: TRILU.vermillion }}>· {due} đến hạn</span>}
+                </div>
+              </div>
+              <svg width="10" height="14" viewBox="0 0 10 14"><path d="M2 2l5 5-5 5" stroke={TRILU.inkMute} strokeWidth="1.4" fill="none" strokeLinecap="round"/></svg>
+            </button>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
+// ============================================================
+// MAIN APP
+// ============================================================
+function App() {
+  const [route, setRoute] = useState('home'); // home | library | lesson | study | summary | profile | stats
+  const [user, setUser] = useState(null);
+  const [authChecked, setAuthChecked] = useState(false);
+  const [lessons, setLessons] = useState(null);
+  const [srsState, setSrsState] = useState(null);
+  const [currentDeckGroup, setCurrentDeckGroup] = useState(null);
+  const [session, setSession] = useState(null);
+  const [summary, setSummary] = useState(null);
+
+  // Boot: check auth + load data
+  useEffect(() => {
+    (async () => {
+      try {
+        const me = await api('/api/me');
+        if (me.user) setUser(me.user);
+      } catch (e) {
+        // no session, ok
+      }
+      setAuthChecked(true);
+
+      // Always load lessons (public)
+      try {
+        const r = await fetch('/flashcard-lessons.json');
+        if (r.ok) setLessons(await r.json());
+      } catch (e) {
+        console.warn('Failed to load lessons', e);
+      }
+
+      // Boot screen fade
+      const boot = document.getElementById('boot');
+      if (boot) {
+        boot.classList.add('gone');
+        setTimeout(() => boot.remove(), 400);
+      }
+    })();
+  }, []);
+
+  // Load SRS state when authed
+  useEffect(() => {
+    if (!user) return;
+    api('/api/srs/state').then(setSrsState).catch(e => console.warn('SRS state', e));
+  }, [user]);
+
+  // Build deck list from lessons + SRS state
+  const decks = useMemo(() => {
+    if (!lessons) return [];
+    const out = [];
+    const LEVEL_META = {
+      n5: { track:'JLPT', level:'N5', kanji:'五', accent: TRILU.indigo },
+      n4: { track:'JLPT', level:'N4', kanji:'四', accent: TRILU.indigo },
+      n3: { track:'JLPT', level:'N3', kanji:'三', accent: TRILU.indigo },
+      n2: { track:'JLPT', level:'N2', kanji:'二', accent: TRILU.moss },
+      n1: { track:'JLPT', level:'N1', kanji:'一', accent: TRILU.moss },
+      bjt: { track:'BJT', level:'BJT', kanji:'商', accent: TRILU.vermillion },
+      kanji: { track:'JLPT', level:'N5', kanji:'字', accent: TRILU.gold }, // kanji by grade special
+    };
+    for (const [lvl, group] of Object.entries(lessons)) {
+      const meta = LEVEL_META[lvl] || { track:'JLPT', level:'N5', kanji:'本', accent: TRILU.ink };
+      const totalWords = group.lessons.reduce((a, l) => a + l.words.length, 0);
+      out.push({
+        id: lvl,
+        kanji: meta.kanji,
+        level: meta.level,
+        track: meta.track,
+        accent: meta.accent,
+        name: group.label,
+        sub: `${group.lessons.length} bài · ${totalWords.toLocaleString()} từ`,
+        total: totalWords,
+        done: 0, // TODO: from srsState
+        dueCount: 0,
+        groupKey: lvl,
+        groupData: group,
+      });
+    }
+    return out;
+  }, [lessons]);
+
+  const srsStats = useMemo(() => {
+    if (!srsState) return { due: 0, new: 0, hard: 0, streak: 0, weekMinutes: [0,0,0,0,0,0,0] };
+    return {
+      due: srsState.dueToday || 0,
+      new: srsState.newToday || 0,
+      hard: srsState.hardToday || 0,
+      streak: srsState.streak || 0,
+      weekMinutes: srsState.weekMinutes || [0,0,0,0,0,0,0],
+    };
+  }, [srsState]);
+
+  // ───── Study session control ─────
+  function startSession(words, deckLabel) {
+    const cards = words.slice(0, 20).map(w => ({
+      word: w,
+      reading: '',
+      meaning: '',
+      pos: '',
+      hanViet: '',
+      examples: [],
+      tags: [],
+      intervals: { again: '<1m', hard: '6m', good: '1d', easy: '4d' },
+    }));
+    setSession({
+      index: 0, total: cards.length, cards,
+      deckLabel, startTs: Date.now(),
+      ratings: [], correct: 0,
+    });
+    setRoute('study');
+    // Lazy-load card data
+    cards.forEach((c, i) => {
+      hydrateCard(c.word).then(data => {
+        setSession(prev => {
+          if (!prev) return prev;
+          const next = { ...prev, cards: [...prev.cards] };
+          next.cards[i] = { ...next.cards[i], ...data };
+          return next;
+        });
+      });
+    });
+  }
+
+  async function hydrateCard(word) {
+    try {
+      const r = await api('/api/word', { method: 'POST', body: JSON.stringify({ query: word }) });
+      const d = r.data || {};
+      const meaning = (d.meanings && d.meanings.length > 0)
+        ? d.meanings.map(m => m.vi).filter(Boolean).slice(0,3).join('; ')
+        : '';
+      const reading = (d.readings && d.readings[0] && (d.readings[0].kana || d.readings[0])) || '';
+      const examples = (d.examples || []).map(ex => ({
+        ja: ex.ja || '',
+        furigana: ex.ja_with_furigana || ex.furigana || ex.ja || '',
+        vi: ex.vi || ex.translation || '',
+      })).filter(x => x.ja);
+      const tags = [];
+      if (d.jlpt) tags.push(d.jlpt);
+      if (d.common) tags.push('常用');
+      return {
+        meaning,
+        reading: typeof reading === 'string' ? reading : '',
+        romaji: d.romaji || '',
+        hanViet: d.han_viet || d.hanViet || '',
+        pos: (d.pos || d.partOfSpeech || '').toString(),
+        examples,
+        tags,
+      };
+    } catch (e) {
+      return { meaning: '(không tải được)', examples: [], tags: [] };
+    }
+  }
+
+  function rate(rating) {
+    if (!session) return;
+    const ratings = [...session.ratings, rating];
+    const correct = session.correct + (rating === 'good' || rating === 'easy' ? 1 : 0);
+    const nextIdx = session.index + 1;
+    if (rating === 'again') {
+      // re-queue at end
+      const cards = [...session.cards, session.cards[session.index]];
+      setSession({ ...session, ratings, correct, cards, total: cards.length, index: nextIdx });
+    } else {
+      setSession({ ...session, ratings, correct, index: nextIdx });
+    }
+    // Submit to backend (fire-and-forget)
+    if (user) {
+      api('/api/srs/review', {
+        method: 'POST',
+        body: JSON.stringify({ word: session.cards[session.index].word, rating }),
+      }).catch(()=>{});
+    }
+    // End of session
+    if (nextIdx >= (rating === 'again' ? session.total + 1 : session.total)) {
+      setSummary({
+        total: ratings.length,
+        accuracy: ratings.length ? correct / ratings.length : 0,
+        timeMs: Date.now() - session.startTs,
+        streak: srsStats.streak + 1,
+      });
+      setSession(null);
+      setRoute('summary');
+    }
+  }
+
+  // ───── Render ─────
+  if (!authChecked) {
+    return <div className="app-frame" style={{ ...washiBg(0.4) }}/>;
+  }
+  if (!user) {
+    return <LoginPrompt/>;
+  }
+
+  if (route === 'study' && session) {
+    return <StudyScreen session={session} onExit={() => { setSession(null); setRoute('home'); }} onRate={rate} />;
+  }
+  if (route === 'summary' && summary) {
+    return <SummaryScreen summary={summary} onContinue={() => { setSummary(null); setRoute('home'); }} onNav={setRoute}/>;
+  }
+  if (route === 'lesson' && currentDeckGroup) {
+    return (
+      <LessonPicker
+        deckGroup={currentDeckGroup}
+        onBack={() => setRoute('library')}
+        onPickLesson={(lesson) => startSession(lesson.words, lesson.label)}
+      />
+    );
+  }
+  if (route === 'library') {
+    return (
+      <LibraryScreen
+        decks={decks}
+        onNav={setRoute}
+        onOpenDeck={(d) => { setCurrentDeckGroup({ label: d.name, lessons: d.groupData.lessons }); setRoute('lesson'); }}
+      />
+    );
+  }
+  // Default: home
+  return (
+    <HomeScreen
+      user={user}
+      srsStats={srsStats}
+      decks={decks.slice(0, 3)}
+      onStart={() => {
+        // Build a mixed-deck due queue from SRS
+        const dueWords = srsState?.dueWords || [];
+        if (dueWords.length) startSession(dueWords, 'Phiên hôm nay');
+        else setRoute('library');
+      }}
+      onNav={setRoute}
+      onOpenDeck={(d) => { setCurrentDeckGroup({ label: d.name, lessons: d.groupData.lessons }); setRoute('lesson'); }}
+    />
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App/>);
+  </script>
+
+  <script>
+    // Service worker registration (offline support)
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(()=>{});
+      });
+    }
+  </script>
+</body>
+</html>
