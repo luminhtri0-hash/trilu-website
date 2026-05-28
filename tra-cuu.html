@@ -89,8 +89,10 @@ h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6vw,56px);lin
 .r-meanings span:not(:last-child)::after{content:" · ";color:var(--gold);font-style:normal}
 .r-meanings-en{font-family:var(--sans);font-size:14px;color:rgba(27,58,107,0.65);margin-top:6px;font-style:italic}
 .r-ex{margin-top:8px;padding:12px 14px;background:rgba(184,149,104,0.06);border-left:2px solid var(--gold);border-radius:6px}
-.r-ex .ex-ja{font-family:var(--jp);font-size:16px;color:var(--ink);margin-bottom:2px}
-.r-ex .ex-furi{font-family:var(--jp);font-size:12px;color:var(--gold);margin-bottom:6px}
+.r-ex .ex-ja{font-family:var(--jp);font-size:18px;color:var(--ink);margin-bottom:8px;line-height:2.2}
+.r-ex .ex-ja ruby{ruby-align:center;ruby-position:over}
+.r-ex .ex-ja rt{font-family:var(--jp);font-size:0.5em;color:var(--gold);font-weight:400;letter-spacing:0;line-height:1.2}
+.r-ex .ex-furi{font-family:var(--jp);font-size:12px;color:var(--gold);margin-bottom:6px;opacity:0.65;font-style:italic}
 .r-ex .ex-vi{font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(27,58,107,0.8)}
 .r-related{display:flex;flex-wrap:wrap;gap:6px}
 .r-related a{font-family:var(--jp);font-size:14px;color:var(--ink);background:rgba(184,149,104,0.1);padding:5px 11px;border-radius:6px;text-decoration:none;border:1px solid rgba(184,149,104,0.2);cursor:pointer}
@@ -410,12 +412,20 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
   }
 
   // ─────── Global event delegation (reliable click handler) ───────
-  document.body.addEventListener('click', function(e){
-    // TTS button
+  function handleAction(e){
+    // External links inside cards (data-stop=1) bypass card-click
+    const stop = e.target.closest('[data-stop]');
+    // TTS button (also has data-stop on inline kanji TTS)
     const tts = e.target.closest('[data-tts]');
     if(tts){
       e.preventDefault();
+      e.stopPropagation();
       speak(tts.getAttribute('data-tts'), tts.getAttribute('data-tts-lang') || 'ja-JP');
+      return;
+    }
+    if(stop && stop.tagName === 'A'){
+      // Plain external link — let browser navigate
+      e.stopPropagation();
       return;
     }
     // Click-to-search action
@@ -428,10 +438,47 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
       else if(action === 'grammar') searchGrammar(q);
       else if(action === 'translate') searchTranslate(q);
     }
+  }
+  document.body.addEventListener('click', handleAction);
+  // Keyboard accessibility for role=button cards
+  document.body.addEventListener('keydown', function(e){
+    if((e.key === 'Enter' || e.key === ' ') && e.target.matches('[role="button"][data-action]')){
+      e.preventDefault();
+      handleAction({target: e.target, preventDefault: ()=>{}, stopPropagation: ()=>{}});
+    }
   });
 
   function ttsBtn(text){
     return ` <button type="button" class="tts-btn" data-tts="${escapeHtml(text)}" data-tts-lang="ja-JP" title="Phát âm tiếng Nhật" aria-label="Phát âm">🔊</button>`;
+  }
+  // Convert {kanji|reading} syntax → <ruby><rt> HTML. Other text is escaped normally.
+  function renderRuby(s){
+    if(!s) return '';
+    // Split into segments: either {X|Y} group or plain text
+    let out = '';
+    let i = 0;
+    while(i < s.length){
+      if(s[i] === '{'){
+        const close = s.indexOf('}', i);
+        if(close < 0) { out += escapeHtml(s.slice(i)); break; }
+        const inside = s.slice(i+1, close);
+        const sep = inside.indexOf('|');
+        if(sep > 0){
+          const k = inside.slice(0, sep);
+          const r = inside.slice(sep+1);
+          out += `<ruby>${escapeHtml(k)}<rt>${escapeHtml(r)}</rt></ruby>`;
+        } else {
+          out += escapeHtml(inside);
+        }
+        i = close + 1;
+      } else {
+        const next = s.indexOf('{', i);
+        if(next < 0) { out += escapeHtml(s.slice(i)); break; }
+        out += escapeHtml(s.slice(i, next));
+        i = next;
+      }
+    }
+    return out;
   }
   renderHistory();
 
@@ -457,12 +504,18 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
         r.common ? `<span class="chip common">COMMON</span>` : '',
         ...(r.word_class||[]).map(c => `<span class="chip">${escapeHtml(c)}</span>`)
       ].filter(Boolean).join('');
-      const examples = (r.examples||[]).map(e => `
+      const examples = (r.examples||[]).map(e => {
+        const ja = e.ja_ruby ? renderRuby(e.ja_ruby) : escapeHtml(e.ja||'');
+        const ttsSrc = e.ja || (e.ja_ruby||'').replace(/\{([^|}]+)\|[^}]+\}/g, '$1');
+        // furigana shown below only if NO ruby (fallback for older cached data)
+        const furi = (!e.ja_ruby && e.furigana) ? `<div class="ex-furi">${escapeHtml(e.furigana)}</div>` : '';
+        return `
         <div class="r-ex">
-          <div class="ex-ja">${escapeHtml(e.ja||'')}${e.ja?ttsBtn(e.ja):''}</div>
-          ${e.furigana ? `<div class="ex-furi">${escapeHtml(e.furigana)}</div>` : ''}
+          <div class="ex-ja">${ja}${ttsSrc?ttsBtn(ttsSrc):''}</div>
+          ${furi}
           <div class="ex-vi">${escapeHtml(e.vi||'')}</div>
-        </div>`).join('');
+        </div>`;
+      }).join('');
       const related = (r.related||[]).length ? `
         <div class="r-section">
           <h3>Từ liên quan · click để tra</h3>
@@ -478,18 +531,18 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
             if(k.jlpt) tags.push(`<span class="r-bd-tag">JLPT ${escapeHtml(k.jlpt)}</span>`);
             const hv = k.han_viet ? `<div class="r-bd-hv">${escapeHtml(k.han_viet)}${k.han_meaning?' · '+escapeHtml(k.han_meaning):''}</div>` : '';
             return `
-            <a class="r-bd-card" href="#" data-action="word" data-q="${escapeHtml(k.char)}">
+            <div class="r-bd-card" role="button" tabindex="0" data-action="word" data-q="${escapeHtml(k.char)}">
               <div class="r-bd-char">${escapeHtml(k.char)}</div>
               ${hv}
               <div class="r-bd-mean">${escapeHtml(k.meaning||'')}</div>
               <div class="r-bd-read">${k.on?'on '+escapeHtml(k.on):''}${k.kun?(k.on?'<br>':'')+'kun '+escapeHtml(k.kun):''}</div>
               ${tags.length?`<div class="r-bd-tags">${tags.join('')}</div>`:''}
               <div class="r-bd-links">
-                <a class="r-bd-link" href="https://jisho.org/search/${encodeURIComponent(k.char)}%23kanji" target="_blank" rel="noopener" onclick="event.stopPropagation()">JISHO</a>
-                <a class="r-bd-link" href="https://kanji.koohii.com/study/kanji/${encodeURIComponent(k.char)}" target="_blank" rel="noopener" onclick="event.stopPropagation()">KOOHII</a>
-                <button type="button" class="r-bd-link tts-btn-inline" data-tts="${escapeHtml(k.char)}" data-tts-lang="ja-JP" onclick="event.stopPropagation()" style="border:none;cursor:pointer;font:inherit">🔊 ÂM</button>
+                <a class="r-bd-link" href="https://jisho.org/search/${encodeURIComponent(k.char)}%23kanji" target="_blank" rel="noopener" data-stop="1">JISHO</a>
+                <a class="r-bd-link" href="https://kanji.koohii.com/study/kanji/${encodeURIComponent(k.char)}" target="_blank" rel="noopener" data-stop="1">KOOHII</a>
+                <button type="button" class="r-bd-link tts-btn-inline" data-tts="${escapeHtml(k.char)}" data-tts-lang="ja-JP" data-stop="1">🔊 ÂM</button>
               </div>
-            </a>`;
+            </div>`;
           }).join('')}</div>
         </div>` : '';
       return `
@@ -521,11 +574,15 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
     const cacheTag = meta.cached ? `<span class="chip" title="Cache hit">⚡ CACHED</span>` : '';
     const items = data.patterns.map(p => {
       const chips = [cacheTag, p.jlpt ? `<span class="chip jlpt">${p.jlpt}</span>` : ''].filter(Boolean).join('');
-      const examples = (p.examples||[]).map(e => `
+      const examples = (p.examples||[]).map(e => {
+        const ja = e.ja_ruby ? renderRuby(e.ja_ruby) : escapeHtml(e.ja||'');
+        const ttsSrc = e.ja || (e.ja_ruby||'').replace(/\{([^|}]+)\|[^}]+\}/g, '$1');
+        return `
         <div class="r-ex">
-          <div class="ex-ja">${escapeHtml(e.ja||'')}${e.ja?ttsBtn(e.ja):''}</div>
+          <div class="ex-ja">${ja}${ttsSrc?ttsBtn(ttsSrc):''}</div>
           <div class="ex-vi">${escapeHtml(e.vi||'')}</div>
-        </div>`).join('');
+        </div>`;
+      }).join('');
       const compare = (p.compare_with||[]).length ? `
         <div class="r-section">
           <h3>So sánh</h3>
