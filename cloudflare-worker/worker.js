@@ -318,7 +318,8 @@ Trả về **JSON đúng schema** dưới đây, không có text nào khác:
       "meanings_en": ["solitude", "loneliness"],
       "examples": [
         {
-          "ja": "彼は孤独を感じている。",
+          "ja": "彼は孤独を感じている。",                          // plain text dùng cho TTS
+          "ja_ruby": "{彼|かれ}は{孤独|こどく}を{感|かん}じている。", // format ruby: {kanji|reading} cho từng kanji
           "furigana": "かれはこどくをかんじている。",
           "vi": "Anh ấy đang cảm thấy cô đơn."
         }
@@ -347,7 +348,7 @@ Quy tắc:
 - Nếu input là Romaji ambiguous (vd "hashi" → 橋/箸), trả tất cả trong results.
 - Nếu input không phải tiếng Nhật, dịch sang Nhật + trả 1-3 từ Nhật gần nhất.
 - meanings_vi PHẢI có; meanings_en optional nhưng nên có.
-- examples 2-4 câu, tự nhiên, có furigana ĐẦY ĐỦ cho TẤT CẢ kanji trong câu.
+- examples 2-4 câu, tự nhiên. PHẢI có ja_ruby format {kanji|reading} cho TỪNG nhóm kanji liền nhau. Vd: 富士山 → {富士山|ふじさん} (1 cụm) hoặc {富|ふ}{士|じ}{山|さん} (mỗi chữ). Plain text giữa các nhóm để nguyên (は, を, ました…). KHÔNG bọc hiragana/katakana trong {}.
 - jlpt: chỉ điền nếu chắc chắn, không thì null.
 - kanji_breakdown PHẢI có: han_viet (âm Hán-Việt), han_meaning (nghĩa Hán-Việt ngắn), strokes (số nét, integer), radical (bộ thủ char), radical_name (tên bộ thủ tiếng Việt).
 - Nếu không biết từ này: { "is_known": false, "results": [] }.
@@ -373,8 +374,8 @@ Trả về **JSON đúng schema** dưới đây, không có text nào khác:
       ],
       "usage": "Diễn tả việc làm một việc liên tục, lặp đi lặp lại — thường mang sắc thái tiêu cực.",
       "examples": [
-        {"ja": "彼はテレビを見てばかりいる。", "vi": "Anh ấy chỉ xem TV cả ngày."},
-        {"ja": "雨ばかり降っている。", "vi": "Trời cứ mưa suốt."}
+        {"ja": "彼はテレビを見てばかりいる。", "ja_ruby": "{彼|かれ}はテレビを{見|み}てばかりいる。", "vi": "Anh ấy chỉ xem TV cả ngày."},
+        {"ja": "雨ばかり降っている。", "ja_ruby": "{雨|あめ}ばかり{降|ふ}っている。", "vi": "Trời cứ mưa suốt."}
       ],
       "compare_with": [
         { "pattern": "～だけ", "diff": "～だけ trung tính, ～ばかり mang sắc thái phê phán hơn." }
@@ -392,7 +393,7 @@ Quy tắc:
 - Nếu input mơ hồ (vd "ば" trùng nhiều mẫu), trả tất cả patterns liên quan trong array.
 - Nếu không phải pattern ngữ pháp: { "is_known": false, "patterns": [] }.
 - meaning_vi PHẢI có. structure liệt kê các form chính.
-- examples 2-4 câu thực tế.
+- examples 2-4 câu thực tế. PHẢI có ja_ruby format {kanji|reading} cho TỪNG nhóm kanji trong ja.
 - Chỉ trả JSON.`;
 
 const TRANSLATE_PROMPT = (text, direction) => {
