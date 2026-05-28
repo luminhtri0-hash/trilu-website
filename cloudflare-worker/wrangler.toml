@@ -1,0 +1,47 @@
+name = "trilu-dict-api"
+main = "worker.js"
+compatibility_date = "2025-05-01"
+
+# Custom domain route — Cloudflare phải proxy trilu.edu.vn (orange cloud)
+routes = [
+  { pattern = "trilu.edu.vn/api/*", zone_name = "trilu.edu.vn" }
+]
+
+# ─────────── Vars (public, không bí mật) ───────────
+[vars]
+ALLOWED_ORIGIN = "https://trilu.edu.vn"
+COOKIE_DOMAIN  = ".trilu.edu.vn"
+GEMINI_MODEL   = "gemini-2.0-flash"
+QUOTA_ANON     = "10"
+QUOTA_USER     = "100"
+MAIL_FROM      = "Trí Lữ Nihongo <noreply@trilu.edu.vn>"
+
+# ─────────── KV namespaces ───────────
+# Sau khi tạo bằng `wrangler kv:namespace create`, paste id vào đây.
+[[kv_namespaces]]
+binding = "DICT_CACHE"
+id = "PASTE_DICT_CACHE_ID_HERE"
+
+[[kv_namespaces]]
+binding = "QUOTA"
+id = "PASTE_QUOTA_ID_HERE"
+
+[[kv_namespaces]]
+binding = "SESSIONS"
+id = "PASTE_SESSIONS_ID_HERE"
+
+[[kv_namespaces]]
+binding = "USERS"
+id = "PASTE_USERS_ID_HERE"
+
+[[kv_namespaces]]
+binding = "MAGIC"
+id = "PASTE_MAGIC_ID_HERE"
+
+# ─────────── Secrets (KHÔNG paste vào file này!) ───────────
+# Set bằng wrangler secret put:
+#   wrangler secret put GEMINI_API_KEY
+#   wrangler secret put GOOGLE_CLIENT_ID
+#   wrangler secret put GOOGLE_CLIENT_SECRET
+#   wrangler secret put RESEND_API_KEY
+#   wrangler secret put JWT_SECRET     # random 32+ ký tự, tự tạo
