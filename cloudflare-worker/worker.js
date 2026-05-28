@@ -30,7 +30,8 @@
  * Vars:
  *   ALLOWED_ORIGIN              = https://trilu.edu.vn
  *   COOKIE_DOMAIN               = .trilu.edu.vn
- *   GEMINI_MODEL                = gemini-2.0-flash  (or gemini-2.5-flash)
+ *   GEMINI_MODEL                = gemini-2.5-flash   (word + grammar)
+ *   GEMINI_MODEL_PRO            = gemini-2.5-pro     (translate — quality matters)
  *   QUOTA_ANON                  = 10
  *   QUOTA_USER                  = 100
  */
@@ -220,7 +221,7 @@ async function quotaContext(req, env) {
 /* ─────────── Gemini ─────────── */
 
 async function callGemini(env, prompt, { model } = {}) {
-  const m = model || env.GEMINI_MODEL || "gemini-2.0-flash";
+  const m = model || env.GEMINI_MODEL || "gemini-2.5-flash";
   const url = `https://generativelanguage.googleapis.com/v1beta/models/${m}:generateContent?key=${env.GEMINI_API_KEY}`;
   const body = {
     contents: [{ role: "user", parts: [{ text: prompt }] }],
@@ -455,10 +456,13 @@ async function handleDictLookup(req, env, type) {
     });
   }
 
-  // 3. Call Gemini
+  // 3. Call Gemini — translate uses Pro for quality, word/grammar use Flash for speed+cost
   let result;
   try {
-    result = await callGemini(env, prompt);
+    const model = type === "translate"
+      ? (env.GEMINI_MODEL_PRO || "gemini-2.5-pro")
+      : (env.GEMINI_MODEL || "gemini-2.5-flash");
+    result = await callGemini(env, prompt, { model });
   } catch (e) {
     return err(502, "upstream error: " + e.message);
   }
