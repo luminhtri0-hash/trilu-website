@@ -258,11 +258,11 @@ async function callGemini(env, prompt, { model } = {}) {
     generationConfig: {
       temperature: 0.2,
       topP: 0.9,
-      maxOutputTokens: 32768,
+      maxOutputTokens: 65536,
       responseMimeType: "application/json",
-      // Gemini 3.x: maxOutputTokens INCLUDES thinking. Reduce thinking → more room for JSON output.
-      // 32768 - 1024 thinking ≈ 31k for output (enough for word with 3+ kanji breakdown).
-      thinkingConfig: { thinkingBudget: 1024 },
+      // Chất lượng > tốc độ. Thinking budget cao cho phân tích sâu (Hán-Việt, ngữ nghĩa).
+      // Total 65536 = 8192 thinking + 57344 output, dư nhiều cho từ phức (3+ kanji breakdown).
+      thinkingConfig: { thinkingBudget: 8192 },
     },
   };
   const r = await fetch(url, {
