@@ -325,8 +325,18 @@ Trả về **JSON đúng schema** dưới đây, không có text nào khác:
       ],
       "related": ["孤立", "一人ぼっち"],
       "kanji_breakdown": [                    // chỉ khi có kanji
-        { "char": "孤", "meaning": "cô · mồ côi", "on": "コ", "kun": "みなしご" },
-        { "char": "独", "meaning": "độc · một mình", "on": "ドク", "kun": "ひと.り" }
+        {
+          "char": "孤",
+          "han_viet": "cô",                   // âm Hán Việt (1-2 từ)
+          "han_meaning": "mồ côi, lẻ loi",    // nghĩa âm Hán Việt
+          "meaning": "cô · mồ côi",            // nghĩa gốc (tiếng Việt mô tả)
+          "on": "コ",                          // âm On (katakana)
+          "kun": "みなしご",                    // âm Kun (hiragana)
+          "strokes": 9,                        // số nét
+          "radical": "子",                     // bộ thủ
+          "radical_name": "tử (con)",          // tên bộ thủ tiếng Việt
+          "jlpt": "N1"                         // JLPT level của kanji (null nếu không xếp)
+        }
       ]
     }
   ],
@@ -337,8 +347,9 @@ Quy tắc:
 - Nếu input là Romaji ambiguous (vd "hashi" → 橋/箸), trả tất cả trong results.
 - Nếu input không phải tiếng Nhật, dịch sang Nhật + trả 1-3 từ Nhật gần nhất.
 - meanings_vi PHẢI có; meanings_en optional nhưng nên có.
-- examples 2-4 câu, tự nhiên, có furigana cho kanji.
+- examples 2-4 câu, tự nhiên, có furigana ĐẦY ĐỦ cho TẤT CẢ kanji trong câu.
 - jlpt: chỉ điền nếu chắc chắn, không thì null.
+- kanji_breakdown PHẢI có: han_viet (âm Hán-Việt), han_meaning (nghĩa Hán-Việt ngắn), strokes (số nét, integer), radical (bộ thủ char), radical_name (tên bộ thủ tiếng Việt).
 - Nếu không biết từ này: { "is_known": false, "results": [] }.
 - Chỉ trả JSON, không markdown, không lời dẫn.`;
 
