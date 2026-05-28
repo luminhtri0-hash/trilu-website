@@ -93,7 +93,7 @@ h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6vw,56px);lin
 .r-ex .ex-ja ruby{ruby-align:center;ruby-position:over}
 .r-ex .ex-ja rt{font-family:var(--jp);font-size:0.42em;color:var(--gold);font-weight:400;letter-spacing:0;line-height:1.2}
 .r-ex .ex-furi{font-family:var(--jp);font-size:14px;color:var(--gold);margin-bottom:8px;opacity:0.7;font-style:italic}
-.r-ex .ex-vi{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(27,58,107,0.85);line-height:1.5}
+.r-ex .ex-vi{font-family:var(--serif);font-style:italic;font-size:22px;color:rgba(27,58,107,0.88);line-height:1.5}
 .r-related{display:flex;flex-wrap:wrap;gap:8px}
 .r-related a{font-family:var(--jp);font-size:18px;color:var(--ink);background:rgba(184,149,104,0.1);padding:8px 14px;border-radius:8px;text-decoration:none;border:1px solid rgba(184,149,104,0.25);cursor:pointer;font-weight:500}
 .r-related a:hover{background:var(--gold);color:var(--cream)}
@@ -145,13 +145,14 @@ h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6vw,56px);lin
 .tr-target{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.6vw,30px);line-height:1.5;color:var(--ink);padding:22px 0;border-top:1px solid rgba(184,149,104,0.2);border-bottom:1px solid rgba(184,149,104,0.2);margin:14px 0 22px}
 .tr-target.jp{font-family:var(--jp);font-style:normal;font-size:clamp(22px,2.4vw,28px);line-height:1.85}
 .tr-source{font-size:15px;color:rgba(27,58,107,0.6);font-style:italic;margin-bottom:8px}
-.tr-alt{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(27,58,107,0.85);padding:14px 18px;background:rgba(184,149,104,0.06);border-radius:8px;margin-top:8px;line-height:1.5}
-.tr-alt.jp{font-family:var(--jp);font-style:normal;font-size:18px;line-height:1.7}
+.tr-alt{font-family:var(--serif);font-style:italic;font-size:22px;color:rgba(27,58,107,0.88);padding:18px 22px;background:rgba(184,149,104,0.06);border-radius:10px;margin-top:10px;line-height:1.5}
+.tr-alt.jp{font-family:var(--jp);font-style:normal;font-size:22px;line-height:1.75}
+.tr-source{font-family:var(--serif);font-style:italic;font-size:18px;color:rgba(27,58,107,0.65);margin-bottom:14px;line-height:1.5}
 .tr-vocab{display:flex;flex-direction:column;gap:6px}
-.tr-vocab-row{display:flex;gap:14px;padding:8px 10px;background:rgba(184,149,104,0.05);border-radius:6px;align-items:baseline;flex-wrap:wrap}
-.tr-vocab-row .w{font-family:var(--jp);font-size:16px;color:var(--ink);font-weight:600;min-width:80px}
-.tr-vocab-row .rd{font-family:var(--jp);font-size:12px;color:var(--gold)}
-.tr-vocab-row .m{font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(27,58,107,0.78);flex:1;min-width:120px}
+.tr-vocab-row{display:flex;gap:24px;padding:16px 22px;background:rgba(184,149,104,0.06);border-radius:10px;align-items:baseline;flex-wrap:wrap}
+.tr-vocab-row .w{font-family:var(--jp);font-size:24px;color:var(--ink);font-weight:600;min-width:110px;line-height:1.2}
+.tr-vocab-row .rd{font-family:var(--jp);font-size:16px;color:var(--gold);min-width:90px}
+.tr-vocab-row .m{font-family:var(--serif);font-style:italic;font-size:21px;color:rgba(27,58,107,0.88);flex:1;min-width:200px;line-height:1.4}
 
 /* footer-ish sections */
 .section-title{font-family:var(--mono);font-size:11px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin:36px 0 14px;display:flex;align-items:center;gap:10px}
@@ -756,16 +757,24 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
           <div class="ex-vi">${escapeHtml(e.vi||'')}</div>
         </div>`;
       }).join('');
+      // Chips compare_with hiển thị lên đầu, click → tra grammar đó
+      const compareChips = (p.compare_with||[]).length ? `
+        <div class="r-section" style="border:none;padding-top:6px;margin-top:14px">
+          <h3>Ngữ pháp tương tự · click để tra</h3>
+          <div class="r-related">
+            ${p.compare_with.map(c => `<a href="#" data-action="grammar" data-q="${escapeHtml(c.pattern)}">${escapeHtml(c.pattern)}</a>`).join('')}
+          </div>
+        </div>` : '';
       const compare = (p.compare_with||[]).length ? `
         <div class="r-section">
-          <h3>So sánh</h3>
+          <h3>So sánh chi tiết</h3>
           ${p.compare_with.map(c => `<div class="r-ex"><div class="ex-ja">${escapeHtml(c.pattern)}</div><div class="ex-vi">${escapeHtml(c.diff)}</div></div>`).join('')}
         </div>` : '';
       const mistakes = (p.common_mistakes||[]).length ? `
         <div class="r-section">
           <h3>Lưu ý dễ nhầm</h3>
-          <ul style="margin-left:18px;font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.65;color:rgba(27,58,107,0.85)">
-            ${p.common_mistakes.map(m => `<li>${escapeHtml(m)}</li>`).join('')}
+          <ul style="margin-left:22px;font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.65;color:rgba(27,58,107,0.88)">
+            ${p.common_mistakes.map(m => `<li style="margin-bottom:6px">${escapeHtml(m)}</li>`).join('')}
           </ul>
         </div>` : '';
       const structure = (p.structure||[]).length ? `
@@ -776,11 +785,12 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
       return `
         <div class="r-card">
           <div class="r-meta">${chips}</div>
-          <div class="r-title" style="font-size:32px">${escapeHtml(p.pattern)}</div>
+          <div class="r-title" style="font-size:clamp(36px,5vw,52px)">${escapeHtml(p.pattern)}</div>
           <div class="r-section" style="border:none;padding-top:0;margin-top:8px">
             <div class="r-meanings">${escapeHtml(p.meaning_vi || '')}</div>
           </div>
-          ${p.usage ? `<div class="r-section"><h3>Cách dùng</h3><p style="font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.6;color:rgba(27,58,107,0.85)">${escapeHtml(p.usage)}</p></div>` : ''}
+          ${compareChips}
+          ${p.usage ? `<div class="r-section"><h3>Cách dùng</h3><p style="font-family:var(--serif);font-style:italic;font-size:20px;line-height:1.6;color:rgba(27,58,107,0.9)">${escapeHtml(p.usage)}</p></div>` : ''}
           ${structure}
           ${examples ? `<div class="r-section"><h3>Ví dụ</h3>${examples}</div>` : ''}
           ${compare}
