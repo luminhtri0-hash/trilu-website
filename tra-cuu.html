@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>Tra cứu — Trí Lữ Nihongo</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Tra kanji, kana, romaji, tiếng Việt. Bảng hiragana + katakana, gốc kanji, 5 từ điển miễn phí.">
+<meta name="description" content="Từ điển Nhật–Việt tích hợp AI Gemini. Tra từ vựng, ngữ pháp, dịch câu — kết quả inline, có ví dụ, JLPT level, furigana.">
 <meta name="theme-color" content="#1B3A6B">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
@@ -15,74 +15,142 @@
 <link rel="manifest" href="/manifest.json">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--cream:#FBF6E8;--ink:#1B3A6B;--gold:#B89568;--sumi:#8B3A2E;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter Tight',-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--jp:'Noto Serif JP',serif}
+:root{--cream:#FBF6E8;--ink:#1B3A6B;--gold:#B89568;--sumi:#8B3A2E;--moss:#5C7A4B;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter Tight',-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--jp:'Noto Serif JP',serif}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:var(--sans);background:var(--cream);color:var(--ink);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased}
-.wrap{max-width:880px;margin:0 auto;padding:max(24px,env(safe-area-inset-top)) 22px max(40px,env(safe-area-inset-bottom))}
-.nav{display:flex;justify-content:space-between;align-items:center;padding-bottom:24px;border-bottom:1px solid rgba(184,149,104,0.25);margin-bottom:48px;gap:16px}
+html,body{background:var(--cream)}
+body{font-family:var(--sans);color:var(--ink);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:960px;margin:0 auto;padding:max(20px,env(safe-area-inset-top)) 22px max(40px,env(safe-area-inset-bottom))}
+.nav{display:flex;justify-content:space-between;align-items:center;padding-bottom:22px;border-bottom:1px solid rgba(184,149,104,0.25);margin-bottom:36px;gap:16px}
 .brand{display:flex;align-items:center;gap:14px;text-decoration:none;color:inherit}
-.brand img{width:44px;height:44px;border-radius:11px}
-.brand-name{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1}
+.brand img{width:42px;height:42px;border-radius:11px}
+.brand-name{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1}
 .brand-jp{font-family:var(--jp);font-size:11px;color:var(--gold);letter-spacing:0.22em;margin-top:5px}
-.back{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.2);border-radius:999px;transition:all .2s}
-.back:hover{background:var(--ink);color:var(--cream)}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
-.eyebrow .jp{font-family:var(--jp);color:var(--gold);letter-spacing:0.32em;margin-left:8px;font-weight:400}
-h1{font-family:var(--serif);font-style:italic;font-size:clamp(40px,7vw,64px);line-height:1.05;letter-spacing:-0.01em;margin-bottom:22px;font-weight:400}
-.lede{font-size:17px;line-height:1.65;color:rgba(27,58,107,0.78);margin-bottom:42px;max-width:600px}
-.search-card{background:#fff;border:1px solid rgba(184,149,104,0.35);border-radius:18px;padding:6px 6px 6px 22px;display:flex;align-items:stretch;gap:10px;box-shadow:0 8px 22px rgba(27,58,107,0.06);margin-bottom:18px}
-.search-card .kicker{display:flex;align-items:center;font-family:var(--jp);font-size:24px;color:var(--ink)}
-.search-card input{flex:1;border:none;outline:none;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink);background:transparent;padding:18px 8px;min-width:0}
-.search-card input::placeholder{color:rgba(27,58,107,0.4)}
-.search-btn{background:var(--ink);color:var(--cream);border:none;padding:0 24px;border-radius:14px;font-family:var(--mono);font-size:11px;letter-spacing:0.2em;cursor:pointer;transition:transform .15s,background .2s;white-space:nowrap}
-.search-btn:hover{background:#0F2545}
+.user-box{display:flex;align-items:center;gap:10px}
+.user-quota{font-family:var(--mono);font-size:11px;letter-spacing:0.12em;color:rgba(27,58,107,0.65);text-transform:uppercase}
+.user-quota strong{color:var(--ink)}
+.user-quota.low{color:var(--sumi)}
+.user-action{font-family:var(--mono);font-size:10.5px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.22);border-radius:999px;background:transparent;cursor:pointer;transition:all .2s;font-weight:600}
+.user-action:hover{background:var(--ink);color:var(--cream)}
+.user-avatar{width:32px;height:32px;border-radius:50%;border:1px solid rgba(184,149,104,0.4)}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--gold);text-transform:uppercase;margin-bottom:14px}
+.eyebrow .jp{font-family:var(--jp);color:var(--gold);letter-spacing:0.3em;margin-left:8px;font-weight:400}
+h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6vw,56px);line-height:1.05;letter-spacing:-0.01em;margin-bottom:18px;font-weight:400}
+.lede{font-size:16px;line-height:1.65;color:rgba(27,58,107,0.78);margin-bottom:32px;max-width:620px}
+
+/* tabs */
+.tabs{display:flex;gap:6px;margin-bottom:14px;border-bottom:1px solid rgba(184,149,104,0.25)}
+.tab{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;background:transparent;border:none;padding:14px 18px;color:rgba(27,58,107,0.55);cursor:pointer;border-bottom:2px solid transparent;font-weight:600;transition:all .15s;display:flex;align-items:center;gap:8px}
+.tab .tab-jp{font-family:var(--jp);font-size:13px;letter-spacing:0;color:var(--gold);font-weight:500}
+.tab:hover{color:var(--ink)}
+.tab.active{color:var(--ink);border-bottom-color:var(--ink)}
+.tab.active .tab-jp{color:var(--ink)}
+
+/* search */
+.search-row{margin-top:18px;margin-bottom:6px}
+.search-card{background:#fff;border:1px solid rgba(184,149,104,0.35);border-radius:16px;padding:6px 6px 6px 18px;display:flex;align-items:stretch;gap:8px;box-shadow:0 6px 18px rgba(27,58,107,0.05)}
+.search-card .kicker{display:flex;align-items:center;font-family:var(--jp);font-size:22px;color:var(--gold)}
+.search-card input,.search-card textarea{flex:1;border:none;outline:none;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink);background:transparent;padding:16px 8px;min-width:0;resize:none}
+.search-card input::placeholder,.search-card textarea::placeholder{color:rgba(27,58,107,0.4)}
+.search-card textarea{font-family:var(--sans);font-style:normal;font-size:15px;min-height:96px;padding:16px 8px;line-height:1.55}
+.search-btn{background:var(--ink);color:var(--cream);border:none;padding:0 22px;border-radius:12px;font-family:var(--mono);font-size:11px;letter-spacing:0.18em;cursor:pointer;transition:all .15s;white-space:nowrap;font-weight:700}
+.search-btn:hover:not(:disabled){background:#0F2545}
 .search-btn:active{transform:scale(0.97)}
-.note{font-size:13px;color:rgba(27,58,107,0.55);margin-bottom:36px;font-style:italic}
-.section-title{font-family:var(--mono);font-size:11px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin:36px 0 16px}
-.tips{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin-bottom:36px}
-.tip{padding:14px 16px;background:rgba(184,149,104,0.06);border:1px solid rgba(184,149,104,0.2);border-radius:12px}
-.tip-jp{font-family:var(--jp);font-size:20px;color:var(--ink);margin-bottom:4px;font-weight:600}
-.tip-vi{font-size:12px;color:rgba(27,58,107,0.78);line-height:1.5}
-.tip-vi strong{color:var(--ink)}
-.kana-section{margin-bottom:36px}
-.kana-tabs{display:flex;gap:8px;margin-bottom:14px}
-.kana-tab{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;padding:8px 16px;background:transparent;border:1px solid rgba(184,149,104,0.4);border-radius:999px;color:var(--ink);cursor:pointer;text-transform:uppercase;transition:all .2s}
-.kana-tab.active{background:var(--ink);color:var(--cream);border-color:var(--ink)}
-.kana-tab:hover:not(.active){background:rgba(184,149,104,0.15)}
-.kana-grid{display:grid;grid-template-columns:repeat(11,1fr);gap:3px;font-family:var(--jp);background:rgba(184,149,104,0.08);padding:8px;border-radius:12px}
-.kana-grid .k{background:#fff;border-radius:6px;padding:8px 4px;text-align:center;cursor:pointer;transition:all .15s;text-decoration:none;color:var(--ink);display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:48px}
-.kana-grid .k:hover{background:var(--ink);color:var(--cream);transform:scale(1.06)}
-.kana-grid .k-jp{font-size:18px;font-weight:600;line-height:1}
-.kana-grid .k-r{font-family:var(--mono);font-size:9px;color:var(--gold);letter-spacing:0.08em;margin-top:2px}
-.kana-grid .k:hover .k-r{color:rgba(251,246,232,0.7)}
-.kana-grid .empty{background:transparent;cursor:default}
-.kana-grid .empty:hover{transform:none}
-.kana-hidden{display:none}
-.kana-active{display:grid}
-.radicals{display:grid;grid-template-columns:repeat(auto-fill,minmax(46px,1fr));gap:6px;font-family:var(--jp)}
-.radicals a{background:#fff;border:1px solid rgba(184,149,104,0.25);border-radius:8px;padding:10px 4px;text-align:center;text-decoration:none;color:var(--ink);font-size:20px;transition:all .15s;display:flex;flex-direction:column;align-items:center;gap:3px}
-.radicals a:hover{background:var(--gold);color:var(--cream);transform:translateY(-2px)}
-.radicals a .r-mean{font-family:var(--mono);font-size:8px;color:var(--gold);letter-spacing:0.08em;text-transform:uppercase}
-.radicals a:hover .r-mean{color:rgba(251,246,232,0.85)}
-.links{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
-.links a{display:flex;flex-direction:column;gap:4px;padding:16px 18px;background:rgba(184,149,104,0.08);border:1px solid transparent;border-radius:12px;text-decoration:none;color:var(--ink);transition:all .2s}
-.links a:hover{background:rgba(184,149,104,0.18);border-color:rgba(184,149,104,0.4);transform:translateY(-2px)}
-.links a .name{font-family:var(--serif);font-style:italic;font-size:18px}
-.links a .desc{font-family:var(--mono);font-size:10.5px;color:rgba(27,58,107,0.6);letter-spacing:0.12em;text-transform:uppercase}
-.tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-top:14px}
-.tools a{padding:14px;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:10px;text-decoration:none;color:var(--ink);transition:all .2s;display:block}
-.tools a .tool-name{font-family:var(--serif);font-style:italic;font-size:17px;margin-bottom:2px}
-.tools a .tool-desc{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:rgba(27,58,107,0.6);text-transform:uppercase}
-.tools a:hover{background:var(--gold);color:var(--cream);border-color:var(--gold)}
-.tools a:hover .tool-desc{color:rgba(251,246,232,0.85)}
-footer{margin-top:64px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.25);font-family:var(--mono);font-size:11px;color:rgba(27,58,107,0.55);letter-spacing:0.15em;text-align:center}
-@media(max-width:600px){.nav{flex-direction:row}.brand-name{font-size:18px}.back{padding:6px 10px;font-size:10px}h1{font-size:36px}.lede{font-size:15px;margin-bottom:28px}.search-card{flex-direction:column;padding:14px;gap:8px;align-items:stretch}.search-card .kicker{display:none}.search-card input{padding:14px 4px;font-size:16px;text-align:center}.search-btn{padding:14px}.kana-grid{grid-template-columns:repeat(6,1fr)}.kana-grid .k{min-height:42px}.kana-grid .k-jp{font-size:16px}.tips{grid-template-columns:1fr}.tools{grid-template-columns:1fr 1fr}}
+.search-btn:disabled{opacity:0.5;cursor:not-allowed}
+
+.note{font-size:13px;color:rgba(27,58,107,0.55);margin:10px 2px 24px;font-style:italic}
+
+/* direction toggle for translate */
+.dir-toggle{display:inline-flex;border:1px solid rgba(184,149,104,0.4);border-radius:999px;margin-bottom:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:0.16em;text-transform:uppercase;overflow:hidden}
+.dir-btn{padding:8px 16px;background:transparent;border:none;color:rgba(27,58,107,0.6);cursor:pointer;font:inherit;font-weight:600}
+.dir-btn.active{background:var(--ink);color:var(--cream)}
+
+/* result + states */
+.state{padding:32px 22px;text-align:center;background:rgba(184,149,104,0.06);border:1px dashed rgba(184,149,104,0.3);border-radius:14px;color:rgba(27,58,107,0.65);font-family:var(--mono);font-size:12px;letter-spacing:0.14em;margin-top:18px}
+.state.error{background:rgba(139,58,46,0.05);border-color:rgba(139,58,46,0.3);color:var(--sumi)}
+.state.loading{color:var(--gold)}
+.state.loading::after{content:" ...";animation:dots 1.5s steps(3,end) infinite}
+@keyframes dots{0%{content:""} 33%{content:" ."} 66%{content:" .."} 100%{content:" ..."}}
+
+/* results */
+.results{margin-top:18px;display:flex;flex-direction:column;gap:18px}
+.r-card{background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:14px;padding:24px 22px;box-shadow:0 4px 14px rgba(27,58,107,0.04)}
+.r-meta{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:0.14em;text-transform:uppercase}
+.chip{padding:4px 11px;border-radius:999px;border:1px solid rgba(184,149,104,0.4);color:var(--gold);background:rgba(184,149,104,0.06);font-weight:600}
+.chip.jlpt{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.chip.common{background:var(--moss);color:#FBF6E8;border-color:var(--moss)}
+.r-title{font-family:var(--jp);font-size:42px;line-height:1.1;color:var(--ink);font-weight:600;margin-bottom:6px;letter-spacing:0.01em}
+.r-reading{font-family:var(--jp);font-size:18px;color:rgba(27,58,107,0.75);margin-bottom:4px}
+.r-romaji{font-family:var(--mono);font-size:11.5px;color:var(--gold);letter-spacing:0.18em;text-transform:uppercase;margin-bottom:18px}
+.r-section{margin-top:18px;padding-top:14px;border-top:1px solid rgba(184,149,104,0.18)}
+.r-section h3{font-family:var(--mono);font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:600}
+.r-meanings{font-family:var(--serif);font-size:20px;font-style:italic;color:var(--ink);line-height:1.5}
+.r-meanings span:not(:last-child)::after{content:" · ";color:var(--gold);font-style:normal}
+.r-meanings-en{font-family:var(--sans);font-size:14px;color:rgba(27,58,107,0.65);margin-top:6px;font-style:italic}
+.r-ex{margin-top:8px;padding:12px 14px;background:rgba(184,149,104,0.06);border-left:2px solid var(--gold);border-radius:6px}
+.r-ex .ex-ja{font-family:var(--jp);font-size:16px;color:var(--ink);margin-bottom:2px}
+.r-ex .ex-furi{font-family:var(--jp);font-size:12px;color:var(--gold);margin-bottom:6px}
+.r-ex .ex-vi{font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(27,58,107,0.8)}
+.r-related{display:flex;flex-wrap:wrap;gap:6px}
+.r-related a{font-family:var(--jp);font-size:14px;color:var(--ink);background:rgba(184,149,104,0.1);padding:5px 11px;border-radius:6px;text-decoration:none;border:1px solid rgba(184,149,104,0.2);cursor:pointer}
+.r-related a:hover{background:var(--gold);color:var(--cream)}
+.r-breakdown{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px}
+.r-bd-card{background:rgba(27,58,107,0.04);padding:10px 12px;border-radius:8px;border:1px solid rgba(184,149,104,0.2)}
+.r-bd-char{font-family:var(--jp);font-size:30px;color:var(--ink);font-weight:600;line-height:1;margin-bottom:4px}
+.r-bd-mean{font-family:var(--sans);font-size:12px;color:rgba(27,58,107,0.75);margin-bottom:4px}
+.r-bd-read{font-family:var(--mono);font-size:9.5px;color:var(--gold);letter-spacing:0.1em;line-height:1.35}
+
+/* translate result */
+.tr-target{font-family:var(--serif);font-style:italic;font-size:22px;line-height:1.45;color:var(--ink);padding:18px 0;border-top:1px solid rgba(184,149,104,0.2);border-bottom:1px solid rgba(184,149,104,0.2);margin:10px 0 18px}
+.tr-target.jp{font-family:var(--jp);font-style:normal;font-size:20px;line-height:1.7}
+.tr-source{font-size:14px;color:rgba(27,58,107,0.6);font-style:italic;margin-bottom:6px}
+.tr-alt{font-family:var(--serif);font-style:italic;font-size:16px;color:rgba(27,58,107,0.85);padding:10px 12px;background:rgba(184,149,104,0.06);border-radius:6px;margin-top:6px}
+.tr-alt.jp{font-family:var(--jp);font-style:normal;font-size:15px;line-height:1.6}
+.tr-vocab{display:flex;flex-direction:column;gap:6px}
+.tr-vocab-row{display:flex;gap:14px;padding:8px 10px;background:rgba(184,149,104,0.05);border-radius:6px;align-items:baseline;flex-wrap:wrap}
+.tr-vocab-row .w{font-family:var(--jp);font-size:16px;color:var(--ink);font-weight:600;min-width:80px}
+.tr-vocab-row .rd{font-family:var(--jp);font-size:12px;color:var(--gold)}
+.tr-vocab-row .m{font-family:var(--serif);font-style:italic;font-size:15px;color:rgba(27,58,107,0.78);flex:1;min-width:120px}
+
+/* footer-ish sections */
+.section-title{font-family:var(--mono);font-size:11px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin:36px 0 14px;display:flex;align-items:center;gap:10px}
+.section-title::before{content:"";flex:0 0 24px;height:1px;background:var(--gold);opacity:0.5}
+.history{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px}
+.history-item{background:#fff;padding:10px 12px;border-radius:8px;border:1px solid rgba(184,149,104,0.25);font-family:var(--jp);font-size:15px;color:var(--ink);cursor:pointer;text-align:center;text-decoration:none;transition:all .15s}
+.history-item:hover{background:var(--gold);color:var(--cream);border-color:var(--gold)}
+.history-item .ht-type{display:block;font-family:var(--mono);font-size:9px;letter-spacing:0.14em;color:var(--gold);margin-bottom:2px;text-transform:uppercase;font-weight:600}
+.history-item:hover .ht-type{color:rgba(251,246,232,0.85)}
+.tools-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.tools-row a{padding:14px;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:10px;text-decoration:none;color:var(--ink);transition:all .15s;display:block}
+.tools-row a .tn{font-family:var(--serif);font-style:italic;font-size:16px;margin-bottom:2px}
+.tools-row a .td{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;color:rgba(27,58,107,0.6);text-transform:uppercase}
+.tools-row a:hover{background:var(--gold);color:var(--cream);border-color:var(--gold)}
+.tools-row a:hover .td{color:rgba(251,246,232,0.85)}
+
+footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.25);font-family:var(--mono);font-size:11px;color:rgba(27,58,107,0.55);letter-spacing:0.15em;text-align:center}
+
+@media(max-width:600px){
+  .nav{flex-wrap:wrap;gap:10px}
+  .brand-name{font-size:17px}
+  h1{font-size:32px}
+  .lede{font-size:14.5px;margin-bottom:22px}
+  .tab{padding:11px 12px;font-size:10px;letter-spacing:0.13em}
+  .tab .tab-jp{font-size:12px}
+  .search-card{flex-direction:column;padding:14px;gap:8px;align-items:stretch}
+  .search-card .kicker{display:none}
+  .search-card input,.search-card textarea{padding:12px 4px;font-size:16px;text-align:center}
+  .search-card textarea{text-align:left}
+  .search-btn{padding:14px}
+  .r-title{font-size:34px}
+  .r-meanings{font-size:18px}
+  .tr-target{font-size:18px}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
+
   <nav class="nav">
     <a class="brand" href="/">
       <img src="/icon-180.png" alt="Trí Lữ Nihongo">
@@ -91,105 +159,417 @@ footer{margin-top:64px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
         <div class="brand-jp">智 旅 日 本 語</div>
       </div>
     </a>
-    <a class="back" href="/">← Về trang</a>
+    <div class="user-box" id="userBox">
+      <a class="user-action" href="/">← TRANG CHỦ</a>
+    </div>
   </nav>
-  <div class="eyebrow">Tra cứu nhanh<span class="jp">検 索</span></div>
+
+  <div class="eyebrow">Từ điển AI <span class="jp">辞 書</span></div>
   <h1><em>Một ô tìm —</em><br>biết cả ba.</h1>
-  <p class="lede">Từ vựng · ngữ pháp · kanji — gõ kanji, kana, romaji hoặc tiếng Việt, AI tự nhận diện. Kết nối từ điển Mazii (1.7M người dùng) — đối tác chính thức của Trí Lữ.</p>
-  <form class="search-card" onsubmit="event.preventDefault(); const q=document.getElementById('q').value.trim(); if(q) window.open('https://mazii.net/vi-VN/search/word/javi/'+encodeURIComponent(q),'_blank');">
-    <div class="kicker">検</div>
-    <input id="q" type="text" placeholder="Tra kanji · kana · romaji · tiếng Việt" autocomplete="off" autofocus>
-    <button type="submit" class="search-btn">MỞ TỪ ĐIỂN →</button>
-  </form>
-  <p class="note">Mẹo: gõ tiếng Việt như "đẹp", "đi học", "cảm ơn" — AI sẽ tự dịch sang Nhật.</p>
+  <p class="lede">Từ vựng · ngữ pháp · dịch câu — gõ kanji, kana, romaji hoặc tiếng Việt, AI Gemini sẽ phân tích đầy đủ: cách đọc, nghĩa, JLPT, ví dụ, gốc kanji.</p>
 
-  <div class="section-title">Bốn cách tra · 4 ways</div>
-  <div class="tips">
-    <div class="tip"><div class="tip-jp">桜 → さくら</div><div class="tip-vi"><strong>Gõ kanji</strong> để xem cách đọc, nghĩa Việt, các từ ghép.</div></div>
-    <div class="tip"><div class="tip-jp">さくら → 桜</div><div class="tip-vi"><strong>Gõ hiragana</strong> để tìm kanji tương ứng + tất cả homonyms.</div></div>
-    <div class="tip"><div class="tip-jp">sakura → 桜</div><div class="tip-vi"><strong>Gõ romaji</strong> nếu chưa quen gõ tiếng Nhật. Đầy đủ như gõ hiragana.</div></div>
-    <div class="tip"><div class="tip-jp">hoa anh đào → 桜</div><div class="tip-vi"><strong>Gõ tiếng Việt</strong> để dịch ngược. Hỗ trợ cả câu ngắn.</div></div>
+  <div class="tabs" role="tablist">
+    <button class="tab active" data-tab="word"      role="tab">Từ vựng <span class="tab-jp">語</span></button>
+    <button class="tab"        data-tab="grammar"   role="tab">Ngữ pháp <span class="tab-jp">文法</span></button>
+    <button class="tab"        data-tab="translate" role="tab">Dịch câu <span class="tab-jp">訳</span></button>
   </div>
 
-  <div class="section-title">Bảng kana · 仮名表 — click để tra</div>
-  <div class="kana-section">
-    <div class="kana-tabs">
-      <button class="kana-tab active" onclick="showKana('hira')">HIRAGANA · ひらがな</button>
-      <button class="kana-tab" onclick="showKana('kata')">KATAKANA · カタカナ</button>
+  <!-- WORD -->
+  <div class="panel" id="panel-word">
+    <div class="search-row">
+      <form class="search-card" id="form-word">
+        <div class="kicker">語</div>
+        <input id="q-word" type="text" placeholder="Tra kanji · kana · romaji · tiếng Việt" autocomplete="off">
+        <button type="submit" class="search-btn">TRA →</button>
+      </form>
     </div>
-    <div id="kana-hira" class="kana-grid kana-active">
-      <a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%82" target="_blank"><span class="k-jp">あ</span><span class="k-r">a</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%84" target="_blank"><span class="k-jp">い</span><span class="k-r">i</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%86" target="_blank"><span class="k-jp">う</span><span class="k-r">u</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%88" target="_blank"><span class="k-jp">え</span><span class="k-r">e</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%8A" target="_blank"><span class="k-jp">お</span><span class="k-r">o</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%8B" target="_blank"><span class="k-jp">か</span><span class="k-r">ka</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%8D" target="_blank"><span class="k-jp">き</span><span class="k-r">ki</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%8F" target="_blank"><span class="k-jp">く</span><span class="k-r">ku</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%91" target="_blank"><span class="k-jp">け</span><span class="k-r">ke</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%93" target="_blank"><span class="k-jp">こ</span><span class="k-r">ko</span></a><span class="k empty"></span>
-      <a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%95" target="_blank"><span class="k-jp">さ</span><span class="k-r">sa</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%97" target="_blank"><span class="k-jp">し</span><span class="k-r">shi</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%99" target="_blank"><span class="k-jp">す</span><span class="k-r">su</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%9B" target="_blank"><span class="k-jp">せ</span><span class="k-r">se</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%9D" target="_blank"><span class="k-jp">そ</span><span class="k-r">so</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%9F" target="_blank"><span class="k-jp">た</span><span class="k-r">ta</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%A1" target="_blank"><span class="k-jp">ち</span><span class="k-r">chi</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%A4" target="_blank"><span class="k-jp">つ</span><span class="k-r">tsu</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%A6" target="_blank"><span class="k-jp">て</span><span class="k-r">te</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%A8" target="_blank"><span class="k-jp">と</span><span class="k-r">to</span></a><span class="k empty"></span>
-      <a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%AA" target="_blank"><span class="k-jp">な</span><span class="k-r">na</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%AB" target="_blank"><span class="k-jp">に</span><span class="k-r">ni</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%AC" target="_blank"><span class="k-jp">ぬ</span><span class="k-r">nu</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%AD" target="_blank"><span class="k-jp">ね</span><span class="k-r">ne</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%AE" target="_blank"><span class="k-jp">の</span><span class="k-r">no</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%AF" target="_blank"><span class="k-jp">は</span><span class="k-r">ha</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%B2" target="_blank"><span class="k-jp">ひ</span><span class="k-r">hi</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%B5" target="_blank"><span class="k-jp">ふ</span><span class="k-r">fu</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%B8" target="_blank"><span class="k-jp">へ</span><span class="k-r">he</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%BB" target="_blank"><span class="k-jp">ほ</span><span class="k-r">ho</span></a><span class="k empty"></span>
-      <a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%BE" target="_blank"><span class="k-jp">ま</span><span class="k-r">ma</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%81%BF" target="_blank"><span class="k-jp">み</span><span class="k-r">mi</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%80" target="_blank"><span class="k-jp">む</span><span class="k-r">mu</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%81" target="_blank"><span class="k-jp">め</span><span class="k-r">me</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%82" target="_blank"><span class="k-jp">も</span><span class="k-r">mo</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%84" target="_blank"><span class="k-jp">や</span><span class="k-r">ya</span></a><span class="k empty"></span><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%86" target="_blank"><span class="k-jp">ゆ</span><span class="k-r">yu</span></a><span class="k empty"></span><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%88" target="_blank"><span class="k-jp">よ</span><span class="k-r">yo</span></a><span class="k empty"></span>
-      <a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%89" target="_blank"><span class="k-jp">ら</span><span class="k-r">ra</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%8A" target="_blank"><span class="k-jp">り</span><span class="k-r">ri</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%8B" target="_blank"><span class="k-jp">る</span><span class="k-r">ru</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%8C" target="_blank"><span class="k-jp">れ</span><span class="k-r">re</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%8D" target="_blank"><span class="k-jp">ろ</span><span class="k-r">ro</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%8F" target="_blank"><span class="k-jp">わ</span><span class="k-r">wa</span></a><span class="k empty"></span><span class="k empty"></span><span class="k empty"></span><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%92" target="_blank"><span class="k-jp">を</span><span class="k-r">wo</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%93" target="_blank"><span class="k-jp">ん</span><span class="k-r">n</span></a>
+    <p class="note">Mẹo: gõ <strong>桜</strong>, <strong>さくら</strong>, <strong>sakura</strong>, hay <strong>hoa anh đào</strong> — đều ra cùng kết quả.</p>
+    <div id="out-word"></div>
+  </div>
+
+  <!-- GRAMMAR -->
+  <div class="panel" id="panel-grammar" style="display:none">
+    <div class="search-row">
+      <form class="search-card" id="form-grammar">
+        <div class="kicker">文</div>
+        <input id="q-grammar" type="text" placeholder="Mẫu ngữ pháp: ～ばかり · ～ても · ～なくちゃ…" autocomplete="off">
+        <button type="submit" class="search-btn">TRA →</button>
+      </form>
     </div>
-    <div id="kana-kata" class="kana-grid kana-hidden">
-      <a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%A2" target="_blank"><span class="k-jp">ア</span><span class="k-r">a</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%A4" target="_blank"><span class="k-jp">イ</span><span class="k-r">i</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%A6" target="_blank"><span class="k-jp">ウ</span><span class="k-r">u</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%A8" target="_blank"><span class="k-jp">エ</span><span class="k-r">e</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%AA" target="_blank"><span class="k-jp">オ</span><span class="k-r">o</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%AB" target="_blank"><span class="k-jp">カ</span><span class="k-r">ka</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%AD" target="_blank"><span class="k-jp">キ</span><span class="k-r">ki</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%AF" target="_blank"><span class="k-jp">ク</span><span class="k-r">ku</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%B1" target="_blank"><span class="k-jp">ケ</span><span class="k-r">ke</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%B3" target="_blank"><span class="k-jp">コ</span><span class="k-r">ko</span></a><span class="k empty"></span>
-      <a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%B5" target="_blank"><span class="k-jp">サ</span><span class="k-r">sa</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%B7" target="_blank"><span class="k-jp">シ</span><span class="k-r">shi</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%B9" target="_blank"><span class="k-jp">ス</span><span class="k-r">su</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%BB" target="_blank"><span class="k-jp">セ</span><span class="k-r">se</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%BD" target="_blank"><span class="k-jp">ソ</span><span class="k-r">so</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%82%BF" target="_blank"><span class="k-jp">タ</span><span class="k-r">ta</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%81" target="_blank"><span class="k-jp">チ</span><span class="k-r">chi</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%84" target="_blank"><span class="k-jp">ツ</span><span class="k-r">tsu</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%86" target="_blank"><span class="k-jp">テ</span><span class="k-r">te</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%88" target="_blank"><span class="k-jp">ト</span><span class="k-r">to</span></a><span class="k empty"></span>
-      <a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%8A" target="_blank"><span class="k-jp">ナ</span><span class="k-r">na</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%8B" target="_blank"><span class="k-jp">ニ</span><span class="k-r">ni</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%8C" target="_blank"><span class="k-jp">ヌ</span><span class="k-r">nu</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%8D" target="_blank"><span class="k-jp">ネ</span><span class="k-r">ne</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%8E" target="_blank"><span class="k-jp">ノ</span><span class="k-r">no</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%8F" target="_blank"><span class="k-jp">ハ</span><span class="k-r">ha</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%92" target="_blank"><span class="k-jp">ヒ</span><span class="k-r">hi</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%95" target="_blank"><span class="k-jp">フ</span><span class="k-r">fu</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%98" target="_blank"><span class="k-jp">ヘ</span><span class="k-r">he</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%9B" target="_blank"><span class="k-jp">ホ</span><span class="k-r">ho</span></a><span class="k empty"></span>
-      <a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%9E" target="_blank"><span class="k-jp">マ</span><span class="k-r">ma</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%9F" target="_blank"><span class="k-jp">ミ</span><span class="k-r">mi</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%A0" target="_blank"><span class="k-jp">ム</span><span class="k-r">mu</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%A1" target="_blank"><span class="k-jp">メ</span><span class="k-r">me</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%A2" target="_blank"><span class="k-jp">モ</span><span class="k-r">mo</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%A4" target="_blank"><span class="k-jp">ヤ</span><span class="k-r">ya</span></a><span class="k empty"></span><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%A6" target="_blank"><span class="k-jp">ユ</span><span class="k-r">yu</span></a><span class="k empty"></span><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%A8" target="_blank"><span class="k-jp">ヨ</span><span class="k-r">yo</span></a><span class="k empty"></span>
-      <a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%A9" target="_blank"><span class="k-jp">ラ</span><span class="k-r">ra</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%AA" target="_blank"><span class="k-jp">リ</span><span class="k-r">ri</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%AB" target="_blank"><span class="k-jp">ル</span><span class="k-r">ru</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%AC" target="_blank"><span class="k-jp">レ</span><span class="k-r">re</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%AD" target="_blank"><span class="k-jp">ロ</span><span class="k-r">ro</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%AF" target="_blank"><span class="k-jp">ワ</span><span class="k-r">wa</span></a><span class="k empty"></span><span class="k empty"></span><span class="k empty"></span><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%B2" target="_blank"><span class="k-jp">ヲ</span><span class="k-r">wo</span></a><a class="k" href="https://mazii.net/vi-VN/search/word/javi/%E3%83%B3" target="_blank"><span class="k-jp">ン</span><span class="k-r">n</span></a>
+    <p class="note">Mẹo: gõ <strong>~ばかり</strong>, <strong>てから</strong>, <strong>so that</strong>… mình sẽ tìm pattern + giải thích + ví dụ.</p>
+    <div id="out-grammar"></div>
+  </div>
+
+  <!-- TRANSLATE -->
+  <div class="panel" id="panel-translate" style="display:none">
+    <div class="search-row">
+      <div class="dir-toggle" id="dir-toggle">
+        <button class="dir-btn active" data-dir="ja->vi">日 → VI</button>
+        <button class="dir-btn"        data-dir="vi->ja">VI → 日</button>
+      </div>
+      <form class="search-card" id="form-translate">
+        <textarea id="q-translate" placeholder="Dán câu hoặc đoạn văn (tối đa 3000 ký tự)…" rows="4"></textarea>
+        <button type="submit" class="search-btn">DỊCH →</button>
+      </form>
     </div>
+    <p class="note">Dịch tự nhiên, có ghi chú văn hoá + từ vựng quan trọng. Bản dịch được cache để lần sau dùng lại miễn phí.</p>
+    <div id="out-translate"></div>
   </div>
 
-  <div class="section-title">Gốc kanji thường gặp · 部首 — bushū</div>
-  <div class="radicals">
-    <a href="https://jisho.org/search/%E4%BA%BA%23kanji" target="_blank">人<span class="r-mean">PERSON</span></a>
-    <a href="https://jisho.org/search/%E6%B0%B4%23kanji" target="_blank">水<span class="r-mean">WATER</span></a>
-    <a href="https://jisho.org/search/%E6%9C%A8%23kanji" target="_blank">木<span class="r-mean">TREE</span></a>
-    <a href="https://jisho.org/search/%E7%81%AB%23kanji" target="_blank">火<span class="r-mean">FIRE</span></a>
-    <a href="https://jisho.org/search/%E5%9C%9F%23kanji" target="_blank">土<span class="r-mean">EARTH</span></a>
-    <a href="https://jisho.org/search/%E9%87%91%23kanji" target="_blank">金<span class="r-mean">METAL</span></a>
-    <a href="https://jisho.org/search/%E5%8F%A3%23kanji" target="_blank">口<span class="r-mean">MOUTH</span></a>
-    <a href="https://jisho.org/search/%E7%9B%AE%23kanji" target="_blank">目<span class="r-mean">EYE</span></a>
-    <a href="https://jisho.org/search/%E6%89%8B%23kanji" target="_blank">手<span class="r-mean">HAND</span></a>
-    <a href="https://jisho.org/search/%E8%B6%B3%23kanji" target="_blank">足<span class="r-mean">FOOT</span></a>
-    <a href="https://jisho.org/search/%E5%BF%83%23kanji" target="_blank">心<span class="r-mean">HEART</span></a>
-    <a href="https://jisho.org/search/%E5%A4%A7%23kanji" target="_blank">大<span class="r-mean">BIG</span></a>
-    <a href="https://jisho.org/search/%E5%B0%8F%23kanji" target="_blank">小<span class="r-mean">SMALL</span></a>
-    <a href="https://jisho.org/search/%E5%B1%B1%23kanji" target="_blank">山<span class="r-mean">MOUNTAIN</span></a>
-    <a href="https://jisho.org/search/%E5%B7%9D%23kanji" target="_blank">川<span class="r-mean">RIVER</span></a>
-    <a href="https://jisho.org/search/%E7%94%B0%23kanji" target="_blank">田<span class="r-mean">FIELD</span></a>
-    <a href="https://jisho.org/search/%E6%97%A5%23kanji" target="_blank">日<span class="r-mean">SUN/DAY</span></a>
-    <a href="https://jisho.org/search/%E6%9C%88%23kanji" target="_blank">月<span class="r-mean">MOON</span></a>
-    <a href="https://jisho.org/search/%E9%9B%A8%23kanji" target="_blank">雨<span class="r-mean">RAIN</span></a>
-    <a href="https://jisho.org/search/%E9%A3%9F%23kanji" target="_blank">食<span class="r-mean">EAT</span></a>
-    <a href="https://jisho.org/search/%E8%A8%80%23kanji" target="_blank">言<span class="r-mean">SPEAK</span></a>
-    <a href="https://jisho.org/search/%E6%96%87%23kanji" target="_blank">文<span class="r-mean">TEXT</span></a>
-    <a href="https://jisho.org/search/%E6%84%9B%23kanji" target="_blank">愛<span class="r-mean">LOVE</span></a>
-    <a href="https://jisho.org/search/%E5%AE%B6%23kanji" target="_blank">家<span class="r-mean">HOUSE</span></a>
-  </div>
-  <p class="note" style="margin-top:14px">Click chữ Hán bất kỳ → Jisho.org sẽ hiển thị tất cả kanji chứa gốc đó + nghĩa.</p>
-
-  <div class="section-title">Hôm nay · Người học tra nhiều nhất</div>
-  <div class="links">
-    <a href="https://mazii.net/vi-VN/search/word/javi/%E6%A1%9C" target="_blank"><span class="name">桜 — sakura</span><span class="desc">01 · Hoa anh đào</span></a>
-    <a href="https://mazii.net/vi-VN/search/word/javi/%E7%B8%81" target="_blank"><span class="name">縁 — en</span><span class="desc">02 · Duyên</span></a>
-    <a href="https://mazii.net/vi-VN/search/word/javi/%E5%AD%A6%E6%A0%A1" target="_blank"><span class="name">学校 — gakkō</span><span class="desc">03 · Trường học</span></a>
-    <a href="https://mazii.net/vi-VN/search/word/javi/%E6%99%BA" target="_blank"><span class="name">智 — chi</span><span class="desc">04 · Trí tuệ</span></a>
-    <a href="https://mazii.net/vi-VN/search/word/javi/%E7%BE%8E%E3%81%97%E3%81%84" target="_blank"><span class="name">美しい — utsukushii</span><span class="desc">05 · Đẹp</span></a>
-    <a href="https://mazii.net/vi-VN/search/word/javi/%E3%81%82%E3%82%8A%E3%81%8C%E3%81%A8%E3%81%86" target="_blank"><span class="name">ありがとう — arigatō</span><span class="desc">06 · Cảm ơn</span></a>
+  <!-- HISTORY -->
+  <div class="section-title">Tra gần đây · 履歴</div>
+  <div id="history" class="history">
+    <p class="note" style="grid-column:1/-1">Chưa có lịch sử. Bắt đầu tra ở trên.</p>
   </div>
 
-  <div class="section-title">5 từ điển khác · ngoài Mazii</div>
-  <div class="tools">
-    <a href="https://jisho.org/" target="_blank"><div class="tool-name">Jisho</div><div class="tool-desc">Nhật–Anh · radicals</div></a>
-    <a href="https://takoboto.jp/" target="_blank"><div class="tool-name">Takoboto</div><div class="tool-desc">Offline · iOS Android</div></a>
-    <a href="https://www.romajidesu.com/" target="_blank"><div class="tool-name">RomajiDesu</div><div class="tool-desc">Romaji → kana</div></a>
-    <a href="https://www.wadoku.de/" target="_blank"><div class="tool-name">Wadoku</div><div class="tool-desc">Nhật–Đức · chuyên sâu</div></a>
-    <a href="https://kotobank.jp/" target="_blank"><div class="tool-name">Kotobank</div><div class="tool-desc">Nhật–Nhật · cho N1</div></a>
+  <!-- FALLBACK TOOLS -->
+  <div class="section-title">Từ điển khác (nếu bạn cần thêm)</div>
+  <div class="tools-row">
+    <a href="https://mazii.net/" target="_blank" rel="noopener"><div class="tn">Mazii</div><div class="td">Việt · 1.7M users</div></a>
+    <a href="https://jisho.org/" target="_blank" rel="noopener"><div class="tn">Jisho</div><div class="td">Anh · radicals</div></a>
+    <a href="https://takoboto.jp/" target="_blank" rel="noopener"><div class="tn">Takoboto</div><div class="td">Offline · iOS Android</div></a>
+    <a href="https://kotobank.jp/" target="_blank" rel="noopener"><div class="tn">Kotobank</div><div class="td">Nhật–Nhật · N1</div></a>
   </div>
+
   <footer>© MMXXVI · TRÍ LỮ NIHONGO · TRILU.EDU.VN</footer>
 </div>
+
+<script src="/nav.js" defer></script>
 <script>
-function showKana(t){
-  document.querySelectorAll('.kana-tab').forEach(b=>b.classList.toggle('active', b.textContent.toLowerCase().includes(t)));
-  document.getElementById('kana-hira').classList.toggle('kana-active', t==='hira');
-  document.getElementById('kana-hira').classList.toggle('kana-hidden', t!=='hira');
-  document.getElementById('kana-kata').classList.toggle('kana-active', t==='kata');
-  document.getElementById('kana-kata').classList.toggle('kana-hidden', t!=='kata');
-}
+(function(){
+  const $  = (s) => document.querySelector(s);
+  const $$ = (s) => Array.from(document.querySelectorAll(s));
+
+  // ─────── tabs ───────
+  $$('.tab').forEach(t => t.addEventListener('click', () => {
+    $$('.tab').forEach(x => x.classList.toggle('active', x === t));
+    $$('.panel').forEach(p => p.style.display = (p.id === 'panel-' + t.dataset.tab) ? '' : 'none');
+  }));
+
+  // ─────── direction toggle (translate) ───────
+  let direction = 'ja->vi';
+  $$('#dir-toggle .dir-btn').forEach(b => b.addEventListener('click', () => {
+    direction = b.dataset.dir;
+    $$('#dir-toggle .dir-btn').forEach(x => x.classList.toggle('active', x === b));
+  }));
+
+  // ─────── user / quota ───────
+  async function refreshMe(){
+    try{
+      const r = await fetch('/api/me', {credentials:'include'});
+      const data = await r.json();
+      const box = $('#userBox');
+      const q = data.quota || {used:0, limit:10};
+      const left = Math.max(0, q.limit - q.used);
+      const isLow = left <= Math.max(2, q.limit * 0.2);
+      if(data.user){
+        box.innerHTML = `
+          <span class="user-quota ${isLow?'low':''}">Còn <strong>${left}/${q.limit}</strong> lượt</span>
+          ${data.user.picture ? `<img class="user-avatar" src="${data.user.picture}" alt="${data.user.name||''}">` : ''}
+          <button class="user-action" onclick="logout()">THOÁT</button>
+        `;
+      } else {
+        box.innerHTML = `
+          <span class="user-quota ${isLow?'low':''}">Còn <strong>${left}/${q.limit}</strong> lượt khách</span>
+          <a class="user-action" href="/tra-cuu/login.html">ĐĂNG NHẬP →</a>
+        `;
+      }
+    }catch(e){ /* offline */ }
+  }
+  window.logout = async function(){
+    await fetch('/api/auth/logout', {method:'POST', credentials:'include'});
+    location.reload();
+  };
+  refreshMe();
+
+  // ─────── history ───────
+  const HIST_KEY = 'tlNihongoHistory';
+  function loadHistory(){
+    try{ return JSON.parse(localStorage.getItem(HIST_KEY) || '[]'); }catch{return [];}
+  }
+  function saveHistory(arr){
+    try{ localStorage.setItem(HIST_KEY, JSON.stringify(arr.slice(0, 24))); }catch{}
+  }
+  function addHistory(type, query){
+    if(!query) return;
+    let h = loadHistory();
+    h = h.filter(x => !(x.type === type && x.query === query));
+    h.unshift({type, query, t: Date.now()});
+    saveHistory(h);
+    renderHistory();
+  }
+  function renderHistory(){
+    const h = loadHistory();
+    const el = $('#history');
+    if(!h.length){
+      el.innerHTML = '<p class="note" style="grid-column:1/-1">Chưa có lịch sử. Bắt đầu tra ở trên.</p>';
+      return;
+    }
+    el.innerHTML = h.map(x => `
+      <a class="history-item" onclick="replayHistory('${x.type}', ${JSON.stringify(x.query)}); return false;">
+        <span class="ht-type">${x.type === 'word'?'TỪ':x.type==='grammar'?'NGỮ':'DỊCH'}</span>
+        ${escapeHtml(x.query.length > 24 ? x.query.slice(0,22)+'…' : x.query)}
+      </a>
+    `).join('');
+  }
+  window.replayHistory = function(type, query){
+    const tab = $$('.tab').find(t => t.dataset.tab === type);
+    if(tab) tab.click();
+    if(type === 'word'){ $('#q-word').value = query; $('#form-word').dispatchEvent(new Event('submit')); }
+    else if(type === 'grammar'){ $('#q-grammar').value = query; $('#form-grammar').dispatchEvent(new Event('submit')); }
+    else { $('#q-translate').value = query; $('#form-translate').dispatchEvent(new Event('submit')); }
+  };
+  renderHistory();
+
+  // ─────── helpers ───────
+  function escapeHtml(s){
+    return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  }
+  function setState(target, kind, text){
+    $(target).innerHTML = `<div class="state ${kind}">${escapeHtml(text)}</div>`;
+  }
+
+  // ─────── render: WORD ───────
+  function renderWord(out, data, meta){
+    if(!data || !data.is_known || !data.results || !data.results.length){
+      out.innerHTML = `<div class="state error">Chưa tìm thấy "${escapeHtml(data?.input||'')}". Thử cách đọc khác hoặc gõ bằng kanji/kana.</div>`;
+      return;
+    }
+    const cacheTag = meta.cached ? `<span class="chip" title="Cache hit">⚡ CACHED</span>` : '';
+    const items = data.results.map(r => {
+      const chips = [
+        cacheTag,
+        r.jlpt ? `<span class="chip jlpt">${r.jlpt}</span>` : '',
+        r.common ? `<span class="chip common">COMMON</span>` : '',
+        ...(r.word_class||[]).map(c => `<span class="chip">${escapeHtml(c)}</span>`)
+      ].filter(Boolean).join('');
+      const examples = (r.examples||[]).map(e => `
+        <div class="r-ex">
+          <div class="ex-ja">${escapeHtml(e.ja||'')}</div>
+          ${e.furigana ? `<div class="ex-furi">${escapeHtml(e.furigana)}</div>` : ''}
+          <div class="ex-vi">${escapeHtml(e.vi||'')}</div>
+        </div>`).join('');
+      const related = (r.related||[]).length ? `
+        <div class="r-section">
+          <h3>Từ liên quan</h3>
+          <div class="r-related">${r.related.map(w => `<a onclick="replayHistory('word', ${JSON.stringify(w)}); return false;">${escapeHtml(w)}</a>`).join('')}</div>
+        </div>` : '';
+      const breakdown = (r.kanji_breakdown||[]).length ? `
+        <div class="r-section">
+          <h3>Gốc kanji · 字源</h3>
+          <div class="r-breakdown">${r.kanji_breakdown.map(k => `
+            <div class="r-bd-card">
+              <div class="r-bd-char">${escapeHtml(k.char)}</div>
+              <div class="r-bd-mean">${escapeHtml(k.meaning||'')}</div>
+              <div class="r-bd-read">${k.on?'on '+escapeHtml(k.on):''}${k.kun?(k.on?'<br>':'')+'kun '+escapeHtml(k.kun):''}</div>
+            </div>`).join('')}</div>
+        </div>` : '';
+      return `
+        <div class="r-card">
+          <div class="r-meta">${chips}</div>
+          ${r.kanji ? `<div class="r-title">${escapeHtml(r.kanji)}</div>` : ''}
+          ${r.reading_hiragana ? `<div class="r-reading">${escapeHtml(r.reading_hiragana)}</div>` : ''}
+          ${r.reading_romaji ? `<div class="r-romaji">${escapeHtml(r.reading_romaji)}</div>` : ''}
+          <div class="r-section">
+            <h3>Nghĩa</h3>
+            <div class="r-meanings">${(r.meanings_vi||[]).map(m => `<span>${escapeHtml(m)}</span>`).join('')}</div>
+            ${(r.meanings_en||[]).length ? `<div class="r-meanings-en">EN: ${r.meanings_en.map(escapeHtml).join(' · ')}</div>` : ''}
+          </div>
+          ${examples ? `<div class="r-section"><h3>Ví dụ</h3>${examples}</div>` : ''}
+          ${related}
+          ${breakdown}
+        </div>`;
+    }).join('');
+    const note = data.note ? `<p class="note" style="margin-top:14px">${escapeHtml(data.note)}</p>` : '';
+    out.innerHTML = items + note;
+  }
+
+  // ─────── render: GRAMMAR ───────
+  function renderGrammar(out, data, meta){
+    if(!data || !data.is_known || !data.patterns || !data.patterns.length){
+      out.innerHTML = `<div class="state error">Chưa nhận diện được mẫu ngữ pháp này. Thử nhập có ~ trước/sau (vd ~ばかり) hoặc dạng đầy đủ.</div>`;
+      return;
+    }
+    const cacheTag = meta.cached ? `<span class="chip" title="Cache hit">⚡ CACHED</span>` : '';
+    const items = data.patterns.map(p => {
+      const chips = [cacheTag, p.jlpt ? `<span class="chip jlpt">${p.jlpt}</span>` : ''].filter(Boolean).join('');
+      const examples = (p.examples||[]).map(e => `
+        <div class="r-ex">
+          <div class="ex-ja">${escapeHtml(e.ja||'')}</div>
+          <div class="ex-vi">${escapeHtml(e.vi||'')}</div>
+        </div>`).join('');
+      const compare = (p.compare_with||[]).length ? `
+        <div class="r-section">
+          <h3>So sánh</h3>
+          ${p.compare_with.map(c => `<div class="r-ex"><div class="ex-ja">${escapeHtml(c.pattern)}</div><div class="ex-vi">${escapeHtml(c.diff)}</div></div>`).join('')}
+        </div>` : '';
+      const mistakes = (p.common_mistakes||[]).length ? `
+        <div class="r-section">
+          <h3>Lưu ý dễ nhầm</h3>
+          <ul style="margin-left:18px;font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.65;color:rgba(27,58,107,0.85)">
+            ${p.common_mistakes.map(m => `<li>${escapeHtml(m)}</li>`).join('')}
+          </ul>
+        </div>` : '';
+      const structure = (p.structure||[]).length ? `
+        <div class="r-section">
+          <h3>Cấu trúc</h3>
+          ${p.structure.map(s => `<div style="font-family:var(--jp);font-size:15px;padding:6px 10px;background:rgba(184,149,104,0.06);border-radius:6px;margin-bottom:4px">${escapeHtml(s)}</div>`).join('')}
+        </div>` : '';
+      return `
+        <div class="r-card">
+          <div class="r-meta">${chips}</div>
+          <div class="r-title" style="font-size:32px">${escapeHtml(p.pattern)}</div>
+          <div class="r-section" style="border:none;padding-top:0;margin-top:8px">
+            <div class="r-meanings">${escapeHtml(p.meaning_vi || '')}</div>
+          </div>
+          ${p.usage ? `<div class="r-section"><h3>Cách dùng</h3><p style="font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.6;color:rgba(27,58,107,0.85)">${escapeHtml(p.usage)}</p></div>` : ''}
+          ${structure}
+          ${examples ? `<div class="r-section"><h3>Ví dụ</h3>${examples}</div>` : ''}
+          ${compare}
+          ${mistakes}
+        </div>`;
+    }).join('');
+    out.innerHTML = items;
+  }
+
+  // ─────── render: TRANSLATE ───────
+  function renderTranslate(out, data, meta, dir){
+    if(!data || !data.target){
+      out.innerHTML = `<div class="state error">Không dịch được. Vui lòng thử lại.</div>`;
+      return;
+    }
+    const cacheTag = meta.cached ? `<span class="chip" title="Cache hit">⚡ CACHED</span>` : '';
+    const targetIsJp = dir === 'vi->ja';
+    const alts = (data.alternatives||[]).length ? `
+      <div class="r-section">
+        <h3>Bản dịch khác</h3>
+        ${data.alternatives.map(a => `<div class="tr-alt ${targetIsJp?'jp':''}">${escapeHtml(a)}</div>`).join('')}
+      </div>` : '';
+    const notes = (data.notes||[]).length ? `
+      <div class="r-section">
+        <h3>Ghi chú</h3>
+        <ul style="margin-left:18px;font-family:var(--serif);font-style:italic;font-size:15px;line-height:1.65;color:rgba(27,58,107,0.85)">
+          ${data.notes.map(n => `<li>${escapeHtml(n)}</li>`).join('')}
+        </ul>
+      </div>` : '';
+    const vocab = (data.vocabulary||[]).length ? `
+      <div class="r-section">
+        <h3>Từ vựng quan trọng</h3>
+        <div class="tr-vocab">
+          ${data.vocabulary.map(v => `
+            <div class="tr-vocab-row">
+              <span class="w">${escapeHtml(v.word||'')}</span>
+              <span class="rd">${escapeHtml(v.reading||'')}</span>
+              <span class="m">${escapeHtml(v.meaning_vi||'')}</span>
+            </div>`).join('')}
+        </div>
+      </div>` : '';
+    const gnotes = (data.grammar_notes||[]).length ? `
+      <div class="r-section">
+        <h3>Ngữ pháp</h3>
+        ${data.grammar_notes.map(g => `<div class="r-ex"><div class="ex-ja">${escapeHtml(g.pattern||'')}</div><div class="ex-vi">${escapeHtml(g.explanation||'')}</div></div>`).join('')}
+      </div>` : '';
+    out.innerHTML = `
+      <div class="r-card">
+        <div class="r-meta">${cacheTag}<span class="chip">${dir === 'vi->ja' ? 'VI → 日' : '日 → VI'}</span></div>
+        <div class="tr-source">Nguồn: ${escapeHtml((data.source||'').slice(0, 200))}${(data.source||'').length>200?'…':''}</div>
+        <div class="tr-target ${targetIsJp?'jp':''}">${escapeHtml(data.target)}</div>
+        ${alts}
+        ${vocab}
+        ${gnotes}
+        ${notes}
+      </div>`;
+  }
+
+  // ─────── api call ───────
+  async function apiCall(path, body){
+    const r = await fetch(path, {
+      method: 'POST',
+      headers: {'content-type':'application/json'},
+      credentials: 'include',
+      body: JSON.stringify(body)
+    });
+    const data = await r.json();
+    if(!r.ok){
+      const err = new Error(data.error || ('HTTP ' + r.status));
+      err.status = r.status;
+      err.payload = data;
+      throw err;
+    }
+    return data;
+  }
+
+  // ─────── submit handlers ───────
+  $('#form-word').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const q = $('#q-word').value.trim();
+    if(!q) return;
+    setState('#out-word', 'loading', 'Đang tra "' + q + '"');
+    try{
+      const r = await apiCall('/api/word', {query: q});
+      renderWord($('#out-word'), r.data, r);
+      addHistory('word', q);
+      refreshMe();
+    }catch(err){
+      handleErr('#out-word', err);
+    }
+  });
+
+  $('#form-grammar').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const q = $('#q-grammar').value.trim();
+    if(!q) return;
+    setState('#out-grammar', 'loading', 'Đang tra ngữ pháp "' + q + '"');
+    try{
+      const r = await apiCall('/api/grammar', {query: q});
+      renderGrammar($('#out-grammar'), r.data, r);
+      addHistory('grammar', q);
+      refreshMe();
+    }catch(err){
+      handleErr('#out-grammar', err);
+    }
+  });
+
+  $('#form-translate').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const text = $('#q-translate').value.trim();
+    if(!text) return;
+    setState('#out-translate', 'loading', 'Đang dịch (' + (direction==='vi->ja'?'VI→日':'日→VI') + ')');
+    try{
+      const r = await apiCall('/api/translate', {text, direction});
+      renderTranslate($('#out-translate'), r.data, r, direction);
+      addHistory('translate', text.length > 60 ? text.slice(0,58)+'…' : text);
+      refreshMe();
+    }catch(err){
+      handleErr('#out-translate', err);
+    }
+  });
+
+  function handleErr(target, err){
+    if(err.status === 429){
+      const q = err.payload?.quota;
+      const loginUrl = err.payload?.login_url;
+      $(target).innerHTML = `
+        <div class="state error">
+          Hết quota hôm nay (${q?.used||0}/${q?.limit||0}). ${loginUrl ? '<br><br><a href="'+loginUrl+'" class="user-action" style="display:inline-block;margin-top:14px">ĐĂNG NHẬP TĂNG QUOTA →</a>' : 'Quota reset lúc 7h sáng giờ VN.'}
+        </div>`;
+    } else {
+      setState(target, 'error', 'Lỗi: ' + err.message);
+    }
+  }
+
+  // ─────── login=ok flash ───────
+  if(new URLSearchParams(location.search).get('login') === 'ok'){
+    setTimeout(() => {
+      const div = document.createElement('div');
+      div.style.cssText = 'position:fixed;top:max(20px,env(safe-area-inset-top));right:20px;background:#5C7A4B;color:#FBF6E8;padding:14px 20px;border-radius:999px;font-family:var(--mono);font-size:11px;letter-spacing:0.18em;z-index:9999;box-shadow:0 8px 24px rgba(27,58,107,0.18);font-weight:600';
+      div.textContent = '✓ ĐĂNG NHẬP THÀNH CÔNG';
+      document.body.appendChild(div);
+      setTimeout(() => div.remove(), 3000);
+      history.replaceState({}, '', location.pathname);
+    }, 300);
+  }
+})();
 </script>
 </body>
 </html>
