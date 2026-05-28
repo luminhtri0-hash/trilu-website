@@ -237,6 +237,9 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
 <script src="/nav.js" defer></script>
 <script>
 (function(){
+  // While trilu.edu.vn DNS is pending Cloudflare activation, route /api/* directly to workers.dev.
+  // Once zone goes active, set API_BASE = '' to use same-origin /api/*.
+  const API_BASE = 'https://trilu-dict-api.luminhtri0.workers.dev';
   const $  = (s) => document.querySelector(s);
   const $$ = (s) => Array.from(document.querySelectorAll(s));
 
@@ -256,7 +259,7 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
   // ─────── user / quota ───────
   async function refreshMe(){
     try{
-      const r = await fetch('/api/me', {credentials:'include'});
+      const r = await fetch(API_BASE + '/api/me', {credentials:'include'});
       const data = await r.json();
       const box = $('#userBox');
       const q = data.quota || {used:0, limit:10};
@@ -277,7 +280,7 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
     }catch(e){ /* offline */ }
   }
   window.logout = async function(){
-    await fetch('/api/auth/logout', {method:'POST', credentials:'include'});
+    await fetch(API_BASE + '/api/auth/logout', {method:'POST', credentials:'include'});
     location.reload();
   };
   refreshMe();
@@ -483,7 +486,7 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
 
   // ─────── api call ───────
   async function apiCall(path, body){
-    const r = await fetch(path, {
+    const r = await fetch(API_BASE + path, {
       method: 'POST',
       headers: {'content-type':'application/json'},
       credentials: 'include',
