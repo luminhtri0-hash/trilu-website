@@ -136,12 +136,23 @@ function setCookie(name, value, opts = {}) {
   return s;
 }
 
-function clearCookie(name, env) {
-  return setCookie(name, "", {
-    Domain: env.COOKIE_DOMAIN,
+function clearCookie(name, env, req) {
+  const opts = {
     "Max-Age": 0,
     Expires: "Thu, 01 Jan 1970 00:00:00 GMT",
-  });
+  };
+  const d = cookieDomain(req, env);
+  if (d) opts.Domain = d;
+  return setCookie(name, "", opts);
+}
+
+/* Cookie domain helper: dùng .trilu.edu.vn khi hostname khớp,
+   ngược lại (workers.dev) trả về undefined → cookie default current host. */
+function cookieDomain(req, env) {
+  const host = req ? new URL(req.url).hostname : "";
+  const cd = (env.COOKIE_DOMAIN || "").replace(/^\./, "");
+  if (cd && (host === cd || host.endsWith("." + cd))) return env.COOKIE_DOMAIN;
+  return undefined;
 }
 
 /* ─────────── session / user helpers ─────────── */
@@ -610,10 +621,10 @@ async function handleVerifyMagic(req, env) {
     providerId: payload.email,
   });
   const sessionToken = await createSession(env, userId);
-  const cookie = setCookie(SESSION_COOKIE, sessionToken, {
-    Domain: env.COOKIE_DOMAIN,
-    "Max-Age": SESSION_TTL,
-  });
+  const cookieOpts = { "Max-Age": SESSION_TTL };
+  const cd = cookieDomain(req, env);
+  if (cd) cookieOpts.Domain = cd;
+  const cookie = setCookie(SESSION_COOKIE, sessionToken, cookieOpts);
   return redirect("/tra-cuu.html?login=ok", {
     headers: { "set-cookie": cookie },
   });
@@ -637,11 +648,10 @@ function errPage(message) {
 async function handleGoogleStart(req, env) {
   const state = randomHex(16);
   const sig = await hmacHex(env.JWT_SECRET, state);
-  const stateCookie = setCookie("oauth_state", `${state}.${sig}`, {
-    Domain: env.COOKIE_DOMAIN,
-    "Max-Age": OAUTH_STATE_TTL,
-    SameSite: "Lax",
-  });
+  const stateCookieOpts = { "Max-Age": OAUTH_STATE_TTL, SameSite: "Lax" };
+  const cd = cookieDomain(req, env);
+  if (cd) stateCookieOpts.Domain = cd;
+  const stateCookie = setCookie("oauth_state", `${state}.${sig}`, stateCookieOpts);
   // Dùng request origin để hoạt động được với cả workers.dev URL và custom domain
   // (Cloudflare proxy của trilu.edu.vn có thể chưa active)
   const origin = new URL(req.url).origin;
@@ -709,16 +719,18 @@ async function handleGoogleCallback(req, env) {
     providerId: info.sub,
   });
   const sessionToken = await createSession(env, userId);
-  const cookie = setCookie(SESSION_COOKIE, sessionToken, {
-    Domain: env.COOKIE_DOMAIN,
-    "Max-Age": SESSION_TTL,
-  });
+  const cd2 = cookieDomain(req, env);
+  const sessOpts = { "Max-Age": SESSION_TTL };
+  if (cd2) sessOpts.Domain = cd2;
+  const cookie = setCookie(SESSION_COOKIE, sessionToken, sessOpts);
   // also clear oauth_state
-  const clearState = setCookie("oauth_state", "", {
-    Domain: env.COOKIE_DOMAIN,
-    "Max-Age": 0,
-  });
-  const res = redirect("/tra-cuu.html?login=ok");
+  const clearOpts = { "Max-Age": 0 };
+  if (cd2) clearOpts.Domain = cd2;
+  const clearState = setCookie("oauth_state", "", clearOpts);
+  // Redirect về site chính (ALLOWED_ORIGIN) thay vì relative URL,
+  // vì callback có thể chạy trên workers.dev — relative sẽ 404.
+  const siteOrigin = env.ALLOWED_ORIGIN || "https://trilu.edu.vn";
+  const res = redirect(`${siteOrigin}/flashcard.html?login=ok`);
   res.headers.append("set-cookie", cookie);
   res.headers.append("set-cookie", clearState);
   return res;
