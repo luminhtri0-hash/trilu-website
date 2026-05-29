@@ -951,25 +951,41 @@ async function handleSrsReview(req, env) {
   const next = srsNextInterval(prev, rating);
   await env.USERS.put(key, JSON.stringify(next));
 
-  // Update meta (streak, weekMinutes)
+  // Update meta (streak, weekMinutes, today/week counts cho leaderboard)
   const metaKey = `srs:${userId}:_meta`;
   const meta = (await env.USERS.get(metaKey, { type: "json" })) || {
     streak: 0, lastStudyDay: null, weekMinutes: [0,0,0,0,0,0,0],
+    todayKey: null, todayReviews: 0, weekKey: null, weekReviews: 0,
   };
   const todayKey = new Date().toISOString().slice(0, 10);
+  const weekKey = isoWeekKey(new Date());
   if (meta.lastStudyDay !== todayKey) {
-    // Check if yesterday → continue streak
     const y = new Date(); y.setDate(y.getDate() - 1);
     const ykey = y.toISOString().slice(0, 10);
     if (meta.lastStudyDay === ykey) meta.streak = (meta.streak || 0) + 1;
     else meta.streak = 1;
     meta.lastStudyDay = todayKey;
   }
-  // Bump today's minute (decorative — 1 review ≈ 0.1 min)
-  const dow = (new Date().getDay() + 6) % 7; // Mon=0
+  // Reset today/week counters khi sang ngày/tuần mới
+  if (meta.todayKey !== todayKey) { meta.todayKey = todayKey; meta.todayReviews = 0; }
+  if (meta.weekKey !== weekKey) { meta.weekKey = weekKey; meta.weekReviews = 0; }
+  meta.todayReviews = (meta.todayReviews || 0) + 1;
+  meta.weekReviews = (meta.weekReviews || 0) + 1;
+  const dow = (new Date().getDay() + 6) % 7;
   if (!meta.weekMinutes) meta.weekMinutes = [0,0,0,0,0,0,0];
   meta.weekMinutes[dow] = (meta.weekMinutes[dow] || 0) + 0.1;
   await env.USERS.put(metaKey, JSON.stringify(meta));
+
+  // Update leaderboards (fire-and-forget acceptable)
+  try {
+    const u = sess.user;
+    const entry = { userId, name: u.name || (u.email || '').split('@')[0], picture: u.picture || null };
+    await Promise.all([
+      updateLeaderboard(env, "streak",            { ...entry, value: meta.streak }),
+      updateLeaderboard(env, `today:${todayKey}`, { ...entry, value: meta.todayReviews }),
+      updateLeaderboard(env, `week:${weekKey}`,   { ...entry, value: meta.weekReviews }),
+    ]);
+  } catch (e) { /* leaderboard update không critical */ }
 
   return json({
     ok: true,
@@ -980,6 +996,59 @@ async function handleSrsReview(req, env) {
       ease: next.e,
       reps: next.reps,
     },
+  });
+}
+
+/* ─────────── Leaderboard ─────────── */
+function isoWeekKey(d) {
+  const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const day = date.getUTCDay() || 7;
+  date.setUTCDate(date.getUTCDate() + 4 - day);
+  const yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+  const week = Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
+  return `${date.getUTCFullYear()}-W${String(week).padStart(2, "0")}`;
+}
+
+async function updateLeaderboard(env, type, entry) {
+  const key = `lb:${type}`;
+  const arr = (await env.USERS.get(key, { type: "json" })) || [];
+  const filtered = arr.filter(e => e.userId !== entry.userId);
+  filtered.push({ ...entry, ts: Date.now() });
+  filtered.sort((a, b) => (b.value || 0) - (a.value || 0));
+  const top = filtered.slice(0, 50);
+  // TTL: today = 2 ngày, week = 14 ngày, streak = không expire
+  const opts = type.startsWith("today:") ? { expirationTtl: 60 * 60 * 24 * 2 }
+             : type.startsWith("week:")  ? { expirationTtl: 60 * 60 * 24 * 14 }
+             : undefined;
+  await env.USERS.put(key, JSON.stringify(top), opts);
+}
+
+async function handleLeaderboard(req, env) {
+  const url = new URL(req.url);
+  const type = url.searchParams.get("type") || "streak";
+  let key;
+  if (type === "streak") key = "lb:streak";
+  else if (type === "today") key = "lb:today:" + new Date().toISOString().slice(0, 10);
+  else if (type === "week")  key = "lb:week:" + isoWeekKey(new Date());
+  else return err(400, "invalid type");
+
+  const arr = (await env.USERS.get(key, { type: "json" })) || [];
+
+  // Tìm vị trí user hiện tại trong full list (nếu logged in)
+  const sess = await getSession(req, env);
+  let myRank = null;
+  if (sess) {
+    const idx = arr.findIndex(e => e.userId === sess.user.id);
+    if (idx >= 0) myRank = { rank: idx + 1, value: arr[idx].value };
+  }
+
+  // Trả top 20 + thông tin của tôi
+  return json({
+    ok: true,
+    type,
+    top: arr.slice(0, 20),
+    myRank,
+    generatedAt: Date.now(),
   });
 }
 
@@ -1067,6 +1136,7 @@ export default {
 
       else if (p === "/api/srs/state")            res = await handleSrsState(req, env);
       else if (p === "/api/srs/review")           res = await handleSrsReview(req, env);
+      else if (p === "/api/leaderboard")          res = await handleLeaderboard(req, env);
 
       else res = err(404, "not found");
 
