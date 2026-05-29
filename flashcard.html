@@ -1186,6 +1186,173 @@ function LessonPicker({ deckGroup, onPickLesson, onBack }) {
 }
 
 // ============================================================
+// LEADERBOARD SCREEN (TIẾN ĐỘ tab — both mobile + desktop)
+// ============================================================
+function LeaderboardScreen({ user, onNav, isDesktop }) {
+  const [type, setType] = useState('streak'); // streak | today | week
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    setLoading(true);
+    api(`/api/leaderboard?type=${type}`)
+      .then(j => setData(j))
+      .catch(e => setData({ ok: false, top: [], myRank: null, error: e.message }))
+      .finally(() => setLoading(false));
+  }, [type]);
+
+  const TABS = [
+    { id: 'streak', label: 'Chuỗi ngày',  jp: '連続', suffix: 'ngày' },
+    { id: 'today',  label: 'Hôm nay',     jp: '本日', suffix: 'thẻ' },
+    { id: 'week',   label: 'Tuần này',    jp: '今週', suffix: 'thẻ' },
+  ];
+  const cur = TABS.find(t => t.id === type);
+
+  // Inner content shared between mobile + desktop
+  const content = (
+    <>
+      <div style={{ display: 'flex', gap: isDesktop ? 24 : 0, borderBottom: `1px solid ${TRILU.rule}`, marginBottom: 20 }}>
+        {TABS.map(t => (
+          <button key={t.id} onClick={() => setType(t.id)} style={{
+            background: 'none', border: 'none', cursor: 'pointer',
+            padding: isDesktop ? '0 0 14px' : '0 14px 12px',
+            flex: isDesktop ? '0' : '1',
+            position: 'relative', fontFamily: 'inherit',
+            fontSize: 13, fontWeight: type === t.id ? 600 : 400,
+            color: type === t.id ? TRILU.ink : TRILU.inkMute,
+            letterSpacing: 0.5,
+          }}>
+            {t.label}
+            {type === t.id && (
+              <div style={{ position: 'absolute', bottom: -1, left: isDesktop ? 0 : 14, right: isDesktop ? 0 : 14, height: 2, background: TRILU.vermillion }}/>
+            )}
+          </button>
+        ))}
+      </div>
+
+      {loading && (
+        <div style={{ padding: '40px 20px', textAlign: 'center', color: TRILU.inkMute }}>Đang tải…</div>
+      )}
+
+      {!loading && data && (
+        <>
+          {data.myRank && (
+            <div style={{
+              padding: '14px 16px', background: TRILU.creamHi,
+              border: `1px solid ${TRILU.gold}`, borderRadius: 4,
+              marginBottom: 18, display: 'flex', alignItems: 'center', gap: 14,
+            }}>
+              <div style={{
+                width: 38, height: 38, borderRadius: '50%',
+                background: TRILU.indigo, color: TRILU.gold,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                fontFamily: '"Noto Serif JP", serif', fontSize: 18, fontWeight: 700,
+              }}>{data.myRank.rank}</div>
+              <div style={{ flex: 1 }}>
+                <div style={{ fontSize: 10, letterSpacing: 2, color: TRILU.inkMute, textTransform: 'uppercase' }}>Vị trí của bạn</div>
+                <div style={{ fontSize: 14, color: TRILU.ink, marginTop: 2 }}>
+                  Hạng <strong>{data.myRank.rank}</strong> với <strong>{data.myRank.value}</strong> {cur.suffix}
+                </div>
+              </div>
+            </div>
+          )}
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {(data.top || []).length === 0 && (
+              <div style={{ padding: '40px 20px', textAlign: 'center', color: TRILU.inkMute, fontSize: 13 }}>
+                Chưa có ai trên bảng xếp hạng này.<br/>Hãy là người đầu tiên!
+              </div>
+            )}
+            {(data.top || []).map((e, i) => {
+              const rank = i + 1;
+              const isMe = user && e.userId === user.id;
+              const medal = rank === 1 ? '金' : rank === 2 ? '銀' : rank === 3 ? '銅' : null;
+              const medalColor = rank === 1 ? TRILU.gold : rank === 2 ? '#A8A8A8' : rank === 3 ? '#A67841' : null;
+              return (
+                <div key={e.userId || i} style={{
+                  display: 'flex', alignItems: 'center', gap: 14,
+                  padding: '12px 14px',
+                  background: isMe ? TRILU.creamHi : 'transparent',
+                  border: isMe ? `1px solid ${TRILU.gold}` : `1px solid ${TRILU.rule}`,
+                  borderRadius: 3,
+                }}>
+                  <div style={{
+                    width: 32, height: 32, flexShrink: 0,
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    fontFamily: '"Noto Serif JP", serif', fontSize: medal ? 18 : 14,
+                    fontWeight: 700,
+                    color: medal ? medalColor : TRILU.inkMute,
+                  }}>{medal || rank}</div>
+                  {e.picture ? (
+                    <img src={e.picture} alt="" style={{ width: 36, height: 36, borderRadius: '50%', flexShrink: 0 }}/>
+                  ) : (
+                    <div style={{
+                      width: 36, height: 36, borderRadius: '50%', flexShrink: 0,
+                      background: TRILU.cream, border: `1px solid ${TRILU.rule}`,
+                      display: 'flex', alignItems: 'center', justifyContent: 'center',
+                      fontFamily: '"Noto Serif JP", serif', fontSize: 14, color: TRILU.indigo, fontWeight: 600,
+                    }}>{(e.name || '?').charAt(0).toUpperCase()}</div>
+                  )}
+                  <div style={{ flex: 1, minWidth: 0 }}>
+                    <div style={{
+                      fontSize: 14, color: TRILU.ink, fontWeight: isMe ? 600 : 500,
+                      whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+                    }}>{e.name || 'Ẩn danh'}{isMe && <span style={{ marginLeft: 6, color: TRILU.vermillion, fontSize: 11 }}>(bạn)</span>}</div>
+                  </div>
+                  <div style={{
+                    fontFamily: '"Noto Serif JP", serif', fontSize: 20, fontWeight: 600,
+                    color: type === 'streak' ? TRILU.vermillion : TRILU.indigo,
+                    fontVariantNumeric: 'tabular-nums', minWidth: 50, textAlign: 'right',
+                  }}>{e.value}</div>
+                  <span style={{ fontSize: 11, color: TRILU.inkMute, minWidth: 28 }}>{cur.suffix}</span>
+                </div>
+              );
+            })}
+          </div>
+        </>
+      )}
+    </>
+  );
+
+  if (isDesktop) {
+    return (
+      <DeskFrame>
+        <DeskRail active="stats" onNav={onNav} streak={0} />
+        <div style={{ flex: 1, minWidth: 0, padding: '44px 40px 40px', overflow: 'auto', maxWidth: 920, margin: '0 auto' }}>
+          <div style={{ fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>
+            Bảng xếp hạng · <span style={{ fontFamily: '"Noto Serif JP", serif', letterSpacing: 1 }}>{cur.jp}</span>
+          </div>
+          <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 34, fontWeight: 500, color: TRILU.ink, marginTop: 8 }}>
+            {cur.label}
+          </div>
+          <InkRule width={56} style={{ marginTop: 12, marginBottom: 28 }} />
+          {content}
+        </div>
+      </DeskFrame>
+    );
+  }
+
+  // Mobile
+  return (
+    <div className="app-frame scroll" style={{ ...washiBg(0.4), paddingBottom: 96 }}>
+      <StatusBar/>
+      <div style={{ padding: '16px 24px 0' }}>
+        <div style={{ fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>Bảng xếp hạng</div>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginTop: 4 }}>
+          <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 26, fontWeight: 500, color: TRILU.ink }}>Tiến độ</span>
+          <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 14, color: TRILU.inkMute, letterSpacing: 2 }}>{cur.jp}</span>
+        </div>
+        <InkRule width={48} style={{ marginTop: 12 }} />
+      </div>
+      <div style={{ padding: '20px 16px 0' }}>
+        {content}
+      </div>
+      <TabBar active="stats" onNav={onNav} />
+    </div>
+  );
+}
+
+// ============================================================
 // DESKTOP LAYOUTS (≥1024px) — from Claude Design
 // ============================================================
 const DeskCtx = React.createContext({ fluid: true, vw: 1440 });
@@ -2089,6 +2256,8 @@ function App() {
     screen = isDesktop
       ? <DesktopLibraryScreen decks={decks} onNav={setRoute} onOpenDeck={openDeck} srsStats={srsStats} />
       : <LibraryScreen decks={decks} onNav={setRoute} onOpenDeck={openDeck} />;
+  } else if (route === 'stats') {
+    screen = <LeaderboardScreen user={user} onNav={setRoute} isDesktop={isDesktop} />;
   } else {
     screen = isDesktop
       ? <DesktopHomeScreen user={user} srsStats={srsStats} decks={decks} onStart={startFromDue} onNav={setRoute} onOpenDeck={openDeck} />
