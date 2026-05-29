@@ -645,13 +645,24 @@ function errPage(message) {
 
 /* ─────────── auth: Google OAuth ─────────── */
 
+/* Stateless OAuth state: state = base64url(`${nonce}.${ts}.${sig}`)
+   - Không dùng cookie (tránh bug SameSite + cross-domain)
+   - sig = HMAC(JWT_SECRET, `${nonce}.${ts}`)
+   - Verify: re-compute HMAC + check ts trong khoảng OAUTH_STATE_TTL */
+function b64urlEncode(s) {
+  return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function b64urlDecode(s) {
+  s = s.replace(/-/g, "+").replace(/_/g, "/");
+  while (s.length % 4) s += "=";
+  return atob(s);
+}
+
 async function handleGoogleStart(req, env) {
-  const state = randomHex(16);
-  const sig = await hmacHex(env.JWT_SECRET, state);
-  const stateCookieOpts = { "Max-Age": OAUTH_STATE_TTL, SameSite: "Lax" };
-  const cd = cookieDomain(req, env);
-  if (cd) stateCookieOpts.Domain = cd;
-  const stateCookie = setCookie("oauth_state", `${state}.${sig}`, stateCookieOpts);
+  const nonce = randomHex(12);
+  const ts = String(Date.now());
+  const sig = await hmacHex(env.JWT_SECRET, `${nonce}.${ts}`);
+  const state = b64urlEncode(`${nonce}.${ts}.${sig}`);
   // Dùng request origin để hoạt động được với cả workers.dev URL và custom domain
   // (Cloudflare proxy của trilu.edu.vn có thể chưa active)
   const origin = new URL(req.url).origin;
@@ -664,9 +675,7 @@ async function handleGoogleStart(req, env) {
     access_type: "online",
     prompt: "select_account",
   });
-  return redirect(`https://accounts.google.com/o/oauth2/v2/auth?${params}`, {
-    headers: { "set-cookie": stateCookie },
-  });
+  return redirect(`https://accounts.google.com/o/oauth2/v2/auth?${params}`);
 }
 
 async function handleGoogleCallback(req, env) {
@@ -675,12 +684,20 @@ async function handleGoogleCallback(req, env) {
   const state = url.searchParams.get("state");
   if (!code || !state) return errPage("Thiếu code/state từ Google.");
 
-  const cookies = parseCookies(req);
-  const stateCookie = cookies.oauth_state || "";
-  const [savedState, savedSig] = stateCookie.split(".");
-  if (savedState !== state) return errPage("State không khớp (có thể là CSRF).");
-  const expectSig = await hmacHex(env.JWT_SECRET, state);
-  if (expectSig !== savedSig) return errPage("State bị giả mạo.");
+  // Verify stateless state (HMAC + timestamp)
+  let nonce, ts, sig;
+  try {
+    [nonce, ts, sig] = b64urlDecode(state).split(".");
+  } catch {
+    return errPage("State không hợp lệ.");
+  }
+  if (!nonce || !ts || !sig) return errPage("State không đầy đủ.");
+  const expectSig = await hmacHex(env.JWT_SECRET, `${nonce}.${ts}`);
+  if (expectSig !== sig) return errPage("State bị giả mạo (HMAC fail).");
+  const age = Date.now() - parseInt(ts, 10);
+  if (!isFinite(age) || age < 0 || age > OAUTH_STATE_TTL * 1000) {
+    return errPage("State đã hết hạn (>10 phút).");
+  }
 
   // Dùng request origin để hoạt động được với cả workers.dev URL và custom domain
   // (Cloudflare proxy của trilu.edu.vn có thể chưa active)
@@ -723,16 +740,11 @@ async function handleGoogleCallback(req, env) {
   const sessOpts = { "Max-Age": SESSION_TTL };
   if (cd2) sessOpts.Domain = cd2;
   const cookie = setCookie(SESSION_COOKIE, sessionToken, sessOpts);
-  // also clear oauth_state
-  const clearOpts = { "Max-Age": 0 };
-  if (cd2) clearOpts.Domain = cd2;
-  const clearState = setCookie("oauth_state", "", clearOpts);
   // Redirect về site chính (ALLOWED_ORIGIN) thay vì relative URL,
   // vì callback có thể chạy trên workers.dev — relative sẽ 404.
   const siteOrigin = env.ALLOWED_ORIGIN || "https://trilu.edu.vn";
   const res = redirect(`${siteOrigin}/flashcard.html?login=ok`);
   res.headers.append("set-cookie", cookie);
-  res.headers.append("set-cookie", clearState);
   return res;
 }
 
