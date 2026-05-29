@@ -550,7 +550,9 @@ async function handleMagicLink(req, env) {
   const payload = { email, expires_at: Date.now() + MAGIC_TTL * 1000 };
   await env.MAGIC.put(`magic:${token}`, JSON.stringify(payload), { expirationTtl: MAGIC_TTL });
 
-  const origin = env.ALLOWED_ORIGIN || "https://trilu.edu.vn";
+  // Dùng request origin để hoạt động được với cả workers.dev URL và custom domain
+  // (Cloudflare proxy của trilu.edu.vn có thể chưa active)
+  const origin = new URL(req.url).origin;
   const link = `${origin}/api/auth/verify?token=${token}`;
   const subject = "Trí Lữ · Đăng nhập tra cứu từ điển";
   const text = `Chào bạn,\n\nClick đường dẫn dưới đây để đăng nhập vào Trí Lữ Nihongo (link hết hạn sau 15 phút):\n\n${link}\n\nNếu bạn không yêu cầu đăng nhập, vui lòng bỏ qua email này.\n\n— Trí Lữ Nihongo · trilu.edu.vn`;
@@ -640,7 +642,9 @@ async function handleGoogleStart(req, env) {
     "Max-Age": OAUTH_STATE_TTL,
     SameSite: "Lax",
   });
-  const origin = env.ALLOWED_ORIGIN || "https://trilu.edu.vn";
+  // Dùng request origin để hoạt động được với cả workers.dev URL và custom domain
+  // (Cloudflare proxy của trilu.edu.vn có thể chưa active)
+  const origin = new URL(req.url).origin;
   const params = new URLSearchParams({
     client_id: env.GOOGLE_CLIENT_ID,
     redirect_uri: `${origin}/api/auth/google/callback`,
@@ -668,7 +672,9 @@ async function handleGoogleCallback(req, env) {
   const expectSig = await hmacHex(env.JWT_SECRET, state);
   if (expectSig !== savedSig) return errPage("State bị giả mạo.");
 
-  const origin = env.ALLOWED_ORIGIN || "https://trilu.edu.vn";
+  // Dùng request origin để hoạt động được với cả workers.dev URL và custom domain
+  // (Cloudflare proxy của trilu.edu.vn có thể chưa active)
+  const origin = new URL(req.url).origin;
   // exchange code
   const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
