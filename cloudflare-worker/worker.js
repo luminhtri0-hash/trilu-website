@@ -621,13 +621,15 @@ async function handleVerifyMagic(req, env) {
     providerId: payload.email,
   });
   const sessionToken = await createSession(env, userId);
-  const cookieOpts = { "Max-Age": SESSION_TTL };
+  // SameSite=None để cookie gửi được trong cross-site fetch (trilu.edu.vn → workers.dev)
+  const cookieOpts = { "Max-Age": SESSION_TTL, SameSite: "None" };
   const cd = cookieDomain(req, env);
   if (cd) cookieOpts.Domain = cd;
   const cookie = setCookie(SESSION_COOKIE, sessionToken, cookieOpts);
-  return redirect("/tra-cuu.html?login=ok", {
-    headers: { "set-cookie": cookie },
-  });
+  const siteOrigin = env.ALLOWED_ORIGIN || "https://trilu.edu.vn";
+  const res = redirect(`${siteOrigin}/flashcard.html?login=ok`);
+  res.headers.append("set-cookie", cookie);
+  return res;
 }
 
 function errPage(message) {
@@ -737,7 +739,8 @@ async function handleGoogleCallback(req, env) {
   });
   const sessionToken = await createSession(env, userId);
   const cd2 = cookieDomain(req, env);
-  const sessOpts = { "Max-Age": SESSION_TTL };
+  // SameSite=None để cookie gửi được trong cross-site fetch (trilu.edu.vn → workers.dev)
+  const sessOpts = { "Max-Age": SESSION_TTL, SameSite: "None" };
   if (cd2) sessOpts.Domain = cd2;
   const cookie = setCookie(SESSION_COOKIE, sessionToken, sessOpts);
   // Redirect về site chính (ALLOWED_ORIGIN) thay vì relative URL,
