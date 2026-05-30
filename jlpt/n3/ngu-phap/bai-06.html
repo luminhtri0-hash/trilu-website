@@ -1,0 +1,506 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 6 · Điều kiện, giả định — Ngữ pháp N3 — Trí Lữ Nihongo</title>
+<meta name="description" content="Ngữ pháp N3 — Bài 6: Điều kiện, giả định. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa; --paper-2:#fff8f0;
+  --surface:#f7f0e8; --surface-2:#f2e5d8;
+  --ink:#1e2430; --muted:#5f6470;
+  --accent:#1a4a6e; --accent-dark:#0f3050;
+  --accent-2:#9b7a38; --accent-3:#c7ab70;
+  --line:#dfcfbb; --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --green:#2d5e3e; --teal:#2d6e7a;
+  --plum:#6a4a8a; --terra:#b56b3f;
+  --rose:#a23b5a; --navy:#1a4a6e;
+  --correct:#2d5e3e; --wrong:#a23b5a;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(26,74,110,0.08), transparent 22%),
+    linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+.cover{ position:relative; overflow:hidden; background:radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%), radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%), linear-gradient(135deg, #0f3050 0%, #1a4a6e 36%, #0a2238 100%); color:#fff; border-radius:30px; box-shadow:var(--shadow); padding:60px 64px 50px; margin-bottom:26px; }
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+.toc-panel{ margin:0 0 34px; background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96)); border:1px solid rgba(155,122,56,0.20); border-radius:24px; box-shadow:var(--shadow); padding:28px 30px; }
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:14px 16px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(26,74,110,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item-number{ display:inline-block; min-width:34px; padding:2px 8px; margin-right:8px; border-radius:8px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:11px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:13.5px; font-family:"Noto Serif CJK JP",serif; }
+.toc-item-summary{ display:block; margin-top:5px; color:var(--muted); font-size:12px; line-height:1.45; }
+
+.document{ background:var(--paper); border:1px solid rgba(155,122,56,0.16); border-radius:28px; box-shadow:var(--shadow); padding:0 0 40px; margin-bottom:40px; overflow:hidden; }
+.lesson-banner{ position:relative; overflow:hidden; padding:30px 44px 28px; background:radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%), linear-gradient(135deg, #0f3050 0%, #1a4a6e 50%, #0a2238 100%); color:#fff; }
+.lesson-banner::after{ content:"文法"; position:absolute; right:-10px; bottom:-50px; font-family:"Noto Serif CJK JP",serif; font-weight:900; font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:8px; }
+.lesson-banner h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:30px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:14px; color:rgba(255,255,255,0.82); }
+.doc-body{ padding:30px 44px 10px; }
+
+.grammar-card{ margin:24px 0; background:#fff; border:1px solid var(--line-2); border-radius:20px; overflow:hidden; box-shadow:0 10px 26px rgba(60,38,19,0.05); }
+.gc-head{ display:flex; align-items:center; gap:14px; padding:18px 24px; background:linear-gradient(90deg, rgba(26,74,110,0.06), rgba(199,171,112,0.05)); border-bottom:2px solid var(--accent); }
+.gc-num{ flex-shrink:0; width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg, var(--accent) 0%, #2d6e9e 100%); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:18px; font-family:"EB Garamond",serif; box-shadow:0 4px 10px rgba(26,74,110,0.25); }
+.gc-title{ font-family:"Noto Serif CJK JP",serif; font-size:22px; font-weight:700; color:var(--accent); flex:1; }
+.gc-title .gc-meaning{ display:block; font-family:Inter,sans-serif; font-size:13px; color:var(--accent-2); font-style:italic; font-weight:600; margin-top:2px; }
+.gc-body{ padding:22px 26px; }
+
+.gc-section{ margin-bottom:18px; }
+.gc-section:last-child{ margin-bottom:0; }
+.gc-label{ display:inline-block; font-size:10.5px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#fff; padding:3px 10px; border-radius:5px; margin-bottom:8px; }
+.gc-label.lbl-struct{ background:var(--green); }
+.gc-label.lbl-explain{ background:var(--accent); }
+.gc-label.lbl-example{ background:var(--accent-2); }
+.gc-label.lbl-note{ background:var(--terra); }
+.gc-label.lbl-compare{ background:var(--plum); }
+
+.struct-box{ background:linear-gradient(180deg, #f3f9ed, #e7f2dc); border:1px solid #c8dab1; border-left:4px solid var(--green); border-radius:10px; padding:12px 16px; font-family:"Noto Serif CJK JP",serif; font-size:14.5px; color:#2c4a2d; line-height:1.85; }
+.struct-box code{ background:rgba(45,94,62,0.10); padding:1px 6px; border-radius:4px; font-family:"Noto Serif CJK JP",serif; color:var(--green); font-weight:700; }
+
+.explain-box{ background:linear-gradient(180deg, #f4f8fc, #e8f0f8); border:1px solid #c4d8e8; border-left:4px solid var(--accent); border-radius:10px; padding:12px 16px; font-size:13.5px; line-height:1.7; color:#1f3a4f; }
+.explain-box strong{ color:var(--accent); }
+
+.examples-list{ display:flex; flex-direction:column; gap:10px; }
+.ex-box{ background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent-2); padding:13px 16px; border-radius:0 12px 12px 0; }
+.ex-jp{ font-size:15px; color:#222; margin-bottom:6px; line-height:1.95; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn, .q-vn{ font-size:13.5px; color:#6e5230; font-style:italic; line-height:1.55; padding-top:8px; border-top:1px dotted #e2d4b8; margin-top:6px; }
+.ex-vn.collapsed, .q-vn.collapsed{ display:none; }
+
+/* Toggle button for translation */
+.vn-toggle{ display:inline-flex; align-items:center; gap:4px; margin-top:4px; padding:3px 11px; background:transparent; border:1px dashed #b08850; border-radius:999px; color:#6e5230; font-size:10.5px; cursor:pointer; transition:all 0.15s; font-family:inherit; font-weight:600; letter-spacing:0.04em; }
+.vn-toggle:hover{ background:#fff5e8; border-style:solid; border-color:#9b7a38; }
+.vn-toggle::before{ content:"訳"; font-family:"Noto Serif CJK JP",serif; font-size:11px; margin-right:2px; color:#9b7a38; }
+.vn-toggle.shown{ background:#fff5e8; border-style:solid; border-color:#9b7a38; color:#4a3010; }
+
+.note-box{ background:linear-gradient(180deg, #fff6ee, #fbe9d4); border:1px solid #ecc89e; border-left:4px solid var(--terra); border-radius:10px; padding:12px 16px; font-size:13px; line-height:1.65; color:#6a3e1c; }
+.note-box strong{ color:var(--terra); }
+
+.compare-box{ background:linear-gradient(180deg, #f9f3fb, #ecdef2); border:1px solid #d8c4e6; border-left:4px solid var(--plum); border-radius:10px; padding:12px 16px; font-size:13px; line-height:1.7; color:#3f2a52; }
+.compare-box strong{ color:var(--plum); }
+.compare-box .cmp-item{ margin:6px 0; padding-left:14px; position:relative; }
+.compare-box .cmp-item::before{ content:"◆"; position:absolute; left:0; color:var(--plum); }
+.compare-box .cmp-jp{ font-family:"Noto Serif CJK JP",serif; font-weight:700; color:var(--plum); }
+
+/* ============ EXERCISE BLOCK (Multiple Choice) ============ */
+.exercise-block{ margin:18px 0 6px; background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%); border:1px solid #e7d7be; border-radius:16px; overflow:hidden; box-shadow:0 4px 10px rgba(60,38,19,0.04); }
+.exercise-banner{ display:flex; align-items:center; gap:12px; padding:12px 20px; background:linear-gradient(90deg, var(--rose) 0%, #c14e6e 100%); color:#fff; }
+.exercise-icon{ width:34px; height:34px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:13px; font-family:"Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:15px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:11px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:1px; }
+.exercise-body{ padding:14px 20px; }
+
+.ex-q{ padding:10px 0; border-bottom:1px dotted #eadfce; }
+.ex-q:last-child{ border-bottom:none; }
+.q-stem{ font-size:14px; line-height:1.85; font-family:"Noto Serif CJK JP",serif; color:#222; }
+.q-stem .qnum{ display:inline-block; min-width:22px; font-weight:800; color:var(--rose); margin-right:4px; font-family:"EB Garamond",sans-serif; font-size:14.5px; }
+.q-stem .q-blank{ display:inline-block; min-width:60px; padding:0 8px; border-bottom:1.5px solid #b08850; color:#b08850; font-family:"Noto Serif CJK JP",serif; font-weight:700; text-align:center; }
+
+.q-options{ display:grid; grid-template-columns:repeat(2, 1fr); gap:6px; margin:8px 0 0 24px; }
+.q-opt{ padding:6px 12px; background:#fff; border:1px solid #e0d3b8; border-radius:8px; cursor:pointer; font-family:"Noto Serif CJK JP",serif; font-size:13.5px; transition:all 0.15s; display:flex; align-items:center; gap:6px; color:#4a3a20; }
+.q-opt::before{ content:attr(data-mark); color:var(--rose); font-weight:800; font-family:"EB Garamond",sans-serif; min-width:18px; }
+.q-opt:hover{ background:#fff5e8; border-color:#b08850; }
+.q-opt.correct{ background:linear-gradient(180deg, #e8f5e8, #d4edd4); border-color:var(--correct); color:var(--correct); font-weight:700; }
+.q-opt.correct::before{ color:var(--correct); }
+.q-opt.correct::after{ content:"✓"; margin-left:auto; color:var(--correct); font-weight:800; }
+.q-opt.wrong{ background:linear-gradient(180deg, #fce4e6, #f8d7da); border-color:var(--wrong); color:var(--wrong); }
+.q-opt.wrong::before{ color:var(--wrong); }
+.q-opt.wrong::after{ content:"✗"; margin-left:auto; color:var(--wrong); font-weight:800; }
+
+.q-foot{ display:flex; align-items:center; gap:8px; margin-top:6px; margin-left:24px; flex-wrap:wrap; }
+
+.answer-detail{ display:none; padding:6px 12px; background:#fef9ee; border:1px dashed #c7ab70; border-radius:8px; font-size:12px; color:#5a4520; margin-top:6px; margin-left:24px; line-height:1.5; }
+.answer-detail.shown{ display:block; }
+.answer-detail strong{ color:var(--accent); }
+
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  .gc-body{ padding:16px 18px; }
+  .q-options{ grid-template-columns:1fr; }
+}
+@media print {
+  body{ background:#fff; font-size:12px; }
+  .page-shell{ padding:0; max-width:none; }
+  .cover{ page-break-after:always; box-shadow:none; }
+  .toc-panel{ page-break-after:always; }
+  .document{ page-break-before:always; box-shadow:none; }
+  .vn-toggle{ display:none; }
+  .ex-vn, .q-vn{ display:block !important; }
+  .ex-vn.collapsed, .q-vn.collapsed{ display:block !important; }
+  .answer-detail{ display:block !important; }
+}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:200;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.92);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:38px;height:38px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.18em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}.tl-bc a:hover{color:var(--tl-ink)}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-wrap{max-width:1000px;margin:0 auto;padding:24px}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px;transition:all .2s}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3;pointer-events:none}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n3.html">N3</a> · <a href="../ngu-phap.html">Ngữ pháp</a> · Bài 6</div></div></a><a class="tl-back" href="../ngu-phap.html">← Danh sách bài</a></nav>
+<div class="tl-wrap">
+<article class="document" id="lesson-6">
+<div class="lesson-banner"><span class="lesson-kicker">6課 — Bài 6 · もし、…</span><h2>Điều kiện, giả định</h2><div class="lesson-sub">5 mẫu: ～(の)なら / ～ては・(の)では / ～さえ～ば / たとえ～ても / ～ば・たら・なら</div></div>
+<div class="doc-body">
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">1</div><div class="gc-title">～(の)なら<span class="gc-meaning">Nếu ~ (theo tình huống đối phương đưa ra)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>普通形 (ナ形 だ/-である・名 -である)</code> ＋ (の)なら</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Tiếp nhận <strong>thông tin/tình huống từ người khác</strong>, rồi đưa ra phán đoán, ý kiến, lời khuyên hoặc đề nghị.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①「ちょっと<ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>いんです。」「<ruby>頭<rt>あたま</rt></ruby>が<ruby>痛<rt>いた</rt></ruby>い<span class="target">なら</span>、<ruby>早<rt>はや</rt></ruby>く<ruby>帰<rt>かえ</rt></ruby>って<ruby>休<rt>やす</rt></ruby>んだほうがいい。」</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">"Tôi hơi đau đầu." — "Nếu đau đầu thì về sớm nghỉ ngơi đi."</div></div>
+<div class="ex-box"><div class="ex-jp">②<ruby>京<rt>きょう</rt></ruby><ruby>都<rt>と</rt></ruby>へ<ruby>行<rt>い</rt></ruby>く<span class="target">なら</span>、<ruby>嵐<rt>あらし</rt></ruby><ruby>山<rt>やま</rt></ruby>がおすすめです。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Nếu (anh) đi Kyoto thì tôi gợi ý Arashiyama.</div></div>
+<div class="ex-box"><div class="ex-jp">③その<ruby>本<rt>ほん</rt></ruby>、もう<ruby>読<rt>よ</rt></ruby>んだ<span class="target">のなら</span>、<ruby>貸<rt>か</rt></ruby>してくれない?</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Quyển sách đó, nếu đã đọc xong thì cho mình mượn được không?</div></div>
+</div></div>
+<div class="gc-section"><span class="gc-label lbl-compare">Phân biệt</span><div class="compare-box">
+<div class="cmp-item"><span class="cmp-jp">～なら</span>: tiếp nhận <strong>thông tin từ đối phương</strong> rồi đưa ra ý kiến.</div>
+<div class="cmp-item"><span class="cmp-jp">～たら</span>: chỉ điều kiện chung, có thể tự nói ra.</div>
+<div class="cmp-item"><span class="cmp-jp">～ば</span>: điều kiện trừu tượng/lý thuyết.</div>
+</div></div>
+
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～なら</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>日<rt>に</rt></ruby><ruby>本<rt>ほん</rt></ruby><ruby>語<rt>ご</rt></ruby>を<ruby>勉<rt>べん</rt></ruby><ruby>強<rt>きょう</rt></ruby>する____、まずひらがなを<ruby>覚<rt>おぼ</rt></ruby>えなさい。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="false">うちに</span>
+<span class="q-opt" data-mark="②" data-correct="true">なら</span>
+<span class="q-opt" data-mark="③" data-correct="false">ところで</span>
+<span class="q-opt" data-mark="④" data-correct="false">として</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Nếu định học tiếng Nhật thì hãy nhớ hiragana trước.</div>
+<div class="answer-detail"><strong>Đáp án: ② なら</strong> — Đưa ra lời khuyên dựa trên ý định người đối thoại.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>暇<rt>ひま</rt></ruby>____、<ruby>手<rt>て</rt></ruby><ruby>伝<rt>つだ</rt></ruby>ってくれない?</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="true">なら</span>
+<span class="q-opt" data-mark="②" data-correct="false">ところ</span>
+<span class="q-opt" data-mark="③" data-correct="false">うちに</span>
+<span class="q-opt" data-mark="④" data-correct="false">として</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Nếu rảnh thì giúp tôi được không?</div>
+<div class="answer-detail"><strong>Đáp án: ① なら</strong> — Điều kiện về trạng thái của người nghe.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>映<rt>えい</rt></ruby><ruby>画<rt>が</rt></ruby>を<ruby>見<rt>み</rt></ruby>に<ruby>行<rt>い</rt></ruby>く____<ruby>朝<rt>あさ</rt></ruby>の<ruby>回<rt>かい</rt></ruby>が<ruby>安<rt>やす</rt></ruby>いよ。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="false">うちに</span>
+<span class="q-opt" data-mark="②" data-correct="false">ばかり</span>
+<span class="q-opt" data-mark="③" data-correct="true">なら</span>
+<span class="q-opt" data-mark="④" data-correct="false">ところで</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Nếu đi xem phim thì suất sáng rẻ đấy.</div>
+<div class="answer-detail"><strong>Đáp án: ③ なら</strong> — Gợi ý dựa trên ý định người nghe.</div></div>
+
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">2</div><div class="gc-title">～ては / ～(の)では<span class="gc-meaning">Nếu ~ thì… (kết quả xấu)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>動・て形・イ形 -くて・ナ形 -で・名で</code> ＋ は<br/><code>普通形 (ナ形 -な・名 -な)</code> ＋ のでは</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">"Nếu sự thật ~ (hoặc giả định ~) thì sẽ có <strong>kết quả không hay…</strong>". Vế sau mang ý tiêu cực.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby>こんなに<ruby>遅<rt>おそ</rt></ruby>く<ruby>帰<rt>かえ</rt></ruby>っ<span class="target">ては</span>、<ruby>体<rt>からだ</rt></ruby>を<ruby>壊<rt>こわ</rt></ruby>すよ。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Mỗi ngày mà về trễ thế này thì sẽ hỏng sức khỏe.</div></div>
+<div class="ex-box"><div class="ex-jp">②そんなに<ruby>無<rt>む</rt></ruby><ruby>責<rt>せき</rt></ruby><ruby>任<rt>にん</rt></ruby><span class="target">では</span>、みんなに<ruby>嫌<rt>きら</rt></ruby>われる。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Vô trách nhiệm như vậy thì sẽ bị mọi người ghét.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>今<rt>いま</rt></ruby>から<ruby>始<rt>はじ</rt></ruby>める<span class="target">のでは</span><ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>わない。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Bây giờ mới bắt đầu thì không kịp đâu.</div></div>
+</div></div>
+
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ては / のでは</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>こんなに<ruby>暑<rt>あつ</rt></ruby>く____、<ruby>勉<rt>べん</rt></ruby><ruby>強<rt>きょう</rt></ruby>に<ruby>集<rt>しゅう</rt></ruby><ruby>中<rt>ちゅう</rt></ruby>できない。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="true">ては</span>
+<span class="q-opt" data-mark="②" data-correct="false">のでは</span>
+<span class="q-opt" data-mark="③" data-correct="false">ところで</span>
+<span class="q-opt" data-mark="④" data-correct="false">うちに</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Nóng thế này thì không tập trung học được.</div>
+<div class="answer-detail"><strong>Đáp án: ① ては</strong> — Sau tính từ -くて + は.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>ジュースばかり<ruby>飲<rt>の</rt></ruby>んでい____、<ruby>体<rt>からだ</rt></ruby>に<ruby>悪<rt>わる</rt></ruby>いよ。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="true">ては</span>
+<span class="q-opt" data-mark="②" data-correct="false">のでは</span>
+<span class="q-opt" data-mark="③" data-correct="false">うちに</span>
+<span class="q-opt" data-mark="④" data-correct="false">ところで</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Cứ uống nước ngọt suốt thì không tốt cho sức khỏe.</div>
+<div class="answer-detail"><strong>Đáp án: ① ては</strong> — 動 て形 + は; kết quả tiêu cực ở vế sau.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>説<rt>せつ</rt></ruby><ruby>明<rt>めい</rt></ruby>がそんなに<ruby>難<rt>むずか</rt></ruby>しい____、<ruby>誰<rt>だれ</rt></ruby>もわからないだろう。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="false">うちに</span>
+<span class="q-opt" data-mark="②" data-correct="true">のでは</span>
+<span class="q-opt" data-mark="③" data-correct="false">ところで</span>
+<span class="q-opt" data-mark="④" data-correct="false">として</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Giải thích khó thế thì chẳng ai hiểu.</div>
+<div class="answer-detail"><strong>Đáp án: ② のでは</strong> — Sau tính từ い + のでは.</div></div>
+
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">3</div><div class="gc-title">～さえ～ば<span class="gc-meaning">Chỉ cần ~ là (đủ)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box"><code>名 ＋ さえ</code> ＋ <code>動・ば形 / イ形 -ければ / ナ形 なら</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Chỉ ra <strong>điều kiện tối thiểu cần và đủ</strong>: "Chỉ cần ~ thì vế sau sẽ được thực hiện".</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①あなた<span class="target">さえ</span>そばにいてくれ<span class="target">れば</span>、<ruby>何<rt>なに</rt></ruby>もいらない。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Chỉ cần em ở bên là anh không cần gì nữa.</div></div>
+<div class="ex-box"><div class="ex-jp">②お<ruby>金<rt>かね</rt></ruby><span class="target">さえ</span>あれ<span class="target">ば</span>、なんでも<ruby>買<rt>か</rt></ruby>える。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Chỉ cần có tiền là gì cũng mua được.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>一<rt>ひと</rt></ruby><ruby>言<rt>こと</rt></ruby>「ありがとう」と<ruby>言<rt>い</rt></ruby>い<span class="target">さえすれば</span>、<ruby>相<rt>あい</rt></ruby><ruby>手<rt>て</rt></ruby>はうれしいはずだ。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Chỉ cần nói một câu "cảm ơn" thì đối phương chắc sẽ vui.</div></div>
+</div></div>
+
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～さえ～ば</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>____、もっと<ruby>勉<rt>べん</rt></ruby><ruby>強<rt>きょう</rt></ruby>できるのに。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="true">さえあれば</span>
+<span class="q-opt" data-mark="②" data-correct="false">さえだから</span>
+<span class="q-opt" data-mark="③" data-correct="false">ばかりで</span>
+<span class="q-opt" data-mark="④" data-correct="false">ところで</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Chỉ cần có thời gian là tôi đã học được nhiều hơn.</div>
+<div class="answer-detail"><strong>Đáp án: ① さえあれば</strong> — Điều kiện tối thiểu cần.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>体<rt>からだ</rt></ruby>____<ruby>丈<rt>じょう</rt></ruby><ruby>夫<rt>ぶ</rt></ruby>なら、どんな<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>でもできる。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="false">こそ</span>
+<span class="q-opt" data-mark="②" data-correct="true">さえ</span>
+<span class="q-opt" data-mark="③" data-correct="false">まで</span>
+<span class="q-opt" data-mark="④" data-correct="false">ばかり</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Chỉ cần khỏe mạnh là làm việc gì cũng được.</div>
+<div class="answer-detail"><strong>Đáp án: ② さえ</strong> — Cấu trúc 名 + さえ + (ナ形)なら.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>ボタンを<ruby>押<rt>お</rt></ruby>し____、<ruby>機<rt>き</rt></ruby><ruby>械<rt>かい</rt></ruby>が<ruby>動<rt>うご</rt></ruby>く。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="false">さえあれば</span>
+<span class="q-opt" data-mark="②" data-correct="true">さえすれば</span>
+<span class="q-opt" data-mark="③" data-correct="false">ばかりで</span>
+<span class="q-opt" data-mark="④" data-correct="false">ところで</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Chỉ cần bấm nút là máy chạy.</div>
+<div class="answer-detail"><strong>Đáp án: ② さえすれば</strong> — Cấu trúc 動ます形 + さえ + すれば.</div></div>
+
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">4</div><div class="gc-title">たとえ～ても / たとえ～でも<span class="gc-meaning">Cho dù ~ đi nữa thì…</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">たとえ ＋ <code>動・て形＋も / イ形 -くて＋も / ナ形 -で＋も / 名で＋も</code></div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Diễn tả <strong>giả định ngược</strong>: "Cho dù điều ~ là sự thật đi nữa thì cũng không ảnh hưởng đến vế sau".</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①<span class="target">たとえ</span><ruby>失<rt>しっ</rt></ruby><ruby>敗<rt>ぱい</rt></ruby>し<span class="target">ても</span>、もう<ruby>一<rt>いち</rt></ruby><ruby>度<rt>ど</rt></ruby><ruby>挑<rt>ちょう</rt></ruby><ruby>戦<rt>せん</rt></ruby>します。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Dù thất bại tôi cũng thử lại lần nữa.</div></div>
+<div class="ex-box"><div class="ex-jp">②<span class="target">たとえ</span><ruby>高<rt>たか</rt></ruby>く<span class="target">ても</span>、<ruby>必<rt>ひつ</rt></ruby><ruby>要<rt>よう</rt></ruby>なら<ruby>買<rt>か</rt></ruby>います。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Dù đắt nếu cần thì tôi vẫn mua.</div></div>
+<div class="ex-box"><div class="ex-jp">③<span class="target">たとえ</span><ruby>嘘<rt>うそ</rt></ruby><span class="target">でも</span>、うれしい<ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby>はいつでもうれしい。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Dù là dối, lời lẽ vui vẻ thì lúc nào cũng làm vui.</div></div>
+</div></div>
+
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập たとえ～ても</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>たとえ____、<ruby>明<rt>あ</rt></ruby><ruby>日<rt>した</rt></ruby>のイベントは<ruby>行<rt>おこな</rt></ruby>われます。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="false">雨が降って</span>
+<span class="q-opt" data-mark="②" data-correct="true">雨が降っても</span>
+<span class="q-opt" data-mark="③" data-correct="false">雨が降ったら</span>
+<span class="q-opt" data-mark="④" data-correct="false">雨が降る</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Cho dù mưa đi nữa, sự kiện ngày mai vẫn diễn ra.</div>
+<div class="answer-detail"><strong>Đáp án: ② 雨が降っても</strong> — Cấu trúc たとえ ＋ て形 + も.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>たとえ<ruby>忙<rt>いそが</rt></ruby>____、<ruby>運<rt>うん</rt></ruby><ruby>動<rt>どう</rt></ruby>はしたほうがいい。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="false">しい</span>
+<span class="q-opt" data-mark="②" data-correct="true">しくても</span>
+<span class="q-opt" data-mark="③" data-correct="false">しかった</span>
+<span class="q-opt" data-mark="④" data-correct="false">しいで</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Dù bận đi nữa thì cũng nên tập thể dục.</div>
+<div class="answer-detail"><strong>Đáp án: ② しくても</strong> — イ形 -くて + も.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>たとえ____、<ruby>大<rt>たい</rt></ruby><ruby>切<rt>せつ</rt></ruby>な<ruby>意<rt>い</rt></ruby><ruby>見<rt>けん</rt></ruby>を<ruby>持<rt>も</rt></ruby>っている。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="false">子ども</span>
+<span class="q-opt" data-mark="②" data-correct="true">子どもでも</span>
+<span class="q-opt" data-mark="③" data-correct="false">子どもだ</span>
+<span class="q-opt" data-mark="④" data-correct="false">子どもなら</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Cho dù là trẻ em cũng có ý kiến quan trọng.</div>
+<div class="answer-detail"><strong>Đáp án: ② 子どもでも</strong> — 名 + でも sau たとえ.</div></div>
+
+</div></div>
+</div></div>
+
+<div class="grammar-card">
+<div class="gc-head"><div class="gc-num">5</div><div class="gc-title">～ば / ～たら / ～なら (giả định trái thực tế)<span class="gc-meaning">Giá mà ~ thì… (nhưng thực tế không)</span></div></div>
+<div class="gc-body">
+<div class="gc-section"><span class="gc-label lbl-struct">Cấu tạo</span><div class="struct-box">
+<code>動・ば形 / イ形 -ければ / ナ形 なら / 名 なら</code><br/>
+<code>普通形 (過去形)</code> ＋ ら
+</div></div>
+<div class="gc-section"><span class="gc-label lbl-explain">Giải thích</span><div class="explain-box">Diễn tả <strong>giả định ngược với thực tế</strong>: "Giá mà ~ thì đã… (nhưng thực tế thì không)". Vế sau thường dùng「のに / のだが / だろう」.</div></div>
+<div class="gc-section"><span class="gc-label lbl-example">Ví dụ</span>
+<div class="examples-list">
+<div class="ex-box"><div class="ex-jp">①お<ruby>金<rt>かね</rt></ruby>と<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>があ<span class="target">れば</span>、<ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby><ruby>一<rt>いっ</rt></ruby><ruby>周<rt>しゅう</rt></ruby>するのに。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Giá mà có tiền và thời gian thì tôi đã đi vòng quanh thế giới.</div></div>
+<div class="ex-box"><div class="ex-jp">②もっと<ruby>早<rt>はや</rt></ruby>く<ruby>知<rt>し</rt></ruby>ってい<span class="target">たら</span>、<ruby>違<rt>ちが</rt></ruby>う<ruby>結<rt>けっ</rt></ruby><ruby>果<rt>か</rt></ruby>になっただろう。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Nếu biết sớm hơn thì kết quả đã khác.</div></div>
+<div class="ex-box"><div class="ex-jp">③<ruby>学<rt>がく</rt></ruby><ruby>生<rt>せい</rt></ruby><span class="target">なら</span><ruby>割<rt>わり</rt></ruby><ruby>引<rt>びき</rt></ruby>でチケットが<ruby>買<rt>か</rt></ruby>えたのに、もう<ruby>卒<rt>そつ</rt></ruby><ruby>業<rt>ぎょう</rt></ruby>してしまった。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Nếu là sinh viên thì đã mua vé giảm giá được, nhưng đã ra trường rồi.</div></div>
+</div></div>
+
+<div class="exercise-block"><div class="exercise-banner"><div class="exercise-icon">問</div><div><h4>Bài tập ～ば・たら・なら</h4><span class="ex-subtitle">3 câu</span></div></div>
+<div class="exercise-body">
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>もっと<ruby>勉<rt>べん</rt></ruby><ruby>強<rt>きょう</rt></ruby>____<ruby>合<rt>ごう</rt></ruby><ruby>格<rt>かく</rt></ruby>できたのに。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="false">して</span>
+<span class="q-opt" data-mark="②" data-correct="true">していたら</span>
+<span class="q-opt" data-mark="③" data-correct="false">するなら</span>
+<span class="q-opt" data-mark="④" data-correct="false">するうちに</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Giá mà tôi học nhiều hơn thì đã đậu rồi.</div>
+<div class="answer-detail"><strong>Đáp án: ② していたら</strong> — Giả định trái thực tế dùng quá khứ + のに.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>雨<rt>あめ</rt></ruby>が____、<ruby>散<rt>さん</rt></ruby><ruby>歩<rt>ぽ</rt></ruby>に<ruby>行<rt>い</rt></ruby>けたのに。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="true">降らなければ</span>
+<span class="q-opt" data-mark="②" data-correct="false">降ったら</span>
+<span class="q-opt" data-mark="③" data-correct="false">降るなら</span>
+<span class="q-opt" data-mark="④" data-correct="false">降って</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Nếu trời không mưa thì tôi đã đi dạo được.</div>
+<div class="answer-detail"><strong>Đáp án: ① 降らなければ</strong> — Giả định ngược (đang mưa).</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>あの<ruby>時<rt>とき</rt></ruby><ruby>彼<rt>かれ</rt></ruby>に____、<ruby>今<rt>いま</rt></ruby>とは<ruby>違<rt>ちが</rt></ruby>う<ruby>人<rt>じん</rt></ruby><ruby>生<rt>せい</rt></ruby>だっただろう。</div>
+<div class="q-options">
+<span class="q-opt" data-mark="①" data-correct="false">会わない</span>
+<span class="q-opt" data-mark="②" data-correct="true">会っていたら</span>
+<span class="q-opt" data-mark="③" data-correct="false">会うなら</span>
+<span class="q-opt" data-mark="④" data-correct="false">会うところ</span>
+</div>
+<div class="q-foot"><button class="vn-toggle">Xem dịch</button></div>
+<div class="q-vn collapsed">Nếu lúc đó gặp anh ấy thì cuộc đời tôi đã khác.</div>
+<div class="answer-detail"><strong>Đáp án: ② 会っていたら</strong> — Giả định ngược ở quá khứ.</div></div>
+
+</div></div>
+</div></div>
+
+</div></article>
+</div>
+<nav class="tl-pager"><a href="bai-05.html">← Bài 5</a><a class="mid" href="../ngu-phap.html">▦ Danh sách bài</a><a href="bai-07.html">Bài 7 →</a></nav>
+<script>
+document.addEventListener('click', function(e) {
+  // Toggle individual translation (next sibling pattern)
+  if (e.target.classList.contains('vn-toggle')) {
+    const sibling = e.target.nextElementSibling;
+    if (sibling && (sibling.classList.contains('ex-vn') || sibling.classList.contains('q-vn'))) {
+      sibling.classList.toggle('collapsed');
+      const isHidden = sibling.classList.contains('collapsed');
+      e.target.textContent = isHidden ? 'Xem dịch' : 'Ẩn dịch';
+      e.target.classList.toggle('shown', !isHidden);
+    }
+    return;
+  }
+
+  // Multiple choice option click
+  if (e.target.classList.contains('q-opt')) {
+    const opt = e.target;
+    const parent = opt.parentElement;
+    const isCorrect = opt.dataset.correct === 'true';
+    // Reset all options
+    parent.querySelectorAll('.q-opt').forEach(o => { o.classList.remove('correct','wrong'); });
+    if (isCorrect) {
+      opt.classList.add('correct');
+    } else {
+      opt.classList.add('wrong');
+      // Reveal correct
+      const correctOpt = parent.querySelector('.q-opt[data-correct="true"]');
+      if (correctOpt) correctOpt.classList.add('correct');
+    }
+    // Show answer detail if exists
+    const question = opt.closest('.ex-q');
+    const detail = question && question.querySelector('.answer-detail');
+    if (detail) detail.classList.add('shown');
+    return;
+  }
+});
+</script>
+</body></html>

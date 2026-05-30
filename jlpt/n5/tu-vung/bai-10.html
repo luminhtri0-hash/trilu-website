@@ -1,0 +1,1525 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 10 · Sự tồn tại & Vị trí — Từ vựng N5 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N5 — Bài 10: Sự tồn tại & Vị trí. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@400;700;900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#58CC02;
+  --primary-dark:#46A302;
+  --primary-light:#89E219;
+  --secondary:#1CB0F6;
+  --secondary-dark:#0E8AC8;
+  --accent:#FF9600;
+  --accent-2:#FF4B4B;
+  --purple:#CE82FF;
+  --pink:#FF86B5;
+  --yellow:#FFC800;
+  --teal:#19C2C8;
+  --ink:#3C3C3C;
+  --ink-2:#777;
+  --bg:#FFF9F0;
+  --bg-2:#FFFFFF;
+  --card:#FFFFFF;
+  --border:#E5E5E5;
+  --shadow-sm:0 2px 0 #E5E5E5;
+  --shadow-md:0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg:0 10px 30px rgba(0,0,0,0.12);
+  --radius:16px;
+  --radius-sm:10px;
+  --radius-lg:24px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Baloo 2','Noto Sans JP',system-ui,sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(88,204,2,0.06), transparent 30%),
+    radial-gradient(circle at 90% 30%, rgba(28,176,246,0.06), transparent 30%),
+    radial-gradient(circle at 50% 90%, rgba(255,150,0,0.04), transparent 40%),
+    var(--bg);
+  color:var(--ink);
+  line-height:1.6;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+}
+.jp{font-family:'Noto Sans JP','Noto Serif JP',sans-serif}
+
+/* ==== Layout ==== */
+.app{display:grid;grid-template-columns:280px 1fr;min-height:100vh}
+.sidebar{
+  background:linear-gradient(180deg,#fff 0%,#fffaf0 100%);
+  border-right:2px solid var(--border);
+  padding:24px 16px;
+  position:sticky;top:0;height:100vh;overflow-y:auto;
+  box-shadow:4px 0 20px rgba(0,0,0,0.03);
+}
+.sidebar::-webkit-scrollbar{width:6px}
+.sidebar::-webkit-scrollbar-thumb{background:#ddd;border-radius:3px}
+
+.brand{display:flex;align-items:center;gap:12px;padding:8px 12px 16px;border-bottom:2px dashed var(--border);margin-bottom:16px}
+.brand-logo{
+  width:44px;height:44px;border-radius:14px;
+  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+  display:flex;align-items:center;justify-content:center;color:#fff;
+  font-weight:900;font-size:20px;
+  box-shadow:0 4px 0 var(--primary-dark);
+}
+.brand-text h1{font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-0.02em}
+.brand-text p{font-size:11px;color:var(--ink-2);font-weight:600;letter-spacing:0.05em;text-transform:uppercase}
+
+.search-box{
+  display:flex;align-items:center;gap:8px;
+  background:#F5F5F5;border:2px solid transparent;
+  padding:10px 14px;border-radius:12px;margin-bottom:16px;
+  transition:all .2s;
+}
+.search-box:focus-within{background:#fff;border-color:var(--secondary)}
+.search-box input{border:none;outline:none;background:transparent;flex:1;font-family:inherit;font-size:13px;color:var(--ink)}
+.search-box svg{flex-shrink:0;color:var(--ink-2)}
+
+.nav-title{font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-2);font-weight:700;padding:8px 12px 4px}
+.nav-list{list-style:none}
+.nav-item{margin-bottom:4px}
+.nav-link{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 12px;border-radius:10px;
+  text-decoration:none;color:var(--ink);font-weight:600;font-size:13.5px;
+  transition:all .15s;cursor:pointer;border:none;background:transparent;
+  width:100%;text-align:left;font-family:inherit;
+}
+.nav-link:hover{background:#F0F9E8;color:var(--primary-dark)}
+.nav-link.active{background:linear-gradient(90deg,var(--primary),var(--primary-light));color:#fff;box-shadow:0 3px 0 var(--primary-dark)}
+.nav-link.active .nav-num{background:rgba(255,255,255,0.25);color:#fff}
+.nav-num{
+  flex-shrink:0;width:28px;height:28px;border-radius:8px;
+  background:#F0F0F0;color:var(--ink-2);
+  display:flex;align-items:center;justify-content:center;
+  font-weight:800;font-size:12px;
+}
+.nav-text{flex:1;line-height:1.2}
+.nav-text small{display:block;font-size:10.5px;font-weight:500;color:inherit;opacity:0.7;margin-top:2px}
+
+/* ==== Main ==== */
+.main{padding:0;overflow-x:hidden}
+
+.hero{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#58CC02 0%,#19C2C8 50%,#1CB0F6 100%);
+  color:#fff;padding:60px 40px 80px;border-radius:0 0 32px 32px;margin-bottom:-40px;
+}
+.hero::before{
+  content:"";position:absolute;top:-50px;right:-50px;width:300px;height:300px;
+  background:radial-gradient(circle,rgba(255,255,255,0.15),transparent 70%);border-radius:50%;
+}
+.hero::after{
+  content:"五十";position:absolute;right:30px;bottom:-30px;
+  font-family:'Noto Serif JP',serif;font-size:240px;font-weight:900;
+  color:rgba(255,255,255,0.08);line-height:1;letter-spacing:-0.05em;
+}
+.hero-content{position:relative;z-index:1;max-width:900px}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.2);backdrop-filter:blur(10px);padding:6px 14px;border-radius:999px;font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;border:1px solid rgba(255,255,255,0.3)}
+.hero h1{font-size:42px;font-weight:800;line-height:1.1;letter-spacing:-0.02em;margin-bottom:8px}
+.hero .jp-title{font-family:'Noto Serif JP',serif;font-size:24px;font-weight:700;opacity:0.9;margin-bottom:16px}
+.hero p{font-size:16px;opacity:0.95;max-width:600px;line-height:1.5}
+.hero-stats{display:flex;gap:12px;margin-top:24px;flex-wrap:wrap}
+.hero-stat{background:rgba(255,255,255,0.15);backdrop-filter:blur(10px);padding:10px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.25)}
+.hero-stat strong{display:block;font-size:20px;font-weight:800}
+.hero-stat span{font-size:11px;opacity:0.9;letter-spacing:0.05em;text-transform:uppercase}
+
+.content{padding:40px;max-width:1400px;margin:0 auto}
+
+/* ==== Welcome card ==== */
+.welcome-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:60px;margin-bottom:32px}
+.welcome-card{
+  background:var(--card);padding:24px;border-radius:var(--radius);
+  border:2px solid var(--border);box-shadow:var(--shadow-sm);
+  transition:all .2s;cursor:pointer;
+}
+.welcome-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--primary)}
+.welcome-card-icon{width:56px;height:56px;border-radius:16px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;color:#fff}
+.welcome-card h3{font-size:16px;font-weight:700;margin-bottom:6px}
+.welcome-card p{font-size:13px;color:var(--ink-2);line-height:1.5}
+
+/* ==== Lesson ==== */
+.lesson{display:none;animation:fadeIn .4s ease}
+.lesson.active{display:block}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+
+.lesson-header{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,var(--bg-grad-1,#58CC02) 0%,var(--bg-grad-2,#1CB0F6) 100%);
+  color:#fff;padding:32px 36px;border-radius:var(--radius-lg);margin-bottom:24px;
+  box-shadow:var(--shadow-md);
+}
+.lesson-header::before{
+  content:attr(data-mark);position:absolute;right:-20px;bottom:-60px;
+  font-family:'Noto Serif JP',serif;font-size:200px;font-weight:900;
+  color:rgba(255,255,255,0.1);line-height:1;letter-spacing:-0.05em;
+}
+.lesson-header-inner{position:relative;z-index:1}
+.lesson-number{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.25);backdrop-filter:blur(10px);padding:5px 12px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:12px;border:1px solid rgba(255,255,255,0.3)}
+.lesson-title{font-size:28px;font-weight:800;margin-bottom:6px;letter-spacing:-0.01em}
+.lesson-jp{font-family:'Noto Serif JP',serif;font-size:18px;font-weight:700;opacity:0.9;margin-bottom:10px}
+.lesson-desc{font-size:14px;opacity:0.92;max-width:600px;line-height:1.5}
+.lesson-meta{display:flex;gap:8px;margin-top:14px;flex-wrap:wrap}
+.lesson-meta span{background:rgba(255,255,255,0.2);padding:4px 10px;border-radius:999px;font-size:11px;font-weight:600}
+
+/* Section */
+.section{margin-bottom:32px}
+.section-title{
+  display:flex;align-items:center;gap:12px;margin-bottom:16px;padding:0 4px;
+}
+.section-title-num{
+  width:34px;height:34px;border-radius:10px;
+  background:linear-gradient(135deg,var(--accent),#FF7B00);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;
+  box-shadow:0 3px 0 #D17F00;flex-shrink:0;
+}
+.section-title h3{font-size:18px;font-weight:800;color:var(--ink);letter-spacing:-0.01em}
+.section-title p{font-size:12px;color:var(--ink-2);font-weight:500}
+
+/* Cards grid */
+.cards-grid{
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px;
+}
+.vocab-card{
+  background:var(--card);border:2px solid var(--border);border-radius:var(--radius);
+  padding:16px;cursor:pointer;transition:all .2s;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;gap:8px;min-height:200px;
+}
+.vocab-card::before{
+  content:"";position:absolute;top:0;left:0;right:0;height:4px;
+  background:var(--card-color,var(--primary));border-radius:14px 14px 0 0;
+}
+.vocab-card:hover{transform:translateY(-4px);border-color:var(--card-color,var(--primary));box-shadow:var(--shadow-md)}
+.vocab-card.flipped .card-front{display:none}
+.vocab-card.flipped .card-back{display:flex}
+.card-back{display:none;flex-direction:column;gap:8px;flex:1;align-items:center;justify-content:center;text-align:center}
+.card-front{display:flex;flex-direction:column;gap:8px;flex:1}
+
+.card-icon{
+  width:64px;height:64px;border-radius:14px;
+  background:linear-gradient(135deg,var(--card-color,var(--primary)),var(--card-color-dark,var(--primary-dark)));
+  display:flex;align-items:center;justify-content:center;color:#fff;
+  margin-bottom:4px;flex-shrink:0;
+}
+.card-icon svg{width:36px;height:36px}
+
+.card-kanji{
+  font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;
+  color:var(--ink);line-height:1.2;
+}
+.card-kana{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--ink-2);font-weight:500}
+.card-romaji{font-size:11px;color:var(--card-color-dark,var(--primary-dark));font-weight:700;letter-spacing:0.02em;font-style:italic;text-transform:lowercase}
+.card-meaning{
+  font-size:13.5px;font-weight:700;color:var(--ink);
+  padding-top:8px;border-top:1px dashed var(--border);margin-top:auto;line-height:1.4;
+}
+.card-back .card-meaning{border:none;padding:0;font-size:16px;color:var(--card-color-dark,var(--primary-dark))}
+.card-back .card-kanji{font-size:32px;text-align:center}
+
+.card-tag{
+  position:absolute;top:10px;right:10px;font-size:9.5px;font-weight:700;
+  padding:3px 8px;border-radius:999px;letter-spacing:0.05em;text-transform:uppercase;
+  background:var(--card-color-bg,#F0F9E8);color:var(--card-color-dark,var(--primary-dark));
+}
+
+/* Example sentence on card back */
+.vocab-card.has-ex .card-back{justify-content:flex-start}
+.card-ex{
+  width:100%;margin-top:10px;padding-top:10px;
+  border-top:1px dashed var(--border);text-align:left;
+}
+.card-ex-label{
+  font-size:9.5px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;
+  color:var(--card-color-dark,var(--primary-dark));margin-bottom:6px;
+  display:flex;align-items:center;gap:6px;
+}
+.card-ex-jp{
+  font-family:'Noto Sans JP',sans-serif;font-size:15px;line-height:2.2;color:var(--ink);
+}
+.card-ex-jp ruby{ruby-position:over}
+.card-ex-jp rt{font-size:9px;color:#9a9a9a;font-weight:500}
+.card-ex-jp .ex-hl{color:var(--card-color-dark,var(--primary-dark));font-weight:700}
+.card-ex-romaji{font-size:10.5px;font-style:italic;color:var(--card-color-dark,var(--primary-dark));margin-top:3px;line-height:1.4}
+.card-ex-vn{font-size:12px;color:var(--ink-2);margin-top:4px;line-height:1.4}
+.card-ex-play{
+  margin-top:8px;display:inline-flex;align-items:center;gap:6px;
+  background:var(--card-color,var(--primary));color:#fff;border:none;cursor:pointer;
+  padding:6px 12px;border-radius:999px;font-family:inherit;font-size:11px;font-weight:700;
+  box-shadow:0 2px 0 var(--card-color-dark,var(--primary-dark));transition:transform .12s;
+}
+.card-ex-play:hover{transform:translateY(-1px)}
+.card-ex-play:active{transform:translateY(1px);box-shadow:none}
+.card-ex-play.playing{background:var(--accent-2);box-shadow:0 2px 0 #B22020;animation:speakerPulse .6s ease-in-out infinite}
+.card-ex-play svg{width:13px;height:13px}
+.card-flip-hint{font-size:10px;color:var(--ink-2);opacity:0.7;margin-top:auto;padding-top:6px;font-style:italic}
+/* when an example is shown on the front, let content flow top-to-bottom */
+.vocab-card.has-ex .card-front .card-meaning{margin-top:8px}
+.vocab-card.has-ex{min-height:auto}
+
+/* Speaker button */
+.card-speaker{
+  position:absolute;bottom:10px;right:10px;
+  width:34px;height:34px;border-radius:50%;
+  background:var(--card-color,var(--primary));color:#fff;
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 2px 0 var(--card-color-dark,var(--primary-dark));
+  transition:transform .15s, box-shadow .15s;z-index:2;
+  opacity:0.85;
+}
+.card-speaker:hover{transform:scale(1.1);opacity:1}
+.card-speaker:active{transform:scale(0.95);box-shadow:0 0 0 var(--card-color-dark,var(--primary-dark))}
+.card-speaker svg{width:16px;height:16px}
+.card-speaker.playing{
+  animation:speakerPulse 0.6s ease-in-out infinite;
+  background:var(--accent-2);box-shadow:0 2px 0 #B22020;
+}
+@keyframes speakerPulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.15)}
+}
+.phrase-row{position:relative}
+.phrase-speaker{
+  width:32px;height:32px;border-radius:50%;
+  background:var(--secondary);color:#fff;border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  margin-right:8px;flex-shrink:0;
+  transition:transform .15s;
+}
+.phrase-speaker:hover{transform:scale(1.1)}
+.phrase-speaker.playing{background:var(--accent-2);animation:speakerPulse 0.6s ease-in-out infinite}
+.phrase-speaker svg{width:14px;height:14px}
+
+/* ==== EXERCISE / QUIZ ==== */
+.quiz-block{
+  margin:24px 0;padding:24px;
+  background:linear-gradient(135deg,#FFF9E6 0%,#FFF3CC 100%);
+  border:2px solid #FFE082;border-radius:var(--radius-lg);
+  position:relative;overflow:hidden;
+}
+.quiz-block::before{
+  content:"練習";position:absolute;right:-10px;bottom:-30px;
+  font-family:'Noto Serif JP',serif;font-size:120px;font-weight:900;
+  color:rgba(255,150,0,0.06);line-height:1;pointer-events:none;
+}
+.quiz-header{
+  display:flex;align-items:center;gap:12px;margin-bottom:16px;position:relative;
+}
+.quiz-icon{
+  width:42px;height:42px;border-radius:12px;
+  background:linear-gradient(135deg,var(--accent),#FF7B00);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 3px 0 #D17F00;flex-shrink:0;
+}
+.quiz-icon svg{width:22px;height:22px}
+.quiz-title{font-size:17px;font-weight:800;color:#8B6500;letter-spacing:-0.01em}
+.quiz-title small{display:block;font-size:12px;color:#A07500;font-weight:600;margin-top:2px}
+.quiz-progress{
+  margin-left:auto;background:rgba(255,255,255,0.6);padding:6px 14px;border-radius:999px;
+  font-size:12px;font-weight:700;color:#8B6500;
+}
+
+.quiz-question{
+  background:#fff;padding:18px 20px;border-radius:var(--radius);
+  margin-bottom:14px;border:2px solid transparent;position:relative;
+}
+.quiz-question.answered{border-color:var(--border)}
+.quiz-question-num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:26px;height:26px;border-radius:50%;
+  background:var(--accent);color:#fff;font-weight:800;font-size:12px;margin-right:10px;
+}
+.quiz-question-text{
+  font-size:15px;font-weight:700;color:var(--ink);margin-bottom:14px;line-height:1.5;
+  display:flex;align-items:center;gap:6px;flex-wrap:wrap;
+}
+.quiz-question-text .target-jp{
+  font-family:'Noto Sans JP',sans-serif;font-size:22px;font-weight:800;color:var(--accent-2);
+  padding:2px 10px;background:#FFF0E5;border-radius:8px;border:1.5px dashed var(--accent);
+}
+.quiz-question-text .listen-btn{
+  width:34px;height:34px;border-radius:50%;background:var(--secondary);color:#fff;border:none;
+  display:inline-flex;align-items:center;justify-content:center;cursor:pointer;
+  box-shadow:0 2px 0 var(--secondary-dark);
+}
+.quiz-question-text .listen-btn:hover{transform:scale(1.1)}
+.quiz-question-text .listen-btn svg{width:16px;height:16px}
+
+.quiz-options{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.quiz-option{
+  background:#FAFAFA;border:2px solid var(--border);border-radius:12px;
+  padding:12px 14px;font-size:13.5px;font-weight:600;color:var(--ink);
+  cursor:pointer;text-align:left;font-family:inherit;
+  transition:all .15s;display:flex;align-items:center;gap:8px;
+}
+.quiz-option:hover{background:#fff;border-color:var(--secondary);transform:translateY(-2px)}
+.quiz-option .opt-key{
+  width:22px;height:22px;border-radius:6px;background:#E5E5E5;color:var(--ink-2);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:11px;
+  flex-shrink:0;
+}
+.quiz-option.correct{background:#E8F8D8;border-color:var(--primary);color:var(--primary-dark)}
+.quiz-option.correct .opt-key{background:var(--primary);color:#fff}
+.quiz-option.wrong{background:#FFE0E0;border-color:var(--accent-2);color:#B22020}
+.quiz-option.wrong .opt-key{background:var(--accent-2);color:#fff}
+.quiz-option.disabled{pointer-events:none;opacity:0.6}
+.quiz-option.disabled.correct,.quiz-option.disabled.wrong{opacity:1}
+
+.quiz-feedback{
+  margin-top:10px;padding:10px 14px;border-radius:10px;font-size:13px;font-weight:600;
+  display:none;align-items:center;gap:8px;
+}
+.quiz-feedback.show{display:flex}
+.quiz-feedback.correct{background:#E8F8D8;color:var(--primary-dark)}
+.quiz-feedback.wrong{background:#FFE0E0;color:#B22020}
+.quiz-feedback svg{width:18px;height:18px;flex-shrink:0}
+
+.quiz-result{
+  margin-top:18px;padding:20px;
+  background:linear-gradient(135deg,#fff 0%,#FFF9E6 100%);
+  border:2px solid var(--accent);border-radius:var(--radius);
+  text-align:center;display:none;
+}
+.quiz-result.show{display:block;animation:fadeIn .4s ease}
+.quiz-result-score{font-size:32px;font-weight:900;color:var(--accent);margin-bottom:6px}
+.quiz-result-text{font-size:14px;color:var(--ink);margin-bottom:14px}
+.quiz-result-btn{
+  padding:10px 20px;background:var(--accent);color:#fff;border:none;border-radius:12px;
+  font-weight:700;cursor:pointer;font-family:inherit;font-size:13px;
+  box-shadow:0 3px 0 #D17F00;transition:transform .1s;
+}
+.quiz-result-btn:hover{transform:translateY(-1px)}
+.quiz-result-btn:active{transform:translateY(0);box-shadow:0 0 0 #D17F00}
+
+/* Match game */
+.match-game{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.match-col{display:flex;flex-direction:column;gap:8px}
+.match-item{
+  background:#fff;border:2px solid var(--border);border-radius:10px;
+  padding:10px 14px;cursor:pointer;font-weight:600;font-size:13.5px;
+  text-align:center;transition:all .15s;font-family:inherit;
+}
+.match-item.jp{font-family:'Noto Sans JP',sans-serif;font-size:16px}
+.match-item:hover{border-color:var(--secondary);background:#F0F9FF}
+.match-item.selected{background:var(--secondary);color:#fff;border-color:var(--secondary-dark)}
+.match-item.matched{background:#E8F8D8;border-color:var(--primary);color:var(--primary-dark);pointer-events:none;opacity:0.7}
+.match-item.shake{animation:shake 0.3s}
+@keyframes shake{
+  0%,100%{transform:translateX(0)}
+  25%{transform:translateX(-5px)}
+  75%{transform:translateX(5px)}
+}
+
+/* Type-answer */
+.quiz-input{
+  width:100%;padding:12px 16px;border:2px solid var(--border);border-radius:12px;
+  font-size:16px;font-family:inherit;font-weight:600;color:var(--ink);
+  transition:border-color .15s;
+}
+.quiz-input:focus{outline:none;border-color:var(--secondary)}
+.quiz-input.correct{border-color:var(--primary);background:#F0F9E8}
+.quiz-input.wrong{border-color:var(--accent-2);background:#FFE0E0}
+
+@media (max-width:600px){
+  .quiz-options{grid-template-columns:1fr}
+  .match-game{grid-template-columns:1fr 1fr;gap:6px}
+}
+
+/* Color variants */
+.color-green{--card-color:#58CC02;--card-color-dark:#46A302;--card-color-bg:#E8F8D8}
+.color-blue{--card-color:#1CB0F6;--card-color-dark:#0E8AC8;--card-color-bg:#D7F0FB}
+.color-orange{--card-color:#FF9600;--card-color-dark:#D17F00;--card-color-bg:#FFE8C8}
+.color-red{--card-color:#FF4B4B;--card-color-dark:#D13A3A;--card-color-bg:#FFD7D7}
+.color-purple{--card-color:#CE82FF;--card-color-dark:#A85FE0;--card-color-bg:#F0DDFF}
+.color-pink{--card-color:#FF86B5;--card-color-dark:#E55B96;--card-color-bg:#FFE0EB}
+.color-yellow{--card-color:#FFC800;--card-color-dark:#D9A800;--card-color-bg:#FFF3C4}
+.color-teal{--card-color:#19C2C8;--card-color-dark:#0DA0A6;--card-color-bg:#D0F4F5}
+
+/* Phrase row */
+.phrase-list{display:flex;flex-direction:column;gap:8px}
+.phrase-row{
+  display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;
+  background:var(--card);border:2px solid var(--border);border-radius:var(--radius-sm);
+  padding:14px 18px;transition:all .15s;
+}
+.phrase-row:hover{border-color:var(--secondary);transform:translateX(4px)}
+.phrase-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:linear-gradient(135deg,var(--secondary),var(--secondary-dark));color:#fff;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.phrase-icon svg{width:22px;height:22px}
+.phrase-jp{font-family:'Noto Sans JP',sans-serif;font-size:16px;font-weight:600;color:var(--ink)}
+.phrase-jp small{display:block;font-size:11px;color:var(--ink-2);font-weight:500;font-style:italic;margin-top:2px;font-family:inherit}
+.phrase-vn{font-size:13px;color:var(--secondary-dark);font-weight:600;text-align:right;max-width:240px}
+
+/* Empty / footer */
+.footer-tip{
+  background:linear-gradient(135deg,#FFF9E6,#FFF3CC);border:2px solid #FFE082;
+  border-radius:var(--radius);padding:20px 24px;margin-top:32px;
+  display:flex;align-items:flex-start;gap:14px;
+}
+.footer-tip-icon{flex-shrink:0;width:40px;height:40px;border-radius:10px;background:linear-gradient(135deg,var(--yellow),var(--accent));color:#fff;display:flex;align-items:center;justify-content:center}
+.footer-tip-icon svg{width:22px;height:22px}
+.footer-tip h4{font-size:14px;font-weight:800;color:#8B6500;margin-bottom:4px}
+.footer-tip p{font-size:13px;color:#5C4400;line-height:1.5}
+
+/* Responsive */
+@media (max-width:900px){
+  .app{grid-template-columns:1fr}
+  .sidebar{position:fixed;left:-280px;width:280px;z-index:100;transition:left .3s}
+  .sidebar.open{left:0;box-shadow:10px 0 30px rgba(0,0,0,0.2)}
+  .menu-toggle{display:flex !important}
+  .hero{padding:40px 24px 60px}
+  .hero h1{font-size:30px}
+  .content{padding:24px 16px}
+  .lesson-header{padding:24px}
+  .lesson-title{font-size:22px}
+  .cards-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+}
+.menu-toggle{
+  display:none;position:fixed;top:16px;left:16px;z-index:101;
+  width:44px;height:44px;border-radius:12px;background:#fff;border:2px solid var(--border);
+  align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--shadow-md);
+}
+
+/* Print */
+@media print{
+  .sidebar,.menu-toggle,.voice-bar{display:none}
+  .app{grid-template-columns:1fr}
+  .lesson{display:block !important;page-break-after:always}
+  .hero{background:#58CC02 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* Voice control bar */
+.voice-bar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(255,255,255,0.95);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  padding:10px 24px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+  box-shadow:0 2px 10px rgba(0,0,0,0.04);
+}
+.voice-bar-label{
+  display:flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:700;color:var(--ink-2);text-transform:uppercase;letter-spacing:0.05em;
+}
+.voice-bar-label svg{width:14px;height:14px;color:var(--secondary)}
+.voice-bar select{
+  border:2px solid var(--border);border-radius:10px;
+  padding:6px 12px;font-family:inherit;font-size:13px;font-weight:600;color:var(--ink);
+  background:#fff;cursor:pointer;outline:none;min-width:180px;max-width:280px;
+  transition:border-color .15s;
+}
+.voice-bar select:focus,.voice-bar select:hover{border-color:var(--secondary)}
+.voice-bar .rate-group{display:flex;align-items:center;gap:8px}
+.voice-bar input[type=range]{width:120px;accent-color:var(--primary)}
+.voice-bar .rate-label{font-size:13px;font-weight:700;color:var(--primary-dark);min-width:32px}
+.voice-test-btn{
+  padding:6px 12px;background:var(--primary);color:#fff;border:none;border-radius:10px;
+  font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;
+  box-shadow:0 2px 0 var(--primary-dark);
+  display:flex;align-items:center;gap:6px;
+}
+.voice-test-btn:hover{transform:translateY(-1px)}
+.voice-test-btn.playing{background:var(--accent-2);box-shadow:0 2px 0 #B22020;animation:speakerPulse 0.6s ease-in-out infinite}
+.voice-test-btn svg{width:14px;height:14px}
+.voice-warning{font-size:11.5px;color:var(--accent-2);font-weight:600;margin-left:auto}
+@media (max-width:700px){
+  .voice-bar{padding:10px 12px;gap:8px}
+  .voice-bar select{min-width:140px;max-width:160px;font-size:12px}
+  .voice-bar input[type=range]{width:80px}
+  .voice-warning{display:none}
+}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-sumi:#8B3A2E;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-sans:'Inter Tight',-apple-system,sans-serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace;--tl-jp:'Noto Serif JP',serif}
+.tl-top{position:sticky;top:0;z-index:200;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.92);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:38px;height:38px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.18em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}.tl-bc a:hover{color:var(--tl-ink)}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1100px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px;transition:all .2s}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3;pointer-events:none}
+/* hide source sidebar/menu — picker lives on its own page */
+.menu-toggle{display:none !important}
+.sidebar{display:none !important}
+.app{display:block !important}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>
+:root{--primary:#1B3A6B!important;--primary-dark:#0F2547!important;--primary-light:#2C5599!important;--secondary:#B89568!important;--secondary-dark:#8A6E47!important;--bg:#FBF6E8!important}
+body{background:#FBF6E8!important}
+.lesson-header{background:linear-gradient(140deg,#1B3A6B 0%,#0F2547 100%)!important;border:1px solid rgba(184,149,104,0.4)!important}
+.nav-link.active{background:linear-gradient(90deg,#1B3A6B,#2C5599)!important;box-shadow:0 3px 0 #0F2547!important}
+.lesson-meta span{background:rgba(255,255,255,0.14)!important}
+</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n5.html">N5</a> · <a href="../tu-vung.html">Từ vựng</a> · Bài 10</div></div></a><a class="tl-back" href="../tu-vung.html">← Danh sách bài</a></nav>
+<div class="app"><main class="main">
+<div class="voice-bar">
+    <div class="voice-bar-label">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M18 5a8 8 0 0 1 0 14" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      Giọng đọc:
+    </div>
+    <select id="voicePicker" onchange="onVoiceChange(this.value)"><option>Đang tải...</option></select>
+    <div class="rate-group">
+      <span class="voice-bar-label">Tốc độ:</span>
+      <input type="range" min="0.5" max="1.3" step="0.05" value="0.85" oninput="onRateChange(this.value)" />
+      <span class="rate-label" id="rateLabel">0.85x</span>
+    </div>
+    <button class="voice-test-btn" onclick="testVoice(this)">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 5L6 9H2v6h4l5 4V5z"/></svg>
+      Thử giọng
+    </button>
+    <span class="voice-warning">💡 Mẹo: Chọn giọng "Google" (có ☁) cho chất lượng tốt nhất</span>
+  </div>
+<div id="lessonsContainer"></div>
+<nav class="tl-pager"><a href="bai-09.html">← Bài 9</a><a class="mid" href="../tu-vung.html">▦ Danh sách bài</a><a href="bai-11.html">Bài 11 →</a></nav>
+</main></div>
+<script>
+const ICONS = {
+  person: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M20 21a8 8 0 0 0-16 0"/></svg>',
+  people: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M14 16c.9-.6 1.9-1 3-1 2.2 0 4 1.8 4 4"/></svg>',
+  teacher: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="3"/><path d="M6 22v-3c0-3.3 2.7-6 6-6s6 2.7 6 6v3"/><rect x="3" y="3" width="6" height="3" rx="0.5"/></svg>',
+  student: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v4c0 1.7 2.7 3 6 3s6-1.3 6-3v-4"/><path d="M22 9v6"/></svg>',
+  doctor: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8"/><path d="M8 6h8"/><circle cx="12" cy="16" r="6"/><path d="M12 14v4M10 16h4"/></svg>',
+  worker: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 22V12h12v10"/><path d="M4 12h16"/><rect x="8" y="3" width="8" height="6" rx="1"/></svg>',
+  child: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="3"/><path d="M8 21l2-7h4l2 7"/><path d="M9 14h6"/></svg>',
+  family: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="7" r="2.5"/><circle cx="16" cy="7" r="2.5"/><circle cx="12" cy="14" r="2"/><path d="M3 21c0-3 2-5 5-5s5 2 5 5"/><path d="M11 21c0-3 2-5 5-5s5 2 5 5"/></svg>',
+  baby: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="6"/><circle cx="10" cy="10" r="0.5" fill="currentColor"/><circle cx="14" cy="10" r="0.5" fill="currentColor"/><path d="M10 13c.5.5 1.2.8 2 .8s1.5-.3 2-.8"/></svg>',
+  friend: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21l-1.5-1.4C5.4 15.4 2 12.3 2 8.5 2 5.5 4.4 3 7.5 3c1.7 0 3.4.8 4.5 2.1C13.1 3.8 14.8 3 16.5 3 19.6 3 22 5.5 22 8.5c0 3.8-3.4 6.9-8.5 11.1L12 21z"/></svg>',
+  book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5V4.5A2.5 2.5 0 0 1 6.5 2H20v18H6.5A2.5 2.5 0 0 1 4 17.5z"/><path d="M4 17.5A2.5 2.5 0 0 1 6.5 15H20"/></svg>',
+  dictionary: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>',
+  newspaper: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2zm0 0a2 2 0 0 1-2-2V11a2 2 0 0 1 2-2h2"/><path d="M10 6h8M10 10h8M10 14h8M10 18h4"/></svg>',
+  notebook: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg>',
+  pen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3l4 4-13 13H4v-4z"/><path d="M14 6l4 4"/></svg>',
+  pencil: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l3-1 14-14-2-2L4 18z"/><path d="M14 6l2 2"/></svg>',
+  key: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="15" r="4"/><path d="M10.5 12 22 .5 19 4l3 3-3.5 3.5L21 13l-3 3"/></svg>',
+  clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  umbrella: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12a10 10 0 0 0-20 0z"/><path d="M12 12v7a2 2 0 1 0 4 0"/></svg>',
+  bag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16l-1 13H5z"/><path d="M8 8V5a4 4 0 1 1 8 0v3"/></svg>',
+  tv: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>',
+  radio: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="8" width="20" height="12" rx="2"/><circle cx="17" cy="14" r="2"/><path d="M6 14h6M6 17h4"/><path d="M5 8l10-4"/></svg>',
+  camera: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h4l2-3h6l2 3h4v12H3z"/><circle cx="12" cy="13" r="4"/></svg>',
+  computer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg>',
+  laptop: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="11" rx="1"/><path d="M2 19h20l-1 2H3z"/></svg>',
+  phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg>',
+  mobile: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 18h2"/></svg>',
+  car: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14"/><path d="M3 17v-4l2-6h14l2 6v4"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>',
+  bike: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="17" r="3"/><circle cx="18" cy="17" r="3"/><path d="M6 17 10 8h5l3 9"/></svg>',
+  train: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="13" rx="2"/><path d="M5 9h14M9 13h.01M15 13h.01"/><path d="M7 16l-2 4M17 16l2 4"/></svg>',
+  bus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M3 11h18M7 17v2M17 17v2"/></svg>',
+  plane: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>',
+  ship: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20a8 8 0 0 0 10-2 8 8 0 0 0 10 2"/><path d="M4 18 6 11h12l2 7"/><path d="M12 11V4M9 7h6"/></svg>',
+  walk: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13" cy="4" r="2"/><path d="M9 22l3-7-3-3 2-6 4 2 3 3"/><path d="M9 12l3 3"/></svg>',
+  chair: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12v10H6z"/><path d="M5 13h14M7 13v8M17 13v8"/></svg>',
+  desk: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10h20"/><path d="M5 10v10M19 10v10"/><path d="M7 10V5h10v5"/></svg>',
+  bed: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20V8h20v12"/><path d="M2 14h20"/><circle cx="7" cy="11" r="2"/></svg>',
+  door: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 22V2h14v20"/><circle cx="15" cy="12" r="0.8" fill="currentColor"/></svg>',
+  window: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 12h18M12 3v18"/></svg>',
+  rice: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13a9 9 0 0 0 18 0z"/><path d="M3 13c2-1 4-1 6 0s4 1 6 0 4-1 6 0"/></svg>',
+  bread: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 13a3 3 0 0 1 6 0v5h6v-5a3 3 0 0 1 6 0v2c0 1-1 2-2 2h-1v3H6v-3H5c-1 0-2-1-2-2z"/></svg>',
+  egg: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C7 2 5 9 5 13a7 7 0 0 0 14 0c0-4-2-11-7-11z"/></svg>',
+  fish: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12c0-3 4-5 8-5s8 2 8 5-4 5-8 5-8-2-8-5z"/><path d="M18 12l4-3v6z"/><circle cx="7" cy="11" r="0.8" fill="currentColor"/></svg>',
+  meat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6a6 6 0 0 1 9 9l-4 4a4 4 0 1 1-5-5z"/><circle cx="9" cy="14" r="1.5"/></svg>',
+  vegetable: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21c-5 0-8-3-8-7s3-7 8-7 8 3 8 7-3 7-8 7z"/><path d="M12 7V3M10 5l2-2 2 2"/></svg>',
+  fruit: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5c-3 0-6 3-6 7s3 9 6 9 6-5 6-9-3-7-6-7z"/><path d="M12 5V2M10 3l2 2 2-2"/></svg>',
+  apple: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6c-3 0-6 2-6 7s3 9 6 9 6-4 6-9-3-7-6-7z"/><path d="M12 6V3M10 4l2-1 2 1"/></svg>',
+  drink: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3h14l-1 18H6z"/><path d="M5 9h14"/></svg>',
+  coffee: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h15v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M18 11h2a2 2 0 0 1 0 4h-2"/><path d="M7 3v2M11 3v2M15 3v2"/></svg>',
+  tea: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h14v6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M17 12h2a2 2 0 0 1 0 4h-2"/><path d="M10 3v4M8 5l4 2 2-4"/></svg>',
+  beer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6h10v15H6z"/><path d="M16 9h3v8h-3"/><path d="M9 10v8M12 10v8"/></svg>',
+  water: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.5C8 8 5 12 5 16a7 7 0 0 0 14 0c0-4-3-8-7-13.5z"/></svg>',
+  juice: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 5h12l-1 16H7z"/><path d="M9 9h6"/><path d="M11 2v3M13 2v3"/></svg>',
+  milk: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2h8v3l1 3v12H7V8l1-3z"/><path d="M9 12h6"/></svg>',
+  cake: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 14h18v7H3z"/><path d="M5 14v-3a3 3 0 0 1 3-3h8a3 3 0 0 1 3 3v3"/><path d="M9 8V5M12 8V4M15 8V5"/></svg>',
+  icecream: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 10a5 5 0 0 1 10 0"/><path d="M7 10l5 11 5-11"/><path d="M5 10h14"/></svg>',
+  candy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M8 12l-5-3v6zM16 12l5-3v6z"/></svg>',
+  cigarette: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="14" width="20" height="3" rx="1"/><path d="M18 11c-1-1-1-3 0-4M21 11c-1-1-1-3 0-4"/></svg>',
+  school: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V10l9-7 9 7v11"/><path d="M9 21v-6h6v6"/><path d="M2 21h20"/></svg>',
+  university: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9l10-5 10 5-10 5z"/><path d="M22 9v6"/><path d="M6 11v6c0 2 3 3 6 3s6-1 6-3v-6"/></svg>',
+  hospital: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg>',
+  bank: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10 12 4l9 6"/><path d="M5 10v10h14V10"/><path d="M9 14v3M12 14v3M15 14v3"/><path d="M3 21h18"/></svg>',
+  post: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>',
+  library: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3h4v18H4zM10 3h4v18h-4zM16 5l3-1 3 17-3 1z"/></svg>',
+  museum: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M3 9l9-6 9 6"/><path d="M5 21V9M19 21V9M9 21V13M15 21V13M12 13v8"/></svg>',
+  store: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18l-1 12H4z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg>',
+  market: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18l-2 5H5z"/><path d="M5 11v9h14v-9"/><circle cx="9" cy="20" r="1"/><circle cx="15" cy="20" r="1"/></svg>',
+  restaurant: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 3v18M10 3v6a3 3 0 0 1-6 0V3M17 14v7M14 3c0 4 1 8 3 8s3-4 3-8z"/></svg>',
+  cafe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h13v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M17 10h2a2 2 0 0 1 0 4h-2"/><path d="M8 5c1-1 1-2 0-3M12 5c1-1 1-2 0-3"/></svg>',
+  station: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="11" rx="2"/><path d="M3 14h18M7 19v2M17 19v2M6 4h12l-2 4H8z"/></svg>',
+  building: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20"/><path d="M8 6h2M14 6h2M8 10h2M14 10h2M8 14h2M14 14h2M10 22v-4h4v4"/></svg>',
+  house: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10 12 3l9 7v11H3z"/><path d="M9 21v-6h6v6"/></svg>',
+  park: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14V3"/><path d="M8 9a4 4 0 0 1 8 0c0 3-4 5-4 5s-4-2-4-5z"/><path d="M3 21h18"/><path d="M7 21c0-3 2-5 5-5s5 2 5 5"/></svg>',
+  classroom: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="14" rx="1"/><path d="M3 17h18M7 17v4M17 17v4"/><path d="M7 7h10v6H7z"/></svg>',
+  office: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18"/><path d="M7 7h3v3H7zM14 7h3v3h-3zM7 14h3v3H7zM14 14h3v3h-3z"/></svg>',
+  toilet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3v8a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V3"/><path d="M9 15v6M15 15v6M7 21h10"/></svg>',
+  elevator: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20"/><path d="M12 2v20M9 8l3-3 3 3M9 16l3 3 3-3"/></svg>',
+  stairs: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h4v-4h4v-4h4v-4h4V5h4"/></svg>',
+  temple: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8 12 3l9 5M2 8h20M5 8v13M19 8v13M3 21h18M10 21v-8h4v8"/></svg>',
+  mountain: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 20l5-10 4 6 3-5 6 9z"/><circle cx="17" cy="6" r="2"/></svg>',
+  ocean: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 16c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 12c2-2 4-2 6 0s4 2 6 0 4-2 6 0M2 20c2-2 4-2 6 0s4 2 6 0 4-2 6 0"/></svg>',
+  river: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5c3 4 3 8 0 12s-3 8 0 12M21 5c-3 4-3 8 0 12s3 8 0 12"/></svg>',
+  tree: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-4 0-7 4-7 8s3 6 7 6 7-2 7-6-3-8-7-8z"/><path d="M12 16v6M9 22h6"/></svg>',
+  flower: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="3"/><path d="M12 6c0-2-1-3-3-3s-3 1-3 3 1 3 3 3M12 6c0-2 1-3 3-3s3 1 3 3-1 3-3 3M12 12c0 2-1 3-3 3s-3-1-3-3 1-3 3-3M12 12c0 2 1 3 3 3s3-1 3-3-1-3-3-3"/><path d="M12 12v10"/></svg>',
+  sakura: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3c-1.5 2-1.5 5 0 7 1.5-2 1.5-5 0-7zM3 12c2-1.5 5-1.5 7 0-2 1.5-5 1.5-7 0zM21 12c-2-1.5-5-1.5-7 0 2 1.5 5 1.5 7 0zM12 21c-1.5-2-1.5-5 0-7 1.5 2 1.5 5 0 7z"/><circle cx="12" cy="12" r="2"/></svg>',
+  sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>',
+  moon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>',
+  cloud: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 18a4 4 0 0 0 0-8 6 6 0 0 0-11.5-2A4.5 4.5 0 0 0 6 18z"/></svg>',
+  rain: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13a4 4 0 0 0 0-8 6 6 0 0 0-11.5-2A4.5 4.5 0 0 0 6 13"/><path d="M8 17l-1 4M12 17l-1 4M16 17l-1 4"/></svg>',
+  snow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg>',
+  earth: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2c3 4 3 16 0 20M12 2c-3 4-3 16 0 20"/></svg>',
+  dog: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 8c0-3 2-4 3-4l2 3h4l2-3c1 0 3 1 3 4v8c0 2-1 3-3 3H8c-2 0-3-1-3-3z"/><circle cx="9" cy="12" r="0.8" fill="currentColor"/><circle cx="15" cy="12" r="0.8" fill="currentColor"/><path d="M11 16h2"/></svg>',
+  cat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 9 4 4l4 3h8l4-3-1 5v8c0 2-1 3-3 3H8c-2 0-3-1-3-3z"/><circle cx="9" cy="13" r="0.8" fill="currentColor"/><circle cx="15" cy="13" r="0.8" fill="currentColor"/><path d="M11 16l1 1 1-1"/></svg>',
+  horse: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l4-7 3-1 2-5 6 3-1 3 4 7"/><path d="M14 11l3-3M12 8l2-3"/></svg>',
+  elephant: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15c0-5 4-9 9-9 4 0 7 3 7 7v6h-4l-1-3v3h-4v-3l-3-1z"/><circle cx="9" cy="11" r="0.8" fill="currentColor"/><path d="M15 17c0 2 2 2 2 4"/></svg>',
+  calendar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></svg>',
+  watch: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="6"/><path d="M12 9v3l2 2M9 2h6l1 4M9 22h6l1-4"/></svg>',
+  sunrise: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 18h20M12 9v6M9 12l3-3 3 3M4 22h16"/><circle cx="12" cy="15" r="2"/></svg>',
+  body: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="5" r="3"/><path d="M9 22V11h6v11M8 12v6M16 12v6"/></svg>',
+  head: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="7"/><path d="M12 17v5"/></svg>',
+  hand: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 11V5a2 2 0 0 1 4 0v6M10 11V3a2 2 0 0 1 4 0v8M14 10V5a2 2 0 0 1 4 0v9c0 5-3 8-7 8H8c-2 0-3-1-4-3l-2-4 2-1 3 3"/></svg>',
+  foot: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 22c0-3 1-5 3-7 1-1 2-3 2-5 0-3-1-5-3-5S6 7 6 11c0 3 1 5 1 11z"/><circle cx="14" cy="5" r="1"/><circle cx="16" cy="7" r="1"/><circle cx="17" cy="10" r="1"/><circle cx="16" cy="13" r="1"/></svg>',
+  eye: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>',
+  ear: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 4-3 5-3 8 0 1-1 2-3 2s-3-1-3-3c0-3-3-3-3-7z"/></svg>',
+  mouth: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12c0-3 4-5 9-5s9 2 9 5-4 5-9 5-9-2-9-5z"/><path d="M5 12h14"/></svg>',
+  nose: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v9c0 2-2 4-4 4s-3-1-3-2c0-2 2-3 4-3"/><path d="M12 3c2 3 4 7 4 11 0 1-1 2-2 2"/></svg>',
+  tooth: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c-3 0-7 1-7 6 0 3 1 5 2 8 1 2 1 6 2 6s1-4 3-4 2 4 3 4 1-4 2-6c1-3 2-5 2-8 0-5-4-6-7-6z"/></svg>',
+  hair: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12c0-5 3-9 7-9s7 4 7 9c-2 0-2-3-3-3s-1 3-2 3-1-3-2-3-1 3-2 3-1-3-2-3-1 3-3 3z"/><path d="M5 12v5c0 2 1 4 2 5M19 12v5c0 2-1 4-2 5"/></svg>',
+  face: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="9" cy="10" r="0.8" fill="currentColor"/><circle cx="15" cy="10" r="0.8" fill="currentColor"/><path d="M8 15c1 1.5 2.5 2 4 2s3-.5 4-2"/></svg>',
+  belly: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="1.5"/></svg>',
+  eat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v8a3 3 0 0 0 3 3v8M9 3v8a3 3 0 0 1-3 3M21 3l-3 6c0 1 .5 2 1.5 2H21v10"/></svg>',
+  read: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5h8a3 3 0 0 1 3 3v14a2 2 0 0 0-2-2H2z"/><path d="M22 5h-8a3 3 0 0 0-3 3v14a2 2 0 0 1 2-2h9z"/></svg>',
+  write: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 3a2.85 2.85 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5z"/></svg>',
+  listen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8a6 6 0 0 1 12 0c0 4-3 5-3 8 0 1-1 2-3 2s-3-1-3-3c0-3-3-3-3-7z"/><path d="M18 4c2 2 2 6 0 8M21 2c3 3 3 9 0 12"/></svg>',
+  watch_v: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg>',
+  buy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18l-2 12H5z"/><path d="M8 6a4 4 0 1 1 8 0"/><path d="M9 21h6"/></svg>',
+  sell: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+  give: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h12l-3-3M15 12l-3 3"/><circle cx="20" cy="12" r="2"/></svg>',
+  receive: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12H9l3-3M9 12l3 3"/><circle cx="4" cy="12" r="2"/></svg>',
+  sleep: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/><path d="M14 4h4l-4 4h4"/></svg>',
+  wake: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>',
+  work: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
+  rest: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20V8h20v12"/><path d="M2 14h20"/></svg>',
+  study: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5h8a3 3 0 0 1 3 3v14a2 2 0 0 0-2-2H2z"/><path d="M22 5h-8a3 3 0 0 0-3 3v14a2 2 0 0 1 2-2h9z"/><path d="M8 9h2M14 9h2"/></svg>',
+  go: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>',
+  come: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 5l-7 7 7 7"/></svg>',
+  return: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 14L4 9l5-5"/><path d="M4 9h11a5 5 0 0 1 5 5v6"/></svg>',
+  meet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 21c0-3 2-5 5-5s5 2 5 5M12 21c0-3 2-5 5-5s5 2 5 5"/></svg>',
+  talk: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+  call: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.1-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.6a2 2 0 0 1-.5 2.1L8 9.7a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.8.3 1.7.6 2.6.7a2 2 0 0 1 1.7 2z"/></svg>',
+  open: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 22V4a2 2 0 0 0-2-2H7v20M5 22h17M14 14l3-3-3-3"/></svg>',
+  close: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 22V2h14v20M15 11l-3 3-3-3"/></svg>',
+  turn_on: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v6"/></svg>',
+  turn_off: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/></svg>',
+  stop: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="5" width="14" height="14" rx="2"/></svg>',
+  start: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"/></svg>',
+  wait: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 22h14M5 2h14M17 22v-5l-5-5 5-5V2M7 22v-5l5-5-5-5V2"/></svg>',
+  sit: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="5" r="2"/><path d="M5 22V11l4-1 4 4-2 8M13 14h7v8"/></svg>',
+  stand: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M12 6v8M9 22l3-8 3 8M9 12l-3 4M15 12l3 4"/></svg>',
+  swim: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="17" cy="6" r="2"/><path d="M2 17l4-2 3 2 3-2 3 2 3-2 4 2"/><path d="M5 11l5-3 5 5"/></svg>',
+  play: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M3 12h6M15 12h6"/></svg>',
+  cut: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>',
+  send: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z"/></svg>',
+  borrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12H9l3-3M9 12l3 3"/><rect x="2" y="8" width="4" height="8" rx="1"/></svg>',
+  lend: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h12l-3-3M15 12l-3 3"/><rect x="18" y="8" width="4" height="8" rx="1"/></svg>',
+  teach: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9l10-5 10 5-10 5z"/><path d="M22 9v6M6 11v4c0 1.7 2.7 3 6 3s6-1.3 6-3v-4"/></svg>',
+  learn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 14l-7-4 7-4 7 4-7 4z"/><path d="M5 11v4c0 2 3 3 7 3s7-1 7-3v-4"/></svg>',
+  understand: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>',
+  hot: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14a4 4 0 1 1-4 0V3a2 2 0 1 1 4 0z"/></svg>',
+  cold: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20M5 5l14 14M19 5L5 19"/></svg>',
+  yes: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 13l4 4L19 7"/></svg>',
+  no: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><path d="M5 12h14"/></svg>',
+  question: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 3-3 3M12 17h.01"/></svg>',
+  heart: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21l-1.5-1.4C5.4 15.4 2 12.3 2 8.5 2 5.5 4.4 3 7.5 3c1.7 0 3.4.8 4.5 2.1C13.1 3.8 14.8 3 16.5 3 19.6 3 22 5.5 22 8.5c0 3.8-3.4 6.9-8.5 11.1L12 21z"/></svg>',
+  heart_broken: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21l-1.5-1.4C5.4 15.4 2 12.3 2 8.5 2 5.5 4.4 3 7.5 3c1.7 0 3.4.8 4.5 2.1C13.1 3.8 14.8 3 16.5 3 19.6 3 22 5.5 22 8.5c0 3.8-3.4 6.9-8.5 11.1L12 21z"/><path d="M12 4l-2 6 3 1-2 5"/></svg>',
+  star: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L15 9 L22 9 L17 14 L19 21 L12 17 L5 21 L7 14 L2 9 L9 9 Z"/></svg>',
+  gift: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2zM12 22V7M12 7s-2-5-5-5a2 2 0 0 0 0 5M12 7s2-5 5-5a2 2 0 0 1 0 5"/></svg>',
+  money: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="3"/><path d="M6 12h.01M18 12h.01"/></svg>',
+  yen: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 8l4 6 4-6M8 13h8M8 16h8M12 14v5"/></svg>',
+  ticket: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4z"/><path d="M13 5v2M13 11v2M13 17v2"/></svg>',
+  letter: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>',
+  photo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>',
+  music: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>',
+  art: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13" cy="11" r="9"/><circle cx="8" cy="9" r="1" fill="currentColor"/><circle cx="13" cy="6" r="1" fill="currentColor"/><circle cx="17" cy="9" r="1" fill="currentColor"/><circle cx="17" cy="14" r="1" fill="currentColor"/><path d="M5 18l-3 3 3 1 1 1 3-3"/></svg>',
+  ball: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3v18"/></svg>',
+  soccer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7l-4 3 1.5 4.5h5L16 10z"/></svg>',
+  tennis: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12c4-4 14-4 18 0M3 12c4 4 14 4 18 0"/></svg>',
+  shirt: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l5-4h8l5 4-3 3v11H6V10z"/><path d="M8 3c1 2 7 2 8 0"/></svg>',
+  pants: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l-1 18h-4l-1-10-1 10H7z"/></svg>',
+  shoes: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 18c0-4 5-6 8-6l2-3 5 2-1 4 6 2v2H2z"/></svg>',
+  hat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 18c5-2 15-2 20 0M6 17V8a6 6 0 0 1 12 0v9"/></svg>',
+  tie: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 3h4l-1 4 3 12-4 4-4-4 3-12z"/></svg>',
+  glasses: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="14" r="4"/><circle cx="18" cy="14" r="4"/><path d="M10 14h4M2 10l3-5h2M22 10l-3-5h-2"/></svg>',
+  box: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 8l-9-5-9 5v8l9 5 9-5z"/><path d="M3 8l9 5 9-5M12 13v9"/></svg>',
+  paper: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>',
+  scissors: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>',
+  fridge: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 10h14M9 6v1M9 14v3"/></svg>',
+  table: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10h20M5 10v10M19 10v10M3 7h18l-1 3H4z"/></svg>',
+  switch: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="6" width="14" height="12" rx="2"/><circle cx="12" cy="12" r="3"/></svg>',
+  battery: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="8" width="18" height="8" rx="1"/><path d="M22 11v2"/></svg>',
+  mailbox: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 22V10h14v12"/><path d="M3 10c0-3 2-5 5-5h8c3 0 5 2 5 5M12 5v17M5 14h4"/></svg>',
+  atm: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><rect x="6" y="6" width="12" height="5"/><path d="M6 15h4M14 15h4M6 18h4M14 18h4"/></svg>',
+  garden: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21h18M5 21V11l7-5 7 5v10"/><circle cx="9" cy="15" r="1.5"/><circle cx="15" cy="15" r="1.5"/></svg>',
+  number: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9h16M4 15h16M10 3 8 21M16 3l-2 18"/></svg>',
+  size: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 6l3-3M3 6l3 3M21 6l-3-3M21 6l-3 3M12 9v12M12 21l-3-3M12 21l3-3"/></svg>',
+  speed: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22a10 10 0 1 1 10-10"/><path d="M12 12l5-3"/></svg>',
+  light: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M5 19l2-2M17 7l2-2"/></svg>',
+  dark: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>',
+  big: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h18v18H3z"/></svg>',
+  small: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 8h8v8H8z"/></svg>',
+  new: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/><circle cx="12" cy="12" r="4"/></svg>',
+  old: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>',
+  easy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 14c1 1.5 2.5 2 4 2s3-.5 4-2"/><circle cx="9" cy="10" r="0.8" fill="currentColor"/><circle cx="15" cy="10" r="0.8" fill="currentColor"/></svg>',
+  hard: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M16 16c-1-1.5-2.5-2-4-2s-3 .5-4 2"/><path d="M8 9l2 1M14 9l2 1"/></svg>',
+  fast: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>',
+  slow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>',
+  expensive: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9h4.5a2 2 0 0 1 0 4H9M15 17H10"/></svg>',
+  cheap: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 9l3 4 3-4M12 13v6"/></svg>',
+  busy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h6M15 12h6M12 3v6M12 15v6"/></svg>',
+  fun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M7 14c1.5 2 3 3 5 3s3.5-1 5-3"/><circle cx="9" cy="10" r="0.8" fill="currentColor"/><circle cx="15" cy="10" r="0.8" fill="currentColor"/></svg>',
+  tired: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 14s1.5 2 4 2 4-2 4-2M9 9l-1 1M15 9l1 1"/></svg>',
+  hotel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8h18v13M3 8l9-5 9 5"/><path d="M9 21v-5h6v5"/></svg>',
+  airport: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16v-2l-8-5V3.5a1.5 1.5 0 0 0-3 0V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5z"/></svg>',
+  party: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 21l3-13 13 3z"/><path d="M5 21l-3-3 3-3M14 8l-2-5M19 14l5-2"/></svg>',
+  festival: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v8"/><path d="M5 10h14l-2 12H7z"/><circle cx="9" cy="14" r="1" fill="currentColor"/><circle cx="15" cy="14" r="1" fill="currentColor"/></svg>',
+  medicine: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M12 8v10M3 13h18"/></svg>',
+  fever: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14a4 4 0 1 1-4 0V3a2 2 0 1 1 4 0z"/><path d="M14 8h3M14 5h2"/></svg>',
+  bath: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12h20v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3z"/><path d="M5 6c0-2 2-4 4-4M9 4c-1 1-1 3 0 4"/></svg>',
+  shower: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12V5a3 3 0 0 1 6 0v1"/><circle cx="14" cy="9" r="4"/><path d="M11 13l-2 5M14 14l-1 6M17 13l2 5"/></svg>',
+  pray: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 22V14L4 8V4l6 6h4l6-6v4l-6 6v8"/></svg>',
+  globe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2c3 4 3 16 0 20M12 2c-3 4-3 16 0 20"/></svg>',
+  language: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 5h12M9 3v2c0 5-3 8-7 9M5 9c0 4 4 6 8 7M14 17l5-10 5 10M16 14h6"/></svg>',
+  name: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="12" rx="2"/><path d="M6 10h8M6 14h5"/><circle cx="18" cy="12" r="1.5"/></svg>',
+  test: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13l2 2 4-4"/></svg>',
+  homework: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5M16 19l2 2 4-4"/></svg>',
+  meeting: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="7" r="2"/><circle cx="15" cy="7" r="2"/><path d="M4 21c0-3 2-5 5-5s5 2 5 5M10 21c0-3 2-5 5-5s5 2 5 5"/></svg>',
+  movie: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M7 5v14M17 5v14M2 10h5M17 10h5M2 14h5M17 14h5"/></svg>',
+  arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>',
+  next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>',
+  back: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>',
+  up: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>',
+  down: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>',
+  wedding: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="14" r="5"/><circle cx="16" cy="14" r="5"/><path d="M6 5l2 4M18 5l-2 4"/></svg>',
+  remember: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 9h.01M15 9h.01M8 15h8"/></svg>',
+  forget: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 9l-1 1M15 9l1 1M9 16c1-1 5-1 6 0"/></svg>',
+  dance: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M12 6l-3 6 3 4 3-4-3-6M9 12l-4 4M15 12l4 4M9 16l-1 5M15 16l1 5"/></svg>',
+  age: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg>',
+  travel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 0 1 0 18M12 3a15 15 0 0 0 0 18"/></svg>',
+  weather: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="10" r="3"/><path d="M18 18a4 4 0 0 0 0-8 6 6 0 0 0-11.5-2"/></svg>',
+  default: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>',
+  speaker: '<svg viewBox="0 0 24 24" fill="currentColor"><path d="M11 5L6 9H2v6h4l5 4V5z"/><path d="M15.5 8.5a4 4 0 0 1 0 7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M18 5a8 8 0 0 1 0 14" fill="none" stroke="currentColor" stroke-width="2"/></svg>',
+  trophy: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 21h8M12 17v4M7 4h10v6a5 5 0 0 1-10 0z"/><path d="M17 5h3v3a3 3 0 0 1-3 3M7 5H4v3a3 3 0 0 0 3 3"/></svg>',
+  pencil_edit: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4z"/></svg>',
+  brain: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3a3 3 0 0 0-3 3v12a3 3 0 0 0 6 0M15 3a3 3 0 0 1 3 3v12a3 3 0 0 1-6 0M9 9c0-2 1-3 3-3s3 1 3 3"/></svg>',
+  // N4 icons
+  trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M5 6l1 14h12l1-14"/></svg>',
+  wallet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7a2 2 0 0 1 2-2h14v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M3 7v12M16 13h3"/></svg>',
+  volunteer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="7" r="3"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/><path d="M16 8l3-3M21 5l-1-1"/></svg>',
+  space: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="11" ry="3" transform="rotate(-25 12 12)"/></svg>',
+  rocket: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c4 4 6 8 6 12l-3 3h-6l-3-3c0-4 2-8 6-12z"/><circle cx="12" cy="10" r="2"/><path d="M9 17l-2 5 3-1M15 17l2 5-3-1"/></svg>',
+  astronaut: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="6"/><path d="M9 8h6M9 11h6"/><path d="M6 22v-3a3 3 0 0 1 3-3h6a3 3 0 0 1 3 3v3"/></svg>',
+  // Birds & animals
+  bird: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 6a3 3 0 1 0-3 3"/><path d="M13 9c-2 0-9 2-9 9 0 1 1 2 3 2h4c4 0 7-2 7-7"/><path d="M22 7l-4 2 1 3"/><circle cx="15" cy="6" r="0.8" fill="currentColor"/></svg>',
+  giraffe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2v8l4 1v11h-3l-1-5h-4l-1 5H6v-9"/><circle cx="15" cy="3" r="1"/></svg>',
+  rat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 14c0-4 4-6 8-6 5 0 9 3 9 7 0 2-2 4-4 4H7a4 4 0 0 1-4-5z"/><circle cx="7" cy="13" r="0.8" fill="currentColor"/><circle cx="6" cy="9" r="2"/><circle cx="10" cy="8" r="2"/><path d="M20 18c2 0 3 1 3 3"/></svg>',
+  monkey: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="6"/><circle cx="6" cy="8" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="9" cy="10" r="0.8" fill="currentColor"/><circle cx="15" cy="10" r="0.8" fill="currentColor"/><path d="M9 14c1 1 2 1.5 3 1.5s2-.5 3-1.5"/></svg>',
+  turtle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="13" rx="8" ry="6"/><path d="M4 13c0-2 1-3 2-3M20 13c0-2-1-3-2-3M8 18c0 1 1 2 1 2M16 18c0 1-1 2-1 2"/><circle cx="22" cy="11" r="1.5"/></svg>',
+  // Nature & disasters
+  wave: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12c3-3 6-3 9 0s6 3 9 0M2 7c3-3 6-3 9 0s6 3 9 0M2 17c3-3 6-3 9 0s6 3 9 0"/></svg>',
+  fireworks: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M5 19l3-3M16 8l3-3"/></svg>',
+  earthquake: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20h20"/><path d="M4 20l3-8 2 4 2-10 3 14 2-6 2 4 2-6 2 8"/></svg>',
+  typhoon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="2"/><path d="M12 2c5 0 8 4 8 8M22 12c0 5-4 8-8 8M12 22c-5 0-8-4-8-8M2 12c0-5 4-8 8-8"/></svg>',
+  thunder: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h7l-1 8 10-12h-7z"/></svg>',
+  fire: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c0 5-5 6-5 12a5 5 0 0 0 10 0c0-3-2-5-2-8 0 2-1 3-3 4 0-3 0-5 0-8z"/></svg>',
+  accident: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/><path d="M3 3l18 18"/></svg>',
+  island: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 18c3-2 6-2 10 0s7 2 10 0"/><path d="M8 15c0-3 2-5 4-5s4 2 4 5"/><path d="M12 10V5"/><path d="M10 5h4"/></svg>',
+  port: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V8"/><circle cx="12" cy="5" r="3"/><path d="M2 18a4 4 0 0 0 10 0a4 4 0 0 0 10 0"/><path d="M5 14h14"/></svg>',
+  // Police & emergency
+  police: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l9 4v6c0 5-4 9-9 10-5-1-9-5-9-10V6z"/><path d="M9 12l2 2 4-4"/></svg>',
+  police_car: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="20" height="6" rx="1"/><path d="M5 12v4M19 12v4M3 17h18"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/><path d="M9 6V4h6v2"/></svg>',
+  ambulance: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="14" height="10" rx="1"/><path d="M16 9h4l2 4v3H2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/><path d="M9 11h4M11 9v4"/></svg>',
+  thief: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M8 8h8"/><path d="M5 22c0-4 3-7 7-7s7 3 7 7"/></svg>',
+  // Home & objects
+  mirror: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="10" rx="6" ry="8"/><path d="M12 18v4M8 22h8"/></svg>',
+  ring: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="15" r="6"/><path d="M9 9l3-7 3 7"/></svg>',
+  doll: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="6" r="4"/><path d="M8 14h8l-1 8H9z"/><path d="M10 5h4"/></svg>',
+  vase: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6v3l-2 2v10a3 3 0 0 0 3 3H8a3 3 0 0 0 3-3V8L9 6z"/></svg>',
+  drawer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M11 6h2M11 12h2M11 18h2"/></svg>',
+  pond: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="15" rx="9" ry="5"/><path d="M7 13c1-1 2-1 3 0M14 13c1-1 2-1 3 0"/></svg>',
+  hallway: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V5l9-3 9 3v16"/><path d="M3 21h18M9 9h2M13 9h2M9 13h2M13 13h2"/></svg>',
+  wall: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16"/><path d="M2 9h20M2 14h20M9 4v5M15 4v5M6 9v5M12 9v5M18 9v5M9 14v5M15 14v5"/></svg>',
+  // Salon & beauty
+  scissors2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg>',
+  salon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="6" r="3"/><path d="M9 9c-2 3-4 5-4 9M15 9c2 3 4 5 4 9M8 22h8"/></svg>',
+  shopping: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3h2l3 12h11l3-8H6"/><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/></svg>',
+  // Building & places
+  castle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8h3V5l2 1V5l2 1V5l2 1V5l2 1V5l2 1V5l2 1V5l2 1v3h3v13z"/><path d="M9 21v-5h6v5"/></svg>',
+  church: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v6M9 5h6"/><path d="M5 22V11l7-3 7 3v11"/><path d="M5 22h14M10 22v-4h4v4"/></svg>',
+  zoo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V8l9-5 9 5v14"/><path d="M3 13h18M3 17h18M7 22V13M11 22V13M15 22V13M19 22V13"/></svg>',
+  hotspring: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20c2-2 4-2 6 0s4 2 6 0s4-2 6 0s4 2 6 0"/><path d="M8 12c-1-2 1-3 0-5M12 12c-1-2 1-3 0-5M16 12c-1-2 1-3 0-5"/></svg>',
+  gym: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 8v8M18 8v8M3 12h18M6 12h12"/><path d="M3 10v4M21 10v4"/></svg>',
+  inn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V10l9-7 9 7v12"/><path d="M3 22h18M9 22v-7h6v7M5 12h14"/></svg>',
+  cram_school: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9l10-5 10 5-10 5z"/><path d="M22 9v6"/><path d="M6 11v4c0 1.7 2.7 3 6 3s6-1.3 6-3v-4"/><path d="M12 14v6"/></svg>',
+  // Food & cooking
+  cooking: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12h16l-2 8H6z"/><path d="M9 12V8a3 3 0 0 1 6 0v4"/></svg>',
+  pot: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16l-1 12H5z"/><path d="M3 8h18M9 8V5h6v3"/></svg>',
+  stove: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="6" width="18" height="14" rx="2"/><circle cx="9" cy="13" r="3"/><circle cx="16" cy="13" r="2"/><path d="M3 10h18"/></svg>',
+  sauce: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 3h6l1 4-1 13H8L7 7z"/><circle cx="12" cy="12" r="2"/></svg>',
+  onion: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5c-4 0-7 3-7 8s3 9 7 9 7-4 7-9-3-8-7-8z"/><path d="M12 5V3M10 4l2-1 2 1"/><path d="M9 10c1 5 5 9 6 11M15 10c-1 5-5 9-6 11"/></svg>',
+  bowl: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 10h20l-1 6a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4z"/><path d="M2 10c0-2 4-4 10-4s10 2 10 4"/></svg>',
+  // Money & business
+  salary: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9 9h4.5a2 2 0 0 1 0 4H9M15 17H10"/></svg>',
+  bonus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12v10H4V12"/><path d="M2 7h20v5H2zM12 22V7"/></svg>',
+  bag2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16l-1 13H5z"/><circle cx="12" cy="14" r="2"/></svg>',
+  // Health
+  pill: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="18" height="10" rx="5"/><path d="M12 8v10"/></svg>',
+  injury: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 15l1.5-1.5L13 16l3-3 2 2-5 5z"/><path d="M3 12a9 9 0 1 1 18 0"/></svg>',
+  burn: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2c0 5-5 6-5 12a5 5 0 0 0 10 0c0-3-2-5-2-8 0 2-1 3-3 4 0-3 0-5 0-8z"/></svg>',
+  cough: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="12" r="5"/><circle cx="9" cy="10" r="0.8" fill="currentColor"/><path d="M9 14c.5.5 1 .8 1.5.8"/><path d="M16 7l4 1M16 11l5 1M16 15l4 3"/></svg>',
+  doctor2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="6" r="3"/><path d="M5 22v-4c0-3 3-5 7-5s7 2 7 5v4"/><path d="M14 16h2v3h-2zM12 14v8"/></svg>',
+  // Communication
+  email: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>',
+  microphone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3M8 21h8"/></svg>',
+  speech: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H8l-5 5V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg>',
+  novel: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h8M8 11h8M8 15h8M8 19h5"/></svg>',
+  singer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="6" r="3"/><path d="M9 9c-1 3 0 6 3 6s4-3 3-6"/><path d="M9 22l3-7 3 7"/><rect x="11" y="13" width="2" height="3" rx="1"/></svg>',
+  drama: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7h18l-1 12H4z"/><path d="M8 12h8M9 16h6"/></svg>',
+  game: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="10" rx="3"/><circle cx="8" cy="12" r="1.5"/><path d="M16 11v2M17 12h-2"/><path d="M6 12h-2"/></svg>',
+  // Misc N4
+  ticket2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 9V6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v3a2 2 0 0 0 0 4v3a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-3a2 2 0 0 0 0-4z"/><path d="M13 5v14"/></svg>',
+  prize: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M9 14l-2 8 5-3 5 3-2-8"/><path d="M12 5v6M9 8h6"/></svg>',
+  baby2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="10" r="6"/><circle cx="10" cy="10" r="0.5" fill="currentColor"/><circle cx="14" cy="10" r="0.5" fill="currentColor"/><path d="M10 13c.5.5 1.2.8 2 .8s1.5-.3 2-.8"/></svg>',
+  twins: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="7" r="3"/><circle cx="16" cy="7" r="3"/><path d="M2 21c0-3 2-5 5-5h2c3 0 5 2 5 5M10 21c0-3 2-5 5-5h2c3 0 5 2 5 5"/></svg>',
+  factory: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V10l5 3V10l5 3V10l8 4v8z"/><path d="M3 22h18M7 17h2M11 17h2M15 17h2"/></svg>',
+  village: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 22V14l4-3v11M21 22V14l-4-3v11M9 11l3-3 3 3"/><path d="M3 22h18M9 22V14l3-3 3 3v8"/></svg>',
+  city: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="8" width="6" height="14"/><rect x="9" y="3" width="6" height="19"/><rect x="15" y="11" width="6" height="11"/><path d="M5 12h2M5 16h2M11 7h2M11 11h2M11 15h2M11 19h2M17 14h2M17 18h2"/></svg>',
+  globe2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M2 12h20M12 2c3 4 3 16 0 20M12 2c-3 4-3 16 0 20"/></svg>',
+  textbook: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 3h14a2 2 0 0 1 2 2v16H6a2 2 0 0 1-2-2z"/><path d="M8 7h8M8 11h8M8 15h6"/></svg>',
+  glass: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3h12l-1 16H7z"/><path d="M6 8h12"/></svg>',
+  plate: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="13" rx="9" ry="4"/><ellipse cx="12" cy="13" rx="5" ry="2"/></svg>',
+  branch: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V8"/><path d="M12 8c-2-2-5-2-5-5M12 12c-2-2-5-2-5-5M12 8c2-2 5-2 5-5"/></svg>',
+  fly: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12c4-4 10-4 14 0M3 8c5-4 13-4 18 0M3 16c5 4 13 4 18 0"/></svg>',
+  build: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21V8l9-5 9 5v13"/><path d="M9 21v-7h6v7M3 21h18"/><path d="M7 11h2M15 11h2"/></svg>',
+  store2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9h18l-1 12H4z"/><path d="M8 9V6a4 4 0 0 1 8 0v3"/></svg>',
+  pet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="10" r="1.5"/><circle cx="18" cy="10" r="1.5"/><circle cx="4" cy="14" r="1.5"/><circle cx="20" cy="14" r="1.5"/><path d="M9 19c0-3 1-5 3-5s3 2 3 5c0 2-2 3-3 3s-3-1-3-3z"/></svg>',
+  furniture: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 20V11h20v9"/><path d="M6 11V8a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v3"/><path d="M4 20v2M20 20v2"/></svg>',
+  cute: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M8 10c0-1 1-2 2 0M14 10c0-1 1-2 2 0M9 15c1 1 2 1.5 3 1.5s2-.5 3-1.5"/></svg>',
+  bookshelf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18"/><path d="M3 9h18M3 15h18M6 6v3M9 6v3M12 6v3M6 12v3M9 12v3M15 12v3M6 18v3M9 18v3"/></svg>',
+  curtain: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 4h20M4 4v18l3-3 3 3 3-3 3 3 3-3 3 3V4"/></svg>',
+  rice_cooker: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18l-1 10H4z"/><circle cx="12" cy="14" r="3"/><path d="M3 10c0-2 4-3 9-3s9 1 9 3"/></svg>',
+  leaf: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19.2 2.96a1 1 0 0 1 1.8.4c1.2 4 .12 9.85-4 12.91-2.78 2.05-4.96 2.6-8 2.66"/><path d="M2 22s4-2 7-5"/></svg>',
+  spray: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="6" y="8" width="8" height="14"/><path d="M14 12h4M14 16h4"/><path d="M8 8V4h4v4M10 4V2"/></svg>',
+  question_box: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9a3 3 0 0 1 6 0c0 2-3 3-3 3M12 16h.01"/></svg>',
+  warning: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 22h20z"/><path d="M12 9v5M12 17h.01"/></svg>',
+  hammer: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12l7-7 7 7-3 3-7-7M14 9l7 7-3 3-7-7"/></svg>',
+  tool: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 7l3-3 3 3-3 3M12 9l-9 9 3 3 9-9M12 9l3 3"/></svg>',
+  envelope: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 7l9 6 9-6"/></svg>',
+  flag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 22V3M4 5h12l-2 4 2 4H4"/></svg>',
+  wind: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h12a2 2 0 1 0 0-4M3 12h18M3 16h8a2 2 0 1 1 0 4"/></svg>',
+  cycle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0-18 0z"/><path d="M16 8l3-3M19 5V8M19 5h-3"/></svg>',
+  exam: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="1"/><path d="M8 7h8M8 11l2 2 4-4M8 17h6"/></svg>',
+  delivery: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="6" width="14" height="10" rx="1"/><path d="M16 9h4l2 4v3H2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>',
+  bell: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 16v-5a6 6 0 0 0-12 0v5l-2 2v1h16v-1z"/><path d="M10 22a2 2 0 0 0 4 0"/></svg>',
+  hospital2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M12 8v8M8 12h8"/></svg>',
+  parent: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="6" r="3"/><circle cx="16" cy="6" r="3"/><circle cx="12" cy="14" r="2"/><path d="M3 21c0-3 2-5 5-5s5 2 5 5M11 21c0-3 2-5 5-5s5 2 5 5"/></svg>',
+  bow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="6" r="3"/><path d="M6 22V12l3-2 3 6 3-6 3 2v10"/></svg>',
+  // Sumo & Japanese arts
+  sumo: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="6" r="4"/><path d="M6 22c0-4 3-7 6-7s6 3 6 7"/><path d="M8 14h8"/></svg>',
+  // Stopwatch & clocks
+  stopwatch: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l3 2M9 2h6"/></svg>',
+  // Star related
+  starry: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 L14 8 L20 8 L15 12 L17 18 L12 14 L7 18 L9 12 L4 8 L10 8 Z"/></svg>',
+  king: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8l3 4 3-6 3 6 3-6 3 6 3-4v10H3z"/></svg>',
+  princess: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9l3 3 5-7 5 7 3-3v8H4z"/><circle cx="12" cy="13" r="1"/></svg>',
+  smoke: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 14c0-3 3-3 3-6s3-3 3-6"/><path d="M9 14c0-3 3-3 3-6s3-3 3-6"/><path d="M15 14c0-3 3-3 3-6"/><path d="M3 22c2 0 2-2 4-2s2 2 5 2 3-2 5-2 2 2 4 2"/></svg>',
+  // Misc
+  notification: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 16v-5a6 6 0 0 0-12 0v5l-2 2v1h16v-1z"/><path d="M10 22a2 2 0 0 0 4 0"/></svg>',
+  trash_bin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 10v6M14 10v6"/></svg>',
+  hanko: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="6" rx="1"/><path d="M9 9v4l3 4 3-4V9"/></svg>',
+  recycle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 21l-4-4 4-4M3 17h7"/><path d="M17 3l4 4-4 4M21 7h-7"/><path d="M17 21l4-4-4-4M14 17l-4-10"/></svg>',
+  oil: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 3h8v6l3 3v9H5v-9l3-3z"/><path d="M10 14h4"/></svg>',
+  wheat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22V8M9 10l3-3 3 3M7 12l5-2 5 2M9 14l3-2 3 2M7 17l5-2 5 2"/></svg>',
+  noodle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 10h18l-1 6a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path d="M7 6c0 2 1 2 1 4M11 5c0 2 1 2 1 5M15 6c0 2 1 2 1 4"/></svg>',
+  abacus: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18"/><circle cx="7" cy="6" r="1.5"/><circle cx="12" cy="6" r="1.5"/><circle cx="17" cy="12" r="1.5"/><circle cx="9" cy="18" r="1.5"/><circle cx="15" cy="18" r="1.5"/></svg>',
+  computer2: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M8 22h8M12 18v4"/></svg>',
+  click: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 9l2 12 3-4 4 4M9 9l-3-3 3-3M9 9l4-2"/></svg>'
+};
+const COLORS = ['green','blue','orange','red','purple','pink','yellow','teal'];
+function getIcon(name){return ICONS[name] || ICONS.default;}
+
+
+// ====== SPEECH SYNTHESIS ======
+// Use KANA (hiragana/katakana) as source of truth — kana is phonetic
+// so TTS will always pronounce correctly, unlike kanji which has multiple readings.
+window.JP_VOICES = [];
+window.SELECTED_VOICE = null;
+window.SPEECH_RATE = 0.85;
+
+function rankVoice(v){
+  // Prefer in order: Google (cloud, best) > Kyoko/Otoya (macOS premium) > Haruka/Ayumi/Ichiro (Windows) > others
+  const n = (v.name||'').toLowerCase();
+  if(n.includes('google')) return 100;
+  if(n.includes('kyoko')) return 90;
+  if(n.includes('otoya')) return 88;
+  if(n.includes('haruka')) return 85;
+  if(n.includes('ayumi')) return 82;
+  if(n.includes('ichiro')) return 80;
+  if(n.includes('premium') || n.includes('enhanced') || n.includes('natural')) return 70;
+  return 50;
+}
+
+function initVoices(){
+  if(!('speechSynthesis' in window)) return;
+  const all = window.speechSynthesis.getVoices();
+  window.JP_VOICES = all
+    .filter(v => v.lang === 'ja-JP' || v.lang.toLowerCase().startsWith('ja'))
+    .sort((a,b) => rankVoice(b) - rankVoice(a));
+  if(window.JP_VOICES.length && !window.SELECTED_VOICE){
+    // Restore from localStorage if available, else pick best
+    try {
+      const saved = localStorage.getItem('jp_voice_name');
+      if(saved){
+        const found = window.JP_VOICES.find(v => v.name === saved);
+        if(found) window.SELECTED_VOICE = found;
+      }
+    } catch(e){}
+    if(!window.SELECTED_VOICE) window.SELECTED_VOICE = window.JP_VOICES[0];
+  }
+  populateVoicePicker();
+}
+
+if('speechSynthesis' in window){
+  initVoices();
+  window.speechSynthesis.onvoiceschanged = initVoices;
+  // Restore rate from storage
+  try {
+    const r = parseFloat(localStorage.getItem('jp_speech_rate'));
+    if(r >= 0.5 && r <= 1.5) window.SPEECH_RATE = r;
+  } catch(e){}
+}
+
+// Convert katakana to hiragana so the speech engine reads consistently
+function kataToHira(s){
+  return s.replace(/[ァ-ヶ]/g, c => String.fromCharCode(c.charCodeAt(0) - 0x60));
+}
+
+function cleanForSpeech(text){
+  if(!text) return '';
+  let s = text;
+  // Remove placeholder markers
+  s = s.replace(/[〜~]/g, '');
+  // Remove anything in parens (both Japanese & English)
+  s = s.replace(/[\(（][^\)）]*[\)）]/g, '');
+  // Replace slashes and middle-dot separators with first option only
+  s = s.split(/[／\/・]/)[0];
+  // Remove ascii punctuation
+  s = s.replace(/[、。？！\?\!,\.\s]+/g, '');
+  return s.trim();
+}
+
+// IMPORTANT: kana is the authoritative source for pronunciation.
+// If kana not provided, fall back to text (which may be kanji - TTS may guess wrong).
+function speakJP(kanaOrText, btnEl){
+  if(!('speechSynthesis' in window)){ alert('Trình duyệt không hỗ trợ phát âm. Hãy dùng Google Chrome hoặc Microsoft Edge.'); return; }
+  window.speechSynthesis.cancel();
+  let text = cleanForSpeech(kanaOrText);
+  text = kataToHira(text); // unify reading
+  if(!text) return;
+  // If no JP voice available, show helpful message
+  if(window.JP_VOICES.length === 0){
+    initVoices();
+    if(window.JP_VOICES.length === 0){
+      alert('Không tìm thấy giọng tiếng Nhật trên máy bạn.\n\nGợi ý:\n• Dùng Google Chrome (có giọng "Google 日本語" online)\n• Hoặc cài giọng Nhật: System Settings → Accessibility → Spoken Content → System Voice → Japanese (Kyoko)');
+      return;
+    }
+  }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'ja-JP';
+  u.rate = window.SPEECH_RATE;
+  u.pitch = 1.0;
+  u.volume = 1.0;
+  if(window.SELECTED_VOICE) u.voice = window.SELECTED_VOICE;
+  if(btnEl){
+    btnEl.classList.add('playing');
+    u.onend = ()=>btnEl.classList.remove('playing');
+    u.onerror = ()=>btnEl.classList.remove('playing');
+  }
+  // Small delay helps some browsers
+  setTimeout(()=>window.speechSynthesis.speak(u), 50);
+}
+
+// ====== EXAMPLE-SENTENCE AUDIO ======
+// Folder where pre-generated MP3s live (relative to this HTML file).
+window.AUDIO_DIR = 'audio/';
+let _currentExAudio = null;
+// Play a pre-generated MP3 for an example sentence. If the file is missing
+// (e.g. you haven't run the generator yet), fall back to the browser voice
+// using the plain-kana reading so the button always works.
+function playExample(btn, audioFile, kanaFallback){
+  // stop any other playing audio / speech
+  if(_currentExAudio){ try{_currentExAudio.pause();}catch(e){} _currentExAudio=null; }
+  if('speechSynthesis' in window) window.speechSynthesis.cancel();
+  document.querySelectorAll('.card-ex-play.playing').forEach(b=>b.classList.remove('playing'));
+
+  const fallback = ()=>{ btn.classList.remove('playing'); speakJP(kanaFallback||'', btn); };
+  if(!audioFile){ fallback(); return; }
+
+  const audio = new Audio(window.AUDIO_DIR + audioFile);
+  _currentExAudio = audio;
+  btn.classList.add('playing');
+  audio.onended = ()=>{ btn.classList.remove('playing'); _currentExAudio=null; };
+  audio.onerror = fallback;
+  audio.play().catch(fallback);
+}
+
+// Build the example-sentence block shown on the back of a flashcard.
+// ex.jp may contain <ruby> markup, so it is inserted as-is (not escaped).
+function renderCardExample(w){
+  if(!w.ex) return '';
+  const ex = w.ex;
+  const audio = ex.audio ? escapeHTML(ex.audio) : '';
+  const kana = escapeHTML(ex.kana || w.kana || '');
+  return `<div class="card-ex">
+    <div class="card-ex-label">例文 · Ví dụ</div>
+    <div class="card-ex-jp jp">${ex.jp}</div>
+    ${ex.romaji?`<div class="card-ex-romaji">${escapeHTML(ex.romaji)}</div>`:''}
+    ${ex.vn?`<div class="card-ex-vn">${escapeHTML(ex.vn)}</div>`:''}
+    <button class="card-ex-play" onclick="event.stopPropagation();playExample(this,'${audio}','${kana}')">${getIcon('speaker')} Nghe câu</button>
+  </div>`;
+}
+
+function populateVoicePicker(){
+  const sel = document.getElementById('voicePicker');
+  if(!sel) return;
+  sel.innerHTML = window.JP_VOICES.length === 0
+    ? '<option>Chưa có giọng tiếng Nhật</option>'
+    : window.JP_VOICES.map(v=>{
+        const label = `${v.name} (${v.lang})${v.localService?'':' ☁'}`;
+        const selected = window.SELECTED_VOICE && v.name === window.SELECTED_VOICE.name ? 'selected' : '';
+        return `<option value="${escapeHTML(v.name)}" ${selected}>${escapeHTML(label)}</option>`;
+      }).join('');
+}
+function onVoiceChange(name){
+  const v = window.JP_VOICES.find(x => x.name === name);
+  if(v){ window.SELECTED_VOICE = v; try{localStorage.setItem('jp_voice_name', name);}catch(e){} }
+  // Test it
+  speakJP('こんにちは', document.querySelector('.voice-test-btn'));
+}
+function onRateChange(val){
+  window.SPEECH_RATE = parseFloat(val);
+  document.getElementById('rateLabel').textContent = val + 'x';
+  try{localStorage.setItem('jp_speech_rate', val);}catch(e){}
+}
+function testVoice(btn){
+  speakJP('にほんごの はつおんです', btn);
+}
+
+// ====== UTIL ======
+function shuffle(arr){
+  const a = arr.slice();
+  for(let i=a.length-1;i>0;i--){
+    const j = Math.floor(Math.random()*(i+1));
+    [a[i],a[j]] = [a[j],a[i]];
+  }
+  return a;
+}
+function escapeHTML(s){ return String(s).replace(/[&<>"']/g, c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]); }
+
+// ====== QUIZ GENERATORS ======
+let quizCounter = 0;
+function generateMCQuiz(words, allWords, lessonNum, sectionIdx, count){
+  // Multiple choice: show JP, pick VN meaning
+  const questions = shuffle(words).slice(0, count).map(w=>{
+    const others = shuffle(allWords.filter(x => x.meaning !== w.meaning)).slice(0,3);
+    const opts = shuffle([w, ...others]);
+    return {q: w, opts, correct: w.meaning};
+  });
+  return questions;
+}
+function generateListenQuiz(words, allWords, count){
+  // Listen, pick the right JP word
+  const questions = shuffle(words).slice(0, count).map(w=>{
+    const others = shuffle(allWords.filter(x => (x.kanji||x.kana) !== (w.kanji||w.kana))).slice(0,3);
+    const opts = shuffle([w, ...others]);
+    return {q: w, opts, correct: w.kanji||w.kana};
+  });
+  return questions;
+}
+
+function renderMCQuiz(questions, title, qIdPrefix){
+  const html = questions.map((qd,i)=>{
+    const w = qd.q;
+    const sp = escapeHTML(w.kana || w.kanji || '');
+    return `<div class="quiz-question" id="${qIdPrefix}-q${i}">
+      <div class="quiz-question-text">
+        <span class="quiz-question-num">${i+1}</span>
+        <span>Từ này nghĩa là gì?</span>
+        <span class="target-jp jp">${escapeHTML(w.kanji||w.kana)}</span>
+        <button class="listen-btn" onclick="speakJP('${sp}', this)" title="Phát âm">${getIcon('speaker')}</button>
+      </div>
+      <div class="quiz-options">
+        ${qd.opts.map((o,j)=>`<button class="quiz-option" data-correct="${o.meaning===qd.correct?'1':'0'}" onclick="answerMC(this, '${qIdPrefix}', ${i})">
+          <span class="opt-key">${String.fromCharCode(65+j)}</span><span>${escapeHTML(o.meaning)}</span>
+        </button>`).join('')}
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>`;
+  }).join('');
+  return `<div class="quiz-block" data-quiz-id="${qIdPrefix}" data-total="${questions.length}">
+    <div class="quiz-header">
+      <div class="quiz-icon">${getIcon('pencil_edit')}</div>
+      <div class="quiz-title">${title}<small>Chọn đáp án đúng • ${questions.length} câu</small></div>
+      <div class="quiz-progress"><span data-progress>0</span>/${questions.length}</div>
+    </div>
+    ${html}
+    <div class="quiz-result" data-result></div>
+  </div>`;
+}
+
+function renderListenQuiz(questions, title, qIdPrefix){
+  const html = questions.map((qd,i)=>{
+    const w = qd.q;
+    const sp = escapeHTML(w.kana || w.kanji || '');
+    return `<div class="quiz-question" id="${qIdPrefix}-q${i}">
+      <div class="quiz-question-text">
+        <span class="quiz-question-num">${i+1}</span>
+        <span>Nghe và chọn từ đúng:</span>
+        <button class="listen-btn" onclick="speakJP('${sp}', this)" title="Phát âm">${getIcon('speaker')}</button>
+        <span style="font-size:12px;color:#888">(Bấm 🔊 để nghe)</span>
+      </div>
+      <div class="quiz-options">
+        ${qd.opts.map((o,j)=>`<button class="quiz-option" data-correct="${(o.kanji||o.kana)===qd.correct?'1':'0'}" onclick="answerMC(this, '${qIdPrefix}', ${i})">
+          <span class="opt-key">${String.fromCharCode(65+j)}</span>
+          <span class="jp" style="font-size:15px">${escapeHTML(o.kanji||o.kana)}</span>
+          <span style="margin-left:auto;font-size:11px;color:#999;font-style:italic">${escapeHTML(o.romaji)}</span>
+        </button>`).join('')}
+      </div>
+      <div class="quiz-feedback"></div>
+    </div>`;
+  }).join('');
+  return `<div class="quiz-block" data-quiz-id="${qIdPrefix}" data-total="${questions.length}">
+    <div class="quiz-header">
+      <div class="quiz-icon" style="background:linear-gradient(135deg,#1CB0F6,#0E8AC8);box-shadow:0 3px 0 #0A6DA0">${getIcon('listen')}</div>
+      <div class="quiz-title">${title}<small>Luyện nghe phát âm • ${questions.length} câu</small></div>
+      <div class="quiz-progress"><span data-progress>0</span>/${questions.length}</div>
+    </div>
+    ${html}
+    <div class="quiz-result" data-result></div>
+  </div>`;
+}
+
+function renderMatchGame(words, title, qIdPrefix){
+  // Pick 5 words for matching
+  const picked = shuffle(words).slice(0, Math.min(5, words.length));
+  const leftItems = picked.map(w => ({key: w.romaji, label: w.kanji||w.kana, isJp: true}));
+  const rightItems = shuffle(picked.map(w => ({key: w.romaji, label: w.meaning, isJp: false})));
+  return `<div class="quiz-block" data-quiz-id="${qIdPrefix}">
+    <div class="quiz-header">
+      <div class="quiz-icon" style="background:linear-gradient(135deg,#CE82FF,#A85FE0);box-shadow:0 3px 0 #8040C0">${getIcon('brain')}</div>
+      <div class="quiz-title">${title}<small>Ghép cặp từ tiếng Nhật ↔ nghĩa</small></div>
+      <div class="quiz-progress"><span data-progress>0</span>/${picked.length}</div>
+    </div>
+    <div class="match-game" data-match="${qIdPrefix}">
+      <div class="match-col">
+        ${leftItems.map(it=>`<button class="match-item jp" data-key="${escapeHTML(it.key)}" data-side="L" onclick="matchClick(this,'${qIdPrefix}')">${escapeHTML(it.label)}</button>`).join('')}
+      </div>
+      <div class="match-col">
+        ${rightItems.map(it=>`<button class="match-item" data-key="${escapeHTML(it.key)}" data-side="R" onclick="matchClick(this,'${qIdPrefix}')">${escapeHTML(it.label)}</button>`).join('')}
+      </div>
+    </div>
+    <div class="quiz-result" data-result></div>
+  </div>`;
+}
+
+// ====== QUIZ INTERACTION ======
+window.QUIZ_STATE = {};
+function answerMC(btn, qid, qi){
+  const block = btn.closest('.quiz-block');
+  const question = btn.closest('.quiz-question');
+  if(question.classList.contains('answered')) return;
+  question.classList.add('answered');
+  const isCorrect = btn.dataset.correct === '1';
+  btn.classList.add(isCorrect ? 'correct' : 'wrong');
+  // Show correct answer
+  question.querySelectorAll('.quiz-option').forEach(o=>{
+    o.classList.add('disabled');
+    if(o.dataset.correct === '1') o.classList.add('correct');
+  });
+  // Feedback
+  const fb = question.querySelector('.quiz-feedback');
+  fb.classList.add('show', isCorrect ? 'correct' : 'wrong');
+  fb.innerHTML = isCorrect
+    ? `${getIcon('yes')}<span>Chính xác! Tuyệt vời!</span>`
+    : `${getIcon('no')}<span>Chưa đúng. Đáp án đúng đã được tô xanh.</span>`;
+  // Update progress
+  const total = parseInt(block.dataset.total);
+  const answered = block.querySelectorAll('.quiz-question.answered').length;
+  block.querySelector('[data-progress]').textContent = answered;
+  if(!window.QUIZ_STATE[qid]) window.QUIZ_STATE[qid] = {correct:0, total};
+  if(isCorrect) window.QUIZ_STATE[qid].correct++;
+  if(answered === total) showQuizResult(block, qid);
+}
+
+function showQuizResult(block, qid){
+  const st = window.QUIZ_STATE[qid];
+  const pct = Math.round(st.correct/st.total*100);
+  let emoji = '🎉', msg = 'Xuất sắc! Bạn nắm chắc rồi!';
+  if(pct < 60){ emoji = '💪'; msg = 'Hãy ôn lại phần này một lần nữa nhé!'; }
+  else if(pct < 80){ emoji = '👍'; msg = 'Khá tốt! Cố gắng nâng cao thêm nhé!'; }
+  const result = block.querySelector('[data-result]');
+  result.innerHTML = `<div class="quiz-result-score">${emoji} ${st.correct}/${st.total} (${pct}%)</div>
+    <div class="quiz-result-text">${msg}</div>
+    <button class="quiz-result-btn" onclick="resetQuiz('${qid}')">Làm lại bài tập</button>`;
+  result.classList.add('show');
+}
+
+function resetQuiz(qid){
+  const block = document.querySelector(`[data-quiz-id="${qid}"]`);
+  if(!block) return;
+  block.querySelectorAll('.quiz-question').forEach(q=>q.classList.remove('answered'));
+  block.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('correct','wrong','disabled'));
+  block.querySelectorAll('.quiz-feedback').forEach(f=>{f.classList.remove('show','correct','wrong');f.innerHTML='';});
+  block.querySelectorAll('.match-item').forEach(m=>m.classList.remove('selected','matched','shake'));
+  const prog = block.querySelector('[data-progress]'); if(prog) prog.textContent = '0';
+  const result = block.querySelector('[data-result]'); if(result){ result.classList.remove('show'); result.innerHTML=''; }
+  if(window.QUIZ_STATE[qid]) window.QUIZ_STATE[qid] = {correct:0, total:window.QUIZ_STATE[qid].total};
+}
+
+let matchSelected = {};
+function matchClick(btn, qid){
+  if(btn.classList.contains('matched')) return;
+  if(!matchSelected[qid]) matchSelected[qid] = null;
+  const side = btn.dataset.side;
+  const key = btn.dataset.key;
+  if(matchSelected[qid] && matchSelected[qid].side !== side){
+    // Try to match
+    const other = matchSelected[qid];
+    if(other.key === key){
+      btn.classList.add('matched');
+      other.el.classList.add('matched');
+      other.el.classList.remove('selected');
+      matchSelected[qid] = null;
+      // Progress
+      const block = btn.closest('.quiz-block');
+      const total = block.querySelectorAll('.match-item').length / 2;
+      const matched = block.querySelectorAll('.match-item.matched').length / 2;
+      block.querySelector('[data-progress]').textContent = matched;
+      if(matched === total){
+        const result = block.querySelector('[data-result]');
+        result.innerHTML = `<div class="quiz-result-score">🎊 Hoàn thành!</div>
+          <div class="quiz-result-text">Bạn đã ghép đúng tất cả ${total} cặp!</div>
+          <button class="quiz-result-btn" onclick="resetMatch('${qid}')">Chơi lại</button>`;
+        result.classList.add('show');
+      }
+    } else {
+      btn.classList.add('shake');
+      other.el.classList.add('shake');
+      setTimeout(()=>{
+        btn.classList.remove('shake');
+        other.el.classList.remove('shake','selected');
+        matchSelected[qid] = null;
+      }, 400);
+    }
+  } else {
+    // Deselect previous on same side
+    if(matchSelected[qid]){
+      matchSelected[qid].el.classList.remove('selected');
+    }
+    btn.classList.add('selected');
+    matchSelected[qid] = {side, key, el: btn};
+  }
+}
+function resetMatch(qid){
+  matchSelected[qid] = null;
+  const block = document.querySelector(`[data-quiz-id="${qid}"]`);
+  if(!block) return;
+  block.querySelectorAll('.match-item').forEach(m=>m.classList.remove('selected','matched','shake'));
+  const prog = block.querySelector('[data-progress]'); if(prog) prog.textContent = '0';
+  const result = block.querySelector('[data-result]'); if(result){ result.classList.remove('show'); result.innerHTML=''; }
+  // Shuffle right column
+  const rightCol = block.querySelector('.match-col:last-child');
+  const items = Array.from(rightCol.children);
+  shuffle(items).forEach(it=>rightCol.appendChild(it));
+}
+
+// ====== MAIN RENDER ======
+function renderLessonNav(){
+  const nav = document.getElementById('lessonNav');
+  const items = Object.keys(LESSONS).sort((a,b)=>a-b).map(num=>{
+    const l = LESSONS[num];
+    return `<li class="nav-item"><button class="nav-link" data-lesson="${num}">
+      <span class="nav-num">${num}</span>
+      <span class="nav-text">Bài ${num}<small>${l.subtitle}</small></span>
+    </button></li>`;
+  }).join('');
+  nav.innerHTML = items;
+  nav.querySelectorAll('.nav-link').forEach(btn=>{
+    btn.addEventListener('click',()=>showLesson(parseInt(btn.dataset.lesson)));
+  });
+}
+
+function renderLessonContent(){
+  const container = document.getElementById('lessonsContainer');
+  const gradients = [
+    ['#58CC02','#19C2C8'],['#1CB0F6','#CE82FF'],['#FF9600','#FF4B4B'],
+    ['#CE82FF','#FF86B5'],['#19C2C8','#1CB0F6'],['#FFC800','#FF9600'],
+    ['#FF86B5','#FF4B4B'],['#58CC02','#FFC800']
+  ];
+  const html = Object.keys(LESSONS).sort((a,b)=>a-b).map(num=>{
+    const l = LESSONS[num];
+    const grad = gradients[(num-1) % gradients.length];
+    // Collect all words for quiz pools (excluding phrases for quizzes)
+    const allLessonWords = [];
+    l.sections.forEach(s => { if(s.type !== 'phrase') allLessonWords.push(...s.words); });
+
+    const sectionsHtml = l.sections.map((sec,si)=>{
+      if(sec.type === 'phrase'){
+        const phrasesHtml = sec.words.map((w,wi)=>{
+          // IMPORTANT: Use kana for pronunciation (kanji has multiple readings)
+          const sp = escapeHTML(w.kana || w.kanji || '');
+          return `<div class="phrase-row">
+          <button class="phrase-speaker" onclick="speakJP('${sp}', this)" title="Phát âm">${getIcon('speaker')}</button>
+          <div class="phrase-icon">${getIcon(w.icon||'default')}</div>
+          <div class="phrase-jp jp">${escapeHTML(w.kanji||w.kana)}<small>${escapeHTML(w.romaji)}</small></div>
+          <div class="phrase-vn">${escapeHTML(w.meaning)}</div>
+        </div>`;
+        }).join('');
+        return `<div class="section">
+          <div class="section-title"><div class="section-title-num">${si+1}</div><div><h3>${sec.name}</h3><p>${sec.words.length} cụm từ • Bấm 🔊 để nghe</p></div></div>
+          <div class="phrase-list">${phrasesHtml}</div>
+        </div>`;
+      }
+      const cardsHtml = sec.words.map((w,wi)=>{
+        const color = w.color || COLORS[wi % COLORS.length];
+        // IMPORTANT: Use kana for pronunciation (kanji has multiple readings)
+        const speakText = escapeHTML(w.kana || w.kanji || '');
+        return `<div class="vocab-card color-${color}${w.ex?' has-ex':''}" onclick="if(!event.target.closest('.card-speaker')&&!event.target.closest('.card-ex-play')) this.classList.toggle('flipped')">
+          ${w.tag?`<span class="card-tag">${w.tag}</span>`:''}
+          <button class="card-speaker" onclick="event.stopPropagation();speakJP('${speakText}', this)" title="Phát âm">${getIcon('speaker')}</button>
+          <div class="card-front">
+            <div class="card-icon">${getIcon(w.icon||'default')}</div>
+            <div class="card-kanji jp">${escapeHTML(w.kanji||w.kana)}</div>
+            ${w.kanji?`<div class="card-kana jp">${escapeHTML(w.kana)}</div>`:''}
+            <div class="card-romaji">${escapeHTML(w.romaji)}</div>
+            <div class="card-meaning">${escapeHTML(w.meaning)}</div>
+            ${renderCardExample(w)}
+          </div>
+          <div class="card-back">
+            <div class="card-icon">${getIcon(w.icon||'default')}</div>
+            <div class="card-kanji jp">${escapeHTML(w.kanji||w.kana)}</div>
+            <div class="card-romaji">${escapeHTML(w.romaji)}</div>
+            <div class="card-meaning">${escapeHTML(w.meaning)}</div>
+          </div>
+        </div>`;
+      }).join('');
+      let sectionBlock = `<div class="section">
+        <div class="section-title"><div class="section-title-num">${si+1}</div><div><h3>${sec.name}</h3><p>${sec.words.length} từ • Bấm thẻ để lật • 🔊 nghe phát âm</p></div></div>
+        <div class="cards-grid">${cardsHtml}</div>
+      </div>`;
+      // Insert a mini-quiz after every 2 sections (if section has 4+ words)
+      const shouldInsertQuiz = (si % 2 === 1) && sec.words.length >= 4 && sec.type !== 'phrase';
+      if(shouldInsertQuiz){
+        const qid = `L${num}-S${si}-mc`;
+        const qPool = [];
+        // Use last 2 sections' words
+        for(let k = Math.max(0, si-1); k <= si; k++){
+          if(l.sections[k] && l.sections[k].type !== 'phrase'){
+            qPool.push(...l.sections[k].words);
+          }
+        }
+        const count = Math.min(4, qPool.length);
+        const quiz = generateMCQuiz(qPool, allLessonWords.length >= 4 ? allLessonWords : qPool, num, si, count);
+        sectionBlock += renderMCQuiz(quiz, `🎯 Bài tập nhanh - Sau phần ${si+1}`, qid);
+      }
+      return sectionBlock;
+    }).join('');
+
+    // End-of-lesson comprehensive exercises
+    let finalQuizzes = '';
+    if(allLessonWords.length >= 5){
+      const qidMatch = `L${num}-final-match`;
+      finalQuizzes += renderMatchGame(allLessonWords, `🧠 Ghép cặp tổng kết Bài ${num}`, qidMatch);
+    }
+    if(allLessonWords.length >= 4){
+      const qidListen = `L${num}-final-listen`;
+      const listenCount = Math.min(5, allLessonWords.length);
+      const listenQ = generateListenQuiz(allLessonWords, allLessonWords, listenCount);
+      finalQuizzes += renderListenQuiz(listenQ, `🎧 Luyện nghe Bài ${num}`, qidListen);
+    }
+    if(allLessonWords.length >= 4){
+      const qidFinal = `L${num}-final-mc`;
+      const finalCount = Math.min(8, allLessonWords.length);
+      const finalQ = generateMCQuiz(allLessonWords, allLessonWords, num, 'final', finalCount);
+      finalQuizzes += renderMCQuiz(finalQ, `🏆 Kiểm tra tổng hợp Bài ${num}`, qidFinal);
+    }
+
+    return `<section class="lesson" data-lesson-id="${num}">
+      <div class="content">
+        <div class="lesson-header" style="--bg-grad-1:${grad[0]};--bg-grad-2:${grad[1]}" data-mark="${l.mark||'語'}">
+          <div class="lesson-header-inner">
+            <div class="lesson-number">Bài ${num} • Lesson ${num}</div>
+            <h2 class="lesson-title">${l.subtitle}</h2>
+            <div class="lesson-jp jp">${l.titleJp||''}</div>
+            <p class="lesson-desc">${l.desc||''}</p>
+            <div class="lesson-meta">${l.sections.map(s=>`<span>${s.name} (${s.words.length})</span>`).join('')}</div>
+          </div>
+        </div>
+        ${sectionsHtml}
+        ${finalQuizzes}
+        <div class="footer-tip">
+          <div class="footer-tip-icon">${getIcon('trophy')}</div>
+          <div><h4>Hoàn thành Bài ${num}!</h4><p>${l.tip||'Học mỗi ngày 10 từ, ôn lại 3 lần trong tuần. Bấm vào từng thẻ để lật xem nghĩa và luyện nhớ chủ động!'}</p></div>
+        </div>
+      </div>
+    </section>`;
+  }).join('');
+  container.innerHTML = html;
+}
+function showLesson(id){
+  document.querySelectorAll('.lesson').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-link').forEach(b=>b.classList.remove('active'));
+  const target = document.querySelector(`[data-lesson-id="${id}"]`);
+  if(target){target.classList.add('active'); window.scrollTo({top:0,behavior:'smooth'});}
+  const btn = document.querySelector(`.nav-link[data-lesson="${id}"]`);
+  if(btn) btn.classList.add('active');
+  document.querySelector('.sidebar').classList.remove('open');
+}
+function setupSearch(){
+  const input = document.getElementById('searchInput');
+  input.addEventListener('input',e=>{
+    const q = e.target.value.toLowerCase().trim();
+    if(!q){
+      document.querySelectorAll('.vocab-card,.phrase-row').forEach(c=>c.style.display='');
+      document.querySelectorAll('.section').forEach(s=>s.style.display='');
+      return;
+    }
+    document.querySelectorAll('.vocab-card,.phrase-row').forEach(card=>{
+      const text = card.textContent.toLowerCase();
+      card.style.display = text.includes(q) ? '' : 'none';
+    });
+  });
+}
+</script>
+<script>
+const LESSONS={"10":{"subtitle":"Sự tồn tại & Vị trí","titleJp":"ここに 本が あります","mark":"在","desc":"Phân biệt あります (đồ vật/cây) và います (người/động vật). Học cách mô tả vị trí: trên/dưới/trước/sau/trong/ngoài.","tip":"Quy tắc cốt lõi: あります dùng cho vật không cử động, います dùng cho thứ cử động được (người, động vật).","sections":[{"name":"Động từ tồn tại","words":[{"kanji":"あります","kana":"あります","romaji":"arimasu","meaning":"Có (vật, cây)","icon":"yes","color":"green"},{"kanji":"います","kana":"います","romaji":"imasu","meaning":"Có (người, động vật)","icon":"yes","color":"pink","ex":{"jp":"<ruby>庭<rt>にわ</rt></ruby>に<ruby>猫<rt>ねこ</rt></ruby>がいます。","kana":"にわにねこがいます","romaji":"Niwa ni neko ga imasu.","vn":"Trong vườn có con mèo.","audio":"L10-imasu.mp3"}},{"kanji":"いろいろ","kana":"いろいろ","romaji":"iroiro","meaning":"Nhiều, đa dạng","icon":"star","color":"yellow","tag":"な"}]},{"name":"Người & động vật","words":[{"kanji":"男の人","kana":"おとこのひと","romaji":"otoko no hito","meaning":"Người đàn ông","icon":"person","color":"blue"},{"kanji":"女の人","kana":"おんなのひと","romaji":"onna no hito","meaning":"Người đàn bà","icon":"person","color":"pink"},{"kanji":"男の子","kana":"おとこのこ","romaji":"otoko no ko","meaning":"Bé trai","icon":"child","color":"blue"},{"kanji":"女の子","kana":"おんなのこ","romaji":"onna no ko","meaning":"Bé gái","icon":"child","color":"pink"},{"kanji":"犬","kana":"いぬ","romaji":"inu","meaning":"Con chó","icon":"dog","color":"orange","ex":{"jp":"<ruby>庭<rt>にわ</rt></ruby>に<ruby>犬<rt>いぬ</rt></ruby>がいます。","kana":"にわにいぬがいます","romaji":"Niwa ni inu ga imasu.","vn":"Trong vườn có con chó.","audio":"L10-inu.mp3"}},{"kanji":"猫","kana":"ねこ","romaji":"neko","meaning":"Con mèo","icon":"cat","color":"purple","ex":{"jp":"<ruby>猫<rt>ねこ</rt></ruby>はテーブルの<ruby>下<rt>した</rt></ruby>にいます。","kana":"ねこはてーぶるのしたにいます","romaji":"Neko wa teeburu no shita ni imasu.","vn":"Con mèo ở dưới bàn.","audio":"L10-neko.mp3"}},{"kanji":"パンダ","kana":"パンダ","romaji":"panda","meaning":"Gấu trúc","icon":"dog","color":"green"},{"kanji":"象","kana":"ぞう","romaji":"zou","meaning":"Con voi","icon":"elephant","color":"teal"},{"kanji":"木","kana":"き","romaji":"ki","meaning":"Cây, gỗ","icon":"tree","color":"green"}]},{"name":"Đồ vật trong nhà","words":[{"kanji":"物","kana":"もの","romaji":"mono","meaning":"Vật, đồ vật","icon":"box","color":"orange"},{"kanji":"電池","kana":"でんち","romaji":"denchi","meaning":"Pin","icon":"battery","color":"yellow"},{"kanji":"箱","kana":"はこ","romaji":"hako","meaning":"Cái hộp","icon":"box","color":"orange"},{"kanji":"スイッチ","kana":"スイッチ","romaji":"suitchi","meaning":"Công tắc","icon":"switch","color":"red"},{"kanji":"冷蔵庫","kana":"れいぞうこ","romaji":"reizouko","meaning":"Tủ lạnh","icon":"fridge","color":"blue","ex":{"jp":"<ruby>冷蔵庫<rt>れいぞうこ</rt></ruby>の<ruby>中<rt>なか</rt></ruby>に<ruby>卵<rt>たまご</rt></ruby>があります。","kana":"れいぞうこのなかにたまごがあります","romaji":"Reizouko no naka ni tamago ga arimasu.","vn":"Trong tủ lạnh có trứng.","audio":"L10-reizouko.mp3"}},{"kanji":"テーブル","kana":"テーブル","romaji":"teeburu","meaning":"Cái bàn","icon":"table","color":"orange"},{"kanji":"ベッド","kana":"ベッド","romaji":"beddo","meaning":"Cái giường","icon":"bed","color":"purple"},{"kanji":"棚","kana":"たな","romaji":"tana","meaning":"Giá sách, kệ","icon":"library","color":"orange"},{"kanji":"ドア","kana":"ドア","romaji":"doa","meaning":"Cửa ra vào","icon":"door","color":"yellow"},{"kanji":"窓","kana":"まど","romaji":"mado","meaning":"Cửa sổ","icon":"window","color":"blue"}]},{"name":"Địa điểm công cộng","words":[{"kanji":"ポスト","kana":"ポスト","romaji":"posuto","meaning":"Hộp thư","icon":"mailbox","color":"red"},{"kanji":"ビル","kana":"ビル","romaji":"biru","meaning":"Tòa nhà cao tầng","icon":"building","color":"blue"},{"kanji":"ATM","kana":"エイティーエム","romaji":"eitiiemu","meaning":"Máy rút tiền tự động","icon":"atm","color":"yellow"},{"kanji":"コンビニ","kana":"コンビニ","romaji":"konbini","meaning":"Cửa hàng tiện lợi","icon":"store","color":"green"},{"kanji":"公園","kana":"こうえん","romaji":"kouen","meaning":"Công viên","icon":"park","color":"green"},{"kanji":"喫茶店","kana":"きっさてん","romaji":"kissaten","meaning":"Quán cà phê","icon":"cafe","color":"orange"},{"kanji":"〜屋","kana":"〜や","romaji":"~ya","meaning":"Cửa hàng ~","icon":"store","color":"orange"},{"kanji":"乗り場","kana":"のりば","romaji":"noriba","meaning":"Bến xe, điểm đón","icon":"bus","color":"blue"},{"kanji":"県","kana":"けん","romaji":"ken","meaning":"Tỉnh (Nhật)","icon":"globe","color":"teal"}]},{"name":"Vị trí (Giới từ chỉ nơi chốn)","words":[{"kanji":"上","kana":"うえ","romaji":"ue","meaning":"Trên","icon":"up","color":"green","ex":{"jp":"<ruby>机<rt>つくえ</rt></ruby>の<ruby>上<rt>うえ</rt></ruby>に<ruby>本<rt>ほん</rt></ruby>があります。","kana":"つくえのうえにほんがあります","romaji":"Tsukue no ue ni hon ga arimasu.","vn":"Trên bàn có sách.","audio":"L10-ue.mp3"}},{"kanji":"下","kana":"した","romaji":"shita","meaning":"Dưới","icon":"down","color":"blue","ex":{"jp":"いすの<ruby>下<rt>した</rt></ruby>に<ruby>猫<rt>ねこ</rt></ruby>がいます。","kana":"いすのしたにねこがいます","romaji":"Isu no shita ni neko ga imasu.","vn":"Dưới ghế có con mèo.","audio":"L10-shita.mp3"}},{"kanji":"前","kana":"まえ","romaji":"mae","meaning":"Trước","icon":"back","color":"orange","ex":{"jp":"<ruby>駅<rt>えき</rt></ruby>の<ruby>前<rt>まえ</rt></ruby>にコンビニがあります。","kana":"えきのまえにこんびにがあります","romaji":"Eki no mae ni konbini ga arimasu.","vn":"Trước ga có cửa hàng tiện lợi.","audio":"L10-mae.mp3"}},{"kanji":"後ろ","kana":"うしろ","romaji":"ushiro","meaning":"Sau","icon":"next","color":"purple"},{"kanji":"右","kana":"みぎ","romaji":"migi","meaning":"Phải","icon":"next","color":"red"},{"kanji":"左","kana":"ひだり","romaji":"hidari","meaning":"Trái","icon":"back","color":"green"},{"kanji":"中","kana":"なか","romaji":"naka","meaning":"Trong, ở giữa","icon":"box","color":"yellow","ex":{"jp":"かばんの<ruby>中<rt>なか</rt></ruby>に<ruby>何<rt>なに</rt></ruby>がありますか。","kana":"かばんのなかになにがありますか","romaji":"Kaban no naka ni nani ga arimasu ka.","vn":"Trong cặp có gì?","audio":"L10-naka.mp3"}},{"kanji":"外","kana":"そと","romaji":"soto","meaning":"Ngoài","icon":"globe","color":"teal"},{"kanji":"隣","kana":"となり","romaji":"tonari","meaning":"Bên cạnh","icon":"arrow","color":"pink","ex":{"jp":"<ruby>銀行<rt>ぎんこう</rt></ruby>の<ruby>隣<rt>となり</rt></ruby>に<ruby>郵便局<rt>ゆうびんきょく</rt></ruby>があります。","kana":"ぎんこうのとなりにゆうびんきょくがあります","romaji":"Ginkou no tonari ni yuubinkyoku ga arimasu.","vn":"Bên cạnh ngân hàng có bưu điện.","audio":"L10-tonari.mp3"}},{"kanji":"近く","kana":"ちかく","romaji":"chikaku","meaning":"Gần","icon":"arrow","color":"green","ex":{"jp":"うちの<ruby>近<rt>ちか</rt></ruby>くに<ruby>公園<rt>こうえん</rt></ruby>があります。","kana":"うちのちかくにこうえんがあります","romaji":"Uchi no chikaku ni kouen ga arimasu.","vn":"Gần nhà tôi có công viên.","audio":"L10-chikaku.mp3"}},{"kanji":"間","kana":"あいだ","romaji":"aida","meaning":"Giữa (2 vật)","icon":"arrow","color":"purple"}]}]}};
+document.addEventListener('DOMContentLoaded',function(){
+  try{ renderLessonContent(); }catch(e){ console.error(e); }
+  var el=document.querySelector('.lesson'); if(el){el.classList.add('active');}
+});
+</script>
+</body></html>

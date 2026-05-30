@@ -1,0 +1,527 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 10 · 旅行 — Từ vựng N3 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N3 — Bài 10: 旅行. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#6e1831;
+  --accent-dark:#4f0f24;
+  --accent-2:#9b7a38;
+  --accent-3:#c7ab70;
+  --line:#dfcfbb;
+  --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(110,24,49,0.08), transparent 22%),
+    linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+/* ============ COVER ============ */
+.cover{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 36%, #3a0f1b 100%);
+  color:#fff; border-radius:30px; box-shadow:var(--shadow);
+  padding:60px 64px 50px; margin-bottom:26px;
+}
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+/* ============ TOC ============ */
+.toc-panel{
+  margin:0 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96));
+  border:1px solid rgba(155,122,56,0.20);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:14px 16px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(110,24,49,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item.disabled{ opacity:0.45; pointer-events:none; }
+.toc-item-number{ display:inline-block; min-width:34px; padding:2px 8px; margin-right:8px; border-radius:8px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:11px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:13.5px; }
+.toc-item-summary{ display:block; margin-top:5px; color:var(--muted); font-size:12px; line-height:1.45; font-family:"Noto Serif CJK JP",serif; }
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(155,122,56,0.16);
+  border-radius:28px; box-shadow:var(--shadow);
+  padding:0 0 40px; margin-bottom:40px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  padding:30px 44px 28px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 50%, #3a0f1b 100%);
+  color:#fff;
+}
+.lesson-banner::after{
+  content:"語彙"; position:absolute; right:-10px; bottom:-50px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:8px; }
+.lesson-banner h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:30px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:14px; color:rgba(255,255,255,0.82); }
+
+.doc-body{ padding:30px 44px 10px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #57132a 0%, #6e1831 52%, #7f3b52 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark); position:absolute; right:18px; top:50%; transform:translateY(-50%);
+  font-family:"Noto Serif CJK JP",serif; font-size:60px; line-height:1; color:rgba(255,255,255,0.12); font-weight:700;
+}
+.section-kicker{ display:block; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:rgba(255,255,255,0.78); }
+.section-head h3{
+  margin:0; padding:0; border:none; color:#fff; background:none;
+  font-family:"Noto Serif CJK JP",serif; font-size:24px; line-height:1.2; font-weight:700;
+}
+.section-head .section-vn{ display:block; margin-top:4px; font-size:13px; font-style:italic; color:rgba(255,255,255,0.82); font-family:Inter,sans-serif; }
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{ margin:16px 0 24px; }
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff; border:1px solid var(--line-2);
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 26px rgba(60,38,19,0.05);
+  font-size:13.5px;
+}
+thead th{
+  background:linear-gradient(180deg, #fcf5ea 0%, #f2e3cf 100%);
+  color:var(--accent); font-weight:800;
+  padding:13px 14px; text-align:left; font-size:13px;
+  border-bottom:1px solid var(--line-2);
+}
+thead th:not(:last-child){ border-right:1px solid var(--line-2); }
+tbody td{
+  padding:18px 14px; vertical-align:top;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+}
+tbody td:last-child{ border-right:none; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody tr:nth-child(even) td{ background:#fffaf4; }
+
+.col-stt{ width:5%; text-align:center; font-weight:800; color:var(--accent); font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:18px; }
+.col-vocab{ width:22%; }
+.col-explain{ width:30%; }
+.col-example{ width:43%; }
+
+.vocab-wrapper{ display:flex; flex-direction:column; gap:4px; }
+.vocab-kanji{ font-size:26px; font-weight:700; color:#222; font-family:"Noto Serif CJK JP","Yu Mincho",serif; line-height:1.15; }
+.vocab-kanji ruby{ ruby-position:over; ruby-align:center; }
+.vocab-kanji rt{ font-size:11px; color:#888; font-family:sans-serif; font-weight:500; }
+.vocab-hanviet{ font-size:11px; color:var(--accent-2); font-weight:800; letter-spacing:1.2px; margin-top:4px; }
+.vocab-pos{ display:inline-block; font-size:10.5px; color:#fff; background:var(--green); padding:2px 8px; border-radius:4px; font-weight:600; letter-spacing:0.05em; margin-top:6px; align-self:flex-start; }
+.vocab-pos.pos-na{ background:var(--terra); }
+.vocab-pos.pos-i{ background:var(--teal); }
+.vocab-pos.pos-adv{ background:var(--plum); }
+.vocab-pos.pos-suru{ background:#8a4a6a; }
+.vocab-pos.pos-katakana{ background:var(--accent-2); }
+.vocab-meaning{ font-size:14px; color:var(--accent); font-weight:700; margin-top:8px; line-height:1.5; }
+
+/* Explain box */
+.kanji-break{ background:linear-gradient(180deg, #fffdf9, #fbf3e8); border:1px solid #e7d7be; border-left:4px solid var(--accent-2); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.65; color:#3b3320; }
+.kanji-break .kchar{ font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; color:var(--accent); margin-right:4px; }
+.kanji-break .kreading{ color:var(--accent-2); font-weight:700; font-size:11.5px; letter-spacing:0.05em; }
+.kanji-break .kmean{ color:#5f4830; }
+.kanji-break .combine{ margin-top:8px; padding-top:8px; border-top:1px dashed #d8c8ad; font-style:italic; color:#6e5230; }
+.kanji-break .combine strong{ font-style:normal; color:var(--accent); }
+.katakana-origin{ background:linear-gradient(180deg, #fff5f8, #faeaf0); border:1px solid #f0d8e2; border-left:4px solid #b13e6a; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#5a3a4a; }
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{ background:linear-gradient(180deg, #f7faf2, #ecf2e2); border:1px solid #d8e2c8; border-left:4px solid var(--green); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#3e5a3a; }
+.wago-note strong{ color:var(--green); }
+
+/* Example box */
+.ex-box{ background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent); padding:13px 16px; border-radius:0 12px 12px 0; }
+.ex-jp{ font-size:15px; color:#222; margin-bottom:8px; line-height:1.95; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn{ font-size:13.5px; color:#6e5230; font-style:italic; line-height:1.55; padding-top:6px; border-top:1px dotted #e2d4b8; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:30px 0 24px;
+  padding:0;
+  background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+  border:1px solid #e7d7be;
+  border-radius:22px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(60,38,19,0.05);
+}
+.exercise-banner{
+  display:flex; align-items:center; gap:14px;
+  padding:18px 24px;
+  background:linear-gradient(90deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff;
+}
+.exercise-icon{ width:42px; height:42px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"EB Garamond","Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:11.5px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:2px; letter-spacing:0.04em; }
+.exercise-body{ padding:22px 26px; }
+
+.exercise{ background:#fff; border:1px solid #ecdec3; border-radius:14px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 14px rgba(60,38,19,0.04); }
+.exercise:last-child{ margin-bottom:0; }
+.exercise-title{ font-weight:700; color:var(--accent); margin-bottom:12px; font-size:14px; display:flex; align-items:center; gap:10px; padding-bottom:10px; border-bottom:1px dashed #e7d7be; }
+.exercise-title .ex-no{ background:var(--accent-2); color:#fff; padding:3px 10px; border-radius:6px; font-size:11.5px; letter-spacing:0.08em; }
+.choice-pool{ background:linear-gradient(180deg, #fff7e8, #f7e4c1); border:1px dashed var(--accent-2); border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:14px; font-family:"Noto Serif CJK JP",serif; color:#674c1b; }
+.choice-pool strong{ color:var(--accent); }
+
+.ex-q{ padding:9px 0; border-bottom:1px dotted #eadfce; font-size:14px; line-height:1.85; font-family:"Noto Serif CJK JP",serif; }
+.ex-q:last-child{ border-bottom:none; }
+.ex-q .qnum{ display:inline-block; min-width:24px; font-weight:700; color:var(--accent); margin-right:4px; font-family:"EB Garamond",sans-serif; font-size:14.5px; }
+.ex-q .blank{ display:inline-block; min-width:90px; border-bottom:1.5px solid #b08850; padding:0 8px; margin:0 3px; text-align:center; color:transparent; cursor:pointer; transition:all .15s; }
+.ex-q .blank:hover{ background:rgba(199,171,112,0.12); }
+.ex-q .blank.shown{ color:var(--accent); font-weight:700; border-bottom-color:var(--accent); background:rgba(199,171,112,0.15); }
+
+.multi-choice{ display:block; margin:4px 0 4px 30px; font-size:13.5px; color:#444; }
+.multi-choice .opt-num{ color:var(--accent-2); font-weight:700; margin-right:6px; }
+.match-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin-top:12px; }
+.match-col{ background:#fffaf2; border:1px solid #ecdec3; border-radius:12px; padding:14px; }
+.match-col h5{ margin:0 0 10px; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; }
+.match-item{ padding:7px 10px; font-size:14px; border-radius:6px; }
+.match-item.jp{ font-family:"Noto Serif CJK JP",serif; }
+.match-item .mlabel{ display:inline-block; min-width:24px; font-weight:800; color:var(--accent-2); }
+
+.answer-toggle{
+  display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+  padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:13px; cursor:pointer; transition:all 0.2s; font-family:inherit;
+  box-shadow:0 6px 14px rgba(110,24,49,0.18);
+}
+.answer-toggle:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(110,24,49,0.28); }
+.answer-toggle::before{ content:"鍵"; font-family:"Noto Serif CJK JP",serif; margin-right:4px; }
+.answer-box{ display:none; margin-top:14px; padding:14px 16px; background:linear-gradient(180deg, #fffbef, #f8eed4); border:1px solid #d9bb88; border-left:4px solid var(--accent-2); border-radius:10px; font-size:13.5px; line-height:1.7; color:#5a4520; }
+.answer-box strong{ color:var(--accent); }
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  table.vocab-table{ min-width:880px; }
+  .table-shell{ overflow-x:auto; }
+  .match-grid{ grid-template-columns:1fr; }
+}
+
+/* === @page: dùng A4 LANDSCAPE cho bài học để có chỗ cho 4 cột === */
+@media print {
+  /* Cover + TOC: portrait */
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  /* Trang bài học: landscape (rộng hơn để 4 cột vừa) */
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+
+  /* === RESET cơ bản === */
+  html, body{ background:#fff !important; }
+  body{ font-size:11px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; }
+
+  /* === COVER === */
+  .cover{ page-break-after:always; break-after:page; box-shadow:none; border-radius:18px; padding:42px 38px; }
+  .cover-title{ font-size:36px; }
+  .cover-mark{ font-size:11rem !important; }
+
+  /* === TOC === */
+  .toc-panel{ page-break-after:always; break-after:page; box-shadow:none; }
+  .toc-grid{ grid-template-columns:repeat(3, 1fr) !important; }
+  .toc-item{ page-break-inside:avoid !important; break-inside:avoid !important; }
+
+  /* === Mỗi BÀI bắt sang trang mới === */
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:16px 18px 12px !important; }
+
+  /* === GỠ BỎ rào cản min-width === */
+  /* QUAN TRỌNG: ghi đè responsive rule khiến bảng tràn ngang */
+  .table-shell{ overflow:visible !important; overflow-x:visible !important; margin:8px 0 14px !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; box-shadow:none !important; table-layout:fixed !important; }
+
+  /* === KHÔNG cắt giữa khối === */
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:18px 22px !important; }
+  .lesson-banner h2{ font-size:22px !important; }
+  .section-head{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:10px 16px !important; margin:10px 0 8px !important; }
+  .section-head h3{ font-size:18px !important; }
+  .section-head::after{ font-size:36px !important; }
+  .exercise-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:12px 18px !important; }
+  .exercise-banner h4{ font-size:14px !important; }
+  .exercise-block{ page-break-inside:auto; margin:14px 0 !important; }
+  .exercise-body{ padding:14px 16px !important; }
+  .exercise{ page-break-inside:avoid !important; break-inside:avoid !important; padding:12px 14px !important; margin-bottom:10px !important; }
+  .footer-card{ page-break-inside:avoid; break-inside:avoid; }
+
+  /* === BẢNG TỪ VỰNG === */
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table tbody{ display:table-row-group; }
+  table.vocab-table thead th{ padding:8px 8px !important; font-size:11px !important; }
+  /* Mỗi tr (= 1 từ vựng) giữ nguyên trên 1 trang */
+  table.vocab-table tr{ page-break-inside:avoid !important; break-inside:avoid !important; page-break-after:auto; }
+  table.vocab-table tbody td{ padding:10px 8px !important; font-size:11px !important; }
+
+  /* === Co cell content nhỏ lại cho vừa khổ === */
+  .vocab-wrapper{ gap:2px !important; }
+  .vocab-kanji{ font-size:18px !important; line-height:1.1 !important; }
+  .vocab-kanji rt{ font-size:9px !important; }
+  .vocab-hanviet{ font-size:9.5px !important; letter-spacing:0.8px !important; margin-top:2px !important; }
+  .vocab-pos{ font-size:8.5px !important; padding:1px 5px !important; margin-top:3px !important; }
+  .vocab-meaning{ font-size:11px !important; margin-top:4px !important; line-height:1.35 !important; }
+
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:7px 9px !important; font-size:10.5px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important; break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:14px !important; }
+  .kanji-break .kreading{ font-size:9.5px !important; }
+  .kanji-break .combine{ margin-top:5px !important; padding-top:5px !important; }
+
+  .ex-box{ padding:8px 10px !important; page-break-inside:avoid !important; break-inside:avoid !important; }
+  .ex-jp{ font-size:12px !important; line-height:1.75 !important; margin-bottom:5px !important; }
+  .ex-jp rt{ font-size:8px !important; }
+  .ex-vn{ font-size:10.5px !important; line-height:1.45 !important; padding-top:4px !important; }
+
+  /* === BÀI TẬP === */
+  .ex-q{ page-break-inside:avoid; break-inside:avoid; font-size:11.5px !important; line-height:1.7 !important; padding:6px 0 !important; }
+  .choice-pool{ font-size:11.5px !important; padding:7px 11px !important; }
+  .multi-choice{ font-size:11px !important; }
+  .answer-toggle{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; break-inside:avoid; font-size:11px !important; padding:10px 12px !important; }
+  .match-grid{ grid-template-columns:1fr 1fr !important; }
+  .match-item{ font-size:11px !important; padding:4px 6px !important; }
+}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:200;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.92);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:38px;height:38px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.18em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}.tl-bc a:hover{color:var(--tl-ink)}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-wrap{max-width:1000px;margin:0 auto;padding:24px}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px;transition:all .2s}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3;pointer-events:none}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n3.html">N3</a> · <a href="../tu-vung.html">Từ vựng</a> · Bài 10</div></div></a><a class="tl-back" href="../tu-vung.html">← Danh sách bài</a></nav>
+<div class="tl-wrap">
+<article class="document" id="lesson-10">
+<div class="lesson-banner">
+  <span class="lesson-kicker">Bài 10 — 趣味と旅行 3</span>
+  <h2>旅行 (Du lịch)</h2>
+  <div class="lesson-sub">Sở thích &amp; du lịch 3: Hành trình tham quan và phương tiện di chuyển (28 từ vựng)</div>
+</div>
+<div class="doc-body">
+
+<div class="section-head" data-mark="旅"><span class="section-kicker">Phần 10-1 · 14 từ</span><h3>旅行</h3><span class="section-vn">Hành trình du lịch</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">1</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>休<rt>きゅう</rt></ruby><ruby>暇<rt>か</rt></ruby></span><span class="vocab-hanviet">HƯU HẠ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Kỳ nghỉ phép dài ngày</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">休</span><span class="kreading">HƯU · きゅう / やす(む)</span> — <span class="kmean">nghỉ</span></div><div><span class="kchar">暇</span><span class="kreading">HẠ · か / ひま</span> — <span class="kmean">rảnh rỗi</span></div><div class="combine"><strong>Ghép:</strong> "Nghỉ + rảnh" → <strong>kỳ nghỉ dài</strong>. Phân biệt: 休憩 (きゅうけい - nghỉ giải lao ngắn). Cụm: 休暇を取る (xin nghỉ phép).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>夏<rt>なつ</rt></ruby>に1<ruby>週<rt>しゅう</rt></ruby><ruby>間<rt>かん</rt></ruby>の<span class="target"><ruby>休<rt>きゅう</rt></ruby><ruby>暇<rt>か</rt></ruby></span>を<ruby>取<rt>と</rt></ruby>って<ruby>旅<rt>りょ</rt></ruby><ruby>行<rt>こう</rt></ruby>に<ruby>行<rt>い</rt></ruby>った。</div><div class="ex-vn">Mùa hè tôi đã xin nghỉ 1 tuần và đi du lịch.</div></div></td></tr>
+
+<tr><td class="col-stt">2</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">ツアー / <ruby>予<rt>よ</rt></ruby><ruby>算<rt>さん</rt></ruby></span><span class="vocab-hanviet">DỰ TOÁN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Tour du lịch / Ngân sách</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">予</span><span class="kreading">DỰ · よ</span> — <span class="kmean">dự trù</span></div><div><span class="kchar">算</span><span class="kreading">TOÁN · さん</span> — <span class="kmean">tính toán</span></div><div class="combine"><strong>Bộ đôi du lịch:</strong> <strong>ツアー</strong> (tour - chương trình du lịch trọn gói). <strong>予算</strong> (ngân sách - cụm: 予算が少ない: ngân sách hạn hẹp).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>予<rt>よ</rt></ruby><ruby>算<rt>さん</rt></ruby></span>が<ruby>少<rt>すく</rt></ruby>ないので、<ruby>安<rt>やす</rt></ruby>い<span class="target">ツアー</span>を<ruby>探<rt>さが</rt></ruby>している。</div><div class="ex-vn">Ngân sách ít nên tôi đang tìm tour giá rẻ.</div></div></td></tr>
+
+<tr><td class="col-stt">3</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">キャンセル</span><span class="vocab-hanviet">(katakana)</span><span class="vocab-pos pos-katakana">Danh + する</span><span class="vocab-meaning">Hủy đặt chỗ</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Nguồn gốc:</strong> Từ tiếng Anh <em>"cancel"</em>. Đồng nghĩa Nhật: 取り消す (とりけす). Cụm: 予約をキャンセルする (hủy đặt chỗ), キャンセル料 (phí hủy).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>急<rt>きゅう</rt></ruby>な<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>のため、<ruby>予<rt>よ</rt></ruby><ruby>約<rt>やく</rt></ruby>を<span class="target">キャンセル</span>しました。</div><div class="ex-vn">Vì có việc gấp, tôi đã hủy đặt chỗ.</div></div></td></tr>
+
+<tr><td class="col-stt">4</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">ガイド / <ruby>観<rt>かん</rt></ruby><ruby>光<rt>こう</rt></ruby></span><span class="vocab-hanviet">QUAN QUANG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Hướng dẫn viên / Tham quan</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">観</span><span class="kreading">QUAN · かん / み(る)</span> — <span class="kmean">ngắm, xem</span></div><div><span class="kchar">光</span><span class="kreading">QUANG · こう / ひかり</span> — <span class="kmean">ánh sáng, danh thắng</span></div><div class="combine"><strong>Bộ đôi du lịch:</strong> <strong>ガイド</strong> (guide - hướng dẫn viên). <strong>観光</strong> (ngắm cảnh + danh lam) = tham quan. Cụm: 観光を楽しむ.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target">ガイド</span>の<ruby>説<rt>せつ</rt></ruby><ruby>明<rt>めい</rt></ruby>を<ruby>聞<rt>き</rt></ruby>きながら<span class="target"><ruby>観<rt>かん</rt></ruby><ruby>光<rt>こう</rt></ruby></span>を<ruby>楽<rt>たの</rt></ruby>しんだ。</div><div class="ex-vn">Tôi đã thưởng thức chuyến tham quan trong khi nghe hướng dẫn viên giải thích.</div></div></td></tr>
+
+<tr><td class="col-stt">5</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>詳<rt>くわ</rt></ruby>しい</span><span class="vocab-hanviet">TƯỜNG</span><span class="vocab-pos pos-i">Tính từ -i</span><span class="vocab-meaning">Tường tận, chi tiết; thông thạo</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">詳</span><span class="kreading">TƯỜNG · しょう / くわ(しい)</span> — <span class="kmean">chi tiết, rõ ràng</span></div><div class="combine"><strong>Hai nghĩa:</strong> ① Chi tiết: 詳しい地図 (bản đồ chi tiết). ② Thông thạo: 〜に詳しい人 (người am hiểu về ~). Khác 細かい (tỉ mỉ).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>詳<rt>くわ</rt></ruby>しい</span><ruby>地<rt>ち</rt></ruby><ruby>図<rt>ず</rt></ruby>で<ruby>道<rt>みち</rt></ruby>を<ruby>調<rt>しら</rt></ruby>べた。</div><div class="ex-vn">Tôi đã tra cứu đường đi trên bản đồ chi tiết.</div></div></td></tr>
+
+<tr><td class="col-stt">6</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>道<rt>みち</rt></ruby>に<ruby>迷<rt>まよ</rt></ruby>う</span><span class="vocab-hanviet">ĐẠO MÊ</span><span class="vocab-pos">Cụm động từ</span><span class="vocab-meaning">Lạc đường</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">迷</span><span class="kreading">MÊ · めい / まよ(う)</span> — <span class="kmean">mê, lạc</span></div><div class="combine"><strong>Cấu trúc:</strong> 道 (đường) + に + 迷う (lạc, do dự) → <strong>lạc đường</strong>. 迷う còn nghĩa khác: ① do dự (どちらに迷う), ② mê hoặc. Cùng chữ 迷: 迷子 (まいご - đứa trẻ lạc).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>新<rt>あたら</rt></ruby>しい<ruby>町<rt>まち</rt></ruby>で<span class="target"><ruby>道<rt>みち</rt></ruby>に<ruby>迷<rt>まよ</rt></ruby>って</span>しまった。</div><div class="ex-vn">Tôi đã bị lạc đường ở một thành phố lạ.</div></div></td></tr>
+
+<tr><td class="col-stt">7</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>両<rt>りょう</rt></ruby><ruby>替<rt>がえ</rt></ruby></span><span class="vocab-hanviet">LƯỠNG THẾ</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Đổi tiền (ngoại tệ)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">両</span><span class="kreading">LƯỠNG · りょう</span> — <span class="kmean">hai, cả hai</span></div><div><span class="kchar">替</span><span class="kreading">THẾ · か(える) / がえ</span> — <span class="kmean">thay, đổi</span></div><div class="combine"><strong>Ghép:</strong> "Đổi qua lại giữa hai (loại tiền)" → <strong>đổi tiền</strong>. Cụm: お金を両替する (đổi tiền), 両替所 (りょうがえじょ - quầy đổi tiền).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>空<rt>くう</rt></ruby><ruby>港<rt>こう</rt></ruby>でドルを<ruby>円<rt>えん</rt></ruby>に<span class="target"><ruby>両<rt>りょう</rt></ruby><ruby>替<rt>がえ</rt></ruby></span>した。</div><div class="ex-vn">Tôi đã đổi đô la sang yên ở sân bay.</div></div></td></tr>
+
+<tr><td class="col-stt">8</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">お<ruby>土<rt>みや</rt></ruby><ruby>産<rt>げ</rt></ruby> / <ruby>名<rt>めい</rt></ruby><ruby>物<rt>ぶつ</rt></ruby></span><span class="vocab-hanviet">THỔ SẢN / DANH VẬT</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Quà lưu niệm / Đặc sản vùng</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">土産</span><span class="kreading">みやげ (熟字訓)</span> — <span class="kmean">quà lưu niệm</span></div><div><span class="kchar">名物</span><span class="kreading">めいぶつ</span> — <span class="kmean">đặc sản nổi tiếng</span></div><div class="combine"><strong>Văn hóa quà:</strong> Người Nhật thường mua お土産 (đồ ăn vặt, đặc sản) khi đi du lịch về để tặng đồng nghiệp, gia đình. 名物 = món/vật làm địa phương đó nổi tiếng.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>町<rt>まち</rt></ruby>の<span class="target"><ruby>名<rt>めい</rt></ruby><ruby>物<rt>ぶつ</rt></ruby></span>のお<ruby>菓<rt>か</rt></ruby><ruby>子<rt>し</rt></ruby>を<span class="target">お<ruby>土<rt>みや</rt></ruby><ruby>産<rt>げ</rt></ruby></span>に<ruby>買<rt>か</rt></ruby>った。</div><div class="ex-vn">Tôi đã mua bánh kẹo đặc sản của thị trấn này để làm quà.</div></div></td></tr>
+
+<tr><td class="col-stt">9</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>感<rt>かん</rt></ruby><ruby>動<rt>どう</rt></ruby></span><span class="vocab-hanviet">CẢM ĐỘNG</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Cảm động, xúc động</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">感</span><span class="kreading">CẢM · かん</span> — <span class="kmean">cảm xúc</span></div><div><span class="kchar">動</span><span class="kreading">ĐỘNG · どう / うご(く)</span> — <span class="kmean">động, chuyển</span></div><div class="combine"><strong>Ghép:</strong> "Cảm xúc bị lay động" → <strong>cảm động</strong>. Cụm: 風景の美しさに感動する, 感動的 (đầy cảm xúc).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>富<rt>ふ</rt></ruby><ruby>士<rt>じ</rt></ruby><ruby>山<rt>さん</rt></ruby>の<ruby>美<rt>うつく</rt></ruby>しさに<span class="target"><ruby>感<rt>かん</rt></ruby><ruby>動<rt>どう</rt></ruby></span>した。</div><div class="ex-vn">Tôi đã xúc động trước vẻ đẹp của núi Phú Sĩ.</div></div></td></tr>
+
+<tr><td class="col-stt">10</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>温<rt>おん</rt></ruby><ruby>泉<rt>せん</rt></ruby></span><span class="vocab-hanviet">ÔN TUYỀN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Suối nước nóng (onsen)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">温</span><span class="kreading">ÔN · おん / あたた(かい)</span> — <span class="kmean">ấm</span></div><div><span class="kchar">泉</span><span class="kreading">TUYỀN · せん / いずみ</span> — <span class="kmean">suối</span></div><div class="combine"><strong>Văn hóa Nhật:</strong> 温泉 là điểm du lịch nổi tiếng. Cụm: 温泉に入る (tắm onsen). Cùng chữ 泉: 噴水 (đài phun nước).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>日<rt>に</rt></ruby><ruby>本<rt>ほん</rt></ruby>の<span class="target"><ruby>温<rt>おん</rt></ruby><ruby>泉<rt>せん</rt></ruby></span>に<ruby>入<rt>はい</rt></ruby>ってのんびりしたい。</div><div class="ex-vn">Tôi muốn tắm onsen Nhật Bản và thư giãn.</div></div></td></tr>
+
+<tr><td class="col-stt">11</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">のんびり / リラックス</span><span class="vocab-hanviet">(và-go + katakana)</span><span class="vocab-pos pos-adv">Trạng từ / Suru</span><span class="vocab-meaning">Thoải mái, thảnh thơi / Thư giãn</span></div></td><td class="col-explain"><div class="wago-note"><strong>Bộ đôi thư giãn:</strong><br/>① <strong>のんびり</strong> (và-go - thảnh thơi, không vội). Cụm: のんびり過ごす.<br/>② <strong>リラックス</strong> (relax - thư giãn). Cụm: リラックスする.</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>週<rt>しゅう</rt></ruby><ruby>末<rt>まつ</rt></ruby>は<ruby>家<rt>いえ</rt></ruby>で<span class="target">のんびり</span><span class="target">リラックス</span>したい。</div><div class="ex-vn">Cuối tuần tôi muốn ở nhà thư giãn thoải mái.</div></div></td></tr>
+
+<tr><td class="col-stt">12</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>で</rt></ruby> / <ruby>記<rt>き</rt></ruby><ruby>憶<rt>おく</rt></ruby></span><span class="vocab-hanviet">TƯ XUẤT / KÝ ỨC</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Kỷ niệm / Ký ức, trí nhớ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">思い出</span><span class="kreading">おもいで</span> — <span class="kmean">kỷ niệm</span></div><div><span class="kchar">記憶</span><span class="kreading">きおく</span> — <span class="kmean">ký ức, trí nhớ</span></div><div class="combine"><strong>Phân biệt:</strong> 思い出 - kỷ niệm cảm xúc (nhẹ nhàng, tích cực). 記憶 - ký ức (trí nhớ thuần túy, có thể tốt/xấu). Cụm: 思い出に残る (lưu lại kỷ niệm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>旅<rt>りょ</rt></ruby><ruby>行<rt>こう</rt></ruby>は<ruby>一<rt>いっ</rt></ruby><ruby>生<rt>しょう</rt></ruby>の<span class="target"><ruby>思<rt>おも</rt></ruby>い<ruby>出<rt>で</rt></ruby></span>になります。</div><div class="ex-vn">Chuyến du lịch này sẽ là kỷ niệm của cả đời tôi.</div></div></td></tr>
+
+<tr><td class="col-stt">13</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>む</span><span class="vocab-hanviet">THÂN VÀO</span><span class="vocab-pos">Động từ tha động</span><span class="vocab-meaning">Đăng ký, ứng tuyển</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">申</span><span class="kreading">THÂN · しん / もう(す)</span> — <span class="kmean">trình bày, nói (khiêm nhường)</span></div><div><span class="kchar">込</span><span class="kreading">VÀO · こ(む)</span> — <span class="kmean">vào, đông</span></div><div class="combine"><strong>Ghép:</strong> "Trình bày + vào (sổ)" → <strong>đăng ký, đăng tuyển</strong>. Cụm: ツアーに申し込む (đăng ký tour), 申し込み (đơn đăng ký).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">ハワイ<ruby>旅<rt>りょ</rt></ruby><ruby>行<rt>こう</rt></ruby>のツアーに<span class="target"><ruby>申<rt>もう</rt></ruby>し<ruby>込<rt>こ</rt></ruby>みました</span>。</div><div class="ex-vn">Tôi đã đăng ký tour du lịch Hawaii.</div></div></td></tr>
+
+<tr><td class="col-stt">14</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>休<rt>きゅう</rt></ruby><ruby>憩<rt>けい</rt></ruby></span><span class="vocab-hanviet">HƯU KHẾ</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Nghỉ giải lao ngắn</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">休</span><span class="kreading">HƯU · きゅう / やす(む)</span> — <span class="kmean">nghỉ</span></div><div><span class="kchar">憩</span><span class="kreading">KHẾ · けい / いこ(い)</span> — <span class="kmean">nghỉ ngơi</span></div><div class="combine"><strong>Phân biệt với 休暇:</strong> 休暇 - nghỉ dài (vài ngày trở lên). 休憩 - nghỉ giải lao ngắn (vài phút - vài giờ giữa giờ làm/học).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">1<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby><ruby>勉<rt>べん</rt></ruby><ruby>強<rt>きょう</rt></ruby>したら、10<ruby>分<rt>ぷん</rt></ruby><span class="target"><ruby>休<rt>きゅう</rt></ruby><ruby>憩<rt>けい</rt></ruby></span>します。</div><div class="ex-vn">Học 1 tiếng xong thì tôi nghỉ 10 phút.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 A — Ôn luyện cụm Du lịch</h4><span class="ex-subtitle">Hai dạng câu hỏi sau khi học 14 từ ở mục 10-1</span></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 A1</span>文脈規定 — Điền từ vào chỗ trống</div>
+      <div class="choice-pool"><strong>選択肢:</strong> 休暇 / 観光 / 両替 / お土産 / 感動 / 申し込む</div>
+      <div class="ex-q"><span class="qnum">(1)</span><ruby>夏<rt>なつ</rt></ruby>に1<ruby>週<rt>しゅう</rt></ruby><ruby>間<rt>かん</rt></ruby>の <span class="blank" data-ans="休暇">　　　　</span> を<ruby>取<rt>と</rt></ruby>った。</div>
+      <div class="ex-q"><span class="qnum">(2)</span><ruby>京<rt>きょう</rt></ruby><ruby>都<rt>と</rt></ruby>で<ruby>美<rt>うつく</rt></ruby>しい<ruby>寺<rt>てら</rt></ruby>を <span class="blank" data-ans="観光">　　　　</span> した。</div>
+      <div class="ex-q"><span class="qnum">(3)</span><ruby>空<rt>くう</rt></ruby><ruby>港<rt>こう</rt></ruby>でドルを<ruby>円<rt>えん</rt></ruby>に <span class="blank" data-ans="両替">　　　　</span> した。</div>
+      <div class="ex-q"><span class="qnum">(4)</span><ruby>同<rt>どう</rt></ruby><ruby>僚<rt>りょう</rt></ruby>のために <span class="blank" data-ans="お土産">　　　　</span> を<ruby>買<rt>か</rt></ruby>った。</div>
+      <div class="ex-q"><span class="qnum">(5)</span><ruby>富<rt>ふ</rt></ruby><ruby>士<rt>じ</rt></ruby><ruby>山<rt>さん</rt></ruby>の<ruby>美<rt>うつく</rt></ruby>しさに <span class="blank" data-ans="感動">　　　　</span> した。</div>
+      <div class="ex-q"><span class="qnum">(6)</span>ハワイ<ruby>旅<rt>りょ</rt></ruby><ruby>行<rt>こう</rt></ruby>のツアーに <span class="blank" data-ans="申し込む">　　　　</span>。</div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án tổng</button>
+      <div class="answer-box"><strong>Đáp án:</strong> (1) 休暇 — (2) 観光 — (3) 両替 — (4) お土産 — (5) 感動 — (6) 申し込む</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-head" data-mark="移"><span class="section-kicker">Phần 10-2 · 14 từ</span><h3>移動</h3><span class="section-vn">Di chuyển và phương tiện</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">15</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>集<rt>しゅう</rt></ruby><ruby>合<rt>ごう</rt></ruby></span><span class="vocab-hanviet">TẬP HỢP</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Tập trung, tụ tập</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">集</span><span class="kreading">TẬP · しゅう / あつ(まる)</span> — <span class="kmean">tụ họp</span></div><div><span class="kchar">合</span><span class="kreading">HỢP · ごう / あ(う)</span> — <span class="kmean">hợp lại</span></div><div class="combine"><strong>Ghép:</strong> "Tụ + hợp" → <strong>tập trung</strong>. Cụm: 駅に集合する (tập trung tại ga). Khác 集める (gom lại đồ vật).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">8<ruby>時<rt>じ</rt></ruby>に<ruby>東<rt>とう</rt></ruby><ruby>京<rt>きょう</rt></ruby><ruby>駅<rt>えき</rt></ruby>に<span class="target"><ruby>集<rt>しゅう</rt></ruby><ruby>合<rt>ごう</rt></ruby></span>してください。</div><div class="ex-vn">Hãy tập trung tại ga Tokyo lúc 8 giờ.</div></div></td></tr>
+
+<tr><td class="col-stt">16</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>移<rt>い</rt></ruby><ruby>動<rt>どう</rt></ruby></span><span class="vocab-hanviet">DI ĐỘNG</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Di chuyển</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">移</span><span class="kreading">DI · い / うつ(る)</span> — <span class="kmean">dời, chuyển</span></div><div><span class="kchar">動</span><span class="kreading">ĐỘNG · どう / うご(く)</span> — <span class="kmean">động, chuyển động</span></div><div class="combine"><strong>Ghép:</strong> "Chuyển + động" → <strong>di chuyển</strong>. Khác 引っ越し (chuyển nhà ở dài hạn). 移動 là di chuyển vị trí tạm thời.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>京<rt>きょう</rt></ruby><ruby>都<rt>と</rt></ruby>から<ruby>大<rt>おお</rt></ruby><ruby>阪<rt>さか</rt></ruby>まで<ruby>新<rt>しん</rt></ruby><ruby>幹<rt>かん</rt></ruby><ruby>線<rt>せん</rt></ruby>で<span class="target"><ruby>移<rt>い</rt></ruby><ruby>動<rt>どう</rt></ruby></span>します。</div><div class="ex-vn">Tôi sẽ di chuyển từ Kyoto đến Osaka bằng tàu Shinkansen.</div></div></td></tr>
+
+<tr><td class="col-stt">17</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>空<rt>くう</rt></ruby><ruby>港<rt>こう</rt></ruby> / チェックイン</span><span class="vocab-hanviet">KHÔNG CẢNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Sân bay / Làm thủ tục lên máy bay</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">空</span><span class="kreading">KHÔNG · くう / そら</span> — <span class="kmean">trời, trống</span></div><div><span class="kchar">港</span><span class="kreading">CẢNG · こう / みなと</span> — <span class="kmean">cảng</span></div><div class="combine"><strong>Bộ đôi sân bay:</strong> <strong>空港</strong> (sân bay - "cảng trên trời"). <strong>チェックイン</strong> (check-in - làm thủ tục lên máy bay/nhận phòng khách sạn).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>空<rt>くう</rt></ruby><ruby>港<rt>こう</rt></ruby></span>で<span class="target">チェックイン</span>をしました。</div><div class="ex-vn">Tôi đã làm thủ tục check-in tại sân bay.</div></div></td></tr>
+
+<tr><td class="col-stt">18</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>荷<rt>に</rt></ruby><ruby>物<rt>もつ</rt></ruby></span><span class="vocab-hanviet">HÀ VẬT</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Hành lý, đồ đạc mang theo</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">荷</span><span class="kreading">HÀ · に / か</span> — <span class="kmean">hàng, gánh nặng</span></div><div><span class="kchar">物</span><span class="kreading">VẬT · もつ / ぶつ</span> — <span class="kmean">vật, đồ</span></div><div class="combine"><strong>Ghép:</strong> "Đồ + gánh" → <strong>hành lý</strong>. Cụm: 荷物を検査する (kiểm tra hành lý), 荷物を預ける (gửi hành lý).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>空<rt>くう</rt></ruby><ruby>港<rt>こう</rt></ruby>で<span class="target"><ruby>荷<rt>に</rt></ruby><ruby>物<rt>もつ</rt></ruby></span>を<ruby>検<rt>けん</rt></ruby><ruby>査<rt>さ</rt></ruby>された。</div><div class="ex-vn">Hành lý của tôi đã bị kiểm tra ở sân bay.</div></div></td></tr>
+
+<tr><td class="col-stt">19</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>国<rt>こく</rt></ruby><ruby>内<rt>ない</rt></ruby><ruby>線<rt>せん</rt></ruby> / <ruby>国<rt>こく</rt></ruby><ruby>際<rt>さい</rt></ruby><ruby>線<rt>せん</rt></ruby></span><span class="vocab-hanviet">QUỐC NỘI TUYẾN / QUỐC TẾ TUYẾN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Tuyến nội địa / Tuyến quốc tế</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">国内</span><span class="kreading">こくない</span> — <span class="kmean">trong nước</span></div><div><span class="kchar">国際</span><span class="kreading">こくさい</span> — <span class="kmean">quốc tế</span></div><div><span class="kchar">線</span><span class="kreading">TUYẾN · せん</span> — <span class="kmean">tuyến đường</span></div><div class="combine"><strong>Cặp đối:</strong> 国内線 (chuyến bay nội địa) ↔ 国際線 (chuyến bay quốc tế). Cùng chữ 際: 実際 (thực tế), 際限 (giới hạn).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>空<rt>くう</rt></ruby><ruby>港<rt>こう</rt></ruby>は<span class="target"><ruby>国<rt>こく</rt></ruby><ruby>内<rt>ない</rt></ruby><ruby>線<rt>せん</rt></ruby></span>も<span class="target"><ruby>国<rt>こく</rt></ruby><ruby>際<rt>さい</rt></ruby><ruby>線<rt>せん</rt></ruby></span>もある。</div><div class="ex-vn">Sân bay này có cả tuyến nội địa lẫn tuyến quốc tế.</div></div></td></tr>
+
+<tr><td class="col-stt">20</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>満<rt>まん</rt></ruby><ruby>員<rt>いん</rt></ruby></span><span class="vocab-hanviet">MÃN VIÊN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Đầy người, hết chỗ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">満</span><span class="kreading">MÃN · まん / み(ちる)</span> — <span class="kmean">đầy</span></div><div><span class="kchar">員</span><span class="kreading">VIÊN · いん</span> — <span class="kmean">thành viên, số người</span></div><div class="combine"><strong>Ghép:</strong> "Đầy người" → <strong>kín chỗ, hết vé</strong>. Cụm: 満員電車 (tàu chật cứng). Cùng chữ 員: 会社員, 店員.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">バスが<span class="target"><ruby>満<rt>まん</rt></ruby><ruby>員<rt>いん</rt></ruby></span>で、<ruby>乗<rt>の</rt></ruby>れなかった。</div><div class="ex-vn">Xe buýt chật kín, tôi không lên được.</div></div></td></tr>
+
+<tr><td class="col-stt">21</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">ドライブ</span><span class="vocab-hanviet">(katakana)</span><span class="vocab-pos pos-katakana">Danh + する</span><span class="vocab-meaning">Lái xe dạo chơi</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Nguồn gốc:</strong> Từ tiếng Anh <em>"drive"</em>. Khác 運転 (うんてん - lái xe đơn thuần): ドライブ nhấn mạnh "lái xe để giải trí, đi chơi". Cụm: ドライブをする (lái xe đi chơi).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>週<rt>しゅう</rt></ruby><ruby>末<rt>まつ</rt></ruby>に<ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby>と<ruby>海<rt>うみ</rt></ruby>へ<span class="target">ドライブ</span>に<ruby>行<rt>い</rt></ruby>った。</div><div class="ex-vn">Cuối tuần tôi đã lái xe đi biển cùng gia đình.</div></div></td></tr>
+
+<tr><td class="col-stt">22</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>渋<rt>じゅう</rt></ruby><ruby>滞<rt>たい</rt></ruby></span><span class="vocab-hanviet">SÁP TRỆ</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Tắc đường, kẹt xe</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">渋</span><span class="kreading">SÁP · じゅう / しぶ(い)</span> — <span class="kmean">khó di chuyển, chát</span></div><div><span class="kchar">滞</span><span class="kreading">TRỆ · たい / とどこお(る)</span> — <span class="kmean">trì trệ, đứng lại</span></div><div class="combine"><strong>Ghép:</strong> "Khó + trì trệ" → <strong>tắc nghẽn</strong>. Đồng nghĩa: 混雑 (こんざつ - đông đúc). Trái nghĩa: すく (đường thông thoáng). Cụm: 道路が渋滞する.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>朝<rt>あさ</rt></ruby>のラッシュアワーで<ruby>道<rt>どう</rt></ruby><ruby>路<rt>ろ</rt></ruby>が<span class="target"><ruby>渋<rt>じゅう</rt></ruby><ruby>滞<rt>たい</rt></ruby></span>している。</div><div class="ex-vn">Đường đang tắc nghẽn vào giờ cao điểm buổi sáng.</div></div></td></tr>
+
+<tr><td class="col-stt">23</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>速<rt>そく</rt></ruby><ruby>度<rt>ど</rt></ruby> / スピード</span><span class="vocab-hanviet">TỐC ĐỘ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Tốc độ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">速</span><span class="kreading">TỐC · そく / はや(い)</span> — <span class="kmean">nhanh</span></div><div><span class="kchar">度</span><span class="kreading">ĐỘ · ど</span> — <span class="kmean">mức độ</span></div><div class="combine"><strong>Đồng nghĩa:</strong> 速度 (kanji, trang trọng) = スピード (katakana, đời thường). Cụm: スピードを出す (chạy tốc độ cao), 速度を落とす (giảm tốc).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">カーブでは<span class="target">スピード</span>を<ruby>落<rt>お</rt></ruby>とそう。</div><div class="ex-vn">Hãy giảm tốc độ khi vào khúc cua.</div></div></td></tr>
+
+<tr><td class="col-stt">24</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">のろのろ</span><span class="vocab-hanviet">(tượng thanh)</span><span class="vocab-pos pos-adv">Trạng từ / Suru</span><span class="vocab-meaning">Chậm rì rì, lề mề</span></div></td><td class="col-explain"><div class="wago-note"><strong>Từ tượng thanh:</strong> Mô phỏng động tác chậm chạp, ì ạch. Sắc thái hơi tiêu cực. Cụm: のろのろ進む (đi chậm rì rì), のろのろ運転 (lái rùa bò). Trái nghĩa: さっさと (nhanh chóng).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>渋<rt>じゅう</rt></ruby><ruby>滞<rt>たい</rt></ruby>で<ruby>車<rt>くるま</rt></ruby>が<span class="target">のろのろ</span>と<ruby>進<rt>すす</rt></ruby>んでいる。</div><div class="ex-vn">Vì kẹt xe, ô tô đang nhích chậm rì rì.</div></div></td></tr>
+
+<tr><td class="col-stt">25</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>信<rt>しん</rt></ruby><ruby>号<rt>ごう</rt></ruby></span><span class="vocab-hanviet">TÍN HIỆU</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Đèn tín hiệu, tín hiệu</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">信</span><span class="kreading">TÍN · しん</span> — <span class="kmean">tín, tin</span></div><div><span class="kchar">号</span><span class="kreading">HIỆU · ごう</span> — <span class="kmean">số hiệu, hiệu</span></div><div class="combine"><strong>Ghép:</strong> "Tín + hiệu" → <strong>đèn tín hiệu</strong>. Cụm: 信号で止まる (dừng đèn đỏ), 信号を無視する (vượt đèn đỏ), 赤信号 (đèn đỏ).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">あの<span class="target"><ruby>信<rt>しん</rt></ruby><ruby>号<rt>ごう</rt></ruby></span>で<ruby>止<rt>と</rt></ruby>まってください。</div><div class="ex-vn">Vui lòng dừng ở đèn tín hiệu kia.</div></div></td></tr>
+
+<tr><td class="col-stt">26</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>酔<rt>よ</rt></ruby>う / くたびれる</span><span class="vocab-hanviet">TÚY</span><span class="vocab-pos">Động từ</span><span class="vocab-meaning">Say (xe) / Kiệt sức, mệt rã rời</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">酔</span><span class="kreading">TÚY · よ(う)</span> — <span class="kmean">say</span></div><div class="combine"><strong>Bộ đôi mệt mỏi khi đi du lịch:</strong> ① <strong>酔う</strong> (say) - 車に酔う (say xe), 船に酔う (say sóng). ② <strong>くたびれる</strong> (và-go - mệt rã rời, kiệt sức) đậm hơn 疲れる.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>長<rt>なが</rt></ruby>いバスの<ruby>旅<rt>たび</rt></ruby>で<span class="target">くたびれて</span>しまった。</div><div class="ex-vn">Hành trình bằng xe buýt dài đã làm tôi kiệt sức.</div></div></td></tr>
+
+<tr><td class="col-stt">27</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>無<rt>ぶ</rt></ruby><ruby>事<rt>じ</rt></ruby></span><span class="vocab-hanviet">VÔ SỰ</span><span class="vocab-pos pos-na">Tính từ -na / Danh từ</span><span class="vocab-meaning">An toàn, không có sự cố</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">無</span><span class="kreading">VÔ · ぶ / む / な(い)</span> — <span class="kmean">không</span></div><div><span class="kchar">事</span><span class="kreading">SỰ · じ / こと</span> — <span class="kmean">việc, sự</span></div><div class="combine"><strong>Ghép:</strong> "Không có việc (xấu)" → <strong>an toàn, vô sự</strong>. Cụm: 無事に到着する (đến nơi an toàn), ご無事で何より (mừng vì bạn bình an).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby>が<span class="target"><ruby>無<rt>ぶ</rt></ruby><ruby>事<rt>じ</rt></ruby></span>に<ruby>家<rt>いえ</rt></ruby>に<ruby>到<rt>とう</rt></ruby><ruby>着<rt>ちゃく</rt></ruby>した。</div><div class="ex-vn">Gia đình tôi đã về nhà an toàn.</div></div></td></tr>
+
+<tr><td class="col-stt">28</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">シートベルト / パスポート</span><span class="vocab-hanviet">(katakana)</span><span class="vocab-pos pos-katakana">Danh từ (gốc Anh)</span><span class="vocab-meaning">Dây an toàn / Hộ chiếu</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Bộ đôi đi lại:</strong><br/>① <strong>シートベルト</strong> (seat belt - dây an toàn). Cụm: 締める (thắt).<br/>② <strong>パスポート</strong> (passport - hộ chiếu). Cụm: 見せる (cho xem).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>飛<rt>ひ</rt></ruby><ruby>行<rt>こう</rt></ruby><ruby>機<rt>き</rt></ruby>に<ruby>乗<rt>の</rt></ruby>る<ruby>前<rt>まえ</rt></ruby>に<span class="target">シートベルト</span>を<ruby>締<rt>し</rt></ruby>めましょう。</div><div class="ex-vn">Trước khi máy bay cất cánh hãy thắt dây an toàn.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 B — Ôn luyện cụm Di chuyển</h4><span class="ex-subtitle">Hai dạng câu hỏi sau khi học 14 từ ở mục 10-2</span></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 B1</span>マッチング — Ghép từ với nghĩa</div>
+      <div class="match-grid">
+        <div class="match-col"><h5>Cột A — Tiếng Nhật</h5>
+          <div class="match-item jp"><span class="mlabel">A1.</span>集合 (しゅうごう)</div>
+          <div class="match-item jp"><span class="mlabel">A2.</span>渋滞 (じゅうたい)</div>
+          <div class="match-item jp"><span class="mlabel">A3.</span>満員 (まんいん)</div>
+          <div class="match-item jp"><span class="mlabel">A4.</span>無事 (ぶじ)</div>
+          <div class="match-item jp"><span class="mlabel">A5.</span>くたびれる</div>
+          <div class="match-item jp"><span class="mlabel">A6.</span>パスポート</div>
+        </div>
+        <div class="match-col"><h5>Cột B — Tiếng Việt</h5>
+          <div class="match-item"><span class="mlabel">B1.</span>Tắc đường, kẹt xe</div>
+          <div class="match-item"><span class="mlabel">B2.</span>Hộ chiếu</div>
+          <div class="match-item"><span class="mlabel">B3.</span>Tập trung</div>
+          <div class="match-item"><span class="mlabel">B4.</span>Đầy người, hết chỗ</div>
+          <div class="match-item"><span class="mlabel">B5.</span>Kiệt sức, mệt rã rời</div>
+          <div class="match-item"><span class="mlabel">B6.</span>An toàn, vô sự</div>
+        </div>
+      </div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> A1→B3 ・ A2→B1 ・ A3→B4 ・ A4→B6 ・ A5→B5 ・ A6→B2</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-09.html">← Bài 9</a><a class="mid" href="../tu-vung.html">▦ Danh sách bài</a><a href="bai-11.html">Bài 11 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+</script>
+</body></html>

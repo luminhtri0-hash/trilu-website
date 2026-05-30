@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Chọn bài · Từ vựng N5 — Trí Lữ Nihongo</title>
+  <meta name="description" content="Chọn bài học — 25 bài từ vựng N5 tại Trí Lữ Nihongo." />
+  <meta name="theme-color" content="#1B3A6B" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/jlpt/jlpt-study.css" />
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-in">
+      <div class="nav-left">
+        <span class="nav-crumb">
+          <a href="/jlpt/n5.html">Khóa N5</a>
+          <span class="sep">·</span>
+          <a href="/jlpt/n5.html">Từ vựng</a>
+          <span class="sep">·</span>
+          <span class="here">Chọn bài</span>
+        </span>
+      </div>
+      <a class="wordmark" href="/">
+        <span class="wordmark-main">Trí Lữ <span class="sep">·</span> Nihongo</span>
+        <span class="wordmark-jp">智 旅 日 本 語</span>
+      </a>
+      <div class="nav-right">
+        <a class="nav-back" href="/jlpt/n5.html"><span>←</span> Học phần</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section class="section" style="padding-bottom:clamp(30px,4vh,48px);">
+      <div class="container">
+        <div class="eyebrow reveal" style="margin-bottom:24px;">
+          <span class="num">N5</span>
+          <span>Học phần · Từ vựng</span>
+          <span class="jp">語彙 · 全 25 課</span>
+        </div>
+        <h1 class="display reveal" data-delay="1" style="max-width:14ch; font-size:clamp(40px,5.6vw,82px);">Chọn bài để bắt đầu.</h1>
+        <p class="lede reveal" data-delay="2" style="margin-top:28px;">25 bài · chọn một bài để học. Mỗi bài có flashcard lật thẻ, phát âm chuẩn và bài tập tương tác — mở riêng từng trang, không cuộn dài.</p>
+        <div class="chip-row reveal mt-s" data-delay="3" aria-label="Học phần">
+          <a class="chip active" href="tu-vung.html">語彙 · Từ vựng</a>
+          <a class="chip" href="ngu-phap.html">文法 · Ngữ pháp</a>
+          <a class="chip" href="han-tu.html">漢字 · Hán tự</a>
+          <a class="chip" href="nghe-hieu.html">聴解 · Nghe hiểu</a>
+          <a class="chip" href="doc-hieu.html">読解 · Đọc hiểu</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--cream-2); padding-top:clamp(40px,5vh,72px);">
+      <div class="container">
+        <div class="eyebrow reveal" style="margin-bottom:28px;">
+          <span class="num">課</span><span>25 bài</span>
+        </div>
+        <div class="lesson-grid reveal" data-delay="1" id="lessonGrid"></div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-in">
+        <div class="foot-brand">
+          <div class="wm">Trí Lữ Nihongo</div>
+          <div class="jp">智 旅 日 本 語</div>
+        </div>
+        <div class="foot-tag">Chinh phục tiếng Nhật — mở cửa tương lai.</div>
+      </div>
+      <div class="foot-meta">
+        <span>© MMXXVI · Trí Lữ Nihongo · trilu.edu.vn</span>
+        <span>N5 · Từ vựng · 25 bài</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    var LESSONS = [{"vi":"Danh tính, Nghề nghiệp & Quốc tịch","jp":"私は ミラーです","items":30,"num":1},{"vi":"Đồ vật & Sở hữu","jp":"これは 何ですか","items":41,"num":2},{"vi":"Địa điểm & Phương hướng","jp":"ここは 食堂です","items":38,"num":3},{"vi":"Thời gian & Thời khóa biểu","jp":"今 何時ですか","items":48,"num":4},{"vi":"Di chuyển & Ngày tháng","jp":"京都へ 行きます","items":35,"num":5},{"vi":"Hành động hàng ngày, Ăn uống & Giao lưu","jp":"ご飯を 食べます","items":50,"num":6},{"vi":"Công cụ, Phương tiện & Quan hệ Cho - Nhận","jp":"ミラーさんは 新しい 車を 買いました","items":45,"num":7},{"vi":"Tính từ mô tả","jp":"桜は きれいです","items":50,"num":8},{"vi":"Khả năng, Sở thích & Lý do","jp":"わたしは 日本料理が 好きです","items":50,"num":9},{"vi":"Sự tồn tại & Vị trí","jp":"ここに 本が あります","items":42,"num":10},{"vi":"Số lượng, Trợ số từ & Thời gian dài","jp":"りんごが 4つ あります","items":57,"num":11},{"vi":"So sánh, Mùa & Lễ hội","jp":"東京は 大阪より 大きいです","items":48,"num":12},{"vi":"Mong muốn, Trạng thái cơ thể & Gọi món","jp":"わたしは カメラが ほしいです","items":31,"num":13},{"vi":"Thể て: Sai khiến nhã nhặn & Trạng thái","jp":"ちょっと 待って ください","items":44,"num":14},{"vi":"Thể て: Cho phép, Cấm đoán & Trạng thái","jp":"写真を 撮っても いいですか","items":22,"num":15},{"vi":"Liên kết câu, Bộ phận cơ thể & Thao tác máy","jp":"朝ジョギングして、シャワーを浴びて、会社へ行きます","items":49,"num":16},{"vi":"Thể ない: Yêu cầu phủ định & Nghĩa vụ","jp":"ここで 写真を 撮らないで ください","items":33,"num":17},{"vi":"Thể nguyên dạng: Khả năng & Sở thích","jp":"ミラーさんは 漢字を 読むことが できます","items":25,"num":18},{"vi":"Thể た: Kinh nghiệm & Sự biến đổi","jp":"相撲を 見た ことが あります","items":23,"num":19},{"vi":"Thể thông thường (Suồng sã)","jp":"夏休みは どこへ 行く？","items":23,"num":20},{"vi":"Thể thông thường + 思います／言います","jp":"あした 雨が 降ると 思います","items":40,"num":21},{"vi":"Mệnh đề bổ nghĩa cho Danh từ & Trang phục","jp":"これは ミラーさんが 作った ケーキです","items":26,"num":22},{"vi":"Quan hệ thời gian (とき) & Điều kiện tất yếu (と)","jp":"図書館で 本を 借りる とき、カードが 要ります","items":23,"num":23},{"vi":"Hành vi Cho - Nhận nâng cao","jp":"わたしは 山田さんに 本を 貸して もらいました","items":18,"num":24},{"vi":"Điều kiện giả định たら & Nghịch lý ても","jp":"もし 雨が 降ったら、行きません","items":15,"num":25}];
+    var CAT = "tu-vung";
+    var grid = document.getElementById("lessonGrid");
+    LESSONS.forEach(function (l) {
+      var n = String(l.num).padStart(2, "0");
+      var a = document.createElement("a");
+      a.className = "lesson-card";
+      a.href = CAT + "/bai-" + n + ".html";
+      var jp = l.jp ? '<p class="lc-jp">' + l.jp + '</p>' : '';
+      var foot = l.items != null ? (l.items + ' mục') : 'Mở bài';
+      a.innerHTML =
+        '<div class="lc-top">' +
+          '<div class="lc-num"><span class="small">Bài</span> ' + n + '</div>' +
+        '</div>' +
+        '<h3 class="lc-title">' + l.vi + '</h3>' + jp +
+        '<div class="lc-foot"><span>' + foot + '</span><span class="arr">→</span></div>';
+      grid.appendChild(a);
+    });
+    (function () {
+      var els = document.querySelectorAll(".reveal:not(.in)");
+      if (!("IntersectionObserver" in window)) { els.forEach(function (el) { el.classList.add("in"); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
+      els.forEach(function (el) { io.observe(el); });
+      setTimeout(function () { els.forEach(function (el) { el.classList.add("in"); }); }, 1600);
+    })();
+  </script>
+</body>
+</html>

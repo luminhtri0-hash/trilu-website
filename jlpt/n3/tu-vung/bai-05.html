@@ -1,0 +1,566 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 5 · 家 — Nhà cửa — Từ vựng N3 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N3 — Bài 5: 家 — Nhà cửa. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#6e1831;
+  --accent-dark:#4f0f24;
+  --accent-2:#9b7a38;
+  --accent-3:#c7ab70;
+  --line:#dfcfbb;
+  --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(110,24,49,0.08), transparent 22%),
+    linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+/* ============ COVER ============ */
+.cover{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 36%, #3a0f1b 100%);
+  color:#fff; border-radius:30px; box-shadow:var(--shadow);
+  padding:60px 64px 50px; margin-bottom:26px;
+}
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+/* ============ TOC ============ */
+.toc-panel{
+  margin:0 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96));
+  border:1px solid rgba(155,122,56,0.20);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:14px 16px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(110,24,49,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item.disabled{ opacity:0.45; pointer-events:none; }
+.toc-item-number{ display:inline-block; min-width:34px; padding:2px 8px; margin-right:8px; border-radius:8px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:11px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:13.5px; }
+.toc-item-summary{ display:block; margin-top:5px; color:var(--muted); font-size:12px; line-height:1.45; font-family:"Noto Serif CJK JP",serif; }
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(155,122,56,0.16);
+  border-radius:28px; box-shadow:var(--shadow);
+  padding:0 0 40px; margin-bottom:40px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  padding:30px 44px 28px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 50%, #3a0f1b 100%);
+  color:#fff;
+}
+.lesson-banner::after{
+  content:"語彙"; position:absolute; right:-10px; bottom:-50px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:8px; }
+.lesson-banner h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:30px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:14px; color:rgba(255,255,255,0.82); }
+
+.doc-body{ padding:30px 44px 10px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #57132a 0%, #6e1831 52%, #7f3b52 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark); position:absolute; right:18px; top:50%; transform:translateY(-50%);
+  font-family:"Noto Serif CJK JP",serif; font-size:60px; line-height:1; color:rgba(255,255,255,0.12); font-weight:700;
+}
+.section-kicker{ display:block; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:rgba(255,255,255,0.78); }
+.section-head h3{
+  margin:0; padding:0; border:none; color:#fff; background:none;
+  font-family:"Noto Serif CJK JP",serif; font-size:24px; line-height:1.2; font-weight:700;
+}
+.section-head .section-vn{ display:block; margin-top:4px; font-size:13px; font-style:italic; color:rgba(255,255,255,0.82); font-family:Inter,sans-serif; }
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{ margin:16px 0 24px; }
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff; border:1px solid var(--line-2);
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 26px rgba(60,38,19,0.05);
+  font-size:13.5px;
+}
+thead th{
+  background:linear-gradient(180deg, #fcf5ea 0%, #f2e3cf 100%);
+  color:var(--accent); font-weight:800;
+  padding:13px 14px; text-align:left; font-size:13px;
+  border-bottom:1px solid var(--line-2);
+}
+thead th:not(:last-child){ border-right:1px solid var(--line-2); }
+tbody td{
+  padding:18px 14px; vertical-align:top;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+}
+tbody td:last-child{ border-right:none; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody tr:nth-child(even) td{ background:#fffaf4; }
+
+.col-stt{ width:5%; text-align:center; font-weight:800; color:var(--accent); font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:18px; }
+.col-vocab{ width:22%; }
+.col-explain{ width:30%; }
+.col-example{ width:43%; }
+
+.vocab-wrapper{ display:flex; flex-direction:column; gap:4px; }
+.vocab-kanji{ font-size:26px; font-weight:700; color:#222; font-family:"Noto Serif CJK JP","Yu Mincho",serif; line-height:1.15; }
+.vocab-kanji ruby{ ruby-position:over; ruby-align:center; }
+.vocab-kanji rt{ font-size:11px; color:#888; font-family:sans-serif; font-weight:500; }
+.vocab-hanviet{ font-size:11px; color:var(--accent-2); font-weight:800; letter-spacing:1.2px; margin-top:4px; }
+.vocab-pos{ display:inline-block; font-size:10.5px; color:#fff; background:var(--green); padding:2px 8px; border-radius:4px; font-weight:600; letter-spacing:0.05em; margin-top:6px; align-self:flex-start; }
+.vocab-pos.pos-na{ background:var(--terra); }
+.vocab-pos.pos-i{ background:var(--teal); }
+.vocab-pos.pos-adv{ background:var(--plum); }
+.vocab-pos.pos-suru{ background:#8a4a6a; }
+.vocab-pos.pos-katakana{ background:var(--accent-2); }
+.vocab-meaning{ font-size:14px; color:var(--accent); font-weight:700; margin-top:8px; line-height:1.5; }
+
+/* Explain box */
+.kanji-break{ background:linear-gradient(180deg, #fffdf9, #fbf3e8); border:1px solid #e7d7be; border-left:4px solid var(--accent-2); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.65; color:#3b3320; }
+.kanji-break .kchar{ font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; color:var(--accent); margin-right:4px; }
+.kanji-break .kreading{ color:var(--accent-2); font-weight:700; font-size:11.5px; letter-spacing:0.05em; }
+.kanji-break .kmean{ color:#5f4830; }
+.kanji-break .combine{ margin-top:8px; padding-top:8px; border-top:1px dashed #d8c8ad; font-style:italic; color:#6e5230; }
+.kanji-break .combine strong{ font-style:normal; color:var(--accent); }
+.katakana-origin{ background:linear-gradient(180deg, #fff5f8, #faeaf0); border:1px solid #f0d8e2; border-left:4px solid #b13e6a; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#5a3a4a; }
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{ background:linear-gradient(180deg, #f7faf2, #ecf2e2); border:1px solid #d8e2c8; border-left:4px solid var(--green); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#3e5a3a; }
+.wago-note strong{ color:var(--green); }
+
+/* Example box */
+.ex-box{ background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent); padding:13px 16px; border-radius:0 12px 12px 0; }
+.ex-jp{ font-size:15px; color:#222; margin-bottom:8px; line-height:1.95; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn{ font-size:13.5px; color:#6e5230; font-style:italic; line-height:1.55; padding-top:6px; border-top:1px dotted #e2d4b8; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:30px 0 24px;
+  padding:0;
+  background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+  border:1px solid #e7d7be;
+  border-radius:22px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(60,38,19,0.05);
+}
+.exercise-banner{
+  display:flex; align-items:center; gap:14px;
+  padding:18px 24px;
+  background:linear-gradient(90deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff;
+}
+.exercise-icon{ width:42px; height:42px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"EB Garamond","Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:11.5px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:2px; letter-spacing:0.04em; }
+.exercise-body{ padding:22px 26px; }
+
+.exercise{ background:#fff; border:1px solid #ecdec3; border-radius:14px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 14px rgba(60,38,19,0.04); }
+.exercise:last-child{ margin-bottom:0; }
+.exercise-title{ font-weight:700; color:var(--accent); margin-bottom:12px; font-size:14px; display:flex; align-items:center; gap:10px; padding-bottom:10px; border-bottom:1px dashed #e7d7be; }
+.exercise-title .ex-no{ background:var(--accent-2); color:#fff; padding:3px 10px; border-radius:6px; font-size:11.5px; letter-spacing:0.08em; }
+.choice-pool{ background:linear-gradient(180deg, #fff7e8, #f7e4c1); border:1px dashed var(--accent-2); border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:14px; font-family:"Noto Serif CJK JP",serif; color:#674c1b; }
+.choice-pool strong{ color:var(--accent); }
+
+.ex-q{ padding:9px 0; border-bottom:1px dotted #eadfce; font-size:14px; line-height:1.85; font-family:"Noto Serif CJK JP",serif; }
+.ex-q:last-child{ border-bottom:none; }
+.ex-q .qnum{ display:inline-block; min-width:24px; font-weight:700; color:var(--accent); margin-right:4px; font-family:"EB Garamond",sans-serif; font-size:14.5px; }
+.ex-q .blank{ display:inline-block; min-width:90px; border-bottom:1.5px solid #b08850; padding:0 8px; margin:0 3px; text-align:center; color:transparent; cursor:pointer; transition:all .15s; }
+.ex-q .blank:hover{ background:rgba(199,171,112,0.12); }
+.ex-q .blank.shown{ color:var(--accent); font-weight:700; border-bottom-color:var(--accent); background:rgba(199,171,112,0.15); }
+
+.multi-choice{ display:block; margin:4px 0 4px 30px; font-size:13.5px; color:#444; }
+.multi-choice .opt-num{ color:var(--accent-2); font-weight:700; margin-right:6px; }
+.match-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin-top:12px; }
+.match-col{ background:#fffaf2; border:1px solid #ecdec3; border-radius:12px; padding:14px; }
+.match-col h5{ margin:0 0 10px; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; }
+.match-item{ padding:7px 10px; font-size:14px; border-radius:6px; }
+.match-item.jp{ font-family:"Noto Serif CJK JP",serif; }
+.match-item .mlabel{ display:inline-block; min-width:24px; font-weight:800; color:var(--accent-2); }
+
+.answer-toggle{
+  display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+  padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:13px; cursor:pointer; transition:all 0.2s; font-family:inherit;
+  box-shadow:0 6px 14px rgba(110,24,49,0.18);
+}
+.answer-toggle:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(110,24,49,0.28); }
+.answer-toggle::before{ content:"鍵"; font-family:"Noto Serif CJK JP",serif; margin-right:4px; }
+.answer-box{ display:none; margin-top:14px; padding:14px 16px; background:linear-gradient(180deg, #fffbef, #f8eed4); border:1px solid #d9bb88; border-left:4px solid var(--accent-2); border-radius:10px; font-size:13.5px; line-height:1.7; color:#5a4520; }
+.answer-box strong{ color:var(--accent); }
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  table.vocab-table{ min-width:880px; }
+  .table-shell{ overflow-x:auto; }
+  .match-grid{ grid-template-columns:1fr; }
+}
+
+/* === @page: dùng A4 LANDSCAPE cho bài học để có chỗ cho 4 cột === */
+@media print {
+  /* Cover + TOC: portrait */
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  /* Trang bài học: landscape (rộng hơn để 4 cột vừa) */
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+
+  /* === RESET cơ bản === */
+  html, body{ background:#fff !important; }
+  body{ font-size:11px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; }
+
+  /* === COVER === */
+  .cover{ page-break-after:always; break-after:page; box-shadow:none; border-radius:18px; padding:42px 38px; }
+  .cover-title{ font-size:36px; }
+  .cover-mark{ font-size:11rem !important; }
+
+  /* === TOC === */
+  .toc-panel{ page-break-after:always; break-after:page; box-shadow:none; }
+  .toc-grid{ grid-template-columns:repeat(3, 1fr) !important; }
+  .toc-item{ page-break-inside:avoid !important; break-inside:avoid !important; }
+
+  /* === Mỗi BÀI bắt sang trang mới === */
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:16px 18px 12px !important; }
+
+  /* === GỠ BỎ rào cản min-width === */
+  /* QUAN TRỌNG: ghi đè responsive rule khiến bảng tràn ngang */
+  .table-shell{ overflow:visible !important; overflow-x:visible !important; margin:8px 0 14px !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; box-shadow:none !important; table-layout:fixed !important; }
+
+  /* === KHÔNG cắt giữa khối === */
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:18px 22px !important; }
+  .lesson-banner h2{ font-size:22px !important; }
+  .section-head{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:10px 16px !important; margin:10px 0 8px !important; }
+  .section-head h3{ font-size:18px !important; }
+  .section-head::after{ font-size:36px !important; }
+  .exercise-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:12px 18px !important; }
+  .exercise-banner h4{ font-size:14px !important; }
+  .exercise-block{ page-break-inside:auto; margin:14px 0 !important; }
+  .exercise-body{ padding:14px 16px !important; }
+  .exercise{ page-break-inside:avoid !important; break-inside:avoid !important; padding:12px 14px !important; margin-bottom:10px !important; }
+  .footer-card{ page-break-inside:avoid; break-inside:avoid; }
+
+  /* === BẢNG TỪ VỰNG === */
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table tbody{ display:table-row-group; }
+  table.vocab-table thead th{ padding:8px 8px !important; font-size:11px !important; }
+  /* Mỗi tr (= 1 từ vựng) giữ nguyên trên 1 trang */
+  table.vocab-table tr{ page-break-inside:avoid !important; break-inside:avoid !important; page-break-after:auto; }
+  table.vocab-table tbody td{ padding:10px 8px !important; font-size:11px !important; }
+
+  /* === Co cell content nhỏ lại cho vừa khổ === */
+  .vocab-wrapper{ gap:2px !important; }
+  .vocab-kanji{ font-size:18px !important; line-height:1.1 !important; }
+  .vocab-kanji rt{ font-size:9px !important; }
+  .vocab-hanviet{ font-size:9.5px !important; letter-spacing:0.8px !important; margin-top:2px !important; }
+  .vocab-pos{ font-size:8.5px !important; padding:1px 5px !important; margin-top:3px !important; }
+  .vocab-meaning{ font-size:11px !important; margin-top:4px !important; line-height:1.35 !important; }
+
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:7px 9px !important; font-size:10.5px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important; break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:14px !important; }
+  .kanji-break .kreading{ font-size:9.5px !important; }
+  .kanji-break .combine{ margin-top:5px !important; padding-top:5px !important; }
+
+  .ex-box{ padding:8px 10px !important; page-break-inside:avoid !important; break-inside:avoid !important; }
+  .ex-jp{ font-size:12px !important; line-height:1.75 !important; margin-bottom:5px !important; }
+  .ex-jp rt{ font-size:8px !important; }
+  .ex-vn{ font-size:10.5px !important; line-height:1.45 !important; padding-top:4px !important; }
+
+  /* === BÀI TẬP === */
+  .ex-q{ page-break-inside:avoid; break-inside:avoid; font-size:11.5px !important; line-height:1.7 !important; padding:6px 0 !important; }
+  .choice-pool{ font-size:11.5px !important; padding:7px 11px !important; }
+  .multi-choice{ font-size:11px !important; }
+  .answer-toggle{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; break-inside:avoid; font-size:11px !important; padding:10px 12px !important; }
+  .match-grid{ grid-template-columns:1fr 1fr !important; }
+  .match-item{ font-size:11px !important; padding:4px 6px !important; }
+}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:200;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.92);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:38px;height:38px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.18em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}.tl-bc a:hover{color:var(--tl-ink)}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-wrap{max-width:1000px;margin:0 auto;padding:24px}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px;transition:all .2s}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3;pointer-events:none}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n3.html">N3</a> · <a href="../tu-vung.html">Từ vựng</a> · Bài 5</div></div></a><a class="tl-back" href="../tu-vung.html">← Danh sách bài</a></nav>
+<div class="tl-wrap">
+<article class="document" id="lesson-5">
+<div class="lesson-banner">
+  <span class="lesson-kicker">Bài 05 — 生活 3</span>
+  <h2>家 (Nhà cửa)</h2>
+  <div class="lesson-sub">Sinh hoạt 3: Xây nhà, nội thất và chuyển nhà (27 từ vựng)</div>
+</div>
+<div class="doc-body">
+
+<div class="section-head" data-mark="家"><span class="section-kicker">Phần 5-1 · 13 từ</span><h3>家</h3><span class="section-vn">Xây nhà, nội thất</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">1</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>自<rt>じ</rt></ruby><ruby>宅<rt>たく</rt></ruby></span><span class="vocab-hanviet">TỰ TRẠCH</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Nhà riêng, nhà mình</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">自</span><span class="kreading">TỰ · じ / みずか(ら)</span> — <span class="kmean">tự mình</span></div><div><span class="kchar">宅</span><span class="kreading">TRẠCH · たく</span> — <span class="kmean">nhà ở</span></div><div class="combine"><strong>Ghép:</strong> "Nhà của chính mình" → <strong>nhà riêng</strong>. Cùng chữ 宅: お宅 (nhà của ngài), 帰宅 (về nhà).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>来<rt>らい</rt></ruby><ruby>年<rt>ねん</rt></ruby>、<ruby>郊<rt>こう</rt></ruby><ruby>外<rt>がい</rt></ruby>に<span class="target"><ruby>自<rt>じ</rt></ruby><ruby>宅<rt>たく</rt></ruby></span>を<ruby>建<rt>た</rt></ruby>てる<ruby>予<rt>よ</rt></ruby><ruby>定<rt>てい</rt></ruby>です。</div><div class="ex-vn">Năm sau tôi dự định xây nhà riêng ở ngoại ô.</div></div></td></tr>
+
+<tr><td class="col-stt">2</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>設<rt>せっ</rt></ruby><ruby>計<rt>けい</rt></ruby></span><span class="vocab-hanviet">THIẾT KẾ</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Thiết kế, lên bản vẽ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">設</span><span class="kreading">THIẾT · せつ</span> — <span class="kmean">đặt, sắp xếp</span></div><div><span class="kchar">計</span><span class="kreading">KẾ · けい / はか(る)</span> — <span class="kmean">tính toán, kế hoạch</span></div><div class="combine"><strong>Ghép:</strong> "Đặt + tính toán" → <strong>thiết kế</strong>. Cùng chữ 設: 設備 (thiết bị), 建設 (xây dựng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>有<rt>ゆう</rt></ruby><ruby>名<rt>めい</rt></ruby>な<ruby>建<rt>けん</rt></ruby><ruby>築<rt>ちく</rt></ruby><ruby>家<rt>か</rt></ruby>に<ruby>家<rt>いえ</rt></ruby>を<span class="target"><ruby>設<rt>せっ</rt></ruby><ruby>計<rt>けい</rt></ruby></span>してもらいました。</div><div class="ex-vn">Tôi đã nhờ một kiến trúc sư nổi tiếng thiết kế ngôi nhà.</div></div></td></tr>
+
+<tr><td class="col-stt">3</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>工<rt>こう</rt></ruby><ruby>事<rt>じ</rt></ruby></span><span class="vocab-hanviet">CÔNG SỰ</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Thi công, công trình</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">工</span><span class="kreading">CÔNG · こう</span> — <span class="kmean">công việc, thợ</span></div><div><span class="kchar">事</span><span class="kreading">SỰ · じ / こと</span> — <span class="kmean">việc</span></div><div class="combine"><strong>Ghép:</strong> "Việc của thợ" → <strong>thi công, công trình</strong>. Cụm: 工事中 (đang thi công), 工事が遅れる (chậm tiến độ).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>台<rt>たい</rt></ruby><ruby>風<rt>ふう</rt></ruby>の<ruby>影<rt>えい</rt></ruby><ruby>響<rt>きょう</rt></ruby>で、<span class="target"><ruby>工<rt>こう</rt></ruby><ruby>事<rt>じ</rt></ruby></span>が1か<ruby>月<rt>げつ</rt></ruby><ruby>遅<rt>おく</rt></ruby>れています。</div><div class="ex-vn">Do ảnh hưởng của bão, công trình đã chậm 1 tháng.</div></div></td></tr>
+
+<tr><td class="col-stt">4</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>建<rt>けん</rt></ruby><ruby>築<rt>ちく</rt></ruby></span><span class="vocab-hanviet">KIẾN TRÚC</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Kiến trúc, công trình xây dựng</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">建</span><span class="kreading">KIẾN · けん / た(てる)</span> — <span class="kmean">dựng, xây</span></div><div><span class="kchar">築</span><span class="kreading">TRÚC · ちく / きず(く)</span> — <span class="kmean">xây dựng</span></div><div class="combine"><strong>Ghép:</strong> "Dựng + xây" → <strong>kiến trúc</strong>. Cụm: 建築中 (đang trong giai đoạn xây dựng), 建築家 (kiến trúc sư).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">あの<span class="target"><ruby>建<rt>けん</rt></ruby><ruby>築<rt>ちく</rt></ruby></span><ruby>中<rt>ちゅう</rt></ruby>のビルは、<ruby>来<rt>らい</rt></ruby><ruby>年<rt>ねん</rt></ruby><ruby>完<rt>かん</rt></ruby><ruby>成<rt>せい</rt></ruby>する<ruby>予<rt>よ</rt></ruby><ruby>定<rt>てい</rt></ruby>です。</div><div class="ex-vn">Tòa nhà đang xây kia dự kiến sẽ hoàn thành vào năm sau.</div></div></td></tr>
+
+<tr><td class="col-stt">5</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>建<rt>けん</rt></ruby><ruby>設<rt>せつ</rt></ruby></span><span class="vocab-hanviet">KIẾN THIẾT</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Xây dựng (công trình lớn)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">建</span><span class="kreading">KIẾN · けん</span> — <span class="kmean">xây dựng</span></div><div><span class="kchar">設</span><span class="kreading">THIẾT · せつ</span> — <span class="kmean">thiết lập</span></div><div class="combine"><strong>Phân biệt:</strong> 建築 nhấn về kiến trúc/công trình cụ thể; 建設 nhấn về quá trình xây dựng quy mô lớn (đường xá, cầu, công trình công cộng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>地<rt>ち</rt></ruby><ruby>域<rt>いき</rt></ruby>では、<ruby>新<rt>あたら</rt></ruby>しいマンションの<span class="target"><ruby>建<rt>けん</rt></ruby><ruby>設<rt>せつ</rt></ruby></span>が<ruby>進<rt>すす</rt></ruby>んでいます。</div><div class="ex-vn">Ở khu vực này, việc xây dựng chung cư mới đang được tiến hành.</div></div></td></tr>
+
+<tr><td class="col-stt">6</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>完<rt>かん</rt></ruby><ruby>成<rt>せい</rt></ruby></span><span class="vocab-hanviet">HOÀN THÀNH</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Hoàn thành, xong xuôi</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">完</span><span class="kreading">HOÀN · かん</span> — <span class="kmean">trọn vẹn</span></div><div><span class="kchar">成</span><span class="kreading">THÀNH · せい / な(る)</span> — <span class="kmean">trở thành, thành tựu</span></div><div class="combine"><strong>Ghép:</strong> "Trọn vẹn + thành" → <strong>hoàn thành</strong>. Khác với 終わる (kết thúc đơn thuần); 完成 nhấn "xong và sẵn sàng dùng".</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">3<ruby>年<rt>ねん</rt></ruby>かけて<ruby>建<rt>た</rt></ruby>てた<ruby>家<rt>いえ</rt></ruby>がついに<span class="target"><ruby>完<rt>かん</rt></ruby><ruby>成<rt>せい</rt></ruby></span>しました。</div><div class="ex-vn">Ngôi nhà tôi xây mất 3 năm cuối cùng cũng đã hoàn thành.</div></div></td></tr>
+
+<tr><td class="col-stt">7</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>土<rt>と</rt></ruby><ruby>地<rt>ち</rt></ruby></span><span class="vocab-hanviet">THỔ ĐỊA</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Đất đai, mảnh đất</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">土</span><span class="kreading">THỔ · ど / と / つち</span> — <span class="kmean">đất, đất nền</span></div><div><span class="kchar">地</span><span class="kreading">ĐỊA · ち / じ</span> — <span class="kmean">vùng, mặt đất</span></div><div class="combine"><strong>Ghép:</strong> "Đất + nền" → <strong>mảnh đất</strong>. Cụm: 土地の価値 (giá trị đất). Cùng chữ 地: 地下 (tầng hầm), 地震 (động đất).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>町<rt>まち</rt></ruby>は<ruby>人<rt>じん</rt></ruby><ruby>気<rt>き</rt></ruby>があるので、<span class="target"><ruby>土<rt>と</rt></ruby><ruby>地<rt>ち</rt></ruby></span>の<ruby>価<rt>か</rt></ruby><ruby>値<rt>ち</rt></ruby>が<ruby>上<rt>あ</rt></ruby>がっています。</div><div class="ex-vn">Thị trấn này được ưa chuộng nên giá trị đất đai đang tăng.</div></div></td></tr>
+
+<tr><td class="col-stt">8</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>地<rt>ち</rt></ruby><ruby>下<rt>か</rt></ruby></span><span class="vocab-hanviet">ĐỊA HẠ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Tầng hầm, dưới lòng đất</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">地</span><span class="kreading">ĐỊA · ち</span> — <span class="kmean">đất</span></div><div><span class="kchar">下</span><span class="kreading">HẠ · か / した</span> — <span class="kmean">dưới</span></div><div class="combine"><strong>Ghép:</strong> "Dưới đất" → <strong>tầng hầm</strong>. Cụm: 地下鉄 (tàu điện ngầm), 地下室 (phòng tầng hầm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>地<rt>ち</rt></ruby><ruby>下<rt>か</rt></ruby></span>に<ruby>映<rt>えい</rt></ruby><ruby>画<rt>が</rt></ruby><ruby>鑑<rt>かん</rt></ruby><ruby>賞<rt>しょう</rt></ruby><ruby>用<rt>よう</rt></ruby>の<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>を<ruby>造<rt>つく</rt></ruby>りました。</div><div class="ex-vn">Tôi đã làm một phòng xem phim dưới tầng hầm.</div></div></td></tr>
+
+<tr><td class="col-stt">9</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>屋<rt>や</rt></ruby><ruby>根<rt>ね</rt></ruby></span><span class="vocab-hanviet">ỐC CĂN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Mái nhà</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">屋</span><span class="kreading">ỐC · や / おく</span> — <span class="kmean">nhà, mái che</span></div><div><span class="kchar">根</span><span class="kreading">CĂN · ね / こん</span> — <span class="kmean">gốc, rễ</span></div><div class="combine"><strong>Ghép:</strong> "Gốc của ngôi nhà" → <strong>mái nhà</strong>. Cùng chữ 屋: 部屋 (căn phòng), 本屋 (tiệm sách).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>古<rt>ふる</rt></ruby>くなった<span class="target"><ruby>屋<rt>や</rt></ruby><ruby>根<rt>ね</rt></ruby></span>を<ruby>直<rt>なお</rt></ruby>すのに50<ruby>万<rt>まん</rt></ruby><ruby>円<rt>えん</rt></ruby>かかりました。</div><div class="ex-vn">Sửa lại mái nhà bị cũ tốn hết 50 vạn yên.</div></div></td></tr>
+
+<tr><td class="col-stt">10</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">インテリア</span><span class="vocab-hanviet">(katakana)</span><span class="vocab-pos pos-katakana">Danh từ (gốc Anh)</span><span class="vocab-meaning">Nội thất, đồ trang trí</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Nguồn gốc:</strong> Từ tiếng Anh <em>"interior"</em>. Phát âm Nhật: <em>in-te-ri-a</em>. Bao gồm: bàn ghế, rèm, đèn, vật trang trí. Đồng nghĩa Nhật cổ: 室内装飾 (しつないそうしょく).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>新<rt>あたら</rt></ruby>しい<ruby>家<rt>いえ</rt></ruby>の<span class="target">インテリア</span>を<ruby>妻<rt>つま</rt></ruby>と<ruby>一<rt>いっ</rt></ruby><ruby>緒<rt>しょ</rt></ruby>に<ruby>選<rt>えら</rt></ruby>びました。</div><div class="ex-vn">Tôi đã chọn nội thất cho ngôi nhà mới cùng với vợ.</div></div></td></tr>
+
+<tr><td class="col-stt">11</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">スペース</span><span class="vocab-hanviet">(katakana)</span><span class="vocab-pos pos-katakana">Danh từ (gốc Anh)</span><span class="vocab-meaning">Không gian, chỗ trống</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Nguồn gốc:</strong> Từ tiếng Anh <em>"space"</em>. Phát âm Nhật: <em>su-pē-su</em>. Đồng nghĩa Nhật: 空間 (くうかん), 場所 (ばしょ). スペース dùng phổ biến trong đời sống.</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>には<ruby>大<rt>おお</rt></ruby>きな<ruby>机<rt>つくえ</rt></ruby>を<ruby>置<rt>お</rt></ruby>く<span class="target">スペース</span>がありません。</div><div class="ex-vn">Trong phòng này không có không gian để đặt một chiếc bàn lớn.</div></div></td></tr>
+
+<tr><td class="col-stt">12</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>家<rt>か</rt></ruby><ruby>具<rt>ぐ</rt></ruby></span><span class="vocab-hanviet">GIA CỤ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Đồ nội thất, đồ đạc</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">家</span><span class="kreading">GIA · か / いえ</span> — <span class="kmean">nhà</span></div><div><span class="kchar">具</span><span class="kreading">CỤ · ぐ</span> — <span class="kmean">đồ dùng, dụng cụ</span></div><div class="combine"><strong>Ghép:</strong> "Đồ dùng trong nhà" → <strong>nội thất</strong>. Cùng chữ 具: 文房具 (đồ văn phòng phẩm), 道具 (dụng cụ).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">デザインがいい<span class="target"><ruby>家<rt>か</rt></ruby><ruby>具<rt>ぐ</rt></ruby></span>を<ruby>買<rt>か</rt></ruby>うと、<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>の<ruby>雰<rt>ふん</rt></ruby><ruby>囲<rt>い</rt></ruby><ruby>気<rt>き</rt></ruby>が<ruby>変<rt>か</rt></ruby>わります。</div><div class="ex-vn">Mua đồ nội thất có thiết kế đẹp thì bầu không khí căn phòng sẽ thay đổi.</div></div></td></tr>
+
+<tr><td class="col-stt">13</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">すっきり</span><span class="vocab-hanviet">(tượng thanh)</span><span class="vocab-pos pos-adv">Trạng từ / する</span><span class="vocab-meaning">Gọn gàng, ngăn nắp, sảng khoái</span></div></td><td class="col-explain"><div class="wago-note"><strong>Từ tượng thanh:</strong> Mô phỏng cảm giác "không có gì thừa thãi". Hai nghĩa: ① Phòng/đồ vật: ngăn nắp, gọn gàng. ② Cảm giác: sảng khoái, nhẹ nhõm (頭がすっきりする).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>不<rt>ふ</rt></ruby><ruby>要<rt>よう</rt></ruby>な<ruby>物<rt>もの</rt></ruby>を<ruby>捨<rt>す</rt></ruby>てたら、<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>の<ruby>中<rt>なか</rt></ruby>が<span class="target">すっきり</span>しました。</div><div class="ex-vn">Vứt đi đồ không cần thiết, căn phòng trở nên gọn gàng hẳn.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 A — Ôn luyện cụm Nhà cửa &amp; Nội thất</h4><span class="ex-subtitle">Hai dạng câu hỏi sau khi học 13 từ ở mục 5-1</span></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 A1</span>文脈規定 — Điền từ vào chỗ trống</div>
+      <div class="choice-pool"><strong>選択肢:</strong> 自宅 / 設計 / 工事 / 完成 / 土地 / 屋根</div>
+      <div class="ex-q"><span class="qnum">(1)</span><ruby>有<rt>ゆう</rt></ruby><ruby>名<rt>めい</rt></ruby>な<ruby>建<rt>けん</rt></ruby><ruby>築<rt>ちく</rt></ruby><ruby>家<rt>か</rt></ruby>に<ruby>家<rt>いえ</rt></ruby>を <span class="blank" data-ans="設計">　　　　</span> してもらった。</div>
+      <div class="ex-q"><span class="qnum">(2)</span><ruby>来<rt>らい</rt></ruby><ruby>年<rt>ねん</rt></ruby>、<ruby>郊<rt>こう</rt></ruby><ruby>外<rt>がい</rt></ruby>に <span class="blank" data-ans="自宅">　　　　</span> を<ruby>建<rt>た</rt></ruby>てます。</div>
+      <div class="ex-q"><span class="qnum">(3)</span><ruby>古<rt>ふる</rt></ruby>くなった <span class="blank" data-ans="屋根">　　　　</span> を<ruby>直<rt>なお</rt></ruby>すのに<ruby>大<rt>たい</rt></ruby><ruby>金<rt>きん</rt></ruby>がかかった。</div>
+      <div class="ex-q"><span class="qnum">(4)</span><ruby>東<rt>とう</rt></ruby><ruby>京<rt>きょう</rt></ruby>の <span class="blank" data-ans="土地">　　　　</span> の<ruby>価<rt>か</rt></ruby><ruby>値<rt>ち</rt></ruby>はとても<ruby>高<rt>たか</rt></ruby>い。</div>
+      <div class="ex-q"><span class="qnum">(5)</span>3<ruby>年<rt>ねん</rt></ruby>かけて、ようやく<ruby>新<rt>しん</rt></ruby><ruby>居<rt>きょ</rt></ruby>が <span class="blank" data-ans="完成">　　　　</span> した。</div>
+      <div class="ex-q"><span class="qnum">(6)</span><ruby>道<rt>どう</rt></ruby><ruby>路<rt>ろ</rt></ruby>の <span class="blank" data-ans="工事">　　　　</span> のため、ここは<ruby>通<rt>とお</rt></ruby>れません。</div>
+      <p style="font-size:12px;color:var(--muted);margin:10px 0 0;font-style:italic;">💡 Bấm vào từng chỗ trống để hiện đáp án.</p>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án tổng</button>
+      <div class="answer-box"><strong>Đáp án:</strong> (1) 設計 — (2) 自宅 — (3) 屋根 — (4) 土地 — (5) 完成 — (6) 工事</div>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 A2</span>マッチング — Ghép từ với nghĩa</div>
+      <div class="match-grid">
+        <div class="match-col"><h5>Cột A — Tiếng Nhật</h5>
+          <div class="match-item jp"><span class="mlabel">A1.</span>建築 (けんちく)</div>
+          <div class="match-item jp"><span class="mlabel">A2.</span>建設 (けんせつ)</div>
+          <div class="match-item jp"><span class="mlabel">A3.</span>地下 (ちか)</div>
+          <div class="match-item jp"><span class="mlabel">A4.</span>家具 (かぐ)</div>
+          <div class="match-item jp"><span class="mlabel">A5.</span>インテリア</div>
+          <div class="match-item jp"><span class="mlabel">A6.</span>すっきり</div>
+        </div>
+        <div class="match-col"><h5>Cột B — Tiếng Việt</h5>
+          <div class="match-item"><span class="mlabel">B1.</span>Đồ nội thất, đồ đạc</div>
+          <div class="match-item"><span class="mlabel">B2.</span>Tầng hầm</div>
+          <div class="match-item"><span class="mlabel">B3.</span>Kiến trúc (công trình)</div>
+          <div class="match-item"><span class="mlabel">B4.</span>Ngăn nắp, gọn gàng</div>
+          <div class="match-item"><span class="mlabel">B5.</span>Xây dựng (quy mô lớn)</div>
+          <div class="match-item"><span class="mlabel">B6.</span>Nội thất, đồ trang trí</div>
+        </div>
+      </div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> A1→B3 ・ A2→B5 ・ A3→B2 ・ A4→B1 ・ A5→B6 ・ A6→B4</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-head" data-mark="越"><span class="section-kicker">Phần 5-2 · 14 từ</span><h3>引っ越し</h3><span class="section-vn">Chuyển nhà, vị trí, khu vực</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">14</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>中<rt>ちゅう</rt></ruby><ruby>心<rt>しん</rt></ruby></span><span class="vocab-hanviet">TRUNG TÂM</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Trung tâm, lõi</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">中</span><span class="kreading">TRUNG · ちゅう / なか</span> — <span class="kmean">giữa</span></div><div><span class="kchar">心</span><span class="kreading">TÂM · しん / こころ</span> — <span class="kmean">tim, tâm</span></div><div class="combine"><strong>Ghép:</strong> "Trái tim ở giữa" → <strong>trung tâm</strong>. Cụm: 町の中心 (trung tâm thị trấn), 中心地 (khu trung tâm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>家<rt>いえ</rt></ruby>は<ruby>町<rt>まち</rt></ruby>の<span class="target"><ruby>中<rt>ちゅう</rt></ruby><ruby>心<rt>しん</rt></ruby></span>にあって、とても<ruby>便<rt>べん</rt></ruby><ruby>利<rt>り</rt></ruby>です。</div><div class="ex-vn">Ngôi nhà này nằm ngay trung tâm thị trấn, rất tiện lợi.</div></div></td></tr>
+
+<tr><td class="col-stt">15</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>商<rt>しょう</rt></ruby><ruby>店<rt>てん</rt></ruby><ruby>街<rt>がい</rt></ruby></span><span class="vocab-hanviet">THƯƠNG ĐIẾM NHAI</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Khu phố thương mại, phố buôn bán</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">商</span><span class="kreading">THƯƠNG · しょう</span> — <span class="kmean">buôn bán</span></div><div><span class="kchar">店</span><span class="kreading">ĐIẾM · てん / みせ</span> — <span class="kmean">cửa hàng</span></div><div><span class="kchar">街</span><span class="kreading">NHAI · がい / まち</span> — <span class="kmean">phố</span></div><div class="combine"><strong>Ghép:</strong> "Phố cửa hàng buôn bán" → <strong>phố thương mại</strong>. Cùng chữ 街: 商業街, 繁華街 (phố sầm uất).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>家<rt>いえ</rt></ruby>の<ruby>近<rt>ちか</rt></ruby>くに<span class="target"><ruby>商<rt>しょう</rt></ruby><ruby>店<rt>てん</rt></ruby><ruby>街<rt>がい</rt></ruby></span>があるので、<ruby>買<rt>か</rt></ruby><ruby>物<rt>もの</rt></ruby>が<ruby>便<rt>べん</rt></ruby><ruby>利<rt>り</rt></ruby>です。</div><div class="ex-vn">Gần nhà có khu phố mua sắm nên việc đi chợ rất tiện.</div></div></td></tr>
+
+<tr><td class="col-stt">16</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>地<rt>ち</rt></ruby><ruby>区<rt>く</rt></ruby></span><span class="vocab-hanviet">ĐỊA KHU</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Khu vực, vùng</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">地</span><span class="kreading">ĐỊA · ち</span> — <span class="kmean">đất, vùng</span></div><div><span class="kchar">区</span><span class="kreading">KHU · く</span> — <span class="kmean">khu vực</span></div><div class="combine"><strong>Ghép:</strong> "Khu của vùng" → <strong>khu vực</strong>. Cụm: 住宅地区 (khu dân cư), 工業地区 (khu công nghiệp). Chữ 区 dùng cho cấp quận (新宿区).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<span class="target"><ruby>地<rt>ち</rt></ruby><ruby>区<rt>く</rt></ruby></span>は<ruby>外<rt>がい</rt></ruby><ruby>国<rt>こく</rt></ruby><ruby>人<rt>じん</rt></ruby>が<ruby>多<rt>おお</rt></ruby>く<ruby>住<rt>す</rt></ruby>んでいます。</div><div class="ex-vn">Khu vực này có nhiều người nước ngoài sinh sống.</div></div></td></tr>
+
+<tr><td class="col-stt">17</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>距<rt>きょ</rt></ruby><ruby>離<rt>り</rt></ruby></span><span class="vocab-hanviet">CỰ LY</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Khoảng cách</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">距</span><span class="kreading">CỰ · きょ</span> — <span class="kmean">cách xa</span></div><div><span class="kchar">離</span><span class="kreading">LY · り / はな(れる)</span> — <span class="kmean">rời, tách</span></div><div class="combine"><strong>Ghép:</strong> "Cách + xa" → <strong>khoảng cách</strong>. Cụm: 距離がある (có khoảng cách), 長距離 (đường dài).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">このアパートは<ruby>駅<rt>えき</rt></ruby>からかなり<span class="target"><ruby>距<rt>きょ</rt></ruby><ruby>離<rt>り</rt></ruby></span>があります。</div><div class="ex-vn">Căn hộ này khá xa nhà ga.</div></div></td></tr>
+
+<tr><td class="col-stt">18</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>畳<rt>じょう</rt></ruby> / <ruby>畳<rt>たたみ</rt></ruby></span><span class="vocab-hanviet">ĐIỆP</span><span class="vocab-pos">Đơn vị / Danh từ</span><span class="vocab-meaning">Chiếu tatami (đơn vị đo diện tích phòng)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">畳</span><span class="kreading">ĐIỆP · じょう / たた(む) / たたみ</span> — <span class="kmean">xếp chồng, chiếu tatami</span></div><div class="combine"><strong>Hai cách đọc:</strong> ① じょう - đơn vị đo phòng Nhật (6畳 = phòng 6 chiếu ≈ 9.7m²). ② たたみ - chiếu tatami truyền thống. 1 chiếu ≈ 1.62m².</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>和<rt>わ</rt></ruby><ruby>室<rt>しつ</rt></ruby>は6<span class="target"><ruby>畳<rt>じょう</rt></ruby></span>で、ちょうどいい<ruby>広<rt>ひろ</rt></ruby>さです。</div><div class="ex-vn">Phòng kiểu Nhật này rộng 6 chiếu tatami, vừa đẹp.</div></div></td></tr>
+
+<tr><td class="col-stt">19</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>日<rt>ひ</rt></ruby><ruby>当<rt>あ</rt></ruby>たり</span><span class="vocab-hanviet">NHẬT ĐƯƠNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Sự đón nắng, nắng chiếu vào</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">日</span><span class="kreading">NHẬT · ひ / にち</span> — <span class="kmean">mặt trời, ngày</span></div><div><span class="kchar">当</span><span class="kreading">ĐƯƠNG · あ(たる) / とう</span> — <span class="kmean">trúng, chiếu vào</span></div><div class="combine"><strong>Ghép:</strong> Danh từ hóa từ 日が当たる (nắng chiếu vào) → <strong>khả năng đón nắng</strong>. 日当たりがいい = đón nắng tốt (rất quan trọng khi tìm nhà ở Nhật).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>は<span class="target"><ruby>日<rt>ひ</rt></ruby><ruby>当<rt>あ</rt></ruby>たり</span>がよくて、<ruby>気<rt>き</rt></ruby><ruby>持<rt>も</rt></ruby>ちがいいです。</div><div class="ex-vn">Phòng này đón nắng tốt, cảm giác rất dễ chịu.</div></div></td></tr>
+
+<tr><td class="col-stt">20</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>西<rt>にし</rt></ruby><ruby>向<rt>む</rt></ruby>き</span><span class="vocab-hanviet">TÂY HƯỚNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Hướng Tây, mặt hướng Tây</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">西</span><span class="kreading">TÂY · にし / せい</span> — <span class="kmean">phía tây</span></div><div><span class="kchar">向</span><span class="kreading">HƯỚNG · む(く) / こう</span> — <span class="kmean">hướng về</span></div><div class="combine"><strong>Ghép:</strong> "Quay về phía tây" → <strong>hướng Tây</strong>. Bộ 4 hướng: 東向き, 西向き, 南向き, 北向き. Phòng 南向き (hướng Nam) được ưa chuộng nhất ở Nhật.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>西<rt>にし</rt></ruby><ruby>向<rt>む</rt></ruby>き</span>の<ruby>窓<rt>まど</rt></ruby>から<ruby>夕<rt>ゆう</rt></ruby><ruby>日<rt>ひ</rt></ruby>が<ruby>美<rt>うつく</rt></ruby>しく<ruby>見<rt>み</rt></ruby>えます。</div><div class="ex-vn">Từ cửa sổ hướng Tây có thể ngắm hoàng hôn rất đẹp.</div></div></td></tr>
+
+<tr><td class="col-stt">21</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>影<rt>かげ</rt></ruby></span><span class="vocab-hanviet">ẢNH</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Bóng (in xuống đất)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">影</span><span class="kreading">ẢNH · かげ / えい</span> — <span class="kmean">bóng, hình ảnh</span></div><div class="combine"><strong>Cách dùng:</strong> 影が出来る (đổ bóng), 長い影 (bóng dài). Phân biệt: 陰 (かげ) - bóng râm khuất ánh sáng; 影 - bóng do vật cản ánh sáng tạo ra. Cùng chữ 影 với 影響 (ảnh hưởng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>夕<rt>ゆう</rt></ruby><ruby>方<rt>がた</rt></ruby>になると、<ruby>木<rt>き</rt></ruby>の<ruby>長<rt>なが</rt></ruby>い<span class="target"><ruby>影<rt>かげ</rt></ruby></span>が<ruby>地<rt>じ</rt></ruby><ruby>面<rt>めん</rt></ruby>に<ruby>出<rt>で</rt></ruby><ruby>来<rt>き</rt></ruby>ます。</div><div class="ex-vn">Đến chiều tối, bóng cây dài đổ xuống mặt đất.</div></div></td></tr>
+
+<tr><td class="col-stt">22</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>風<rt>ふう</rt></ruby><ruby>景<rt>けい</rt></ruby></span><span class="vocab-hanviet">PHONG CẢNH</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Phong cảnh, quang cảnh</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">風</span><span class="kreading">PHONG · ふう / かぜ</span> — <span class="kmean">gió, dáng vẻ</span></div><div><span class="kchar">景</span><span class="kreading">CẢNH · けい</span> — <span class="kmean">cảnh sắc</span></div><div class="combine"><strong>Ghép:</strong> "Gió + cảnh sắc" → <strong>phong cảnh</strong>. Đồng nghĩa: 景色 (けしき) - cảnh đẹp tự nhiên. 風景 trang trọng hơn.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">このアパートからの<span class="target"><ruby>風<rt>ふう</rt></ruby><ruby>景<rt>けい</rt></ruby></span>は<ruby>素<rt>す</rt></ruby><ruby>晴<rt>ば</rt></ruby>らしい。</div><div class="ex-vn">Phong cảnh nhìn từ căn hộ này thật tuyệt.</div></div></td></tr>
+
+<tr><td class="col-stt">23</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>風<rt>ふ</rt></ruby><ruby>呂<rt>ろ</rt></ruby><ruby>付<rt>つ</rt></ruby>き</span><span class="vocab-hanviet">PHONG LỮ PHÓ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Có sẵn bồn tắm (kèm theo)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">風呂</span><span class="kreading">ふろ</span> — <span class="kmean">bồn tắm kiểu Nhật</span></div><div><span class="kchar">付</span><span class="kreading">PHÓ · つ(く) / ふ</span> — <span class="kmean">đính kèm</span></div><div class="combine"><strong>Cấu trúc:</strong> Danh từ + 付き = "có kèm theo ~". Trái nghĩa: 風呂なし. Cùng cấu trúc: トイレ付き (có toilet), 朝食付き (kèm bữa sáng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>風<rt>ふ</rt></ruby><ruby>呂<rt>ろ</rt></ruby><ruby>付<rt>つ</rt></ruby>き</span>のアパートを<ruby>探<rt>さが</rt></ruby>しています。</div><div class="ex-vn">Tôi đang tìm căn hộ có bồn tắm.</div></div></td></tr>
+
+<tr><td class="col-stt">24</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>し</span><span class="vocab-hanviet">DẪN VIỆT</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Sự chuyển nhà</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">引</span><span class="kreading">DẪN · ひ(く) / いん</span> — <span class="kmean">kéo, dẫn</span></div><div><span class="kchar">越</span><span class="kreading">VIỆT · こ(す) / えつ</span> — <span class="kmean">vượt qua, dời</span></div><div class="combine"><strong>Ghép:</strong> "Kéo (đồ) + vượt qua" → <strong>chuyển nhà</strong>. Động từ: 引っ越す. Cụm: 引っ越しを手伝う (giúp chuyển nhà).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>来<rt>らい</rt></ruby><ruby>週<rt>しゅう</rt></ruby>、<ruby>友<rt>とも</rt></ruby><ruby>達<rt>だち</rt></ruby>の<span class="target"><ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>し</span>を<ruby>手<rt>て</rt></ruby><ruby>伝<rt>つだ</rt></ruby>うつもりです。</div><div class="ex-vn">Tuần sau tôi định giúp bạn chuyển nhà.</div></div></td></tr>
+
+<tr><td class="col-stt">25</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>傷<rt>きず</rt></ruby></span><span class="vocab-hanviet">THƯƠNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Vết thương, vết xước</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">傷</span><span class="kreading">THƯƠNG · きず / しょう</span> — <span class="kmean">vết thương, hư hỏng</span></div><div class="combine"><strong>Hai loại:</strong> ① Trên cơ thể: 傷がある (có vết thương). ② Trên đồ vật: 床に傷が付く (sàn nhà bị trầy). Cùng chữ với 火傷 (やけど - bị bỏng), 負傷 (bị thương).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>しの<ruby>時<rt>とき</rt></ruby>、<ruby>床<rt>ゆか</rt></ruby>に<span class="target"><ruby>傷<rt>きず</rt></ruby></span>が<ruby>付<rt>つ</rt></ruby>いてしまった。</div><div class="ex-vn">Lúc chuyển nhà, sàn nhà đã bị xước mất rồi.</div></div></td></tr>
+
+<tr><td class="col-stt">26</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>家<rt>や</rt></ruby><ruby>賃<rt>ちん</rt></ruby></span><span class="vocab-hanviet">GIA NHẪM</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Tiền thuê nhà</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">家</span><span class="kreading">GIA · や / か / いえ</span> — <span class="kmean">nhà</span></div><div><span class="kchar">賃</span><span class="kreading">NHẪM · ちん</span> — <span class="kmean">tiền thuê, công</span></div><div class="combine"><strong>Ghép:</strong> "Tiền của nhà" → <strong>tiền thuê nhà</strong>. Cùng chữ 賃: 賃金 (tiền lương), 運賃 (cước vận chuyển).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>毎<rt>まい</rt></ruby><ruby>月<rt>つき</rt></ruby><ruby>末<rt>まつ</rt></ruby>に<span class="target"><ruby>家<rt>や</rt></ruby><ruby>賃<rt>ちん</rt></ruby></span>を<ruby>払<rt>はら</rt></ruby>っています。</div><div class="ex-vn">Tôi trả tiền thuê nhà vào cuối mỗi tháng.</div></div></td></tr>
+
+<tr><td class="col-stt">27</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>床<rt>ゆか</rt></ruby></span><span class="vocab-hanviet">SÀNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Sàn nhà</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">床</span><span class="kreading">SÀNG · ゆか / しょう / とこ</span> — <span class="kmean">sàn, giường</span></div><div class="combine"><strong>Hai cách đọc:</strong> ① ゆか - sàn nhà (床を拭く: lau sàn). ② とこ - giường, chỗ (床屋 とこや: tiệm hớt tóc). Khác chữ 廊 (ろう): hành lang.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>家<rt>いえ</rt></ruby>の<span class="target"><ruby>床<rt>ゆか</rt></ruby></span>は<ruby>木<rt>き</rt></ruby>で<ruby>出<rt>で</rt></ruby><ruby>来<rt>き</rt></ruby>ていて、<ruby>暖<rt>あたた</rt></ruby>かい<ruby>感<rt>かん</rt></ruby>じがします。</div><div class="ex-vn">Sàn nhà này làm bằng gỗ, có cảm giác ấm áp.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 B — Ôn luyện cụm Chuyển nhà</h4><span class="ex-subtitle">Hai dạng câu hỏi sau khi học 14 từ ở mục 5-2</span></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 B1</span>言い換え類義 — Chọn từ có nghĩa gần nhất</div>
+      <div class="ex-q"><span class="qnum">(1)</span>この<ruby>部<rt>へ</rt></ruby><ruby>屋<rt>や</rt></ruby>はよく<ruby>日<rt>ひ</rt></ruby>が<ruby>入<rt>はい</rt></ruby>る。
+        <span class="multi-choice"><span class="opt-num">①</span>距離がある <span class="opt-num">②</span>日当たりがいい <span class="opt-num">③</span>影が出来る <span class="opt-num">④</span>すっきりしている</span></div>
+      <div class="ex-q"><span class="qnum">(2)</span><ruby>毎<rt>まい</rt></ruby><ruby>月<rt>つき</rt></ruby><ruby>払<rt>はら</rt></ruby>うアパートの<ruby>料<rt>りょう</rt></ruby><ruby>金<rt>きん</rt></ruby>。
+        <span class="multi-choice"><span class="opt-num">①</span>家具 <span class="opt-num">②</span>家賃 <span class="opt-num">③</span>土地 <span class="opt-num">④</span>地区</span></div>
+      <div class="ex-q"><span class="qnum">(3)</span><ruby>家<rt>いえ</rt></ruby>から<ruby>新<rt>あたら</rt></ruby>しい<ruby>家<rt>いえ</rt></ruby>に<ruby>移<rt>うつ</rt></ruby>った。
+        <span class="multi-choice"><span class="opt-num">①</span>完成した <span class="opt-num">②</span>引っ越した <span class="opt-num">③</span>設計した <span class="opt-num">④</span>建てた</span></div>
+      <div class="ex-q"><span class="qnum">(4)</span><ruby>町<rt>まち</rt></ruby>の<ruby>真<rt>ま</rt></ruby>ん<ruby>中<rt>なか</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいる。
+        <span class="multi-choice"><span class="opt-num">①</span>中心 <span class="opt-num">②</span>地下 <span class="opt-num">③</span>地区 <span class="opt-num">④</span>商店街</span></div>
+      <div class="ex-q"><span class="qnum">(5)</span><ruby>窓<rt>まど</rt></ruby>から<ruby>美<rt>うつく</rt></ruby>しい<ruby>景<rt>け</rt></ruby><ruby>色<rt>しき</rt></ruby>が<ruby>見<rt>み</rt></ruby>える。
+        <span class="multi-choice"><span class="opt-num">①</span>影 <span class="opt-num">②</span>距離 <span class="opt-num">③</span>風景 <span class="opt-num">④</span>畳</span></div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> (1) ② 日当たりがいい — (2) ② 家賃 — (3) ② 引っ越した — (4) ① 中心 — (5) ③ 風景</div>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 B2</span>マッチング — Ghép từ với nghĩa</div>
+      <div class="match-grid">
+        <div class="match-col"><h5>Cột A — Tiếng Nhật</h5>
+          <div class="match-item jp"><span class="mlabel">A1.</span>地区 (ちく)</div>
+          <div class="match-item jp"><span class="mlabel">A2.</span>畳 (じょう)</div>
+          <div class="match-item jp"><span class="mlabel">A3.</span>風呂付き</div>
+          <div class="match-item jp"><span class="mlabel">A4.</span>傷 (きず)</div>
+          <div class="match-item jp"><span class="mlabel">A5.</span>商店街</div>
+          <div class="match-item jp"><span class="mlabel">A6.</span>床 (ゆか)</div>
+        </div>
+        <div class="match-col"><h5>Cột B — Tiếng Việt</h5>
+          <div class="match-item"><span class="mlabel">B1.</span>Khu phố mua sắm</div>
+          <div class="match-item"><span class="mlabel">B2.</span>Khu vực, vùng</div>
+          <div class="match-item"><span class="mlabel">B3.</span>Sàn nhà</div>
+          <div class="match-item"><span class="mlabel">B4.</span>Vết xước, vết thương</div>
+          <div class="match-item"><span class="mlabel">B5.</span>Chiếu tatami (đơn vị)</div>
+          <div class="match-item"><span class="mlabel">B6.</span>Có bồn tắm</div>
+        </div>
+      </div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> A1→B2 ・ A2→B5 ・ A3→B6 ・ A4→B4 ・ A5→B1 ・ A6→B3</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-04.html">← Bài 4</a><a class="mid" href="../tu-vung.html">▦ Danh sách bài</a><a href="bai-06.html">Bài 6 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+</script>
+</body></html>

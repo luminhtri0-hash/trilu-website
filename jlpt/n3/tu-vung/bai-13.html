@@ -1,0 +1,525 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 13 · 仕事 — Từ vựng N3 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N3 — Bài 13: 仕事. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#6e1831;
+  --accent-dark:#4f0f24;
+  --accent-2:#9b7a38;
+  --accent-3:#c7ab70;
+  --line:#dfcfbb;
+  --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(110,24,49,0.08), transparent 22%),
+    linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+/* ============ COVER ============ */
+.cover{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 36%, #3a0f1b 100%);
+  color:#fff; border-radius:30px; box-shadow:var(--shadow);
+  padding:60px 64px 50px; margin-bottom:26px;
+}
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+/* ============ TOC ============ */
+.toc-panel{
+  margin:0 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96));
+  border:1px solid rgba(155,122,56,0.20);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:14px 16px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(110,24,49,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item.disabled{ opacity:0.45; pointer-events:none; }
+.toc-item-number{ display:inline-block; min-width:34px; padding:2px 8px; margin-right:8px; border-radius:8px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:11px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:13.5px; }
+.toc-item-summary{ display:block; margin-top:5px; color:var(--muted); font-size:12px; line-height:1.45; font-family:"Noto Serif CJK JP",serif; }
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(155,122,56,0.16);
+  border-radius:28px; box-shadow:var(--shadow);
+  padding:0 0 40px; margin-bottom:40px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  padding:30px 44px 28px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 50%, #3a0f1b 100%);
+  color:#fff;
+}
+.lesson-banner::after{
+  content:"語彙"; position:absolute; right:-10px; bottom:-50px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:8px; }
+.lesson-banner h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:30px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:14px; color:rgba(255,255,255,0.82); }
+
+.doc-body{ padding:30px 44px 10px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #57132a 0%, #6e1831 52%, #7f3b52 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark); position:absolute; right:18px; top:50%; transform:translateY(-50%);
+  font-family:"Noto Serif CJK JP",serif; font-size:60px; line-height:1; color:rgba(255,255,255,0.12); font-weight:700;
+}
+.section-kicker{ display:block; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:rgba(255,255,255,0.78); }
+.section-head h3{
+  margin:0; padding:0; border:none; color:#fff; background:none;
+  font-family:"Noto Serif CJK JP",serif; font-size:24px; line-height:1.2; font-weight:700;
+}
+.section-head .section-vn{ display:block; margin-top:4px; font-size:13px; font-style:italic; color:rgba(255,255,255,0.82); font-family:Inter,sans-serif; }
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{ margin:16px 0 24px; }
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff; border:1px solid var(--line-2);
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 26px rgba(60,38,19,0.05);
+  font-size:13.5px;
+}
+thead th{
+  background:linear-gradient(180deg, #fcf5ea 0%, #f2e3cf 100%);
+  color:var(--accent); font-weight:800;
+  padding:13px 14px; text-align:left; font-size:13px;
+  border-bottom:1px solid var(--line-2);
+}
+thead th:not(:last-child){ border-right:1px solid var(--line-2); }
+tbody td{
+  padding:18px 14px; vertical-align:top;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+}
+tbody td:last-child{ border-right:none; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody tr:nth-child(even) td{ background:#fffaf4; }
+
+.col-stt{ width:5%; text-align:center; font-weight:800; color:var(--accent); font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:18px; }
+.col-vocab{ width:22%; }
+.col-explain{ width:30%; }
+.col-example{ width:43%; }
+
+.vocab-wrapper{ display:flex; flex-direction:column; gap:4px; }
+.vocab-kanji{ font-size:26px; font-weight:700; color:#222; font-family:"Noto Serif CJK JP","Yu Mincho",serif; line-height:1.15; }
+.vocab-kanji ruby{ ruby-position:over; ruby-align:center; }
+.vocab-kanji rt{ font-size:11px; color:#888; font-family:sans-serif; font-weight:500; }
+.vocab-hanviet{ font-size:11px; color:var(--accent-2); font-weight:800; letter-spacing:1.2px; margin-top:4px; }
+.vocab-pos{ display:inline-block; font-size:10.5px; color:#fff; background:var(--green); padding:2px 8px; border-radius:4px; font-weight:600; letter-spacing:0.05em; margin-top:6px; align-self:flex-start; }
+.vocab-pos.pos-na{ background:var(--terra); }
+.vocab-pos.pos-i{ background:var(--teal); }
+.vocab-pos.pos-adv{ background:var(--plum); }
+.vocab-pos.pos-suru{ background:#8a4a6a; }
+.vocab-pos.pos-katakana{ background:var(--accent-2); }
+.vocab-meaning{ font-size:14px; color:var(--accent); font-weight:700; margin-top:8px; line-height:1.5; }
+
+/* Explain box */
+.kanji-break{ background:linear-gradient(180deg, #fffdf9, #fbf3e8); border:1px solid #e7d7be; border-left:4px solid var(--accent-2); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.65; color:#3b3320; }
+.kanji-break .kchar{ font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; color:var(--accent); margin-right:4px; }
+.kanji-break .kreading{ color:var(--accent-2); font-weight:700; font-size:11.5px; letter-spacing:0.05em; }
+.kanji-break .kmean{ color:#5f4830; }
+.kanji-break .combine{ margin-top:8px; padding-top:8px; border-top:1px dashed #d8c8ad; font-style:italic; color:#6e5230; }
+.kanji-break .combine strong{ font-style:normal; color:var(--accent); }
+.katakana-origin{ background:linear-gradient(180deg, #fff5f8, #faeaf0); border:1px solid #f0d8e2; border-left:4px solid #b13e6a; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#5a3a4a; }
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{ background:linear-gradient(180deg, #f7faf2, #ecf2e2); border:1px solid #d8e2c8; border-left:4px solid var(--green); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#3e5a3a; }
+.wago-note strong{ color:var(--green); }
+
+/* Example box */
+.ex-box{ background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent); padding:13px 16px; border-radius:0 12px 12px 0; }
+.ex-jp{ font-size:15px; color:#222; margin-bottom:8px; line-height:1.95; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn{ font-size:13.5px; color:#6e5230; font-style:italic; line-height:1.55; padding-top:6px; border-top:1px dotted #e2d4b8; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:30px 0 24px;
+  padding:0;
+  background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+  border:1px solid #e7d7be;
+  border-radius:22px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(60,38,19,0.05);
+}
+.exercise-banner{
+  display:flex; align-items:center; gap:14px;
+  padding:18px 24px;
+  background:linear-gradient(90deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff;
+}
+.exercise-icon{ width:42px; height:42px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"EB Garamond","Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:11.5px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:2px; letter-spacing:0.04em; }
+.exercise-body{ padding:22px 26px; }
+
+.exercise{ background:#fff; border:1px solid #ecdec3; border-radius:14px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 14px rgba(60,38,19,0.04); }
+.exercise:last-child{ margin-bottom:0; }
+.exercise-title{ font-weight:700; color:var(--accent); margin-bottom:12px; font-size:14px; display:flex; align-items:center; gap:10px; padding-bottom:10px; border-bottom:1px dashed #e7d7be; }
+.exercise-title .ex-no{ background:var(--accent-2); color:#fff; padding:3px 10px; border-radius:6px; font-size:11.5px; letter-spacing:0.08em; }
+.choice-pool{ background:linear-gradient(180deg, #fff7e8, #f7e4c1); border:1px dashed var(--accent-2); border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:14px; font-family:"Noto Serif CJK JP",serif; color:#674c1b; }
+.choice-pool strong{ color:var(--accent); }
+
+.ex-q{ padding:9px 0; border-bottom:1px dotted #eadfce; font-size:14px; line-height:1.85; font-family:"Noto Serif CJK JP",serif; }
+.ex-q:last-child{ border-bottom:none; }
+.ex-q .qnum{ display:inline-block; min-width:24px; font-weight:700; color:var(--accent); margin-right:4px; font-family:"EB Garamond",sans-serif; font-size:14.5px; }
+.ex-q .blank{ display:inline-block; min-width:90px; border-bottom:1.5px solid #b08850; padding:0 8px; margin:0 3px; text-align:center; color:transparent; cursor:pointer; transition:all .15s; }
+.ex-q .blank:hover{ background:rgba(199,171,112,0.12); }
+.ex-q .blank.shown{ color:var(--accent); font-weight:700; border-bottom-color:var(--accent); background:rgba(199,171,112,0.15); }
+
+.multi-choice{ display:block; margin:4px 0 4px 30px; font-size:13.5px; color:#444; }
+.multi-choice .opt-num{ color:var(--accent-2); font-weight:700; margin-right:6px; }
+.match-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin-top:12px; }
+.match-col{ background:#fffaf2; border:1px solid #ecdec3; border-radius:12px; padding:14px; }
+.match-col h5{ margin:0 0 10px; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; }
+.match-item{ padding:7px 10px; font-size:14px; border-radius:6px; }
+.match-item.jp{ font-family:"Noto Serif CJK JP",serif; }
+.match-item .mlabel{ display:inline-block; min-width:24px; font-weight:800; color:var(--accent-2); }
+
+.answer-toggle{
+  display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+  padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:13px; cursor:pointer; transition:all 0.2s; font-family:inherit;
+  box-shadow:0 6px 14px rgba(110,24,49,0.18);
+}
+.answer-toggle:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(110,24,49,0.28); }
+.answer-toggle::before{ content:"鍵"; font-family:"Noto Serif CJK JP",serif; margin-right:4px; }
+.answer-box{ display:none; margin-top:14px; padding:14px 16px; background:linear-gradient(180deg, #fffbef, #f8eed4); border:1px solid #d9bb88; border-left:4px solid var(--accent-2); border-radius:10px; font-size:13.5px; line-height:1.7; color:#5a4520; }
+.answer-box strong{ color:var(--accent); }
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  table.vocab-table{ min-width:880px; }
+  .table-shell{ overflow-x:auto; }
+  .match-grid{ grid-template-columns:1fr; }
+}
+
+/* === @page: dùng A4 LANDSCAPE cho bài học để có chỗ cho 4 cột === */
+@media print {
+  /* Cover + TOC: portrait */
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  /* Trang bài học: landscape (rộng hơn để 4 cột vừa) */
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+
+  /* === RESET cơ bản === */
+  html, body{ background:#fff !important; }
+  body{ font-size:11px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; }
+
+  /* === COVER === */
+  .cover{ page-break-after:always; break-after:page; box-shadow:none; border-radius:18px; padding:42px 38px; }
+  .cover-title{ font-size:36px; }
+  .cover-mark{ font-size:11rem !important; }
+
+  /* === TOC === */
+  .toc-panel{ page-break-after:always; break-after:page; box-shadow:none; }
+  .toc-grid{ grid-template-columns:repeat(3, 1fr) !important; }
+  .toc-item{ page-break-inside:avoid !important; break-inside:avoid !important; }
+
+  /* === Mỗi BÀI bắt sang trang mới === */
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:16px 18px 12px !important; }
+
+  /* === GỠ BỎ rào cản min-width === */
+  /* QUAN TRỌNG: ghi đè responsive rule khiến bảng tràn ngang */
+  .table-shell{ overflow:visible !important; overflow-x:visible !important; margin:8px 0 14px !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; box-shadow:none !important; table-layout:fixed !important; }
+
+  /* === KHÔNG cắt giữa khối === */
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:18px 22px !important; }
+  .lesson-banner h2{ font-size:22px !important; }
+  .section-head{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:10px 16px !important; margin:10px 0 8px !important; }
+  .section-head h3{ font-size:18px !important; }
+  .section-head::after{ font-size:36px !important; }
+  .exercise-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:12px 18px !important; }
+  .exercise-banner h4{ font-size:14px !important; }
+  .exercise-block{ page-break-inside:auto; margin:14px 0 !important; }
+  .exercise-body{ padding:14px 16px !important; }
+  .exercise{ page-break-inside:avoid !important; break-inside:avoid !important; padding:12px 14px !important; margin-bottom:10px !important; }
+  .footer-card{ page-break-inside:avoid; break-inside:avoid; }
+
+  /* === BẢNG TỪ VỰNG === */
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table tbody{ display:table-row-group; }
+  table.vocab-table thead th{ padding:8px 8px !important; font-size:11px !important; }
+  /* Mỗi tr (= 1 từ vựng) giữ nguyên trên 1 trang */
+  table.vocab-table tr{ page-break-inside:avoid !important; break-inside:avoid !important; page-break-after:auto; }
+  table.vocab-table tbody td{ padding:10px 8px !important; font-size:11px !important; }
+
+  /* === Co cell content nhỏ lại cho vừa khổ === */
+  .vocab-wrapper{ gap:2px !important; }
+  .vocab-kanji{ font-size:18px !important; line-height:1.1 !important; }
+  .vocab-kanji rt{ font-size:9px !important; }
+  .vocab-hanviet{ font-size:9.5px !important; letter-spacing:0.8px !important; margin-top:2px !important; }
+  .vocab-pos{ font-size:8.5px !important; padding:1px 5px !important; margin-top:3px !important; }
+  .vocab-meaning{ font-size:11px !important; margin-top:4px !important; line-height:1.35 !important; }
+
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:7px 9px !important; font-size:10.5px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important; break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:14px !important; }
+  .kanji-break .kreading{ font-size:9.5px !important; }
+  .kanji-break .combine{ margin-top:5px !important; padding-top:5px !important; }
+
+  .ex-box{ padding:8px 10px !important; page-break-inside:avoid !important; break-inside:avoid !important; }
+  .ex-jp{ font-size:12px !important; line-height:1.75 !important; margin-bottom:5px !important; }
+  .ex-jp rt{ font-size:8px !important; }
+  .ex-vn{ font-size:10.5px !important; line-height:1.45 !important; padding-top:4px !important; }
+
+  /* === BÀI TẬP === */
+  .ex-q{ page-break-inside:avoid; break-inside:avoid; font-size:11.5px !important; line-height:1.7 !important; padding:6px 0 !important; }
+  .choice-pool{ font-size:11.5px !important; padding:7px 11px !important; }
+  .multi-choice{ font-size:11px !important; }
+  .answer-toggle{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; break-inside:avoid; font-size:11px !important; padding:10px 12px !important; }
+  .match-grid{ grid-template-columns:1fr 1fr !important; }
+  .match-item{ font-size:11px !important; padding:4px 6px !important; }
+}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:200;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.92);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:38px;height:38px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.18em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}.tl-bc a:hover{color:var(--tl-ink)}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-wrap{max-width:1000px;margin:0 auto;padding:24px}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px;transition:all .2s}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3;pointer-events:none}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n3.html">N3</a> · <a href="../tu-vung.html">Từ vựng</a> · Bài 13</div></div></a><a class="tl-back" href="../tu-vung.html">← Danh sách bài</a></nav>
+<div class="tl-wrap">
+<article class="document" id="lesson-13">
+<div class="lesson-banner">
+  <span class="lesson-kicker">Bài 13 — 仕事 1</span>
+  <h2>仕事 (Công việc)</h2>
+  <div class="lesson-sub">Công việc 1: Xin việc, nghề nghiệp và quy trình làm việc (29 từ vựng)</div>
+</div>
+<div class="doc-body">
+
+<div class="section-head" data-mark="就"><span class="section-kicker">Phần 13-1 · 14 từ</span><h3>就職する</h3><span class="section-vn">Xin việc, ứng tuyển</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">1</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">スタッフ / <ruby>社<rt>しゃ</rt></ruby><ruby>員<rt>いん</rt></ruby> / アルバイト</span><span class="vocab-hanviet">XÃ VIÊN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Nhân viên hỗ trợ / Nhân viên chính / Việc làm thêm</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">社</span><span class="kreading">XÃ · しゃ</span> — <span class="kmean">công ty, xã hội</span></div><div><span class="kchar">員</span><span class="kreading">VIÊN · いん</span> — <span class="kmean">thành viên</span></div><div class="combine"><strong>Bộ 3 vai trò:</strong> <strong>スタッフ</strong> (staff - nhân viên thường, không cố định). <strong>社員</strong> (nhân viên chính thức ký HĐ dài hạn). <strong>アルバイト</strong> (từ tiếng Đức "Arbeit" - làm thêm, bán thời gian).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>会<rt>かい</rt></ruby><ruby>社<rt>しゃ</rt></ruby>では<span class="target">アルバイト</span>を<ruby>募<rt>ぼ</rt></ruby><ruby>集<rt>しゅう</rt></ruby>しています。</div><div class="ex-vn">Công ty này đang tuyển nhân viên làm thêm.</div></div></td></tr>
+
+<tr><td class="col-stt">2</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>募<rt>ぼ</rt></ruby><ruby>集<rt>しゅう</rt></ruby></span><span class="vocab-hanviet">MỘ TẬP</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Tuyển dụng, đăng tuyển</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">募</span><span class="kreading">MỘ · ぼ / つの(る)</span> — <span class="kmean">tuyển mộ</span></div><div><span class="kchar">集</span><span class="kreading">TẬP · しゅう / あつ(める)</span> — <span class="kmean">gom, tụ</span></div><div class="combine"><strong>Ghép:</strong> "Tuyển + gom" → <strong>tuyển dụng</strong>. Cụm: スタッフを募集する, 新入社員募集 (tuyển nhân viên mới).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>店<rt>みせ</rt></ruby>では<ruby>新<rt>あたら</rt></ruby>しいスタッフを<span class="target"><ruby>募<rt>ぼ</rt></ruby><ruby>集<rt>しゅう</rt></ruby></span>しています。</div><div class="ex-vn">Cửa hàng này đang tuyển nhân viên mới.</div></div></td></tr>
+
+<tr><td class="col-stt">3</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>履<rt>り</rt></ruby><ruby>歴<rt>れき</rt></ruby><ruby>書<rt>しょ</rt></ruby></span><span class="vocab-hanviet">LÝ LỊCH THƯ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Sơ yếu lý lịch (CV)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">履</span><span class="kreading">LÝ · り</span> — <span class="kmean">trải qua</span></div><div><span class="kchar">歴</span><span class="kreading">LỊCH · れき</span> — <span class="kmean">lịch sử, quá trình</span></div><div><span class="kchar">書</span><span class="kreading">THƯ · しょ</span> — <span class="kmean">văn bản, sách</span></div><div class="combine"><strong>Ghép:</strong> "Quá trình + đã trải + văn bản" → <strong>sơ yếu lý lịch (CV)</strong>. Văn hóa Nhật: 履歴書 viết tay, có ảnh, biểu mẫu chuẩn.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>就<rt>しゅう</rt></ruby><ruby>職<rt>しょく</rt></ruby><ruby>活<rt>かつ</rt></ruby><ruby>動<rt>どう</rt></ruby>のため、<span class="target"><ruby>履<rt>り</rt></ruby><ruby>歴<rt>れき</rt></ruby><ruby>書<rt>しょ</rt></ruby></span>を<ruby>書<rt>か</rt></ruby>いている。</div><div class="ex-vn">Tôi đang viết CV cho việc xin việc.</div></div></td></tr>
+
+<tr><td class="col-stt">4</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>面<rt>めん</rt></ruby><ruby>接<rt>せつ</rt></ruby></span><span class="vocab-hanviet">DIỆN TIẾP</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Phỏng vấn</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">面</span><span class="kreading">DIỆN · めん</span> — <span class="kmean">mặt</span></div><div><span class="kchar">接</span><span class="kreading">TIẾP · せつ</span> — <span class="kmean">tiếp xúc</span></div><div class="combine"><strong>Ghép:</strong> "Mặt + tiếp xúc" → <strong>phỏng vấn trực tiếp</strong>. Cụm: 面接を受ける (tham gia phỏng vấn), 面接官 (người phỏng vấn).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>明<rt>あ</rt></ruby><ruby>日<rt>した</rt></ruby>、<ruby>大<rt>おお</rt></ruby>きな<ruby>会<rt>かい</rt></ruby><ruby>社<rt>しゃ</rt></ruby>の<span class="target"><ruby>面<rt>めん</rt></ruby><ruby>接<rt>せつ</rt></ruby></span>を<ruby>受<rt>う</rt></ruby>けます。</div><div class="ex-vn">Ngày mai tôi sẽ tham gia phỏng vấn tại một công ty lớn.</div></div></td></tr>
+
+<tr><td class="col-stt">5</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>生<rt>せい</rt></ruby><ruby>年<rt>ねん</rt></ruby><ruby>月<rt>がっ</rt></ruby><ruby>日<rt>ぴ</rt></ruby></span><span class="vocab-hanviet">SINH NIÊN NGUYỆT NHẬT</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Ngày tháng năm sinh</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">生</span><span class="kreading">SINH · せい / う(まれる)</span> — <span class="kmean">sinh ra</span></div><div class="combine"><strong>Cấu trúc:</strong> 生 (sinh) + 年月日 (năm-tháng-ngày) → ngày sinh đầy đủ. Phân biệt: 誕生日 (たんじょうび - ngày sinh nhật để chúc mừng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>履<rt>り</rt></ruby><ruby>歴<rt>れき</rt></ruby><ruby>書<rt>しょ</rt></ruby>には<span class="target"><ruby>生<rt>せい</rt></ruby><ruby>年<rt>ねん</rt></ruby><ruby>月<rt>がっ</rt></ruby><ruby>日<rt>ぴ</rt></ruby></span>を<ruby>書<rt>か</rt></ruby>いてください。</div><div class="ex-vn">Hãy ghi ngày tháng năm sinh vào sơ yếu lý lịch.</div></div></td></tr>
+
+<tr><td class="col-stt">6</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>資<rt>し</rt></ruby><ruby>格<rt>かく</rt></ruby> / <ruby>免<rt>めん</rt></ruby><ruby>許<rt>きょ</rt></ruby></span><span class="vocab-hanviet">TƯ CÁCH / MIỄN HỨA</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Chứng chỉ / Giấy phép, bằng lái</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">資格</span><span class="kreading">しかく</span> — <span class="kmean">tư cách, chứng chỉ</span></div><div><span class="kchar">免許</span><span class="kreading">めんきょ</span> — <span class="kmean">giấy phép, bằng cấp hành nghề</span></div><div class="combine"><strong>Phân biệt:</strong> 資格 - chứng chỉ chuyên môn (TOEIC, JLPT, kế toán). 免許 - giấy phép hành nghề (lái xe, bác sĩ, giáo viên).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>運<rt>うん</rt></ruby><ruby>転<rt>てん</rt></ruby><span class="target"><ruby>免<rt>めん</rt></ruby><ruby>許<rt>きょ</rt></ruby></span>を<ruby>取<rt>と</rt></ruby>るために<ruby>教<rt>きょう</rt></ruby><ruby>習<rt>しゅう</rt></ruby><ruby>所<rt>じょ</rt></ruby>に<ruby>通<rt>かよ</rt></ruby>っている。</div><div class="ex-vn">Tôi đang theo học trung tâm lái xe để lấy bằng lái.</div></div></td></tr>
+
+<tr><td class="col-stt">7</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>職<rt>しょく</rt></ruby><ruby>業<rt>ぎょう</rt></ruby> / <ruby>就<rt>つ</rt></ruby>く</span><span class="vocab-hanviet">CHỨC NGHIỆP / TỰU</span><span class="vocab-pos">Danh từ / Động từ</span><span class="vocab-meaning">Nghề nghiệp / Bước vào (nghề)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">職</span><span class="kreading">CHỨC · しょく</span> — <span class="kmean">chức, nghề</span></div><div><span class="kchar">業</span><span class="kreading">NGHIỆP · ぎょう</span> — <span class="kmean">nghiệp, công việc</span></div><div><span class="kchar">就</span><span class="kreading">TỰU · しゅう / つ(く)</span> — <span class="kmean">bước vào</span></div><div class="combine"><strong>Ghép:</strong> 職業 (nghề nghiệp). 職業に就く = bước vào nghề. Cụm: 就職 (xin việc), 就職活動 / 就活 (hoạt động xin việc).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">どんな<span class="target"><ruby>職<rt>しょく</rt></ruby><ruby>業<rt>ぎょう</rt></ruby></span>に<ruby>就<rt>つ</rt></ruby>きたいですか。</div><div class="ex-vn">Bạn muốn theo nghề gì?</div></div></td></tr>
+
+<tr><td class="col-stt">8</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>企<rt>き</rt></ruby><ruby>業<rt>ぎょう</rt></ruby></span><span class="vocab-hanviet">XÍ NGHIỆP</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Doanh nghiệp, công ty (lớn)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">企</span><span class="kreading">XÍ · き / くわだ(てる)</span> — <span class="kmean">dự định, doanh</span></div><div><span class="kchar">業</span><span class="kreading">NGHIỆP · ぎょう</span> — <span class="kmean">nghiệp</span></div><div class="combine"><strong>Phân biệt:</strong> 企業 (doanh nghiệp - bao gồm công ty, tập đoàn, lớn nhỏ). 会社 (công ty cụ thể). Cụm: 大企業 (doanh nghiệp lớn), 中小企業 (DN vừa và nhỏ).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>大<rt>だい</rt></ruby><span class="target"><ruby>企<rt>き</rt></ruby><ruby>業<rt>ぎょう</rt></ruby></span>に<ruby>就<rt>しゅう</rt></ruby><ruby>職<rt>しょく</rt></ruby>するのは<ruby>難<rt>むずか</rt></ruby>しい。</div><div class="ex-vn">Vào làm tại các doanh nghiệp lớn rất khó.</div></div></td></tr>
+
+<tr><td class="col-stt">9</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>辞<rt>や</rt></ruby>める / クビ</span><span class="vocab-hanviet">TỪ</span><span class="vocab-pos">Động từ / Danh từ</span><span class="vocab-meaning">Thôi việc tự nguyện / Bị sa thải</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">辞</span><span class="kreading">TỪ · じ / や(める)</span> — <span class="kmean">từ, bỏ</span></div><div class="combine"><strong>Phân biệt:</strong> 辞める (tự xin nghỉ việc). クビ (từ 首 - "cổ", nghĩa "bị chặt đầu" → bị đuổi việc). クビになる = bị sa thải. Khác 失業 (thất nghiệp do khách quan).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>が<ruby>辛<rt>つら</rt></ruby>くて、<span class="target"><ruby>辞<rt>や</rt></ruby>めたい</span>と<ruby>思<rt>おも</rt></ruby>っている。</div><div class="ex-vn">Công việc vất vả quá, tôi đang muốn nghỉ.</div></div></td></tr>
+
+<tr><td class="col-stt">10</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>会<rt>かい</rt></ruby><ruby>社<rt>しゃ</rt></ruby><ruby>員<rt>いん</rt></ruby> / <ruby>公<rt>こう</rt></ruby><ruby>務<rt>む</rt></ruby><ruby>員<rt>いん</rt></ruby></span><span class="vocab-hanviet">HỘI XÃ VIÊN / CÔNG VỤ VIÊN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Nhân viên văn phòng / Công chức nhà nước</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">公務</span><span class="kreading">こうむ</span> — <span class="kmean">công vụ, việc công</span></div><div class="combine"><strong>Bộ đôi nghề phổ biến:</strong> 会社員 (nhân viên công ty thường - "salaryman"). 公務員 (công chức nhà nước - ổn định, lương tốt, ưu đãi). Còn 職人 (nghệ nhân, thợ lành nghề).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>父<rt>ちち</rt></ruby>は<span class="target"><ruby>公<rt>こう</rt></ruby><ruby>務<rt>む</rt></ruby><ruby>員<rt>いん</rt></ruby></span>で、<ruby>母<rt>はは</rt></ruby>は<span class="target"><ruby>会<rt>かい</rt></ruby><ruby>社<rt>しゃ</rt></ruby><ruby>員<rt>いん</rt></ruby></span>です。</div><div class="ex-vn">Bố tôi là công chức, mẹ tôi là nhân viên văn phòng.</div></div></td></tr>
+
+<tr><td class="col-stt">11</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">モデル / <ruby>記<rt>き</rt></ruby><ruby>者<rt>しゃ</rt></ruby> / パイロット</span><span class="vocab-hanviet">KÝ GIẢ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Người mẫu / Phóng viên / Phi công</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">記者</span><span class="kreading">きしゃ</span> — <span class="kmean">phóng viên báo chí</span></div><div class="combine"><strong>Bộ 3 nghề:</strong> モデル (model - người mẫu), 記者 (phóng viên, ký giả), パイロット (pilot - phi công). 者 (giả/sha) hậu tố nghĩa "người làm gì".</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>新<rt>しん</rt></ruby><ruby>聞<rt>ぶん</rt></ruby><span class="target"><ruby>記<rt>き</rt></ruby><ruby>者<rt>しゃ</rt></ruby></span>になりたい。</div><div class="ex-vn">Tôi muốn trở thành phóng viên báo chí.</div></div></td></tr>
+
+<tr><td class="col-stt">12</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>教<rt>きょう</rt></ruby><ruby>師<rt>し</rt></ruby> / <ruby>医<rt>い</rt></ruby><ruby>師<rt>し</rt></ruby> / <ruby>看<rt>かん</rt></ruby><ruby>護<rt>ご</rt></ruby><ruby>師<rt>し</rt></ruby></span><span class="vocab-hanviet">GIÁO SƯ / Y SƯ / KHÁN HỘ SƯ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Giáo viên / Bác sĩ / Y tá, điều dưỡng</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">師</span><span class="kreading">SƯ · し</span> — <span class="kmean">sư, người có chuyên môn cao</span></div><div class="combine"><strong>Phân biệt với 〜者:</strong> 〜師 nghĩa "chuyên gia, lành nghề" (教師, 医師, 美容師). 〜者 chỉ chung "người làm".</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>母<rt>はは</rt></ruby>は<ruby>病<rt>びょう</rt></ruby><ruby>院<rt>いん</rt></ruby>で<span class="target"><ruby>看<rt>かん</rt></ruby><ruby>護<rt>ご</rt></ruby><ruby>師<rt>し</rt></ruby></span>として<ruby>働<rt>はたら</rt></ruby>いている。</div><div class="ex-vn">Mẹ tôi đang làm y tá tại bệnh viện.</div></div></td></tr>
+
+<tr><td class="col-stt">13</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>弁<rt>べん</rt></ruby><ruby>護<rt>ご</rt></ruby><ruby>士<rt>し</rt></ruby> / <ruby>政<rt>せい</rt></ruby><ruby>治<rt>じ</rt></ruby><ruby>家<rt>か</rt></ruby></span><span class="vocab-hanviet">BIỆN HỘ SỸ / CHÍNH TRỊ GIA</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Luật sư / Chính trị gia</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">士</span><span class="kreading">SỸ · し</span> — <span class="kmean">sỹ, người có bằng cấp</span></div><div><span class="kchar">家</span><span class="kreading">GIA · か</span> — <span class="kmean">gia, chuyên gia</span></div><div class="combine"><strong>Phân biệt:</strong> 〜士 (sỹ - có bằng cấp chính thức: 弁護士, 会計士). 〜家 (gia - chuyên gia: 政治家, 画家). Khác 〜師 (sư - chuyên môn lành nghề).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby>のため、<span class="target"><ruby>弁<rt>べん</rt></ruby><ruby>護<rt>ご</rt></ruby><ruby>士<rt>し</rt></ruby></span>に<ruby>相<rt>そう</rt></ruby><ruby>談<rt>だん</rt></ruby>しよう。</div><div class="ex-vn">Vì vụ án này, hãy tham vấn luật sư.</div></div></td></tr>
+
+<tr><td class="col-stt">14</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>失<rt>うしな</rt></ruby>う</span><span class="vocab-hanviet">THẤT</span><span class="vocab-pos">Động từ tha động</span><span class="vocab-meaning">Mất, đánh mất</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">失</span><span class="kreading">THẤT · しつ / うしな(う)</span> — <span class="kmean">mất, thất bại</span></div><div class="combine"><strong>Hai cách đọc:</strong> ① しつ: 失礼 (thất lễ), 失敗 (thất bại), 失業 (thất nghiệp). ② うしなう: mất theo nghĩa rộng - 仕事を失う (mất việc), 命を失う (mất mạng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">コロナで<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>を<span class="target"><ruby>失<rt>うしな</rt></ruby>った</span><ruby>人<rt>ひと</rt></ruby>が<ruby>多<rt>おお</rt></ruby>い。</div><div class="ex-vn">Có nhiều người đã mất việc vì Covid.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 A — Ôn luyện cụm Xin việc</h4><span class="ex-subtitle">Hai dạng câu hỏi sau khi học 14 từ ở mục 13-1</span></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 A1</span>文脈規定 — Điền từ vào chỗ trống</div>
+      <div class="choice-pool"><strong>選択肢:</strong> 募集 / 履歴書 / 面接 / 資格 / 企業 / 失う</div>
+      <div class="ex-q"><span class="qnum">(1)</span><ruby>就<rt>しゅう</rt></ruby><ruby>職<rt>しょく</rt></ruby>のために <span class="blank" data-ans="履歴書">　　　　</span> を<ruby>書<rt>か</rt></ruby>く。</div>
+      <div class="ex-q"><span class="qnum">(2)</span><ruby>明<rt>あ</rt></ruby><ruby>日<rt>した</rt></ruby> <span class="blank" data-ans="面接">　　　　</span> を<ruby>受<rt>う</rt></ruby>けます。</div>
+      <div class="ex-q"><span class="qnum">(3)</span>この<ruby>店<rt>みせ</rt></ruby>はスタッフを <span class="blank" data-ans="募集">　　　　</span> している。</div>
+      <div class="ex-q"><span class="qnum">(4)</span><ruby>運<rt>うん</rt></ruby><ruby>転<rt>てん</rt></ruby><ruby>免<rt>めん</rt></ruby><ruby>許<rt>きょ</rt></ruby>の <span class="blank" data-ans="資格">　　　　</span> を<ruby>取<rt>と</rt></ruby>った。</div>
+      <div class="ex-q"><span class="qnum">(5)</span><ruby>大<rt>だい</rt></ruby> <span class="blank" data-ans="企業">　　　　</span> に<ruby>入<rt>はい</rt></ruby>るのは<ruby>難<rt>むずか</rt></ruby>しい。</div>
+      <div class="ex-q"><span class="qnum">(6)</span>コロナで<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>を <span class="blank" data-ans="失う">　　　　</span> 人が<ruby>増<rt>ふ</rt></ruby>えた。</div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> (1) 履歴書 — (2) 面接 — (3) 募集 — (4) 資格 — (5) 企業 — (6) 失う</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-head" data-mark="勤"><span class="section-kicker">Phần 13-2 · 15 từ</span><h3>仕事をする</h3><span class="section-vn">Quá trình làm việc</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">15</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">ミーティング / <ruby>資<rt>し</rt></ruby><ruby>料<rt>りょう</rt></ruby></span><span class="vocab-hanviet">TƯ LIỆU</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Cuộc họp / Tài liệu</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">資</span><span class="kreading">TƯ · し</span> — <span class="kmean">tư liệu</span></div><div><span class="kchar">料</span><span class="kreading">LIỆU · りょう</span> — <span class="kmean">nguyên liệu</span></div><div class="combine"><strong>Bộ đôi:</strong> ミーティング (meeting - cuộc họp ngắn). 資料 (tài liệu phát). Đồng nghĩa: 会議 (kaigi - họp trang trọng hơn).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target">ミーティング</span>で<span class="target"><ruby>資<rt>し</rt></ruby><ruby>料<rt>りょう</rt></ruby></span>を<ruby>配<rt>くば</rt></ruby>る。</div><div class="ex-vn">Tôi sẽ phát tài liệu trong cuộc họp.</div></div></td></tr>
+
+<tr><td class="col-stt">16</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">スケジュール / <ruby>立<rt>た</rt></ruby>てる</span><span class="vocab-hanviet">LẬP</span><span class="vocab-pos">Danh từ + động từ</span><span class="vocab-meaning">Lịch trình / Lập kế hoạch</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Cụm thường gặp:</strong> スケジュール (schedule - lịch trình) を立てる (lập). 立てる đa dụng: 計画を立てる (lập kế hoạch), 予定を立てる (lập lịch hẹn).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">プロジェクトの<span class="target">スケジュール</span>を<span class="target"><ruby>立<rt>た</rt></ruby>てた</span>。</div><div class="ex-vn">Tôi đã lập lịch trình cho dự án.</div></div></td></tr>
+
+<tr><td class="col-stt">17</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">アイデア / <ruby>指<rt>し</rt></ruby><ruby>示<rt>じ</rt></ruby></span><span class="vocab-hanviet">CHỈ THỊ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Sáng kiến, ý tưởng / Chỉ thị</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">指</span><span class="kreading">CHỈ · し / ゆび</span> — <span class="kmean">ngón tay, chỉ</span></div><div><span class="kchar">示</span><span class="kreading">THỊ · じ / しめ(す)</span> — <span class="kmean">chỉ ra, ra hiệu</span></div><div class="combine"><strong>Bộ đôi:</strong> アイデア (idea - ý tưởng). 指示 (chỉ thị từ cấp trên). Cụm: アイデアが出る (nảy ra ý tưởng), 指示を出す (ra chỉ thị).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>上<rt>じょう</rt></ruby><ruby>司<rt>し</rt></ruby>から<span class="target"><ruby>指<rt>し</rt></ruby><ruby>示<rt>じ</rt></ruby></span>が<ruby>出<rt>で</rt></ruby>た。</div><div class="ex-vn">Cấp trên đã ra chỉ thị.</div></div></td></tr>
+
+<tr><td class="col-stt">18</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>作<rt>さ</rt></ruby><ruby>業<rt>ぎょう</rt></ruby></span><span class="vocab-hanviet">TÁC NGHIỆP</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Công việc chuyên môn, thao tác</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">作</span><span class="kreading">TÁC · さ / つく(る)</span> — <span class="kmean">làm, tạo</span></div><div><span class="kchar">業</span><span class="kreading">NGHIỆP · ぎょう</span> — <span class="kmean">nghiệp</span></div><div class="combine"><strong>Phân biệt:</strong> 仕事 (công việc nói chung). 作業 (công việc cụ thể, thao tác chân tay/máy móc). Cụm: 作業が進む.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<span class="target"><ruby>作<rt>さ</rt></ruby><ruby>業<rt>ぎょう</rt></ruby></span>は<ruby>順<rt>じゅん</rt></ruby><ruby>調<rt>ちょう</rt></ruby>に<ruby>進<rt>すす</rt></ruby>んでいる。</div><div class="ex-vn">Công việc này đang tiến triển thuận lợi.</div></div></td></tr>
+
+<tr><td class="col-stt">19</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>書<rt>しょ</rt></ruby><ruby>類<rt>るい</rt></ruby></span><span class="vocab-hanviet">THƯ LOẠI</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Giấy tờ, hồ sơ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">書</span><span class="kreading">THƯ · しょ</span> — <span class="kmean">văn bản</span></div><div><span class="kchar">類</span><span class="kreading">LOẠI · るい</span> — <span class="kmean">loại, các thứ</span></div><div class="combine"><strong>Ghép:</strong> "Văn bản các loại" → <strong>giấy tờ hồ sơ</strong>. Cụm: 書類を整理する (sắp xếp hồ sơ), 書類審査 (xét hồ sơ).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<span class="target"><ruby>書<rt>しょ</rt></ruby><ruby>類<rt>るい</rt></ruby></span>を<ruby>整<rt>せい</rt></ruby><ruby>理<rt>り</rt></ruby>してください。</div><div class="ex-vn">Vui lòng sắp xếp hồ sơ này.</div></div></td></tr>
+
+<tr><td class="col-stt">20</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>契<rt>けい</rt></ruby><ruby>約<rt>やく</rt></ruby></span><span class="vocab-hanviet">KHẾ ƯỚC</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Hợp đồng, ký kết</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">契</span><span class="kreading">KHẾ · けい</span> — <span class="kmean">khế ước</span></div><div><span class="kchar">約</span><span class="kreading">ƯỚC · やく</span> — <span class="kmean">ước hẹn</span></div><div class="combine"><strong>Ghép:</strong> "Khế + ước" → <strong>hợp đồng</strong>. Cụm: 契約を結ぶ (ký hợp đồng), 契約書 (văn bản hợp đồng), 契約社員 (nhân viên hợp đồng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">A<ruby>社<rt>しゃ</rt></ruby>と<ruby>新<rt>あたら</rt></ruby>しい<span class="target"><ruby>契<rt>けい</rt></ruby><ruby>約<rt>やく</rt></ruby></span>を<ruby>結<rt>むす</rt></ruby>んだ。</div><div class="ex-vn">Chúng tôi đã ký hợp đồng mới với công ty A.</div></div></td></tr>
+
+<tr><td class="col-stt">21</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>商<rt>しょう</rt></ruby><ruby>品<rt>ひん</rt></ruby> / <ruby>販<rt>はん</rt></ruby><ruby>売<rt>ばい</rt></ruby></span><span class="vocab-hanviet">THƯƠNG PHẨM / PHIẾN MẠI</span><span class="vocab-pos">Danh từ / Suru</span><span class="vocab-meaning">Sản phẩm / Bán, kinh doanh</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">商品</span><span class="kreading">しょうひん</span> — <span class="kmean">hàng hóa, sản phẩm</span></div><div><span class="kchar">販売</span><span class="kreading">はんばい</span> — <span class="kmean">bán hàng, phân phối</span></div><div class="combine"><strong>Ghép:</strong> 商品を販売する = bán hàng. Phân biệt: 売る (động từ - bán đơn giản). 販売 trang trọng, dùng trong kinh doanh.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<span class="target"><ruby>商<rt>しょう</rt></ruby><ruby>品<rt>ひん</rt></ruby></span>はネットで<span class="target"><ruby>販<rt>はん</rt></ruby><ruby>売<rt>ばい</rt></ruby></span>しています。</div><div class="ex-vn">Chúng tôi đang bán sản phẩm này qua mạng.</div></div></td></tr>
+
+<tr><td class="col-stt">22</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>通<rt>つう</rt></ruby><ruby>勤<rt>きん</rt></ruby> / <ruby>出<rt>しゅっ</rt></ruby><ruby>勤<rt>きん</rt></ruby></span><span class="vocab-hanviet">THÔNG CẦN / XUẤT CẦN</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Đi làm / Đến công sở</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">通勤</span><span class="kreading">つうきん</span> — <span class="kmean">đi làm (quá trình)</span></div><div><span class="kchar">出勤</span><span class="kreading">しゅっきん</span> — <span class="kmean">có mặt tại nơi làm</span></div><div class="combine"><strong>Phân biệt:</strong> 通勤 - hành động đi từ nhà đến công ty. 出勤 - có mặt và điểm danh tại công ty. Khác 通学 (đi học).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">バスで<span class="target"><ruby>通<rt>つう</rt></ruby><ruby>勤<rt>きん</rt></ruby></span>するのに1<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>かかる。</div><div class="ex-vn">Đi làm bằng xe buýt mất 1 tiếng.</div></div></td></tr>
+
+<tr><td class="col-stt">23</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>事<rt>じ</rt></ruby><ruby>務<rt>む</rt></ruby><ruby>所<rt>しょ</rt></ruby> / <ruby>本<rt>ほん</rt></ruby><ruby>社<rt>しゃ</rt></ruby></span><span class="vocab-hanviet">SỰ VỤ SỞ / BẢN XÃ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Văn phòng / Trụ sở chính</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">事務所</span><span class="kreading">じむしょ</span> — <span class="kmean">văn phòng làm việc</span></div><div><span class="kchar">本社</span><span class="kreading">ほんしゃ</span> — <span class="kmean">trụ sở chính</span></div><div class="combine"><strong>Phân biệt:</strong> 事務所 = オフィス (office). 本社 - trụ sở chính (≠ 支社 - chi nhánh).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>会<rt>かい</rt></ruby><ruby>社<rt>しゃ</rt></ruby>の<span class="target"><ruby>本<rt>ほん</rt></ruby><ruby>社<rt>しゃ</rt></ruby></span>は<ruby>東<rt>とう</rt></ruby><ruby>京<rt>きょう</rt></ruby>にある。</div><div class="ex-vn">Trụ sở chính của công ty ở Tokyo.</div></div></td></tr>
+
+<tr><td class="col-stt">24</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>残<rt>ざん</rt></ruby><ruby>業<rt>ぎょう</rt></ruby></span><span class="vocab-hanviet">TÀN NGHIỆP</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Làm thêm giờ, tăng ca</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">残</span><span class="kreading">TÀN · ざん / のこ(る)</span> — <span class="kmean">còn lại</span></div><div><span class="kchar">業</span><span class="kreading">NGHIỆP · ぎょう</span> — <span class="kmean">việc</span></div><div class="combine"><strong>Ghép:</strong> "Còn + việc" → <strong>tăng ca</strong>. Văn hóa Nhật: 残業 phổ biến, đôi khi cả 過労 (karoshi - chết do làm việc quá sức).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>会<rt>かい</rt></ruby><ruby>社<rt>しゃ</rt></ruby>は<ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby><span class="target"><ruby>残<rt>ざん</rt></ruby><ruby>業<rt>ぎょう</rt></ruby></span>がある。</div><div class="ex-vn">Công ty này ngày nào cũng có tăng ca.</div></div></td></tr>
+
+<tr><td class="col-stt">25</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">きつい / <ruby>楽<rt>らく</rt></ruby></span><span class="vocab-hanviet">LẠC</span><span class="vocab-pos pos-na">Tính từ</span><span class="vocab-meaning">Vất vả, áp lực / Nhẹ nhàng, thoải mái</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">楽</span><span class="kreading">LẠC · らく / がく</span> — <span class="kmean">vui, thoải mái</span></div><div class="combine"><strong>Cặp đối lập về công việc:</strong> 仕事がきつい (vất vả) ↔ 仕事が楽 (nhẹ nhàng). きつい đã học (chật). Tại đây nghĩa "vất vả, áp lực".</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>は<ruby>給<rt>きゅう</rt></ruby><ruby>料<rt>りょう</rt></ruby>がいいけど、とても<span class="target">きつい</span>。</div><div class="ex-vn">Công việc này lương cao nhưng rất vất vả.</div></div></td></tr>
+
+<tr><td class="col-stt">26</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>時<rt>じ</rt></ruby><ruby>給<rt>きゅう</rt></ruby></span><span class="vocab-hanviet">THỜI CẤP</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Lương theo giờ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">時</span><span class="kreading">THỜI · じ</span> — <span class="kmean">thời gian</span></div><div><span class="kchar">給</span><span class="kreading">CẤP · きゅう</span> — <span class="kmean">cấp, trả</span></div><div class="combine"><strong>Ghép:</strong> "Cấp + theo giờ" → <strong>lương giờ</strong>. Cùng họ: 月給 (げっきゅう - lương tháng), 日給 (にっきゅう - lương ngày), 年俸 (lương năm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">このアルバイトの<span class="target"><ruby>時<rt>じ</rt></ruby><ruby>給<rt>きゅう</rt></ruby></span>は1200<ruby>円<rt>えん</rt></ruby>です。</div><div class="ex-vn">Lương giờ của công việc làm thêm này là 1200 yên.</div></div></td></tr>
+
+<tr><td class="col-stt">27</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>給<rt>きゅう</rt></ruby><ruby>料<rt>りょう</rt></ruby> / ボーナス</span><span class="vocab-hanviet">CẤP LIỆU</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Lương / Tiền thưởng</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">給料</span><span class="kreading">きゅうりょう</span> — <span class="kmean">tiền lương</span></div><div class="combine"><strong>Bộ đôi:</strong> 給料 (lương cơ bản hàng tháng). ボーナス (bonus - tiền thưởng, thường 2 lần/năm: hè và đông). Đồng nghĩa: 賞与 (しょうよ - tiền thưởng trang trọng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>夏<rt>なつ</rt></ruby>に<span class="target">ボーナス</span>をもらって、<ruby>旅<rt>りょ</rt></ruby><ruby>行<rt>こう</rt></ruby>に<ruby>行<rt>い</rt></ruby>く<ruby>予<rt>よ</rt></ruby><ruby>定<rt>てい</rt></ruby>だ。</div><div class="ex-vn">Mùa hè nhận tiền thưởng, tôi dự định đi du lịch.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 B — Ôn luyện cụm Làm việc</h4><span class="ex-subtitle">Hai dạng câu hỏi sau khi học 15 từ ở mục 13-2</span></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 B1</span>マッチング — Ghép từ với nghĩa</div>
+      <div class="match-grid">
+        <div class="match-col"><h5>Cột A — Tiếng Nhật</h5>
+          <div class="match-item jp"><span class="mlabel">A1.</span>指示 (しじ)</div>
+          <div class="match-item jp"><span class="mlabel">A2.</span>契約 (けいやく)</div>
+          <div class="match-item jp"><span class="mlabel">A3.</span>残業 (ざんぎょう)</div>
+          <div class="match-item jp"><span class="mlabel">A4.</span>給料 (きゅうりょう)</div>
+          <div class="match-item jp"><span class="mlabel">A5.</span>通勤 (つうきん)</div>
+          <div class="match-item jp"><span class="mlabel">A6.</span>本社 (ほんしゃ)</div>
+        </div>
+        <div class="match-col"><h5>Cột B — Tiếng Việt</h5>
+          <div class="match-item"><span class="mlabel">B1.</span>Lương cơ bản</div>
+          <div class="match-item"><span class="mlabel">B2.</span>Hợp đồng</div>
+          <div class="match-item"><span class="mlabel">B3.</span>Tăng ca, làm thêm giờ</div>
+          <div class="match-item"><span class="mlabel">B4.</span>Trụ sở chính</div>
+          <div class="match-item"><span class="mlabel">B5.</span>Đi làm</div>
+          <div class="match-item"><span class="mlabel">B6.</span>Chỉ thị từ cấp trên</div>
+        </div>
+      </div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> A1→B6 ・ A2→B2 ・ A3→B3 ・ A4→B1 ・ A5→B5 ・ A6→B4</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-12.html">← Bài 12</a><a class="mid" href="../tu-vung.html">▦ Danh sách bài</a><a href="bai-14.html">Bài 14 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+</script>
+</body></html>

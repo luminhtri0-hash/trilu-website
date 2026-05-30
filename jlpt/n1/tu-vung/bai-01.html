@@ -1,0 +1,1143 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 1 · Tính cách & Phẩm chất con người — Từ vựng N1 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N1 — Bài 1: Tính cách & Phẩm chất con người. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#1b3a5a;
+  --accent-dark:#0f2740;
+  --accent-2:#2d6e7a;
+  --accent-3:#5fa3b2;
+  --line:#bcd3da;
+  --line-2:#dde9ee;
+  --callout:#f0f6f8;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --gold:#c9a449;
+  --gold-deep:#8a6d22;
+  --shadow:0 18px 46px rgba(15,39,64,0.10);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(45,110,122,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(27,58,90,0.08), transparent 22%),
+    linear-gradient(180deg, #eef4f6 0%, #e7eef2 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:16.5px;
+  -webkit-font-smoothing:antialiased;
+  padding:24px 12px;
+  min-height:100vh;
+}
+.page-shell{
+  max-width:1180px; margin:0 auto;
+  background:var(--paper);
+  border:1px solid var(--line-2);
+  border-radius:24px;
+  padding:36px 32px 48px;
+  box-shadow:var(--shadow);
+}
+
+/* ============ HEADER (cover) ============ */
+.main-header{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(95,163,178,0.24), transparent 16%),
+    linear-gradient(135deg, #0f2740 0%, #1b3a5a 36%, #082030 100%);
+  color:#fff; border-radius:22px; box-shadow:var(--shadow);
+  padding:40px 40px 36px; margin-bottom:30px; text-align:center;
+}
+.main-header::after{
+  content:"語彙"; position:absolute; right:-12px; bottom:-50px;
+  font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.main-header .badge{
+  display:inline-block; padding:8px 18px; border-radius:999px;
+  background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.20);
+  color:#cfe5ec; letter-spacing:0.18em; font-size:13px; font-weight:700; text-transform:uppercase;
+}
+.main-header h1{
+  font-family:"EB Garamond","Noto Serif CJK JP",serif;
+  font-weight:700; font-size:42px; line-height:1.1; letter-spacing:-0.01em;
+  margin:18px 0 8px; color:#fff;
+}
+.main-header h1 .jp{ color:var(--accent-3); font-family:"Noto Serif CJK JP",serif; }
+.main-header .subtitle{
+  margin:0 auto; max-width:780px;
+  color:rgba(255,255,255,0.85); font-size:17px; font-style:italic;
+}
+
+/* ============ TOC ============ */
+.toc{
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(240,246,248,0.96));
+  border:1px solid rgba(45,110,122,0.20);
+  border-radius:22px; box-shadow:var(--shadow);
+  padding:26px 28px; margin-bottom:32px;
+}
+.toc h2{
+  margin:0 0 14px; padding:0;
+  font-family:"EB Garamond","Noto Serif CJK JP",serif;
+  font-size:28px; line-height:1.1; color:var(--accent); font-weight:700;
+  border:none;
+}
+.toc-chapter{ margin:18px 0; }
+.toc-chapter-title{
+  display:flex; align-items:center; gap:12px;
+  padding:11px 16px; margin-bottom:10px;
+  background:linear-gradient(90deg, #1b3a5a, #2d6e7a);
+  color:#fff; border-radius:12px;
+  font-family:"Noto Serif CJK JP",serif;
+  font-weight:700; font-size:19px;
+}
+.toc-chapter-title::before{
+  content:""; width:9px; height:9px; border-radius:50%;
+  background:var(--accent-3); flex-shrink:0;
+}
+.toc-items{
+  list-style:none; padding-left:8px; margin:0;
+  display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px;
+}
+.toc-items li{ margin:0; }
+.toc-items a{
+  display:block; padding:11px 14px;
+  text-decoration:none; color:inherit;
+  background:linear-gradient(180deg, #fffefd 0%, #f0f6f8 100%);
+  border:1px solid var(--line-2); border-radius:12px;
+  font-weight:600; color:var(--accent); font-size:16px;
+  transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  border-left:3px solid transparent;
+}
+.toc-items a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(27,58,90,0.40); border-left-color:var(--accent-2);
+  box-shadow:0 12px 24px rgba(15,39,64,0.06);
+}
+
+/* ============ CHAPTER CARD ============ */
+.chapter-card{
+  position:relative; overflow:hidden;
+  background:linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  border-radius:22px; box-shadow:var(--shadow);
+  padding:32px 40px 28px; margin:50px 0 22px;
+  color:#fff;
+}
+.chapter-card::after{
+  content:""; position:absolute; right:-80px; top:-90px;
+  width:240px; height:240px; border-radius:50%;
+  background:radial-gradient(circle, rgba(95,163,178,0.45) 0%, rgba(95,163,178,0.08) 48%, transparent 68%);
+  pointer-events:none;
+}
+.chapter-card h2{
+  margin:0 0 6px;
+  font-family:"Noto Serif CJK JP",serif; font-size:30px; font-weight:700; color:#fff;
+  letter-spacing:0; position:relative; z-index:1;
+}
+.chapter-card h2 .num{ color:var(--accent-3); margin-right:6px; }
+.chapter-card .ch-sub{
+  font-size:16.5px; color:rgba(255,255,255,0.82); font-style:italic;
+  position:relative; z-index:1;
+}
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(45,110,122,0.16);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:0 0 32px; margin-bottom:36px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  display:flex; align-items:center; gap:14px;
+  padding:24px 36px 22px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(95,163,178,0.28), transparent 26%),
+    linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  color:#fff;
+}
+.lesson-banner .lesson-no{
+  flex-shrink:0;
+  width:46px; height:46px; border-radius:50%;
+  background:linear-gradient(135deg, var(--accent-3) 0%, var(--accent-2) 100%);
+  color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:16.5px;
+  box-shadow:0 6px 14px rgba(45,110,122,0.30);
+  font-family:"EB Garamond",serif;
+}
+.lesson-banner h3{
+  margin:0; flex:1;
+  font-family:"Noto Serif CJK JP",serif; font-size:22px; font-weight:700; color:#fff;
+}
+.lesson-banner h3 .vn{
+  display:block; margin-top:3px;
+  font-family:Inter,sans-serif; font-size:15.5px; font-weight:500;
+  color:rgba(255,255,255,0.82); font-style:italic;
+}
+.doc-body{ padding:24px 32px 12px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 16px;
+  padding:14px 22px 14px 20px;
+  border-radius:18px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #154366 0%, #1b3a5a 52%, #2d6e7a 100%);
+  color:#fff; font-weight:700;
+}
+.section-head::before{
+  content:attr(data-mark); margin-right:10px;
+  font-size:19.5px;
+}
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{
+  margin:14px 0 22px;
+  border:1px solid var(--line-2); border-radius:18px; overflow:hidden;
+  background:#fff; box-shadow:0 10px 26px rgba(15,39,64,0.05);
+}
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff;
+  font-size:16px;
+}
+table.vocab-table thead{
+  background:linear-gradient(180deg, #eaf3f6 0%, #cee2e8 100%);
+  color:var(--accent);
+}
+table.vocab-table thead th{
+  padding:13px 14px; text-align:left;
+  font-weight:800; font-size:15px; letter-spacing:0.02em;
+  border-bottom:1px solid var(--line-2);
+  border-right:1px solid var(--line-2);
+}
+table.vocab-table thead th:last-child{ border-right:none; }
+table.vocab-table tbody td{
+  padding:16px 14px; vertical-align:top;
+  border-bottom:1px solid var(--line-2);
+  border-right:1px solid var(--line-2);
+  line-height:1.65;
+}
+table.vocab-table tbody td:last-child{ border-right:none; }
+table.vocab-table tbody tr:last-child td{ border-bottom:none; }
+table.vocab-table tbody tr:nth-child(even) td{ background:#f7fbfc; }
+table.vocab-table tbody tr:hover td{ background:#ecf5f7; }
+
+.kanji-cell{
+  font-family:"Noto Serif CJK JP","Yu Mincho",serif;
+  font-size:22px; font-weight:700; color:#222;
+  line-height:1.2;
+  white-space:nowrap;
+}
+.kanji-cell ruby{ ruby-position:over; ruby-align:center; }
+.kanji-cell rt{
+  font-size:12.5px; color:#7a8590;
+  font-family:Inter,sans-serif; font-weight:500;
+}
+.hanviet{
+  display:block; margin-top:6px;
+  font-size:13px; color:var(--accent-2); font-weight:800;
+  letter-spacing:1.2px;
+  font-family:Inter,sans-serif;
+  white-space:normal;
+}
+.pos{
+  display:inline-block;
+  padding:3px 9px; border-radius:6px;
+  background:var(--green); color:#fff;
+  font-size:12.5px; font-weight:700; letter-spacing:0.05em;
+  font-family:Inter,sans-serif;
+}
+.meaning{
+  color:var(--accent); font-size:16.5px; font-weight:700; line-height:1.5;
+  font-family:Inter,sans-serif;
+}
+.example{
+  font-family:"Noto Serif CJK JP",serif;
+  background:linear-gradient(180deg, #fefdfa, #f3eddb);
+  border-left:4px solid var(--accent);
+  padding:11px 14px; border-radius:0 12px 12px 0;
+  font-size:16px; line-height:1.9;
+}
+.example .jp{
+  display:block; color:#222; font-weight:500; margin-bottom:6px;
+}
+.example .vn{
+  display:block; padding-top:6px; border-top:1px dotted #cee2e8;
+  color:#4a5560; font-style:italic; font-family:Inter,sans-serif;
+  font-size:15px; line-height:1.55;
+}
+
+/* ============ ANALYSIS CELL ============ */
+.analysis-cell{
+  background:linear-gradient(180deg, #fcfffe, #f3f9fa);
+  font-size:15px; line-height:1.6;
+}
+.kanji-break{
+  background:#fff;
+  border:1px solid #cee2e8;
+  border-left:3px solid var(--accent-2);
+  border-radius:10px;
+  padding:10px 12px;
+}
+.kanji-break > div{
+  margin:2px 0;
+  font-family:"Noto Serif CJK JP",serif;
+  color:#1f3a4a;
+}
+.kanji-break .kchar{
+  font-family:"Noto Serif CJK JP","Yu Mincho",serif;
+  font-weight:700; font-size:18.5px;
+  color:var(--accent); margin-right:6px;
+}
+.kanji-break .kreading{
+  color:var(--accent-2);
+  font-family:Inter,sans-serif;
+  font-weight:700; font-size:12.5px;
+  letter-spacing:0.06em;
+}
+.kanji-break .kmean{
+  color:#2d4a5a;
+  font-family:Inter,sans-serif;
+  font-size:14px;
+}
+.ana-combine{
+  margin-top:8px; padding:8px 10px;
+  background:linear-gradient(180deg, #fffbef, #f8eed4);
+  border-left:3px dashed var(--accent-2);
+  border-radius:0 10px 10px 0;
+  color:#5a4520; font-size:13.5px; line-height:1.6;
+  font-family:Inter,sans-serif;
+}
+.ana-combine strong{ color:var(--accent); }
+.ana-syn{ color:var(--green); font-weight:600; }
+.ana-ant{ color:#b13e3e; font-weight:600; }
+.ana-nuance{ color:var(--plum); font-style:italic; }
+.katakana-origin{
+  background:linear-gradient(180deg, #fff5f8, #faeaf0);
+  border:1px solid #f0d8e2;
+  border-left:3px solid #b13e6a;
+  border-radius:10px;
+  padding:10px 12px;
+  font-size:15px; color:#5a3a4a; line-height:1.6;
+}
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{
+  background:linear-gradient(180deg, #f7faf2, #ecf2e2);
+  border:1px solid #d8e2c8;
+  border-left:3px solid var(--green);
+  border-radius:10px;
+  padding:10px 12px;
+  font-size:15px; color:#3e5a3a; line-height:1.6;
+}
+.wago-note strong{ color:var(--green); }
+
+/* ============ SPECIAL BLOCKS (Cấu tạo từ + Phó từ) ============ */
+.special-block{
+  margin:22px 0;
+  background:linear-gradient(180deg, #fffdfa, #f7fbfc);
+  border:1px solid #cee2e8;
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 8px 20px rgba(15,39,64,0.05);
+}
+.special-banner{
+  padding:14px 22px;
+  background:linear-gradient(90deg, #2d6e7a 0%, #5fa3b2 100%);
+  color:#fff;
+  font-family:"Noto Serif CJK JP",serif;
+  font-weight:700; font-size:19px;
+  letter-spacing:0.02em;
+}
+.special-banner.adv{
+  background:linear-gradient(90deg, #6a4a8a 0%, #8a6daf 100%);
+}
+.special-body{ padding:18px 22px; }
+
+/* Word formation grid */
+.word-formation-grid{
+  display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;
+}
+.wf-item{
+  background:#fff;
+  border:1px solid #d4e3e8;
+  border-left:4px solid var(--accent-3);
+  border-radius:10px;
+  padding:11px 14px;
+  font-size:15.5px;
+}
+.wf-item .pattern{
+  font-family:"Noto Serif CJK JP",serif;
+  font-weight:700; font-size:17.5px;
+  color:var(--accent); margin-bottom:4px;
+}
+.wf-item .desc{ color:#3a4a55; margin-bottom:4px; }
+.wf-item .ex{
+  color:var(--muted); font-style:italic; font-size:14px;
+  font-family:Inter,sans-serif;
+}
+
+/* Adverb grid */
+.adverb-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+.adv-item{
+  background:#fff;
+  border:1px solid #d8d0e4;
+  border-left:3px solid #6a4a8a;
+  border-radius:10px;
+  padding:12px 16px;
+  font-size:16.5px;
+}
+.adv-item .adv-word{
+  font-family:"Noto Serif CJK JP",serif;
+  font-weight:700; font-size:18.5px;
+  color:#4a3070;
+}
+.adv-item .adv-meaning{ color:var(--muted); font-style:italic; font-size:15px; }
+.adv-item .adv-ex{
+  margin-top:6px;
+  padding:7px 11px;
+  background:#faf7fd;
+  border-left:2px solid #c8b8e0;
+  border-radius:0 8px 8px 0;
+  font-size:15.5px;
+  font-family:"Noto Serif CJK JP",serif;
+}
+.adv-item .adv-ex .jp{ color:var(--accent); display:inline; }
+.adv-item .adv-ex .vn{
+  display:block; margin-top:4px; padding-top:4px;
+  border-top:1px dotted #d8d0e4;
+  color:#5a5070; font-style:italic; font-size:13.5px;
+  font-family:Inter,sans-serif;
+}
+.adv-item .adv-synonyms{
+  margin-top:8px;
+  padding:7px 11px;
+  background:linear-gradient(180deg, #f5edff, #ede0ff);
+  border-left:3px dashed #8a6daf;
+  border-radius:0 8px 8px 0;
+  font-size:14px; color:#4a2a7a; line-height:1.6;
+  font-family:Inter,sans-serif;
+}
+.adv-item .adv-synonyms strong{ color:#5a1a8a; font-weight:bold; }
+.adv-item .adv-synonyms .syn-jp{
+  font-family:"Noto Serif CJK JP",serif;
+  color:#3a1a6a; font-weight:600;
+}
+.adv-item .adv-synonyms .syn-vn{ color:#6a4a8a; font-style:italic; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:28px 0 22px;
+  background:linear-gradient(180deg, #fefdfa 0%, #f3eddb 100%);
+  border:1px solid #d9c9a8;
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(15,39,64,0.05);
+}
+.exercise-block h4{
+  margin:0;
+  padding:16px 22px;
+  background:linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+  color:#fff;
+  font-family:"Noto Serif CJK JP",serif;
+  font-size:18.5px; font-weight:700;
+  border:none;
+}
+.exercise-block ol{
+  margin:0; padding:18px 22px 18px 44px;
+}
+.exercise-block li{
+  margin:9px 0; line-height:1.75;
+  font-family:"Noto Serif CJK JP",serif;
+}
+.blank{
+  display:inline-block; min-width:80px;
+  padding:0 8px;
+  background:#fff7e8;
+  border-bottom:2px solid var(--accent-2);
+  color:var(--accent); font-weight:700; text-align:center;
+  cursor:pointer; transition:all .15s;
+  border-radius:4px 4px 0 0;
+}
+.blank:hover{ background:#fae7c0; }
+.blank.shown{
+  background:var(--accent-2); color:#fff;
+  border-bottom-color:var(--accent);
+}
+.answer-btn{
+  margin-top:12px; padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:15.5px; cursor:pointer;
+  box-shadow:0 6px 14px rgba(27,58,90,0.18);
+  transition:all 0.2s; font-family:inherit;
+}
+.answer-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 20px rgba(27,58,90,0.28);
+}
+.answer-box{
+  display:none; margin:14px 22px 22px;
+  padding:14px 16px;
+  background:linear-gradient(180deg, #fffbef, #f8eed4);
+  border:1px solid #d9bb88;
+  border-left:4px solid var(--accent-2);
+  border-radius:10px;
+  font-size:16px; line-height:1.7; color:#5a4520;
+}
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{
+  margin-top:34px; padding:24px 28px;
+  background:linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  color:rgba(255,255,255,0.85);
+  border-radius:18px; text-align:center; font-size:15.5px;
+  box-shadow:var(--shadow);
+}
+.footer-card strong{ color:var(--accent-3); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px){
+  .page-shell{ padding:22px 16px 36px; }
+  .main-header{ padding:32px 24px 28px; }
+  .main-header h1{ font-size:30px; }
+  .toc-items{ grid-template-columns:1fr; }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  .chapter-card{ padding:24px 26px 22px; }
+  table.vocab-table{ font-size:15px; min-width:840px; }
+  .table-shell{ overflow-x:auto; }
+  .kanji-cell{ font-size:19.5px; }
+  .word-formation-grid{ grid-template-columns:1fr; }
+}
+
+@media print{
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+  html, body{ background:#fff !important; }
+  body{ font-size:13px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; padding:0; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; box-shadow:none; border:none; }
+  .main-header{ page-break-after:always; break-after:page; padding:34px 30px; box-shadow:none; border-radius:14px; }
+  .main-header h1{ font-size:30px; }
+  .toc{ page-break-after:always; break-after:page; box-shadow:none; }
+  .chapter-card{ page-break-before:always; break-before:page; box-shadow:none; }
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:14px 16px 10px !important; }
+  .table-shell{ overflow:visible !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; table-layout:fixed !important; box-shadow:none !important; }
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:16px 20px !important; }
+  .lesson-banner h3{ font-size:19.5px !important; }
+  .section-head{ page-break-after:avoid !important; padding:9px 16px !important; margin:10px 0 8px !important; }
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table thead th{ padding:7px 7px !important; font-size:12.5px !important; }
+  table.vocab-table tr{ page-break-inside:avoid !important; }
+  table.vocab-table tbody td{ padding:9px 7px !important; font-size:12.5px !important; }
+  .kanji-cell{ font-size:19px !important; line-height:1.15 !important; }
+  .kanji-cell rt{ font-size:10.5px !important; }
+  .hanviet{ font-size:11px !important; letter-spacing:0.8px !important; margin-top:3px !important; }
+  .pos{ font-size:10.5px !important; padding:2px 6px !important; }
+  .meaning{ font-size:13px !important; line-height:1.35 !important; }
+  .example{ padding:7px 9px !important; font-size:12.5px !important; line-height:1.7 !important; }
+  .analysis-cell{ font-size:12.5px !important; }
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:6px 8px !important; font-size:12px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:15.5px !important; }
+  .kanji-break .kreading{ font-size:10.5px !important; }
+  .ana-combine{ padding:5px 8px !important; font-size:11px !important; margin-top:5px !important; }
+  .special-block, .exercise-block, .wf-item, .adv-item{ page-break-inside:avoid !important; }
+  .word-formation-grid{ grid-template-columns:1fr 1fr !important; gap:8px !important; }
+  .wf-item{ padding:7px 9px !important; }
+  .wf-item .pattern{ font-size:15.5px !important; }
+  .wf-item .desc, .wf-item .ex{ font-size:12.5px !important; }
+  .adv-item{ padding:8px 12px !important; }
+  .adv-item .adv-word{ font-size:15.5px !important; }
+  .adv-item .adv-meaning{ font-size:12.5px !important; }
+  .adv-item .adv-ex{ font-size:12.5px !important; padding:5px 8px !important; }
+  .adv-item .adv-synonyms{ font-size:12px !important; padding:5px 8px !important; }
+  .answer-btn{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; font-size:12.5px !important; padding:9px 11px !important; margin:10px 14px 14px !important; }
+  .footer-card{ page-break-inside:avoid; box-shadow:none; }
+}
+
+  /* ---- Word formation: example list with furigana & VN meaning ---- */
+  .wf-item .ex-list-wrapper{ margin-top:6px; }
+  .ex-list{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:5px;
+  }
+  .ex-item{
+    display:flex; flex-wrap:wrap; align-items:baseline; gap:6px;
+    padding:5px 9px;
+    background:linear-gradient(180deg, #fcfffe, #eef7f9);
+    border:1px solid #d8e7ec;
+    border-left:3px solid #5fa3b2;
+    border-radius:6px;
+    font-size:15.5px;
+    line-height:1.5;
+  }
+  .ex-item ruby{
+    font-family:"Noto Serif CJK JP","Yu Mincho",serif;
+    font-weight:700; color:#1b3a5a; font-size:17px;
+    ruby-position:over; ruby-align:center;
+  }
+  .ex-item rt{
+    font-size:11px; color:#5fa3b2;
+    font-family:Inter,sans-serif; font-weight:600;
+  }
+  .ex-item .ex-vn{
+    color:#5f6470; font-style:italic; font-size:13.5px;
+    font-family:Inter,sans-serif;
+  }
+  .ex-item .ex-jp{
+    font-family:"Noto Serif CJK JP",serif;
+    font-weight:700; color:#1b3a5a; font-size:17px;
+  }
+  @media print {
+    .ex-item{ padding:3px 6px !important; font-size:12.5px !important; gap:4px !important; }
+    .ex-item ruby{ font-size:13.5px !important; }
+    .ex-item rt{ font-size:9.5px !important; }
+    .ex-item .ex-vn{ font-size:11px !important; }
+    .ex-list{ gap:3px !important; }
+  }
+
+
+#ttsBar{position:fixed;top:12px;right:12px;z-index:99999;background:rgba(255,255,255,0.97);border:1px solid var(--line,#cbd5dc);border-radius:14px;box-shadow:0 10px 30px rgba(20,30,50,0.18);padding:9px 14px;font-size:13px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;max-width:min(94vw,680px);font-family:Inter,"Segoe UI",sans-serif;color:#23303f;}
+#ttsBar .tts-title{font-weight:800;color:var(--accent,#1b3a5a);white-space:nowrap;}
+#ttsBar label{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+#ttsBar select{font-size:12.5px;max-width:230px;padding:2px 4px;border:1px solid var(--line,#cbd5dc);border-radius:7px;}
+#ttsBar input[type=range]{width:92px;vertical-align:middle;accent-color:var(--accent,#1b3a5a);}
+#ttsBar #ttsRateVal{min-width:30px;color:var(--accent,#1b3a5a);}
+#ttsBar .tts-hint{color:#b4533a;font-size:12px;flex-basis:100%;}
+.tts-btn{display:inline-flex;align-items:center;justify-content:center;margin-left:7px;width:23px;height:23px;border:none;border-radius:50%;background:var(--accent,#1b3a5a);color:#fff;font-size:12px;line-height:1;cursor:pointer;vertical-align:middle;padding:0;opacity:.82;transition:transform .12s ease,opacity .12s ease;-webkit-print-color-adjust:exact;}
+.tts-btn:hover{opacity:1;transform:scale(1.14);}
+.tts-btn.playing{background:var(--green,#2d7d46);animation:ttspulse .85s infinite;}
+.tts-btn.loading{background:#b08400;}
+@keyframes ttspulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(45,125,70,.5);}50%{opacity:.55;box-shadow:0 0 0 5px rgba(45,125,70,0);}}
+@media print{#ttsBar,.tts-btn{display:none!important;}}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:500;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.93);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:36px;height:36px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.16em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n1.html">N1</a> · <a href="../tu-vung.html">Từ vựng</a> · Bài 1</div></div></a><a class="tl-back" href="../tu-vung.html">← Danh sách bài</a></nav>
+<div class="page-shell">
+<div id="ttsBar">
+  <span class="tts-title">🎧 日本語 Audio</span>
+  <label>Nguồn
+    <select id="ttsProvider">
+      <option value="auto">Giọng máy (mặc định)</option>
+      <option value="voicevox">VOICEVOX (free)</option>
+      <option value="google">Google Neural2</option>
+      <option value="azure">Azure Nanami</option>
+    </select>
+  </label>
+  <label id="ttsVoiceWrap">Giọng <select id="ttsVoice"></select></label>
+  <label>Tốc độ <input id="ttsRate" type="range" min="0.5" max="1.4" step="0.05" value="0.95"><b id="ttsRateVal">0.95</b></label>
+  <span id="ttsHint" class="tts-hint"></span>
+</div>
+<article class="document" id="lesson-1-1">
+  <div class="lesson-banner">
+    <div class="lesson-no">1.1</div>
+    <h3>性格・人柄
+      <span class="vn">Tính cách & Phẩm chất con người</span>
+    </h3>
+  </div>
+  <div class="doc-body">
+
+    <div class="section-head" data-mark="📖">Bảng từ vựng (語彙)</div>
+    <div class="table-shell">
+      <table class="vocab-table">
+        <thead>
+          <tr><th style="width:14%">Từ</th><th style="width:7%">Loại</th><th style="width:18%">Nghĩa</th><th style="width:31%">Phân tích / Nguồn gốc</th><th>Ví dụ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="kanji-cell"><ruby>気概<rt>きがい</rt></ruby><span class="hanviet">Khí khái</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">khí phách, ý chí kiên cường không khuất phục</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">気</span><span class="kreading">KHÍ · き</span> — <span class="kmean">tinh thần, khí</span></div><div><span class="kchar">概</span><span class="kreading">KHÁI · がい</span> — <span class="kmean">khái lược, đại lược</span></div><div class="ana-combine"><strong>Ghép:</strong> Tinh thần được khái quát hóa → khí phách bao trùm, ý chí vững.<br><span class="ana-syn">≈ 気骨, 気構え, 意気込み</span> · <span class="ana-ant">⇔ 弱気, 卑屈</span> · <span class="ana-nuance">Văn viết trang trọng.</span></div></div></td>
+            <td class="example"><span class="jp">困難を前にしても挫けない気概を持っている。</span><span class="vn">Anh ấy có khí phách không gục ngã trước khó khăn.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>気骨<rt>きこつ</rt></ruby><span class="hanviet">Khí cốt</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">cốt cách cứng cỏi, không chịu cúi đầu trước cường quyền</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">気</span><span class="kreading">KHÍ · き</span> — <span class="kmean">tinh thần</span></div><div><span class="kchar">骨</span><span class="kreading">CỐT · こつ/ほね</span> — <span class="kmean">xương cốt, cốt lõi</span></div><div class="ana-combine"><strong>Ghép:</strong> Khung xương của tinh thần → cốt cách cứng cỏi.<br><span class="ana-syn">≈ 気概, 硬骨, 不屈</span> · <span class="ana-ant">⇔ 軟弱, 腰抜け</span> · <span class="ana-nuance">Đọc きこつ (không phải きぼね).</span></div></div></td>
+            <td class="example"><span class="jp">気骨のある若者は、不正に対して断固反対した。</span><span class="vn">Người trẻ có cốt cách cứng cỏi đã kiên quyết phản đối điều bất công.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>謙虚<rt>けんきょ</rt></ruby><span class="hanviet">Khiêm hư</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">khiêm tốn, biết hạ mình</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">謙</span><span class="kreading">KHIÊM · けん</span> — <span class="kmean">khiêm nhường</span></div><div><span class="kchar">虚</span><span class="kreading">HƯ · きょ</span> — <span class="kmean">trống rỗng, hư không</span></div><div class="ana-combine"><strong>Ghép:</strong> Tâm trống rỗng, hạ mình → khiêm tốn thực sự.<br><span class="ana-syn">≈ 謙遜, 控えめ, 慎ましい</span> · <span class="ana-ant">⇔ 傲慢, 横柄, 高慢</span> · <span class="ana-nuance">≠ 遠慮 (e dè vì ngại).</span></div></div></td>
+            <td class="example"><span class="jp">彼は実力があるにもかかわらず、極めて謙虚な態度を崩さない。</span><span class="vn">Dù có thực lực, anh ấy vẫn giữ thái độ vô cùng khiêm tốn.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>傲慢<rt>ごうまん</rt></ruby><span class="hanviet">Ngạo mạn</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">kiêu căng, ngạo mạn, coi thường người khác</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">傲</span><span class="kreading">NGẠO · ごう</span> — <span class="kmean">ngạo nghễ</span></div><div><span class="kchar">慢</span><span class="kreading">MẠN · まん</span> — <span class="kmean">khinh mạn, chậm chạp</span></div><div class="ana-combine"><strong>Ghép:</strong> Ngạo nghễ + khinh mạn → coi thường người khác.<br><span class="ana-syn">≈ 横柄, 高慢, 尊大</span> · <span class="ana-ant">⇔ 謙虚, 控えめ</span> · <span class="ana-nuance">Sắc thái phê phán mạnh.</span></div></div></td>
+            <td class="example"><span class="jp">権力を得たとたん、彼の態度は傲慢そのものとなった。</span><span class="vn">Vừa có quyền lực, thái độ của anh ta đã trở nên hoàn toàn ngạo mạn.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>寛大<rt>かんだい</rt></ruby><span class="hanviet">Khoan đại</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">khoan dung, độ lượng</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">寛</span><span class="kreading">KHOAN · かん</span> — <span class="kmean">rộng rãi, thư thái</span></div><div><span class="kchar">大</span><span class="kreading">ĐẠI · だい</span> — <span class="kmean">to lớn</span></div><div class="ana-combine"><strong>Ghép:</strong> Lòng rộng và lớn → khoan dung, độ lượng.<br><span class="ana-syn">≈ 寛容, 大らか, 寛厚</span> · <span class="ana-ant">⇔ 狭量, 厳格, 偏狭</span> · <span class="ana-nuance">Thường nói về thái độ với lỗi lầm.</span></div></div></td>
+            <td class="example"><span class="jp">部下の過ちにも寛大な態度で接する上司は信頼を得やすい。</span><span class="vn">Cấp trên đối xử khoan dung với lỗi lầm của cấp dưới dễ được tín nhiệm.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>狭量<rt>きょうりょう</rt></ruby><span class="hanviet">Hiệp lượng</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">hẹp hòi, nhỏ nhen, không bao dung</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">狭</span><span class="kreading">HIỆP · きょう</span> — <span class="kmean">hẹp</span></div><div><span class="kchar">量</span><span class="kreading">LƯỢNG · りょう</span> — <span class="kmean">lượng, độ chứa</span></div><div class="ana-combine"><strong>Ghép:</strong> Lượng/độ chứa hẹp → tâm hẹp hòi.<br><span class="ana-syn">≈ 偏狭, 度量が小さい, 心が狭い</span> · <span class="ana-ant">⇔ 寛大, 寛容, 大度</span> · <span class="ana-nuance">Văn viết. Thường về tư duy/đối nhân.</span></div></div></td>
+            <td class="example"><span class="jp">そんな狭量な考えでは、誰からも信頼されまい。</span><span class="vn">Với suy nghĩ hẹp hòi như thế, e rằng không ai sẽ tin tưởng anh.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>頑固<rt>がんこ</rt></ruby><span class="hanviet">Ngoan cố</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">cứng đầu, bảo thủ, không chịu nghe ai</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">頑</span><span class="kreading">NGOAN · がん</span> — <span class="kmean">ương ngạnh, ngu ngốc</span></div><div><span class="kchar">固</span><span class="kreading">CỐ · こ</span> — <span class="kmean">cứng, vững chắc</span></div><div class="ana-combine"><strong>Ghép:</strong> Ương ngạnh + cứng đầu → bảo thủ không lay chuyển.<br><span class="ana-syn">≈ 強情, 一徹, かたくな</span> · <span class="ana-ant">⇔ 柔軟, 素直, 従順</span> · <span class="ana-nuance">Có thể trung tính hoặc tiêu cực tùy ngữ cảnh.</span></div></div></td>
+            <td class="example"><span class="jp">父は頑固で、一度決めたら誰の意見にも耳を貸さない。</span><span class="vn">Cha tôi cứng đầu, một khi đã quyết định thì không nghe ý kiến của ai.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>柔軟<rt>じゅうなん</rt></ruby><span class="hanviet">Nhu nhuyễn</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">linh hoạt, mềm dẻo (tư duy, ứng xử)</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">柔</span><span class="kreading">NHU · じゅう</span> — <span class="kmean">mềm mại</span></div><div><span class="kchar">軟</span><span class="kreading">NHUYỄN · なん</span> — <span class="kmean">mềm, nhuyễn</span></div><div class="ana-combine"><strong>Ghép:</strong> Cả hai chữ đều nghĩa 'mềm' → cực mềm dẻo, uyển chuyển.<br><span class="ana-syn">≈ しなやか, 順応, フレキシブル</span> · <span class="ana-ant">⇔ 頑固, 硬直, 強情</span> · <span class="ana-nuance">Dùng cho tư duy/cơ thể/cách ứng xử.</span></div></div></td>
+            <td class="example"><span class="jp">状況に応じて柔軟に対応できる人材が求められている。</span><span class="vn">Doanh nghiệp đang tìm kiếm nhân sự có thể ứng phó linh hoạt theo tình huống.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>潔白<rt>けっぱく</rt></ruby><span class="hanviet">Khiết bạch</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">trong sạch, không vướng tì vết</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">潔</span><span class="kreading">KHIẾT · けつ</span> — <span class="kmean">trong sạch</span></div><div><span class="kchar">白</span><span class="kreading">BẠCH · はく</span> — <span class="kmean">trắng</span></div><div class="ana-combine"><strong>Ghép:</strong> Trong sạch + trắng tinh → vô tội, thanh khiết.<br><span class="ana-syn">≈ 無罪, 純潔, 清廉</span> · <span class="ana-ant">⇔ 汚職, 不正, 後ろ暗い</span> · <span class="ana-nuance">Hay dùng trong 身の潔白 (sự trong sạch của bản thân).</span></div></div></td>
+            <td class="example"><span class="jp">彼は自らの潔白を証明するため、法廷に立った。</span><span class="vn">Anh ấy ra tòa để chứng minh sự trong sạch của mình.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>誠実<rt>せいじつ</rt></ruby><span class="hanviet">Thành thực</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">chân thành, thật thà, có trách nhiệm</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">誠</span><span class="kreading">THÀNH · せい</span> — <span class="kmean">thành thật</span></div><div><span class="kchar">実</span><span class="kreading">THỰC · じつ</span> — <span class="kmean">thực, sự thật</span></div><div class="ana-combine"><strong>Ghép:</strong> Thành thật + sự thực → chân thành đáng tin.<br><span class="ana-syn">≈ 真面目, 律儀, 篤実</span> · <span class="ana-ant">⇔ 不誠実, 不実, いい加減</span> · <span class="ana-nuance">Chỉ tính cách tổng thể, không chỉ lời nói.</span></div></div></td>
+            <td class="example"><span class="jp">彼の誠実な人柄が、多くの人を惹きつけてやまない。</span><span class="vn">Tính cách chân thành của anh ấy luôn cuốn hút nhiều người.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>狡猾<rt>こうかつ</rt></ruby><span class="hanviet">Giảo hoạt</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">xảo quyệt, gian xảo</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">狡</span><span class="kreading">GIẢO · こう</span> — <span class="kmean">gian giảo</span></div><div><span class="kchar">猾</span><span class="kreading">HOẠT · かつ</span> — <span class="kmean">gian xảo, ranh mãnh</span></div><div class="ana-combine"><strong>Ghép:</strong> Hai chữ đều 'gian xảo' → cực kỳ xảo quyệt.<br><span class="ana-syn">≈ ずる賢い, 狡猾, 老獪</span> · <span class="ana-ant">⇔ 正直, 純朴, 愚直</span> · <span class="ana-nuance">Văn viết, mang sắc thái mạnh.</span></div></div></td>
+            <td class="example"><span class="jp">狡猾な手段で利益を得ようとする者には警戒すべきだ。</span><span class="vn">Cần đề phòng những kẻ tìm cách trục lợi bằng thủ đoạn xảo quyệt.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>愚直<rt>ぐちょく</rt></ruby><span class="hanviet">Ngu trực</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">thẳng thắn đến mức cứng nhắc, ngay thẳng quá đỗi</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">愚</span><span class="kreading">NGU · ぐ</span> — <span class="kmean">ngu, dại</span></div><div><span class="kchar">直</span><span class="kreading">TRỰC · ちょく</span> — <span class="kmean">ngay thẳng</span></div><div class="ana-combine"><strong>Ghép:</strong> Ngay thẳng đến mức 'dại' → quá thẳng, thiếu khôn khéo.<br><span class="ana-syn">≈ 馬鹿正直, 一本気</span> · <span class="ana-ant">⇔ 狡猾, 抜け目ない</span> · <span class="ana-nuance">Thường mang ý vừa khen vừa chê.</span></div></div></td>
+            <td class="example"><span class="jp">彼は愚直なまでに約束を守る男だ。</span><span class="vn">Anh ấy là người giữ lời hứa đến mức ngay thẳng cứng nhắc.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>慎重<rt>しんちょう</rt></ruby><span class="hanviet">Thận trọng</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">thận trọng, cẩn trọng kỹ càng</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">慎</span><span class="kreading">THẬN · しん</span> — <span class="kmean">thận trọng, e dè</span></div><div><span class="kchar">重</span><span class="kreading">TRỌNG · ちょう</span> — <span class="kmean">nặng, trọng</span></div><div class="ana-combine"><strong>Ghép:</strong> Cẩn thận và nặng nề → cân nhắc kỹ.<br><span class="ana-syn">≈ 用心深い, 注意深い, 周到</span> · <span class="ana-ant">⇔ 軽率, 軽はずみ, 軽々しい</span> · <span class="ana-nuance">Trung tính, thường khen ngợi.</span></div></div></td>
+            <td class="example"><span class="jp">慎重な検討を重ねた末に、ようやく結論を出した。</span><span class="vn">Sau khi cân nhắc thận trọng nhiều lần, cuối cùng tôi đã đưa ra kết luận.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>軽率<rt>けいそつ</rt></ruby><span class="hanviet">Khinh suất</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">khinh suất, hồ đồ, qua loa</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">軽</span><span class="kreading">KHINH · けい</span> — <span class="kmean">nhẹ</span></div><div><span class="kchar">率</span><span class="kreading">SUẤT · そつ</span> — <span class="kmean">tỷ lệ; suất; thẳng thừng</span></div><div class="ana-combine"><strong>Ghép:</strong> Hành xử nhẹ nhàng, qua loa → hồ đồ.<br><span class="ana-syn">≈ 軽はずみ, 浅はか, 早計</span> · <span class="ana-ant">⇔ 慎重, 思慮深い, 周到</span> · <span class="ana-nuance">Mang sắc thái chỉ trích.</span></div></div></td>
+            <td class="example"><span class="jp">軽率な発言で、彼は信用を失った。</span><span class="vn">Vì phát ngôn khinh suất, anh ấy đã đánh mất sự tín nhiệm.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>用心深い<rt>ようじんぶかい</rt></ruby><span class="hanviet">Dụng tâm thâm</span></td>
+            <td><span class="pos">イ形</span></td>
+            <td class="meaning">cảnh giác, đề phòng kỹ lưỡng</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">用</span><span class="kreading">DỤNG · よう</span> — <span class="kmean">dùng</span></div><div><span class="kchar">心</span><span class="kreading">TÂM · じん/こころ</span> — <span class="kmean">tâm trí</span></div><div><span class="kchar">深</span><span class="kreading">THÂM · ふか</span> — <span class="kmean">sâu</span></div><div class="ana-combine"><strong>Ghép:</strong> Dùng tâm sâu sắc → cảnh giác kỹ lưỡng.<br><span class="ana-syn">≈ 慎重, 注意深い, 警戒する</span> · <span class="ana-ant">⇔ 不用心, 軽率</span> · <span class="ana-nuance">Có thể cả mặt tốt (cẩn trọng) và tiêu cực (đa nghi).</span></div></div></td>
+            <td class="example"><span class="jp">彼は用心深い性格で、めったに人を信用しない。</span><span class="vn">Anh ấy có tính cảnh giác cao, hiếm khi tin tưởng ai.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>陽気<rt>ようき</rt></ruby><span class="hanviet">Dương khí</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">vui vẻ, hoạt bát</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">陽</span><span class="kreading">DƯƠNG · よう</span> — <span class="kmean">mặt trời, dương</span></div><div><span class="kchar">気</span><span class="kreading">KHÍ · き</span> — <span class="kmean">khí, không khí</span></div><div class="ana-combine"><strong>Ghép:</strong> Khí dương (sáng) → tâm trạng vui vẻ, hoạt bát.<br><span class="ana-syn">≈ 朗らか, 快活, 明朗</span> · <span class="ana-ant">⇔ 陰気, 沈鬱, 陰鬱</span> · <span class="ana-nuance">Cũng có nghĩa 'thời tiết' (陽気がいい).</span></div></div></td>
+            <td class="example"><span class="jp">彼女の陽気な笑い声に、職場の雰囲気が一変した。</span><span class="vn">Tiếng cười vui vẻ của cô ấy đã thay đổi hẳn không khí công sở.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>陰気<rt>いんき</rt></ruby><span class="hanviet">Âm khí</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">u ám, trầm uất, lạnh lùng</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">陰</span><span class="kreading">ÂM · いん</span> — <span class="kmean">âm, bóng tối</span></div><div><span class="kchar">気</span><span class="kreading">KHÍ · き</span> — <span class="kmean">khí</span></div><div class="ana-combine"><strong>Ghép:</strong> Khí âm (tối) → u ám, lạnh lẽo.<br><span class="ana-syn">≈ 陰鬱, 暗い, 鬱屈</span> · <span class="ana-ant">⇔ 陽気, 朗らか, 快活</span> · <span class="ana-nuance">Mô tả tính cách hoặc bầu không khí.</span></div></div></td>
+            <td class="example"><span class="jp">彼の陰気な表情が、皆を不安にさせた。</span><span class="vn">Vẻ mặt u ám của anh ấy khiến mọi người bất an.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>気立て<rt>きだて</rt></ruby><span class="hanviet">Khí lập</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">tính nết, bản tính (thường nói về cô gái)</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">気</span><span class="kreading">KHÍ · き</span> — <span class="kmean">tâm tính</span></div><div><span class="kchar">立</span><span class="kreading">LẬP · た(つ)</span> — <span class="kmean">đứng, dựng</span></div><div class="ana-combine"><strong>Ghép:</strong> Tâm tính 'đứng dậy' → tính nết bẩm sinh.<br><span class="ana-syn">≈ 気質, 性質, 人柄</span> · <span class="ana-nuance">Thường dùng nói về phụ nữ. Văn cổ.</span></div></div></td>
+            <td class="example"><span class="jp">気立てのいい娘さんで、誰からも好かれている。</span><span class="vn">Cô ấy là một cô gái có tính nết tốt, được mọi người yêu mến.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>気品<rt>きひん</rt></ruby><span class="hanviet">Khí phẩm</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">phẩm chất cao quý, sự thanh nhã</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">気</span><span class="kreading">KHÍ · き</span> — <span class="kmean">khí chất</span></div><div><span class="kchar">品</span><span class="kreading">PHẨM · ひん</span> — <span class="kmean">phẩm chất</span></div><div class="ana-combine"><strong>Ghép:</strong> Khí chất + phẩm chất → vẻ thanh nhã tự nhiên.<br><span class="ana-syn">≈ 上品, 優雅, 高貴</span> · <span class="ana-ant">⇔ 下品, 卑俗</span> · <span class="ana-nuance">Vẻ đẹp toát ra từ bên trong.</span></div></div></td>
+            <td class="example"><span class="jp">彼女の立ち振る舞いには、隠しきれない気品が漂う。</span><span class="vn">Cử chỉ của cô ấy toát lên vẻ thanh nhã không thể che giấu.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>強情<rt>ごうじょう</rt></ruby><span class="hanviet">Cường tình</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">bướng bỉnh, ương ngạnh</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">強</span><span class="kreading">CƯỜNG · ごう/きょう</span> — <span class="kmean">mạnh</span></div><div><span class="kchar">情</span><span class="kreading">TÌNH · じょう</span> — <span class="kmean">tình cảm, lòng dạ</span></div><div class="ana-combine"><strong>Ghép:</strong> Tình cảm/ý chí mạnh → bướng bỉnh không chịu nhường.<br><span class="ana-syn">≈ 頑固, 意地っ張り, かたくな</span> · <span class="ana-ant">⇔ 素直, 従順</span> · <span class="ana-nuance">Đọc ごうじょう (không きょうじょう).</span></div></div></td>
+            <td class="example"><span class="jp">そんな強情を張らずに、素直に謝りなさい。</span><span class="vn">Đừng có bướng bỉnh như vậy, hãy xin lỗi một cách thành thật đi.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>温厚<rt>おんこう</rt></ruby><span class="hanviet">Ôn hậu</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">ôn hòa, hiền hậu, điềm đạm</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">温</span><span class="kreading">ÔN · おん</span> — <span class="kmean">ấm áp</span></div><div><span class="kchar">厚</span><span class="kreading">HẬU · こう</span> — <span class="kmean">dày, hậu</span></div><div class="ana-combine"><strong>Ghép:</strong> Ấm áp + chân thành → ôn hòa hiền hậu.<br><span class="ana-syn">≈ 温和, 穏やか, 篤実</span> · <span class="ana-ant">⇔ 冷酷, 厳格, 短気</span> · <span class="ana-nuance">Khen ngợi tính cách.</span></div></div></td>
+            <td class="example"><span class="jp">温厚な人柄で知られる先生に、生徒たちは信頼を寄せていた。</span><span class="vn">Học sinh đặt niềm tin vào thầy giáo nổi tiếng ôn hậu.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>厳格<rt>げんかく</rt></ruby><span class="hanviet">Nghiêm cách</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">nghiêm khắc, khắt khe</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">厳</span><span class="kreading">NGHIÊM · げん</span> — <span class="kmean">nghiêm</span></div><div><span class="kchar">格</span><span class="kreading">CÁCH · かく</span> — <span class="kmean">cách thức, chuẩn mực</span></div><div class="ana-combine"><strong>Ghép:</strong> Nghiêm chỉnh theo chuẩn → khắt khe nghiêm khắc.<br><span class="ana-syn">≈ 厳しい, 厳重, 厳正</span> · <span class="ana-ant">⇔ 寛大, 緩い, 甘い</span> · <span class="ana-nuance">Văn trang trọng. Hay dùng cho gia đình, kỷ luật.</span></div></div></td>
+            <td class="example"><span class="jp">厳格な家庭で育った彼は、礼儀作法に厳しい。</span><span class="vn">Lớn lên trong gia đình nghiêm khắc, anh ấy rất khắt khe về lễ nghi.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>淡白<rt>たんぱく</rt></ruby><span class="hanviet">Đạm bạch</span></td>
+            <td><span class="pos">ナ形</span></td>
+            <td class="meaning">đạm bạc, không cố chấp, không tham lam</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">淡</span><span class="kreading">ĐẠM · たん</span> — <span class="kmean">nhạt</span></div><div><span class="kchar">白</span><span class="kreading">BẠCH · はく</span> — <span class="kmean">trắng</span></div><div class="ana-combine"><strong>Ghép:</strong> Nhạt + trong trắng → đạm bạc, không vướng bận.<br><span class="ana-syn">≈ あっさり, 無欲, 飄々</span> · <span class="ana-ant">⇔ 執着, 強欲, 濃厚</span> · <span class="ana-nuance">Cũng dùng cho thức ăn (淡白な味).</span></div></div></td>
+            <td class="example"><span class="jp">物欲のない、淡白な性格の人だ。</span><span class="vn">Là người có tính cách đạm bạc, không tham lam vật chất.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>執念深い<rt>しゅうねんぶかい</rt></ruby><span class="hanviet">Chấp niệm thâm</span></td>
+            <td><span class="pos">イ形</span></td>
+            <td class="meaning">cố chấp, mang hận lâu</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">執</span><span class="kreading">CHẤP · しゅう</span> — <span class="kmean">chấp, dính</span></div><div><span class="kchar">念</span><span class="kreading">NIỆM · ねん</span> — <span class="kmean">ý niệm, ý nghĩ</span></div><div><span class="kchar">深</span><span class="kreading">THÂM · ふか</span> — <span class="kmean">sâu</span></div><div class="ana-combine"><strong>Ghép:</strong> Ý niệm chấp niệm sâu → cố chấp, hận lâu.<br><span class="ana-syn">≈ しつこい, 根に持つ, 恨みがましい</span> · <span class="ana-ant">⇔ 淡白, あっさり, さばさば</span> · <span class="ana-nuance">Sắc thái tiêu cực.</span></div></div></td>
+            <td class="example"><span class="jp">執念深い性格の彼は、些細な恨みでも忘れない。</span><span class="vn">Với tính cách cố chấp, anh ta không quên dù chỉ là mối hận nhỏ nhặt.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== 語形成 ========== -->
+    <div class="special-block">
+      <div class="special-banner">🔤 語形成 — Cấu tạo từ N1</div>
+      <div class="special-body">
+        <div class="word-formation-grid">
+          <div class="wf-item">
+            <div class="pattern">〜気 (〜き)</div>
+            <div class="desc">Hậu tố diễn tả "khuynh hướng tính tình"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>陽気<rt>ようき</rt></ruby> <span class="ex-vn">(vui vẻ, hoạt bát)</span></div><div class="ex-item"><ruby>陰気<rt>いんき</rt></ruby> <span class="ex-vn">(u ám, trầm uất)</span></div><div class="ex-item"><ruby>短気<rt>たんき</rt></ruby> <span class="ex-vn">(nóng nảy, dễ cáu)</span></div><div class="ex-item"><ruby>強気<rt>つよき</rt></ruby> <span class="ex-vn">(cứng rắn, mạnh mẽ)</span></div><div class="ex-item"><ruby>弱気<rt>よわき</rt></ruby> <span class="ex-vn">(nhu nhược, yếu đuối)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">〜柄 (〜がら)</div>
+            <div class="desc">"Bản chất, đặc tính" của người/sự vật</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>人柄<rt>ひとがら</rt></ruby> <span class="ex-vn">(nhân cách, tính người)</span></div><div class="ex-item"><ruby>家柄<rt>いえがら</rt></ruby> <span class="ex-vn">(gia thế, dòng dõi)</span></div><div class="ex-item"><ruby>場所柄<rt>ばしょがら</rt></ruby> <span class="ex-vn">(tính chất nơi chốn)</span></div><div class="ex-item"><ruby>時節柄<rt>じせつがら</rt></ruby> <span class="ex-vn">(bối cảnh thời tiết/thời cuộc)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">〜性 (〜せい)</div>
+            <div class="desc">"Tính chất" mang tính trừu tượng, học thuật</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>柔軟性<rt>じゅうなんせい</rt></ruby> <span class="ex-vn">(tính linh hoạt)</span></div><div class="ex-item"><ruby>社会性<rt>しゃかいせい</rt></ruby> <span class="ex-vn">(tính xã hội)</span></div><div class="ex-item"><ruby>人間性<rt>にんげんせい</rt></ruby> <span class="ex-vn">(nhân tính)</span></div><div class="ex-item"><ruby>将来性<rt>しょうらいせい</rt></ruby> <span class="ex-vn">(triển vọng tương lai)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">〜深い (〜ぶかい)</div>
+            <div class="desc">Diễn tả mức độ sâu của tính cách</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>用心深い<rt>ようじんぶかい</rt></ruby> <span class="ex-vn">(cảnh giác kỹ)</span></div><div class="ex-item"><ruby>執念深い<rt>しゅうねんぶかい</rt></ruby> <span class="ex-vn">(cố chấp, mang hận)</span></div><div class="ex-item"><ruby>興味深い<rt>きょうみぶかい</rt></ruby> <span class="ex-vn">(thú vị sâu sắc)</span></div><div class="ex-item"><ruby>疑い深い<rt>うたがいぶかい</rt></ruby> <span class="ex-vn">(đa nghi)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">無〜 (む〜)</div>
+            <div class="desc">"Không có, vô" → từ trái nghĩa</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>無責任<rt>むせきにん</rt></ruby> <span class="ex-vn">(vô trách nhiệm)</span></div><div class="ex-item"><ruby>無神経<rt>むしんけい</rt></ruby> <span class="ex-vn">(vô tâm, thô)</span></div><div class="ex-item"><ruby>無関心<rt>むかんしん</rt></ruby> <span class="ex-vn">(thờ ơ)</span></div><div class="ex-item"><ruby>無愛想<rt>ぶあいそう</rt></ruby> <span class="ex-vn">(lạnh nhạt, kém duyên)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">不〜 (ふ〜)</div>
+            <div class="desc">"Không, bất" → từ phủ định</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>不誠実<rt>ふせいじつ</rt></ruby> <span class="ex-vn">(không chân thành)</span></div><div class="ex-item"><ruby>不器用<rt>ぶきよう</rt></ruby> <span class="ex-vn">(vụng về)</span></div><div class="ex-item"><ruby>不真面目<rt>ふまじめ</rt></ruby> <span class="ex-vn">(không nghiêm túc)</span></div><div class="ex-item"><ruby>不器量<rt>ぶきりょう</rt></ruby> <span class="ex-vn">(kém duyên (ngoại hình))</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== 副詞・例文 ========== -->
+    <div class="special-block">
+      <div class="special-banner adv">🌟 副詞・例文 — Phó từ &amp; Mẫu câu N1</div>
+      <div class="special-body">
+        <div class="adverb-grid">
+          <div class="adv-item">
+            <div><span class="adv-word">うすうす</span> <span class="adv-meaning">— Mơ hồ cảm thấy, lờ mờ nhận ra</span></div>
+            <div class="adv-ex"><span class="jp">彼の本心はうすうす感じていたが、口に出すのははばかられた。</span><span class="vn">Tôi đã mơ hồ cảm nhận được lòng anh ấy, nhưng ngại không nói ra.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (mơ hồ nhận ra):</strong> <span class="syn-jp">何となく</span> <span class="syn-vn">(mơ hồ)</span> · <span class="syn-jp">漠然と</span> <span class="syn-vn">(mơ hồ trừu tượng)</span> · <span class="syn-jp">ほのかに</span> <span class="syn-vn">(thoáng nhẹ)</span> · <span class="syn-jp">薄々</span> <span class="syn-vn">(viết kanji)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">いかにも</span> <span class="adv-meaning">— Quả thật, đúng là, rõ là</span></div>
+            <div class="adv-ex"><span class="jp">いかにも彼らしい、誠実な対応であった。</span><span class="vn">Đúng là cách xử lý chân thành của anh ấy.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (quả thật là):</strong> <span class="syn-jp">まさに</span> <span class="syn-vn">(đúng là)</span> · <span class="syn-jp">確かに</span> <span class="syn-vn">(đích thực)</span> · <span class="syn-jp">実に</span> <span class="syn-vn">(thực sự)</span> · <span class="syn-jp">本当に</span> <span class="syn-vn">(thật sự)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">あえて</span> <span class="adv-meaning">— Dám, cố ý, bất chấp</span></div>
+            <div class="adv-ex"><span class="jp">嫌われることをあえて承知の上で、彼は真実を告げた。</span><span class="vn">Biết rõ sẽ bị ghét, anh ấy vẫn dám nói ra sự thật.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (cố ý, dám):</strong> <span class="syn-jp">わざと</span> <span class="syn-vn">(cố ý)</span> · <span class="syn-jp">敢然と</span> <span class="syn-vn">(quả cảm)</span> · <span class="syn-jp">わざわざ</span> <span class="syn-vn">(cố tình)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">てっきり</span> <span class="adv-meaning">— Đinh ninh, cứ ngỡ là (nhưng hóa ra không phải)</span></div>
+            <div class="adv-ex"><span class="jp">てっきり冗談だと思っていたが、彼は本気だった。</span><span class="vn">Tôi cứ đinh ninh là đùa, nhưng anh ấy nghiêm túc.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (cứ ngỡ là):</strong> <span class="syn-jp">てっきり〜と思った</span> <span class="syn-vn">(cứ ngỡ)</span> · <span class="syn-jp">すっかり</span> <span class="syn-vn">(hoàn toàn)</span> · <span class="syn-jp">間違いなく</span> <span class="syn-vn">(chắc chắn)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">心底 (しんそこ)</span> <span class="adv-meaning">— Tự đáy lòng, hoàn toàn từ tâm can</span></div>
+            <div class="adv-ex"><span class="jp">彼の人柄に、心底から敬意を抱くようになった。</span><span class="vn">Tôi đã đến lúc kính phục con người anh ấy từ tận đáy lòng.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (tự đáy lòng):</strong> <span class="syn-jp">心から</span> <span class="syn-vn">(từ trái tim)</span> · <span class="syn-jp">つくづく</span> <span class="syn-vn">(sâu sắc)</span> · <span class="syn-jp">しみじみ</span> <span class="syn-vn">(thấm thía)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">何しろ (なにしろ)</span> <span class="adv-meaning">— Dù sao thì, nói gì thì nói (nhấn mạnh lý do)</span></div>
+            <div class="adv-ex"><span class="jp">何しろ気骨のある人物だから、簡単には屈しまい。</span><span class="vn">Dù sao thì anh ấy cũng là người có khí phách, sẽ không dễ khuất phục đâu.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (dù sao thì):</strong> <span class="syn-jp">とにかく</span> <span class="syn-vn">(dù gì)</span> · <span class="syn-jp">ともかく</span> <span class="syn-vn">(trước hết)</span> · <span class="syn-jp">なにせ</span> <span class="syn-vn">(dạng tỉnh lược)</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== 練習 ========== -->
+    <div class="exercise-block">
+      <h4>📝 練習問題 — Bài tập</h4>
+      <p style="font-size:16.5px;color:#3a2412;"><strong>Câu 1.</strong> Điền từ thích hợp vào chỗ trống (chọn từ: 謙虚／傲慢／柔軟／頑固／狡猾).</p>
+      <ol>
+        <li>権力を得たとたんに態度が <span class="blank" data-ans="傲慢">　　　　</span> になる者は信頼されない。</li>
+        <li>状況の変化に応じて <span class="blank" data-ans="柔軟">　　　　</span> に対応できる人が、これからのリーダーには求められる。</li>
+        <li>彼は実力があるにもかかわらず、決して自慢せず <span class="blank" data-ans="謙虚">　　　　</span> な姿勢を崩さない。</li>
+        <li>父はとても <span class="blank" data-ans="頑固">　　　　</span> で、一度言い出したら誰の意見にも耳を貸さない。</li>
+        <li>あんな <span class="blank" data-ans="狡猾">　　　　</span> な手段で利益を得ようとは、許しがたい。</li>
+      </ol>
+      <button class="answer-btn" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box">
+        ① 傲慢　② 柔軟　③ 謙虚　④ 頑固　⑤ 狡猾<br>
+        <small>※ Lưu ý sự đối lập từng cặp: 謙虚 ↔ 傲慢, 柔軟 ↔ 頑固.</small>
+      </div>
+
+      <p style="margin-top:18px;font-size:16.5px;color:#3a2412;"><strong>Câu 2.</strong> Chọn từ gần nghĩa nhất.</p>
+      <ol>
+        <li>「気骨のある人物」とほぼ同じ意味は？　a) 軽率な人　b) 信念を持つ人　c) 気弱な人 → <span class="blank" data-ans="b">　　　　</span></li>
+        <li>「執念深い」とほぼ反対の意味は？　a) 淡白　b) 強情　c) 傲慢 → <span class="blank" data-ans="a">　　　　</span></li>
+        <li>「温厚」と最も近い意味は？　a) 厳格　b) 穏やか　c) 狡猾 → <span class="blank" data-ans="b">　　　　</span></li>
+      </ol>
+      <button class="answer-btn" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box">
+        ① b) 信念を持つ人　② a) 淡白　③ b) 穏やか
+      </div>
+    </div>
+
+  </div>
+</article>
+</div>
+<nav class="tl-pager"><span class="dis">← Bài trước</span><a class="mid" href="../tu-vung.html">▦ Danh sách bài</a><a href="bai-02.html">Bài 2 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+
+;
+
+/* ============================================================
+   CONFIG GIỌNG ĐỌC — sửa ở đây để bật giọng neural chất lượng cao.
+   Đổi provider bằng menu "Nguồn" trên thanh, hoặc đặt mặc định bên dưới.
+   • VOICEVOX (miễn phí, tự nhiên): đặt voicevoxUrl tới server VOICEVOX của bạn.
+   • Google Cloud TTS (Neural2): nên dùng proxy để giấu key →
+       googleEndpoint = 'https://your-proxy/synthesize'  (proxy nhận {text} trả {audioContent})
+       hoặc test nhanh: googleApiKey = 'KEY' (KHÔNG để key thật trên web công khai!)
+   • Azure: azureKey + azureRegion (giọng ja-JP-NanamiNeural). Có thể cần proxy do CORS.
+   ============================================================ */
+window.TTS_CONFIG = window.TTS_CONFIG || {
+  voicevoxUrl   : 'http://localhost:50021', voicevoxSpeaker: 3,   // 3 = ずんだもん; đổi tùy ý
+  googleEndpoint: '',  googleApiKey: '',  googleVoice: 'ja-JP-Neural2-B',
+  azureEndpoint : '',  azureKey: '',  azureRegion: 'japaneast', azureVoice: 'ja-JP-NanamiNeural'
+};
+(function(){
+  var synth = ('speechSynthesis' in window) ? window.speechSynthesis : null;
+  var bar=document.getElementById('ttsBar'),
+      provSel=document.getElementById('ttsProvider'),
+      voiceWrap=document.getElementById('ttsVoiceWrap'),
+      sel=document.getElementById('ttsVoice'),
+      rate=document.getElementById('ttsRate'),
+      rateVal=document.getElementById('ttsRateVal'),
+      hint=document.getElementById('ttsHint'),
+      voices=[], saved={}, cur=null, cache={}, audio=new Audio();
+  try{ saved=JSON.parse(localStorage.getItem('ttsPref')||'{}'); }catch(e){}
+  if(saved.provider) provSel.value=saved.provider;
+  if(saved.rate){ rate.value=saved.rate; rateVal.textContent=saved.rate; }
+
+  /* ---------- giọng máy (Web Speech) ---------- */
+  function isJa(v){ return /ja(-|_|$)/i.test(v.lang)||/japan|japanese|日本/i.test(v.name); }
+  function score(v){ var n=(v.name||'').toLowerCase(),s=0;
+    if(/natural/.test(n))s+=120; if(/google/.test(n))s+=80; if(/online|server|neural/.test(n))s+=50;
+    if(/nanami|keita|ayumi|haruka|sayaka|ichiro|mizuki/.test(n))s+=45;
+    if(/enhanced|premium|plus/.test(n))s+=30; if(/kyoko|o-?ren|otoya|hattori/.test(n))s+=18;
+    if(/compact|eloquence|espeak|fallback/.test(n))s-=60; if(v.localService===false)s+=15; return s; }
+  function fillVoices(){
+    if(!synth) return; voices=synth.getVoices().filter(isJa).sort(function(a,b){return score(b)-score(a);});
+    sel.innerHTML='';
+    if(!voices.length){ var o=document.createElement('option'); o.value=''; o.textContent='(máy chưa có giọng Nhật)'; sel.appendChild(o); return; }
+    voices.forEach(function(v){ var o=document.createElement('option'); o.value=v.name;
+      o.textContent=v.name.replace(/Microsoft |Google /,'')+' · '+v.lang+(/natural/i.test(v.name)?' ★':''); sel.appendChild(o); });
+    if(saved.voice && voices.some(function(v){return v.name===saved.voice;})) sel.value=saved.voice; else sel.value=voices[0].name;
+  }
+  if(synth){ fillVoices(); if(synth.onvoiceschanged!==undefined) synth.onvoiceschanged=fillVoices; }
+
+  function updateUI(){
+    var p=provSel.value;
+    voiceWrap.style.display = (p==='auto') ? '' : 'none';
+    if(p==='auto'){
+      var best=voices[0];
+      hint.textContent = (best && /natural|google/i.test(best.name)) ? ''
+        : '💡 Giọng máy nghe chưa hay? Mở bằng Microsoft Edge (giọng "Natural" Nanami) hoặc chọn nguồn VOICEVOX/Google/Azure ở trên.';
+    } else if(p==='voicevox'){ hint.textContent = TTS_CONFIG.voicevoxUrl ? '' : '⚠ Chưa đặt voicevoxUrl trong CONFIG.'; }
+    else if(p==='google'){ hint.textContent = (TTS_CONFIG.googleEndpoint||TTS_CONFIG.googleApiKey) ? '' : '⚠ Chưa đặt googleEndpoint/googleApiKey trong CONFIG.'; }
+    else if(p==='azure'){ hint.textContent = (TTS_CONFIG.azureEndpoint||TTS_CONFIG.azureKey) ? '' : '⚠ Chưa đặt azureKey/azureRegion trong CONFIG.'; }
+  }
+  function persist(){ try{ localStorage.setItem('ttsPref',JSON.stringify({provider:provSel.value,voice:sel.value,rate:rate.value})); }catch(e){} }
+  provSel.addEventListener('change',function(){ stopAll(); updateUI(); persist(); });
+  rate.addEventListener('input',function(){ rateVal.textContent=parseFloat(rate.value).toFixed(2); persist(); });
+  sel.addEventListener('change',persist);
+  updateUI();
+
+  function textOf(el){ var c=el.cloneNode(true); c.querySelectorAll('rt').forEach(function(r){r.remove();}); return c.textContent.replace(/\s+/g,'').trim(); }
+  function getRate(){ return parseFloat(rate.value)||1; }
+
+  /* ---------- adapter API ---------- */
+  async function fetchVoicevox(text){
+    var C=TTS_CONFIG, base=C.voicevoxUrl.replace(/\/$/,'');
+    var q=await fetch(base+'/audio_query?speaker='+C.voicevoxSpeaker+'&text='+encodeURIComponent(text),{method:'POST'});
+    var query=await q.json(); query.speedScale=getRate();
+    var s=await fetch(base+'/synthesis?speaker='+C.voicevoxSpeaker,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(query)});
+    return URL.createObjectURL(await s.blob());
+  }
+  async function fetchGoogle(text){
+    var C=TTS_CONFIG, body={input:{text:text},voice:{languageCode:'ja-JP',name:C.googleVoice},audioConfig:{audioEncoding:'MP3',speakingRate:getRate()}};
+    var url = C.googleEndpoint || ('https://texttospeech.googleapis.com/v1/text:synthesize?key='+C.googleApiKey);
+    var r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    var j=await r.json(); return 'data:audio/mp3;base64,'+j.audioContent;
+  }
+  async function fetchAzure(text){
+    var C=TTS_CONFIG;
+    var ssml='<speak version="1.0" xml:lang="ja-JP"><voice name="'+C.azureVoice+'"><prosody rate="'+Math.round((getRate()-1)*100)+'%">'+text+'</prosody></voice></speak>';
+    var url=C.azureEndpoint || ('https://'+C.azureRegion+'.tts.speech.microsoft.com/cognitiveservices/v1');
+    var h={'Content-Type':'application/ssml+xml','X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3'};
+    if(C.azureKey) h['Ocp-Apim-Subscription-Key']=C.azureKey;
+    var r=await fetch(url,{method:'POST',headers:h,body:ssml});
+    return URL.createObjectURL(await r.blob());
+  }
+  function apiFetch(text){
+    var p=provSel.value, key=p+'|'+getRate()+'|'+text;
+    if(cache[key]) return Promise.resolve(cache[key]);
+    var fn = p==='voicevox'?fetchVoicevox : p==='google'?fetchGoogle : fetchAzure;
+    return fn(text).then(function(src){ cache[key]=src; return src; });
+  }
+
+  /* ---------- điều khiển phát ---------- */
+  function stopAll(){ if(synth) synth.cancel(); audio.pause(); document.querySelectorAll('.tts-btn.playing,.tts-btn.loading').forEach(function(b){b.classList.remove('playing','loading');}); cur=null; }
+  function deviceSpeak(el,btn){
+    if(!synth){ hint.textContent='Trình duyệt không hỗ trợ đọc; hãy chọn nguồn API.'; return; }
+    var u=new SpeechSynthesisUtterance(textOf(el)); u.lang='ja-JP';
+    var v=voices.find(function(x){return x.name===sel.value;}); if(v) u.voice=v; u.rate=getRate();
+    u.onend=u.onerror=function(){ btn.classList.remove('playing'); if(cur===btn)cur=null; };
+    btn.classList.add('playing'); cur=btn; synth.speak(u);
+  }
+  function play(el,btn){
+    var wasCur=(cur===btn); stopAll(); if(wasCur) return;
+    var p=provSel.value;
+    if(p==='auto'){ deviceSpeak(el,btn); return; }
+    btn.classList.add('loading'); cur=btn;
+    apiFetch(textOf(el)).then(function(src){
+      btn.classList.remove('loading'); btn.classList.add('playing');
+      audio.src=src; audio.playbackRate=1; audio.onended=function(){ btn.classList.remove('playing'); if(cur===btn)cur=null; };
+      return audio.play();
+    }).catch(function(e){ console.warn('TTS API lỗi → dùng giọng máy:',e); btn.classList.remove('loading'); deviceSpeak(el,btn); });
+  }
+
+  document.querySelectorAll('.jp, .ex-jp').forEach(function(el){
+    if(el.closest('.main-header')||el.closest('.cover')||el.closest('#ttsBar')) return;
+    if(textOf(el).length<2) return;
+    var b=document.createElement('button'); b.className='tts-btn'; b.type='button'; b.title='Nghe đọc (tiếng Nhật)'; b.textContent='🔊';
+    b.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); play(el,b); });
+    el.insertAdjacentElement('afterend',b);
+  });
+})();
+</script>
+</body></html>

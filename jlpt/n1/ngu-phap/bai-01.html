@@ -1,0 +1,427 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 1 · Quan hệ thời gian gần đồng thời — Ngữ pháp N1 — Trí Lữ Nihongo</title>
+<meta name="description" content="Ngữ pháp N1 — Bài 1: Quan hệ thời gian gần đồng thời. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa; --paper-2:#fff8f0;
+  --ink:#1e2430; --muted:#5f6470;
+  --accent:#4f0f24; --accent-dark:#3a0a1c;
+  --accent-2:#9b7a38; --accent-3:#c7ab70;
+  --line:#dfcfbb; --line-2:#eadfce;
+  --green:#2d5e3e; --teal:#2d6e7a;
+  --plum:#6a4a8a; --terra:#b56b3f;
+  --rose:#a23b5a; --navy:#1a4a6e;
+  --correct:#2d5e3e; --wrong:#a23b5a;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{ margin:0; color:var(--ink); background:radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),radial-gradient(circle at 85% 14%, rgba(79,15,36,0.10), transparent 22%),linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%); font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif; line-height:1.7; font-size:16.5px; -webkit-font-smoothing:antialiased; }
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+.cover{ position:relative; overflow:hidden; background:radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),linear-gradient(135deg, #3a0a1c 0%, #4f0f24 36%, #240612 100%); color:#fff; border-radius:30px; box-shadow:var(--shadow); padding:60px 64px 50px; margin-bottom:26px; }
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:13px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:18.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:15.5px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:15px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+.toc-panel{ margin:0 0 34px; background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96)); border:1px solid rgba(155,122,56,0.20); border-radius:24px; box-shadow:var(--shadow); padding:28px 30px; }
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:13px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:16px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:12px 14px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(79,15,36,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item-number{ display:inline-block; min-width:32px; padding:2px 7px; margin-right:7px; border-radius:7px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:12.5px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:15px; font-family:"Noto Serif CJK JP",serif; }
+.toc-item-summary{ display:block; margin-top:4px; color:var(--muted); font-size:13.5px; line-height:1.4; }
+
+.lesson{ background:var(--paper); border:1px solid rgba(155,122,56,0.16); border-radius:28px; box-shadow:var(--shadow); padding:0 0 36px; margin-bottom:36px; overflow:hidden; }
+.lesson-banner{ position:relative; overflow:hidden; padding:26px 40px 24px; background:radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%), linear-gradient(135deg, #3a0a1c 0%, #4f0f24 50%, #240612 100%); color:#fff; }
+.lesson-banner::after{ content:"文法"; position:absolute; right:-10px; bottom:-50px; font-family:"Noto Serif CJK JP",serif; font-weight:900; font-size:clamp(6rem, 12vw, 10rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.lesson-kicker{ display:block; font-size:13px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:6px; }
+.lesson-banner h2{ margin:0 0 5px; font-family:"Noto Serif CJK JP",serif; font-size:26px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:15.5px; color:rgba(255,255,255,0.82); }
+
+.grammar-card{ margin:20px 40px; background:#fff; border:1px solid var(--line-2); border-radius:18px; overflow:hidden; box-shadow:0 8px 22px rgba(60,38,19,0.05); padding-bottom:12px; }
+.gc-head{ display:flex; align-items:center; gap:12px; padding:14px 20px; background:linear-gradient(90deg, rgba(79,15,36,0.06), rgba(199,171,112,0.05)); border-bottom:2px solid var(--accent); }
+.gc-num{ flex-shrink:0; width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg, var(--accent) 0%, #8a2d49 100%); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15.5px; font-family:"EB Garamond",serif; box-shadow:0 4px 10px rgba(79,15,36,0.25); }
+.gc-head h3.gc-jp{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:19.5px; font-weight:700; color:var(--accent); flex:1; line-height:1.3; }
+.gc-head .gc-meaning{ display:block; font-family:Inter,sans-serif; font-size:15px; color:var(--accent-2); font-style:italic; font-weight:600; margin-top:2px; }
+
+.struct-box{ margin:10px 20px; background:linear-gradient(180deg, #f3f9ed, #e7f2dc); border:1px solid #c8dab1; border-left:4px solid var(--green); border-radius:10px; padding:10px 14px; font-family:"Noto Serif CJK JP",serif; font-size:16.5px; color:#2c4a2d; line-height:1.75; }
+.struct-box strong{ color:var(--green); }
+
+.explain{ margin:10px 20px; background:linear-gradient(180deg, #f4f8fc, #e8f0f8); border:1px solid #c4d8e8; border-left:4px solid var(--navy); border-radius:10px; padding:10px 14px; font-size:15.5px; line-height:1.65; color:#1f3a4f; }
+.explain strong{ color:var(--navy); }
+
+.ex-box{ margin:10px 20px; background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent-2); padding:11px 14px; border-radius:0 10px 10px 0; }
+.ex-jp{ font-size:17px; color:#222; margin-bottom:6px; line-height:1.9; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:12px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn, .q-vn{ font-size:15.5px; color:#6e5230; font-style:italic; line-height:1.5; padding-top:6px; border-top:1px dotted #e2d4b8; margin-top:5px; }
+.ex-vn.collapsed, .q-vn.collapsed{ display:none; }
+
+.vn-toggle{ display:inline-flex; align-items:center; gap:4px; margin-top:3px; padding:2px 10px; background:transparent; border:1px dashed #b08850; border-radius:999px; color:#6e5230; font-size:12px; cursor:pointer; transition:all 0.15s; font-family:inherit; font-weight:600; letter-spacing:0.04em; }
+.vn-toggle:hover{ background:#fff5e8; border-style:solid; border-color:#9b7a38; }
+.vn-toggle::before{ content:"訳"; font-family:"Noto Serif CJK JP",serif; font-size:12px; margin-right:2px; color:#9b7a38; }
+.vn-toggle.shown{ background:#fff5e8; border-style:solid; border-color:#9b7a38; color:#4a3010; }
+
+.compare-box{ margin:10px 20px; background:linear-gradient(180deg, #f9f3fb, #ecdef2); border:1px solid #d8c4e6; border-left:4px solid var(--plum); border-radius:10px; padding:10px 14px; font-size:15px; line-height:1.65; color:#3f2a52; }
+.compare-box .compare-title{ font-weight:800; font-family:"Noto Serif CJK JP",serif; color:var(--plum); margin-bottom:6px; font-size:15.5px; }
+.compare-box .compare-row{ margin:4px 0; padding-left:13px; position:relative; display:block; }
+.compare-box .compare-row::before{ content:"◆"; position:absolute; left:0; color:var(--plum); }
+.compare-box .compare-row .cmp-jp{ font-family:"Noto Serif CJK JP",serif; font-weight:700; color:var(--plum); margin-right:6px; }
+.compare-box .compare-row .cmp-vn{ color:#3f2a52; }
+
+.exercises{ margin:12px 20px; background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%); border:1px solid #e7d7be; border-radius:14px; padding:12px 18px; box-shadow:0 4px 10px rgba(60,38,19,0.04); }
+.exercises .ex-title{ display:inline-block; padding:5px 14px; background:linear-gradient(90deg, var(--rose) 0%, #c14e6e 100%); color:#fff; border-radius:8px; font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:15.5px; margin-bottom:10px; }
+.ex-q{ padding:8px 0; border-bottom:1px dotted #eadfce; }
+.ex-q:last-child{ border-bottom:none; }
+.q-stem{ font-size:16px; line-height:1.8; font-family:"Noto Serif CJK JP",serif; color:#222; }
+.q-stem .qnum{ display:inline-block; min-width:20px; font-weight:800; color:var(--rose); margin-right:3px; font-family:"EB Garamond",sans-serif; font-size:16.5px; }
+.q-options{ display:grid; grid-template-columns:repeat(2, 1fr); gap:5px; margin:6px 0 0 22px; }
+.q-opt{ padding:5px 10px; background:#fff; border:1px solid #e0d3b8; border-radius:7px; cursor:pointer; font-family:"Noto Serif CJK JP",serif; font-size:15.5px; transition:all 0.15s; display:flex; align-items:center; gap:5px; color:#4a3a20; }
+.q-opt::before{ content:attr(data-mark); color:var(--rose); font-weight:800; font-family:"EB Garamond",sans-serif; min-width:18px; }
+.q-opt:hover{ background:#fff5e8; border-color:#b08850; }
+.q-opt.correct{ background:linear-gradient(180deg, #e8f5e8, #d4edd4); border-color:var(--correct); color:var(--correct); font-weight:700; }
+.q-opt.correct::before{ color:var(--correct); }
+.q-opt.correct::after{ content:"✓"; margin-left:auto; color:var(--correct); font-weight:800; }
+.q-opt.wrong{ background:linear-gradient(180deg, #fce4e6, #f8d7da); border-color:var(--wrong); color:var(--wrong); }
+.q-opt.wrong::before{ color:var(--wrong); }
+.q-opt.wrong::after{ content:"✗"; margin-left:auto; color:var(--wrong); font-weight:800; }
+.q-foot{ display:flex; align-items:center; gap:8px; margin-top:5px; margin-left:22px; flex-wrap:wrap; }
+.answer-detail{ display:none; padding:5px 11px; background:#fef9ee; border:1px dashed #c7ab70; border-radius:7px; font-size:13.5px; color:#5a4520; margin-top:5px; margin-left:22px; line-height:1.5; }
+.answer-detail.shown{ display:block; }
+.answer-detail strong{ color:var(--accent); }
+
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:15.5px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .lesson-banner{ padding:20px 20px 18px; }
+  .grammar-card{ margin:14px 18px; }
+  .q-options{ grid-template-columns:1fr; }
+}
+@media print {
+  body{ background:#fff; font-size:14px; }
+  .page-shell{ padding:0; max-width:none; }
+  .cover, .toc-panel{ page-break-after:always; box-shadow:none; }
+  .lesson{ page-break-before:always; box-shadow:none; }
+  .vn-toggle{ display:none; }
+  .ex-vn, .q-vn{ display:block !important; }
+  .answer-detail{ display:block !important; }
+}
+
+
+#ttsBar{position:fixed;top:12px;right:12px;z-index:99999;background:rgba(255,255,255,0.97);border:1px solid var(--line,#cbd5dc);border-radius:14px;box-shadow:0 10px 30px rgba(20,30,50,0.18);padding:9px 14px;font-size:13px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;max-width:min(94vw,680px);font-family:Inter,"Segoe UI",sans-serif;color:#23303f;}
+#ttsBar .tts-title{font-weight:800;color:var(--accent,#1b3a5a);white-space:nowrap;}
+#ttsBar label{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+#ttsBar select{font-size:12.5px;max-width:230px;padding:2px 4px;border:1px solid var(--line,#cbd5dc);border-radius:7px;}
+#ttsBar input[type=range]{width:92px;vertical-align:middle;accent-color:var(--accent,#1b3a5a);}
+#ttsBar #ttsRateVal{min-width:30px;color:var(--accent,#1b3a5a);}
+#ttsBar .tts-hint{color:#b4533a;font-size:12px;flex-basis:100%;}
+.tts-btn{display:inline-flex;align-items:center;justify-content:center;margin-left:7px;width:23px;height:23px;border:none;border-radius:50%;background:var(--accent,#1b3a5a);color:#fff;font-size:12px;line-height:1;cursor:pointer;vertical-align:middle;padding:0;opacity:.82;transition:transform .12s ease,opacity .12s ease;-webkit-print-color-adjust:exact;}
+.tts-btn:hover{opacity:1;transform:scale(1.14);}
+.tts-btn.playing{background:var(--green,#2d7d46);animation:ttspulse .85s infinite;}
+.tts-btn.loading{background:#b08400;}
+@keyframes ttspulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(45,125,70,.5);}50%{opacity:.55;box-shadow:0 0 0 5px rgba(45,125,70,0);}}
+@media print{#ttsBar,.tts-btn{display:none!important;}}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:500;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.93);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:36px;height:36px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.16em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n1.html">N1</a> · <a href="../ngu-phap.html">Ngữ pháp</a> · Bài 1</div></div></a><a class="tl-back" href="../ngu-phap.html">← Danh sách bài</a></nav>
+<div class="page-shell">
+<div id="ttsBar">
+  <span class="tts-title">🎧 日本語 Audio</span>
+  <label>Nguồn
+    <select id="ttsProvider">
+      <option value="auto">Giọng máy (mặc định)</option>
+      <option value="voicevox">VOICEVOX (free)</option>
+      <option value="google">Google Neural2</option>
+      <option value="azure">Azure Nanami</option>
+    </select>
+  </label>
+  <label id="ttsVoiceWrap">Giọng <select id="ttsVoice"></select></label>
+  <label>Tốc độ <input id="ttsRate" type="range" min="0.5" max="1.4" step="0.05" value="0.95"><b id="ttsRateVal">0.95</b></label>
+  <span id="ttsHint" class="tts-hint"></span>
+</div>
+<article class="lesson" id="lesson-1">
+<div class="lesson-banner"><span class="lesson-kicker">1課 — Bài 1 · 時間関係</span><h2>Quan hệ thời gian gần đồng thời</h2><div class="lesson-sub">4 mẫu N1: ～が早いか / ～や否や / ～なり / ～そばから</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">1.1</span><h3 class="gc-jp">～が<ruby>早<rt>はや</rt></ruby>いか</h3><span class="gc-meaning">vừa ~ thì lập tức (gần như đồng thời)</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [V<sub>る</sub> / Vた] + が早いか</div>
+<div class="explain"><strong>Giải thích:</strong> Diễn tả ngay khi vế trước vừa xảy ra thì vế sau xảy ra tức thì. Văn viết, mang sắc thái khách quan miêu tả tình huống. Vế sau thường là sự kiện đã xảy ra (quá khứ), không dùng cho ý chí, mệnh lệnh.</div>
+
+<div class="ex-box"><div class="ex-jp">① <ruby>記者会見<rt>きしゃかいけん</rt></ruby>が<ruby>終<rt>お</rt></ruby>わる<span class="target">が早いか</span>、<ruby>株価<rt>かぶか</rt></ruby>が<ruby>急落<rt>きゅうらく</rt></ruby>した。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Buổi họp báo vừa kết thúc thì giá cổ phiếu lập tức rớt thê thảm.</div></div>
+
+<div class="ex-box"><div class="ex-jp">② <ruby>新製品<rt>しんせいひん</rt></ruby>が<ruby>発売<rt>はつばい</rt></ruby>される<span class="target">が早いか</span>、<ruby>店頭<rt>てんとう</rt></ruby>から<ruby>姿<rt>すがた</rt></ruby>を<ruby>消<rt>け</rt></ruby>した。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Sản phẩm mới vừa được tung ra là biến mất khỏi các cửa hàng ngay.</div></div>
+
+<div class="ex-box"><div class="ex-jp">③ <ruby>判決<rt>はんけつ</rt></ruby>が<ruby>下<rt>くだ</rt></ruby>される<span class="target">が早いか</span>、<ruby>傍聴席<rt>ぼうちょうせき</rt></ruby>からどよめきが<ruby>起<rt>お</rt></ruby>こった。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Phán quyết vừa được tuyên bố thì khu vực khán phòng đã nổi lên tiếng xôn xao.</div></div>
+
+<div class="compare-box"><div class="compare-title">So sánh: が早いか / や否や / なり / そばから</div><div class="compare-row"><span class="cmp-jp">が早いか</span><span class="cmp-vn">"Vừa ~ thì lập tức" — văn viết, miêu tả khách quan.</span></div><div class="compare-row"><span class="cmp-jp">や否や</span><span class="cmp-vn">Tương tự nhưng văn chương hơn, hùng biện.</span></div><div class="compare-row"><span class="cmp-jp">なり</span><span class="cmp-vn">"Vừa ~ là làm ngay" — cùng chủ thể, hành động chủ động.</span></div><div class="compare-row"><span class="cmp-jp">そばから</span><span class="cmp-vn">"Vừa ~ thì đã ~" — sự kiện lặp đi lặp lại.</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 1.1</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>会議<rt>かいぎ</rt></ruby>が<ruby>終<rt>お</rt></ruby>わる（____）、<ruby>彼<rt>かれ</rt></ruby>は<ruby>急<rt>いそ</rt></ruby>いで<ruby>会場<rt>かいじょう</rt></ruby>を<ruby>出<rt>で</rt></ruby>ていった。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">が早いか</span><span class="q-opt" data-mark="②" data-correct="false">かたわら</span><span class="q-opt" data-mark="③" data-correct="false">てからというもの</span><span class="q-opt" data-mark="④" data-correct="false">につけ</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Cuộc họp vừa kết thúc, anh ấy đã vội vã rời khỏi hội trường.</div><div class="answer-detail"><strong>Đáp án: ① が早いか</strong> — Hai sự kiện gần như đồng thời, sự kiện sau là kết quả khách quan → が早いか.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>授業<rt>じゅぎょう</rt></ruby><ruby>終了<rt>しゅうりょう</rt></ruby>のチャイムが<ruby>鳴<rt>な</rt></ruby>る（____）、<ruby>子供<rt>こども</rt></ruby>たちは<ruby>運動場<rt>うんどうじょう</rt></ruby>へ<ruby>駆<rt>か</rt></ruby>け<ruby>出<rt>だ</rt></ruby>した。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">なり</span><span class="q-opt" data-mark="②" data-correct="true">が早いか</span><span class="q-opt" data-mark="③" data-correct="false">そばから</span><span class="q-opt" data-mark="④" data-correct="false">かたわら</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Chuông báo hết tiết vừa reo, lũ trẻ đã chạy ùa ra sân thể dục.</div><div class="answer-detail"><strong>Đáp án: ② が早いか</strong> — Chủ ngữ hai vế khác (chuông ↔ trẻ con) → が早いか thay vì なり (cùng chủ thể).</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>大臣<rt>だいじん</rt></ruby>の<ruby>辞任<rt>じにん</rt></ruby><ruby>発表<rt>はっぴょう</rt></ruby>がある（____）、メディアは<ruby>一斉<rt>いっせい</rt></ruby>に<ruby>速報<rt>そくほう</rt></ruby>を<ruby>流<rt>なが</rt></ruby>した。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">そばから</span><span class="q-opt" data-mark="②" data-correct="false">ところで</span><span class="q-opt" data-mark="③" data-correct="true">が早いか</span><span class="q-opt" data-mark="④" data-correct="false">につれ</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Thông báo từ chức của bộ trưởng vừa được đưa ra, truyền thông đã đồng loạt đăng tin nóng.</div><div class="answer-detail"><strong>Đáp án: ③ が早いか</strong> — Sự kiện công bố + phản ứng tức thì → が早いか. そばから sai vì không lặp lại.</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">1.2</span><h3 class="gc-jp">～や<ruby>否<rt>いな</rt></ruby>や / ～や</h3><span class="gc-meaning">vừa mới ~ là (văn chương)</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [V<sub>る</sub>] + や(否や)</div>
+<div class="explain"><strong>Giải thích:</strong> Văn chương, hùng biện hơn が早いか. Diễn tả hai sự kiện xảy ra gần như đồng thời, vế sau thường ngoài dự kiến. Thường xuất hiện trong tiểu thuyết, phóng sự, văn nghị luận.</div>
+
+<div class="ex-box"><div class="ex-jp">① <ruby>事件<rt>じけん</rt></ruby>の<ruby>真相<rt>しんそう</rt></ruby>が<ruby>明<rt>あき</rt></ruby>らかになる<span class="target">や否や</span>、<ruby>世論<rt>よろん</rt></ruby>は<ruby>一気<rt>いっき</rt></ruby>に<ruby>変<rt>か</rt></ruby>わった。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Sự thật của vụ việc vừa được công khai thì dư luận đã thay đổi chóng vánh.</div></div>
+
+<div class="ex-box"><div class="ex-jp">② その<ruby>知<rt>し</rt></ruby>らせを<ruby>聞<rt>き</rt></ruby>く<span class="target">や</span>、<ruby>彼<rt>かれ</rt></ruby>は<ruby>絶句<rt>ぜっく</rt></ruby>した。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Vừa nghe tin đó, anh ấy đã chết lặng đi.</div></div>
+
+<div class="ex-box"><div class="ex-jp">③ <ruby>新人<rt>しんじん</rt></ruby><ruby>作家<rt>さっか</rt></ruby>のデビュー<ruby>作<rt>さく</rt></ruby>が<ruby>発売<rt>はつばい</rt></ruby>される<span class="target">や否や</span>、たちまちベストセラーとなった。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Tác phẩm đầu tay của nhà văn mới vừa được phát hành đã lập tức trở thành sách bán chạy.</div></div>
+
+<div class="compare-box"><div class="compare-title">や否や vs が早いか</div><div class="compare-row"><span class="cmp-jp">や否や</span><span class="cmp-vn">Văn chương, hùng biện, sắc thái ấn tượng mạnh.</span></div><div class="compare-row"><span class="cmp-jp">が早いか</span><span class="cmp-vn">Trang trọng nhưng trung tính hơn.</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 1.2</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>暗殺<rt>あんさつ</rt></ruby>の<ruby>知<rt>し</rt></ruby>らせが<ruby>届<rt>とど</rt></ruby>く（____）、<ruby>市場<rt>しじょう</rt></ruby>は<ruby>混乱<rt>こんらん</rt></ruby>に<ruby>陥<rt>おちい</rt></ruby>った。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">や否や</span><span class="q-opt" data-mark="②" data-correct="false">そばから</span><span class="q-opt" data-mark="③" data-correct="false">かたわら</span><span class="q-opt" data-mark="④" data-correct="false">につれ</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Tin báo vụ ám sát vừa được đưa tới, thị trường đã rơi vào hỗn loạn.</div><div class="answer-detail"><strong>Đáp án: ① や否や</strong> — Sự kiện chấn động + phản ứng mạnh → や否や (văn chương).</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>その<ruby>言葉<rt>ことば</rt></ruby>を<ruby>聞<rt>き</rt></ruby>く（____）、<ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>涙<rt>なみだ</rt></ruby>を<ruby>流<rt>なが</rt></ruby>した。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">そばから</span><span class="q-opt" data-mark="②" data-correct="false">なり</span><span class="q-opt" data-mark="③" data-correct="true">や</span><span class="q-opt" data-mark="④" data-correct="false">ところで</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Vừa nghe câu nói ấy, cô ấy đã rơi nước mắt.</div><div class="answer-detail"><strong>Đáp án: ③ や</strong> — Văn chương ngắn gọn → V<sub>る</sub>+や (rút gọn của や否や).</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>大臣<rt>だいじん</rt></ruby>の<ruby>暴言<rt>ぼうげん</rt></ruby>が<ruby>報<rt>ほう</rt></ruby>じられる（____）、SNSは<ruby>炎上<rt>えんじょう</rt></ruby>した。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">かたわら</span><span class="q-opt" data-mark="②" data-correct="true">や否や</span><span class="q-opt" data-mark="③" data-correct="false">あげく</span><span class="q-opt" data-mark="④" data-correct="false">ぐらいで</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Phát ngôn vô lễ của bộ trưởng vừa được đưa tin, mạng xã hội đã bùng nổ tranh cãi.</div><div class="answer-detail"><strong>Đáp án: ② や否や</strong> — Sự kiện công khai + phản ứng tức thì mạnh → や否や.</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">1.3</span><h3 class="gc-jp">～なり</h3><span class="gc-meaning">vừa ~ là (cùng chủ thể, hành động chủ động)</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [V<sub>る</sub>] + なり</div>
+<div class="explain"><strong>Giải thích:</strong> Vừa ~ là chủ thể (cùng chủ ngữ) đã làm ngay hành động khác. Khác が早いか/や否や (có thể khác chủ thể), なり buộc cùng chủ thể. Sắc thái bất ngờ, ấn tượng.</div>
+
+<div class="ex-box"><div class="ex-jp">① <ruby>息子<rt>むすこ</rt></ruby>は<ruby>家<rt>いえ</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>る<span class="target">なり</span>、<ruby>部屋<rt>へや</rt></ruby>に<ruby>閉<rt>と</rt></ruby>じこもってしまった。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Con trai vừa về đến nhà là nhốt mình trong phòng.</div></div>
+
+<div class="ex-box"><div class="ex-jp">② <ruby>彼<rt>かれ</rt></ruby>は<ruby>事務所<rt>じむしょ</rt></ruby>に<ruby>入<rt>はい</rt></ruby>って<ruby>来<rt>く</rt></ruby>る<span class="target">なり</span>、<ruby>大声<rt>おおごえ</rt></ruby>で<ruby>怒鳴<rt>どな</rt></ruby>り<ruby>始<rt>はじ</rt></ruby>めた。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Anh ấy vừa bước vào văn phòng là đã quát tháo om sòm.</div></div>
+
+<div class="ex-box"><div class="ex-jp">③ <ruby>母<rt>はは</rt></ruby>は<ruby>電話<rt>でんわ</rt></ruby>を<ruby>切<rt>き</rt></ruby>る<span class="target">なり</span>、<ruby>泣<rt>な</rt></ruby>き<ruby>崩<rt>くず</rt></ruby>れた。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Mẹ vừa cúp điện thoại xong là òa khóc nức nở.</div></div>
+
+<div class="compare-box"><div class="compare-title">Phân biệt なり với các mẫu khác</div><div class="compare-row"><span class="cmp-jp">なり</span><span class="cmp-vn">Cùng chủ thể, hành động chủ động, bất ngờ.</span></div><div class="compare-row"><span class="cmp-jp">が早いか / や否や</span><span class="cmp-vn">Có thể hai chủ thể khác nhau.</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 1.3</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>娘<rt>むすめ</rt></ruby>は<ruby>玄関<rt>げんかん</rt></ruby>に<ruby>入<rt>はい</rt></ruby>る（____）、<ruby>泣<rt>な</rt></ruby>き<ruby>出<rt>だ</rt></ruby>した。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">なり</span><span class="q-opt" data-mark="②" data-correct="false">そばから</span><span class="q-opt" data-mark="③" data-correct="false">かたわら</span><span class="q-opt" data-mark="④" data-correct="false">につけ</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Con gái vừa bước vào cửa là đã òa khóc.</div><div class="answer-detail"><strong>Đáp án: ① なり</strong> — Cùng chủ thể (娘 vào nhà + khóc) → なり.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>社長<rt>しゃちょう</rt></ruby>は<ruby>会議室<rt>かいぎしつ</rt></ruby>に<ruby>足<rt>あし</rt></ruby>を<ruby>踏<rt>ふ</rt></ruby>み<ruby>入<rt>い</rt></ruby>れる（____）、<ruby>厳<rt>きび</rt></ruby>しい<ruby>口調<rt>くちょう</rt></ruby>で<ruby>叱責<rt>しっせき</rt></ruby>を<ruby>始<rt>はじ</rt></ruby>めた。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">が早いか</span><span class="q-opt" data-mark="②" data-correct="true">なり</span><span class="q-opt" data-mark="③" data-correct="false">そばから</span><span class="q-opt" data-mark="④" data-correct="false">かたわら</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Giám đốc vừa bước vào phòng họp là quở trách với giọng nghiêm khắc.</div><div class="answer-detail"><strong>Đáp án: ② なり</strong> — Cùng chủ thể (giám đốc) + hành động chủ động → なり. が早いか cũng đúng ngữ pháp nhưng なり tự nhiên hơn cho cùng chủ thể.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>祖父<rt>そふ</rt></ruby>は<ruby>新聞<rt>しんぶん</rt></ruby>を<ruby>開<rt>ひら</rt></ruby>く（____）、<ruby>眉<rt>まゆ</rt></ruby>をひそめた。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">そばから</span><span class="q-opt" data-mark="②" data-correct="false">かたわら</span><span class="q-opt" data-mark="③" data-correct="true">なり</span><span class="q-opt" data-mark="④" data-correct="false">あげく</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Ông tôi vừa mở tờ báo ra là đã nhíu mày.</div><div class="answer-detail"><strong>Đáp án: ③ なり</strong> — Cùng chủ thể (祖父) + phản ứng tức thì → なり.</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">1.4</span><h3 class="gc-jp">～そばから</h3><span class="gc-meaning">vừa ~ thì đã ~ (lặp đi lặp lại)</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [V<sub>る</sub> / Vた] + そばから</div>
+<div class="explain"><strong>Giải thích:</strong> Diễn tả hành động/sự việc cứ <em>lặp đi lặp lại</em> bị xóa/đảo ngược — "Vừa làm X xong thì lại Y, vừa Y xong lại làm X". Mang sắc thái bất lực, phiền toái.</div>
+
+<div class="ex-box"><div class="ex-jp">① <ruby>覚<rt>おぼ</rt></ruby>えた<span class="target">そばから</span><ruby>忘<rt>わす</rt></ruby>れてしまう。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Vừa nhớ xong đã quên ngay.</div></div>
+
+<div class="ex-box"><div class="ex-jp">② <ruby>注意<rt>ちゅうい</rt></ruby>される<span class="target">そばから</span>、<ruby>同<rt>おな</rt></ruby>じミスを<ruby>繰<rt>く</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>す<ruby>新人<rt>しんじん</rt></ruby>に<ruby>頭<rt>あたま</rt></ruby>を<ruby>抱<rt>かか</rt></ruby>えている。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Đầu tôi nhức óc với cái cậu lính mới vừa bị nhắc nhở là đã lặp lại lỗi cũ.</div></div>
+
+<div class="ex-box"><div class="ex-jp">③ <ruby>掃除<rt>そうじ</rt></ruby>する<span class="target">そばから</span>、<ruby>子供<rt>こども</rt></ruby>たちが<ruby>散<rt>ち</rt></ruby>らかしていく。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Vừa dọn xong thì lũ trẻ đã bày bừa lại.</div></div>
+
+<div class="compare-box"><div class="compare-title">そばから vs 4 mẫu trên</div><div class="compare-row"><span class="cmp-jp">そばから</span><span class="cmp-vn">Sự việc <em>lặp lại</em>, có sắc thái bất lực.</span></div><div class="compare-row"><span class="cmp-jp">が早いか / や否や / なり</span><span class="cmp-vn">Sự việc xảy ra <em>một lần</em> ngay sau hành động trước.</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 1.4</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>習<rt>なら</rt></ruby>った（____）<ruby>忘<rt>わす</rt></ruby>れてしまうので、<ruby>復習<rt>ふくしゅう</rt></ruby>が<ruby>大切<rt>たいせつ</rt></ruby>だ。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">そばから</span><span class="q-opt" data-mark="②" data-correct="false">なり</span><span class="q-opt" data-mark="③" data-correct="false">が早いか</span><span class="q-opt" data-mark="④" data-correct="false">や否や</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Cứ vừa học xong đã quên, nên việc ôn lại rất quan trọng.</div><div class="answer-detail"><strong>Đáp án: ① そばから</strong> — Sự việc lặp đi lặp lại → そばから. Các mẫu kia chỉ dùng cho một lần.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>片<rt>かた</rt></ruby>づけ<ruby>始<rt>はじ</rt></ruby>める（____）<ruby>娘<rt>むすめ</rt></ruby>がおもちゃを<ruby>取<rt>と</rt></ruby>り<ruby>出<rt>だ</rt></ruby>す。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">なり</span><span class="q-opt" data-mark="②" data-correct="false">が早いか</span><span class="q-opt" data-mark="③" data-correct="true">そばから</span><span class="q-opt" data-mark="④" data-correct="false">ところで</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Mỗi khi tôi vừa bắt đầu thu dọn thì con gái lại lôi đồ chơi ra.</div><div class="answer-detail"><strong>Đáp án: ③ そばから</strong> — Việc lặp lại, có sắc thái bất lực → そばから.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>洗濯物<rt>せんたくもの</rt></ruby>を<ruby>畳<rt>たた</rt></ruby>む（____）、<ruby>息子<rt>むすこ</rt></ruby>が<ruby>引<rt>ひ</rt></ruby>っ<ruby>張<rt>ぱ</rt></ruby>り<ruby>出<rt>だ</rt></ruby>して<ruby>遊<rt>あそ</rt></ruby>ぶ。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">が早いか</span><span class="q-opt" data-mark="②" data-correct="true">そばから</span><span class="q-opt" data-mark="③" data-correct="false">や否や</span><span class="q-opt" data-mark="④" data-correct="false">あげく</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Tôi vừa gấp quần áo xong là con trai lại lôi ra chơi.</div><div class="answer-detail"><strong>Đáp án: ② そばから</strong> — Tình huống lặp lại liên tục → そばから.</div></div>
+</div></div>
+
+</article>
+</div>
+<nav class="tl-pager"><span class="dis">← Bài trước</span><a class="mid" href="../ngu-phap.html">▦ Danh sách bài</a><a href="bai-02.html">Bài 2 →</a></nav>
+<script>
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('vn-toggle')) {
+    const sibling = e.target.nextElementSibling;
+    if (sibling && (sibling.classList.contains('ex-vn') || sibling.classList.contains('q-vn'))) {
+      sibling.classList.toggle('collapsed');
+      const isHidden = sibling.classList.contains('collapsed');
+      e.target.textContent = isHidden ? 'Xem dịch' : 'Ẩn dịch';
+      e.target.classList.toggle('shown', !isHidden);
+    }
+    return;
+  }
+  if (e.target.classList.contains('q-opt')) {
+    const opt = e.target;
+    const parent = opt.parentElement;
+    const isCorrect = opt.dataset.correct === 'true';
+    parent.querySelectorAll('.q-opt').forEach(o => { o.classList.remove('correct','wrong'); });
+    if (isCorrect) opt.classList.add('correct');
+    else { opt.classList.add('wrong'); const correctOpt = parent.querySelector('.q-opt[data-correct="true"]'); if (correctOpt) correctOpt.classList.add('correct'); }
+    const question = opt.closest('.ex-q');
+    const detail = question && question.querySelector('.answer-detail');
+    if (detail) detail.classList.add('shown');
+    return;
+  }
+});
+
+;
+
+/* ============================================================
+   CONFIG GIỌNG ĐỌC — sửa ở đây để bật giọng neural chất lượng cao.
+   Đổi provider bằng menu "Nguồn" trên thanh, hoặc đặt mặc định bên dưới.
+   • VOICEVOX (miễn phí, tự nhiên): đặt voicevoxUrl tới server VOICEVOX của bạn.
+   • Google Cloud TTS (Neural2): nên dùng proxy để giấu key →
+       googleEndpoint = 'https://your-proxy/synthesize'  (proxy nhận {text} trả {audioContent})
+       hoặc test nhanh: googleApiKey = 'KEY' (KHÔNG để key thật trên web công khai!)
+   • Azure: azureKey + azureRegion (giọng ja-JP-NanamiNeural). Có thể cần proxy do CORS.
+   ============================================================ */
+window.TTS_CONFIG = window.TTS_CONFIG || {
+  voicevoxUrl   : 'http://localhost:50021', voicevoxSpeaker: 3,   // 3 = ずんだもん; đổi tùy ý
+  googleEndpoint: '',  googleApiKey: '',  googleVoice: 'ja-JP-Neural2-B',
+  azureEndpoint : '',  azureKey: '',  azureRegion: 'japaneast', azureVoice: 'ja-JP-NanamiNeural'
+};
+(function(){
+  var synth = ('speechSynthesis' in window) ? window.speechSynthesis : null;
+  var bar=document.getElementById('ttsBar'),
+      provSel=document.getElementById('ttsProvider'),
+      voiceWrap=document.getElementById('ttsVoiceWrap'),
+      sel=document.getElementById('ttsVoice'),
+      rate=document.getElementById('ttsRate'),
+      rateVal=document.getElementById('ttsRateVal'),
+      hint=document.getElementById('ttsHint'),
+      voices=[], saved={}, cur=null, cache={}, audio=new Audio();
+  try{ saved=JSON.parse(localStorage.getItem('ttsPref')||'{}'); }catch(e){}
+  if(saved.provider) provSel.value=saved.provider;
+  if(saved.rate){ rate.value=saved.rate; rateVal.textContent=saved.rate; }
+
+  /* ---------- giọng máy (Web Speech) ---------- */
+  function isJa(v){ return /ja(-|_|$)/i.test(v.lang)||/japan|japanese|日本/i.test(v.name); }
+  function score(v){ var n=(v.name||'').toLowerCase(),s=0;
+    if(/natural/.test(n))s+=120; if(/google/.test(n))s+=80; if(/online|server|neural/.test(n))s+=50;
+    if(/nanami|keita|ayumi|haruka|sayaka|ichiro|mizuki/.test(n))s+=45;
+    if(/enhanced|premium|plus/.test(n))s+=30; if(/kyoko|o-?ren|otoya|hattori/.test(n))s+=18;
+    if(/compact|eloquence|espeak|fallback/.test(n))s-=60; if(v.localService===false)s+=15; return s; }
+  function fillVoices(){
+    if(!synth) return; voices=synth.getVoices().filter(isJa).sort(function(a,b){return score(b)-score(a);});
+    sel.innerHTML='';
+    if(!voices.length){ var o=document.createElement('option'); o.value=''; o.textContent='(máy chưa có giọng Nhật)'; sel.appendChild(o); return; }
+    voices.forEach(function(v){ var o=document.createElement('option'); o.value=v.name;
+      o.textContent=v.name.replace(/Microsoft |Google /,'')+' · '+v.lang+(/natural/i.test(v.name)?' ★':''); sel.appendChild(o); });
+    if(saved.voice && voices.some(function(v){return v.name===saved.voice;})) sel.value=saved.voice; else sel.value=voices[0].name;
+  }
+  if(synth){ fillVoices(); if(synth.onvoiceschanged!==undefined) synth.onvoiceschanged=fillVoices; }
+
+  function updateUI(){
+    var p=provSel.value;
+    voiceWrap.style.display = (p==='auto') ? '' : 'none';
+    if(p==='auto'){
+      var best=voices[0];
+      hint.textContent = (best && /natural|google/i.test(best.name)) ? ''
+        : '💡 Giọng máy nghe chưa hay? Mở bằng Microsoft Edge (giọng "Natural" Nanami) hoặc chọn nguồn VOICEVOX/Google/Azure ở trên.';
+    } else if(p==='voicevox'){ hint.textContent = TTS_CONFIG.voicevoxUrl ? '' : '⚠ Chưa đặt voicevoxUrl trong CONFIG.'; }
+    else if(p==='google'){ hint.textContent = (TTS_CONFIG.googleEndpoint||TTS_CONFIG.googleApiKey) ? '' : '⚠ Chưa đặt googleEndpoint/googleApiKey trong CONFIG.'; }
+    else if(p==='azure'){ hint.textContent = (TTS_CONFIG.azureEndpoint||TTS_CONFIG.azureKey) ? '' : '⚠ Chưa đặt azureKey/azureRegion trong CONFIG.'; }
+  }
+  function persist(){ try{ localStorage.setItem('ttsPref',JSON.stringify({provider:provSel.value,voice:sel.value,rate:rate.value})); }catch(e){} }
+  provSel.addEventListener('change',function(){ stopAll(); updateUI(); persist(); });
+  rate.addEventListener('input',function(){ rateVal.textContent=parseFloat(rate.value).toFixed(2); persist(); });
+  sel.addEventListener('change',persist);
+  updateUI();
+
+  function textOf(el){ var c=el.cloneNode(true); c.querySelectorAll('rt').forEach(function(r){r.remove();}); return c.textContent.replace(/\s+/g,'').trim(); }
+  function getRate(){ return parseFloat(rate.value)||1; }
+
+  /* ---------- adapter API ---------- */
+  async function fetchVoicevox(text){
+    var C=TTS_CONFIG, base=C.voicevoxUrl.replace(/\/$/,'');
+    var q=await fetch(base+'/audio_query?speaker='+C.voicevoxSpeaker+'&text='+encodeURIComponent(text),{method:'POST'});
+    var query=await q.json(); query.speedScale=getRate();
+    var s=await fetch(base+'/synthesis?speaker='+C.voicevoxSpeaker,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(query)});
+    return URL.createObjectURL(await s.blob());
+  }
+  async function fetchGoogle(text){
+    var C=TTS_CONFIG, body={input:{text:text},voice:{languageCode:'ja-JP',name:C.googleVoice},audioConfig:{audioEncoding:'MP3',speakingRate:getRate()}};
+    var url = C.googleEndpoint || ('https://texttospeech.googleapis.com/v1/text:synthesize?key='+C.googleApiKey);
+    var r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    var j=await r.json(); return 'data:audio/mp3;base64,'+j.audioContent;
+  }
+  async function fetchAzure(text){
+    var C=TTS_CONFIG;
+    var ssml='<speak version="1.0" xml:lang="ja-JP"><voice name="'+C.azureVoice+'"><prosody rate="'+Math.round((getRate()-1)*100)+'%">'+text+'</prosody></voice></speak>';
+    var url=C.azureEndpoint || ('https://'+C.azureRegion+'.tts.speech.microsoft.com/cognitiveservices/v1');
+    var h={'Content-Type':'application/ssml+xml','X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3'};
+    if(C.azureKey) h['Ocp-Apim-Subscription-Key']=C.azureKey;
+    var r=await fetch(url,{method:'POST',headers:h,body:ssml});
+    return URL.createObjectURL(await r.blob());
+  }
+  function apiFetch(text){
+    var p=provSel.value, key=p+'|'+getRate()+'|'+text;
+    if(cache[key]) return Promise.resolve(cache[key]);
+    var fn = p==='voicevox'?fetchVoicevox : p==='google'?fetchGoogle : fetchAzure;
+    return fn(text).then(function(src){ cache[key]=src; return src; });
+  }
+
+  /* ---------- điều khiển phát ---------- */
+  function stopAll(){ if(synth) synth.cancel(); audio.pause(); document.querySelectorAll('.tts-btn.playing,.tts-btn.loading').forEach(function(b){b.classList.remove('playing','loading');}); cur=null; }
+  function deviceSpeak(el,btn){
+    if(!synth){ hint.textContent='Trình duyệt không hỗ trợ đọc; hãy chọn nguồn API.'; return; }
+    var u=new SpeechSynthesisUtterance(textOf(el)); u.lang='ja-JP';
+    var v=voices.find(function(x){return x.name===sel.value;}); if(v) u.voice=v; u.rate=getRate();
+    u.onend=u.onerror=function(){ btn.classList.remove('playing'); if(cur===btn)cur=null; };
+    btn.classList.add('playing'); cur=btn; synth.speak(u);
+  }
+  function play(el,btn){
+    var wasCur=(cur===btn); stopAll(); if(wasCur) return;
+    var p=provSel.value;
+    if(p==='auto'){ deviceSpeak(el,btn); return; }
+    btn.classList.add('loading'); cur=btn;
+    apiFetch(textOf(el)).then(function(src){
+      btn.classList.remove('loading'); btn.classList.add('playing');
+      audio.src=src; audio.playbackRate=1; audio.onended=function(){ btn.classList.remove('playing'); if(cur===btn)cur=null; };
+      return audio.play();
+    }).catch(function(e){ console.warn('TTS API lỗi → dùng giọng máy:',e); btn.classList.remove('loading'); deviceSpeak(el,btn); });
+  }
+
+  document.querySelectorAll('.jp, .ex-jp').forEach(function(el){
+    if(el.closest('.main-header')||el.closest('.cover')||el.closest('#ttsBar')) return;
+    if(textOf(el).length<2) return;
+    var b=document.createElement('button'); b.className='tts-btn'; b.type='button'; b.title='Nghe đọc (tiếng Nhật)'; b.textContent='🔊';
+    b.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); play(el,b); });
+    el.insertAdjacentElement('afterend',b);
+  });
+})();
+</script>
+</body></html>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Chọn bài · Từ vựng N1 — Trí Lữ Nihongo</title>
+  <meta name="description" content="Chọn bài học — 15 bài từ vựng N1 tại Trí Lữ Nihongo." />
+  <meta name="theme-color" content="#1B3A6B" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/jlpt/jlpt-study.css" />
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="site-nav-in">
+      <div class="nav-left">
+        <span class="nav-crumb">
+          <a href="/jlpt/n1.html">Khóa N1</a>
+          <span class="sep">·</span>
+          <a href="/jlpt/n1.html">Từ vựng</a>
+          <span class="sep">·</span>
+          <span class="here">Chọn bài</span>
+        </span>
+      </div>
+      <a class="wordmark" href="/">
+        <span class="wordmark-main">Trí Lữ <span class="sep">·</span> Nihongo</span>
+        <span class="wordmark-jp">智 旅 日 本 語</span>
+      </a>
+      <div class="nav-right">
+        <a class="nav-back" href="/jlpt/n1.html"><span>←</span> Học phần</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section class="section" style="padding-bottom:clamp(30px,4vh,48px);">
+      <div class="container">
+        <div class="eyebrow reveal" style="margin-bottom:24px;">
+          <span class="num">N1</span>
+          <span>Học phần · Từ vựng</span>
+          <span class="jp">語彙 · 全 15 課</span>
+        </div>
+        <h1 class="display reveal" data-delay="1" style="max-width:14ch; font-size:clamp(40px,5.6vw,82px);">Chọn bài để bắt đầu.</h1>
+        <p class="lede reveal" data-delay="2" style="margin-top:28px;">15 bài · chọn một bài để học. Nội dung mở riêng từng trang, kèm phát âm & bài tập.</p>
+        <div class="chip-row reveal mt-s" data-delay="3" aria-label="Học phần">
+          <a class="chip active" href="tu-vung.html">語彙 · Từ vựng</a>
+          <a class="chip" href="ngu-phap.html">文法 · Ngữ pháp</a>
+          <a class="chip" href="han-tu.html">漢字 · Hán tự</a>
+          <a class="chip" href="nghe-hieu.html">聴解 · Nghe hiểu</a>
+          <a class="chip" href="doc-hieu.html">読解 · Đọc hiểu</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--cream-2); padding-top:clamp(40px,5vh,72px);">
+      <div class="container">
+        <div class="eyebrow reveal" style="margin-bottom:28px;">
+          <span class="num">課</span><span>15 bài</span>
+        </div>
+        <div class="lesson-grid reveal" data-delay="1" id="lessonGrid"></div>
+      </div>
+    </section>
+
+    <footer class="foot">
+      <div class="foot-in">
+        <div class="foot-brand">
+          <div class="wm">Trí Lữ Nihongo</div>
+          <div class="jp">智 旅 日 本 語</div>
+        </div>
+        <div class="foot-tag">Chinh phục tiếng Nhật — mở cửa tương lai.</div>
+      </div>
+      <div class="foot-meta">
+        <span>© MMXXVI · Trí Lữ Nihongo · trilu.edu.vn</span>
+        <span>N1 · Từ vựng · 15 bài</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    var LESSONS = [{"vi":"Tính cách & Phẩm chất con người","jp":"性格・人柄","items":null,"num":1},{"vi":"Quan hệ con người & Sự giao tiếp","jp":"人間関係・付き合い","items":null,"num":2},{"vi":"Sinh hoạt hằng ngày","jp":"日常生活","items":null,"num":3},{"vi":"Y tế & Sức khỏe","jp":"医療・健康","items":null,"num":4},{"vi":"Nghệ thuật & Thể thao","jp":"芸術・スポーツ","items":null,"num":5},{"vi":"Giáo dục","jp":"教育","items":null,"num":6},{"vi":"Công việc / Sự nghiệp","jp":"仕事","items":null,"num":7},{"vi":"Truyền thông & Báo chí","jp":"メディア","items":null,"num":8},{"vi":"Kinh tế & Công nghiệp","jp":"経済・産業","items":null,"num":9},{"vi":"Chính trị · Pháp luật · Lịch sử","jp":"政治・法律・歴史","items":null,"num":10},{"vi":"Vấn đề xã hội","jp":"社会問題","items":null,"num":11},{"vi":"Tự nhiên & Địa hình","jp":"自然・地形","items":null,"num":12},{"vi":"Công nghệ & Kỹ thuật","jp":"技術","items":null,"num":13},{"vi":"Thời gian & Không gian","jp":"時間・空間","items":null,"num":14},{"vi":"Quan hệ & Biến đổi","jp":"関係・変化","items":null,"num":15}];
+    var CAT = "tu-vung";
+    var grid = document.getElementById("lessonGrid");
+    LESSONS.forEach(function (l) {
+      var n = String(l.num).padStart(2, "0");
+      var a = document.createElement("a");
+      a.className = "lesson-card";
+      a.href = CAT + "/bai-" + n + ".html";
+      var jp = l.jp ? '<p class="lc-jp">' + l.jp + '</p>' : '';
+      var foot = l.items != null ? (l.items + ' mục') : 'Mở bài';
+      a.innerHTML =
+        '<div class="lc-top">' +
+          '<div class="lc-num"><span class="small">Bài</span> ' + n + '</div>' +
+        '</div>' +
+        '<h3 class="lc-title">' + l.vi + '</h3>' + jp +
+        '<div class="lc-foot"><span>' + foot + '</span><span class="arr">→</span></div>';
+      grid.appendChild(a);
+    });
+    (function () {
+      var els = document.querySelectorAll(".reveal:not(.in)");
+      if (!("IntersectionObserver" in window)) { els.forEach(function (el) { el.classList.add("in"); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
+      els.forEach(function (el) { io.observe(el); });
+      setTimeout(function () { els.forEach(function (el) { el.classList.add("in"); }); }, 1600);
+    })();
+  </script>
+</body>
+</html>

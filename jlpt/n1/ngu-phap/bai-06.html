@@ -1,0 +1,407 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 6 · Trạng thái cao cấp — Ngữ pháp N1 — Trí Lữ Nihongo</title>
+<meta name="description" content="Ngữ pháp N1 — Bài 6: Trạng thái cao cấp. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa; --paper-2:#fff8f0;
+  --ink:#1e2430; --muted:#5f6470;
+  --accent:#4f0f24; --accent-dark:#3a0a1c;
+  --accent-2:#9b7a38; --accent-3:#c7ab70;
+  --line:#dfcfbb; --line-2:#eadfce;
+  --green:#2d5e3e; --teal:#2d6e7a;
+  --plum:#6a4a8a; --terra:#b56b3f;
+  --rose:#a23b5a; --navy:#1a4a6e;
+  --correct:#2d5e3e; --wrong:#a23b5a;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{ margin:0; color:var(--ink); background:radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),radial-gradient(circle at 85% 14%, rgba(79,15,36,0.10), transparent 22%),linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%); font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif; line-height:1.7; font-size:16.5px; -webkit-font-smoothing:antialiased; }
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+.cover{ position:relative; overflow:hidden; background:radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),linear-gradient(135deg, #3a0a1c 0%, #4f0f24 36%, #240612 100%); color:#fff; border-radius:30px; box-shadow:var(--shadow); padding:60px 64px 50px; margin-bottom:26px; }
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:13px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:18.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:15.5px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:15px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+.toc-panel{ margin:0 0 34px; background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96)); border:1px solid rgba(155,122,56,0.20); border-radius:24px; box-shadow:var(--shadow); padding:28px 30px; }
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:13px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:16px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:12px 14px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(79,15,36,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item-number{ display:inline-block; min-width:32px; padding:2px 7px; margin-right:7px; border-radius:7px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:12.5px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:15px; font-family:"Noto Serif CJK JP",serif; }
+.toc-item-summary{ display:block; margin-top:4px; color:var(--muted); font-size:13.5px; line-height:1.4; }
+
+.lesson{ background:var(--paper); border:1px solid rgba(155,122,56,0.16); border-radius:28px; box-shadow:var(--shadow); padding:0 0 36px; margin-bottom:36px; overflow:hidden; }
+.lesson-banner{ position:relative; overflow:hidden; padding:26px 40px 24px; background:radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%), linear-gradient(135deg, #3a0a1c 0%, #4f0f24 50%, #240612 100%); color:#fff; }
+.lesson-banner::after{ content:"文法"; position:absolute; right:-10px; bottom:-50px; font-family:"Noto Serif CJK JP",serif; font-weight:900; font-size:clamp(6rem, 12vw, 10rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.lesson-kicker{ display:block; font-size:13px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:6px; }
+.lesson-banner h2{ margin:0 0 5px; font-family:"Noto Serif CJK JP",serif; font-size:26px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:15.5px; color:rgba(255,255,255,0.82); }
+
+.grammar-card{ margin:20px 40px; background:#fff; border:1px solid var(--line-2); border-radius:18px; overflow:hidden; box-shadow:0 8px 22px rgba(60,38,19,0.05); padding-bottom:12px; }
+.gc-head{ display:flex; align-items:center; gap:12px; padding:14px 20px; background:linear-gradient(90deg, rgba(79,15,36,0.06), rgba(199,171,112,0.05)); border-bottom:2px solid var(--accent); }
+.gc-num{ flex-shrink:0; width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg, var(--accent) 0%, #8a2d49 100%); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15.5px; font-family:"EB Garamond",serif; box-shadow:0 4px 10px rgba(79,15,36,0.25); }
+.gc-head h3.gc-jp{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:19.5px; font-weight:700; color:var(--accent); flex:1; line-height:1.3; }
+.gc-head .gc-meaning{ display:block; font-family:Inter,sans-serif; font-size:15px; color:var(--accent-2); font-style:italic; font-weight:600; margin-top:2px; }
+
+.struct-box{ margin:10px 20px; background:linear-gradient(180deg, #f3f9ed, #e7f2dc); border:1px solid #c8dab1; border-left:4px solid var(--green); border-radius:10px; padding:10px 14px; font-family:"Noto Serif CJK JP",serif; font-size:16.5px; color:#2c4a2d; line-height:1.75; }
+.struct-box strong{ color:var(--green); }
+
+.explain{ margin:10px 20px; background:linear-gradient(180deg, #f4f8fc, #e8f0f8); border:1px solid #c4d8e8; border-left:4px solid var(--navy); border-radius:10px; padding:10px 14px; font-size:15.5px; line-height:1.65; color:#1f3a4f; }
+.explain strong{ color:var(--navy); }
+
+.ex-box{ margin:10px 20px; background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent-2); padding:11px 14px; border-radius:0 10px 10px 0; }
+.ex-jp{ font-size:17px; color:#222; margin-bottom:6px; line-height:1.9; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:12px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn, .q-vn{ font-size:15.5px; color:#6e5230; font-style:italic; line-height:1.5; padding-top:6px; border-top:1px dotted #e2d4b8; margin-top:5px; }
+.ex-vn.collapsed, .q-vn.collapsed{ display:none; }
+
+.vn-toggle{ display:inline-flex; align-items:center; gap:4px; margin-top:3px; padding:2px 10px; background:transparent; border:1px dashed #b08850; border-radius:999px; color:#6e5230; font-size:12px; cursor:pointer; transition:all 0.15s; font-family:inherit; font-weight:600; letter-spacing:0.04em; }
+.vn-toggle:hover{ background:#fff5e8; border-style:solid; border-color:#9b7a38; }
+.vn-toggle::before{ content:"訳"; font-family:"Noto Serif CJK JP",serif; font-size:12px; margin-right:2px; color:#9b7a38; }
+.vn-toggle.shown{ background:#fff5e8; border-style:solid; border-color:#9b7a38; color:#4a3010; }
+
+.compare-box{ margin:10px 20px; background:linear-gradient(180deg, #f9f3fb, #ecdef2); border:1px solid #d8c4e6; border-left:4px solid var(--plum); border-radius:10px; padding:10px 14px; font-size:15px; line-height:1.65; color:#3f2a52; }
+.compare-box .compare-title{ font-weight:800; font-family:"Noto Serif CJK JP",serif; color:var(--plum); margin-bottom:6px; font-size:15.5px; }
+.compare-box .compare-row{ margin:4px 0; padding-left:13px; position:relative; display:block; }
+.compare-box .compare-row::before{ content:"◆"; position:absolute; left:0; color:var(--plum); }
+.compare-box .compare-row .cmp-jp{ font-family:"Noto Serif CJK JP",serif; font-weight:700; color:var(--plum); margin-right:6px; }
+.compare-box .compare-row .cmp-vn{ color:#3f2a52; }
+
+.exercises{ margin:12px 20px; background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%); border:1px solid #e7d7be; border-radius:14px; padding:12px 18px; box-shadow:0 4px 10px rgba(60,38,19,0.04); }
+.exercises .ex-title{ display:inline-block; padding:5px 14px; background:linear-gradient(90deg, var(--rose) 0%, #c14e6e 100%); color:#fff; border-radius:8px; font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:15.5px; margin-bottom:10px; }
+.ex-q{ padding:8px 0; border-bottom:1px dotted #eadfce; }
+.ex-q:last-child{ border-bottom:none; }
+.q-stem{ font-size:16px; line-height:1.8; font-family:"Noto Serif CJK JP",serif; color:#222; }
+.q-stem .qnum{ display:inline-block; min-width:20px; font-weight:800; color:var(--rose); margin-right:3px; font-family:"EB Garamond",sans-serif; font-size:16.5px; }
+.q-options{ display:grid; grid-template-columns:repeat(2, 1fr); gap:5px; margin:6px 0 0 22px; }
+.q-opt{ padding:5px 10px; background:#fff; border:1px solid #e0d3b8; border-radius:7px; cursor:pointer; font-family:"Noto Serif CJK JP",serif; font-size:15.5px; transition:all 0.15s; display:flex; align-items:center; gap:5px; color:#4a3a20; }
+.q-opt::before{ content:attr(data-mark); color:var(--rose); font-weight:800; font-family:"EB Garamond",sans-serif; min-width:18px; }
+.q-opt:hover{ background:#fff5e8; border-color:#b08850; }
+.q-opt.correct{ background:linear-gradient(180deg, #e8f5e8, #d4edd4); border-color:var(--correct); color:var(--correct); font-weight:700; }
+.q-opt.correct::before{ color:var(--correct); }
+.q-opt.correct::after{ content:"✓"; margin-left:auto; color:var(--correct); font-weight:800; }
+.q-opt.wrong{ background:linear-gradient(180deg, #fce4e6, #f8d7da); border-color:var(--wrong); color:var(--wrong); }
+.q-opt.wrong::before{ color:var(--wrong); }
+.q-opt.wrong::after{ content:"✗"; margin-left:auto; color:var(--wrong); font-weight:800; }
+.q-foot{ display:flex; align-items:center; gap:8px; margin-top:5px; margin-left:22px; flex-wrap:wrap; }
+.answer-detail{ display:none; padding:5px 11px; background:#fef9ee; border:1px dashed #c7ab70; border-radius:7px; font-size:13.5px; color:#5a4520; margin-top:5px; margin-left:22px; line-height:1.5; }
+.answer-detail.shown{ display:block; }
+.answer-detail strong{ color:var(--accent); }
+
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:15.5px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .lesson-banner{ padding:20px 20px 18px; }
+  .grammar-card{ margin:14px 18px; }
+  .q-options{ grid-template-columns:1fr; }
+}
+@media print {
+  body{ background:#fff; font-size:14px; }
+  .page-shell{ padding:0; max-width:none; }
+  .cover, .toc-panel{ page-break-after:always; box-shadow:none; }
+  .lesson{ page-break-before:always; box-shadow:none; }
+  .vn-toggle{ display:none; }
+  .ex-vn, .q-vn{ display:block !important; }
+  .answer-detail{ display:block !important; }
+}
+
+
+#ttsBar{position:fixed;top:12px;right:12px;z-index:99999;background:rgba(255,255,255,0.97);border:1px solid var(--line,#cbd5dc);border-radius:14px;box-shadow:0 10px 30px rgba(20,30,50,0.18);padding:9px 14px;font-size:13px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;max-width:min(94vw,680px);font-family:Inter,"Segoe UI",sans-serif;color:#23303f;}
+#ttsBar .tts-title{font-weight:800;color:var(--accent,#1b3a5a);white-space:nowrap;}
+#ttsBar label{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+#ttsBar select{font-size:12.5px;max-width:230px;padding:2px 4px;border:1px solid var(--line,#cbd5dc);border-radius:7px;}
+#ttsBar input[type=range]{width:92px;vertical-align:middle;accent-color:var(--accent,#1b3a5a);}
+#ttsBar #ttsRateVal{min-width:30px;color:var(--accent,#1b3a5a);}
+#ttsBar .tts-hint{color:#b4533a;font-size:12px;flex-basis:100%;}
+.tts-btn{display:inline-flex;align-items:center;justify-content:center;margin-left:7px;width:23px;height:23px;border:none;border-radius:50%;background:var(--accent,#1b3a5a);color:#fff;font-size:12px;line-height:1;cursor:pointer;vertical-align:middle;padding:0;opacity:.82;transition:transform .12s ease,opacity .12s ease;-webkit-print-color-adjust:exact;}
+.tts-btn:hover{opacity:1;transform:scale(1.14);}
+.tts-btn.playing{background:var(--green,#2d7d46);animation:ttspulse .85s infinite;}
+.tts-btn.loading{background:#b08400;}
+@keyframes ttspulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(45,125,70,.5);}50%{opacity:.55;box-shadow:0 0 0 5px rgba(45,125,70,0);}}
+@media print{#ttsBar,.tts-btn{display:none!important;}}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:500;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.93);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:36px;height:36px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.16em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n1.html">N1</a> · <a href="../ngu-phap.html">Ngữ pháp</a> · Bài 6</div></div></a><a class="tl-back" href="../ngu-phap.html">← Danh sách bài</a></nav>
+<div class="page-shell">
+<div id="ttsBar">
+  <span class="tts-title">🎧 日本語 Audio</span>
+  <label>Nguồn
+    <select id="ttsProvider">
+      <option value="auto">Giọng máy (mặc định)</option>
+      <option value="voicevox">VOICEVOX (free)</option>
+      <option value="google">Google Neural2</option>
+      <option value="azure">Azure Nanami</option>
+    </select>
+  </label>
+  <label id="ttsVoiceWrap">Giọng <select id="ttsVoice"></select></label>
+  <label>Tốc độ <input id="ttsRate" type="range" min="0.5" max="1.4" step="0.05" value="0.95"><b id="ttsRateVal">0.95</b></label>
+  <span id="ttsHint" class="tts-hint"></span>
+</div>
+<article class="lesson" id="lesson-6">
+<div class="lesson-banner"><span class="lesson-kicker">6課 — Bài 6 · 様子・状態</span><h2>Trạng thái cao cấp</h2><div class="lesson-sub">3 mẫu: ～ながら(に) / ～まじき / ～にたえる・にたえない</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">6.1</span><h3 class="gc-jp">～ながら(に) / ～ながらの</h3><span class="gc-meaning">vẫn giữ nguyên trạng thái ~</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [V<sub>ます</sub> / N] + ながら(に)</div>
+<div class="explain"><strong>Giải thích:</strong> Diễn tả "vẫn giữ nguyên trạng thái N từ trước đến giờ". Khác với ～ながら (vừa làm vừa làm), mẫu này nhấn mạnh duy trì trạng thái. Văn trang trọng.</div>
+
+<div class="ex-box"><div class="ex-jp">① この<ruby>町<rt>まち</rt></ruby>は<ruby>昔<rt>むかし</rt></ruby><span class="target">ながら</span>の<ruby>風情<rt>ふぜい</rt></ruby>を<ruby>残<rt>のこ</rt></ruby>している。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Khu phố này vẫn giữ được không khí xưa cũ như ngày nào.</div></div>
+
+<div class="ex-box"><div class="ex-jp">② <ruby>彼<rt>かれ</rt></ruby>は<ruby>生<rt>う</rt></ruby>まれ<span class="target">ながらに</span>して<ruby>音楽<rt>おんがく</rt></ruby>の<ruby>才能<rt>さいのう</rt></ruby>がある。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Anh ấy có tài năng âm nhạc bẩm sinh từ khi ra đời.</div></div>
+
+<div class="ex-box"><div class="ex-jp">③ <ruby>彼女<rt>かのじょ</rt></ruby>は<ruby>涙<rt>なみだ</rt></ruby><span class="target">ながらに</span><ruby>謝<rt>あやま</rt></ruby>った。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Cô ấy đã xin lỗi trong nước mắt.</div></div>
+
+<div class="compare-box"><div class="compare-title">2 nghĩa của ながら</div><div class="compare-row"><span class="cmp-jp">V<sub>ます</sub>+ながら</span><span class="cmp-vn">"Vừa V vừa..." (đồng thời hành động).</span></div><div class="compare-row"><span class="cmp-jp">N+ながら(に)</span><span class="cmp-vn">"Vẫn giữ nguyên N" (trạng thái duy trì).</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 6.1</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>この<ruby>村<rt>むら</rt></ruby>では<ruby>古<rt>ふる</rt></ruby>く（____）の<ruby>祭<rt>まつ</rt></ruby>りが<ruby>続<rt>つづ</rt></ruby>けられている。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">からの</span><span class="q-opt" data-mark="②" data-correct="false">ものの</span><span class="q-opt" data-mark="③" data-correct="false">あげくの</span><span class="q-opt" data-mark="④" data-correct="false">きりの</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Ở ngôi làng này vẫn duy trì lễ hội từ xa xưa.</div><div class="answer-detail"><strong>Đáp án: ① からの</strong> — "Từ xưa đến nay" → 古くからの (= 昔ながらの). Đáp án từ から phù hợp ngữ pháp tự nhiên hơn ながら ở vị trí này; ngữ pháp 昔ながらの cũng tương đương.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>あの<ruby>歌手<rt>かしゅ</rt></ruby>は<ruby>生<rt>う</rt></ruby>まれ（____）の<ruby>美<rt>うつく</rt></ruby>しい<ruby>声<rt>こえ</rt></ruby>を<ruby>持<rt>も</rt></ruby>っている。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">あげく</span><span class="q-opt" data-mark="②" data-correct="true">ながら</span><span class="q-opt" data-mark="③" data-correct="false">きり</span><span class="q-opt" data-mark="④" data-correct="false">につけ</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Ca sĩ ấy có giọng hát đẹp trời sinh.</div><div class="answer-detail"><strong>Đáp án: ② ながら</strong> — V<sub>ます</sub>+ながらの = bẩm sinh, duy trì → ながら.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>彼<rt>かれ</rt></ruby>は<ruby>涙<rt>なみだ</rt></ruby>（____）に<ruby>過去<rt>かこ</rt></ruby>の<ruby>過<rt>あやま</rt></ruby>ちを<ruby>告白<rt>こくはく</rt></ruby>した。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">っぱなし</span><span class="q-opt" data-mark="②" data-correct="false">きり</span><span class="q-opt" data-mark="③" data-correct="true">ながら</span><span class="q-opt" data-mark="④" data-correct="false">こそ</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Anh ấy đã thú nhận lỗi lầm trong quá khứ trong nước mắt.</div><div class="answer-detail"><strong>Đáp án: ③ ながら</strong> — N+ながらに = "trong trạng thái N" → ながら.</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">6.2</span><h3 class="gc-jp">～まじき</h3><span class="gc-meaning">không được phép, không thể tha thứ</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [V<sub>る</sub>] + まじき + N　（する → するまじき／すまじき）</div>
+<div class="explain"><strong>Giải thích:</strong> Văn cổ điển, diễn tả "không được phép xảy ra, không thể tha thứ". Văn rất trang trọng, hùng biện, văn báo chí. Thường đi kèm "～にあるまじき" để chỉ "không thích hợp với vị trí, tư cách".</div>
+
+<div class="ex-box"><div class="ex-jp">① <ruby>政治家<rt>せいじか</rt></ruby>として<ruby>許<rt>ゆる</rt></ruby>す<span class="target">まじき</span><ruby>発言<rt>はつげん</rt></ruby>だ。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Đây là phát ngôn không thể tha thứ đối với một chính trị gia.</div></div>
+
+<div class="ex-box"><div class="ex-jp">② <ruby>教師<rt>きょうし</rt></ruby>にある<span class="target">まじき</span><ruby>行為<rt>こうい</rt></ruby>であり、<ruby>厳<rt>きび</rt></ruby>しく<ruby>処分<rt>しょぶん</rt></ruby>されるべきだ。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Đây là hành vi không thích hợp với một người thầy giáo, cần bị xử lý nghiêm khắc.</div></div>
+
+<div class="ex-box"><div class="ex-jp">③ <ruby>医師<rt>いし</rt></ruby>にある<span class="target">まじき</span><ruby>無責任<rt>むせきにん</rt></ruby>な<ruby>対応<rt>たいおう</rt></ruby>が<ruby>問題<rt>もんだい</rt></ruby>となっている。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Cách hành xử vô trách nhiệm không xứng với một bác sĩ đang là vấn đề bị lên án.</div></div>
+
+<div class="compare-box"><div class="compare-title">Lưu ý</div><div class="compare-row"><span class="cmp-jp">～まじき N</span><span class="cmp-vn">"N không được phép xảy ra".</span></div><div class="compare-row"><span class="cmp-jp">Nにあるまじき</span><span class="cmp-vn">"Không thích hợp với tư cách N".</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 6.2</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>公務員<rt>こうむいん</rt></ruby>にある（____）<ruby>不正<rt>ふせい</rt></ruby><ruby>行為<rt>こうい</rt></ruby>が<ruby>発覚<rt>はっかく</rt></ruby>した。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">まじき</span><span class="q-opt" data-mark="②" data-correct="false">べき</span><span class="q-opt" data-mark="③" data-correct="false">わけ</span><span class="q-opt" data-mark="④" data-correct="false">はず</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Hành vi gian dối không thích hợp với một công chức đã bị phát hiện.</div><div class="answer-detail"><strong>Đáp án: ① まじき</strong> — "Không xứng với tư cách N" → にあるまじき.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>武士道<rt>ぶしどう</rt></ruby>に<ruby>反<rt>はん</rt></ruby>する、<ruby>許<rt>ゆる</rt></ruby>す（____）<ruby>裏切<rt>うらぎ</rt></ruby>りの<ruby>行為<rt>こうい</rt></ruby>だ。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">べき</span><span class="q-opt" data-mark="②" data-correct="true">まじき</span><span class="q-opt" data-mark="③" data-correct="false">わけ</span><span class="q-opt" data-mark="④" data-correct="false">はず</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Đó là hành vi phản bội không thể tha thứ, đi ngược với tinh thần võ sĩ đạo.</div><div class="answer-detail"><strong>Đáp án: ② まじき</strong> — "Không được phép tha thứ" → 許すまじき.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>看護師<rt>かんごし</rt></ruby>にある（____）<ruby>暴言<rt>ぼうげん</rt></ruby>が<ruby>批判<rt>ひはん</rt></ruby>されている。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">べき</span><span class="q-opt" data-mark="②" data-correct="false">わけ</span><span class="q-opt" data-mark="③" data-correct="true">まじき</span><span class="q-opt" data-mark="④" data-correct="false">べからず</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Lời lẽ thô lỗ không xứng với một y tá đang bị chỉ trích.</div><div class="answer-detail"><strong>Đáp án: ③ まじき</strong> — Hành vi không xứng với tư cách → にあるまじき.</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">6.3</span><h3 class="gc-jp">～にたえる / ～にたえない</h3><span class="gc-meaning">đáng để ~ / không chịu nổi</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [V<sub>る</sub> / N] + にたえる / にたえない</div>
+<div class="explain"><strong>Giải thích:</strong> Hai nghĩa: (1) "Đáng để V" — đủ giá trị/điều kiện. (2) "Không chịu nổi" cảm xúc, sự thật. Văn trang trọng.</div>
+
+<div class="ex-box"><div class="ex-jp">① この<ruby>作品<rt>さくひん</rt></ruby>は<ruby>鑑賞<rt>かんしょう</rt></ruby><span class="target">にたえる</span>レベルだ。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Tác phẩm này đạt đến mức đáng để thưởng thức.</div></div>
+
+<div class="ex-box"><div class="ex-jp">② その<ruby>記事<rt>きじ</rt></ruby>は<ruby>読<rt>よ</rt></ruby>む<span class="target">にたえない</span><ruby>内容<rt>ないよう</rt></ruby>だった。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Bài báo đó có nội dung không thể chịu nổi để đọc.</div></div>
+
+<div class="ex-box"><div class="ex-jp">③ <ruby>突然<rt>とつぜん</rt></ruby>の<ruby>悲報<rt>ひほう</rt></ruby>に、<ruby>悲<rt>かな</rt></ruby>しみ<span class="target">にたえません</span>。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Trước tin buồn đột ngột, tôi không nén nổi nỗi đau.</div></div>
+
+<div class="compare-box"><div class="compare-title">2 nghĩa rõ rệt</div><div class="compare-row"><span class="cmp-jp">にたえる (tích cực)</span><span class="cmp-vn">"Đáng để V" — đủ tiêu chuẩn.</span></div><div class="compare-row"><span class="cmp-jp">にたえない (tiêu cực)</span><span class="cmp-vn">"Không chịu nổi" — quá đau khổ/tệ.</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 6.3</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>あの<ruby>映画<rt>えいが</rt></ruby>は<ruby>大人<rt>おとな</rt></ruby>の<ruby>鑑賞<rt>かんしょう</rt></ruby>（____）<ruby>傑作<rt>けっさく</rt></ruby>だ。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">にたえる</span><span class="q-opt" data-mark="②" data-correct="false">にたえない</span><span class="q-opt" data-mark="③" data-correct="false">に至る</span><span class="q-opt" data-mark="④" data-correct="false">にもまして</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Bộ phim đó là một kiệt tác đáng để người lớn thưởng thức.</div><div class="answer-detail"><strong>Đáp án: ① にたえる</strong> — "Đáng để xem" → にたえる.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>残酷<rt>ざんこく</rt></ruby>な<ruby>映像<rt>えいぞう</rt></ruby>で、<ruby>見<rt>み</rt></ruby>る（____）ものだった。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">にたえる</span><span class="q-opt" data-mark="②" data-correct="true">にたえない</span><span class="q-opt" data-mark="③" data-correct="false">にあたる</span><span class="q-opt" data-mark="④" data-correct="false">にひきかえ</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Đó là cảnh tàn khốc, không thể nào chịu nổi để xem.</div><div class="answer-detail"><strong>Đáp án: ② にたえない</strong> — "Không chịu nổi" → にたえない.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>恩師<rt>おんし</rt></ruby>の<ruby>訃報<rt>ふほう</rt></ruby>に、<ruby>悲<rt>かな</rt></ruby>しみ（____）。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">にたえる</span><span class="q-opt" data-mark="②" data-correct="false">に至る</span><span class="q-opt" data-mark="③" data-correct="true">にたえません</span><span class="q-opt" data-mark="④" data-correct="false">にもまして</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Trước tin buồn về thầy giáo cũ, tôi không nén được nỗi đau.</div><div class="answer-detail"><strong>Đáp án: ③ にたえません</strong> — "Không nén nổi cảm xúc" → 悲しみにたえない.</div></div>
+</div></div>
+
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-05.html">← Bài 5</a><a class="mid" href="../ngu-phap.html">▦ Danh sách bài</a><a href="bai-07.html">Bài 7 →</a></nav>
+<script>
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('vn-toggle')) {
+    const sibling = e.target.nextElementSibling;
+    if (sibling && (sibling.classList.contains('ex-vn') || sibling.classList.contains('q-vn'))) {
+      sibling.classList.toggle('collapsed');
+      const isHidden = sibling.classList.contains('collapsed');
+      e.target.textContent = isHidden ? 'Xem dịch' : 'Ẩn dịch';
+      e.target.classList.toggle('shown', !isHidden);
+    }
+    return;
+  }
+  if (e.target.classList.contains('q-opt')) {
+    const opt = e.target;
+    const parent = opt.parentElement;
+    const isCorrect = opt.dataset.correct === 'true';
+    parent.querySelectorAll('.q-opt').forEach(o => { o.classList.remove('correct','wrong'); });
+    if (isCorrect) opt.classList.add('correct');
+    else { opt.classList.add('wrong'); const correctOpt = parent.querySelector('.q-opt[data-correct="true"]'); if (correctOpt) correctOpt.classList.add('correct'); }
+    const question = opt.closest('.ex-q');
+    const detail = question && question.querySelector('.answer-detail');
+    if (detail) detail.classList.add('shown');
+    return;
+  }
+});
+
+;
+
+/* ============================================================
+   CONFIG GIỌNG ĐỌC — sửa ở đây để bật giọng neural chất lượng cao.
+   Đổi provider bằng menu "Nguồn" trên thanh, hoặc đặt mặc định bên dưới.
+   • VOICEVOX (miễn phí, tự nhiên): đặt voicevoxUrl tới server VOICEVOX của bạn.
+   • Google Cloud TTS (Neural2): nên dùng proxy để giấu key →
+       googleEndpoint = 'https://your-proxy/synthesize'  (proxy nhận {text} trả {audioContent})
+       hoặc test nhanh: googleApiKey = 'KEY' (KHÔNG để key thật trên web công khai!)
+   • Azure: azureKey + azureRegion (giọng ja-JP-NanamiNeural). Có thể cần proxy do CORS.
+   ============================================================ */
+window.TTS_CONFIG = window.TTS_CONFIG || {
+  voicevoxUrl   : 'http://localhost:50021', voicevoxSpeaker: 3,   // 3 = ずんだもん; đổi tùy ý
+  googleEndpoint: '',  googleApiKey: '',  googleVoice: 'ja-JP-Neural2-B',
+  azureEndpoint : '',  azureKey: '',  azureRegion: 'japaneast', azureVoice: 'ja-JP-NanamiNeural'
+};
+(function(){
+  var synth = ('speechSynthesis' in window) ? window.speechSynthesis : null;
+  var bar=document.getElementById('ttsBar'),
+      provSel=document.getElementById('ttsProvider'),
+      voiceWrap=document.getElementById('ttsVoiceWrap'),
+      sel=document.getElementById('ttsVoice'),
+      rate=document.getElementById('ttsRate'),
+      rateVal=document.getElementById('ttsRateVal'),
+      hint=document.getElementById('ttsHint'),
+      voices=[], saved={}, cur=null, cache={}, audio=new Audio();
+  try{ saved=JSON.parse(localStorage.getItem('ttsPref')||'{}'); }catch(e){}
+  if(saved.provider) provSel.value=saved.provider;
+  if(saved.rate){ rate.value=saved.rate; rateVal.textContent=saved.rate; }
+
+  /* ---------- giọng máy (Web Speech) ---------- */
+  function isJa(v){ return /ja(-|_|$)/i.test(v.lang)||/japan|japanese|日本/i.test(v.name); }
+  function score(v){ var n=(v.name||'').toLowerCase(),s=0;
+    if(/natural/.test(n))s+=120; if(/google/.test(n))s+=80; if(/online|server|neural/.test(n))s+=50;
+    if(/nanami|keita|ayumi|haruka|sayaka|ichiro|mizuki/.test(n))s+=45;
+    if(/enhanced|premium|plus/.test(n))s+=30; if(/kyoko|o-?ren|otoya|hattori/.test(n))s+=18;
+    if(/compact|eloquence|espeak|fallback/.test(n))s-=60; if(v.localService===false)s+=15; return s; }
+  function fillVoices(){
+    if(!synth) return; voices=synth.getVoices().filter(isJa).sort(function(a,b){return score(b)-score(a);});
+    sel.innerHTML='';
+    if(!voices.length){ var o=document.createElement('option'); o.value=''; o.textContent='(máy chưa có giọng Nhật)'; sel.appendChild(o); return; }
+    voices.forEach(function(v){ var o=document.createElement('option'); o.value=v.name;
+      o.textContent=v.name.replace(/Microsoft |Google /,'')+' · '+v.lang+(/natural/i.test(v.name)?' ★':''); sel.appendChild(o); });
+    if(saved.voice && voices.some(function(v){return v.name===saved.voice;})) sel.value=saved.voice; else sel.value=voices[0].name;
+  }
+  if(synth){ fillVoices(); if(synth.onvoiceschanged!==undefined) synth.onvoiceschanged=fillVoices; }
+
+  function updateUI(){
+    var p=provSel.value;
+    voiceWrap.style.display = (p==='auto') ? '' : 'none';
+    if(p==='auto'){
+      var best=voices[0];
+      hint.textContent = (best && /natural|google/i.test(best.name)) ? ''
+        : '💡 Giọng máy nghe chưa hay? Mở bằng Microsoft Edge (giọng "Natural" Nanami) hoặc chọn nguồn VOICEVOX/Google/Azure ở trên.';
+    } else if(p==='voicevox'){ hint.textContent = TTS_CONFIG.voicevoxUrl ? '' : '⚠ Chưa đặt voicevoxUrl trong CONFIG.'; }
+    else if(p==='google'){ hint.textContent = (TTS_CONFIG.googleEndpoint||TTS_CONFIG.googleApiKey) ? '' : '⚠ Chưa đặt googleEndpoint/googleApiKey trong CONFIG.'; }
+    else if(p==='azure'){ hint.textContent = (TTS_CONFIG.azureEndpoint||TTS_CONFIG.azureKey) ? '' : '⚠ Chưa đặt azureKey/azureRegion trong CONFIG.'; }
+  }
+  function persist(){ try{ localStorage.setItem('ttsPref',JSON.stringify({provider:provSel.value,voice:sel.value,rate:rate.value})); }catch(e){} }
+  provSel.addEventListener('change',function(){ stopAll(); updateUI(); persist(); });
+  rate.addEventListener('input',function(){ rateVal.textContent=parseFloat(rate.value).toFixed(2); persist(); });
+  sel.addEventListener('change',persist);
+  updateUI();
+
+  function textOf(el){ var c=el.cloneNode(true); c.querySelectorAll('rt').forEach(function(r){r.remove();}); return c.textContent.replace(/\s+/g,'').trim(); }
+  function getRate(){ return parseFloat(rate.value)||1; }
+
+  /* ---------- adapter API ---------- */
+  async function fetchVoicevox(text){
+    var C=TTS_CONFIG, base=C.voicevoxUrl.replace(/\/$/,'');
+    var q=await fetch(base+'/audio_query?speaker='+C.voicevoxSpeaker+'&text='+encodeURIComponent(text),{method:'POST'});
+    var query=await q.json(); query.speedScale=getRate();
+    var s=await fetch(base+'/synthesis?speaker='+C.voicevoxSpeaker,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(query)});
+    return URL.createObjectURL(await s.blob());
+  }
+  async function fetchGoogle(text){
+    var C=TTS_CONFIG, body={input:{text:text},voice:{languageCode:'ja-JP',name:C.googleVoice},audioConfig:{audioEncoding:'MP3',speakingRate:getRate()}};
+    var url = C.googleEndpoint || ('https://texttospeech.googleapis.com/v1/text:synthesize?key='+C.googleApiKey);
+    var r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    var j=await r.json(); return 'data:audio/mp3;base64,'+j.audioContent;
+  }
+  async function fetchAzure(text){
+    var C=TTS_CONFIG;
+    var ssml='<speak version="1.0" xml:lang="ja-JP"><voice name="'+C.azureVoice+'"><prosody rate="'+Math.round((getRate()-1)*100)+'%">'+text+'</prosody></voice></speak>';
+    var url=C.azureEndpoint || ('https://'+C.azureRegion+'.tts.speech.microsoft.com/cognitiveservices/v1');
+    var h={'Content-Type':'application/ssml+xml','X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3'};
+    if(C.azureKey) h['Ocp-Apim-Subscription-Key']=C.azureKey;
+    var r=await fetch(url,{method:'POST',headers:h,body:ssml});
+    return URL.createObjectURL(await r.blob());
+  }
+  function apiFetch(text){
+    var p=provSel.value, key=p+'|'+getRate()+'|'+text;
+    if(cache[key]) return Promise.resolve(cache[key]);
+    var fn = p==='voicevox'?fetchVoicevox : p==='google'?fetchGoogle : fetchAzure;
+    return fn(text).then(function(src){ cache[key]=src; return src; });
+  }
+
+  /* ---------- điều khiển phát ---------- */
+  function stopAll(){ if(synth) synth.cancel(); audio.pause(); document.querySelectorAll('.tts-btn.playing,.tts-btn.loading').forEach(function(b){b.classList.remove('playing','loading');}); cur=null; }
+  function deviceSpeak(el,btn){
+    if(!synth){ hint.textContent='Trình duyệt không hỗ trợ đọc; hãy chọn nguồn API.'; return; }
+    var u=new SpeechSynthesisUtterance(textOf(el)); u.lang='ja-JP';
+    var v=voices.find(function(x){return x.name===sel.value;}); if(v) u.voice=v; u.rate=getRate();
+    u.onend=u.onerror=function(){ btn.classList.remove('playing'); if(cur===btn)cur=null; };
+    btn.classList.add('playing'); cur=btn; synth.speak(u);
+  }
+  function play(el,btn){
+    var wasCur=(cur===btn); stopAll(); if(wasCur) return;
+    var p=provSel.value;
+    if(p==='auto'){ deviceSpeak(el,btn); return; }
+    btn.classList.add('loading'); cur=btn;
+    apiFetch(textOf(el)).then(function(src){
+      btn.classList.remove('loading'); btn.classList.add('playing');
+      audio.src=src; audio.playbackRate=1; audio.onended=function(){ btn.classList.remove('playing'); if(cur===btn)cur=null; };
+      return audio.play();
+    }).catch(function(e){ console.warn('TTS API lỗi → dùng giọng máy:',e); btn.classList.remove('loading'); deviceSpeak(el,btn); });
+  }
+
+  document.querySelectorAll('.jp, .ex-jp').forEach(function(el){
+    if(el.closest('.main-header')||el.closest('.cover')||el.closest('#ttsBar')) return;
+    if(textOf(el).length<2) return;
+    var b=document.createElement('button'); b.className='tts-btn'; b.type='button'; b.title='Nghe đọc (tiếng Nhật)'; b.textContent='🔊';
+    b.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); play(el,b); });
+    el.insertAdjacentElement('afterend',b);
+  });
+})();
+</script>
+</body></html>

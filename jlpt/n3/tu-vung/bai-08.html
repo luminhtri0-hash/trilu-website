@@ -1,0 +1,522 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 8 · スポーツ、芸術 — Từ vựng N3 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N3 — Bài 8: スポーツ、芸術. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#6e1831;
+  --accent-dark:#4f0f24;
+  --accent-2:#9b7a38;
+  --accent-3:#c7ab70;
+  --line:#dfcfbb;
+  --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(110,24,49,0.08), transparent 22%),
+    linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+/* ============ COVER ============ */
+.cover{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 36%, #3a0f1b 100%);
+  color:#fff; border-radius:30px; box-shadow:var(--shadow);
+  padding:60px 64px 50px; margin-bottom:26px;
+}
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+/* ============ TOC ============ */
+.toc-panel{
+  margin:0 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96));
+  border:1px solid rgba(155,122,56,0.20);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:14px 16px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(110,24,49,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item.disabled{ opacity:0.45; pointer-events:none; }
+.toc-item-number{ display:inline-block; min-width:34px; padding:2px 8px; margin-right:8px; border-radius:8px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:11px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:13.5px; }
+.toc-item-summary{ display:block; margin-top:5px; color:var(--muted); font-size:12px; line-height:1.45; font-family:"Noto Serif CJK JP",serif; }
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(155,122,56,0.16);
+  border-radius:28px; box-shadow:var(--shadow);
+  padding:0 0 40px; margin-bottom:40px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  padding:30px 44px 28px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 50%, #3a0f1b 100%);
+  color:#fff;
+}
+.lesson-banner::after{
+  content:"語彙"; position:absolute; right:-10px; bottom:-50px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:8px; }
+.lesson-banner h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:30px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:14px; color:rgba(255,255,255,0.82); }
+
+.doc-body{ padding:30px 44px 10px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #57132a 0%, #6e1831 52%, #7f3b52 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark); position:absolute; right:18px; top:50%; transform:translateY(-50%);
+  font-family:"Noto Serif CJK JP",serif; font-size:60px; line-height:1; color:rgba(255,255,255,0.12); font-weight:700;
+}
+.section-kicker{ display:block; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:rgba(255,255,255,0.78); }
+.section-head h3{
+  margin:0; padding:0; border:none; color:#fff; background:none;
+  font-family:"Noto Serif CJK JP",serif; font-size:24px; line-height:1.2; font-weight:700;
+}
+.section-head .section-vn{ display:block; margin-top:4px; font-size:13px; font-style:italic; color:rgba(255,255,255,0.82); font-family:Inter,sans-serif; }
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{ margin:16px 0 24px; }
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff; border:1px solid var(--line-2);
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 26px rgba(60,38,19,0.05);
+  font-size:13.5px;
+}
+thead th{
+  background:linear-gradient(180deg, #fcf5ea 0%, #f2e3cf 100%);
+  color:var(--accent); font-weight:800;
+  padding:13px 14px; text-align:left; font-size:13px;
+  border-bottom:1px solid var(--line-2);
+}
+thead th:not(:last-child){ border-right:1px solid var(--line-2); }
+tbody td{
+  padding:18px 14px; vertical-align:top;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+}
+tbody td:last-child{ border-right:none; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody tr:nth-child(even) td{ background:#fffaf4; }
+
+.col-stt{ width:5%; text-align:center; font-weight:800; color:var(--accent); font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:18px; }
+.col-vocab{ width:22%; }
+.col-explain{ width:30%; }
+.col-example{ width:43%; }
+
+.vocab-wrapper{ display:flex; flex-direction:column; gap:4px; }
+.vocab-kanji{ font-size:26px; font-weight:700; color:#222; font-family:"Noto Serif CJK JP","Yu Mincho",serif; line-height:1.15; }
+.vocab-kanji ruby{ ruby-position:over; ruby-align:center; }
+.vocab-kanji rt{ font-size:11px; color:#888; font-family:sans-serif; font-weight:500; }
+.vocab-hanviet{ font-size:11px; color:var(--accent-2); font-weight:800; letter-spacing:1.2px; margin-top:4px; }
+.vocab-pos{ display:inline-block; font-size:10.5px; color:#fff; background:var(--green); padding:2px 8px; border-radius:4px; font-weight:600; letter-spacing:0.05em; margin-top:6px; align-self:flex-start; }
+.vocab-pos.pos-na{ background:var(--terra); }
+.vocab-pos.pos-i{ background:var(--teal); }
+.vocab-pos.pos-adv{ background:var(--plum); }
+.vocab-pos.pos-suru{ background:#8a4a6a; }
+.vocab-pos.pos-katakana{ background:var(--accent-2); }
+.vocab-meaning{ font-size:14px; color:var(--accent); font-weight:700; margin-top:8px; line-height:1.5; }
+
+/* Explain box */
+.kanji-break{ background:linear-gradient(180deg, #fffdf9, #fbf3e8); border:1px solid #e7d7be; border-left:4px solid var(--accent-2); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.65; color:#3b3320; }
+.kanji-break .kchar{ font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; color:var(--accent); margin-right:4px; }
+.kanji-break .kreading{ color:var(--accent-2); font-weight:700; font-size:11.5px; letter-spacing:0.05em; }
+.kanji-break .kmean{ color:#5f4830; }
+.kanji-break .combine{ margin-top:8px; padding-top:8px; border-top:1px dashed #d8c8ad; font-style:italic; color:#6e5230; }
+.kanji-break .combine strong{ font-style:normal; color:var(--accent); }
+.katakana-origin{ background:linear-gradient(180deg, #fff5f8, #faeaf0); border:1px solid #f0d8e2; border-left:4px solid #b13e6a; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#5a3a4a; }
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{ background:linear-gradient(180deg, #f7faf2, #ecf2e2); border:1px solid #d8e2c8; border-left:4px solid var(--green); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#3e5a3a; }
+.wago-note strong{ color:var(--green); }
+
+/* Example box */
+.ex-box{ background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent); padding:13px 16px; border-radius:0 12px 12px 0; }
+.ex-jp{ font-size:15px; color:#222; margin-bottom:8px; line-height:1.95; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn{ font-size:13.5px; color:#6e5230; font-style:italic; line-height:1.55; padding-top:6px; border-top:1px dotted #e2d4b8; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:30px 0 24px;
+  padding:0;
+  background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+  border:1px solid #e7d7be;
+  border-radius:22px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(60,38,19,0.05);
+}
+.exercise-banner{
+  display:flex; align-items:center; gap:14px;
+  padding:18px 24px;
+  background:linear-gradient(90deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff;
+}
+.exercise-icon{ width:42px; height:42px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"EB Garamond","Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:11.5px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:2px; letter-spacing:0.04em; }
+.exercise-body{ padding:22px 26px; }
+
+.exercise{ background:#fff; border:1px solid #ecdec3; border-radius:14px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 14px rgba(60,38,19,0.04); }
+.exercise:last-child{ margin-bottom:0; }
+.exercise-title{ font-weight:700; color:var(--accent); margin-bottom:12px; font-size:14px; display:flex; align-items:center; gap:10px; padding-bottom:10px; border-bottom:1px dashed #e7d7be; }
+.exercise-title .ex-no{ background:var(--accent-2); color:#fff; padding:3px 10px; border-radius:6px; font-size:11.5px; letter-spacing:0.08em; }
+.choice-pool{ background:linear-gradient(180deg, #fff7e8, #f7e4c1); border:1px dashed var(--accent-2); border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:14px; font-family:"Noto Serif CJK JP",serif; color:#674c1b; }
+.choice-pool strong{ color:var(--accent); }
+
+.ex-q{ padding:9px 0; border-bottom:1px dotted #eadfce; font-size:14px; line-height:1.85; font-family:"Noto Serif CJK JP",serif; }
+.ex-q:last-child{ border-bottom:none; }
+.ex-q .qnum{ display:inline-block; min-width:24px; font-weight:700; color:var(--accent); margin-right:4px; font-family:"EB Garamond",sans-serif; font-size:14.5px; }
+.ex-q .blank{ display:inline-block; min-width:90px; border-bottom:1.5px solid #b08850; padding:0 8px; margin:0 3px; text-align:center; color:transparent; cursor:pointer; transition:all .15s; }
+.ex-q .blank:hover{ background:rgba(199,171,112,0.12); }
+.ex-q .blank.shown{ color:var(--accent); font-weight:700; border-bottom-color:var(--accent); background:rgba(199,171,112,0.15); }
+
+.multi-choice{ display:block; margin:4px 0 4px 30px; font-size:13.5px; color:#444; }
+.multi-choice .opt-num{ color:var(--accent-2); font-weight:700; margin-right:6px; }
+.match-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin-top:12px; }
+.match-col{ background:#fffaf2; border:1px solid #ecdec3; border-radius:12px; padding:14px; }
+.match-col h5{ margin:0 0 10px; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; }
+.match-item{ padding:7px 10px; font-size:14px; border-radius:6px; }
+.match-item.jp{ font-family:"Noto Serif CJK JP",serif; }
+.match-item .mlabel{ display:inline-block; min-width:24px; font-weight:800; color:var(--accent-2); }
+
+.answer-toggle{
+  display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+  padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:13px; cursor:pointer; transition:all 0.2s; font-family:inherit;
+  box-shadow:0 6px 14px rgba(110,24,49,0.18);
+}
+.answer-toggle:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(110,24,49,0.28); }
+.answer-toggle::before{ content:"鍵"; font-family:"Noto Serif CJK JP",serif; margin-right:4px; }
+.answer-box{ display:none; margin-top:14px; padding:14px 16px; background:linear-gradient(180deg, #fffbef, #f8eed4); border:1px solid #d9bb88; border-left:4px solid var(--accent-2); border-radius:10px; font-size:13.5px; line-height:1.7; color:#5a4520; }
+.answer-box strong{ color:var(--accent); }
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  table.vocab-table{ min-width:880px; }
+  .table-shell{ overflow-x:auto; }
+  .match-grid{ grid-template-columns:1fr; }
+}
+
+/* === @page: dùng A4 LANDSCAPE cho bài học để có chỗ cho 4 cột === */
+@media print {
+  /* Cover + TOC: portrait */
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  /* Trang bài học: landscape (rộng hơn để 4 cột vừa) */
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+
+  /* === RESET cơ bản === */
+  html, body{ background:#fff !important; }
+  body{ font-size:11px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; }
+
+  /* === COVER === */
+  .cover{ page-break-after:always; break-after:page; box-shadow:none; border-radius:18px; padding:42px 38px; }
+  .cover-title{ font-size:36px; }
+  .cover-mark{ font-size:11rem !important; }
+
+  /* === TOC === */
+  .toc-panel{ page-break-after:always; break-after:page; box-shadow:none; }
+  .toc-grid{ grid-template-columns:repeat(3, 1fr) !important; }
+  .toc-item{ page-break-inside:avoid !important; break-inside:avoid !important; }
+
+  /* === Mỗi BÀI bắt sang trang mới === */
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:16px 18px 12px !important; }
+
+  /* === GỠ BỎ rào cản min-width === */
+  /* QUAN TRỌNG: ghi đè responsive rule khiến bảng tràn ngang */
+  .table-shell{ overflow:visible !important; overflow-x:visible !important; margin:8px 0 14px !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; box-shadow:none !important; table-layout:fixed !important; }
+
+  /* === KHÔNG cắt giữa khối === */
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:18px 22px !important; }
+  .lesson-banner h2{ font-size:22px !important; }
+  .section-head{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:10px 16px !important; margin:10px 0 8px !important; }
+  .section-head h3{ font-size:18px !important; }
+  .section-head::after{ font-size:36px !important; }
+  .exercise-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:12px 18px !important; }
+  .exercise-banner h4{ font-size:14px !important; }
+  .exercise-block{ page-break-inside:auto; margin:14px 0 !important; }
+  .exercise-body{ padding:14px 16px !important; }
+  .exercise{ page-break-inside:avoid !important; break-inside:avoid !important; padding:12px 14px !important; margin-bottom:10px !important; }
+  .footer-card{ page-break-inside:avoid; break-inside:avoid; }
+
+  /* === BẢNG TỪ VỰNG === */
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table tbody{ display:table-row-group; }
+  table.vocab-table thead th{ padding:8px 8px !important; font-size:11px !important; }
+  /* Mỗi tr (= 1 từ vựng) giữ nguyên trên 1 trang */
+  table.vocab-table tr{ page-break-inside:avoid !important; break-inside:avoid !important; page-break-after:auto; }
+  table.vocab-table tbody td{ padding:10px 8px !important; font-size:11px !important; }
+
+  /* === Co cell content nhỏ lại cho vừa khổ === */
+  .vocab-wrapper{ gap:2px !important; }
+  .vocab-kanji{ font-size:18px !important; line-height:1.1 !important; }
+  .vocab-kanji rt{ font-size:9px !important; }
+  .vocab-hanviet{ font-size:9.5px !important; letter-spacing:0.8px !important; margin-top:2px !important; }
+  .vocab-pos{ font-size:8.5px !important; padding:1px 5px !important; margin-top:3px !important; }
+  .vocab-meaning{ font-size:11px !important; margin-top:4px !important; line-height:1.35 !important; }
+
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:7px 9px !important; font-size:10.5px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important; break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:14px !important; }
+  .kanji-break .kreading{ font-size:9.5px !important; }
+  .kanji-break .combine{ margin-top:5px !important; padding-top:5px !important; }
+
+  .ex-box{ padding:8px 10px !important; page-break-inside:avoid !important; break-inside:avoid !important; }
+  .ex-jp{ font-size:12px !important; line-height:1.75 !important; margin-bottom:5px !important; }
+  .ex-jp rt{ font-size:8px !important; }
+  .ex-vn{ font-size:10.5px !important; line-height:1.45 !important; padding-top:4px !important; }
+
+  /* === BÀI TẬP === */
+  .ex-q{ page-break-inside:avoid; break-inside:avoid; font-size:11.5px !important; line-height:1.7 !important; padding:6px 0 !important; }
+  .choice-pool{ font-size:11.5px !important; padding:7px 11px !important; }
+  .multi-choice{ font-size:11px !important; }
+  .answer-toggle{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; break-inside:avoid; font-size:11px !important; padding:10px 12px !important; }
+  .match-grid{ grid-template-columns:1fr 1fr !important; }
+  .match-item{ font-size:11px !important; padding:4px 6px !important; }
+}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:200;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.92);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:38px;height:38px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.18em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}.tl-bc a:hover{color:var(--tl-ink)}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-wrap{max-width:1000px;margin:0 auto;padding:24px}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px;transition:all .2s}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3;pointer-events:none}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n3.html">N3</a> · <a href="../tu-vung.html">Từ vựng</a> · Bài 8</div></div></a><a class="tl-back" href="../tu-vung.html">← Danh sách bài</a></nav>
+<div class="tl-wrap">
+<article class="document" id="lesson-8">
+<div class="lesson-banner">
+  <span class="lesson-kicker">Bài 08 — 趣味と旅行 1</span>
+  <h2>スポーツ、芸術 (Thể thao &amp; Nghệ thuật)</h2>
+  <div class="lesson-sub">Sở thích &amp; du lịch 1: Thi đấu thể thao và nghệ thuật biểu diễn (25 từ vựng)</div>
+</div>
+<div class="doc-body">
+
+<div class="section-head" data-mark="技"><span class="section-kicker">Phần 8-1 · 13 từ</span><h3>スポーツ</h3><span class="section-vn">Thể thao và thi đấu</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">1</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>試<rt>し</rt></ruby><ruby>合<rt>あい</rt></ruby></span><span class="vocab-hanviet">THÍ HỢP</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Trận đấu, cuộc thi đấu</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">試</span><span class="kreading">THÍ · し / こころ(みる)</span> — <span class="kmean">thử, thi</span></div><div><span class="kchar">合</span><span class="kreading">HỢP · あ(う) / ごう</span> — <span class="kmean">hợp, đối đầu</span></div><div class="combine"><strong>Ghép:</strong> "Thử + đối đầu" → <strong>trận đấu</strong>. Cụm: 試合に出る (ra sân thi đấu), 試合に勝つ / 負ける (thắng/thua).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">サッカーの<span class="target"><ruby>試<rt>し</rt></ruby><ruby>合<rt>あい</rt></ruby></span>が<ruby>始<rt>はじ</rt></ruby>まるのをワクワクしながら<ruby>待<rt>ま</rt></ruby>っている。</div><div class="ex-vn">Tôi đang hồi hộp chờ trận đấu bóng đá bắt đầu.</div></div></td></tr>
+
+<tr><td class="col-stt">2</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>活<rt>かつ</rt></ruby><ruby>躍<rt>やく</rt></ruby></span><span class="vocab-hanviet">HOẠT DƯỢC</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Sự thể hiện xuất sắc, hoạt động nổi bật</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">活</span><span class="kreading">HOẠT · かつ</span> — <span class="kmean">sống, hoạt động</span></div><div><span class="kchar">躍</span><span class="kreading">DƯỢC · やく</span> — <span class="kmean">nhảy, vọt lên</span></div><div class="combine"><strong>Ghép:</strong> "Sống động + bật lên" → <strong>thể hiện xuất sắc</strong>. Cụm: 活躍する (tỏa sáng), 活躍に期待する (kỳ vọng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">あの<ruby>選<rt>せん</rt></ruby><ruby>手<rt>しゅ</rt></ruby>の<span class="target"><ruby>活<rt>かつ</rt></ruby><ruby>躍<rt>やく</rt></ruby></span>にみんな<ruby>期<rt>き</rt></ruby><ruby>待<rt>たい</rt></ruby>している。</div><div class="ex-vn">Mọi người đều kỳ vọng vào màn thể hiện xuất sắc của tuyển thủ đó.</div></div></td></tr>
+
+<tr><td class="col-stt">3</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>応<rt>おう</rt></ruby><ruby>援<rt>えん</rt></ruby></span><span class="vocab-hanviet">ỨNG VIỆN</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Cổ vũ, ủng hộ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">応</span><span class="kreading">ỨNG · おう / こた(える)</span> — <span class="kmean">đáp ứng</span></div><div><span class="kchar">援</span><span class="kreading">VIỆN · えん</span> — <span class="kmean">giúp đỡ</span></div><div class="combine"><strong>Ghép:</strong> "Đáp + giúp đỡ" → <strong>cổ vũ</strong>. Cụm: 応援する (cổ vũ), 応援団 (đội cổ vũ), 応援歌 (bài hát cổ vũ).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>日<rt>に</rt></ruby><ruby>本<rt>ほん</rt></ruby>チームを<ruby>一<rt>いっ</rt></ruby><ruby>生<rt>しょう</rt></ruby><ruby>懸<rt>けん</rt></ruby><ruby>命<rt>めい</rt></ruby><span class="target"><ruby>応<rt>おう</rt></ruby><ruby>援<rt>えん</rt></ruby></span>しています。</div><div class="ex-vn">Tôi đang hết mình cổ vũ cho đội tuyển Nhật Bản.</div></div></td></tr>
+
+<tr><td class="col-stt">4</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>出<rt>しゅつ</rt></ruby><ruby>場<rt>じょう</rt></ruby></span><span class="vocab-hanviet">XUẤT TRƯỜNG</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Ra sân, tham gia thi đấu</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">出</span><span class="kreading">XUẤT · しゅつ / で(る)</span> — <span class="kmean">ra</span></div><div><span class="kchar">場</span><span class="kreading">TRƯỜNG · じょう / ば</span> — <span class="kmean">nơi, sân</span></div><div class="combine"><strong>Ghép:</strong> "Ra sân" → <strong>tham gia thi đấu/sự kiện</strong>. Phân biệt: 参加 (tham gia chung); 出場 chỉ chuyên cho thi đấu hoặc biểu diễn.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">オリンピックに<span class="target"><ruby>出<rt>しゅつ</rt></ruby><ruby>場<rt>じょう</rt></ruby></span>するのが<ruby>夢<rt>ゆめ</rt></ruby>です。</div><div class="ex-vn">Ước mơ của tôi là được tham gia Olympic.</div></div></td></tr>
+
+<tr><td class="col-stt">5</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>投<rt>な</rt></ruby>げる / <ruby>打<rt>う</rt></ruby>つ / <ruby>蹴<rt>け</rt></ruby>る</span><span class="vocab-hanviet">ĐẦU / ĐẢ / TÚC</span><span class="vocab-pos">Động từ tha động</span><span class="vocab-meaning">Ném / Đánh / Đá (bóng)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">投</span><span class="kreading">ĐẦU · な(げる)</span> — <span class="kmean">ném, quăng</span></div><div><span class="kchar">打</span><span class="kreading">ĐẢ · う(つ) / だ</span> — <span class="kmean">đánh, đập</span></div><div><span class="kchar">蹴</span><span class="kreading">TÚC · け(る) / しゅう</span> — <span class="kmean">đá, đạp</span></div><div class="combine"><strong>Bộ 3 động từ bóng:</strong> ボールを投げる (ném bóng - bóng chày), 打つ (đánh - cầu lông, gậy), 蹴る (đá - bóng đá).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">サッカー<ruby>選<rt>せん</rt></ruby><ruby>手<rt>しゅ</rt></ruby>はボールを<ruby>強<rt>つよ</rt></ruby>く<span class="target"><ruby>蹴<rt>け</rt></ruby>って</span>、ゴールに<ruby>入<rt>い</rt></ruby>れた。</div><div class="ex-vn">Cầu thủ bóng đá đã đá mạnh quả bóng và ghi bàn.</div></div></td></tr>
+
+<tr><td class="col-stt">6</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>優<rt>ゆう</rt></ruby><ruby>勝<rt>しょう</rt></ruby></span><span class="vocab-hanviet">ƯU THẮNG</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Chức vô địch, vô địch giải</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">優</span><span class="kreading">ƯU · ゆう / やさ(しい)</span> — <span class="kmean">ưu tú, vượt trội</span></div><div><span class="kchar">勝</span><span class="kreading">THẮNG · しょう / か(つ)</span> — <span class="kmean">thắng</span></div><div class="combine"><strong>Ghép:</strong> "Vượt trội + thắng" → <strong>vô địch</strong>. Cụm: 優勝を争う (tranh chức vô địch), 優勝する (giành chức vô địch).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">2チームが<span class="target"><ruby>優<rt>ゆう</rt></ruby><ruby>勝<rt>しょう</rt></ruby></span>を<ruby>争<rt>あらそ</rt></ruby>っている。</div><div class="ex-vn">Hai đội đang tranh chấp chức vô địch.</div></div></td></tr>
+
+<tr><td class="col-stt">7</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>悔<rt>くや</rt></ruby>しい</span><span class="vocab-hanviet">HỐI</span><span class="vocab-pos pos-i">Tính từ -i</span><span class="vocab-meaning">Tiếc nuối, ấm ức, tức tối</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">悔</span><span class="kreading">HỐI · かい / くや(しい)</span> — <span class="kmean">hối hận, tiếc</span></div><div class="combine"><strong>Sắc thái:</strong> Cảm xúc bực bội/tiếc nuối khi không đạt được dù đã cố gắng. Khác 残念 (đáng tiếc - nhẹ hơn). Cùng chữ với 後悔 (hối hận).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">1<ruby>点<rt>てん</rt></ruby><ruby>差<rt>さ</rt></ruby>で<ruby>負<rt>ま</rt></ruby>けて、とても<span class="target"><ruby>悔<rt>くや</rt></ruby>しい</span>です。</div><div class="ex-vn">Thua chỉ vì cách biệt 1 điểm, ấm ức quá.</div></div></td></tr>
+
+<tr><td class="col-stt">8</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>代<rt>だい</rt></ruby><ruby>表<rt>ひょう</rt></ruby></span><span class="vocab-hanviet">ĐẠI BIỂU</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Đại diện, đại biểu</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">代</span><span class="kreading">ĐẠI · だい / か(わる)</span> — <span class="kmean">thay thế</span></div><div><span class="kchar">表</span><span class="kreading">BIỂU · ひょう / おもて</span> — <span class="kmean">biểu hiện, mặt</span></div><div class="combine"><strong>Ghép:</strong> "Người thay mặt" → <strong>đại diện</strong>. Cụm: 日本の代表に選ばれる (được chọn làm đại diện Nhật Bản), 代表者 (người đại diện).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>彼<rt>かれ</rt></ruby>は<ruby>日<rt>に</rt></ruby><ruby>本<rt>ほん</rt></ruby>の<span class="target"><ruby>代<rt>だい</rt></ruby><ruby>表<rt>ひょう</rt></ruby></span>に<ruby>選<rt>えら</rt></ruby>ばれて、オリンピックに<ruby>出<rt>しゅつ</rt></ruby><ruby>場<rt>じょう</rt></ruby>した。</div><div class="ex-vn">Cậu ấy được chọn làm đại diện cho Nhật Bản và đã tham dự Olympic.</div></div></td></tr>
+
+<tr><td class="col-stt">9</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">トレーニング</span><span class="vocab-hanviet">(katakana)</span><span class="vocab-pos pos-katakana">Danh từ (gốc Anh)</span><span class="vocab-meaning">Tập luyện, training</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Nguồn gốc:</strong> Từ tiếng Anh <em>"training"</em>. Đồng nghĩa Nhật: 練習 (luyện tập chung), 訓練 (huấn luyện). トレーニング chuyên dùng cho thể thao, gym. Cụm: 厳しいトレーニング (luyện tập khắc nghiệt).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">プロの<ruby>選<rt>せん</rt></ruby><ruby>手<rt>しゅ</rt></ruby>は<ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby><ruby>厳<rt>きび</rt></ruby>しい<span class="target">トレーニング</span>を<ruby>続<rt>つづ</rt></ruby>けている。</div><div class="ex-vn">Các tuyển thủ chuyên nghiệp duy trì luyện tập khắc nghiệt mỗi ngày.</div></div></td></tr>
+
+<tr><td class="col-stt">10</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">コース / ゴール</span><span class="vocab-hanviet">(katakana)</span><span class="vocab-pos pos-katakana">Danh từ (gốc Anh)</span><span class="vocab-meaning">Đường đua / Đích đến (mục tiêu)</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Bộ đôi katakana:</strong><br/>① <strong>コース</strong> (course) - đường đua, lộ trình. Cụm: コースを走る.<br/>② <strong>ゴール</strong> (goal) - vạch đích, khung thành, mục tiêu. Cụm: トップでゴール (về đích vị trí số 1), ゴールを決める (ghi bàn).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>長<rt>なが</rt></ruby>い<span class="target">コース</span>を<ruby>走<rt>はし</rt></ruby>って、トップで<span class="target">ゴール</span>した。</div><div class="ex-vn">Anh ấy đã chạy cả đường đua dài và về đích ở vị trí dẫn đầu.</div></div></td></tr>
+
+<tr><td class="col-stt">11</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">あきらめる</span><span class="vocab-hanviet">(và-go)</span><span class="vocab-pos">Động từ</span><span class="vocab-meaning">Từ bỏ, bỏ cuộc, đầu hàng</span></div></td><td class="col-explain"><div class="wago-note"><strong>Từ thuần Nhật:</strong> Kanji ít dùng「諦める」. Sắc thái: Chấp nhận không thể đạt được nên dừng cố gắng. Khác từ 止める (ngừng làm chung). Cụm: 途中であきらめる, 夢をあきらめる.</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>苦<rt>くる</rt></ruby>しくても、<ruby>途<rt>と</rt></ruby><ruby>中<rt>ちゅう</rt></ruby>で<span class="target">あきらめ</span>たくない。</div><div class="ex-vn">Dù có khổ sở thì tôi cũng không muốn bỏ cuộc giữa chừng.</div></div></td></tr>
+
+<tr><td class="col-stt">12</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>記<rt>き</rt></ruby><ruby>録<rt>ろく</rt></ruby></span><span class="vocab-hanviet">KÝ LỤC</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Kỷ lục, ghi chép</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">記</span><span class="kreading">KÝ · き / しる(す)</span> — <span class="kmean">ghi chép</span></div><div><span class="kchar">録</span><span class="kreading">LỤC · ろく</span> — <span class="kmean">ghi lại</span></div><div class="combine"><strong>Ghép:</strong> "Ghi + lục lại" → <strong>kỷ lục</strong>. Hai nghĩa: ① Thành tích thể thao: 記録を破る (phá kỷ lục). ② Ghi chép: 記録する (ghi lại sự kiện).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>選<rt>せん</rt></ruby><ruby>手<rt>しゅ</rt></ruby>は<ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby><span class="target"><ruby>記<rt>き</rt></ruby><ruby>録<rt>ろく</rt></ruby></span>を<ruby>破<rt>やぶ</rt></ruby>った。</div><div class="ex-vn">Tuyển thủ này đã phá kỷ lục thế giới.</div></div></td></tr>
+
+<tr><td class="col-stt">13</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>選<rt>せん</rt></ruby><ruby>手<rt>しゅ</rt></ruby></span><span class="vocab-hanviet">TUYỂN THỦ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Vận động viên, tuyển thủ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">選</span><span class="kreading">TUYỂN · せん / えら(ぶ)</span> — <span class="kmean">chọn lựa</span></div><div><span class="kchar">手</span><span class="kreading">THỦ · しゅ / て</span> — <span class="kmean">tay, người làm</span></div><div class="combine"><strong>Ghép:</strong> "Người được chọn ra" → <strong>tuyển thủ</strong>. Cụm: 選手になる (trở thành tuyển thủ), プロ選手 (vận động viên chuyên nghiệp).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">あの<span class="target"><ruby>選<rt>せん</rt></ruby><ruby>手<rt>しゅ</rt></ruby></span>は<ruby>子<rt>こ</rt></ruby><ruby>供<rt>ども</rt></ruby>たちの<ruby>憧<rt>あこが</rt></ruby>れだ。</div><div class="ex-vn">Tuyển thủ đó là thần tượng của các em nhỏ.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 A — Ôn luyện cụm Thể thao</h4><span class="ex-subtitle">Hai dạng câu hỏi sau khi học 13 từ ở mục 8-1</span></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 A1</span>文脈規定 — Điền từ vào chỗ trống</div>
+      <div class="choice-pool"><strong>選択肢:</strong> 試合 / 応援 / 出場 / 優勝 / 記録 / トレーニング</div>
+      <div class="ex-q"><span class="qnum">(1)</span><ruby>日<rt>に</rt></ruby><ruby>本<rt>ほん</rt></ruby>チームを<ruby>一<rt>いっ</rt></ruby><ruby>生<rt>しょう</rt></ruby><ruby>懸<rt>けん</rt></ruby><ruby>命<rt>めい</rt></ruby> <span class="blank" data-ans="応援">　　　　</span> した。</div>
+      <div class="ex-q"><span class="qnum">(2)</span><ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby><ruby>厳<rt>きび</rt></ruby>しい <span class="blank" data-ans="トレーニング">　　　　</span> を<ruby>続<rt>つづ</rt></ruby>けている。</div>
+      <div class="ex-q"><span class="qnum">(3)</span>サッカーの <span class="blank" data-ans="試合">　　　　</span> が<ruby>始<rt>はじ</rt></ruby>まった。</div>
+      <div class="ex-q"><span class="qnum">(4)</span><ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby> <span class="blank" data-ans="記録">　　　　</span> を<ruby>破<rt>やぶ</rt></ruby>った。</div>
+      <div class="ex-q"><span class="qnum">(5)</span>オリンピックに <span class="blank" data-ans="出場">　　　　</span> したい。</div>
+      <div class="ex-q"><span class="qnum">(6)</span>3<ruby>年<rt>ねん</rt></ruby><ruby>連<rt>れん</rt></ruby><ruby>続<rt>ぞく</rt></ruby> <span class="blank" data-ans="優勝">　　　　</span> したチーム。</div>
+      <p style="font-size:12px;color:var(--muted);margin:10px 0 0;font-style:italic;">💡 Bấm vào từng chỗ trống để hiện đáp án.</p>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án tổng</button>
+      <div class="answer-box"><strong>Đáp án:</strong> (1) 応援 — (2) トレーニング — (3) 試合 — (4) 記録 — (5) 出場 — (6) 優勝</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-head" data-mark="芸"><span class="section-kicker">Phần 8-2 · 12 từ</span><h3>芸術</h3><span class="section-vn">Nghệ thuật và biểu diễn</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">14</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>芸<rt>げい</rt></ruby><ruby>術<rt>じゅつ</rt></ruby></span><span class="vocab-hanviet">NGHỆ THUẬT</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Nghệ thuật</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">芸</span><span class="kreading">NGHỆ · げい</span> — <span class="kmean">nghệ thuật, tài nghệ</span></div><div><span class="kchar">術</span><span class="kreading">THUẬT · じゅつ</span> — <span class="kmean">kỹ thuật, phương pháp</span></div><div class="combine"><strong>Ghép:</strong> "Tài nghệ + kỹ thuật" → <strong>nghệ thuật</strong>. Cụm: 芸術に興味がある (yêu nghệ thuật), 伝統芸術 (nghệ thuật truyền thống).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">わたしは<span class="target"><ruby>芸<rt>げい</rt></ruby><ruby>術<rt>じゅつ</rt></ruby></span>にとても<ruby>興<rt>きょう</rt></ruby><ruby>味<rt>み</rt></ruby>があります。</div><div class="ex-vn">Tôi rất quan tâm đến nghệ thuật.</div></div></td></tr>
+
+<tr><td class="col-stt">15</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>一<rt>いち</rt></ruby><ruby>流<rt>りゅう</rt></ruby></span><span class="vocab-hanviet">NHẤT LƯU</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Hạng nhất, đẳng cấp hàng đầu</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">一</span><span class="kreading">NHẤT · いち</span> — <span class="kmean">một</span></div><div><span class="kchar">流</span><span class="kreading">LƯU · りゅう / なが(れる)</span> — <span class="kmean">dòng, đẳng cấp</span></div><div class="combine"><strong>Ghép:</strong> "Đẳng cấp số 1" → <strong>hàng đầu</strong>. Cùng nhóm: 二流 (hạng hai), 三流 (hạng ba). Cụm: 一流の作家 (nhà văn nổi tiếng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>絵<rt>え</rt></ruby>は<span class="target"><ruby>一<rt>いち</rt></ruby><ruby>流<rt>りゅう</rt></ruby></span>の<ruby>画<rt>が</rt></ruby><ruby>家<rt>か</rt></ruby>の<ruby>作<rt>さく</rt></ruby><ruby>品<rt>ひん</rt></ruby>です。</div><div class="ex-vn">Bức tranh này là tác phẩm của họa sĩ hàng đầu.</div></div></td></tr>
+
+<tr><td class="col-stt">16</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>才<rt>さい</rt></ruby><ruby>能<rt>のう</rt></ruby></span><span class="vocab-hanviet">TÀI NĂNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Tài năng, năng khiếu</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">才</span><span class="kreading">TÀI · さい</span> — <span class="kmean">tài, tuổi</span></div><div><span class="kchar">能</span><span class="kreading">NĂNG · のう</span> — <span class="kmean">năng lực</span></div><div class="combine"><strong>Ghép:</strong> "Tài + năng lực" → <strong>tài năng</strong>. Cụm: 才能がある (có tài), 才能を持つ (mang trong mình tài năng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>子<rt>こ</rt></ruby>は<ruby>音<rt>おん</rt></ruby><ruby>楽<rt>がく</rt></ruby>の<span class="target"><ruby>才<rt>さい</rt></ruby><ruby>能<rt>のう</rt></ruby></span>がある。</div><div class="ex-vn">Đứa trẻ này có năng khiếu âm nhạc.</div></div></td></tr>
+
+<tr><td class="col-stt">17</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>監<rt>かん</rt></ruby><ruby>督<rt>とく</rt></ruby></span><span class="vocab-hanviet">GIÁM ĐỐC</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Đạo diễn / HLV trưởng</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">監</span><span class="kreading">GIÁM · かん</span> — <span class="kmean">giám sát</span></div><div><span class="kchar">督</span><span class="kreading">ĐỐC · とく</span> — <span class="kmean">điều khiển</span></div><div class="combine"><strong>Hai nghĩa:</strong> ① Đạo diễn phim: 映画監督. ② HLV trưởng: サッカー監督. Cùng chữ 監: 監視 (giám sát), 監督官 (giám đốc thanh tra).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">あの<ruby>映<rt>えい</rt></ruby><ruby>画<rt>が</rt></ruby>の<span class="target"><ruby>監<rt>かん</rt></ruby><ruby>督<rt>とく</rt></ruby></span>は<ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby><ruby>的<rt>てき</rt></ruby>に<ruby>有<rt>ゆう</rt></ruby><ruby>名<rt>めい</rt></ruby>です。</div><div class="ex-vn">Đạo diễn của bộ phim đó nổi tiếng toàn cầu.</div></div></td></tr>
+
+<tr><td class="col-stt">18</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>俳<rt>はい</rt></ruby><ruby>優<rt>ゆう</rt></ruby> / <ruby>女<rt>じょ</rt></ruby><ruby>優<rt>ゆう</rt></ruby></span><span class="vocab-hanviet">BÀI ƯU / NỮ ƯU</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Diễn viên (nam) / Nữ diễn viên</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">俳</span><span class="kreading">BÀI · はい</span> — <span class="kmean">diễn xuất</span></div><div><span class="kchar">優</span><span class="kreading">ƯU · ゆう</span> — <span class="kmean">vượt trội, diễn</span></div><div class="combine"><strong>Phân biệt:</strong> 俳優 (はいゆう) - diễn viên (chung, có thể nam/nữ). 女優 (じょゆう) - chuyên chỉ nữ. 男優 (だんゆう) - nam (ít dùng). Cụm: 人気のある俳優.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">あの<span class="target"><ruby>女<rt>じょ</rt></ruby><ruby>優<rt>ゆう</rt></ruby></span>はとてもきれいで<ruby>演<rt>えん</rt></ruby><ruby>技<rt>ぎ</rt></ruby>もうまい。</div><div class="ex-vn">Nữ diễn viên đó vừa xinh đẹp vừa diễn xuất hay.</div></div></td></tr>
+
+<tr><td class="col-stt">19</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>作<rt>さく</rt></ruby><ruby>品<rt>ひん</rt></ruby></span><span class="vocab-hanviet">TÁC PHẨM</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Tác phẩm</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">作</span><span class="kreading">TÁC · さく / つく(る)</span> — <span class="kmean">làm, tạo ra</span></div><div><span class="kchar">品</span><span class="kreading">PHẨM · ひん</span> — <span class="kmean">phẩm, đồ vật</span></div><div class="combine"><strong>Ghép:</strong> "Sản phẩm sáng tác" → <strong>tác phẩm</strong>. Cùng chữ 品: 商品 (hàng hóa), 食品 (thực phẩm). Cụm: お勧めの作品 (tác phẩm gợi ý).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>監<rt>かん</rt></ruby><ruby>督<rt>とく</rt></ruby>の<span class="target"><ruby>作<rt>さく</rt></ruby><ruby>品<rt>ひん</rt></ruby></span>はどれも<ruby>面<rt>おも</rt></ruby><ruby>白<rt>しろ</rt></ruby>い。</div><div class="ex-vn">Tác phẩm nào của đạo diễn này cũng đều thú vị.</div></div></td></tr>
+
+<tr><td class="col-stt">20</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">ストーリー</span><span class="vocab-hanviet">(katakana)</span><span class="vocab-pos pos-katakana">Danh từ (gốc Anh)</span><span class="vocab-meaning">Cốt truyện, câu chuyện</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Nguồn gốc:</strong> Từ tiếng Anh <em>"story"</em>. Phát âm Nhật: <em>su-tō-rī</em>. Đồng nghĩa Nhật: 物語 (ものがたり - truyện), 筋 (すじ - cốt truyện). Cụm: ストーリーが単純だ (cốt truyện đơn giản).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>映<rt>えい</rt></ruby><ruby>画<rt>が</rt></ruby>の<span class="target">ストーリー</span>はちょっと<ruby>単<rt>たん</rt></ruby><ruby>純<rt>じゅん</rt></ruby>すぎる。</div><div class="ex-vn">Cốt truyện của bộ phim này hơi quá đơn giản.</div></div></td></tr>
+
+<tr><td class="col-stt">21</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>表<rt>ひょう</rt></ruby><ruby>現<rt>げん</rt></ruby></span><span class="vocab-hanviet">BIỂU HIỆN</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Biểu hiện, thể hiện ra</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">表</span><span class="kreading">BIỂU · ひょう / おもて</span> — <span class="kmean">biểu, mặt</span></div><div><span class="kchar">現</span><span class="kreading">HIỆN · げん / あらわ(れる)</span> — <span class="kmean">hiện ra</span></div><div class="combine"><strong>Ghép:</strong> "Hiện ra bề mặt" → <strong>biểu hiện</strong>. Cụm: 感情を表現する (thể hiện cảm xúc), 表現力 (khả năng biểu đạt).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>絵<rt>え</rt></ruby>は<ruby>悲<rt>かな</rt></ruby>しみをうまく<span class="target"><ruby>表<rt>ひょう</rt></ruby><ruby>現<rt>げん</rt></ruby></span>している。</div><div class="ex-vn">Bức tranh này thể hiện nỗi buồn rất khéo.</div></div></td></tr>
+
+<tr><td class="col-stt">22</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>楽<rt>がっ</rt></ruby><ruby>器<rt>き</rt></ruby></span><span class="vocab-hanviet">NHẠC KHÍ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Nhạc cụ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">楽</span><span class="kreading">NHẠC · がく / らく / たの(しい)</span> — <span class="kmean">nhạc, vui</span></div><div><span class="kchar">器</span><span class="kreading">KHÍ · き / うつわ</span> — <span class="kmean">đồ chứa, công cụ</span></div><div class="combine"><strong>Ghép:</strong> "Công cụ phát nhạc" → <strong>nhạc cụ</strong>. Cụm: 楽器を弾く (chơi nhạc cụ - dây/phím). Cùng chữ 楽: 音楽 (âm nhạc), 楽しい (vui).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">3つの<span class="target"><ruby>楽<rt>がっ</rt></ruby><ruby>器<rt>き</rt></ruby></span>を<ruby>弾<rt>ひ</rt></ruby>くことが<ruby>出<rt>で</rt></ruby><ruby>来<rt>き</rt></ruby>ます。</div><div class="ex-vn">Tôi có thể chơi được 3 loại nhạc cụ.</div></div></td></tr>
+
+<tr><td class="col-stt">23</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>演<rt>えん</rt></ruby><ruby>奏<rt>そう</rt></ruby></span><span class="vocab-hanviet">DIỄN TẤU</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Biểu diễn nhạc cụ, hòa tấu</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">演</span><span class="kreading">DIỄN · えん</span> — <span class="kmean">diễn xuất</span></div><div><span class="kchar">奏</span><span class="kreading">TẤU · そう</span> — <span class="kmean">tấu nhạc</span></div><div class="combine"><strong>Ghép:</strong> "Diễn + tấu" → <strong>biểu diễn nhạc cụ</strong>. Khác 歌う (hát) - chỉ giọng người. 演奏 chỉ dành cho nhạc cụ.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">プロのピアニストの<span class="target"><ruby>演<rt>えん</rt></ruby><ruby>奏<rt>そう</rt></ruby></span>を<ruby>聞<rt>き</rt></ruby>くと<ruby>感<rt>かん</rt></ruby><ruby>動<rt>どう</rt></ruby>する。</div><div class="ex-vn">Nghe pianist chuyên nghiệp biểu diễn rất xúc động.</div></div></td></tr>
+
+<tr><td class="col-stt">24</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>感<rt>かん</rt></ruby><ruby>想<rt>そう</rt></ruby></span><span class="vocab-hanviet">CẢM TƯỞNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Cảm nghĩ, cảm tưởng</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">感</span><span class="kreading">CẢM · かん</span> — <span class="kmean">cảm</span></div><div><span class="kchar">想</span><span class="kreading">TƯỞNG · そう / おも(う)</span> — <span class="kmean">nghĩ, suy nghĩ</span></div><div class="combine"><strong>Ghép:</strong> "Cảm + nghĩ" → <strong>cảm nghĩ</strong>. Cụm: 感想を言う (nói cảm nghĩ), 感想文 (bài viết cảm nghĩ). Khác 意見 (ý kiến).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>本<rt>ほん</rt></ruby>を<ruby>読<rt>よ</rt></ruby>んだ<span class="target"><ruby>感<rt>かん</rt></ruby><ruby>想<rt>そう</rt></ruby></span>を<ruby>聞<rt>き</rt></ruby>かせてください。</div><div class="ex-vn">Hãy cho tôi nghe cảm nghĩ sau khi bạn đọc xong cuốn sách này.</div></div></td></tr>
+
+<tr><td class="col-stt">25</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">コンクール / 演劇 / 絵画 / アニメ</span><span class="vocab-hanviet">DIỄN KỊCH / HỘI HỌA</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Cuộc thi tài năng / Kịch / Tranh vẽ / Phim hoạt hình</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">演劇</span><span class="kreading">えんげき</span> — <span class="kmean">kịch nghệ sân khấu</span></div><div><span class="kchar">絵画</span><span class="kreading">かいが</span> — <span class="kmean">tranh vẽ</span></div><div class="combine"><strong>Bộ 4 từ nghệ thuật:</strong> <strong>コンクール</strong> (concours - cuộc thi tài năng), <strong>演劇</strong> (kịch sân khấu), <strong>絵画</strong> (tranh vẽ), <strong>アニメ</strong> (animation - hoạt hình).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>毎<rt>まい</rt></ruby><ruby>年<rt>とし</rt></ruby><ruby>夏<rt>なつ</rt></ruby>、ピアノ<span class="target">コンクール</span>に<ruby>出<rt>で</rt></ruby>ています。</div><div class="ex-vn">Mỗi mùa hè tôi đều tham gia cuộc thi piano.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 B — Ôn luyện cụm Nghệ thuật</h4><span class="ex-subtitle">Hai dạng câu hỏi sau khi học 12 từ ở mục 8-2</span></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 B1</span>マッチング — Ghép từ với nghĩa</div>
+      <div class="match-grid">
+        <div class="match-col"><h5>Cột A — Tiếng Nhật</h5>
+          <div class="match-item jp"><span class="mlabel">A1.</span>監督 (かんとく)</div>
+          <div class="match-item jp"><span class="mlabel">A2.</span>俳優 (はいゆう)</div>
+          <div class="match-item jp"><span class="mlabel">A3.</span>才能 (さいのう)</div>
+          <div class="match-item jp"><span class="mlabel">A4.</span>表現 (ひょうげん)</div>
+          <div class="match-item jp"><span class="mlabel">A5.</span>演奏 (えんそう)</div>
+          <div class="match-item jp"><span class="mlabel">A6.</span>感想 (かんそう)</div>
+        </div>
+        <div class="match-col"><h5>Cột B — Tiếng Việt</h5>
+          <div class="match-item"><span class="mlabel">B1.</span>Cảm nghĩ</div>
+          <div class="match-item"><span class="mlabel">B2.</span>Đạo diễn / HLV</div>
+          <div class="match-item"><span class="mlabel">B3.</span>Biểu diễn nhạc cụ</div>
+          <div class="match-item"><span class="mlabel">B4.</span>Diễn viên</div>
+          <div class="match-item"><span class="mlabel">B5.</span>Biểu hiện, thể hiện</div>
+          <div class="match-item"><span class="mlabel">B6.</span>Tài năng</div>
+        </div>
+      </div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> A1→B2 ・ A2→B4 ・ A3→B6 ・ A4→B5 ・ A5→B3 ・ A6→B1</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-07.html">← Bài 7</a><a class="mid" href="../tu-vung.html">▦ Danh sách bài</a><a href="bai-09.html">Bài 9 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+</script>
+</body></html>

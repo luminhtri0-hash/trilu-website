@@ -1,0 +1,1142 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 4 · Y tế & Sức khỏe — Từ vựng N1 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N1 — Bài 4: Y tế & Sức khỏe. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#1b3a5a;
+  --accent-dark:#0f2740;
+  --accent-2:#2d6e7a;
+  --accent-3:#5fa3b2;
+  --line:#bcd3da;
+  --line-2:#dde9ee;
+  --callout:#f0f6f8;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --gold:#c9a449;
+  --gold-deep:#8a6d22;
+  --shadow:0 18px 46px rgba(15,39,64,0.10);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(45,110,122,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(27,58,90,0.08), transparent 22%),
+    linear-gradient(180deg, #eef4f6 0%, #e7eef2 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:16.5px;
+  -webkit-font-smoothing:antialiased;
+  padding:24px 12px;
+  min-height:100vh;
+}
+.page-shell{
+  max-width:1180px; margin:0 auto;
+  background:var(--paper);
+  border:1px solid var(--line-2);
+  border-radius:24px;
+  padding:36px 32px 48px;
+  box-shadow:var(--shadow);
+}
+
+/* ============ HEADER (cover) ============ */
+.main-header{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(95,163,178,0.24), transparent 16%),
+    linear-gradient(135deg, #0f2740 0%, #1b3a5a 36%, #082030 100%);
+  color:#fff; border-radius:22px; box-shadow:var(--shadow);
+  padding:40px 40px 36px; margin-bottom:30px; text-align:center;
+}
+.main-header::after{
+  content:"語彙"; position:absolute; right:-12px; bottom:-50px;
+  font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.main-header .badge{
+  display:inline-block; padding:8px 18px; border-radius:999px;
+  background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.20);
+  color:#cfe5ec; letter-spacing:0.18em; font-size:13px; font-weight:700; text-transform:uppercase;
+}
+.main-header h1{
+  font-family:"EB Garamond","Noto Serif CJK JP",serif;
+  font-weight:700; font-size:42px; line-height:1.1; letter-spacing:-0.01em;
+  margin:18px 0 8px; color:#fff;
+}
+.main-header h1 .jp{ color:var(--accent-3); font-family:"Noto Serif CJK JP",serif; }
+.main-header .subtitle{
+  margin:0 auto; max-width:780px;
+  color:rgba(255,255,255,0.85); font-size:17px; font-style:italic;
+}
+
+/* ============ TOC ============ */
+.toc{
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(240,246,248,0.96));
+  border:1px solid rgba(45,110,122,0.20);
+  border-radius:22px; box-shadow:var(--shadow);
+  padding:26px 28px; margin-bottom:32px;
+}
+.toc h2{
+  margin:0 0 14px; padding:0;
+  font-family:"EB Garamond","Noto Serif CJK JP",serif;
+  font-size:28px; line-height:1.1; color:var(--accent); font-weight:700;
+  border:none;
+}
+.toc-chapter{ margin:18px 0; }
+.toc-chapter-title{
+  display:flex; align-items:center; gap:12px;
+  padding:11px 16px; margin-bottom:10px;
+  background:linear-gradient(90deg, #1b3a5a, #2d6e7a);
+  color:#fff; border-radius:12px;
+  font-family:"Noto Serif CJK JP",serif;
+  font-weight:700; font-size:19px;
+}
+.toc-chapter-title::before{
+  content:""; width:9px; height:9px; border-radius:50%;
+  background:var(--accent-3); flex-shrink:0;
+}
+.toc-items{
+  list-style:none; padding-left:8px; margin:0;
+  display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px;
+}
+.toc-items li{ margin:0; }
+.toc-items a{
+  display:block; padding:11px 14px;
+  text-decoration:none; color:inherit;
+  background:linear-gradient(180deg, #fffefd 0%, #f0f6f8 100%);
+  border:1px solid var(--line-2); border-radius:12px;
+  font-weight:600; color:var(--accent); font-size:16px;
+  transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  border-left:3px solid transparent;
+}
+.toc-items a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(27,58,90,0.40); border-left-color:var(--accent-2);
+  box-shadow:0 12px 24px rgba(15,39,64,0.06);
+}
+
+/* ============ CHAPTER CARD ============ */
+.chapter-card{
+  position:relative; overflow:hidden;
+  background:linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  border-radius:22px; box-shadow:var(--shadow);
+  padding:32px 40px 28px; margin:50px 0 22px;
+  color:#fff;
+}
+.chapter-card::after{
+  content:""; position:absolute; right:-80px; top:-90px;
+  width:240px; height:240px; border-radius:50%;
+  background:radial-gradient(circle, rgba(95,163,178,0.45) 0%, rgba(95,163,178,0.08) 48%, transparent 68%);
+  pointer-events:none;
+}
+.chapter-card h2{
+  margin:0 0 6px;
+  font-family:"Noto Serif CJK JP",serif; font-size:30px; font-weight:700; color:#fff;
+  letter-spacing:0; position:relative; z-index:1;
+}
+.chapter-card h2 .num{ color:var(--accent-3); margin-right:6px; }
+.chapter-card .ch-sub{
+  font-size:16.5px; color:rgba(255,255,255,0.82); font-style:italic;
+  position:relative; z-index:1;
+}
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(45,110,122,0.16);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:0 0 32px; margin-bottom:36px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  display:flex; align-items:center; gap:14px;
+  padding:24px 36px 22px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(95,163,178,0.28), transparent 26%),
+    linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  color:#fff;
+}
+.lesson-banner .lesson-no{
+  flex-shrink:0;
+  width:46px; height:46px; border-radius:50%;
+  background:linear-gradient(135deg, var(--accent-3) 0%, var(--accent-2) 100%);
+  color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:16.5px;
+  box-shadow:0 6px 14px rgba(45,110,122,0.30);
+  font-family:"EB Garamond",serif;
+}
+.lesson-banner h3{
+  margin:0; flex:1;
+  font-family:"Noto Serif CJK JP",serif; font-size:22px; font-weight:700; color:#fff;
+}
+.lesson-banner h3 .vn{
+  display:block; margin-top:3px;
+  font-family:Inter,sans-serif; font-size:15.5px; font-weight:500;
+  color:rgba(255,255,255,0.82); font-style:italic;
+}
+.doc-body{ padding:24px 32px 12px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 16px;
+  padding:14px 22px 14px 20px;
+  border-radius:18px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #154366 0%, #1b3a5a 52%, #2d6e7a 100%);
+  color:#fff; font-weight:700;
+}
+.section-head::before{
+  content:attr(data-mark); margin-right:10px;
+  font-size:19.5px;
+}
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{
+  margin:14px 0 22px;
+  border:1px solid var(--line-2); border-radius:18px; overflow:hidden;
+  background:#fff; box-shadow:0 10px 26px rgba(15,39,64,0.05);
+}
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff;
+  font-size:16px;
+}
+table.vocab-table thead{
+  background:linear-gradient(180deg, #eaf3f6 0%, #cee2e8 100%);
+  color:var(--accent);
+}
+table.vocab-table thead th{
+  padding:13px 14px; text-align:left;
+  font-weight:800; font-size:15px; letter-spacing:0.02em;
+  border-bottom:1px solid var(--line-2);
+  border-right:1px solid var(--line-2);
+}
+table.vocab-table thead th:last-child{ border-right:none; }
+table.vocab-table tbody td{
+  padding:16px 14px; vertical-align:top;
+  border-bottom:1px solid var(--line-2);
+  border-right:1px solid var(--line-2);
+  line-height:1.65;
+}
+table.vocab-table tbody td:last-child{ border-right:none; }
+table.vocab-table tbody tr:last-child td{ border-bottom:none; }
+table.vocab-table tbody tr:nth-child(even) td{ background:#f7fbfc; }
+table.vocab-table tbody tr:hover td{ background:#ecf5f7; }
+
+.kanji-cell{
+  font-family:"Noto Serif CJK JP","Yu Mincho",serif;
+  font-size:22px; font-weight:700; color:#222;
+  line-height:1.2;
+  white-space:nowrap;
+}
+.kanji-cell ruby{ ruby-position:over; ruby-align:center; }
+.kanji-cell rt{
+  font-size:12.5px; color:#7a8590;
+  font-family:Inter,sans-serif; font-weight:500;
+}
+.hanviet{
+  display:block; margin-top:6px;
+  font-size:13px; color:var(--accent-2); font-weight:800;
+  letter-spacing:1.2px;
+  font-family:Inter,sans-serif;
+  white-space:normal;
+}
+.pos{
+  display:inline-block;
+  padding:3px 9px; border-radius:6px;
+  background:var(--green); color:#fff;
+  font-size:12.5px; font-weight:700; letter-spacing:0.05em;
+  font-family:Inter,sans-serif;
+}
+.meaning{
+  color:var(--accent); font-size:16.5px; font-weight:700; line-height:1.5;
+  font-family:Inter,sans-serif;
+}
+.example{
+  font-family:"Noto Serif CJK JP",serif;
+  background:linear-gradient(180deg, #fefdfa, #f3eddb);
+  border-left:4px solid var(--accent);
+  padding:11px 14px; border-radius:0 12px 12px 0;
+  font-size:16px; line-height:1.9;
+}
+.example .jp{
+  display:block; color:#222; font-weight:500; margin-bottom:6px;
+}
+.example .vn{
+  display:block; padding-top:6px; border-top:1px dotted #cee2e8;
+  color:#4a5560; font-style:italic; font-family:Inter,sans-serif;
+  font-size:15px; line-height:1.55;
+}
+
+/* ============ ANALYSIS CELL ============ */
+.analysis-cell{
+  background:linear-gradient(180deg, #fcfffe, #f3f9fa);
+  font-size:15px; line-height:1.6;
+}
+.kanji-break{
+  background:#fff;
+  border:1px solid #cee2e8;
+  border-left:3px solid var(--accent-2);
+  border-radius:10px;
+  padding:10px 12px;
+}
+.kanji-break > div{
+  margin:2px 0;
+  font-family:"Noto Serif CJK JP",serif;
+  color:#1f3a4a;
+}
+.kanji-break .kchar{
+  font-family:"Noto Serif CJK JP","Yu Mincho",serif;
+  font-weight:700; font-size:18.5px;
+  color:var(--accent); margin-right:6px;
+}
+.kanji-break .kreading{
+  color:var(--accent-2);
+  font-family:Inter,sans-serif;
+  font-weight:700; font-size:12.5px;
+  letter-spacing:0.06em;
+}
+.kanji-break .kmean{
+  color:#2d4a5a;
+  font-family:Inter,sans-serif;
+  font-size:14px;
+}
+.ana-combine{
+  margin-top:8px; padding:8px 10px;
+  background:linear-gradient(180deg, #fffbef, #f8eed4);
+  border-left:3px dashed var(--accent-2);
+  border-radius:0 10px 10px 0;
+  color:#5a4520; font-size:13.5px; line-height:1.6;
+  font-family:Inter,sans-serif;
+}
+.ana-combine strong{ color:var(--accent); }
+.ana-syn{ color:var(--green); font-weight:600; }
+.ana-ant{ color:#b13e3e; font-weight:600; }
+.ana-nuance{ color:var(--plum); font-style:italic; }
+.katakana-origin{
+  background:linear-gradient(180deg, #fff5f8, #faeaf0);
+  border:1px solid #f0d8e2;
+  border-left:3px solid #b13e6a;
+  border-radius:10px;
+  padding:10px 12px;
+  font-size:15px; color:#5a3a4a; line-height:1.6;
+}
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{
+  background:linear-gradient(180deg, #f7faf2, #ecf2e2);
+  border:1px solid #d8e2c8;
+  border-left:3px solid var(--green);
+  border-radius:10px;
+  padding:10px 12px;
+  font-size:15px; color:#3e5a3a; line-height:1.6;
+}
+.wago-note strong{ color:var(--green); }
+
+/* ============ SPECIAL BLOCKS (Cấu tạo từ + Phó từ) ============ */
+.special-block{
+  margin:22px 0;
+  background:linear-gradient(180deg, #fffdfa, #f7fbfc);
+  border:1px solid #cee2e8;
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 8px 20px rgba(15,39,64,0.05);
+}
+.special-banner{
+  padding:14px 22px;
+  background:linear-gradient(90deg, #2d6e7a 0%, #5fa3b2 100%);
+  color:#fff;
+  font-family:"Noto Serif CJK JP",serif;
+  font-weight:700; font-size:19px;
+  letter-spacing:0.02em;
+}
+.special-banner.adv{
+  background:linear-gradient(90deg, #6a4a8a 0%, #8a6daf 100%);
+}
+.special-body{ padding:18px 22px; }
+
+/* Word formation grid */
+.word-formation-grid{
+  display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;
+}
+.wf-item{
+  background:#fff;
+  border:1px solid #d4e3e8;
+  border-left:4px solid var(--accent-3);
+  border-radius:10px;
+  padding:11px 14px;
+  font-size:15.5px;
+}
+.wf-item .pattern{
+  font-family:"Noto Serif CJK JP",serif;
+  font-weight:700; font-size:17.5px;
+  color:var(--accent); margin-bottom:4px;
+}
+.wf-item .desc{ color:#3a4a55; margin-bottom:4px; }
+.wf-item .ex{
+  color:var(--muted); font-style:italic; font-size:14px;
+  font-family:Inter,sans-serif;
+}
+
+/* Adverb grid */
+.adverb-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+.adv-item{
+  background:#fff;
+  border:1px solid #d8d0e4;
+  border-left:3px solid #6a4a8a;
+  border-radius:10px;
+  padding:12px 16px;
+  font-size:16.5px;
+}
+.adv-item .adv-word{
+  font-family:"Noto Serif CJK JP",serif;
+  font-weight:700; font-size:18.5px;
+  color:#4a3070;
+}
+.adv-item .adv-meaning{ color:var(--muted); font-style:italic; font-size:15px; }
+.adv-item .adv-ex{
+  margin-top:6px;
+  padding:7px 11px;
+  background:#faf7fd;
+  border-left:2px solid #c8b8e0;
+  border-radius:0 8px 8px 0;
+  font-size:15.5px;
+  font-family:"Noto Serif CJK JP",serif;
+}
+.adv-item .adv-ex .jp{ color:var(--accent); display:inline; }
+.adv-item .adv-ex .vn{
+  display:block; margin-top:4px; padding-top:4px;
+  border-top:1px dotted #d8d0e4;
+  color:#5a5070; font-style:italic; font-size:13.5px;
+  font-family:Inter,sans-serif;
+}
+.adv-item .adv-synonyms{
+  margin-top:8px;
+  padding:7px 11px;
+  background:linear-gradient(180deg, #f5edff, #ede0ff);
+  border-left:3px dashed #8a6daf;
+  border-radius:0 8px 8px 0;
+  font-size:14px; color:#4a2a7a; line-height:1.6;
+  font-family:Inter,sans-serif;
+}
+.adv-item .adv-synonyms strong{ color:#5a1a8a; font-weight:bold; }
+.adv-item .adv-synonyms .syn-jp{
+  font-family:"Noto Serif CJK JP",serif;
+  color:#3a1a6a; font-weight:600;
+}
+.adv-item .adv-synonyms .syn-vn{ color:#6a4a8a; font-style:italic; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:28px 0 22px;
+  background:linear-gradient(180deg, #fefdfa 0%, #f3eddb 100%);
+  border:1px solid #d9c9a8;
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(15,39,64,0.05);
+}
+.exercise-block h4{
+  margin:0;
+  padding:16px 22px;
+  background:linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+  color:#fff;
+  font-family:"Noto Serif CJK JP",serif;
+  font-size:18.5px; font-weight:700;
+  border:none;
+}
+.exercise-block ol{
+  margin:0; padding:18px 22px 18px 44px;
+}
+.exercise-block li{
+  margin:9px 0; line-height:1.75;
+  font-family:"Noto Serif CJK JP",serif;
+}
+.blank{
+  display:inline-block; min-width:80px;
+  padding:0 8px;
+  background:#fff7e8;
+  border-bottom:2px solid var(--accent-2);
+  color:var(--accent); font-weight:700; text-align:center;
+  cursor:pointer; transition:all .15s;
+  border-radius:4px 4px 0 0;
+}
+.blank:hover{ background:#fae7c0; }
+.blank.shown{
+  background:var(--accent-2); color:#fff;
+  border-bottom-color:var(--accent);
+}
+.answer-btn{
+  margin-top:12px; padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:15.5px; cursor:pointer;
+  box-shadow:0 6px 14px rgba(27,58,90,0.18);
+  transition:all 0.2s; font-family:inherit;
+}
+.answer-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 20px rgba(27,58,90,0.28);
+}
+.answer-box{
+  display:none; margin:14px 22px 22px;
+  padding:14px 16px;
+  background:linear-gradient(180deg, #fffbef, #f8eed4);
+  border:1px solid #d9bb88;
+  border-left:4px solid var(--accent-2);
+  border-radius:10px;
+  font-size:16px; line-height:1.7; color:#5a4520;
+}
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{
+  margin-top:34px; padding:24px 28px;
+  background:linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  color:rgba(255,255,255,0.85);
+  border-radius:18px; text-align:center; font-size:15.5px;
+  box-shadow:var(--shadow);
+}
+.footer-card strong{ color:var(--accent-3); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px){
+  .page-shell{ padding:22px 16px 36px; }
+  .main-header{ padding:32px 24px 28px; }
+  .main-header h1{ font-size:30px; }
+  .toc-items{ grid-template-columns:1fr; }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  .chapter-card{ padding:24px 26px 22px; }
+  table.vocab-table{ font-size:15px; min-width:840px; }
+  .table-shell{ overflow-x:auto; }
+  .kanji-cell{ font-size:19.5px; }
+  .word-formation-grid{ grid-template-columns:1fr; }
+}
+
+@media print{
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+  html, body{ background:#fff !important; }
+  body{ font-size:13px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; padding:0; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; box-shadow:none; border:none; }
+  .main-header{ page-break-after:always; break-after:page; padding:34px 30px; box-shadow:none; border-radius:14px; }
+  .main-header h1{ font-size:30px; }
+  .toc{ page-break-after:always; break-after:page; box-shadow:none; }
+  .chapter-card{ page-break-before:always; break-before:page; box-shadow:none; }
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:14px 16px 10px !important; }
+  .table-shell{ overflow:visible !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; table-layout:fixed !important; box-shadow:none !important; }
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:16px 20px !important; }
+  .lesson-banner h3{ font-size:19.5px !important; }
+  .section-head{ page-break-after:avoid !important; padding:9px 16px !important; margin:10px 0 8px !important; }
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table thead th{ padding:7px 7px !important; font-size:12.5px !important; }
+  table.vocab-table tr{ page-break-inside:avoid !important; }
+  table.vocab-table tbody td{ padding:9px 7px !important; font-size:12.5px !important; }
+  .kanji-cell{ font-size:19px !important; line-height:1.15 !important; }
+  .kanji-cell rt{ font-size:10.5px !important; }
+  .hanviet{ font-size:11px !important; letter-spacing:0.8px !important; margin-top:3px !important; }
+  .pos{ font-size:10.5px !important; padding:2px 6px !important; }
+  .meaning{ font-size:13px !important; line-height:1.35 !important; }
+  .example{ padding:7px 9px !important; font-size:12.5px !important; line-height:1.7 !important; }
+  .analysis-cell{ font-size:12.5px !important; }
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:6px 8px !important; font-size:12px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:15.5px !important; }
+  .kanji-break .kreading{ font-size:10.5px !important; }
+  .ana-combine{ padding:5px 8px !important; font-size:11px !important; margin-top:5px !important; }
+  .special-block, .exercise-block, .wf-item, .adv-item{ page-break-inside:avoid !important; }
+  .word-formation-grid{ grid-template-columns:1fr 1fr !important; gap:8px !important; }
+  .wf-item{ padding:7px 9px !important; }
+  .wf-item .pattern{ font-size:15.5px !important; }
+  .wf-item .desc, .wf-item .ex{ font-size:12.5px !important; }
+  .adv-item{ padding:8px 12px !important; }
+  .adv-item .adv-word{ font-size:15.5px !important; }
+  .adv-item .adv-meaning{ font-size:12.5px !important; }
+  .adv-item .adv-ex{ font-size:12.5px !important; padding:5px 8px !important; }
+  .adv-item .adv-synonyms{ font-size:12px !important; padding:5px 8px !important; }
+  .answer-btn{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; font-size:12.5px !important; padding:9px 11px !important; margin:10px 14px 14px !important; }
+  .footer-card{ page-break-inside:avoid; box-shadow:none; }
+}
+
+  /* ---- Word formation: example list with furigana & VN meaning ---- */
+  .wf-item .ex-list-wrapper{ margin-top:6px; }
+  .ex-list{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:5px;
+  }
+  .ex-item{
+    display:flex; flex-wrap:wrap; align-items:baseline; gap:6px;
+    padding:5px 9px;
+    background:linear-gradient(180deg, #fcfffe, #eef7f9);
+    border:1px solid #d8e7ec;
+    border-left:3px solid #5fa3b2;
+    border-radius:6px;
+    font-size:15.5px;
+    line-height:1.5;
+  }
+  .ex-item ruby{
+    font-family:"Noto Serif CJK JP","Yu Mincho",serif;
+    font-weight:700; color:#1b3a5a; font-size:17px;
+    ruby-position:over; ruby-align:center;
+  }
+  .ex-item rt{
+    font-size:11px; color:#5fa3b2;
+    font-family:Inter,sans-serif; font-weight:600;
+  }
+  .ex-item .ex-vn{
+    color:#5f6470; font-style:italic; font-size:13.5px;
+    font-family:Inter,sans-serif;
+  }
+  .ex-item .ex-jp{
+    font-family:"Noto Serif CJK JP",serif;
+    font-weight:700; color:#1b3a5a; font-size:17px;
+  }
+  @media print {
+    .ex-item{ padding:3px 6px !important; font-size:12.5px !important; gap:4px !important; }
+    .ex-item ruby{ font-size:13.5px !important; }
+    .ex-item rt{ font-size:9.5px !important; }
+    .ex-item .ex-vn{ font-size:11px !important; }
+    .ex-list{ gap:3px !important; }
+  }
+
+
+#ttsBar{position:fixed;top:12px;right:12px;z-index:99999;background:rgba(255,255,255,0.97);border:1px solid var(--line,#cbd5dc);border-radius:14px;box-shadow:0 10px 30px rgba(20,30,50,0.18);padding:9px 14px;font-size:13px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;max-width:min(94vw,680px);font-family:Inter,"Segoe UI",sans-serif;color:#23303f;}
+#ttsBar .tts-title{font-weight:800;color:var(--accent,#1b3a5a);white-space:nowrap;}
+#ttsBar label{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+#ttsBar select{font-size:12.5px;max-width:230px;padding:2px 4px;border:1px solid var(--line,#cbd5dc);border-radius:7px;}
+#ttsBar input[type=range]{width:92px;vertical-align:middle;accent-color:var(--accent,#1b3a5a);}
+#ttsBar #ttsRateVal{min-width:30px;color:var(--accent,#1b3a5a);}
+#ttsBar .tts-hint{color:#b4533a;font-size:12px;flex-basis:100%;}
+.tts-btn{display:inline-flex;align-items:center;justify-content:center;margin-left:7px;width:23px;height:23px;border:none;border-radius:50%;background:var(--accent,#1b3a5a);color:#fff;font-size:12px;line-height:1;cursor:pointer;vertical-align:middle;padding:0;opacity:.82;transition:transform .12s ease,opacity .12s ease;-webkit-print-color-adjust:exact;}
+.tts-btn:hover{opacity:1;transform:scale(1.14);}
+.tts-btn.playing{background:var(--green,#2d7d46);animation:ttspulse .85s infinite;}
+.tts-btn.loading{background:#b08400;}
+@keyframes ttspulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(45,125,70,.5);}50%{opacity:.55;box-shadow:0 0 0 5px rgba(45,125,70,0);}}
+@media print{#ttsBar,.tts-btn{display:none!important;}}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:500;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.93);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:36px;height:36px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.16em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n1.html">N1</a> · <a href="../tu-vung.html">Từ vựng</a> · Bài 4</div></div></a><a class="tl-back" href="../tu-vung.html">← Danh sách bài</a></nav>
+<div class="page-shell">
+<div id="ttsBar">
+  <span class="tts-title">🎧 日本語 Audio</span>
+  <label>Nguồn
+    <select id="ttsProvider">
+      <option value="auto">Giọng máy (mặc định)</option>
+      <option value="voicevox">VOICEVOX (free)</option>
+      <option value="google">Google Neural2</option>
+      <option value="azure">Azure Nanami</option>
+    </select>
+  </label>
+  <label id="ttsVoiceWrap">Giọng <select id="ttsVoice"></select></label>
+  <label>Tốc độ <input id="ttsRate" type="range" min="0.5" max="1.4" step="0.05" value="0.95"><b id="ttsRateVal">0.95</b></label>
+  <span id="ttsHint" class="tts-hint"></span>
+</div>
+<article class="document" id="lesson-2-2">
+  <div class="lesson-banner">
+    <div class="lesson-no">2.2</div>
+    <h3>医療・健康
+      <span class="vn">Y tế &amp; Sức khỏe</span>
+    </h3>
+  </div>
+  <div class="doc-body">
+
+    <div class="section-head" data-mark="📖">Bảng từ vựng (語彙)</div>
+    <div class="table-shell">
+      <table class="vocab-table">
+        <thead>
+          <tr><th style="width:14%">Từ</th><th style="width:7%">Loại</th><th style="width:18%">Nghĩa</th><th style="width:31%">Phân tích / Nguồn gốc</th><th>Ví dụ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="kanji-cell"><ruby>診療<rt>しんりょう</rt></ruby><span class="hanviet">Chẩn liệu</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">khám chữa bệnh</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">診</span><span class="kreading">CHẨN · しん</span> — <span class="kmean">khám bệnh</span></div><div><span class="kchar">療</span><span class="kreading">LIỆU · りょう</span> — <span class="kmean">chữa trị</span></div><div class="ana-combine"><strong>Ghép:</strong> Khám + chữa → toàn bộ quá trình điều trị.<br><span class="ana-syn">≈ 診察, 治療, 医療</span> · <span class="ana-nuance">Cụm: 診療科 (chuyên khoa), 診療所 (phòng khám).</span></div></div></td>
+            <td class="example"><span class="jp">予約なしで診療を受けるのは難しい。</span><span class="vn">Khó mà được khám chữa bệnh nếu không đặt trước.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>診察<rt>しんさつ</rt></ruby><span class="hanviet">Chẩn sát</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">khám bệnh (chẩn đoán)</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">診</span><span class="kreading">CHẨN · しん</span> — <span class="kmean">khám</span></div><div><span class="kchar">察</span><span class="kreading">SÁT · さつ</span> — <span class="kmean">quan sát, xét</span></div><div class="ana-combine"><strong>Ghép:</strong> Khám + quan sát → khám bệnh để chẩn đoán.<br><span class="ana-syn">≈ 診断, 受診</span> · <span class="ana-nuance">Hành vi khám trực tiếp của bác sĩ.</span></div></div></td>
+            <td class="example"><span class="jp">医師の丁寧な診察を受けて安心した。</span><span class="vn">Tôi đã yên tâm sau khi được bác sĩ khám kỹ lưỡng.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>診断<rt>しんだん</rt></ruby><span class="hanviet">Chẩn đoán</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">chẩn đoán</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">診</span><span class="kreading">CHẨN · しん</span> — <span class="kmean">khám</span></div><div><span class="kchar">断</span><span class="kreading">ĐOÁN · だん</span> — <span class="kmean">đoán, kết luận</span></div><div class="ana-combine"><strong>Ghép:</strong> Khám + đưa kết luận → chẩn đoán.<br><span class="ana-syn">≈ 判定, 診療</span> · <span class="ana-nuance">Kết quả: 診断書 (giấy chẩn đoán), 誤診 (chẩn đoán sai).</span></div></div></td>
+            <td class="example"><span class="jp">早期診断こそ、治療成功の鍵となる。</span><span class="vn">Chẩn đoán sớm chính là chìa khóa cho việc chữa trị thành công.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>治療<rt>ちりょう</rt></ruby><span class="hanviet">Trị liệu</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">điều trị, chữa trị</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">治</span><span class="kreading">TRỊ · ち</span> — <span class="kmean">trị</span></div><div><span class="kchar">療</span><span class="kreading">LIỆU · りょう</span> — <span class="kmean">liệu pháp</span></div><div class="ana-combine"><strong>Ghép:</strong> Trị + liệu → điều trị.<br><span class="ana-syn">≈ 療治, 手当, ヒーリング</span> · <span class="ana-nuance">Phân biệt: 治療 (chữa bệnh), 治癒 (lành bệnh).</span></div></div></td>
+            <td class="example"><span class="jp">最先端の治療を受けるべく、海外の病院に転院した。</span><span class="vn">Để được điều trị tiên tiến nhất, anh ấy đã chuyển sang bệnh viện nước ngoài.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>手術<rt>しゅじゅつ</rt></ruby><span class="hanviet">Thủ thuật</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">phẫu thuật, mổ</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">手</span><span class="kreading">THỦ · しゅ</span> — <span class="kmean">tay</span></div><div><span class="kchar">術</span><span class="kreading">THUẬT · じゅつ</span> — <span class="kmean">kỹ thuật</span></div><div class="ana-combine"><strong>Ghép:</strong> Kỹ thuật của tay → phẫu thuật.<br><span class="ana-syn">≈ オペ, 外科手術, オペレーション</span> · <span class="ana-nuance">Cụm: 手術を受ける (được phẫu thuật).</span></div></div></td>
+            <td class="example"><span class="jp">難手術にもかかわらず、無事に成功した。</span><span class="vn">Tuy là ca mổ khó nhưng đã thành công an toàn.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>処方<rt>しょほう</rt></ruby><span class="hanviet">Xử phương</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">kê đơn (thuốc)</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">処</span><span class="kreading">XỬ · しょ</span> — <span class="kmean">xử lý</span></div><div><span class="kchar">方</span><span class="kreading">PHƯƠNG · ほう</span> — <span class="kmean">cách thức</span></div><div class="ana-combine"><strong>Ghép:</strong> Xử lý + cách → cách kê đơn.<br><span class="ana-syn">≈ 処方箋, 投薬</span> · <span class="ana-nuance">Cụm: 処方箋 (đơn thuốc).</span></div></div></td>
+            <td class="example"><span class="jp">医師の処方どおりに服用してください。</span><span class="vn">Xin hãy uống thuốc đúng theo đơn của bác sĩ.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>投薬<rt>とうやく</rt></ruby><span class="hanviet">Đầu dược</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">cho thuốc, dùng thuốc</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">投</span><span class="kreading">ĐẦU · とう</span> — <span class="kmean">gieo, đưa</span></div><div><span class="kchar">薬</span><span class="kreading">DƯỢC · やく</span> — <span class="kmean">thuốc</span></div><div class="ana-combine"><strong>Ghép:</strong> Đưa thuốc cho dùng.<br><span class="ana-syn">≈ 投与, 服薬</span> · <span class="ana-nuance">Trang trọng, dùng trong y khoa. Cụm: 過剰投薬 (lạm thuốc).</span></div></div></td>
+            <td class="example"><span class="jp">過剰な投薬は副作用を招く恐れがある。</span><span class="vn">Dùng thuốc quá mức có thể dẫn đến tác dụng phụ.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>副作用<rt>ふくさよう</rt></ruby><span class="hanviet">Phó tác dụng</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">tác dụng phụ</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">副</span><span class="kreading">PHÓ · ふく</span> — <span class="kmean">phụ</span></div><div><span class="kchar">作</span><span class="kreading">TÁC · さ</span> — <span class="kmean">tác động</span></div><div><span class="kchar">用</span><span class="kreading">DỤNG · よう</span> — <span class="kmean">công dụng</span></div><div class="ana-combine"><strong>Ghép:</strong> Tác dụng phụ.<br><span class="ana-syn">≈ サイドエフェクト, 副反応</span> · <span class="ana-ant">⇔ 主作用, 本作用</span> · <span class="ana-nuance">Khái niệm y khoa.</span></div></div></td>
+            <td class="example"><span class="jp">薬の副作用に注意するよう、医師から告げられた。</span><span class="vn">Bác sĩ dặn tôi phải chú ý đến tác dụng phụ của thuốc.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>看護<rt>かんご</rt></ruby><span class="hanviet">Khán hộ</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">chăm sóc y tế (bệnh nhân)</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">看</span><span class="kreading">KHÁN · かん</span> — <span class="kmean">trông coi</span></div><div><span class="kchar">護</span><span class="kreading">HỘ · ご</span> — <span class="kmean">bảo vệ</span></div><div class="ana-combine"><strong>Ghép:</strong> Trông coi + bảo vệ → chăm sóc y tế chuyên môn.<br><span class="ana-syn">≈ ナーシング, 介護</span> · <span class="ana-nuance">Cụm: 看護師 (y tá), 看護学.</span></div></div></td>
+            <td class="example"><span class="jp">看護師の手厚いケアに、患者は心から感謝した。</span><span class="vn">Bệnh nhân biết ơn sâu sắc trước sự chăm sóc tận tình của y tá.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>看病<rt>かんびょう</rt></ruby><span class="hanviet">Khán bệnh</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">chăm sóc người bệnh (trong gia đình)</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">看</span><span class="kreading">KHÁN · かん</span> — <span class="kmean">trông</span></div><div><span class="kchar">病</span><span class="kreading">BỆNH · びょう</span> — <span class="kmean">bệnh</span></div><div class="ana-combine"><strong>Ghép:</strong> Trông người bệnh.<br><span class="ana-syn">≈ 付き添い, 介抱</span> · <span class="ana-nuance">Chăm sóc trong gia đình; chuyên môn là 看護.</span></div></div></td>
+            <td class="example"><span class="jp">寝食を忘れて、母の看病を続けた。</span><span class="vn">Tôi quên ăn quên ngủ chăm sóc mẹ bệnh.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>入院<rt>にゅういん</rt></ruby><span class="hanviet">Nhập viện</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">nhập viện</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">入</span><span class="kreading">NHẬP · にゅう</span> — <span class="kmean">vào</span></div><div><span class="kchar">院</span><span class="kreading">VIỆN · いん</span> — <span class="kmean">viện</span></div><div class="ana-combine"><strong>Ghép:</strong> Vào viện.<br><span class="ana-ant">⇔ 退院</span> · <span class="ana-nuance">Cụm: 入院手続き, 入院費.</span></div></div></td>
+            <td class="example"><span class="jp">検査結果を受け、即日入院することになった。</span><span class="vn">Sau khi nhận kết quả xét nghiệm, tôi phải nhập viện ngay trong ngày.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>退院<rt>たいいん</rt></ruby><span class="hanviet">Thoái viện</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">xuất viện</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">退</span><span class="kreading">THOÁI · たい</span> — <span class="kmean">rút lui</span></div><div><span class="kchar">院</span><span class="kreading">VIỆN · いん</span> — <span class="kmean">viện</span></div><div class="ana-combine"><strong>Ghép:</strong> Rời viện → xuất viện.<br><span class="ana-ant">⇔ 入院</span> · <span class="ana-nuance">Cụm: 退院祝い.</span></div></div></td>
+            <td class="example"><span class="jp">退院後も、自宅でのリハビリが欠かせない。</span><span class="vn">Sau khi xuất viện, việc phục hồi chức năng tại nhà là không thể thiếu.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>容体<rt>ようだい</rt></ruby><span class="hanviet">Dung thể</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">tình trạng (bệnh nhân)</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">容</span><span class="kreading">DUNG · よう</span> — <span class="kmean">hình thái</span></div><div><span class="kchar">体</span><span class="kreading">THỂ · たい</span> — <span class="kmean">thân, cơ thể</span></div><div class="ana-combine"><strong>Ghép:</strong> Hình thái cơ thể → tình trạng bệnh nhân.<br><span class="ana-syn">≈ 病状, 容態</span> · <span class="ana-nuance">Cũng đọc ようたい. Cụm: 容体が急変する.</span></div></div></td>
+            <td class="example"><span class="jp">容体が急変し、医師たちは緊張に包まれた。</span><span class="vn">Tình trạng đột biến, các bác sĩ rơi vào căng thẳng.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>持病<rt>じびょう</rt></ruby><span class="hanviet">Trì bệnh</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">bệnh mãn tính (mang theo)</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">持</span><span class="kreading">TRÌ · じ</span> — <span class="kmean">mang theo</span></div><div><span class="kchar">病</span><span class="kreading">BỆNH · びょう</span> — <span class="kmean">bệnh</span></div><div class="ana-combine"><strong>Ghép:</strong> Bệnh mang theo → bệnh mạn tính.<br><span class="ana-syn">≈ 慢性病, 宿痾</span> · <span class="ana-nuance">Đời thường; chuyên môn là 慢性疾患.</span></div></div></td>
+            <td class="example"><span class="jp">持病があるため、定期的な通院が欠かせない。</span><span class="vn">Vì có bệnh mãn tính, anh ấy không thể bỏ qua việc tái khám định kỳ.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>難病<rt>なんびょう</rt></ruby><span class="hanviet">Nan bệnh</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">bệnh nan y</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">難</span><span class="kreading">NAN · なん</span> — <span class="kmean">khó</span></div><div><span class="kchar">病</span><span class="kreading">BỆNH · びょう</span> — <span class="kmean">bệnh</span></div><div class="ana-combine"><strong>Ghép:</strong> Bệnh khó chữa → bệnh nan y.<br><span class="ana-syn">≈ 不治の病, 重病</span> · <span class="ana-ant">⇔ 軽症</span> · <span class="ana-nuance">Cụm: 難病指定 (bệnh được quốc gia công nhận).</span></div></div></td>
+            <td class="example"><span class="jp">難病を克服した彼の物語は、多くの人々に勇気を与えた。</span><span class="vn">Câu chuyện anh ấy vượt qua bệnh nan y đã đem lại dũng khí cho nhiều người.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>癌<rt>がん</rt></ruby><span class="hanviet">Nham</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">ung thư</td>
+            
+            <td class="analysis-cell"><div class="wago-note"><strong>Wago / Cụm:</strong> Hán tự đơn (がん). Gốc: bộ 疒 (bệnh) + 嵒 (đá núi) → 'cục cứng như đá' = khối u. ≈ 悪性腫瘍, がん (hiragana). Cụm: 胃癌, 肺癌, 癌細胞.</div></td>
+            <td class="example"><span class="jp">早期発見できれば、癌も治る時代となった。</span><span class="vn">Đã đến thời đại mà ung thư cũng chữa được nếu phát hiện sớm.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>感染<rt>かんせん</rt></ruby><span class="hanviet">Cảm nhiễm</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">lây nhiễm</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">感</span><span class="kreading">CẢM · かん</span> — <span class="kmean">cảm nhận, lây</span></div><div><span class="kchar">染</span><span class="kreading">NHIỄM · せん</span> — <span class="kmean">nhuộm, dính</span></div><div class="ana-combine"><strong>Ghép:</strong> Cảm + nhiễm → lây.<br><span class="ana-syn">≈ 伝染, 罹患</span> · <span class="ana-nuance">Cụm: 感染症, 感染源, 院内感染.</span></div></div></td>
+            <td class="example"><span class="jp">空気感染を防ぐため、徹底した対策が求められる。</span><span class="vn">Để ngăn lây nhiễm qua không khí, cần có biện pháp triệt để.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>免疫<rt>めんえき</rt></ruby><span class="hanviet">Miễn dịch</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">miễn dịch</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">免</span><span class="kreading">MIỄN · めん</span> — <span class="kmean">miễn, tránh</span></div><div><span class="kchar">疫</span><span class="kreading">DỊCH · えき</span> — <span class="kmean">dịch bệnh</span></div><div class="ana-combine"><strong>Ghép:</strong> Miễn dịch bệnh → khả năng miễn dịch.<br><span class="ana-syn">≈ 抵抗力, 免疫力</span> · <span class="ana-nuance">Cụm: 免疫力を高める. Còn nghĩa bóng: ~に免疫がない (không quen, sốc).</span></div></div></td>
+            <td class="example"><span class="jp">十分な睡眠は免疫力の維持に不可欠だ。</span><span class="vn">Giấc ngủ đầy đủ không thể thiếu để duy trì khả năng miễn dịch.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>予防<rt>よぼう</rt></ruby><span class="hanviet">Dự phòng</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">phòng ngừa</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">予</span><span class="kreading">DỰ · よ</span> — <span class="kmean">trước</span></div><div><span class="kchar">防</span><span class="kreading">PHÒNG · ぼう</span> — <span class="kmean">ngăn chặn</span></div><div class="ana-combine"><strong>Ghép:</strong> Ngăn trước → phòng ngừa.<br><span class="ana-syn">≈ 防止, 予防策</span> · <span class="ana-ant">⇔ 治療, 対応</span> · <span class="ana-nuance">Cụm: 予防接種 (tiêm chủng), 予防医学.</span></div></div></td>
+            <td class="example"><span class="jp">日々の予防こそ、最大の治療と言える。</span><span class="vn">Phòng ngừa hàng ngày chính là phương pháp chữa trị tốt nhất.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>衛生<rt>えいせい</rt></ruby><span class="hanviet">Vệ sinh</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">vệ sinh</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">衛</span><span class="kreading">VỆ · えい</span> — <span class="kmean">bảo vệ</span></div><div><span class="kchar">生</span><span class="kreading">SINH · せい</span> — <span class="kmean">sinh, sống</span></div><div class="ana-combine"><strong>Ghép:</strong> Bảo vệ sự sống → vệ sinh.<br><span class="ana-syn">≈ 清潔, 保健</span> · <span class="ana-nuance">Cụm: 公衆衛生, 食品衛生, 衛生管理.</span></div></div></td>
+            <td class="example"><span class="jp">衛生管理が徹底された施設として知られている。</span><span class="vn">Cơ sở này được biết đến là nơi quản lý vệ sinh chặt chẽ.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>回復<rt>かいふく</rt></ruby><span class="hanviet">Hồi phục</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">hồi phục, bình phục</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">回</span><span class="kreading">HỒI · かい</span> — <span class="kmean">quay về</span></div><div><span class="kchar">復</span><span class="kreading">PHỤC · ふく</span> — <span class="kmean">trở lại</span></div><div class="ana-combine"><strong>Ghép:</strong> Quay về + trở lại → hồi phục.<br><span class="ana-syn">≈ 復活, 回帰, リカバー</span> · <span class="ana-ant">⇔ 悪化, 後退</span> · <span class="ana-nuance">Cụm: 回復期, 景気回復.</span></div></div></td>
+            <td class="example"><span class="jp">入院から一週間、ようやく回復の兆しが見え始めた。</span><span class="vn">Sau một tuần nhập viện, dấu hiệu hồi phục cuối cùng cũng đã xuất hiện.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>悪化<rt>あっか</rt></ruby><span class="hanviet">Ác hóa</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">xấu đi, trầm trọng hơn</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">悪</span><span class="kreading">ÁC · あく/あっ</span> — <span class="kmean">xấu</span></div><div><span class="kchar">化</span><span class="kreading">HÓA · か</span> — <span class="kmean">biến thành</span></div><div class="ana-combine"><strong>Ghép:</strong> Biến thành xấu → tệ đi.<br><span class="ana-syn">≈ 深刻化, 劣化</span> · <span class="ana-ant">⇔ 回復, 改善, 好転</span> · <span class="ana-nuance">Đọc あっか (giảm âm).</span></div></div></td>
+            <td class="example"><span class="jp">放置すれば、症状はさらに悪化しかねない。</span><span class="vn">Nếu để mặc, triệu chứng e rằng còn xấu đi nữa.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>慢性<rt>まんせい</rt></ruby><span class="hanviet">Mạn tính</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">mạn tính, dai dẳng</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">慢</span><span class="kreading">MẠN · まん</span> — <span class="kmean">chậm, lười</span></div><div><span class="kchar">性</span><span class="kreading">TÍNH · せい</span> — <span class="kmean">tính chất</span></div><div class="ana-combine"><strong>Ghép:</strong> Tính chất chậm/dai dẳng → mạn tính.<br><span class="ana-syn">≈ 持病, 長期</span> · <span class="ana-ant">⇔ 急性</span> · <span class="ana-nuance">Cụm: 慢性疾患, 慢性病.</span></div></div></td>
+            <td class="example"><span class="jp">慢性の頭痛に悩まされて久しい。</span><span class="vn">Đã lâu rồi tôi bị hành hạ bởi chứng đau đầu mạn tính.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>急性<rt>きゅうせい</rt></ruby><span class="hanviet">Cấp tính</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">cấp tính</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">急</span><span class="kreading">CẤP · きゅう</span> — <span class="kmean">gấp, đột</span></div><div><span class="kchar">性</span><span class="kreading">TÍNH · せい</span> — <span class="kmean">tính</span></div><div class="ana-combine"><strong>Ghép:</strong> Tính cấp tốc → cấp tính.<br><span class="ana-syn">≈ 急発, 突発性</span> · <span class="ana-ant">⇔ 慢性</span> · <span class="ana-nuance">Cụm: 急性肺炎, 急性アルコール中毒.</span></div></div></td>
+            <td class="example"><span class="jp">急性肺炎で、緊急入院を余儀なくされた。</span><span class="vn">Bị viêm phổi cấp tính, tôi buộc phải nhập viện khẩn cấp.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 語形成 -->
+    <div class="special-block">
+      <div class="special-banner">🔤 語形成 — Cấu tạo từ N1</div>
+      <div class="special-body">
+        <div class="word-formation-grid">
+          <div class="wf-item">
+            <div class="pattern">診〜 (しん〜)</div>
+            <div class="desc">"Khám bệnh"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>診察<rt>しんさつ</rt></ruby> <span class="ex-vn">(khám bệnh)</span></div><div class="ex-item"><ruby>診断<rt>しんだん</rt></ruby> <span class="ex-vn">(chẩn đoán)</span></div><div class="ex-item"><ruby>診療<rt>しんりょう</rt></ruby> <span class="ex-vn">(khám chữa bệnh)</span></div><div class="ex-item"><ruby>診療所<rt>しんりょうじょ</rt></ruby> <span class="ex-vn">(phòng khám)</span></div><div class="ex-item"><ruby>誤診<rt>ごしん</rt></ruby> <span class="ex-vn">(chẩn đoán sai)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">〜療 (〜りょう)</div>
+            <div class="desc">"Chữa trị"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>治療<rt>ちりょう</rt></ruby> <span class="ex-vn">(điều trị)</span></div><div class="ex-item"><ruby>診療<rt>しんりょう</rt></ruby> <span class="ex-vn">(khám chữa bệnh)</span></div><div class="ex-item"><ruby>医療<rt>いりょう</rt></ruby> <span class="ex-vn">(y tế)</span></div><div class="ex-item"><ruby>物療<rt>ぶつりょう</rt></ruby> <span class="ex-vn">(vật lý trị liệu)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">〜性 (〜せい)</div>
+            <div class="desc">"Tính chất của bệnh"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>慢性<rt>まんせい</rt></ruby> <span class="ex-vn">(mạn tính)</span></div><div class="ex-item"><ruby>急性<rt>きゅうせい</rt></ruby> <span class="ex-vn">(cấp tính)</span></div><div class="ex-item"><ruby>悪性<rt>あくせい</rt></ruby> <span class="ex-vn">(ác tính (ung thư))</span></div><div class="ex-item"><ruby>良性<rt>りょうせい</rt></ruby> <span class="ex-vn">(lành tính)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">〜病 (〜びょう)</div>
+            <div class="desc">"Bệnh, dạng bệnh"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>持病<rt>じびょう</rt></ruby> <span class="ex-vn">(bệnh mãn tính)</span></div><div class="ex-item"><ruby>難病<rt>なんびょう</rt></ruby> <span class="ex-vn">(bệnh nan y)</span></div><div class="ex-item"><ruby>成人病<rt>せいじんびょう</rt></ruby> <span class="ex-vn">(bệnh người lớn)</span></div><div class="ex-item"><ruby>伝染病<rt>でんせんびょう</rt></ruby> <span class="ex-vn">(bệnh truyền nhiễm)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">予〜 (よ〜)</div>
+            <div class="desc">"Phòng trước, dự liệu"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>予防<rt>よぼう</rt></ruby> <span class="ex-vn">(phòng ngừa)</span></div><div class="ex-item"><ruby>予診<rt>よしん</rt></ruby> <span class="ex-vn">(khám sơ bộ)</span></div><div class="ex-item"><ruby>予後<rt>よご</rt></ruby> <span class="ex-vn">(tiên lượng)</span></div><div class="ex-item"><ruby>予兆<rt>よちょう</rt></ruby> <span class="ex-vn">(điềm báo)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">副〜 (ふく〜)</div>
+            <div class="desc">"Phụ, đi kèm"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>副作用<rt>ふくさよう</rt></ruby> <span class="ex-vn">(tác dụng phụ)</span></div><div class="ex-item"><ruby>副反応<rt>ふくはんのう</rt></ruby> <span class="ex-vn">(phản ứng phụ)</span></div><div class="ex-item"><ruby>副産物<rt>ふくさんぶつ</rt></ruby> <span class="ex-vn">(sản phẩm phụ)</span></div><div class="ex-item"><ruby>副次的<rt>ふくじてき</rt></ruby> <span class="ex-vn">(mang tính phụ)</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 副詞 -->
+    <div class="special-block">
+      <div class="special-banner adv">🌟 副詞・例文 — Phó từ N1</div>
+      <div class="special-body">
+        <div class="adverb-grid">
+          <div class="adv-item">
+            <div><span class="adv-word">めっきり</span> <span class="adv-meaning">— Rõ rệt, đáng kể (thường về tuổi/sức khỏe)</span></div>
+            <div class="adv-ex"><span class="jp">最近、祖父はめっきり弱ってきた。</span><span class="vn">Dạo gần đây, ông tôi yếu đi rõ rệt.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (rõ rệt - về thay đổi):</strong> <span class="syn-jp">急に</span> <span class="syn-vn">(đột ngột)</span> · <span class="syn-jp">ぐっと</span> <span class="syn-vn">(mạnh)</span> · <span class="syn-jp">著しく</span> <span class="syn-vn">(đáng kể)</span> · <span class="syn-jp">目に見えて</span> <span class="syn-vn">(thấy rõ)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">いまだに</span> <span class="adv-meaning">— Cho đến nay vẫn (chưa)</span></div>
+            <div class="adv-ex"><span class="jp">原因はいまだに解明されていない難病である。</span><span class="vn">Đây là bệnh nan y mà nguyên nhân đến nay vẫn chưa được làm rõ.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (đến nay vẫn):</strong> <span class="syn-jp">依然として</span> <span class="syn-vn">(vẫn còn)</span> · <span class="syn-jp">相変わらず</span> <span class="syn-vn">(vẫn như cũ)</span> · <span class="syn-jp">今もって</span> <span class="syn-vn">(đến giờ vẫn)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">辛うじて (かろうじて)</span> <span class="adv-meaning">— May mà, suýt soát</span></div>
+            <div class="adv-ex"><span class="jp">大手術を経て、彼は辛うじて命を取り留めた。</span><span class="vn">Trải qua ca đại phẫu, anh ấy may mà giữ được mạng sống.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (suýt soát):</strong> <span class="syn-jp">ぎりぎり</span> <span class="syn-vn">(sát nút)</span> · <span class="syn-jp">やっと</span> <span class="syn-vn">(cuối cùng)</span> · <span class="syn-jp">どうにかこうにか</span> <span class="syn-vn">(xoay sở)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">徐々に (じょじょに)</span> <span class="adv-meaning">— Từ từ, dần dần</span></div>
+            <div class="adv-ex"><span class="jp">徐々に体力を回復させ、ようやく社会復帰した。</span><span class="vn">Dần dần hồi phục thể lực, anh ấy cuối cùng đã trở lại xã hội.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (từ từ):</strong> <span class="syn-jp">だんだん</span> <span class="syn-vn">(dần)</span> · <span class="syn-jp">次第に</span> <span class="syn-vn">(tuần tự)</span> · <span class="syn-jp">少しずつ</span> <span class="syn-vn">(từng ít)</span> · <span class="syn-jp">漸次</span> <span class="syn-vn">(tiệm tiến)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">なおざりに</span> <span class="adv-meaning">— Lơ là, qua loa</span></div>
+            <div class="adv-ex"><span class="jp">健康管理をなおざりにしては、大病を招きかねない。</span><span class="vn">Lơ là việc chăm sức khỏe thì có thể chuốc lấy bệnh nặng.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (lơ là):</strong> <span class="syn-jp">おろそかに</span> <span class="syn-vn">(sơ sài)</span> · <span class="syn-jp">いい加減に</span> <span class="syn-vn">(đại khái)</span> · <span class="syn-jp">適当に</span> <span class="syn-vn">(qua quýt)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">ひいては</span> <span class="adv-meaning">— Thậm chí dẫn đến, kéo theo</span></div>
+            <div class="adv-ex"><span class="jp">運動不足は肥満を、ひいては生活習慣病を引き起こす。</span><span class="vn">Thiếu vận động dẫn đến béo phì, thậm chí gây ra bệnh do lối sống.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (kéo theo):</strong> <span class="syn-jp">延いては</span> <span class="syn-vn">(viết kanji)</span> · <span class="syn-jp">ひいては</span> <span class="syn-vn">(thậm chí)</span> · <span class="syn-jp">更には</span> <span class="syn-vn">(hơn nữa)</span> · <span class="syn-jp">結果として</span> <span class="syn-vn">(kết quả là)</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 練習 -->
+    <div class="exercise-block">
+      <h4>📝 練習問題 — Bài tập</h4>
+      <p style="font-size:16.5px;color:#3a2412;"><strong>Câu 1.</strong> Điền từ phù hợp (診断／治療／免疫／持病／悪化).</p>
+      <ol>
+        <li>早期 <span class="blank" data-ans="診断">　　　　</span> によって、多くの命が救われている。</li>
+        <li>最新の <span class="blank" data-ans="治療">　　　　</span> を受けるべく、海外渡航を決意した。</li>
+        <li>放置していたら、症状はみるみる <span class="blank" data-ans="悪化">　　　　</span> していった。</li>
+        <li><span class="blank" data-ans="持病">　　　　</span> がある彼は、毎月通院を欠かさない。</li>
+        <li>規則正しい生活が、 <span class="blank" data-ans="免疫">　　　　</span> 力を高めるカギだと言われている。</li>
+      </ol>
+      <button class="answer-btn" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box">
+        ① 診断　② 治療　③ 悪化　④ 持病　⑤ 免疫
+      </div>
+
+      <p style="margin-top:18px;font-size:16.5px;color:#3a2412;"><strong>Câu 2.</strong> Chọn từ trái nghĩa.</p>
+      <ol>
+        <li>「悪化」⇔ ？　a) 回復　b) 慢性　c) 副作用 → <span class="blank" data-ans="a">　　　　</span></li>
+        <li>「慢性」⇔ ？　a) 急性　b) 副作用　c) 予防 → <span class="blank" data-ans="a">　　　　</span></li>
+        <li>「入院」⇔ ？　a) 通院　b) 退院　c) 看病 → <span class="blank" data-ans="b">　　　　</span></li>
+      </ol>
+      <button class="answer-btn" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box">
+        ① a) 回復　② a) 急性　③ b) 退院
+      </div>
+    </div>
+
+  </div>
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-03.html">← Bài 3</a><a class="mid" href="../tu-vung.html">▦ Danh sách bài</a><a href="bai-05.html">Bài 5 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+
+;
+
+/* ============================================================
+   CONFIG GIỌNG ĐỌC — sửa ở đây để bật giọng neural chất lượng cao.
+   Đổi provider bằng menu "Nguồn" trên thanh, hoặc đặt mặc định bên dưới.
+   • VOICEVOX (miễn phí, tự nhiên): đặt voicevoxUrl tới server VOICEVOX của bạn.
+   • Google Cloud TTS (Neural2): nên dùng proxy để giấu key →
+       googleEndpoint = 'https://your-proxy/synthesize'  (proxy nhận {text} trả {audioContent})
+       hoặc test nhanh: googleApiKey = 'KEY' (KHÔNG để key thật trên web công khai!)
+   • Azure: azureKey + azureRegion (giọng ja-JP-NanamiNeural). Có thể cần proxy do CORS.
+   ============================================================ */
+window.TTS_CONFIG = window.TTS_CONFIG || {
+  voicevoxUrl   : 'http://localhost:50021', voicevoxSpeaker: 3,   // 3 = ずんだもん; đổi tùy ý
+  googleEndpoint: '',  googleApiKey: '',  googleVoice: 'ja-JP-Neural2-B',
+  azureEndpoint : '',  azureKey: '',  azureRegion: 'japaneast', azureVoice: 'ja-JP-NanamiNeural'
+};
+(function(){
+  var synth = ('speechSynthesis' in window) ? window.speechSynthesis : null;
+  var bar=document.getElementById('ttsBar'),
+      provSel=document.getElementById('ttsProvider'),
+      voiceWrap=document.getElementById('ttsVoiceWrap'),
+      sel=document.getElementById('ttsVoice'),
+      rate=document.getElementById('ttsRate'),
+      rateVal=document.getElementById('ttsRateVal'),
+      hint=document.getElementById('ttsHint'),
+      voices=[], saved={}, cur=null, cache={}, audio=new Audio();
+  try{ saved=JSON.parse(localStorage.getItem('ttsPref')||'{}'); }catch(e){}
+  if(saved.provider) provSel.value=saved.provider;
+  if(saved.rate){ rate.value=saved.rate; rateVal.textContent=saved.rate; }
+
+  /* ---------- giọng máy (Web Speech) ---------- */
+  function isJa(v){ return /ja(-|_|$)/i.test(v.lang)||/japan|japanese|日本/i.test(v.name); }
+  function score(v){ var n=(v.name||'').toLowerCase(),s=0;
+    if(/natural/.test(n))s+=120; if(/google/.test(n))s+=80; if(/online|server|neural/.test(n))s+=50;
+    if(/nanami|keita|ayumi|haruka|sayaka|ichiro|mizuki/.test(n))s+=45;
+    if(/enhanced|premium|plus/.test(n))s+=30; if(/kyoko|o-?ren|otoya|hattori/.test(n))s+=18;
+    if(/compact|eloquence|espeak|fallback/.test(n))s-=60; if(v.localService===false)s+=15; return s; }
+  function fillVoices(){
+    if(!synth) return; voices=synth.getVoices().filter(isJa).sort(function(a,b){return score(b)-score(a);});
+    sel.innerHTML='';
+    if(!voices.length){ var o=document.createElement('option'); o.value=''; o.textContent='(máy chưa có giọng Nhật)'; sel.appendChild(o); return; }
+    voices.forEach(function(v){ var o=document.createElement('option'); o.value=v.name;
+      o.textContent=v.name.replace(/Microsoft |Google /,'')+' · '+v.lang+(/natural/i.test(v.name)?' ★':''); sel.appendChild(o); });
+    if(saved.voice && voices.some(function(v){return v.name===saved.voice;})) sel.value=saved.voice; else sel.value=voices[0].name;
+  }
+  if(synth){ fillVoices(); if(synth.onvoiceschanged!==undefined) synth.onvoiceschanged=fillVoices; }
+
+  function updateUI(){
+    var p=provSel.value;
+    voiceWrap.style.display = (p==='auto') ? '' : 'none';
+    if(p==='auto'){
+      var best=voices[0];
+      hint.textContent = (best && /natural|google/i.test(best.name)) ? ''
+        : '💡 Giọng máy nghe chưa hay? Mở bằng Microsoft Edge (giọng "Natural" Nanami) hoặc chọn nguồn VOICEVOX/Google/Azure ở trên.';
+    } else if(p==='voicevox'){ hint.textContent = TTS_CONFIG.voicevoxUrl ? '' : '⚠ Chưa đặt voicevoxUrl trong CONFIG.'; }
+    else if(p==='google'){ hint.textContent = (TTS_CONFIG.googleEndpoint||TTS_CONFIG.googleApiKey) ? '' : '⚠ Chưa đặt googleEndpoint/googleApiKey trong CONFIG.'; }
+    else if(p==='azure'){ hint.textContent = (TTS_CONFIG.azureEndpoint||TTS_CONFIG.azureKey) ? '' : '⚠ Chưa đặt azureKey/azureRegion trong CONFIG.'; }
+  }
+  function persist(){ try{ localStorage.setItem('ttsPref',JSON.stringify({provider:provSel.value,voice:sel.value,rate:rate.value})); }catch(e){} }
+  provSel.addEventListener('change',function(){ stopAll(); updateUI(); persist(); });
+  rate.addEventListener('input',function(){ rateVal.textContent=parseFloat(rate.value).toFixed(2); persist(); });
+  sel.addEventListener('change',persist);
+  updateUI();
+
+  function textOf(el){ var c=el.cloneNode(true); c.querySelectorAll('rt').forEach(function(r){r.remove();}); return c.textContent.replace(/\s+/g,'').trim(); }
+  function getRate(){ return parseFloat(rate.value)||1; }
+
+  /* ---------- adapter API ---------- */
+  async function fetchVoicevox(text){
+    var C=TTS_CONFIG, base=C.voicevoxUrl.replace(/\/$/,'');
+    var q=await fetch(base+'/audio_query?speaker='+C.voicevoxSpeaker+'&text='+encodeURIComponent(text),{method:'POST'});
+    var query=await q.json(); query.speedScale=getRate();
+    var s=await fetch(base+'/synthesis?speaker='+C.voicevoxSpeaker,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(query)});
+    return URL.createObjectURL(await s.blob());
+  }
+  async function fetchGoogle(text){
+    var C=TTS_CONFIG, body={input:{text:text},voice:{languageCode:'ja-JP',name:C.googleVoice},audioConfig:{audioEncoding:'MP3',speakingRate:getRate()}};
+    var url = C.googleEndpoint || ('https://texttospeech.googleapis.com/v1/text:synthesize?key='+C.googleApiKey);
+    var r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    var j=await r.json(); return 'data:audio/mp3;base64,'+j.audioContent;
+  }
+  async function fetchAzure(text){
+    var C=TTS_CONFIG;
+    var ssml='<speak version="1.0" xml:lang="ja-JP"><voice name="'+C.azureVoice+'"><prosody rate="'+Math.round((getRate()-1)*100)+'%">'+text+'</prosody></voice></speak>';
+    var url=C.azureEndpoint || ('https://'+C.azureRegion+'.tts.speech.microsoft.com/cognitiveservices/v1');
+    var h={'Content-Type':'application/ssml+xml','X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3'};
+    if(C.azureKey) h['Ocp-Apim-Subscription-Key']=C.azureKey;
+    var r=await fetch(url,{method:'POST',headers:h,body:ssml});
+    return URL.createObjectURL(await r.blob());
+  }
+  function apiFetch(text){
+    var p=provSel.value, key=p+'|'+getRate()+'|'+text;
+    if(cache[key]) return Promise.resolve(cache[key]);
+    var fn = p==='voicevox'?fetchVoicevox : p==='google'?fetchGoogle : fetchAzure;
+    return fn(text).then(function(src){ cache[key]=src; return src; });
+  }
+
+  /* ---------- điều khiển phát ---------- */
+  function stopAll(){ if(synth) synth.cancel(); audio.pause(); document.querySelectorAll('.tts-btn.playing,.tts-btn.loading').forEach(function(b){b.classList.remove('playing','loading');}); cur=null; }
+  function deviceSpeak(el,btn){
+    if(!synth){ hint.textContent='Trình duyệt không hỗ trợ đọc; hãy chọn nguồn API.'; return; }
+    var u=new SpeechSynthesisUtterance(textOf(el)); u.lang='ja-JP';
+    var v=voices.find(function(x){return x.name===sel.value;}); if(v) u.voice=v; u.rate=getRate();
+    u.onend=u.onerror=function(){ btn.classList.remove('playing'); if(cur===btn)cur=null; };
+    btn.classList.add('playing'); cur=btn; synth.speak(u);
+  }
+  function play(el,btn){
+    var wasCur=(cur===btn); stopAll(); if(wasCur) return;
+    var p=provSel.value;
+    if(p==='auto'){ deviceSpeak(el,btn); return; }
+    btn.classList.add('loading'); cur=btn;
+    apiFetch(textOf(el)).then(function(src){
+      btn.classList.remove('loading'); btn.classList.add('playing');
+      audio.src=src; audio.playbackRate=1; audio.onended=function(){ btn.classList.remove('playing'); if(cur===btn)cur=null; };
+      return audio.play();
+    }).catch(function(e){ console.warn('TTS API lỗi → dùng giọng máy:',e); btn.classList.remove('loading'); deviceSpeak(el,btn); });
+  }
+
+  document.querySelectorAll('.jp, .ex-jp').forEach(function(el){
+    if(el.closest('.main-header')||el.closest('.cover')||el.closest('#ttsBar')) return;
+    if(textOf(el).length<2) return;
+    var b=document.createElement('button'); b.className='tts-btn'; b.type='button'; b.title='Nghe đọc (tiếng Nhật)'; b.textContent='🔊';
+    b.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); play(el,b); });
+    el.insertAdjacentElement('afterend',b);
+  });
+})();
+</script>
+</body></html>

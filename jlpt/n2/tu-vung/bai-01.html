@@ -1,0 +1,673 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 1 · Họ hàng, Bạn bè, Người quen — Từ vựng N2 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N2 — Bài 1: Họ hàng, Bạn bè, Người quen. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#1b3a5a;
+  --accent-dark:#0f2740;
+  --accent-2:#2d6e7a;
+  --accent-3:#5fa3b2;
+  --line:#bcd3da;
+  --line-2:#dde9ee;
+  --callout:#f0f6f8;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --shadow:0 18px 46px rgba(15, 39, 64, 0.10);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(45,110,122,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(27,58,90,0.08), transparent 22%),
+    linear-gradient(180deg, #eef4f6 0%, #e7eef2 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+/* ============ COVER ============ */
+.cover{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(95,163,178,0.24), transparent 16%),
+    linear-gradient(135deg, #0f2740 0%, #1b3a5a 36%, #082030 100%);
+  color:#fff; border-radius:30px; box-shadow:var(--shadow);
+  padding:60px 64px 50px; margin-bottom:26px;
+}
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(95,163,178,0.52) 0%, rgba(95,163,178,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(95,163,178,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+/* ============ TOC ============ */
+.toc-panel{
+  margin:0 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(240,246,248,0.96));
+  border:1px solid rgba(45,110,122,0.20);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-chapter{ margin-bottom:20px; }
+.toc-chapter-head{ display:flex; align-items:center; gap:12px; padding:12px 16px; margin-bottom:10px; background:linear-gradient(90deg, #1b3a5a, #2d6e7a); color:#fff; border-radius:12px; }
+.toc-chapter-num{ font-family:"Noto Serif CJK JP",serif; font-weight:900; font-size:22px; opacity:0.85; }
+.toc-chapter-title{ font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:16px; }
+.toc-chapter-title .vn{ font-style:italic; font-size:13px; opacity:0.85; margin-left:8px; font-family:Inter,sans-serif; font-weight:500; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; padding-left:8px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:12px 14px; background:linear-gradient(180deg, #fffefd 0%, #f0f6f8 100%); border:1px solid var(--line-2); border-radius:12px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(27,58,90,0.40); box-shadow:0 12px 24px rgba(15,39,64,0.06); }
+.toc-item-number{ display:inline-block; min-width:30px; padding:2px 7px; margin-right:6px; border-radius:7px; background:linear-gradient(180deg, var(--accent-2), #1f5560); color:#fff; font-weight:800; font-size:10.5px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:13px; }
+.toc-item-summary{ display:block; margin-top:4px; color:var(--muted); font-size:11.5px; line-height:1.45; font-family:"Noto Serif CJK JP",serif; }
+
+/* ============ CHAPTER HEADER ============ */
+.chapter-card{
+  position:relative; overflow:hidden;
+  background:linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:34px 44px 30px; margin:50px 0 20px;
+  color:#fff;
+}
+.chapter-card::after{
+  content:attr(data-mark); position:absolute; right:0; bottom:-40px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(8rem, 16vw, 13rem); color:rgba(255,255,255,0.08); line-height:1;
+}
+.chapter-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(95,163,178,0.95); margin-bottom:10px; }
+.chapter-card h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:34px; font-weight:700; }
+.chapter-card .chapter-sub{ font-size:14.5px; color:rgba(255,255,255,0.82); position:relative; z-index:1; }
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(45,110,122,0.16);
+  border-radius:28px; box-shadow:var(--shadow);
+  padding:0 0 40px; margin-bottom:40px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  padding:30px 44px 28px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(95,163,178,0.28), transparent 26%),
+    linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  color:#fff;
+}
+.lesson-banner::after{
+  content:"語彙"; position:absolute; right:-10px; bottom:-50px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:8px; }
+.lesson-banner h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:28px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:14px; color:rgba(255,255,255,0.82); }
+
+.doc-body{ padding:30px 44px 10px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #154366 0%, #1b3a5a 52%, #2d6e7a 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark); position:absolute; right:18px; top:50%; transform:translateY(-50%);
+  font-family:"Noto Serif CJK JP",serif; font-size:60px; line-height:1; color:rgba(255,255,255,0.12); font-weight:700;
+}
+.section-kicker{ display:block; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:rgba(255,255,255,0.78); }
+.section-head h3{
+  margin:0; padding:0; border:none; color:#fff; background:none;
+  font-family:"Noto Serif CJK JP",serif; font-size:22px; line-height:1.2; font-weight:700;
+}
+.section-head .section-vn{ display:block; margin-top:4px; font-size:13px; font-style:italic; color:rgba(255,255,255,0.82); font-family:Inter,sans-serif; }
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{ margin:16px 0 24px; }
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff; border:1px solid var(--line-2);
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 26px rgba(15,39,64,0.05);
+  font-size:13.5px;
+}
+thead th{
+  background:linear-gradient(180deg, #eaf3f6 0%, #cee2e8 100%);
+  color:var(--accent); font-weight:800;
+  padding:13px 14px; text-align:left; font-size:13px;
+  border-bottom:1px solid var(--line-2);
+}
+thead th:not(:last-child){ border-right:1px solid var(--line-2); }
+tbody td{
+  padding:18px 14px; vertical-align:top;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+}
+tbody td:last-child{ border-right:none; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody tr:nth-child(even) td{ background:#f7fbfc; }
+
+.col-stt{ width:5%; text-align:center; font-weight:800; color:var(--accent); font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:18px; }
+.col-vocab{ width:22%; }
+.col-explain{ width:30%; }
+.col-example{ width:43%; }
+
+.vocab-wrapper{ display:flex; flex-direction:column; gap:4px; }
+.vocab-kanji{ font-size:24px; font-weight:700; color:#222; font-family:"Noto Serif CJK JP","Yu Mincho",serif; line-height:1.15; }
+.vocab-kanji ruby{ ruby-position:over; ruby-align:center; }
+.vocab-kanji rt{ font-size:11px; color:#888; font-family:sans-serif; font-weight:500; }
+.vocab-hanviet{ font-size:11px; color:var(--accent-2); font-weight:800; letter-spacing:1.2px; margin-top:4px; }
+.vocab-pos{ display:inline-block; font-size:10.5px; color:#fff; background:var(--green); padding:2px 8px; border-radius:4px; font-weight:600; letter-spacing:0.05em; margin-top:6px; align-self:flex-start; }
+.vocab-pos.pos-na{ background:var(--terra); }
+.vocab-pos.pos-i{ background:var(--teal); }
+.vocab-pos.pos-adv{ background:var(--plum); }
+.vocab-pos.pos-suru{ background:#8a4a6a; }
+.vocab-pos.pos-katakana{ background:var(--accent-2); }
+.vocab-meaning{ font-size:14px; color:var(--accent); font-weight:700; margin-top:8px; line-height:1.5; }
+
+/* Explain box */
+.kanji-break{ background:linear-gradient(180deg, #f7fbfc, #e8f1f4); border:1px solid #cee2e8; border-left:4px solid var(--accent-2); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.65; color:#1f3a4a; }
+.kanji-break .kchar{ font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; color:var(--accent); margin-right:4px; }
+.kanji-break .kreading{ color:var(--accent-2); font-weight:700; font-size:11.5px; letter-spacing:0.05em; }
+.kanji-break .kmean{ color:#2d4a5a; }
+.kanji-break .combine{ margin-top:8px; padding-top:8px; border-top:1px dashed #b3cdd5; font-style:italic; color:#2d5560; }
+.kanji-break .combine strong{ font-style:normal; color:var(--accent); }
+.katakana-origin{ background:linear-gradient(180deg, #fff5f8, #faeaf0); border:1px solid #f0d8e2; border-left:4px solid #b13e6a; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#5a3a4a; }
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{ background:linear-gradient(180deg, #f7faf2, #ecf2e2); border:1px solid #d8e2c8; border-left:4px solid var(--green); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#3e5a3a; }
+.wago-note strong{ color:var(--green); }
+
+/* Example box */
+.ex-box{ background:linear-gradient(180deg, #fefdfa, #f3eddb); border-left:4px solid var(--accent); padding:13px 16px; border-radius:0 12px 12px 0; }
+.ex-jp{ font-size:14.5px; color:#222; margin-bottom:8px; line-height:1.95; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(95,163,178,0.20); padding:0 3px; border-radius:3px; }
+.ex-vn{ font-size:13px; color:#4a5560; font-style:italic; line-height:1.55; padding-top:6px; border-top:1px dotted #cee2e8; }
+
+/* ============ WORD FORMATION & ADVERB BLOCKS ============ */
+.special-block{
+  margin:24px 0;
+  background:linear-gradient(180deg, #fffdfa, #f7fbfc);
+  border:1px solid #cee2e8;
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 8px 20px rgba(15,39,64,0.05);
+}
+.special-banner{
+  display:flex; align-items:center; gap:12px;
+  padding:14px 22px;
+  background:linear-gradient(90deg, #2d6e7a 0%, #5fa3b2 100%);
+  color:#fff;
+}
+.special-banner.adv{ background:linear-gradient(90deg, #6a4a8a 0%, #8a6daf 100%); }
+.special-icon{ width:36px; height:36px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"Noto Serif CJK JP",serif; }
+.special-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:16px; font-weight:700; }
+.special-banner .sp-subtitle{ display:block; font-size:11px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:1px; letter-spacing:0.04em; }
+.special-body{ padding:18px 22px; }
+
+.word-formation-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; }
+.wf-item{ background:#fff; border:1px solid #d4e3e8; border-radius:10px; padding:12px 14px; }
+.wf-pattern{ font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:17px; color:var(--accent); margin-bottom:6px; }
+.wf-pattern .ptype{ font-size:11px; color:var(--accent-2); margin-left:6px; font-weight:600; }
+.wf-examples{ font-size:13px; line-height:1.7; color:#333; font-family:"Noto Serif CJK JP",serif; }
+.wf-examples .wfx{ display:inline-block; margin-right:8px; }
+.wf-examples .wfx-jp{ font-weight:600; color:var(--accent-dark); }
+.wf-examples .wfx-vn{ font-style:italic; color:#5f6470; font-family:Inter,sans-serif; font-size:11.5px; }
+
+.adverb-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+.adv-item{ background:#fff; border:1px solid #d8d0e4; border-radius:10px; padding:13px 16px; border-left:3px solid #6a4a8a; }
+.adv-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:5px; }
+.adv-jp{ font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:16px; color:#4a3070; }
+.adv-vn{ font-size:12.5px; color:var(--muted); font-style:italic; }
+.adv-ex{ font-size:13px; line-height:1.75; color:#333; font-family:"Noto Serif CJK JP",serif; padding:6px 10px; background:#faf7fd; border-radius:6px; margin-top:4px; }
+.adv-ex .adv-ex-vn{ display:block; font-size:11.5px; color:#5a5070; font-style:italic; font-family:Inter,sans-serif; margin-top:3px; padding-top:3px; border-top:1px dotted #d8d0e4; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:30px 0 24px;
+  padding:0;
+  background:linear-gradient(180deg, #fefdfa 0%, #f3eddb 100%);
+  border:1px solid #d9c9a8;
+  border-radius:22px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(15,39,64,0.05);
+}
+.exercise-banner{
+  display:flex; align-items:center; gap:14px;
+  padding:18px 24px;
+  background:linear-gradient(90deg, var(--accent) 0%, #2d6e7a 100%);
+  color:#fff;
+}
+.exercise-icon{ width:42px; height:42px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"EB Garamond","Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:11.5px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:2px; letter-spacing:0.04em; }
+.exercise-body{ padding:22px 26px; }
+
+.exercise{ background:#fff; border:1px solid #d9c9a8; border-radius:14px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 14px rgba(15,39,64,0.04); }
+.exercise:last-child{ margin-bottom:0; }
+.exercise-title{ font-weight:700; color:var(--accent); margin-bottom:12px; font-size:14px; display:flex; align-items:center; gap:10px; padding-bottom:10px; border-bottom:1px dashed #d9c9a8; }
+.exercise-title .ex-no{ background:var(--accent-2); color:#fff; padding:3px 10px; border-radius:6px; font-size:11.5px; letter-spacing:0.08em; }
+.choice-pool{ background:linear-gradient(180deg, #fff7e8, #f7e4c1); border:1px dashed #b08850; border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:14px; font-family:"Noto Serif CJK JP",serif; color:#674c1b; }
+.choice-pool strong{ color:var(--accent); }
+
+.ex-q{ padding:9px 0; border-bottom:1px dotted #e8dcc0; font-size:14px; line-height:1.85; font-family:"Noto Serif CJK JP",serif; }
+.ex-q:last-child{ border-bottom:none; }
+.ex-q .qnum{ display:inline-block; min-width:24px; font-weight:700; color:var(--accent); margin-right:4px; font-family:"EB Garamond",sans-serif; font-size:14.5px; }
+.ex-q .blank{ display:inline-block; min-width:90px; border-bottom:1.5px solid #b08850; padding:0 8px; margin:0 3px; text-align:center; color:transparent; cursor:pointer; transition:all .15s; }
+.ex-q .blank:hover{ background:rgba(95,163,178,0.12); }
+.ex-q .blank.shown{ color:var(--accent); font-weight:700; border-bottom-color:var(--accent); background:rgba(95,163,178,0.15); }
+
+.multi-choice{ display:block; margin:4px 0 4px 30px; font-size:13.5px; color:#444; }
+.multi-choice .opt-num{ color:var(--accent-2); font-weight:700; margin-right:6px; }
+.match-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin-top:12px; }
+.match-col{ background:#f7fbfc; border:1px solid #cee2e8; border-radius:12px; padding:14px; }
+.match-col h5{ margin:0 0 10px; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; }
+.match-item{ padding:7px 10px; font-size:14px; border-radius:6px; }
+.match-item.jp{ font-family:"Noto Serif CJK JP",serif; }
+.match-item .mlabel{ display:inline-block; min-width:24px; font-weight:800; color:var(--accent-2); }
+
+.answer-toggle{
+  display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+  padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, #2d6e7a 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:13px; cursor:pointer; transition:all 0.2s; font-family:inherit;
+  box-shadow:0 6px 14px rgba(27,58,90,0.18);
+}
+.answer-toggle:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(27,58,90,0.28); }
+.answer-toggle::before{ content:"鍵"; font-family:"Noto Serif CJK JP",serif; margin-right:4px; }
+.answer-box{ display:none; margin-top:14px; padding:14px 16px; background:linear-gradient(180deg, #fffbef, #f8eed4); border:1px solid #d9bb88; border-left:4px solid var(--accent-2); border-radius:10px; font-size:13.5px; line-height:1.7; color:#5a4520; }
+.answer-box strong{ color:var(--accent); }
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  .chapter-card{ padding:24px 28px 22px; }
+  table.vocab-table{ min-width:880px; }
+  .table-shell{ overflow-x:auto; }
+  .match-grid{ grid-template-columns:1fr; }
+  .word-formation-grid{ grid-template-columns:1fr; }
+}
+
+@media print {
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+  html, body{ background:#fff !important; }
+  body{ font-size:11px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; }
+  .cover{ page-break-after:always; break-after:page; box-shadow:none; border-radius:18px; padding:42px 38px; }
+  .cover-title{ font-size:36px; }
+  .cover-mark{ font-size:11rem !important; }
+  .toc-panel{ page-break-after:always; break-after:page; box-shadow:none; }
+  .toc-grid{ grid-template-columns:repeat(3, 1fr) !important; }
+  .toc-item{ page-break-inside:avoid !important; break-inside:avoid !important; }
+  .chapter-card{ page-break-before:always; break-before:page; box-shadow:none; }
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:16px 18px 12px !important; }
+  .table-shell{ overflow:visible !important; overflow-x:visible !important; margin:8px 0 14px !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; box-shadow:none !important; table-layout:fixed !important; }
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:18px 22px !important; }
+  .lesson-banner h2{ font-size:22px !important; }
+  .section-head{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:10px 16px !important; margin:10px 0 8px !important; }
+  .section-head h3{ font-size:18px !important; }
+  .section-head::after{ font-size:36px !important; }
+  .exercise-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:12px 18px !important; }
+  .exercise-banner h4{ font-size:14px !important; }
+  .exercise-block{ page-break-inside:auto; margin:14px 0 !important; }
+  .exercise-body{ padding:14px 16px !important; }
+  .exercise{ page-break-inside:avoid !important; break-inside:avoid !important; padding:12px 14px !important; margin-bottom:10px !important; }
+  .special-block{ page-break-inside:avoid !important; break-inside:avoid !important; }
+  .footer-card{ page-break-inside:avoid; break-inside:avoid; }
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table tbody{ display:table-row-group; }
+  table.vocab-table thead th{ padding:8px 8px !important; font-size:11px !important; }
+  table.vocab-table tr{ page-break-inside:avoid !important; break-inside:avoid !important; page-break-after:auto; }
+  table.vocab-table tbody td{ padding:10px 8px !important; font-size:11px !important; }
+  .vocab-wrapper{ gap:2px !important; }
+  .vocab-kanji{ font-size:17px !important; line-height:1.1 !important; }
+  .vocab-kanji rt{ font-size:9px !important; }
+  .vocab-hanviet{ font-size:9.5px !important; letter-spacing:0.8px !important; margin-top:2px !important; }
+  .vocab-pos{ font-size:8.5px !important; padding:1px 5px !important; margin-top:3px !important; }
+  .vocab-meaning{ font-size:11px !important; margin-top:4px !important; line-height:1.35 !important; }
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:7px 9px !important; font-size:10.5px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important; break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:14px !important; }
+  .kanji-break .kreading{ font-size:9.5px !important; }
+  .kanji-break .combine{ margin-top:5px !important; padding-top:5px !important; }
+  .ex-box{ padding:8px 10px !important; page-break-inside:avoid !important; break-inside:avoid !important; }
+  .ex-jp{ font-size:11.5px !important; line-height:1.75 !important; margin-bottom:5px !important; }
+  .ex-jp rt{ font-size:8px !important; }
+  .ex-vn{ font-size:10.5px !important; line-height:1.45 !important; padding-top:4px !important; }
+  .ex-q{ page-break-inside:avoid; break-inside:avoid; font-size:11.5px !important; line-height:1.7 !important; padding:6px 0 !important; }
+  .choice-pool{ font-size:11.5px !important; padding:7px 11px !important; }
+  .multi-choice{ font-size:11px !important; }
+  .answer-toggle{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; break-inside:avoid; font-size:11px !important; padding:10px 12px !important; }
+  .match-grid{ grid-template-columns:1fr 1fr !important; }
+  .match-item{ font-size:11px !important; padding:4px 6px !important; }
+  .word-formation-grid{ grid-template-columns:1fr 1fr !important; gap:8px !important; }
+  .wf-item{ padding:8px 10px !important; }
+  .wf-pattern{ font-size:13px !important; }
+  .wf-examples{ font-size:10.5px !important; }
+  .adv-jp{ font-size:13px !important; }
+  .adv-vn{ font-size:11px !important; }
+  .adv-ex{ font-size:10.5px !important; padding:4px 8px !important; }
+}
+
+
+.tts-btn{cursor:pointer;border:1px solid rgba(45,110,122,.35);background:rgba(95,163,178,.12);
+  border-radius:6px;font-size:.85em;line-height:1;margin-right:7px;padding:2px 6px;opacity:.78;
+  transition:.15s;vertical-align:middle;-webkit-user-select:none;user-select:none;}
+.tts-btn:hover{opacity:1;transform:scale(1.08);background:rgba(95,163,178,.25);}
+.tts-btn.playing{opacity:1;background:#2d6e7a;border-color:#2d6e7a;color:#fff;}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:500;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.93);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:36px;height:36px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.16em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n2.html">N2</a> · <a href="../tu-vung.html">Từ vựng</a> · Bài 1</div></div></a><a class="tl-back" href="../tu-vung.html">← Danh sách bài</a></nav>
+<div class="page-shell">
+
+<article class="document" id="lesson-1-1">
+<div class="lesson-banner">
+  <span class="lesson-kicker">1課 — 親類 ・ 友人 ・ 知人</span>
+  <h2>Họ hàng, Bạn bè, Người quen</h2>
+  <div class="lesson-sub">家族 ・ 親類, 友人 ・ 知人, 付き合い (26 từ vựng chủ đề)</div>
+</div>
+<div class="doc-body">
+
+<div class="section-head" data-mark="家"><span class="section-kicker">1-1 · Từ vựng chủ đề · 26 từ</span><h3>家族 ・ 親類 ・ 友人</h3><span class="section-vn">Gia đình, họ hàng và bạn bè</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ N2 &amp; Dịch</th></tr></thead><tbody>
+
+<tr><td class="col-stt">1</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>祖<rt>そ</rt></ruby><ruby>先<rt>せん</rt></ruby></span><span class="vocab-hanviet">TỔ TIÊN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Tổ tiên, ông cha</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">祖</span><span class="kreading">TỔ · そ</span> — <span class="kmean">ông tổ, gốc</span></div><div><span class="kchar">先</span><span class="kreading">TIÊN · せん / さき</span> — <span class="kmean">trước, đời trước</span></div><div class="combine"><strong>Ghép:</strong> "Đời trước + gốc" → <strong>tổ tiên</strong>. Trang trọng hơn 先祖 (せんぞ). Cùng nhóm: 子孫 (con cháu - trái nghĩa).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="6867c9636c">わが<ruby>家<rt>か</rt></ruby>の<span class="target"><ruby>祖<rt>そ</rt></ruby><ruby>先<rt>せん</rt></ruby></span>は<ruby>江<rt>え</rt></ruby><ruby>戸<rt>ど</rt></ruby><ruby>時<rt>じ</rt></ruby><ruby>代<rt>だい</rt></ruby>からこの<ruby>土<rt>と</rt></ruby><ruby>地<rt>ち</rt></ruby>に<ruby>住<rt>す</rt></ruby>んでいたという。</div><div class="ex-vn">Nghe nói tổ tiên của nhà tôi đã sống ở mảnh đất này từ thời Edo.</div></div></td></tr>
+
+<tr><td class="col-stt">2</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>子<rt>し</rt></ruby><ruby>孫<rt>そん</rt></ruby></span><span class="vocab-hanviet">TỬ TÔN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Con cháu, đời sau</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">子</span><span class="kreading">TỬ · し / こ</span> — <span class="kmean">con</span></div><div><span class="kchar">孫</span><span class="kreading">TÔN · そん / まご</span> — <span class="kmean">cháu</span></div><div class="combine"><strong>Ghép:</strong> "Con + cháu" → <strong>hậu duệ</strong>. Cụm: 子孫を残す (để lại con cháu), 子孫繁栄 (con cháu thịnh vượng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="7da01659a0">この<ruby>環<rt>かん</rt></ruby><ruby>境<rt>きょう</rt></ruby><ruby>問<rt>もん</rt></ruby><ruby>題<rt>だい</rt></ruby>は、<span class="target"><ruby>子<rt>し</rt></ruby><ruby>孫<rt>そん</rt></ruby></span>のためにも<ruby>今<rt>いま</rt></ruby>すぐ<ruby>解<rt>かい</rt></ruby><ruby>決<rt>けつ</rt></ruby>しなければならない。</div><div class="ex-vn">Vấn đề môi trường này, vì con cháu mai sau, cũng phải giải quyết ngay bây giờ.</div></div></td></tr>
+
+<tr><td class="col-stt">3</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>祖<rt>そ</rt></ruby><ruby>父<rt>ふ</rt></ruby><ruby>母<rt>ぼ</rt></ruby> / <ruby>孫<rt>まご</rt></ruby></span><span class="vocab-hanviet">TỔ PHỤ MẪU / TÔN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Ông bà / Cháu (nội/ngoại)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">祖父母</span><span class="kreading">そふぼ</span> — <span class="kmean">ông bà nội/ngoại</span></div><div><span class="kchar">孫</span><span class="kreading">まご</span> — <span class="kmean">cháu</span></div><div class="combine"><strong>Trang trọng hơn:</strong> 祖父母 = おじいさんとおばあさん. Cụm: 孫の顔を見せる (cho ông bà gặp cháu).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="383d93532a"><span class="target"><ruby>祖<rt>そ</rt></ruby><ruby>父<rt>ふ</rt></ruby><ruby>母<rt>ぼ</rt></ruby></span>にとって、<span class="target"><ruby>孫<rt>まご</rt></ruby></span>の<ruby>成<rt>せい</rt></ruby><ruby>長<rt>ちょう</rt></ruby>を<ruby>見<rt>み</rt></ruby>ることほど<ruby>嬉<rt>うれ</rt></ruby>しいことはないだろう。</div><div class="ex-vn">Đối với ông bà, có lẽ không có niềm vui nào lớn bằng việc nhìn thấy cháu lớn lên.</div></div></td></tr>
+
+<tr><td class="col-stt">4</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>三<rt>さん</rt></ruby><ruby>世<rt>せ</rt></ruby><ruby>代<rt>だい</rt></ruby> / <ruby>一<rt>いっ</rt></ruby><ruby>家<rt>か</rt></ruby></span><span class="vocab-hanviet">TAM THẾ ĐẠI / NHẤT GIA</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Ba thế hệ / Cả nhà</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">世代</span><span class="kreading">せだい</span> — <span class="kmean">thế hệ</span></div><div><span class="kchar">一家</span><span class="kreading">いっか</span> — <span class="kmean">một gia đình, cả nhà</span></div><div class="combine"><strong>Văn hóa:</strong> Ở Nhật, sống chung 三世代 (ông bà + bố mẹ + con) ngày càng hiếm. Cụm: 一家団欒 (cả nhà sum vầy).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="8170be2fd2"><span class="target"><ruby>三<rt>さん</rt></ruby><ruby>世<rt>せ</rt></ruby><ruby>代<rt>だい</rt></ruby></span>が<ruby>一<rt>ひと</rt></ruby>つ<ruby>屋<rt>や</rt></ruby><ruby>根<rt>ね</rt></ruby>の<ruby>下<rt>した</rt></ruby>で<ruby>暮<rt>く</rt></ruby>らすという<ruby>習<rt>しゅう</rt></ruby><ruby>慣<rt>かん</rt></ruby>は、もはやめずらしくなった。</div><div class="ex-vn">Phong tục ba thế hệ cùng sống dưới một mái nhà giờ đây đã trở thành hiếm.</div></div></td></tr>
+
+<tr><td class="col-stt">5</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>親<rt>しん</rt></ruby><ruby>類<rt>るい</rt></ruby></span><span class="vocab-hanviet">THÂN LOẠI</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Họ hàng, thân thuộc</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">親</span><span class="kreading">THÂN · しん</span> — <span class="kmean">thân, ruột thịt</span></div><div><span class="kchar">類</span><span class="kreading">LOẠI · るい</span> — <span class="kmean">loại, các thứ</span></div><div class="combine"><strong>Phân biệt:</strong> 親類 = 親戚 (しんせき) - đều là họ hàng. 親類 trang trọng hơn một chút. Cùng chữ 類: 種類 (chủng loại), 書類 (giấy tờ).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="871217d468">お<ruby>正<rt>しょう</rt></ruby><ruby>月<rt>がつ</rt></ruby>には<span class="target"><ruby>親<rt>しん</rt></ruby><ruby>類<rt>るい</rt></ruby></span><ruby>一<rt>いち</rt></ruby><ruby>同<rt>どう</rt></ruby>が<ruby>祖<rt>そ</rt></ruby><ruby>父<rt>ふ</rt></ruby>の<ruby>家<rt>いえ</rt></ruby>に<ruby>集<rt>あつ</rt></ruby>まることになっている。</div><div class="ex-vn">Vào dịp Tết, toàn thể họ hàng đã thành thông lệ tụ tập tại nhà ông nội.</div></div></td></tr>
+
+<tr><td class="col-stt">6</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>親<rt>おや</rt></ruby><ruby>孝<rt>こう</rt></ruby><ruby>行<rt>こう</rt></ruby></span><span class="vocab-hanviet">THÂN HIẾU HÀNH</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Hiếu thảo với cha mẹ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">親</span><span class="kreading">THÂN · おや</span> — <span class="kmean">cha mẹ</span></div><div><span class="kchar">孝</span><span class="kreading">HIẾU · こう</span> — <span class="kmean">hiếu thảo</span></div><div><span class="kchar">行</span><span class="kreading">HÀNH · こう</span> — <span class="kmean">làm, hành động</span></div><div class="combine"><strong>Trái nghĩa:</strong> 親不孝 (おやふこう - bất hiếu). Cụm: 親孝行をする (làm tròn đạo hiếu).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="09ac1f4524">いつかは<span class="target"><ruby>親<rt>おや</rt></ruby><ruby>孝<rt>こう</rt></ruby><ruby>行<rt>こう</rt></ruby></span>したいと<ruby>思<rt>おも</rt></ruby>っていたものの、<ruby>気<rt>き</rt></ruby>が<ruby>付<rt>つ</rt></ruby>くと<ruby>両<rt>りょう</rt></ruby><ruby>親<rt>しん</rt></ruby>はもうこの<ruby>世<rt>よ</rt></ruby>にいなかった。</div><div class="ex-vn">Tuy đã từng nghĩ một lúc nào đó sẽ báo hiếu cha mẹ, nhưng khi nhận ra thì cha mẹ đã không còn ở trên đời.</div></div></td></tr>
+
+<tr><td class="col-stt">7</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>実<rt>じっ</rt></ruby><ruby>家<rt>か</rt></ruby></span><span class="vocab-hanviet">THỰC GIA</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Nhà bố mẹ đẻ (cha mẹ ruột)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">実</span><span class="kreading">THỰC · じつ</span> — <span class="kmean">thật, ruột</span></div><div><span class="kchar">家</span><span class="kreading">GIA · か</span> — <span class="kmean">nhà</span></div><div class="combine"><strong>Sắc thái:</strong> Dùng đặc biệt cho người đã kết hôn nói về nhà bố mẹ ruột. Khác với nhà chồng/vợ (婚家 こんか).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="9fe14602e6">お<ruby>盆<rt>ぼん</rt></ruby><ruby>休<rt>やす</rt></ruby>みには、<ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby><ruby>全<rt>ぜん</rt></ruby><ruby>員<rt>いん</rt></ruby>で<span class="target"><ruby>実<rt>じっ</rt></ruby><ruby>家<rt>か</rt></ruby></span>へ<ruby>帰<rt>かえ</rt></ruby>るつもりだ。</div><div class="ex-vn">Vào dịp lễ Obon, cả gia đình tôi định về nhà bố mẹ đẻ.</div></div></td></tr>
+
+<tr><td class="col-stt">8</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>末<rt>すえ</rt></ruby>っ<ruby>子<rt>こ</rt></ruby> / <ruby>一<rt>ひと</rt></ruby><ruby>人<rt>り</rt></ruby>っ<ruby>子<rt>こ</rt></ruby> / <ruby>双<rt>ふた</rt></ruby><ruby>子<rt>ご</rt></ruby></span><span class="vocab-hanviet">MẠT TỬ / NHẤT NHÂN TỬ / SONG TỬ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Con út / Con một / Sinh đôi</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">末っ子</span><span class="kreading">すえっこ</span> — <span class="kmean">đứa con sinh sau cùng</span></div><div><span class="kchar">一人っ子</span><span class="kreading">ひとりっこ</span> — <span class="kmean">con duy nhất</span></div><div><span class="kchar">双子</span><span class="kreading">ふたご</span> — <span class="kmean">sinh đôi</span></div><div class="combine"><strong>Bộ 3:</strong> Đã học ở N3. Tại N2, nhấn mạnh sự khác biệt văn hóa: 一人っ子 ngày càng nhiều ở các nước phát triển.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="fd83188eb0"><ruby>少<rt>しょう</rt></ruby><ruby>子<rt>し</rt></ruby><ruby>化<rt>か</rt></ruby>が<ruby>進<rt>すす</rt></ruby>むにつれて、<span class="target"><ruby>一<rt>ひと</rt></ruby><ruby>人<rt>り</rt></ruby>っ<ruby>子<rt>こ</rt></ruby></span>の<ruby>家<rt>か</rt></ruby><ruby>庭<rt>てい</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えてきた。</div><div class="ex-vn">Cùng với việc tỉ lệ sinh sụt giảm, các gia đình có con một ngày càng tăng.</div></div></td></tr>
+
+<tr><td class="col-stt">9</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>仲<rt>なか</rt></ruby><ruby>良<rt>よ</rt></ruby>し / <ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby><ruby>仲<rt>なか</rt></ruby><ruby>間<rt>ま</rt></ruby></span><span class="vocab-hanviet">TRỌNG LƯƠNG / SỰ TRỌNG GIAN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Bạn thân thiết / Đồng nghiệp thân</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">仲良し</span><span class="kreading">なかよし</span> — <span class="kmean">"hòa hợp tốt" → bạn thân</span></div><div><span class="kchar">仲間</span><span class="kreading">なかま</span> — <span class="kmean">đồng đội, bạn cùng nhóm</span></div><div class="combine"><strong>Phân biệt:</strong> 仲良し (bạn thân thiết, tình cảm). 仲間 (đồng đội, có yếu tố hợp tác - đã học N3). Cụm: 仕事仲間 (bạn đồng nghiệp).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="77bfd65a9a"><ruby>大<rt>だい</rt></ruby><ruby>学<rt>がく</rt></ruby><ruby>時<rt>じ</rt></ruby><ruby>代<rt>だい</rt></ruby>の<span class="target"><ruby>仲<rt>なか</rt></ruby><ruby>良<rt>よ</rt></ruby>し</span>とは、<ruby>卒<rt>そつ</rt></ruby><ruby>業<rt>ぎょう</rt></ruby><ruby>後<rt>ご</rt></ruby>も<ruby>連<rt>れん</rt></ruby><ruby>絡<rt>らく</rt></ruby>を<ruby>取<rt>と</rt></ruby>り<ruby>合<rt>あ</rt></ruby>っている。</div><div class="ex-vn">Tôi và bạn thân thời đại học, dù đã tốt nghiệp vẫn giữ liên lạc với nhau.</div></div></td></tr>
+
+<tr><td class="col-stt">10</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>知<rt>ち</rt></ruby><ruby>人<rt>じん</rt></ruby> / <ruby>知<rt>し</rt></ruby>り<ruby>合<rt>あ</rt></ruby>い</span><span class="vocab-hanviet">TRI NHÂN / TRI HỢP</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Người quen (trang trọng / đời thường)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">知人</span><span class="kreading">ちじん</span> — <span class="kmean">người quen (trang trọng)</span></div><div><span class="kchar">知り合い</span><span class="kreading">しりあい</span> — <span class="kmean">người quen (đời thường)</span></div><div class="combine"><strong>Phân biệt:</strong> 知人 dùng trong văn viết, văn trang trọng. 知り合い dùng đời thường. Mức độ thân thiết: 知り合い &lt; 友人 &lt; 親友.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="b9064ad559">この<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>は<span class="target"><ruby>知<rt>ち</rt></ruby><ruby>人<rt>じん</rt></ruby></span>の<ruby>紹<rt>しょう</rt></ruby><ruby>介<rt>かい</rt></ruby>で<ruby>始<rt>はじ</rt></ruby>めたきっかけだった。</div><div class="ex-vn">Công việc này tôi bắt đầu nhờ sự giới thiệu của một người quen.</div></div></td></tr>
+
+<tr><td class="col-stt">11</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>奥<rt>おく</rt></ruby><ruby>様<rt>さま</rt></ruby> / ご<ruby>主<rt>しゅ</rt></ruby><ruby>人<rt>じん</rt></ruby></span><span class="vocab-hanviet">ÁO SỰ / CHỦ NHÂN</span><span class="vocab-pos">Kính ngữ</span><span class="vocab-meaning">Vợ / Chồng (của người khác)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">奥</span><span class="kreading">ÁO · おく</span> — <span class="kmean">phía trong</span></div><div><span class="kchar">主人</span><span class="kreading">しゅじん</span> — <span class="kmean">chủ nhân, chồng</span></div><div class="combine"><strong>Kính ngữ:</strong> 奥様 (vợ người khác - kính ngữ), ご主人 (chồng người khác). Khi nói về vợ/chồng mình: 妻 (つま), 夫 (おっと).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="fca4c72e16">ご<span class="target"><ruby>主<rt>しゅ</rt></ruby><ruby>人<rt>じん</rt></ruby></span>のお<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>はどちらにお<ruby>勤<rt>つと</rt></ruby>めですか。</div><div class="ex-vn">Chồng chị đang làm việc ở đâu thế ạ?</div></div></td></tr>
+
+<tr><td class="col-stt">12</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">お<ruby>母<rt>かあ</rt></ruby><ruby>様<rt>さま</rt></ruby> / お<ruby>父<rt>とう</rt></ruby><ruby>様<rt>さま</rt></ruby></span><span class="vocab-hanviet">MẪU SỰ / PHỤ SỰ</span><span class="vocab-pos">Kính ngữ</span><span class="vocab-meaning">Mẹ / Bố (của người khác)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">様</span><span class="kreading">SỰ · さま</span> — <span class="kmean">tôn xưng kính ngữ</span></div><div class="combine"><strong>So sánh:</strong> Kính ngữ お母様 / お父様 dùng trong văn trang trọng, viết thư. Hằng ngày: お母さん / お父さん. Nhà mình: 母 / 父.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="dc24fcb396">お<span class="target"><ruby>母<rt>かあ</rt></ruby><ruby>様<rt>さま</rt></ruby></span>のお<ruby>加<rt>か</rt></ruby><ruby>減<rt>げん</rt></ruby>はいかがですか。</div><div class="ex-vn">Sức khỏe của mẹ anh/chị thế nào ạ?</div></div></td></tr>
+
+<tr><td class="col-stt">13</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">お<ruby>嬢<rt>じょう</rt></ruby>ちゃん / お<ruby>坊<rt>ぼっ</rt></ruby>ちゃん</span><span class="vocab-hanviet">NƯƠNG / PHÒNG</span><span class="vocab-pos">Kính ngữ</span><span class="vocab-meaning">Con gái / Con trai (của người khác)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">嬢</span><span class="kreading">NƯƠNG · じょう</span> — <span class="kmean">cô gái trẻ</span></div><div><span class="kchar">坊</span><span class="kreading">PHÒNG · ぼう / ぼっ</span> — <span class="kmean">cậu bé</span></div><div class="combine"><strong>Sắc thái:</strong> Trang trọng, thường dùng với gia đình giàu/quý tộc. Đời thường hơn: お子さん.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="caed41b5da">お<span class="target"><ruby>嬢<rt>じょう</rt></ruby>ちゃん</span>はピアノが<ruby>大<rt>たい</rt></ruby><ruby>変<rt>へん</rt></ruby>お<ruby>上<rt>じょう</rt></ruby><ruby>手<rt>ず</rt></ruby>だそうですね。</div><div class="ex-vn">Nghe nói con gái nhà anh chơi piano rất giỏi nhỉ.</div></div></td></tr>
+
+<tr><td class="col-stt">14</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>氏<rt>し</rt></ruby> / <ruby>夫<rt>ふ</rt></ruby><ruby>妻<rt>さい</rt></ruby> / <ruby>夫<rt>ふ</rt></ruby><ruby>人<rt>じん</rt></ruby></span><span class="vocab-hanviet">THỊ / PHU THÊ / PHU NHÂN</span><span class="vocab-pos">Hậu tố</span><span class="vocab-meaning">Ông... / Vợ chồng / Phu nhân</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">氏</span><span class="kreading">THỊ · し</span> — <span class="kmean">ông, anh (tôn xưng)</span></div><div><span class="kchar">夫妻</span><span class="kreading">ふさい</span> — <span class="kmean">vợ chồng (trang trọng)</span></div><div class="combine"><strong>Cách dùng:</strong> 田中氏 (ông Tanaka - văn viết), 田中夫妻 (vợ chồng Tanaka), 田中夫人 (phu nhân Tanaka).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="1201949874">アメリカの<ruby>大<rt>だい</rt></ruby><ruby>統<rt>とう</rt></ruby><ruby>領<rt>りょう</rt></ruby><span class="target"><ruby>夫<rt>ふ</rt></ruby><ruby>妻<rt>さい</rt></ruby></span>が<ruby>来<rt>らい</rt></ruby><ruby>日<rt>にち</rt></ruby>されました。</div><div class="ex-vn">Vợ chồng Tổng thống Mỹ đã đến thăm Nhật Bản.</div></div></td></tr>
+
+<tr><td class="col-stt">15</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>上<rt>じょう</rt></ruby><ruby>司<rt>し</rt></ruby> / <ruby>部<rt>ぶ</rt></ruby><ruby>下<rt>か</rt></ruby></span><span class="vocab-hanviet">THƯỢNG TƯ / BỘ HẠ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Cấp trên / Cấp dưới</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">上司</span><span class="kreading">じょうし</span> — <span class="kmean">cấp trên trong công ty</span></div><div><span class="kchar">部下</span><span class="kreading">ぶか</span> — <span class="kmean">cấp dưới (đã học N3)</span></div><div class="combine"><strong>Văn hóa làm việc Nhật:</strong> 上下関係 (quan hệ trên dưới) rất nghiêm ngặt. 上司 luôn được tôn trọng và sử dụng kính ngữ.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="09e983311e"><span class="target"><ruby>上<rt>じょう</rt></ruby><ruby>司<rt>し</rt></ruby></span>に<ruby>気<rt>き</rt></ruby>に<ruby>入<rt>い</rt></ruby>られるためには、<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>の<ruby>能<rt>のう</rt></ruby><ruby>力<rt>りょく</rt></ruby>だけでなく<ruby>人<rt>にん</rt></ruby><ruby>間<rt>げん</rt></ruby><ruby>関<rt>かん</rt></ruby><ruby>係<rt>けい</rt></ruby>も<ruby>大<rt>たい</rt></ruby><ruby>切<rt>せつ</rt></ruby>だ。</div><div class="ex-vn">Để được cấp trên ưa thích, không chỉ năng lực làm việc mà cả mối quan hệ con người cũng quan trọng.</div></div></td></tr>
+
+<tr><td class="col-stt">16</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>先<rt>せん</rt></ruby><ruby>輩<rt>ぱい</rt></ruby> / <ruby>後<rt>こう</rt></ruby><ruby>輩<rt>はい</rt></ruby></span><span class="vocab-hanviet">TIÊN BỐI / HẬU BỐI</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Tiền bối / Hậu bối</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">輩</span><span class="kreading">BỐI · はい / ぱい</span> — <span class="kmean">bậc, lứa</span></div><div class="combine"><strong>Đã học N3.</strong> Tại N2 lưu ý: 先輩 không nhất thiết hơn tuổi mà chỉ cần vào trước (cùng trường, công ty). Cụm: 先輩風を吹かせる (giở giọng tiền bối).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="456c1aa5cb">高<ruby>校<rt>こう</rt></ruby>時<ruby>代<rt>だい</rt></ruby>の<span class="target"><ruby>先<rt>せん</rt></ruby><ruby>輩<rt>ぱい</rt></ruby></span>とは、<ruby>今<rt>いま</rt></ruby>でも<ruby>連<rt>れん</rt></ruby><ruby>絡<rt>らく</rt></ruby>を<ruby>取<rt>と</rt></ruby>り<ruby>合<rt>あ</rt></ruby>っている。</div><div class="ex-vn">Tôi vẫn giữ liên lạc với các tiền bối thời cấp 3 cho đến giờ.</div></div></td></tr>
+
+<tr><td class="col-stt">17</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>目<rt>め</rt></ruby><ruby>上<rt>うえ</rt></ruby> / <ruby>目<rt>め</rt></ruby><ruby>下<rt>した</rt></ruby></span><span class="vocab-hanviet">MỤC THƯỢNG / MỤC HẠ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Bề trên / Bề dưới</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">目上</span><span class="kreading">めうえ</span> — <span class="kmean">người cao tuổi/chức vụ hơn mình</span></div><div><span class="kchar">目下</span><span class="kreading">めした</span> — <span class="kmean">người thấp tuổi/chức vụ hơn mình</span></div><div class="combine"><strong>Phân biệt với 上司/部下:</strong> 目上/目下 rộng hơn (bao gồm cả ngoài công ty). Cụm: 目上の人に敬語を使う (dùng kính ngữ với người trên).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="c2ea6ece30"><span class="target"><ruby>目<rt>め</rt></ruby><ruby>上<rt>うえ</rt></ruby></span>の<ruby>人<rt>ひと</rt></ruby>と<ruby>話<rt>はな</rt></ruby>すときは、<ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby><ruby>遣<rt>づか</rt></ruby>いに<ruby>気<rt>き</rt></ruby>を<ruby>付<rt>つ</rt></ruby>けなければならない。</div><div class="ex-vn">Khi nói chuyện với người bề trên, phải chú ý đến cách dùng từ ngữ.</div></div></td></tr>
+
+<tr><td class="col-stt">18</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>年<rt>とし</rt></ruby><ruby>上<rt>うえ</rt></ruby> / <ruby>年<rt>とし</rt></ruby><ruby>下<rt>した</rt></ruby> / <ruby>同<rt>おな</rt></ruby>い<ruby>年<rt>どし</rt></ruby></span><span class="vocab-hanviet">NIÊN THƯỢNG / NIÊN HẠ / ĐỒNG NIÊN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Lớn tuổi hơn / Nhỏ tuổi hơn / Cùng tuổi</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">同い年</span><span class="kreading">おないどし</span> — <span class="kmean">"đồng niên" - bạn cùng tuổi</span></div><div class="combine"><strong>Lưu ý:</strong> 同い年 đọc đặc biệt (おないどし) chứ không phải どうねん. Cụm: 一歳年上 (lớn hơn 1 tuổi).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="648bd69f74"><ruby>夫<rt>おっと</rt></ruby>とは<span class="target"><ruby>同<rt>おな</rt></ruby>い<ruby>年<rt>どし</rt></ruby></span>で、<ruby>同<rt>おな</rt></ruby>じ<ruby>会<rt>かい</rt></ruby><ruby>社<rt>しゃ</rt></ruby>で<ruby>知<rt>し</rt></ruby>り<ruby>合<rt>あ</rt></ruby>った。</div><div class="ex-vn">Tôi và chồng cùng tuổi và quen nhau ở cùng công ty.</div></div></td></tr>
+
+<tr><td class="col-stt">19</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>周<rt>しゅう</rt></ruby><ruby>囲<rt>い</rt></ruby>の<ruby>人<rt>ひと</rt></ruby><ruby>々<rt>びと</rt></ruby></span><span class="vocab-hanviet">CHU VÂY · NHÂN</span><span class="vocab-pos">Cụm danh từ</span><span class="vocab-meaning">Những người xung quanh</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">周囲</span><span class="kreading">しゅうい</span> — <span class="kmean">xung quanh, chu vi</span></div><div><span class="kchar">人々</span><span class="kreading">ひとびと</span> — <span class="kmean">mọi người (số nhiều)</span></div><div class="combine"><strong>Lưu ý:</strong> 人々 = ひとびと (rendaku). 々 là ký hiệu lặp chữ Hán. Đồng nghĩa: 周りの人たち (đời thường).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="ddc3277e2f"><ruby>大<rt>たい</rt></ruby><ruby>変<rt>へん</rt></ruby>な<ruby>時<rt>とき</rt></ruby>こそ、<span class="target"><ruby>周<rt>しゅう</rt></ruby><ruby>囲<rt>い</rt></ruby>の<ruby>人<rt>ひと</rt></ruby><ruby>々<rt>びと</rt></ruby></span>のあたたかさに<ruby>気<rt>き</rt></ruby>付かされるものだ。</div><div class="ex-vn">Chính trong những lúc khó khăn ta mới nhận ra sự ấm áp của những người xung quanh.</div></div></td></tr>
+
+<tr><td class="col-stt">20</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">コミュニケーション</span><span class="vocab-hanviet">(katakana)</span><span class="vocab-pos pos-katakana">Danh từ (gốc Anh)</span><span class="vocab-meaning">Giao tiếp, truyền thông</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Nguồn gốc:</strong> Từ tiếng Anh <em>"communication"</em>. Cụm: コミュニケーションを取る (giao tiếp). Đồng nghĩa: 意思疎通 (いしそつう - sự thông hiểu).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="4271e8044a">グローバル<ruby>社<rt>しゃ</rt></ruby><ruby>会<rt>かい</rt></ruby>では、<ruby>異<rt>い</rt></ruby><ruby>文<rt>ぶん</rt></ruby><ruby>化<rt>か</rt></ruby>との<span class="target">コミュニケーション</span>を<ruby>取<rt>と</rt></ruby>る<ruby>能<rt>のう</rt></ruby><ruby>力<rt>りょく</rt></ruby>が<ruby>求<rt>もと</rt></ruby>められる。</div><div class="ex-vn">Trong xã hội toàn cầu hóa, khả năng giao tiếp với các nền văn hóa khác là điều được đòi hỏi.</div></div></td></tr>
+
+<tr><td class="col-stt">21</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>取<rt>と</rt></ruby>り<ruby>消<rt>け</rt></ruby>す</span><span class="vocab-hanviet">THỦ TIÊU</span><span class="vocab-pos">Động từ tha động</span><span class="vocab-meaning">Hủy bỏ (lời nói, hẹn)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">取</span><span class="kreading">THỦ · と(る)</span> — <span class="kmean">lấy, rút</span></div><div><span class="kchar">消</span><span class="kreading">TIÊU · け(す)</span> — <span class="kmean">xóa, dập</span></div><div class="combine"><strong>Ghép:</strong> "Rút + xóa" → <strong>hủy bỏ</strong>. Cụm: 約束を取り消す (hủy hẹn), 注文を取り消す (hủy đơn). Phân biệt với キャンセル (đời thường).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="776254f1c4">いったん<ruby>言<rt>い</rt></ruby>ったことは<span class="target"><ruby>取<rt>と</rt></ruby>り<ruby>消<rt>け</rt></ruby>せ</span>ない。だから<ruby>発<rt>はつ</rt></ruby><ruby>言<rt>げん</rt></ruby>には<ruby>慎<rt>しん</rt></ruby><ruby>重<rt>ちょう</rt></ruby>でなければならない。</div><div class="ex-vn">Một khi đã nói ra thì không thể rút lại. Vì thế phải thận trọng khi phát ngôn.</div></div></td></tr>
+
+<tr><td class="col-stt">22</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby><ruby>遣<rt>づか</rt></ruby>い</span><span class="vocab-hanviet">NGÔN DIỆP KHIỂN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Cách dùng từ ngữ, ngôn từ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">遣</span><span class="kreading">KHIỂN · けん / づか(い)</span> — <span class="kmean">phái cử, sử dụng</span></div><div class="combine"><strong>Cụm:</strong> 丁寧な言葉遣い (cách dùng từ lịch thiệp). Cùng cấu trúc: 金遣い (cách tiêu tiền), 気遣い (sự quan tâm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="fc6739b268">この<ruby>会<rt>かい</rt></ruby><ruby>社<rt>しゃ</rt></ruby>では、お<ruby>客<rt>きゃく</rt></ruby><ruby>様<rt>さま</rt></ruby>に<ruby>対<rt>たい</rt></ruby>して<ruby>丁<rt>てい</rt></ruby><ruby>寧<rt>ねい</rt></ruby>な<span class="target"><ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby><ruby>遣<rt>づか</rt></ruby>い</span>をすることが<ruby>求<rt>もと</rt></ruby>められる。</div><div class="ex-vn">Tại công ty này, được yêu cầu phải dùng ngôn từ lịch sự với khách hàng.</div></div></td></tr>
+
+<tr><td class="col-stt">23</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>握<rt>あく</rt></ruby><ruby>手<rt>しゅ</rt></ruby></span><span class="vocab-hanviet">ÁC THỦ</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Bắt tay</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">握</span><span class="kreading">ÁC · あく / にぎ(る)</span> — <span class="kmean">nắm chặt</span></div><div><span class="kchar">手</span><span class="kreading">THỦ · しゅ / て</span> — <span class="kmean">tay</span></div><div class="combine"><strong>Văn hóa:</strong> Bắt tay (握手) là cách chào của phương Tây. Ở Nhật, お辞儀 (cúi chào) là chuẩn mực truyền thống.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="654f490f09"><ruby>初<rt>はじ</rt></ruby>めて<ruby>会<rt>あ</rt></ruby>った<ruby>時<rt>とき</rt></ruby>、<ruby>彼<rt>かれ</rt></ruby>は<ruby>笑<rt>え</rt></ruby><ruby>顔<rt>がお</rt></ruby>で<span class="target"><ruby>握<rt>あく</rt></ruby><ruby>手<rt>しゅ</rt></ruby></span>を<ruby>求<rt>もと</rt></ruby>めてきた。</div><div class="ex-vn">Lúc gặp lần đầu, anh ấy đã chìa tay xin bắt tay với nụ cười.</div></div></td></tr>
+
+<tr><td class="col-stt">24</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">お<ruby>辞<rt>じ</rt></ruby><ruby>儀<rt>ぎ</rt></ruby></span><span class="vocab-hanviet">TỪ NGHI</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Cúi chào (kiểu Nhật)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">辞</span><span class="kreading">TỪ · じ</span> — <span class="kmean">từ, lời</span></div><div><span class="kchar">儀</span><span class="kreading">NGHI · ぎ</span> — <span class="kmean">nghi lễ</span></div><div class="combine"><strong>Văn hóa:</strong> 3 mức cúi chào: 会釈 (15° - chào nhẹ), 敬礼 (30° - bình thường), 最敬礼 (45° - kính cẩn nhất). Quan trọng trong văn hóa Nhật.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="0d925f9eae"><ruby>日<rt>に</rt></ruby><ruby>本<rt>ほん</rt></ruby>では<ruby>挨<rt>あい</rt></ruby><ruby>拶<rt>さつ</rt></ruby>として<span class="target">お<ruby>辞<rt>じ</rt></ruby><ruby>儀<rt>ぎ</rt></ruby></span>をする<ruby>習<rt>しゅう</rt></ruby><ruby>慣<rt>かん</rt></ruby>がある。</div><div class="ex-vn">Ở Nhật có tập quán cúi chào như một lời chào hỏi.</div></div></td></tr>
+
+<tr><td class="col-stt">25</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>付<rt>つ</rt></ruby>き<ruby>合<rt>あ</rt></ruby>い</span><span class="vocab-hanviet">PHÓ HỢP</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Mối quan hệ, sự giao thiệp</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">付</span><span class="kreading">PHÓ · つ(く)</span> — <span class="kmean">gắn, đi cùng</span></div><div><span class="kchar">合</span><span class="kreading">HỢP · あ(う)</span> — <span class="kmean">hợp lại</span></div><div class="combine"><strong>Đa nghĩa:</strong> 付き合い (mối quan hệ rộng - cả công việc, bạn bè, hàng xóm). 付き合う (giao thiệp / hẹn hò). Đời sống Nhật rất coi trọng 付き合い.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="cbeb685022"><ruby>近<rt>きん</rt></ruby><ruby>所<rt>じょ</rt></ruby>との<span class="target"><ruby>付<rt>つ</rt></ruby>き<ruby>合<rt>あ</rt></ruby>い</span>が<ruby>薄<rt>うす</rt></ruby>くなってきた<ruby>現<rt>げん</rt></ruby><ruby>代<rt>だい</rt></ruby><ruby>社<rt>しゃ</rt></ruby><ruby>会<rt>かい</rt></ruby>では、<ruby>孤<rt>こ</rt></ruby><ruby>独<rt>どく</rt></ruby><ruby>死<rt>し</rt></ruby>が<ruby>問<rt>もん</rt></ruby><ruby>題<rt>だい</rt></ruby>となっている。</div><div class="ex-vn">Trong xã hội hiện đại nơi mối quan hệ với hàng xóm ngày càng mờ nhạt, cái chết cô độc đã trở thành một vấn đề.</div></div></td></tr>
+
+<tr><td class="col-stt">26</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>話<rt>はな</rt></ruby>し<ruby>合<rt>あ</rt></ruby>い</span><span class="vocab-hanviet">THOẠI HỢP</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Thảo luận, bàn bạc</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">話</span><span class="kreading">THOẠI · はな(す)</span> — <span class="kmean">nói</span></div><div><span class="kchar">合</span><span class="kreading">HỢP · あ(う)</span> — <span class="kmean">lẫn nhau</span></div><div class="combine"><strong>Cấu trúc:</strong> [Động từ] + 合う = lẫn nhau. 話し合う = nói chuyện qua lại (thảo luận), 助け合う (giúp đỡ nhau), 知り合う (quen nhau).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="1f233ee5fe"><ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby><ruby>会<rt>かい</rt></ruby><ruby>議<rt>ぎ</rt></ruby>で、<ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>しのことを<ruby>真<rt>しん</rt></ruby><ruby>剣<rt>けん</rt></ruby>に<span class="target"><ruby>話<rt>はな</rt></ruby>し<ruby>合<rt>あ</rt></ruby>った</span>。</div><div class="ex-vn">Tại cuộc họp gia đình, chúng tôi đã bàn bạc nghiêm túc về chuyện chuyển nhà.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="special-block">
+  <div class="special-banner"><div class="special-icon">語</div><div><h4>語形成 — Cấu tạo từ</h4><span class="sp-subtitle">Quy luật cấu tạo từ thường gặp trong bài</span></div></div>
+  <div class="special-body">
+    <div class="word-formation-grid">
+      <div class="wf-item">
+        <div class="wf-pattern">~<ruby>仲<rt>なか</rt></ruby><ruby>間<rt>ま</rt></ruby> <span class="ptype">danh từ + 仲間 = đồng nhóm</span></div>
+        <div class="wf-examples"><span class="wfx"><span class="wfx-jp"><ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby><ruby>仲<rt>なか</rt></ruby><ruby>間<rt>ま</rt></ruby></span> <span class="wfx-vn">(đồng nghiệp)</span></span><span class="wfx"><span class="wfx-jp"><ruby>勉<rt>べん</rt></ruby><ruby>強<rt>きょう</rt></ruby><ruby>仲<rt>なか</rt></ruby><ruby>間<rt>ま</rt></ruby></span> <span class="wfx-vn">(bạn học chung)</span></span><span class="wfx"><span class="wfx-jp"><ruby>飲<rt>の</rt></ruby>み<ruby>仲<rt>なか</rt></ruby><ruby>間<rt>ま</rt></ruby></span> <span class="wfx-vn">(bạn nhậu)</span></span></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-pattern">~<ruby>合<rt>あ</rt></ruby>い <span class="ptype">động từ + 合う → danh từ hóa</span></div>
+        <div class="wf-examples"><span class="wfx"><span class="wfx-jp"><ruby>知<rt>し</rt></ruby>り<ruby>合<rt>あ</rt></ruby>い</span> <span class="wfx-vn">(người quen)</span></span><span class="wfx"><span class="wfx-jp"><ruby>付<rt>つ</rt></ruby>き<ruby>合<rt>あ</rt></ruby>い</span> <span class="wfx-vn">(giao thiệp)</span></span><span class="wfx"><span class="wfx-jp"><ruby>話<rt>はな</rt></ruby>し<ruby>合<rt>あ</rt></ruby>い</span> <span class="wfx-vn">(thảo luận)</span></span></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-pattern"><ruby>取<rt>と</rt></ruby>り~ <span class="ptype">取り + động từ = mang sắc thái thao tác</span></div>
+        <div class="wf-examples"><span class="wfx"><span class="wfx-jp"><ruby>取<rt>と</rt></ruby>り<ruby>消<rt>け</rt></ruby>す</span> <span class="wfx-vn">(hủy bỏ)</span></span><span class="wfx"><span class="wfx-jp"><ruby>取<rt>と</rt></ruby>り<ruby>出<rt>だ</rt></ruby>す</span> <span class="wfx-vn">(lấy ra)</span></span><span class="wfx"><span class="wfx-jp"><ruby>取<rt>と</rt></ruby>り<ruby>替<rt>か</rt></ruby>える</span> <span class="wfx-vn">(thay thế)</span></span></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-pattern">~<ruby>遣<rt>づか</rt></ruby>い <span class="ptype">danh từ + 遣い = cách sử dụng</span></div>
+        <div class="wf-examples"><span class="wfx"><span class="wfx-jp"><ruby>言<rt>こと</rt></ruby><ruby>葉<rt>ば</rt></ruby><ruby>遣<rt>づか</rt></ruby>い</span> <span class="wfx-vn">(cách dùng từ)</span></span><span class="wfx"><span class="wfx-jp"><ruby>金<rt>かね</rt></ruby><ruby>遣<rt>づか</rt></ruby>い</span> <span class="wfx-vn">(cách tiêu tiền)</span></span><span class="wfx"><span class="wfx-jp"><ruby>気<rt>き</rt></ruby><ruby>遣<rt>づか</rt></ruby>い</span> <span class="wfx-vn">(sự quan tâm)</span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="special-block">
+  <div class="special-banner adv"><div class="special-icon">副</div><div><h4>副詞 ・ 例文 — Phó từ &amp; Cụm biểu thị</h4><span class="sp-subtitle">Phó từ N2 dùng trong ngữ cảnh quan hệ con người</span></div></div>
+  <div class="special-body">
+    <div class="adverb-grid">
+      <div class="adv-item">
+        <div class="adv-head"><span class="adv-jp"><ruby>長<rt>なが</rt></ruby><ruby>年<rt>ねん</rt></ruby></span><span class="adv-vn">Nhiều năm, lâu năm</span></div>
+        <div class="adv-ex" data-tts="02b2fb4e41"><ruby>長<rt>なが</rt></ruby><ruby>年<rt>ねん</rt></ruby>の<ruby>友<rt>ゆう</rt></ruby><ruby>人<rt>じん</rt></ruby>と<ruby>久<rt>ひさ</rt></ruby>しぶりに<ruby>会<rt>あ</rt></ruby>って、<ruby>昔<rt>むかし</rt></ruby><ruby>話<rt>ばなし</rt></ruby>に<ruby>花<rt>はな</rt></ruby>が<ruby>咲<rt>さ</rt></ruby>いた。<span class="adv-ex-vn">Lâu rồi mới gặp lại người bạn nhiều năm, chúng tôi đã ôn lại chuyện xưa rất sôi nổi.</span></div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-head"><span class="adv-jp">たとえ ~ても</span><span class="adv-vn">Cho dù... đi chăng nữa</span></div>
+        <div class="adv-ex" data-tts="a82339f01c"><span class="target">たとえ</span><ruby>離<rt>はな</rt></ruby>れていても、<ruby>心<rt>こころ</rt></ruby>はいつもつながっている。<span class="adv-ex-vn">Cho dù có xa cách thì trái tim vẫn luôn kết nối.</span></div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-head"><span class="adv-jp">~<ruby>振<rt>ぶ</rt></ruby>り (に)</span><span class="adv-vn">Sau (bao nhiêu) năm/thời gian</span></div>
+        <div class="adv-ex" data-tts="fd00e5ec53">10<ruby>年<rt>ねん</rt></ruby><span class="target">ぶり</span>に<ruby>故<rt>こ</rt></ruby><ruby>郷<rt>きょう</rt></ruby>に<ruby>帰<rt>かえ</rt></ruby>ったら、<ruby>町<rt>まち</rt></ruby>はすっかり<ruby>変<rt>か</rt></ruby>わっていた。<span class="adv-ex-vn">Sau 10 năm tôi mới về quê, thị trấn đã thay đổi hoàn toàn.</span></div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-head"><span class="adv-jp">まるで ~ようだ</span><span class="adv-vn">Giống hệt như, cứ như thể</span></div>
+        <div class="adv-ex" data-tts="57c67aa0fb"><ruby>双<rt>ふた</rt></ruby><ruby>子<rt>ご</rt></ruby>の<ruby>姉<rt>あね</rt></ruby><ruby>妹<rt>いもうと</rt></ruby>は<span class="target">まるで</span><ruby>鏡<rt>かがみ</rt></ruby>に<ruby>映<rt>うつ</rt></ruby>したかの<span class="target">ように</span>そっくりだ。<span class="adv-ex-vn">Hai chị em sinh đôi giống nhau y như được phản chiếu qua gương.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 — Bài tập tổng hợp 1.1</h4><span class="ex-subtitle">Theo dạng đề N2 文脈規定 + 言い換え類義 + 用法</span></div></div>
+  <div class="exercise-body">
+
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 1</span>文脈規定 — Điền từ vào chỗ trống phù hợp ngữ cảnh</div>
+      <div class="choice-pool"><strong>選択肢:</strong> 親孝行 / 実家 / 上司 / 言葉遣い / 取り消し / 付き合い</div>
+      <div class="ex-q"><span class="qnum">(1)</span><ruby>急<rt>きゅう</rt></ruby>な<ruby>出<rt>しゅっ</rt></ruby><ruby>張<rt>ちょう</rt></ruby>のため、<ruby>予<rt>よ</rt></ruby><ruby>約<rt>やく</rt></ruby>を <span class="blank" data-ans="取り消し">　　　　</span> させていただきました。</div>
+      <div class="ex-q"><span class="qnum">(2)</span>お<ruby>客<rt>きゃく</rt></ruby><ruby>様<rt>さま</rt></ruby>に<ruby>対<rt>たい</rt></ruby>する <span class="blank" data-ans="言葉遣い">　　　　</span> には<ruby>十<rt>じゅう</rt></ruby><ruby>分<rt>ぶん</rt></ruby><ruby>気<rt>き</rt></ruby>を<ruby>付<rt>つ</rt></ruby>けるように。</div>
+      <div class="ex-q"><span class="qnum">(3)</span><ruby>盆<rt>ぼん</rt></ruby><ruby>正<rt>しょう</rt></ruby><ruby>月<rt>がつ</rt></ruby>には<ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby>みんなで <span class="blank" data-ans="実家">　　　　</span> に<ruby>帰<rt>かえ</rt></ruby>る<ruby>習<rt>しゅう</rt></ruby><ruby>慣<rt>かん</rt></ruby>がある。</div>
+      <div class="ex-q"><span class="qnum">(4)</span><ruby>近<rt>きん</rt></ruby><ruby>所<rt>じょ</rt></ruby>との <span class="blank" data-ans="付き合い">　　　　</span> が<ruby>面<rt>めん</rt></ruby><ruby>倒<rt>どう</rt></ruby>だと<ruby>感<rt>かん</rt></ruby>じる<ruby>人<rt>ひと</rt></ruby>も<ruby>少<rt>すく</rt></ruby>なくない。</div>
+      <div class="ex-q"><span class="qnum">(5)</span><ruby>就<rt>しゅう</rt></ruby><ruby>職<rt>しょく</rt></ruby>してから<ruby>初<rt>はじ</rt></ruby>めて<ruby>母<rt>はは</rt></ruby>に<ruby>旅<rt>りょ</rt></ruby><ruby>行<rt>こう</rt></ruby>をプレゼントできて、ささやかな <span class="blank" data-ans="親孝行">　　　　</span> ができた。</div>
+      <div class="ex-q"><span class="qnum">(6)</span>新人の<ruby>頃<rt>ころ</rt></ruby>は <span class="blank" data-ans="上司">　　　　</span> に<ruby>怒<rt>おこ</rt></ruby>られてばかりだった。</div>
+      <p style="font-size:12px;color:var(--muted);margin:10px 0 0;font-style:italic;">💡 Bấm vào từng chỗ trống để hiện đáp án.</p>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án tổng</button>
+      <div class="answer-box"><strong>Đáp án:</strong> (1) 取り消し — (2) 言葉遣い — (3) 実家 — (4) 付き合い — (5) 親孝行 — (6) 上司</div>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 2</span>言い換え類義 — Chọn cụm từ có nghĩa gần nhất với phần được gạch chân</div>
+      <div class="ex-q"><span class="qnum">(1)</span><ruby>彼<rt>かれ</rt></ruby>とは<ruby>会<rt>かい</rt></ruby><ruby>社<rt>しゃ</rt></ruby>を<ruby>通<rt>つう</rt></ruby>じての <strong>知人</strong> です。
+        <span class="multi-choice"><span class="opt-num">①</span><ruby>友<rt>とも</rt></ruby><ruby>達<rt>だち</rt></ruby> <span class="opt-num">②</span><ruby>知<rt>し</rt></ruby>り<ruby>合<rt>あ</rt></ruby>い <span class="opt-num">③</span><ruby>親<rt>しん</rt></ruby><ruby>類<rt>るい</rt></ruby> <span class="opt-num">④</span><ruby>仲<rt>なか</rt></ruby><ruby>間<rt>ま</rt></ruby></span></div>
+      <div class="ex-q"><span class="qnum">(2)</span><ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby><ruby>会<rt>かい</rt></ruby><ruby>議<rt>ぎ</rt></ruby>で<ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>しのことを<ruby>真<rt>しん</rt></ruby><ruby>剣<rt>けん</rt></ruby>に <strong>話し合った</strong>。
+        <span class="multi-choice"><span class="opt-num">①</span><ruby>議<rt>ぎ</rt></ruby><ruby>論<rt>ろん</rt></ruby>した <span class="opt-num">②</span><ruby>決<rt>けっ</rt></ruby><ruby>定<rt>てい</rt></ruby>した <span class="opt-num">③</span><ruby>説<rt>せつ</rt></ruby><ruby>明<rt>めい</rt></ruby>した <span class="opt-num">④</span><ruby>反<rt>はん</rt></ruby><ruby>対<rt>たい</rt></ruby>した</span></div>
+      <div class="ex-q"><span class="qnum">(3)</span><ruby>急<rt>きゅう</rt></ruby><ruby>な<rt></rt></ruby>用事ができたため、約束を <strong>取り消した</strong>。
+        <span class="multi-choice"><span class="opt-num">①</span><ruby>守<rt>まも</rt></ruby>った <span class="opt-num">②</span><ruby>遅<rt>おく</rt></ruby>らせた <span class="opt-num">③</span>キャンセルした <span class="opt-num">④</span><ruby>急<rt>いそ</rt></ruby>いだ</span></div>
+      <div class="ex-q"><span class="qnum">(4)</span><ruby>彼<rt>かれ</rt></ruby>は<ruby>私<rt>わたし</rt></ruby>と <strong>同い年</strong> です。
+        <span class="multi-choice"><span class="opt-num">①</span><ruby>年<rt>とし</rt></ruby><ruby>上<rt>うえ</rt></ruby> <span class="opt-num">②</span><ruby>年<rt>とし</rt></ruby><ruby>下<rt>した</rt></ruby> <span class="opt-num">③</span><ruby>年<rt>とし</rt></ruby>が<ruby>同<rt>おな</rt></ruby>じ <span class="opt-num">④</span><ruby>同<rt>どう</rt></ruby><ruby>級<rt>きゅう</rt></ruby><ruby>生<rt>せい</rt></ruby></span></div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> (1) ② 知り合い — (2) ① 議論した — (3) ③ キャンセルした — (4) ③ 年が同じ</div>
+    </div>
+
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 3</span>用法 — Chọn câu sử dụng từ đúng nhất (dạng đề N2)</div>
+      <div class="ex-q"><span class="qnum">(1)</span><strong><ruby>親<rt>おや</rt></ruby><ruby>孝<rt>こう</rt></ruby><ruby>行<rt>こう</rt></ruby></strong>
+        <div class="multi-choice"><span class="opt-num">①</span>あの<ruby>子<rt>こ</rt></ruby>は<ruby>親<rt>おや</rt></ruby><ruby>孝<rt>こう</rt></ruby><ruby>行<rt>こう</rt></ruby>な<ruby>性<rt>せい</rt></ruby><ruby>格<rt>かく</rt></ruby>だ。</div>
+        <div class="multi-choice"><span class="opt-num">②</span><ruby>初<rt>はじ</rt></ruby>めての<ruby>給<rt>きゅう</rt></ruby><ruby>料<rt>りょう</rt></ruby>で<ruby>両<rt>りょう</rt></ruby><ruby>親<rt>しん</rt></ruby>に<ruby>食<rt>しょく</rt></ruby><ruby>事<rt>じ</rt></ruby>をごちそうして、<ruby>少<rt>すこ</rt></ruby>しは<ruby>親<rt>おや</rt></ruby><ruby>孝<rt>こう</rt></ruby><ruby>行<rt>こう</rt></ruby>ができた。</div>
+        <div class="multi-choice"><span class="opt-num">③</span>あの<ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby>は<ruby>親<rt>おや</rt></ruby><ruby>孝<rt>こう</rt></ruby><ruby>行<rt>こう</rt></ruby>で<ruby>仲<rt>なか</rt></ruby>がいい。</div>
+        <div class="multi-choice"><span class="opt-num">④</span><ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby><ruby>親<rt>おや</rt></ruby><ruby>孝<rt>こう</rt></ruby><ruby>行<rt>こう</rt></ruby>に<ruby>会<rt>あ</rt></ruby>っている。</div>
+      </div>
+      <div class="ex-q"><span class="qnum">(2)</span><strong><ruby>付<rt>つ</rt></ruby>き<ruby>合<rt>あ</rt></ruby>い</strong>
+        <div class="multi-choice"><span class="opt-num">①</span><ruby>近<rt>きん</rt></ruby><ruby>所<rt>じょ</rt></ruby>との<ruby>付<rt>つ</rt></ruby>き<ruby>合<rt>あ</rt></ruby>いが<ruby>大<rt>たい</rt></ruby><ruby>切<rt>せつ</rt></ruby>だ。</div>
+        <div class="multi-choice"><span class="opt-num">②</span><ruby>彼<rt>かれ</rt></ruby>は<ruby>付<rt>つ</rt></ruby>き<ruby>合<rt>あ</rt></ruby>いな<ruby>人<rt>ひと</rt></ruby>です。</div>
+        <div class="multi-choice"><span class="opt-num">③</span><ruby>友<rt>とも</rt></ruby><ruby>達<rt>だち</rt></ruby>に<ruby>付<rt>つ</rt></ruby>き<ruby>合<rt>あ</rt></ruby>いした。</div>
+        <div class="multi-choice"><span class="opt-num">④</span><ruby>付<rt>つ</rt></ruby>き<ruby>合<rt>あ</rt></ruby>いを<ruby>食<rt>た</rt></ruby>べました。</div>
+      </div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> (1) ② — (2) ①</div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+</article>
+</div>
+<nav class="tl-pager"><span class="dis">← Bài trước</span><a class="mid" href="../tu-vung.html">▦ Danh sách bài</a><a href="bai-02.html">Bài 2 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+
+;
+
+/* ==== Cấu hình audio TTS ==== */
+window.TTS_BASE = window.TTS_BASE || 'audio/';   // đổi thành đường dẫn host MP3 của bạn, ví dụ '/static/n2/audio/'
+(function(){
+  var SUP = ('speechSynthesis' in window);
+  function jtext(el){
+    var c=el.cloneNode(true);
+    c.querySelectorAll('rt, rp, .adv-ex-vn, .tts-btn').forEach(function(n){n.remove();});
+    var s=(c.textContent||'');
+    s=s.replace(/[①-⓿]/g,' ').replace(/^[\s0-9().、\-]+/,'');
+    return s.replace(/\s+/g,' ').trim();
+  }
+  /* giọng dự phòng (khi thiếu file MP3): chọn giọng ja tốt nhất, tránh eSpeak */
+  var jaVoice=null;
+  function rank(v){var n=((v.name||'')+' '+(v.voiceURI||'')).toLowerCase(),s=0;
+    if(/natural|neural|enhanced|premium|wavenet/.test(n))s+=100;
+    if(/google/.test(n))s+=60; if(v.localService===false)s+=10;
+    if(/kyoko|otoya|o-ren|nanami|ayumi|keita|haruka/.test(n))s+=40;
+    if(/espeak|festival/.test(n))s-=200; return s;}
+  function pickVoice(){if(!SUP)return;var vs=(speechSynthesis.getVoices()||[])
+      .filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf('ja')===0;});
+      vs.sort(function(a,b){return rank(b)-rank(a);}); jaVoice=vs[0]||null;}
+  if(SUP){pickVoice();try{speechSynthesis.onvoiceschanged=pickVoice;}catch(e){}}
+  function fallback(el){if(!SUP)return;var t=jtext(el);if(!t)return;
+    speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);
+    u.lang='ja-JP';u.rate=0.95;if(jaVoice)u.voice=jaVoice;speechSynthesis.speak(u);}
+  var curAudio=null,curBtn=null;
+  function stop(){if(curAudio){curAudio.pause();curAudio=null;}if(curBtn){curBtn.classList.remove('playing');curBtn=null;}}
+  function play(btn,el){
+    stop();
+    var id=el.getAttribute('data-tts');
+    if(id){
+      var a=new Audio(window.TTS_BASE+id+'.mp3');
+      curAudio=a;curBtn=btn;btn.classList.add('playing');
+      a.onended=a.onpause=function(){btn.classList.remove('playing');};
+      a.onerror=function(){btn.classList.remove('playing');curAudio=null;fallback(el);};
+      a.play().catch(function(){btn.classList.remove('playing');curAudio=null;fallback(el);});
+    } else { fallback(el); }
+  }
+  document.querySelectorAll('.ex-jp, .adv-ex').forEach(function(el){
+    if(el.querySelector('.tts-btn'))return;
+    var b=document.createElement('button');
+    b.className='tts-btn';b.type='button';b.textContent='🔊';
+    b.setAttribute('aria-label','Nghe câu tiếng Nhật');b.title='Nghe đọc (Google TTS)';
+    b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();play(b,el);});
+    el.insertBefore(b,el.firstChild);
+  });
+})();
+</script>
+</body></html>

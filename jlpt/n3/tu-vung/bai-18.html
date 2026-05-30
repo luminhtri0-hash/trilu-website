@@ -1,0 +1,519 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 18 · 季節と天気、地理 — Từ vựng N3 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N3 — Bài 18: 季節と天気、地理. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#6e1831;
+  --accent-dark:#4f0f24;
+  --accent-2:#9b7a38;
+  --accent-3:#c7ab70;
+  --line:#dfcfbb;
+  --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(110,24,49,0.08), transparent 22%),
+    linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+/* ============ COVER ============ */
+.cover{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 36%, #3a0f1b 100%);
+  color:#fff; border-radius:30px; box-shadow:var(--shadow);
+  padding:60px 64px 50px; margin-bottom:26px;
+}
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+/* ============ TOC ============ */
+.toc-panel{
+  margin:0 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96));
+  border:1px solid rgba(155,122,56,0.20);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:14px 16px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(110,24,49,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item.disabled{ opacity:0.45; pointer-events:none; }
+.toc-item-number{ display:inline-block; min-width:34px; padding:2px 8px; margin-right:8px; border-radius:8px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:11px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:13.5px; }
+.toc-item-summary{ display:block; margin-top:5px; color:var(--muted); font-size:12px; line-height:1.45; font-family:"Noto Serif CJK JP",serif; }
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(155,122,56,0.16);
+  border-radius:28px; box-shadow:var(--shadow);
+  padding:0 0 40px; margin-bottom:40px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  padding:30px 44px 28px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 50%, #3a0f1b 100%);
+  color:#fff;
+}
+.lesson-banner::after{
+  content:"語彙"; position:absolute; right:-10px; bottom:-50px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:8px; }
+.lesson-banner h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:30px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:14px; color:rgba(255,255,255,0.82); }
+
+.doc-body{ padding:30px 44px 10px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #57132a 0%, #6e1831 52%, #7f3b52 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark); position:absolute; right:18px; top:50%; transform:translateY(-50%);
+  font-family:"Noto Serif CJK JP",serif; font-size:60px; line-height:1; color:rgba(255,255,255,0.12); font-weight:700;
+}
+.section-kicker{ display:block; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:rgba(255,255,255,0.78); }
+.section-head h3{
+  margin:0; padding:0; border:none; color:#fff; background:none;
+  font-family:"Noto Serif CJK JP",serif; font-size:24px; line-height:1.2; font-weight:700;
+}
+.section-head .section-vn{ display:block; margin-top:4px; font-size:13px; font-style:italic; color:rgba(255,255,255,0.82); font-family:Inter,sans-serif; }
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{ margin:16px 0 24px; }
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff; border:1px solid var(--line-2);
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 26px rgba(60,38,19,0.05);
+  font-size:13.5px;
+}
+thead th{
+  background:linear-gradient(180deg, #fcf5ea 0%, #f2e3cf 100%);
+  color:var(--accent); font-weight:800;
+  padding:13px 14px; text-align:left; font-size:13px;
+  border-bottom:1px solid var(--line-2);
+}
+thead th:not(:last-child){ border-right:1px solid var(--line-2); }
+tbody td{
+  padding:18px 14px; vertical-align:top;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+}
+tbody td:last-child{ border-right:none; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody tr:nth-child(even) td{ background:#fffaf4; }
+
+.col-stt{ width:5%; text-align:center; font-weight:800; color:var(--accent); font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:18px; }
+.col-vocab{ width:22%; }
+.col-explain{ width:30%; }
+.col-example{ width:43%; }
+
+.vocab-wrapper{ display:flex; flex-direction:column; gap:4px; }
+.vocab-kanji{ font-size:26px; font-weight:700; color:#222; font-family:"Noto Serif CJK JP","Yu Mincho",serif; line-height:1.15; }
+.vocab-kanji ruby{ ruby-position:over; ruby-align:center; }
+.vocab-kanji rt{ font-size:11px; color:#888; font-family:sans-serif; font-weight:500; }
+.vocab-hanviet{ font-size:11px; color:var(--accent-2); font-weight:800; letter-spacing:1.2px; margin-top:4px; }
+.vocab-pos{ display:inline-block; font-size:10.5px; color:#fff; background:var(--green); padding:2px 8px; border-radius:4px; font-weight:600; letter-spacing:0.05em; margin-top:6px; align-self:flex-start; }
+.vocab-pos.pos-na{ background:var(--terra); }
+.vocab-pos.pos-i{ background:var(--teal); }
+.vocab-pos.pos-adv{ background:var(--plum); }
+.vocab-pos.pos-suru{ background:#8a4a6a; }
+.vocab-pos.pos-katakana{ background:var(--accent-2); }
+.vocab-meaning{ font-size:14px; color:var(--accent); font-weight:700; margin-top:8px; line-height:1.5; }
+
+/* Explain box */
+.kanji-break{ background:linear-gradient(180deg, #fffdf9, #fbf3e8); border:1px solid #e7d7be; border-left:4px solid var(--accent-2); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.65; color:#3b3320; }
+.kanji-break .kchar{ font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; color:var(--accent); margin-right:4px; }
+.kanji-break .kreading{ color:var(--accent-2); font-weight:700; font-size:11.5px; letter-spacing:0.05em; }
+.kanji-break .kmean{ color:#5f4830; }
+.kanji-break .combine{ margin-top:8px; padding-top:8px; border-top:1px dashed #d8c8ad; font-style:italic; color:#6e5230; }
+.kanji-break .combine strong{ font-style:normal; color:var(--accent); }
+.katakana-origin{ background:linear-gradient(180deg, #fff5f8, #faeaf0); border:1px solid #f0d8e2; border-left:4px solid #b13e6a; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#5a3a4a; }
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{ background:linear-gradient(180deg, #f7faf2, #ecf2e2); border:1px solid #d8e2c8; border-left:4px solid var(--green); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#3e5a3a; }
+.wago-note strong{ color:var(--green); }
+
+/* Example box */
+.ex-box{ background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent); padding:13px 16px; border-radius:0 12px 12px 0; }
+.ex-jp{ font-size:15px; color:#222; margin-bottom:8px; line-height:1.95; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn{ font-size:13.5px; color:#6e5230; font-style:italic; line-height:1.55; padding-top:6px; border-top:1px dotted #e2d4b8; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:30px 0 24px;
+  padding:0;
+  background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+  border:1px solid #e7d7be;
+  border-radius:22px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(60,38,19,0.05);
+}
+.exercise-banner{
+  display:flex; align-items:center; gap:14px;
+  padding:18px 24px;
+  background:linear-gradient(90deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff;
+}
+.exercise-icon{ width:42px; height:42px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"EB Garamond","Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:11.5px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:2px; letter-spacing:0.04em; }
+.exercise-body{ padding:22px 26px; }
+
+.exercise{ background:#fff; border:1px solid #ecdec3; border-radius:14px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 14px rgba(60,38,19,0.04); }
+.exercise:last-child{ margin-bottom:0; }
+.exercise-title{ font-weight:700; color:var(--accent); margin-bottom:12px; font-size:14px; display:flex; align-items:center; gap:10px; padding-bottom:10px; border-bottom:1px dashed #e7d7be; }
+.exercise-title .ex-no{ background:var(--accent-2); color:#fff; padding:3px 10px; border-radius:6px; font-size:11.5px; letter-spacing:0.08em; }
+.choice-pool{ background:linear-gradient(180deg, #fff7e8, #f7e4c1); border:1px dashed var(--accent-2); border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:14px; font-family:"Noto Serif CJK JP",serif; color:#674c1b; }
+.choice-pool strong{ color:var(--accent); }
+
+.ex-q{ padding:9px 0; border-bottom:1px dotted #eadfce; font-size:14px; line-height:1.85; font-family:"Noto Serif CJK JP",serif; }
+.ex-q:last-child{ border-bottom:none; }
+.ex-q .qnum{ display:inline-block; min-width:24px; font-weight:700; color:var(--accent); margin-right:4px; font-family:"EB Garamond",sans-serif; font-size:14.5px; }
+.ex-q .blank{ display:inline-block; min-width:90px; border-bottom:1.5px solid #b08850; padding:0 8px; margin:0 3px; text-align:center; color:transparent; cursor:pointer; transition:all .15s; }
+.ex-q .blank:hover{ background:rgba(199,171,112,0.12); }
+.ex-q .blank.shown{ color:var(--accent); font-weight:700; border-bottom-color:var(--accent); background:rgba(199,171,112,0.15); }
+
+.multi-choice{ display:block; margin:4px 0 4px 30px; font-size:13.5px; color:#444; }
+.multi-choice .opt-num{ color:var(--accent-2); font-weight:700; margin-right:6px; }
+.match-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin-top:12px; }
+.match-col{ background:#fffaf2; border:1px solid #ecdec3; border-radius:12px; padding:14px; }
+.match-col h5{ margin:0 0 10px; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; }
+.match-item{ padding:7px 10px; font-size:14px; border-radius:6px; }
+.match-item.jp{ font-family:"Noto Serif CJK JP",serif; }
+.match-item .mlabel{ display:inline-block; min-width:24px; font-weight:800; color:var(--accent-2); }
+
+.answer-toggle{
+  display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+  padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:13px; cursor:pointer; transition:all 0.2s; font-family:inherit;
+  box-shadow:0 6px 14px rgba(110,24,49,0.18);
+}
+.answer-toggle:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(110,24,49,0.28); }
+.answer-toggle::before{ content:"鍵"; font-family:"Noto Serif CJK JP",serif; margin-right:4px; }
+.answer-box{ display:none; margin-top:14px; padding:14px 16px; background:linear-gradient(180deg, #fffbef, #f8eed4); border:1px solid #d9bb88; border-left:4px solid var(--accent-2); border-radius:10px; font-size:13.5px; line-height:1.7; color:#5a4520; }
+.answer-box strong{ color:var(--accent); }
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  table.vocab-table{ min-width:880px; }
+  .table-shell{ overflow-x:auto; }
+  .match-grid{ grid-template-columns:1fr; }
+}
+
+/* === @page: dùng A4 LANDSCAPE cho bài học để có chỗ cho 4 cột === */
+@media print {
+  /* Cover + TOC: portrait */
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  /* Trang bài học: landscape (rộng hơn để 4 cột vừa) */
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+
+  /* === RESET cơ bản === */
+  html, body{ background:#fff !important; }
+  body{ font-size:11px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; }
+
+  /* === COVER === */
+  .cover{ page-break-after:always; break-after:page; box-shadow:none; border-radius:18px; padding:42px 38px; }
+  .cover-title{ font-size:36px; }
+  .cover-mark{ font-size:11rem !important; }
+
+  /* === TOC === */
+  .toc-panel{ page-break-after:always; break-after:page; box-shadow:none; }
+  .toc-grid{ grid-template-columns:repeat(3, 1fr) !important; }
+  .toc-item{ page-break-inside:avoid !important; break-inside:avoid !important; }
+
+  /* === Mỗi BÀI bắt sang trang mới === */
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:16px 18px 12px !important; }
+
+  /* === GỠ BỎ rào cản min-width === */
+  /* QUAN TRỌNG: ghi đè responsive rule khiến bảng tràn ngang */
+  .table-shell{ overflow:visible !important; overflow-x:visible !important; margin:8px 0 14px !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; box-shadow:none !important; table-layout:fixed !important; }
+
+  /* === KHÔNG cắt giữa khối === */
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:18px 22px !important; }
+  .lesson-banner h2{ font-size:22px !important; }
+  .section-head{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:10px 16px !important; margin:10px 0 8px !important; }
+  .section-head h3{ font-size:18px !important; }
+  .section-head::after{ font-size:36px !important; }
+  .exercise-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:12px 18px !important; }
+  .exercise-banner h4{ font-size:14px !important; }
+  .exercise-block{ page-break-inside:auto; margin:14px 0 !important; }
+  .exercise-body{ padding:14px 16px !important; }
+  .exercise{ page-break-inside:avoid !important; break-inside:avoid !important; padding:12px 14px !important; margin-bottom:10px !important; }
+  .footer-card{ page-break-inside:avoid; break-inside:avoid; }
+
+  /* === BẢNG TỪ VỰNG === */
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table tbody{ display:table-row-group; }
+  table.vocab-table thead th{ padding:8px 8px !important; font-size:11px !important; }
+  /* Mỗi tr (= 1 từ vựng) giữ nguyên trên 1 trang */
+  table.vocab-table tr{ page-break-inside:avoid !important; break-inside:avoid !important; page-break-after:auto; }
+  table.vocab-table tbody td{ padding:10px 8px !important; font-size:11px !important; }
+
+  /* === Co cell content nhỏ lại cho vừa khổ === */
+  .vocab-wrapper{ gap:2px !important; }
+  .vocab-kanji{ font-size:18px !important; line-height:1.1 !important; }
+  .vocab-kanji rt{ font-size:9px !important; }
+  .vocab-hanviet{ font-size:9.5px !important; letter-spacing:0.8px !important; margin-top:2px !important; }
+  .vocab-pos{ font-size:8.5px !important; padding:1px 5px !important; margin-top:3px !important; }
+  .vocab-meaning{ font-size:11px !important; margin-top:4px !important; line-height:1.35 !important; }
+
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:7px 9px !important; font-size:10.5px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important; break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:14px !important; }
+  .kanji-break .kreading{ font-size:9.5px !important; }
+  .kanji-break .combine{ margin-top:5px !important; padding-top:5px !important; }
+
+  .ex-box{ padding:8px 10px !important; page-break-inside:avoid !important; break-inside:avoid !important; }
+  .ex-jp{ font-size:12px !important; line-height:1.75 !important; margin-bottom:5px !important; }
+  .ex-jp rt{ font-size:8px !important; }
+  .ex-vn{ font-size:10.5px !important; line-height:1.45 !important; padding-top:4px !important; }
+
+  /* === BÀI TẬP === */
+  .ex-q{ page-break-inside:avoid; break-inside:avoid; font-size:11.5px !important; line-height:1.7 !important; padding:6px 0 !important; }
+  .choice-pool{ font-size:11.5px !important; padding:7px 11px !important; }
+  .multi-choice{ font-size:11px !important; }
+  .answer-toggle{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; break-inside:avoid; font-size:11px !important; padding:10px 12px !important; }
+  .match-grid{ grid-template-columns:1fr 1fr !important; }
+  .match-item{ font-size:11px !important; padding:4px 6px !important; }
+}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:200;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.92);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:38px;height:38px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.18em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}.tl-bc a:hover{color:var(--tl-ink)}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-wrap{max-width:1000px;margin:0 auto;padding:24px}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px;transition:all .2s}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3;pointer-events:none}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n3.html">N3</a> · <a href="../tu-vung.html">Từ vựng</a> · Bài 18</div></div></a><a class="tl-back" href="../tu-vung.html">← Danh sách bài</a></nav>
+<div class="tl-wrap">
+<article class="document" id="lesson-18">
+<div class="lesson-banner">
+  <span class="lesson-kicker">Bài 18 — 自然 1</span>
+  <h2>季節と天気、地理 (Mùa, Thời tiết &amp; Địa lý)</h2>
+  <div class="lesson-sub">Tự nhiên 1: Khí hậu bốn mùa và địa hình tự nhiên (24 từ vựng)</div>
+</div>
+<div class="doc-body">
+
+<div class="section-head" data-mark="天"><span class="section-kicker">Phần 18-1 · 14 từ</span><h3>季節と天気</h3><span class="section-vn">Khí hậu và thời tiết</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">1</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>気<rt>き</rt></ruby><ruby>温<rt>おん</rt></ruby></span><span class="vocab-hanviet">KHÍ ÔN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Nhiệt độ không khí</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">気</span><span class="kreading">KHÍ · き</span> — <span class="kmean">khí, không khí</span></div><div><span class="kchar">温</span><span class="kreading">ÔN · おん / あたた(かい)</span> — <span class="kmean">ấm, nhiệt</span></div><div class="combine"><strong>Ghép:</strong> "Nhiệt + không khí" → <strong>nhiệt độ không khí</strong>. Phân biệt: 気温 (nhiệt độ không khí), 体温 (thân nhiệt), 水温 (nhiệt độ nước).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>今<rt>きょう</rt></ruby><ruby>日<rt>う</rt></ruby>の<span class="target"><ruby>気<rt>き</rt></ruby><ruby>温<rt>おん</rt></ruby></span>は30<ruby>度<rt>ど</rt></ruby>を<ruby>超<rt>こ</rt></ruby>えた。</div><div class="ex-vn">Nhiệt độ hôm nay vượt 30 độ C.</div></div></td></tr>
+
+<tr><td class="col-stt">2</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>確<rt>かく</rt></ruby><ruby>率<rt>りつ</rt></ruby></span><span class="vocab-hanviet">XÁC SUẤT</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Xác suất, tỷ lệ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">確</span><span class="kreading">XÁC · かく</span> — <span class="kmean">chắc chắn</span></div><div><span class="kchar">率</span><span class="kreading">SUẤT · りつ</span> — <span class="kmean">tỷ lệ</span></div><div class="combine"><strong>Ghép:</strong> "Chắc + tỷ lệ" → <strong>xác suất</strong>. Cụm: 70%の確率で雨が降る (70% khả năng mưa). Cùng chữ 率: 効率 (hiệu suất).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>明<rt>あ</rt></ruby><ruby>日<rt>した</rt></ruby>は80%の<span class="target"><ruby>確<rt>かく</rt></ruby><ruby>率<rt>りつ</rt></ruby></span>で<ruby>雨<rt>あめ</rt></ruby>が<ruby>降<rt>ふ</rt></ruby>る。</div><div class="ex-vn">Ngày mai có 80% xác suất mưa.</div></div></td></tr>
+
+<tr><td class="col-stt">3</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>嵐<rt>あらし</rt></ruby> / <ruby>雷<rt>かみなり</rt></ruby></span><span class="vocab-hanviet">LAM / LÔI</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Bão / Sấm sét</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">嵐</span><span class="kreading">LAM · あらし</span> — <span class="kmean">bão lớn</span></div><div><span class="kchar">雷</span><span class="kreading">LÔI · かみなり / らい</span> — <span class="kmean">sấm sét</span></div><div class="combine"><strong>Cụm:</strong> 嵐が近付く (bão sắp đến), 雷が鳴る (sấm vang). 嵐 chữ đẹp: 山 (núi) + 風 (gió) → bão núi. Phân biệt: 台風 (typhoon - bão lớn ở Châu Á).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>嵐<rt>あらし</rt></ruby></span>が<ruby>近<rt>ちか</rt></ruby><ruby>付<rt>づ</rt></ruby>いてきて、<span class="target"><ruby>雷<rt>かみなり</rt></ruby></span>も<ruby>鳴<rt>な</rt></ruby>っている。</div><div class="ex-vn">Bão đang đến gần, sấm cũng đang rền.</div></div></td></tr>
+
+<tr><td class="col-stt">4</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>激<rt>はげ</rt></ruby>しい</span><span class="vocab-hanviet">KÍCH</span><span class="vocab-pos pos-i">Tính từ -i</span><span class="vocab-meaning">Dữ dội, mãnh liệt</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">激</span><span class="kreading">KÍCH · げき / はげ(しい)</span> — <span class="kmean">dữ dội, kích động</span></div><div class="combine"><strong>Cách dùng:</strong> 激しい雨 (mưa dữ dội), 激しい運動 (vận động mạnh), 激しい競争 (cạnh tranh khốc liệt). Cùng chữ 激: 感激 (cảm kích).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>夕<rt>ゆう</rt></ruby><ruby>方<rt>がた</rt></ruby>から<ruby>雨<rt>あめ</rt></ruby>が<span class="target"><ruby>激<rt>はげ</rt></ruby>しく</span><ruby>降<rt>ふ</rt></ruby>っている。</div><div class="ex-vn">Từ chiều, mưa đang rơi dữ dội.</div></div></td></tr>
+
+<tr><td class="col-stt">5</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>虹<rt>にじ</rt></ruby></span><span class="vocab-hanviet">HỒNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Cầu vồng</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">虹</span><span class="kreading">HỒNG · にじ / こう</span> — <span class="kmean">cầu vồng</span></div><div class="combine"><strong>Cụm:</strong> 虹が出る (cầu vồng xuất hiện). Mẹo nhớ: bộ 虫 (côn trùng) + 工 (việc) → người Nhật xưa nghĩ cầu vồng là "con rồng".</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>雨<rt>あめ</rt></ruby>が<ruby>止<rt>や</rt></ruby>んだ<ruby>後<rt>あと</rt></ruby>、<ruby>美<rt>うつく</rt></ruby>しい<span class="target"><ruby>虹<rt>にじ</rt></ruby></span>が<ruby>出<rt>で</rt></ruby>た。</div><div class="ex-vn">Sau cơn mưa, cầu vồng đẹp đã xuất hiện.</div></div></td></tr>
+
+<tr><td class="col-stt">6</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>湿<rt>しつ</rt></ruby><ruby>度<rt>ど</rt></ruby> / <ruby>乾<rt>かん</rt></ruby><ruby>燥<rt>そう</rt></ruby></span><span class="vocab-hanviet">THẤP ĐỘ / CAN TÁO</span><span class="vocab-pos">Danh từ / Suru</span><span class="vocab-meaning">Độ ẩm / Hanh khô</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">湿</span><span class="kreading">THẤP · しつ / しめ(る)</span> — <span class="kmean">ẩm ướt</span></div><div><span class="kchar">乾燥</span><span class="kreading">かんそう</span> — <span class="kmean">hanh khô</span></div><div class="combine"><strong>Cặp đối:</strong> 湿度が高い (độ ẩm cao) ↔ 空気が乾燥する (không khí hanh khô). Mùa hè Nhật ẩm, mùa đông Nhật rất khô.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>夏<rt>なつ</rt></ruby>は<span class="target"><ruby>湿<rt>しつ</rt></ruby><ruby>度<rt>ど</rt></ruby></span>が<ruby>高<rt>たか</rt></ruby>くて、<ruby>蒸<rt>む</rt></ruby>し<ruby>暑<rt>あつ</rt></ruby>い。</div><div class="ex-vn">Mùa hè độ ẩm cao, oi bức.</div></div></td></tr>
+
+<tr><td class="col-stt">7</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>夜<rt>よ</rt></ruby>が<ruby>明<rt>あ</rt></ruby>ける / <ruby>日<rt>ひ</rt></ruby>が<ruby>沈<rt>しず</rt></ruby>む</span><span class="vocab-hanviet">DẠ MINH / NHẬT TRẦM</span><span class="vocab-pos">Cụm động từ</span><span class="vocab-meaning">Trời sáng / Mặt trời lặn</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">明</span><span class="kreading">MINH · あ(ける) / めい</span> — <span class="kmean">sáng</span></div><div><span class="kchar">沈</span><span class="kreading">TRẦM · しず(む) / ちん</span> — <span class="kmean">chìm, lặn</span></div><div class="combine"><strong>Bộ đôi tự nhiên:</strong> 夜が明ける (đêm qua, ngày tới). 日が沈む (mặt trời lặn). Đối lập: 日が昇る (mặt trời mọc).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>夕<rt>ゆう</rt></ruby><ruby>方<rt>がた</rt></ruby>に<span class="target"><ruby>日<rt>ひ</rt></ruby>が<ruby>沈<rt>しず</rt></ruby>んだ</span>。</div><div class="ex-vn">Mặt trời đã lặn vào buổi chiều.</div></div></td></tr>
+
+<tr><td class="col-stt">8</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>太<rt>たい</rt></ruby><ruby>陽<rt>よう</rt></ruby> / まぶしい</span><span class="vocab-hanviet">THÁI DƯƠNG</span><span class="vocab-pos">Danh từ / Tính từ -i</span><span class="vocab-meaning">Mặt trời / Chói lóa</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">太陽</span><span class="kreading">たいよう</span> — <span class="kmean">mặt trời</span></div><div class="combine"><strong>Bộ đôi:</strong> 太陽 (mặt trời - khái niệm thiên văn). 日 (ひ - mặt trời, ngày). まぶしい (và-go: chói mắt, lóa). Cụm: 太陽がまぶしい.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>夏<rt>なつ</rt></ruby>の<span class="target"><ruby>太<rt>たい</rt></ruby><ruby>陽<rt>よう</rt></ruby></span>はとても<span class="target">まぶしい</span>。</div><div class="ex-vn">Mặt trời mùa hè chói lóa.</div></div></td></tr>
+
+<tr><td class="col-stt">9</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>四<rt>し</rt></ruby><ruby>季<rt>き</rt></ruby></span><span class="vocab-hanviet">TỨ QUÝ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Bốn mùa</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">四</span><span class="kreading">TỨ · し / よん</span> — <span class="kmean">bốn</span></div><div><span class="kchar">季</span><span class="kreading">QUÝ · き</span> — <span class="kmean">mùa</span></div><div class="combine"><strong>Ghép:</strong> "Bốn + mùa" → <strong>4 mùa</strong>. Cụm: 日本には四季がある (Nhật có 4 mùa). 4 mùa: 春 (xuân), 夏 (hạ), 秋 (thu), 冬 (đông).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>日<rt>に</rt></ruby><ruby>本<rt>ほん</rt></ruby>には<ruby>美<rt>うつく</rt></ruby>しい<span class="target"><ruby>四<rt>し</rt></ruby><ruby>季<rt>き</rt></ruby></span>がある。</div><div class="ex-vn">Nhật Bản có bốn mùa đẹp.</div></div></td></tr>
+
+<tr><td class="col-stt">10</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>爽<rt>さわ</rt></ruby>やか / <ruby>蒸<rt>む</rt></ruby>し<ruby>暑<rt>あつ</rt></ruby>い</span><span class="vocab-hanviet">SẢNG / CHƯNG NÓNG</span><span class="vocab-pos pos-na">Tính từ</span><span class="vocab-meaning">Sảng khoái, mát mẻ / Oi bức</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">爽</span><span class="kreading">SẢNG · さわ(やか) / そう</span> — <span class="kmean">sảng khoái</span></div><div><span class="kchar">蒸</span><span class="kreading">CHƯNG · む(す) / じょう</span> — <span class="kmean">hấp, hầm</span></div><div class="combine"><strong>Cặp đối lập thời tiết:</strong> 爽やか (-na, mát mẻ, sảng khoái - mùa thu) ↔ 蒸し暑い (-i, oi bức như nồi hấp - mùa hè).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>秋<rt>あき</rt></ruby>は<span class="target"><ruby>爽<rt>さわ</rt></ruby>やか</span>で、<ruby>気<rt>き</rt></ruby><ruby>持<rt>も</rt></ruby>ちがいい<ruby>季<rt>き</rt></ruby><ruby>節<rt>せつ</rt></ruby>です。</div><div class="ex-vn">Mùa thu mát mẻ sảng khoái, là mùa rất dễ chịu.</div></div></td></tr>
+
+<tr><td class="col-stt">11</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>梅<rt>つ</rt></ruby><ruby>雨<rt>ゆ</rt></ruby></span><span class="vocab-hanviet">MAI VŨ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Mùa mưa Tsuyu</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">梅雨</span><span class="kreading">つゆ (熟字訓)</span> — <span class="kmean">mùa mưa "mai vũ"</span></div><div class="combine"><strong>Cách đọc đặc biệt:</strong> 梅 (mai - mơ) + 雨 (vũ - mưa) đọc là つゆ (tsuyu). Mùa mưa ở Nhật từ tháng 6 đến giữa tháng 7. Cụm: 梅雨に入る (vào mùa mưa).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">6<ruby>月<rt>がつ</rt></ruby>になると、<span class="target"><ruby>梅<rt>つ</rt></ruby><ruby>雨<rt>ゆ</rt></ruby></span>に<ruby>入<rt>はい</rt></ruby>ります。</div><div class="ex-vn">Đến tháng 6 là vào mùa mưa Tsuyu.</div></div></td></tr>
+
+<tr><td class="col-stt">12</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>超<rt>こ</rt></ruby>える</span><span class="vocab-hanviet">SIÊU</span><span class="vocab-pos">Động từ tự động</span><span class="vocab-meaning">Vượt qua, vượt mức</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">超</span><span class="kreading">SIÊU · ちょう / こ(える)</span> — <span class="kmean">vượt, siêu</span></div><div class="combine"><strong>Cụm:</strong> 30度を超える (vượt 30 độ), 予算を超える (vượt ngân sách). Cùng chữ 超: 超高層ビル (tòa nhà siêu cao).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>今<rt>きょう</rt></ruby><ruby>日<rt>う</rt></ruby>の<ruby>気<rt>き</rt></ruby><ruby>温<rt>おん</rt></ruby>は35<ruby>度<rt>ど</rt></ruby>を<span class="target"><ruby>超<rt>こ</rt></ruby>えた</span>。</div><div class="ex-vn">Nhiệt độ hôm nay đã vượt 35 độ.</div></div></td></tr>
+
+<tr><td class="col-stt">13</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>降<rt>ふ</rt></ruby>る / <ruby>鳴<rt>な</rt></ruby>る</span><span class="vocab-hanviet">GIÁNG / MINH</span><span class="vocab-pos">Động từ tự động</span><span class="vocab-meaning">Rơi (mưa, tuyết) / Vang, kêu</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">降</span><span class="kreading">GIÁNG · ふ(る) / こう</span> — <span class="kmean">rơi, xuống</span></div><div><span class="kchar">鳴</span><span class="kreading">MINH · な(る) / めい</span> — <span class="kmean">vang, kêu</span></div><div class="combine"><strong>Cụm:</strong> 雨が降る (mưa rơi), 雷が鳴る (sấm rền), 鐘が鳴る (chuông kêu). Cùng chữ 降: 乗り降り (lên xuống xe).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>朝<rt>あさ</rt></ruby>から<ruby>雨<rt>あめ</rt></ruby>が<span class="target"><ruby>降<rt>ふ</rt></ruby>って</span>いる。</div><div class="ex-vn">Mưa đang rơi từ sáng.</div></div></td></tr>
+
+<tr><td class="col-stt">14</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>近<rt>ちか</rt></ruby><ruby>付<rt>づ</rt></ruby>く</span><span class="vocab-hanviet">CẬN PHÓ</span><span class="vocab-pos">Động từ tự động</span><span class="vocab-meaning">Đến gần, áp sát</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">近</span><span class="kreading">CẬN · きん / ちか(い)</span> — <span class="kmean">gần</span></div><div><span class="kchar">付</span><span class="kreading">PHÓ · ふ / つ(く)</span> — <span class="kmean">gắn</span></div><div class="combine"><strong>Cụm:</strong> 嵐が近付く (bão sắp đến), 試験が近付く (kỳ thi sắp đến). Cặp tha-tự: 近づく (tự) - 近づける (tha - làm cho gần lại).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>台<rt>たい</rt></ruby><ruby>風<rt>ふう</rt></ruby>が<span class="target"><ruby>近<rt>ちか</rt></ruby><ruby>付<rt>づ</rt></ruby>いて</span>きた。</div><div class="ex-vn">Cơn bão đã đến gần.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 A — Ôn luyện cụm Thời tiết</h4><span class="ex-subtitle">Một dạng câu hỏi sau khi học 14 từ ở mục 18-1</span></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 A1</span>文脈規定 — Điền từ vào chỗ trống</div>
+      <div class="choice-pool"><strong>選択肢:</strong> 気温 / 嵐 / 雷 / 湿度 / 四季 / 梅雨</div>
+      <div class="ex-q"><span class="qnum">(1)</span><ruby>今<rt>きょう</rt></ruby><ruby>日<rt>う</rt></ruby>の <span class="blank" data-ans="気温">　　　　</span> は30<ruby>度<rt>ど</rt></ruby>です。</div>
+      <div class="ex-q"><span class="qnum">(2)</span><ruby>夏<rt>なつ</rt></ruby>は <span class="blank" data-ans="湿度">　　　　</span> が<ruby>高<rt>たか</rt></ruby>くて<ruby>大<rt>たい</rt></ruby><ruby>変<rt>へん</rt></ruby>だ。</div>
+      <div class="ex-q"><span class="qnum">(3)</span> <span class="blank" data-ans="嵐">　　　　</span> が<ruby>来<rt>く</rt></ruby>るので<ruby>家<rt>いえ</rt></ruby>にいよう。</div>
+      <div class="ex-q"><span class="qnum">(4)</span> <span class="blank" data-ans="雷">　　　　</span> が<ruby>鳴<rt>な</rt></ruby>って、<ruby>恐<rt>こわ</rt></ruby>かった。</div>
+      <div class="ex-q"><span class="qnum">(5)</span>6<ruby>月<rt>がつ</rt></ruby>から <span class="blank" data-ans="梅雨">　　　　</span> が<ruby>始<rt>はじ</rt></ruby>まる。</div>
+      <div class="ex-q"><span class="qnum">(6)</span><ruby>日<rt>に</rt></ruby><ruby>本<rt>ほん</rt></ruby>には<ruby>美<rt>うつく</rt></ruby>しい <span class="blank" data-ans="四季">　　　　</span> がある。</div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> (1) 気温 — (2) 湿度 — (3) 嵐 — (4) 雷 — (5) 梅雨 — (6) 四季</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-head" data-mark="地"><span class="section-kicker">Phần 18-2 · 10 từ</span><h3>地理</h3><span class="section-vn">Địa lý tự nhiên</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">15</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>大<rt>たい</rt></ruby><ruby>陸<rt>りく</rt></ruby> / <ruby>砂<rt>さ</rt></ruby><ruby>漠<rt>ばく</rt></ruby></span><span class="vocab-hanviet">ĐẠI LỤC / SA MẠC</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Lục địa / Sa mạc</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">大陸</span><span class="kreading">たいりく</span> — <span class="kmean">lục địa</span></div><div><span class="kchar">砂漠</span><span class="kreading">さばく</span> — <span class="kmean">sa mạc</span></div><div class="combine"><strong>Bộ đôi địa lý lớn:</strong> 大陸 (Châu lục: ユーラシア大陸 - Á Âu). 砂漠 (sa mạc lớn: サハラ砂漠). Cùng chữ 砂: 砂 (cát).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">アフリカ<span class="target"><ruby>大<rt>たい</rt></ruby><ruby>陸<rt>りく</rt></ruby></span>にはサハラ<span class="target"><ruby>砂<rt>さ</rt></ruby><ruby>漠<rt>ばく</rt></ruby></span>がある。</div><div class="ex-vn">Châu Phi có sa mạc Sahara.</div></div></td></tr>
+
+<tr><td class="col-stt">16</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>火<rt>か</rt></ruby><ruby>山<rt>ざん</rt></ruby> / <ruby>爆<rt>ばく</rt></ruby><ruby>発<rt>はつ</rt></ruby></span><span class="vocab-hanviet">HỎA SƠN / BẠO PHÁT</span><span class="vocab-pos">Danh từ / Suru</span><span class="vocab-meaning">Núi lửa / Nổ, phun trào</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">火山</span><span class="kreading">かざん</span> — <span class="kmean">núi lửa</span></div><div><span class="kchar">爆発</span><span class="kreading">ばくはつ</span> — <span class="kmean">nổ, phát nổ</span></div><div class="combine"><strong>Cụm:</strong> 火山が爆発する (núi lửa phun trào). 日本: 富士山 cũng là núi lửa (đã ngủ). 爆発 cũng dùng cho bom: 爆弾が爆発する.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">あの<span class="target"><ruby>火<rt>か</rt></ruby><ruby>山<rt>ざん</rt></ruby></span>が<ruby>突<rt>とつ</rt></ruby><ruby>然<rt>ぜん</rt></ruby><span class="target"><ruby>爆<rt>ばく</rt></ruby><ruby>発<rt>はつ</rt></ruby></span>した。</div><div class="ex-vn">Ngọn núi lửa kia đột ngột phun trào.</div></div></td></tr>
+
+<tr><td class="col-stt">17</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>川<rt>かわ</rt></ruby> / <ruby>流<rt>なが</rt></ruby>れる / あふれる</span><span class="vocab-hanviet">XUYÊN / LƯU</span><span class="vocab-pos">Danh + Động từ</span><span class="vocab-meaning">Sông / Chảy / Tràn ra</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">流</span><span class="kreading">LƯU · りゅう / なが(れる)</span> — <span class="kmean">chảy, lưu</span></div><div class="combine"><strong>Cụm:</strong> 川が流れる (sông chảy hiền hòa), 川があふれる (sông tràn bờ, lũ lụt). あふれる là và-go.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>台<rt>たい</rt></ruby><ruby>風<rt>ふう</rt></ruby>で<span class="target"><ruby>川<rt>かわ</rt></ruby></span>が<span class="target">あふれて</span>、<ruby>町<rt>まち</rt></ruby>が<ruby>水<rt>みず</rt></ruby>に<ruby>沈<rt>しず</rt></ruby>んだ。</div><div class="ex-vn">Do bão, sông tràn bờ và thị trấn bị ngập trong nước.</div></div></td></tr>
+
+<tr><td class="col-stt">18</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>滝<rt>たき</rt></ruby> / <ruby>湖<rt>みずうみ</rt></ruby> / <ruby>島<rt>しま</rt></ruby></span><span class="vocab-hanviet">LONG / HỒ / ĐẢO</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Thác nước / Hồ / Đảo</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">滝</span><span class="kreading">LONG · たき</span> — <span class="kmean">thác nước</span></div><div><span class="kchar">湖</span><span class="kreading">HỒ · みずうみ / こ</span> — <span class="kmean">hồ</span></div><div><span class="kchar">島</span><span class="kreading">ĐẢO · しま / とう</span> — <span class="kmean">đảo</span></div><div class="combine"><strong>Bộ 3 cảnh nước:</strong> 滝 (thác - 滝を眺める), 湖 (hồ - 湖に浮かぶ島), 島 (đảo - 日本は島国).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<span class="target"><ruby>湖<rt>みずうみ</rt></ruby></span>には<ruby>小<rt>ちい</rt></ruby>さな<span class="target"><ruby>島<rt>しま</rt></ruby></span>が<ruby>浮<rt>う</rt></ruby>かんでいる。</div><div class="ex-vn">Trên hồ này có một hòn đảo nhỏ nổi lên.</div></div></td></tr>
+
+<tr><td class="col-stt">19</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>農<rt>のう</rt></ruby><ruby>業<rt>ぎょう</rt></ruby> / <ruby>盛<rt>さか</rt></ruby>ん</span><span class="vocab-hanviet">NÔNG NGHIỆP / THỊNH</span><span class="vocab-pos">Danh từ / Tính từ -na</span><span class="vocab-meaning">Nông nghiệp / Thịnh hành, phát triển</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">農業</span><span class="kreading">のうぎょう</span> — <span class="kmean">nông nghiệp</span></div><div><span class="kchar">盛</span><span class="kreading">THỊNH · せい / さか(ん)</span> — <span class="kmean">thịnh, hưng thịnh</span></div><div class="combine"><strong>Cụm:</strong> 農業が盛んな地域 (vùng nông nghiệp phát triển). Cùng chữ 業: 工業 (công nghiệp), 商業 (thương nghiệp), 漁業 (ngư nghiệp).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>地<rt>ち</rt></ruby><ruby>域<rt>いき</rt></ruby>は<span class="target"><ruby>農<rt>のう</rt></ruby><ruby>業<rt>ぎょう</rt></ruby></span>が<span class="target"><ruby>盛<rt>さか</rt></ruby>ん</span>だ。</div><div class="ex-vn">Khu vực này có nền nông nghiệp phát triển.</div></div></td></tr>
+
+<tr><td class="col-stt">20</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>都<rt>と</rt></ruby><ruby>会<rt>かい</rt></ruby> / <ruby>地<rt>ち</rt></ruby><ruby>方<rt>ほう</rt></ruby></span><span class="vocab-hanviet">ĐÔ HỘI / ĐỊA PHƯƠNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Thành thị / Địa phương, nông thôn</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">都会</span><span class="kreading">とかい</span> — <span class="kmean">đô thị, thành thị</span></div><div><span class="kchar">地方</span><span class="kreading">ちほう</span> — <span class="kmean">địa phương (ngoài Tokyo)</span></div><div class="combine"><strong>Cặp đối:</strong> 都会 (thành thị) ↔ 地方 (địa phương, vùng quê) = 田舎 (いなか). Người Nhật vùng quê thường lên 都会 tìm việc.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>都<rt>と</rt></ruby><ruby>会<rt>かい</rt></ruby></span>の<ruby>生<rt>せい</rt></ruby><ruby>活<rt>かつ</rt></ruby>は<ruby>便<rt>べん</rt></ruby><ruby>利<rt>り</rt></ruby>だけど、<ruby>疲<rt>つか</rt></ruby>れる。</div><div class="ex-vn">Cuộc sống đô thị tiện lợi nhưng mệt mỏi.</div></div></td></tr>
+
+<tr><td class="col-stt">21</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>田<rt>いな</rt></ruby><ruby>舎<rt>か</rt></ruby> / <ruby>故<rt>こ</rt></ruby><ruby>郷<rt>きょう</rt></ruby></span><span class="vocab-hanviet">ĐIỀN XÁ / CỐ HƯƠNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Vùng quê / Quê hương</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">田舎</span><span class="kreading">いなか (熟字訓)</span> — <span class="kmean">vùng quê, nông thôn</span></div><div><span class="kchar">故郷</span><span class="kreading">こきょう / ふるさと</span> — <span class="kmean">quê hương, quê nhà</span></div><div class="combine"><strong>Phân biệt:</strong> 田舎 - vùng quê nói chung (có thể không phải quê mình). 故郷 / ふるさと - quê hương (mình sinh ra). Cụm: 故郷を離れる (xa quê).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>故<rt>こ</rt></ruby><ruby>郷<rt>きょう</rt></ruby></span>が<ruby>懐<rt>なつ</rt></ruby>かしい。</div><div class="ex-vn">Tôi nhớ quê hương mình quá.</div></div></td></tr>
+
+<tr><td class="col-stt">22</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>離<rt>はな</rt></ruby>れる</span><span class="vocab-hanviet">LY</span><span class="vocab-pos">Động từ tự động</span><span class="vocab-meaning">Rời khỏi, xa rời</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">離</span><span class="kreading">LY · り / はな(れる)</span> — <span class="kmean">rời, ly</span></div><div class="combine"><strong>Cụm:</strong> 故郷を離れる (xa quê hương), 仕事を離れる (rời việc). Cùng chữ 離: 離婚 (ly hôn), 距離 (khoảng cách).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">18<ruby>歳<rt>さい</rt></ruby>の<ruby>時<rt>とき</rt></ruby>、<ruby>故<rt>こ</rt></ruby><ruby>郷<rt>きょう</rt></ruby>を<span class="target"><ruby>離<rt>はな</rt></ruby>れて</span><ruby>東<rt>とう</rt></ruby><ruby>京<rt>きょう</rt></ruby>に<ruby>来<rt>き</rt></ruby>た。</div><div class="ex-vn">Năm 18 tuổi, tôi rời quê hương lên Tokyo.</div></div></td></tr>
+
+<tr><td class="col-stt">23</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>懐<rt>なつ</rt></ruby>かしい</span><span class="vocab-hanviet">HOÀI</span><span class="vocab-pos pos-i">Tính từ -i</span><span class="vocab-meaning">Nhớ nhung, hoài niệm</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">懐</span><span class="kreading">HOÀI · かい / なつ(かしい)</span> — <span class="kmean">nhớ, hoài</span></div><div class="combine"><strong>Sắc thái:</strong> Cảm xúc ấm áp khi nhớ về quá khứ (kỷ niệm đẹp). Không phải "nhớ ai" thuần túy (đó là 恋しい). Cụm: 懐かしい音楽 (bài hát hoài niệm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>歌<rt>うた</rt></ruby>を<ruby>聞<rt>き</rt></ruby>くと<span class="target"><ruby>懐<rt>なつ</rt></ruby>かしい</span><ruby>気<rt>き</rt></ruby><ruby>持<rt>も</rt></ruby>ちになる。</div><div class="ex-vn">Nghe bài hát này tôi cảm thấy hoài niệm.</div></div></td></tr>
+
+<tr><td class="col-stt">24</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>眺<rt>なが</rt></ruby>める</span><span class="vocab-hanviet">DIẾU</span><span class="vocab-pos">Động từ tha động</span><span class="vocab-meaning">Phóng tầm mắt ngắm</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">眺</span><span class="kreading">DIẾU · ちょう / なが(める)</span> — <span class="kmean">nhìn từ xa</span></div><div class="combine"><strong>Phân biệt:</strong> 見る (xem chung), 観る (xem giải trí), 眺める (ngắm cảnh từ xa, lặng lẽ). Cụm: 滝を眺める (ngắm thác).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>窓<rt>まど</rt></ruby>から<ruby>海<rt>うみ</rt></ruby>を<span class="target"><ruby>眺<rt>なが</rt></ruby>めて</span>いる。</div><div class="ex-vn">Tôi đang ngắm biển từ cửa sổ.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 B — Ôn luyện cụm Địa lý</h4><span class="ex-subtitle">Một dạng câu hỏi sau khi học 10 từ ở mục 18-2</span></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 B1</span>マッチング — Ghép từ với nghĩa</div>
+      <div class="match-grid">
+        <div class="match-col"><h5>Cột A — Tiếng Nhật</h5>
+          <div class="match-item jp"><span class="mlabel">A1.</span>大陸 (たいりく)</div>
+          <div class="match-item jp"><span class="mlabel">A2.</span>火山 (かざん)</div>
+          <div class="match-item jp"><span class="mlabel">A3.</span>湖 (みずうみ)</div>
+          <div class="match-item jp"><span class="mlabel">A4.</span>都会 (とかい)</div>
+          <div class="match-item jp"><span class="mlabel">A5.</span>故郷 (こきょう)</div>
+          <div class="match-item jp"><span class="mlabel">A6.</span>懐かしい</div>
+        </div>
+        <div class="match-col"><h5>Cột B — Tiếng Việt</h5>
+          <div class="match-item"><span class="mlabel">B1.</span>Hồ</div>
+          <div class="match-item"><span class="mlabel">B2.</span>Lục địa</div>
+          <div class="match-item"><span class="mlabel">B3.</span>Đô thị, thành phố</div>
+          <div class="match-item"><span class="mlabel">B4.</span>Hoài niệm, nhớ nhung</div>
+          <div class="match-item"><span class="mlabel">B5.</span>Núi lửa</div>
+          <div class="match-item"><span class="mlabel">B6.</span>Quê hương</div>
+        </div>
+      </div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> A1→B2 ・ A2→B5 ・ A3→B1 ・ A4→B3 ・ A5→B6 ・ A6→B4</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-17.html">← Bài 17</a><a class="mid" href="../tu-vung.html">▦ Danh sách bài</a><a href="bai-19.html">Bài 19 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+</script>
+</body></html>

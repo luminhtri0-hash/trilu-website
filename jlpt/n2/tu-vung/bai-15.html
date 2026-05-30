@@ -1,0 +1,634 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 15 · Vụ án & Tai nạn & Thảm họa — Từ vựng N2 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N2 — Bài 15: Vụ án & Tai nạn & Thảm họa. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#1b3a5a;
+  --accent-dark:#0f2740;
+  --accent-2:#2d6e7a;
+  --accent-3:#5fa3b2;
+  --line:#bcd3da;
+  --line-2:#dde9ee;
+  --callout:#f0f6f8;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --shadow:0 18px 46px rgba(15, 39, 64, 0.10);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(45,110,122,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(27,58,90,0.08), transparent 22%),
+    linear-gradient(180deg, #eef4f6 0%, #e7eef2 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+/* ============ COVER ============ */
+.cover{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(95,163,178,0.24), transparent 16%),
+    linear-gradient(135deg, #0f2740 0%, #1b3a5a 36%, #082030 100%);
+  color:#fff; border-radius:30px; box-shadow:var(--shadow);
+  padding:60px 64px 50px; margin-bottom:26px;
+}
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(95,163,178,0.52) 0%, rgba(95,163,178,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(95,163,178,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+/* ============ TOC ============ */
+.toc-panel{
+  margin:0 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(240,246,248,0.96));
+  border:1px solid rgba(45,110,122,0.20);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-chapter{ margin-bottom:20px; }
+.toc-chapter-head{ display:flex; align-items:center; gap:12px; padding:12px 16px; margin-bottom:10px; background:linear-gradient(90deg, #1b3a5a, #2d6e7a); color:#fff; border-radius:12px; }
+.toc-chapter-num{ font-family:"Noto Serif CJK JP",serif; font-weight:900; font-size:22px; opacity:0.85; }
+.toc-chapter-title{ font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:16px; }
+.toc-chapter-title .vn{ font-style:italic; font-size:13px; opacity:0.85; margin-left:8px; font-family:Inter,sans-serif; font-weight:500; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; padding-left:8px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:12px 14px; background:linear-gradient(180deg, #fffefd 0%, #f0f6f8 100%); border:1px solid var(--line-2); border-radius:12px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(27,58,90,0.40); box-shadow:0 12px 24px rgba(15,39,64,0.06); }
+.toc-item-number{ display:inline-block; min-width:30px; padding:2px 7px; margin-right:6px; border-radius:7px; background:linear-gradient(180deg, var(--accent-2), #1f5560); color:#fff; font-weight:800; font-size:10.5px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:13px; }
+.toc-item-summary{ display:block; margin-top:4px; color:var(--muted); font-size:11.5px; line-height:1.45; font-family:"Noto Serif CJK JP",serif; }
+
+/* ============ CHAPTER HEADER ============ */
+.chapter-card{
+  position:relative; overflow:hidden;
+  background:linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:34px 44px 30px; margin:50px 0 20px;
+  color:#fff;
+}
+.chapter-card::after{
+  content:attr(data-mark); position:absolute; right:0; bottom:-40px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(8rem, 16vw, 13rem); color:rgba(255,255,255,0.08); line-height:1;
+}
+.chapter-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(95,163,178,0.95); margin-bottom:10px; }
+.chapter-card h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:34px; font-weight:700; }
+.chapter-card .chapter-sub{ font-size:14.5px; color:rgba(255,255,255,0.82); position:relative; z-index:1; }
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(45,110,122,0.16);
+  border-radius:28px; box-shadow:var(--shadow);
+  padding:0 0 40px; margin-bottom:40px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  padding:30px 44px 28px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(95,163,178,0.28), transparent 26%),
+    linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  color:#fff;
+}
+.lesson-banner::after{
+  content:"語彙"; position:absolute; right:-10px; bottom:-50px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:8px; }
+.lesson-banner h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:28px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:14px; color:rgba(255,255,255,0.82); }
+
+.doc-body{ padding:30px 44px 10px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #154366 0%, #1b3a5a 52%, #2d6e7a 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark); position:absolute; right:18px; top:50%; transform:translateY(-50%);
+  font-family:"Noto Serif CJK JP",serif; font-size:60px; line-height:1; color:rgba(255,255,255,0.12); font-weight:700;
+}
+.section-kicker{ display:block; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:rgba(255,255,255,0.78); }
+.section-head h3{
+  margin:0; padding:0; border:none; color:#fff; background:none;
+  font-family:"Noto Serif CJK JP",serif; font-size:22px; line-height:1.2; font-weight:700;
+}
+.section-head .section-vn{ display:block; margin-top:4px; font-size:13px; font-style:italic; color:rgba(255,255,255,0.82); font-family:Inter,sans-serif; }
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{ margin:16px 0 24px; }
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff; border:1px solid var(--line-2);
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 26px rgba(15,39,64,0.05);
+  font-size:13.5px;
+}
+thead th{
+  background:linear-gradient(180deg, #eaf3f6 0%, #cee2e8 100%);
+  color:var(--accent); font-weight:800;
+  padding:13px 14px; text-align:left; font-size:13px;
+  border-bottom:1px solid var(--line-2);
+}
+thead th:not(:last-child){ border-right:1px solid var(--line-2); }
+tbody td{
+  padding:18px 14px; vertical-align:top;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+}
+tbody td:last-child{ border-right:none; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody tr:nth-child(even) td{ background:#f7fbfc; }
+
+.col-stt{ width:5%; text-align:center; font-weight:800; color:var(--accent); font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:18px; }
+.col-vocab{ width:22%; }
+.col-explain{ width:30%; }
+.col-example{ width:43%; }
+
+.vocab-wrapper{ display:flex; flex-direction:column; gap:4px; }
+.vocab-kanji{ font-size:24px; font-weight:700; color:#222; font-family:"Noto Serif CJK JP","Yu Mincho",serif; line-height:1.15; }
+.vocab-kanji ruby{ ruby-position:over; ruby-align:center; }
+.vocab-kanji rt{ font-size:11px; color:#888; font-family:sans-serif; font-weight:500; }
+.vocab-hanviet{ font-size:11px; color:var(--accent-2); font-weight:800; letter-spacing:1.2px; margin-top:4px; }
+.vocab-pos{ display:inline-block; font-size:10.5px; color:#fff; background:var(--green); padding:2px 8px; border-radius:4px; font-weight:600; letter-spacing:0.05em; margin-top:6px; align-self:flex-start; }
+.vocab-pos.pos-na{ background:var(--terra); }
+.vocab-pos.pos-i{ background:var(--teal); }
+.vocab-pos.pos-adv{ background:var(--plum); }
+.vocab-pos.pos-suru{ background:#8a4a6a; }
+.vocab-pos.pos-katakana{ background:var(--accent-2); }
+.vocab-meaning{ font-size:14px; color:var(--accent); font-weight:700; margin-top:8px; line-height:1.5; }
+
+/* Explain box */
+.kanji-break{ background:linear-gradient(180deg, #f7fbfc, #e8f1f4); border:1px solid #cee2e8; border-left:4px solid var(--accent-2); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.65; color:#1f3a4a; }
+.kanji-break .kchar{ font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; color:var(--accent); margin-right:4px; }
+.kanji-break .kreading{ color:var(--accent-2); font-weight:700; font-size:11.5px; letter-spacing:0.05em; }
+.kanji-break .kmean{ color:#2d4a5a; }
+.kanji-break .combine{ margin-top:8px; padding-top:8px; border-top:1px dashed #b3cdd5; font-style:italic; color:#2d5560; }
+.kanji-break .combine strong{ font-style:normal; color:var(--accent); }
+.katakana-origin{ background:linear-gradient(180deg, #fff5f8, #faeaf0); border:1px solid #f0d8e2; border-left:4px solid #b13e6a; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#5a3a4a; }
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{ background:linear-gradient(180deg, #f7faf2, #ecf2e2); border:1px solid #d8e2c8; border-left:4px solid var(--green); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#3e5a3a; }
+.wago-note strong{ color:var(--green); }
+
+/* Example box */
+.ex-box{ background:linear-gradient(180deg, #fefdfa, #f3eddb); border-left:4px solid var(--accent); padding:13px 16px; border-radius:0 12px 12px 0; }
+.ex-jp{ font-size:14.5px; color:#222; margin-bottom:8px; line-height:1.95; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(95,163,178,0.20); padding:0 3px; border-radius:3px; }
+.ex-vn{ font-size:13px; color:#4a5560; font-style:italic; line-height:1.55; padding-top:6px; border-top:1px dotted #cee2e8; }
+
+/* ============ WORD FORMATION & ADVERB BLOCKS ============ */
+.special-block{
+  margin:24px 0;
+  background:linear-gradient(180deg, #fffdfa, #f7fbfc);
+  border:1px solid #cee2e8;
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 8px 20px rgba(15,39,64,0.05);
+}
+.special-banner{
+  display:flex; align-items:center; gap:12px;
+  padding:14px 22px;
+  background:linear-gradient(90deg, #2d6e7a 0%, #5fa3b2 100%);
+  color:#fff;
+}
+.special-banner.adv{ background:linear-gradient(90deg, #6a4a8a 0%, #8a6daf 100%); }
+.special-icon{ width:36px; height:36px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"Noto Serif CJK JP",serif; }
+.special-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:16px; font-weight:700; }
+.special-banner .sp-subtitle{ display:block; font-size:11px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:1px; letter-spacing:0.04em; }
+.special-body{ padding:18px 22px; }
+
+.word-formation-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; }
+.wf-item{ background:#fff; border:1px solid #d4e3e8; border-radius:10px; padding:12px 14px; }
+.wf-pattern{ font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:17px; color:var(--accent); margin-bottom:6px; }
+.wf-pattern .ptype{ font-size:11px; color:var(--accent-2); margin-left:6px; font-weight:600; }
+.wf-examples{ font-size:13px; line-height:1.7; color:#333; font-family:"Noto Serif CJK JP",serif; }
+.wf-examples .wfx{ display:inline-block; margin-right:8px; }
+.wf-examples .wfx-jp{ font-weight:600; color:var(--accent-dark); }
+.wf-examples .wfx-vn{ font-style:italic; color:#5f6470; font-family:Inter,sans-serif; font-size:11.5px; }
+
+.adverb-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+.adv-item{ background:#fff; border:1px solid #d8d0e4; border-radius:10px; padding:13px 16px; border-left:3px solid #6a4a8a; }
+.adv-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:5px; }
+.adv-jp{ font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:16px; color:#4a3070; }
+.adv-vn{ font-size:12.5px; color:var(--muted); font-style:italic; }
+.adv-ex{ font-size:13px; line-height:1.75; color:#333; font-family:"Noto Serif CJK JP",serif; padding:6px 10px; background:#faf7fd; border-radius:6px; margin-top:4px; }
+.adv-ex .adv-ex-vn{ display:block; font-size:11.5px; color:#5a5070; font-style:italic; font-family:Inter,sans-serif; margin-top:3px; padding-top:3px; border-top:1px dotted #d8d0e4; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:30px 0 24px;
+  padding:0;
+  background:linear-gradient(180deg, #fefdfa 0%, #f3eddb 100%);
+  border:1px solid #d9c9a8;
+  border-radius:22px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(15,39,64,0.05);
+}
+.exercise-banner{
+  display:flex; align-items:center; gap:14px;
+  padding:18px 24px;
+  background:linear-gradient(90deg, var(--accent) 0%, #2d6e7a 100%);
+  color:#fff;
+}
+.exercise-icon{ width:42px; height:42px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"EB Garamond","Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:11.5px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:2px; letter-spacing:0.04em; }
+.exercise-body{ padding:22px 26px; }
+
+.exercise{ background:#fff; border:1px solid #d9c9a8; border-radius:14px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 14px rgba(15,39,64,0.04); }
+.exercise:last-child{ margin-bottom:0; }
+.exercise-title{ font-weight:700; color:var(--accent); margin-bottom:12px; font-size:14px; display:flex; align-items:center; gap:10px; padding-bottom:10px; border-bottom:1px dashed #d9c9a8; }
+.exercise-title .ex-no{ background:var(--accent-2); color:#fff; padding:3px 10px; border-radius:6px; font-size:11.5px; letter-spacing:0.08em; }
+.choice-pool{ background:linear-gradient(180deg, #fff7e8, #f7e4c1); border:1px dashed #b08850; border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:14px; font-family:"Noto Serif CJK JP",serif; color:#674c1b; }
+.choice-pool strong{ color:var(--accent); }
+
+.ex-q{ padding:9px 0; border-bottom:1px dotted #e8dcc0; font-size:14px; line-height:1.85; font-family:"Noto Serif CJK JP",serif; }
+.ex-q:last-child{ border-bottom:none; }
+.ex-q .qnum{ display:inline-block; min-width:24px; font-weight:700; color:var(--accent); margin-right:4px; font-family:"EB Garamond",sans-serif; font-size:14.5px; }
+.ex-q .blank{ display:inline-block; min-width:90px; border-bottom:1.5px solid #b08850; padding:0 8px; margin:0 3px; text-align:center; color:transparent; cursor:pointer; transition:all .15s; }
+.ex-q .blank:hover{ background:rgba(95,163,178,0.12); }
+.ex-q .blank.shown{ color:var(--accent); font-weight:700; border-bottom-color:var(--accent); background:rgba(95,163,178,0.15); }
+
+.multi-choice{ display:block; margin:4px 0 4px 30px; font-size:13.5px; color:#444; }
+.multi-choice .opt-num{ color:var(--accent-2); font-weight:700; margin-right:6px; }
+.match-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin-top:12px; }
+.match-col{ background:#f7fbfc; border:1px solid #cee2e8; border-radius:12px; padding:14px; }
+.match-col h5{ margin:0 0 10px; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; }
+.match-item{ padding:7px 10px; font-size:14px; border-radius:6px; }
+.match-item.jp{ font-family:"Noto Serif CJK JP",serif; }
+.match-item .mlabel{ display:inline-block; min-width:24px; font-weight:800; color:var(--accent-2); }
+
+.answer-toggle{
+  display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+  padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, #2d6e7a 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:13px; cursor:pointer; transition:all 0.2s; font-family:inherit;
+  box-shadow:0 6px 14px rgba(27,58,90,0.18);
+}
+.answer-toggle:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(27,58,90,0.28); }
+.answer-toggle::before{ content:"鍵"; font-family:"Noto Serif CJK JP",serif; margin-right:4px; }
+.answer-box{ display:none; margin-top:14px; padding:14px 16px; background:linear-gradient(180deg, #fffbef, #f8eed4); border:1px solid #d9bb88; border-left:4px solid var(--accent-2); border-radius:10px; font-size:13.5px; line-height:1.7; color:#5a4520; }
+.answer-box strong{ color:var(--accent); }
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  .chapter-card{ padding:24px 28px 22px; }
+  table.vocab-table{ min-width:880px; }
+  .table-shell{ overflow-x:auto; }
+  .match-grid{ grid-template-columns:1fr; }
+  .word-formation-grid{ grid-template-columns:1fr; }
+}
+
+@media print {
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+  html, body{ background:#fff !important; }
+  body{ font-size:11px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; }
+  .cover{ page-break-after:always; break-after:page; box-shadow:none; border-radius:18px; padding:42px 38px; }
+  .cover-title{ font-size:36px; }
+  .cover-mark{ font-size:11rem !important; }
+  .toc-panel{ page-break-after:always; break-after:page; box-shadow:none; }
+  .toc-grid{ grid-template-columns:repeat(3, 1fr) !important; }
+  .toc-item{ page-break-inside:avoid !important; break-inside:avoid !important; }
+  .chapter-card{ page-break-before:always; break-before:page; box-shadow:none; }
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:16px 18px 12px !important; }
+  .table-shell{ overflow:visible !important; overflow-x:visible !important; margin:8px 0 14px !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; box-shadow:none !important; table-layout:fixed !important; }
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:18px 22px !important; }
+  .lesson-banner h2{ font-size:22px !important; }
+  .section-head{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:10px 16px !important; margin:10px 0 8px !important; }
+  .section-head h3{ font-size:18px !important; }
+  .section-head::after{ font-size:36px !important; }
+  .exercise-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:12px 18px !important; }
+  .exercise-banner h4{ font-size:14px !important; }
+  .exercise-block{ page-break-inside:auto; margin:14px 0 !important; }
+  .exercise-body{ padding:14px 16px !important; }
+  .exercise{ page-break-inside:avoid !important; break-inside:avoid !important; padding:12px 14px !important; margin-bottom:10px !important; }
+  .special-block{ page-break-inside:avoid !important; break-inside:avoid !important; }
+  .footer-card{ page-break-inside:avoid; break-inside:avoid; }
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table tbody{ display:table-row-group; }
+  table.vocab-table thead th{ padding:8px 8px !important; font-size:11px !important; }
+  table.vocab-table tr{ page-break-inside:avoid !important; break-inside:avoid !important; page-break-after:auto; }
+  table.vocab-table tbody td{ padding:10px 8px !important; font-size:11px !important; }
+  .vocab-wrapper{ gap:2px !important; }
+  .vocab-kanji{ font-size:17px !important; line-height:1.1 !important; }
+  .vocab-kanji rt{ font-size:9px !important; }
+  .vocab-hanviet{ font-size:9.5px !important; letter-spacing:0.8px !important; margin-top:2px !important; }
+  .vocab-pos{ font-size:8.5px !important; padding:1px 5px !important; margin-top:3px !important; }
+  .vocab-meaning{ font-size:11px !important; margin-top:4px !important; line-height:1.35 !important; }
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:7px 9px !important; font-size:10.5px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important; break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:14px !important; }
+  .kanji-break .kreading{ font-size:9.5px !important; }
+  .kanji-break .combine{ margin-top:5px !important; padding-top:5px !important; }
+  .ex-box{ padding:8px 10px !important; page-break-inside:avoid !important; break-inside:avoid !important; }
+  .ex-jp{ font-size:11.5px !important; line-height:1.75 !important; margin-bottom:5px !important; }
+  .ex-jp rt{ font-size:8px !important; }
+  .ex-vn{ font-size:10.5px !important; line-height:1.45 !important; padding-top:4px !important; }
+  .ex-q{ page-break-inside:avoid; break-inside:avoid; font-size:11.5px !important; line-height:1.7 !important; padding:6px 0 !important; }
+  .choice-pool{ font-size:11.5px !important; padding:7px 11px !important; }
+  .multi-choice{ font-size:11px !important; }
+  .answer-toggle{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; break-inside:avoid; font-size:11px !important; padding:10px 12px !important; }
+  .match-grid{ grid-template-columns:1fr 1fr !important; }
+  .match-item{ font-size:11px !important; padding:4px 6px !important; }
+  .word-formation-grid{ grid-template-columns:1fr 1fr !important; gap:8px !important; }
+  .wf-item{ padding:8px 10px !important; }
+  .wf-pattern{ font-size:13px !important; }
+  .wf-examples{ font-size:10.5px !important; }
+  .adv-jp{ font-size:13px !important; }
+  .adv-vn{ font-size:11px !important; }
+  .adv-ex{ font-size:10.5px !important; padding:4px 8px !important; }
+}
+
+
+.tts-btn{cursor:pointer;border:1px solid rgba(45,110,122,.35);background:rgba(95,163,178,.12);
+  border-radius:6px;font-size:.85em;line-height:1;margin-right:7px;padding:2px 6px;opacity:.78;
+  transition:.15s;vertical-align:middle;-webkit-user-select:none;user-select:none;}
+.tts-btn:hover{opacity:1;transform:scale(1.08);background:rgba(95,163,178,.25);}
+.tts-btn.playing{opacity:1;background:#2d6e7a;border-color:#2d6e7a;color:#fff;}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:500;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.93);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:36px;height:36px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.16em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n2.html">N2</a> · <a href="../tu-vung.html">Từ vựng</a> · Bài 15</div></div></a><a class="tl-back" href="../tu-vung.html">← Danh sách bài</a></nav>
+<div class="page-shell">
+
+<article class="document" id="lesson-7-2">
+<div class="lesson-banner">
+  <span class="lesson-kicker">2課 — 事件 ・ 事故 ・ 災害</span>
+  <h2>Vụ án &amp; Tai nạn &amp; Thảm họa</h2>
+  <div class="lesson-sub">事件, 事故, 災害 (24 từ chủ đề)</div>
+</div>
+<div class="doc-body">
+
+<div class="section-head" data-mark="災"><span class="section-kicker">7-2 · Từ vựng vụ án/tai nạn · 24 từ</span><h3>事件 ・ 事故 ・ 災害</h3><span class="section-vn">Vụ án, tai nạn và thảm họa</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ N2 &amp; Dịch</th></tr></thead><tbody>
+
+<tr><td class="col-stt">1</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>殺<rt>さつ</rt></ruby><ruby>人<rt>じん</rt></ruby><ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby> / <ruby>起<rt>お</rt></ruby>きる</span><span class="vocab-hanviet">SÁT NHÂN SỰ KIỆN</span><span class="vocab-pos">Danh + Động từ</span><span class="vocab-meaning">Vụ án giết người / Xảy ra</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">殺人</span><span class="kreading">さつじん</span> — <span class="kmean">giết người</span></div><div class="combine"><strong>Cụm:</strong> 殺人事件が起きる (xảy ra vụ án mạng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="529d23e769">この<ruby>静<rt>しず</rt></ruby>かな<ruby>町<rt>まち</rt></ruby>で<span class="target"><ruby>殺<rt>さつ</rt></ruby><ruby>人<rt>じん</rt></ruby><ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby></span>が<span class="target"><ruby>起<rt>お</rt></ruby>きる</span>とは<ruby>思<rt>おも</rt></ruby>わなかった。</div><div class="ex-vn">Tôi đã không nghĩ rằng vụ án mạng lại xảy ra ở thị trấn yên bình này.</div></div></td></tr>
+
+<tr><td class="col-stt">2</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>逮<rt>たい</rt></ruby><ruby>捕<rt>ほ</rt></ruby> / <ruby>捕<rt>つか</rt></ruby>まえる / <ruby>捕<rt>つか</rt></ruby>まる</span><span class="vocab-hanviet">ĐÃI BẮT</span><span class="vocab-pos">Danh + Động từ</span><span class="vocab-meaning">Bắt giữ / Bắt được / Bị bắt</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">逮捕</span><span class="kreading">たいほ</span> — <span class="kmean">bắt giữ (đã học N3)</span></div><div class="combine"><strong>Cặp tha-tự:</strong> 捕まえる (tha - bắt được) ↔ 捕まる (tự - bị bắt).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="c617eba26e">3<ruby>日<rt>か</rt></ruby><ruby>後<rt>ご</rt></ruby>に<ruby>犯<rt>はん</rt></ruby><ruby>人<rt>にん</rt></ruby>が<span class="target"><ruby>捕<rt>つか</rt></ruby>まった</span>。</div><div class="ex-vn">3 ngày sau tội phạm đã bị bắt.</div></div></td></tr>
+
+<tr><td class="col-stt">3</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>強<rt>ごう</rt></ruby><ruby>盗<rt>とう</rt></ruby> / <ruby>奪<rt>うば</rt></ruby>う / <ruby>逃<rt>に</rt></ruby>げる</span><span class="vocab-hanviet">CƯỜNG ĐẠO / ĐOẠT / ĐÀO</span><span class="vocab-pos">Danh + Động từ</span><span class="vocab-meaning">Tên cướp / Cướp đoạt / Trốn chạy</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">強盗</span><span class="kreading">ごうとう</span> — <span class="kmean">cướp có vũ trang</span></div><div class="combine"><strong>Cụm:</strong> 強盗が金を奪って逃げる (cướp giật tiền rồi trốn).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="a59f961855"><span class="target"><ruby>強<rt>ごう</rt></ruby><ruby>盗<rt>とう</rt></ruby></span>がコンビニで<ruby>金<rt>かね</rt></ruby>を<span class="target"><ruby>奪<rt>うば</rt></ruby>って</span>逃げた。</div><div class="ex-vn">Tên cướp đã cướp tiền ở cửa hàng tiện lợi rồi bỏ chạy.</div></div></td></tr>
+
+<tr><td class="col-stt">4</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>狙<rt>ねら</rt></ruby>う / <ruby>殺<rt>ころ</rt></ruby>す</span><span class="vocab-hanviet">THƯ / SÁT</span><span class="vocab-pos">Động từ tha động</span><span class="vocab-meaning">Nhắm vào / Sát hại</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">狙</span><span class="kreading">THƯ · そ / ねら(う)</span> — <span class="kmean">nhắm tới</span></div><div class="combine"><strong>Cụm:</strong> お年寄りを狙う (nhắm vào người già). 狙う còn dùng cho mục tiêu: 優勝を狙う.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="ceabe3406c"><ruby>一<rt>ひと</rt></ruby><ruby>人<rt>り</rt></ruby><ruby>暮<rt>ぐ</rt></ruby>らしのお<ruby>年<rt>とし</rt></ruby><ruby>寄<rt>よ</rt></ruby>りを<span class="target"><ruby>狙<rt>ねら</rt></ruby>った</span><ruby>詐<rt>さ</rt></ruby><ruby>欺<rt>ぎ</rt></ruby><ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えている。</div><div class="ex-vn">Các vụ lừa đảo nhắm vào người già sống một mình đang gia tăng.</div></div></td></tr>
+
+<tr><td class="col-stt">5</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>盗<rt>とう</rt></ruby><ruby>難<rt>なん</rt></ruby> / <ruby>詐<rt>さ</rt></ruby><ruby>欺<rt>ぎ</rt></ruby> / <ruby>被<rt>ひ</rt></ruby><ruby>害<rt>がい</rt></ruby></span><span class="vocab-hanviet">ĐẠO NẠN / TRÁ KHI / BỊ HẠI</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Bị trộm / Lừa đảo / Thiệt hại</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">盗難</span><span class="kreading">とうなん</span> — <span class="kmean">vụ trộm cắp</span></div><div><span class="kchar">詐欺</span><span class="kreading">さぎ</span> — <span class="kmean">lừa đảo</span></div><div class="combine"><strong>Cụm:</strong> 盗難 / 詐欺の被害に遭う (chịu thiệt hại do trộm cắp/lừa đảo).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="a6c6b99176">オレオレ<span class="target"><ruby>詐<rt>さ</rt></ruby><ruby>欺<rt>ぎ</rt></ruby></span>の<span class="target"><ruby>被<rt>ひ</rt></ruby><ruby>害<rt>がい</rt></ruby></span>に<ruby>遭<rt>あ</rt></ruby>う<ruby>高<rt>こう</rt></ruby><ruby>齢<rt>れい</rt></ruby><ruby>者<rt>しゃ</rt></ruby>が<ruby>後<rt>あと</rt></ruby>を<ruby>絶<rt>た</rt></ruby>たない。</div><div class="ex-vn">Người cao tuổi bị thiệt hại do trò lừa đảo "alo bố/mẹ ơi" không ngừng tăng.</div></div></td></tr>
+
+<tr><td class="col-stt">6</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>罪<rt>つみ</rt></ruby> / <ruby>犯<rt>おか</rt></ruby>す / <ruby>行<rt>ゆく</rt></ruby><ruby>方<rt>え</rt></ruby></span><span class="vocab-hanviet">TỘI / PHẠM / HÀNH PHƯƠNG</span><span class="vocab-pos">Danh + Động từ</span><span class="vocab-meaning">Tội / Phạm / Tung tích</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">犯</span><span class="kreading">PHẠM · はん / おか(す)</span> — <span class="kmean">phạm</span></div><div><span class="kchar">行方</span><span class="kreading">ゆくえ (熟字訓)</span> — <span class="kmean">nơi đi tới, tung tích</span></div><div class="combine"><strong>Cụm:</strong> 罪を犯す (phạm tội), 行方がわからない (không rõ tung tích).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="2ca845beff">10<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>から<span class="target"><ruby>行<rt>ゆく</rt></ruby><ruby>方<rt>え</rt></ruby></span>がわからなくなった<ruby>友<rt>とも</rt></ruby><ruby>達<rt>だち</rt></ruby>を<ruby>探<rt>さが</rt></ruby>している。</div><div class="ex-vn">Tôi đang tìm người bạn đã mất tung tích từ 10 năm trước.</div></div></td></tr>
+
+<tr><td class="col-stt">7</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>現<rt>げん</rt></ruby><ruby>場<rt>ば</rt></ruby> / <ruby>捜<rt>そう</rt></ruby><ruby>査<rt>さ</rt></ruby> / <ruby>証<rt>しょう</rt></ruby><ruby>拠<rt>こ</rt></ruby></span><span class="vocab-hanviet">HIỆN TRƯỜNG / SƯU TRA / CHỨNG CỨ</span><span class="vocab-pos">Danh + Suru</span><span class="vocab-meaning">Hiện trường / Điều tra / Chứng cứ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">捜査</span><span class="kreading">そうさ</span> — <span class="kmean">điều tra (tội phạm)</span></div><div><span class="kchar">証拠</span><span class="kreading">しょうこ</span> — <span class="kmean">chứng cứ</span></div><div class="combine"><strong>Cụm:</strong> 警察が現場を捜査する, 事件の証拠が見つかる.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="63dc894abb">警察は<span class="target"><ruby>現<rt>げん</rt></ruby><ruby>場<rt>ば</rt></ruby></span>を<span class="target"><ruby>捜<rt>そう</rt></ruby><ruby>査<rt>さ</rt></ruby></span>し、<ruby>重<rt>じゅう</rt></ruby><ruby>要<rt>よう</rt></ruby>な<span class="target"><ruby>証<rt>しょう</rt></ruby><ruby>拠<rt>こ</rt></ruby></span>を<ruby>見<rt>み</rt></ruby>つけた。</div><div class="ex-vn">Cảnh sát đã điều tra hiện trường và tìm được chứng cứ quan trọng.</div></div></td></tr>
+
+<tr><td class="col-stt">8</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>防<rt>ぼう</rt></ruby><ruby>犯<rt>はん</rt></ruby> / <ruby>強<rt>きょう</rt></ruby><ruby>化<rt>か</rt></ruby></span><span class="vocab-hanviet">PHÒNG PHẠM / CƯỜNG HÓA</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Phòng chống tội phạm / Tăng cường</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">防犯</span><span class="kreading">ぼうはん</span> — <span class="kmean">phòng chống tội phạm</span></div><div><span class="kchar">強化</span><span class="kreading">きょうか</span> — <span class="kmean">tăng cường</span></div><div class="combine"><strong>Cụm:</strong> 防犯対策を強化する, 防犯カメラ.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="19c580db26">この<ruby>地<rt>ち</rt></ruby><ruby>域<rt>いき</rt></ruby>では<span class="target"><ruby>防<rt>ぼう</rt></ruby><ruby>犯<rt>はん</rt></ruby></span><ruby>対<rt>たい</rt></ruby><ruby>策<rt>さく</rt></ruby>を<span class="target"><ruby>強<rt>きょう</rt></ruby><ruby>化<rt>か</rt></ruby></span>している。</div><div class="ex-vn">Khu vực này đang tăng cường biện pháp phòng chống tội phạm.</div></div></td></tr>
+
+<tr><td class="col-stt">9</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>犯<rt>はん</rt></ruby><ruby>罪<rt>ざい</rt></ruby> / <ruby>防<rt>ぼう</rt></ruby><ruby>止<rt>し</rt></ruby> / <ruby>努<rt>つと</rt></ruby>める</span><span class="vocab-hanviet">PHẠM TỘI / PHÒNG CHỈ / NỖ</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Tội phạm / Ngăn chặn / Nỗ lực</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">犯罪</span><span class="kreading">はんざい</span> — <span class="kmean">tội phạm</span></div><div><span class="kchar">防止</span><span class="kreading">ぼうし</span> — <span class="kmean">ngăn chặn</span></div><div class="combine"><strong>Cụm:</strong> 犯罪防止に努める (nỗ lực ngăn chặn tội phạm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="3e01415e70">警察は<span class="target"><ruby>犯<rt>はん</rt></ruby><ruby>罪<rt>ざい</rt></ruby></span><span class="target"><ruby>防<rt>ぼう</rt></ruby><ruby>止<rt>し</rt></ruby></span>に<span class="target"><ruby>努<rt>つと</rt></ruby>めて</span>いる。</div><div class="ex-vn">Cảnh sát đang nỗ lực ngăn chặn tội phạm.</div></div></td></tr>
+
+<tr><td class="col-stt">10</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>交<rt>こう</rt></ruby><ruby>通<rt>つう</rt></ruby><ruby>事<rt>じ</rt></ruby><ruby>故<rt>こ</rt></ruby> / <ruby>遭<rt>あ</rt></ruby>う</span><span class="vocab-hanviet">GIAO THÔNG SỰ CỐ / NGỘ</span><span class="vocab-pos">Danh + Động từ</span><span class="vocab-meaning">Tai nạn giao thông / Gặp phải</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">遭</span><span class="kreading">NGỘ · そう / あ(う)</span> — <span class="kmean">gặp phải (chuyện xấu)</span></div><div class="combine"><strong>Cụm:</strong> 交通事故に遭う (gặp tai nạn giao thông). 遭う dùng cho chuyện xấu.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="c95df7834d"><ruby>朝<rt>あさ</rt></ruby>の<ruby>通<rt>つう</rt></ruby><ruby>勤<rt>きん</rt></ruby><ruby>中<rt>ちゅう</rt></ruby>に<span class="target"><ruby>交<rt>こう</rt></ruby><ruby>通<rt>つう</rt></ruby><ruby>事<rt>じ</rt></ruby><ruby>故<rt>こ</rt></ruby></span>に<span class="target"><ruby>遭<rt>あ</rt></ruby>って</span>しまった。</div><div class="ex-vn">Tôi đã bị tai nạn giao thông trên đường đi làm buổi sáng.</div></div></td></tr>
+
+<tr><td class="col-stt">11</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>飛<rt>と</rt></ruby>び<ruby>出<rt>だ</rt></ruby>す / <ruby>違<rt>い</rt></ruby><ruby>反<rt>はん</rt></ruby> / <ruby>取<rt>と</rt></ruby>り<ruby>締<rt>し</rt></ruby>まる</span><span class="vocab-hanviet">PHI XUẤT / VI PHẢN / THỦ THIẾT</span><span class="vocab-pos">Động từ</span><span class="vocab-meaning">Lao ra / Vi phạm / Kiểm soát, phạt</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">取り締まる</span><span class="kreading">とりしまる</span> — <span class="kmean">kiểm soát, phạt</span></div><div class="combine"><strong>Cụm:</strong> 道路に飛び出す, スピード違反を取り締まる.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="448c309d51"><ruby>子<rt>こ</rt></ruby><ruby>供<rt>ども</rt></ruby>が<ruby>急<rt>きゅう</rt></ruby>に<ruby>道<rt>どう</rt></ruby><ruby>路<rt>ろ</rt></ruby>に<span class="target"><ruby>飛<rt>と</rt></ruby>び<ruby>出<rt>だ</rt></ruby>して</span>、<ruby>運<rt>うん</rt></ruby><ruby>転<rt>てん</rt></ruby><ruby>手<rt>しゅ</rt></ruby>はびっくりした。</div><div class="ex-vn">Đứa trẻ đột nhiên lao ra đường khiến tài xế giật mình.</div></div></td></tr>
+
+<tr><td class="col-stt">12</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>交<rt>こう</rt></ruby><ruby>差<rt>さ</rt></ruby><ruby>点<rt>てん</rt></ruby> / <ruby>差<rt>さ</rt></ruby>しかかる</span><span class="vocab-hanviet">GIAO SAI ĐIỂM / SAI</span><span class="vocab-pos">Danh + Động từ</span><span class="vocab-meaning">Ngã tư / Đến gần, tới gần</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">交差点</span><span class="kreading">こうさてん</span> — <span class="kmean">ngã tư</span></div><div><span class="kchar">差しかかる</span><span class="kreading">さしかかる</span> — <span class="kmean">tới gần điểm nào đó</span></div><div class="combine"><strong>Cụm:</strong> 車が交差点に差しかかる (xe tới gần ngã tư).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="428e8d6871"><ruby>車<rt>くるま</rt></ruby>が<span class="target"><ruby>交<rt>こう</rt></ruby><ruby>差<rt>さ</rt></ruby><ruby>点<rt>てん</rt></ruby></span>に<span class="target"><ruby>差<rt>さ</rt></ruby>しかかった</span><ruby>時<rt>とき</rt></ruby>、<ruby>信<rt>しん</rt></ruby><ruby>号<rt>ごう</rt></ruby>が<ruby>赤<rt>あか</rt></ruby>に<ruby>変<rt>か</rt></ruby>わった。</div><div class="ex-vn">Khi xe đến gần ngã tư, đèn giao thông chuyển sang đỏ.</div></div></td></tr>
+
+<tr><td class="col-stt">13</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>衝<rt>しょう</rt></ruby><ruby>突<rt>とつ</rt></ruby> / <ruby>保<rt>ほ</rt></ruby><ruby>険<rt>けん</rt></ruby></span><span class="vocab-hanviet">XUNG ĐỘT / BẢO HIỂM</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Va chạm / Bảo hiểm</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">衝突</span><span class="kreading">しょうとつ</span> — <span class="kmean">va đập, xung đột</span></div><div class="combine"><strong>Cụm:</strong> 車とバイクが衝突する, 保険を掛ける (mua bảo hiểm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="222604b755">バイクが<ruby>車<rt>くるま</rt></ruby>と<span class="target"><ruby>衝<rt>しょう</rt></ruby><ruby>突<rt>とつ</rt></ruby></span>して、<ruby>運<rt>うん</rt></ruby><ruby>転<rt>てん</rt></ruby><ruby>手<rt>しゅ</rt></ruby>は<ruby>重<rt>じゅう</rt></ruby><ruby>傷<rt>しょう</rt></ruby>を<ruby>負<rt>お</rt></ruby>った。</div><div class="ex-vn">Xe máy va chạm với ô tô, tài xế bị thương nặng.</div></div></td></tr>
+
+<tr><td class="col-stt">14</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>災<rt>さい</rt></ruby><ruby>害<rt>がい</rt></ruby> / <ruby>発<rt>はっ</rt></ruby><ruby>生<rt>せい</rt></ruby> / <ruby>備<rt>そな</rt></ruby>える</span><span class="vocab-hanviet">TAI HẠI / PHÁT SINH / BỊ</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Thảm họa / Xảy ra / Phòng bị</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">災害</span><span class="kreading">さいがい</span> — <span class="kmean">thiên tai</span></div><div><span class="kchar">備</span><span class="kreading">BỊ · び / そな(える)</span> — <span class="kmean">chuẩn bị, phòng bị</span></div><div class="combine"><strong>Cụm:</strong> 災害が発生する, 災害に備える (phòng thiên tai).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="b82fd6e745">日本では<span class="target"><ruby>災<rt>さい</rt></ruby><ruby>害<rt>がい</rt></ruby></span>に<span class="target"><ruby>備<rt>そな</rt></ruby>えて</span>、<ruby>非<rt>ひ</rt></ruby><ruby>常<rt>じょう</rt></ruby>食を<ruby>用<rt>よう</rt></ruby><ruby>意<rt>い</rt></ruby>している<ruby>家<rt>か</rt></ruby><ruby>庭<rt>てい</rt></ruby>が<ruby>多<rt>おお</rt></ruby>い。</div><div class="ex-vn">Ở Nhật, nhiều gia đình chuẩn bị sẵn thực phẩm khẩn cấp để phòng thiên tai.</div></div></td></tr>
+
+<tr><td class="col-stt">15</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>住<rt>じゅう</rt></ruby><ruby>民<rt>みん</rt></ruby> / <ruby>警<rt>けい</rt></ruby><ruby>戒<rt>かい</rt></ruby> / <ruby>呼<rt>よ</rt></ruby>びかける</span><span class="vocab-hanviet">TRỤ DÂN / CẢNH GIỚI / HÔ</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Cư dân / Cảnh giác / Kêu gọi</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">警戒</span><span class="kreading">けいかい</span> — <span class="kmean">cảnh giác</span></div><div><span class="kchar">呼びかける</span><span class="kreading">よびかける</span> — <span class="kmean">kêu gọi</span></div><div class="combine"><strong>Cụm:</strong> 住民に警戒を呼びかける (kêu gọi dân đề phòng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="214b97f741">市は<span class="target"><ruby>住<rt>じゅう</rt></ruby><ruby>民<rt>みん</rt></ruby></span>に<span class="target"><ruby>警<rt>けい</rt></ruby><ruby>戒<rt>かい</rt></ruby></span>を<span class="target"><ruby>呼<rt>よ</rt></ruby>びかけ</span>た。</div><div class="ex-vn">Thành phố đã kêu gọi cư dân cảnh giác.</div></div></td></tr>
+
+<tr><td class="col-stt">16</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>大<rt>おお</rt></ruby><ruby>雨<rt>あめ</rt></ruby> / <ruby>洪<rt>こう</rt></ruby><ruby>水<rt>ずい</rt></ruby> / <ruby>警<rt>けい</rt></ruby><ruby>報<rt>ほう</rt></ruby></span><span class="vocab-hanviet">ĐẠI VŨ / HỒNG THỦY / CẢNH BÁO</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Mưa lớn / Lũ lụt / Cảnh báo</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">洪水</span><span class="kreading">こうずい</span> — <span class="kmean">lũ lụt</span></div><div><span class="kchar">警報</span><span class="kreading">けいほう</span> — <span class="kmean">cảnh báo</span></div><div class="combine"><strong>Cụm:</strong> 大雨洪水警報が出る (phát cảnh báo mưa lớn lũ lụt).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="048e686d8f"><ruby>台<rt>たい</rt></ruby><ruby>風<rt>ふう</rt></ruby>のため、<span class="target"><ruby>大<rt>おお</rt></ruby><ruby>雨<rt>あめ</rt></ruby></span><span class="target"><ruby>洪<rt>こう</rt></ruby><ruby>水<rt>ずい</rt></ruby></span><span class="target"><ruby>警<rt>けい</rt></ruby><ruby>報<rt>ほう</rt></ruby></span>が<ruby>出<rt>で</rt></ruby>た。</div><div class="ex-vn">Do bão, cảnh báo mưa lớn và lũ lụt đã được phát đi.</div></div></td></tr>
+
+<tr><td class="col-stt">17</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>土<rt>ど</rt></ruby><ruby>砂<rt>しゃ</rt></ruby><ruby>崩<rt>くず</rt></ruby>れ / がけ<ruby>崩<rt>くず</rt></ruby>れ</span><span class="vocab-hanviet">THỔ SA BĂNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Lở đất / Sạt lở vách núi</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">土砂崩れ</span><span class="kreading">どしゃくずれ</span> — <span class="kmean">lở đất đá</span></div><div class="combine"><strong>Cụm:</strong> 土砂崩れが起きる (xảy ra lở đất).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="53655ecc7f"><ruby>大<rt>おお</rt></ruby><ruby>雨<rt>あめ</rt></ruby>のせいで<span class="target"><ruby>土<rt>ど</rt></ruby><ruby>砂<rt>しゃ</rt></ruby><ruby>崩<rt>くず</rt></ruby>れ</span>が<ruby>発<rt>はっ</rt></ruby><ruby>生<rt>せい</rt></ruby>し、<ruby>多<rt>おお</rt></ruby>くの<ruby>家<rt>いえ</rt></ruby>が<ruby>埋<rt>う</rt></ruby>もれた。</div><div class="ex-vn">Do mưa lớn, lở đất đã xảy ra và nhiều ngôi nhà bị vùi lấp.</div></div></td></tr>
+
+<tr><td class="col-stt">18</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>河<rt>か</rt></ruby><ruby>川<rt>せん</rt></ruby> / はんらん</span><span class="vocab-hanviet">HÀ XUYÊN</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Sông ngòi / Tràn bờ, ngập lụt</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">河川</span><span class="kreading">かせん</span> — <span class="kmean">sông ngòi (trang trọng)</span></div><div class="combine"><strong>Cụm:</strong> 河川がはんらんする (sông ngập). はんらん cũng viết: 氾濫.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="694bcc0af5">大<ruby>雨<rt>あめ</rt></ruby>で<span class="target"><ruby>河<rt>か</rt></ruby><ruby>川<rt>せん</rt></ruby></span>が<span class="target">はんらん</span>し、<ruby>町<rt>まち</rt></ruby>が<ruby>水<rt>みず</rt></ruby>に<ruby>沈<rt>しず</rt></ruby>んだ。</div><div class="ex-vn">Mưa lớn làm sông tràn bờ và thị trấn bị ngập.</div></div></td></tr>
+
+<tr><td class="col-stt">19</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>火<rt>か</rt></ruby><ruby>山<rt>ざん</rt></ruby> / <ruby>噴<rt>ふん</rt></ruby><ruby>火<rt>か</rt></ruby> / <ruby>避<rt>ひ</rt></ruby><ruby>難<rt>なん</rt></ruby></span><span class="vocab-hanviet">HỎA SƠN / PHUN HỎA / TỴ NẠN</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Núi lửa / Phun trào / Tị nạn</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">噴火</span><span class="kreading">ふんか</span> — <span class="kmean">phun trào</span></div><div><span class="kchar">避難</span><span class="kreading">ひなん</span> — <span class="kmean">tị nạn, sơ tán</span></div><div class="combine"><strong>Cụm:</strong> 火山が噴火する, 安全な場所へ避難する.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="328d7477d3"><span class="target"><ruby>火<rt>か</rt></ruby><ruby>山<rt>ざん</rt></ruby></span>が<span class="target"><ruby>噴<rt>ふん</rt></ruby><ruby>火<rt>か</rt></ruby></span>したため、<ruby>住<rt>じゅう</rt></ruby><ruby>民<rt>みん</rt></ruby>は<ruby>急<rt>きゅう</rt></ruby>いで<span class="target"><ruby>避<rt>ひ</rt></ruby><ruby>難<rt>なん</rt></ruby></span>した。</div><div class="ex-vn">Núi lửa phun trào nên người dân đã vội vàng tị nạn.</div></div></td></tr>
+
+<tr><td class="col-stt">20</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>地<rt>じ</rt></ruby><ruby>震<rt>しん</rt></ruby> / <ruby>被<rt>ひ</rt></ruby><ruby>災<rt>さい</rt></ruby><ruby>者<rt>しゃ</rt></ruby> / <ruby>救<rt>きゅう</rt></ruby><ruby>済<rt>さい</rt></ruby></span><span class="vocab-hanviet">ĐỊA CHẤN / BỊ TAI GIẢ / CỨU TẾ</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Động đất / Nạn nhân / Cứu trợ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">被災者</span><span class="kreading">ひさいしゃ</span> — <span class="kmean">nạn nhân thiên tai</span></div><div><span class="kchar">救済</span><span class="kreading">きゅうさい</span> — <span class="kmean">cứu tế, cứu trợ</span></div><div class="combine"><strong>Cụm:</strong> 大地震の被災者を救済する.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="1ef2987ba9"><ruby>大<rt>おお</rt></ruby><span class="target"><ruby>地<rt>じ</rt></ruby><ruby>震<rt>しん</rt></ruby></span>の<span class="target"><ruby>被<rt>ひ</rt></ruby><ruby>災<rt>さい</rt></ruby><ruby>者<rt>しゃ</rt></ruby></span>のため、<ruby>多<rt>おお</rt></ruby>くの<ruby>支<rt>し</rt></ruby><ruby>援<rt>えん</rt></ruby>が<ruby>集<rt>あつ</rt></ruby>められた。</div><div class="ex-vn">Để giúp đỡ nạn nhân động đất lớn, nhiều sự ủng hộ đã được quyên góp.</div></div></td></tr>
+
+<tr><td class="col-stt">21</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>食<rt>しょく</rt></ruby><ruby>糧<rt>りょう</rt></ruby> / <ruby>確<rt>かく</rt></ruby><ruby>保<rt>ほ</rt></ruby></span><span class="vocab-hanviet">THỰC LƯƠNG / XÁC BẢO</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Lương thực / Đảm bảo</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">食糧</span><span class="kreading">しょくりょう</span> — <span class="kmean">lương thực</span></div><div><span class="kchar">確保</span><span class="kreading">かくほ</span> — <span class="kmean">đảm bảo, giữ chắc</span></div><div class="combine"><strong>Cụm:</strong> 食糧を確保する (đảm bảo lương thực).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="9ebb28f3ac">災害<ruby>時<rt>じ</rt></ruby>には、まず<span class="target"><ruby>食<rt>しょく</rt></ruby><ruby>糧<rt>りょう</rt></ruby></span>を<span class="target"><ruby>確<rt>かく</rt></ruby><ruby>保<rt>ほ</rt></ruby></span>することが<ruby>最<rt>もっと</rt></ruby>も<ruby>重<rt>じゅう</rt></ruby><ruby>要<rt>よう</rt></ruby>だ。</div><div class="ex-vn">Khi thiên tai, đảm bảo lương thực là điều quan trọng nhất.</div></div></td></tr>
+
+<tr><td class="col-stt">22</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>停<rt>てい</rt></ruby><ruby>電<rt>でん</rt></ruby> / <ruby>復<rt>ふっ</rt></ruby><ruby>旧<rt>きゅう</rt></ruby></span><span class="vocab-hanviet">ĐÌNH ĐIỆN / PHỤC CỰU</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Mất điện / Phục hồi</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">停電</span><span class="kreading">ていでん</span> — <span class="kmean">mất điện</span></div><div><span class="kchar">復旧</span><span class="kreading">ふっきゅう</span> — <span class="kmean">khôi phục</span></div><div class="combine"><strong>Cụm:</strong> 停電が復旧する (điện được khôi phục).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="20038e5e30">3<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby><ruby>後<rt>ご</rt></ruby>、ようやく<span class="target"><ruby>停<rt>てい</rt></ruby><ruby>電<rt>でん</rt></ruby></span>が<span class="target"><ruby>復<rt>ふっ</rt></ruby><ruby>旧<rt>きゅう</rt></ruby></span>した。</div><div class="ex-vn">Sau 3 tiếng, cuối cùng điện cũng được khôi phục.</div></div></td></tr>
+
+<tr><td class="col-stt">23</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>救<rt>きゅう</rt></ruby><ruby>急<rt>きゅう</rt></ruby><ruby>車<rt>しゃ</rt></ruby> / <ruby>負<rt>ふ</rt></ruby><ruby>傷<rt>しょう</rt></ruby></span><span class="vocab-hanviet">CỨU CẤP XA / PHỤ THƯƠNG</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Xe cứu thương / Bị thương</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">救急車</span><span class="kreading">きゅうきゅうしゃ</span> — <span class="kmean">xe cứu thương</span></div><div><span class="kchar">負傷</span><span class="kreading">ふしょう</span> — <span class="kmean">bị thương</span></div><div class="combine"><strong>Cụm:</strong> 救急車を呼ぶ (gọi cấp cứu), 重傷を負う (bị thương nặng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="f32268619e">事故で<span class="target"><ruby>負<rt>ふ</rt></ruby><ruby>傷<rt>しょう</rt></ruby></span>した<ruby>男<rt>だん</rt></ruby><ruby>性<rt>せい</rt></ruby>が<span class="target"><ruby>救<rt>きゅう</rt></ruby><ruby>急<rt>きゅう</rt></ruby><ruby>車<rt>しゃ</rt></ruby></span>で<ruby>運<rt>はこ</rt></ruby>ばれた。</div><div class="ex-vn">Người đàn ông bị thương trong tai nạn đã được xe cứu thương chở đi.</div></div></td></tr>
+
+<tr><td class="col-stt">24</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>津<rt>つ</rt></ruby><ruby>波<rt>なみ</rt></ruby> / <ruby>保<rt>ほ</rt></ruby><ruby>護<rt>ご</rt></ruby></span><span class="vocab-hanviet">TÂN BA / BẢO HỘ</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Sóng thần / Bảo hộ, bảo vệ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">津波</span><span class="kreading">つなみ</span> — <span class="kmean">sóng thần (tsunami)</span></div><div class="combine"><strong>Cụm:</strong> 津波警報, 被災者を保護する (bảo hộ nạn nhân). Tsunami là từ tiếng Nhật đã thông dụng quốc tế.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="66a1be7554">2011<ruby>年<rt>ねん</rt></ruby>の<ruby>東<rt>とう</rt></ruby><ruby>日<rt>に</rt></ruby><ruby>本<rt>ほん</rt></ruby><ruby>大<rt>だい</rt></ruby><ruby>震<rt>しん</rt></ruby><ruby>災<rt>さい</rt></ruby>では、<span class="target"><ruby>津<rt>つ</rt></ruby><ruby>波<rt>なみ</rt></ruby></span>が<ruby>大<rt>おお</rt></ruby>きな<ruby>被<rt>ひ</rt></ruby><ruby>害<rt>がい</rt></ruby>をもたらした。</div><div class="ex-vn">Trong trận động đất Đông Nhật Bản năm 2011, sóng thần đã gây ra thiệt hại lớn.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="special-block">
+  <div class="special-banner"><div class="special-icon">語</div><div><h4>語形成 — Cấu tạo từ</h4></div></div>
+  <div class="special-body">
+    <div class="word-formation-grid">
+      <div class="wf-item">
+        <div class="wf-pattern">~<ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby> / ~<ruby>事<rt>じ</rt></ruby><ruby>故<rt>こ</rt></ruby> <span class="ptype">"vụ ~"</span></div>
+        <div class="wf-examples"><span class="wfx"><span class="wfx-jp"><ruby>殺<rt>さつ</rt></ruby><ruby>人<rt>じん</rt></ruby><ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby></span> <span class="wfx-vn">(vụ giết người)</span></span><span class="wfx"><span class="wfx-jp"><ruby>交<rt>こう</rt></ruby><ruby>通<rt>つう</rt></ruby><ruby>事<rt>じ</rt></ruby><ruby>故<rt>こ</rt></ruby></span> <span class="wfx-vn">(tai nạn GT)</span></span></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-pattern">~<ruby>対<rt>たい</rt></ruby><ruby>策<rt>さく</rt></ruby> / ~<ruby>防<rt>ぼう</rt></ruby><ruby>止<rt>し</rt></ruby> <span class="ptype">"chống / ngừa"</span></div>
+        <div class="wf-examples"><span class="wfx"><span class="wfx-jp"><ruby>防<rt>ぼう</rt></ruby><ruby>犯<rt>はん</rt></ruby><ruby>対<rt>たい</rt></ruby><ruby>策<rt>さく</rt></ruby></span> <span class="wfx-vn">(chống tội phạm)</span></span><span class="wfx"><span class="wfx-jp"><ruby>犯<rt>はん</rt></ruby><ruby>罪<rt>ざい</rt></ruby><ruby>防<rt>ぼう</rt></ruby><ruby>止<rt>し</rt></ruby></span> <span class="wfx-vn">(ngừa tội phạm)</span></span></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-pattern"><ruby>飛<rt>と</rt></ruby>び~ / <ruby>取<rt>と</rt></ruby>り~ <span class="ptype">"phối hợp động từ"</span></div>
+        <div class="wf-examples"><span class="wfx"><span class="wfx-jp"><ruby>飛<rt>と</rt></ruby>び<ruby>出<rt>だ</rt></ruby>す</span> <span class="wfx-vn">(lao ra)</span></span><span class="wfx"><span class="wfx-jp"><ruby>取<rt>と</rt></ruby>り<ruby>締<rt>し</rt></ruby>まる</span> <span class="wfx-vn">(kiểm soát)</span></span></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-pattern">~<ruby>警<rt>けい</rt></ruby><ruby>報<rt>ほう</rt></ruby> / ~<ruby>崩<rt>くず</rt></ruby>れ <span class="ptype">"cảnh báo / sạt lở"</span></div>
+        <div class="wf-examples"><span class="wfx"><span class="wfx-jp"><ruby>大<rt>おお</rt></ruby><ruby>雨<rt>あめ</rt></ruby><ruby>警<rt>けい</rt></ruby><ruby>報<rt>ほう</rt></ruby></span> <span class="wfx-vn">(cảnh báo mưa lớn)</span></span><span class="wfx"><span class="wfx-jp"><ruby>津<rt>つ</rt></ruby><ruby>波<rt>なみ</rt></ruby><ruby>警<rt>けい</rt></ruby><ruby>報<rt>ほう</rt></ruby></span> <span class="wfx-vn">(cảnh báo sóng thần)</span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="special-block">
+  <div class="special-banner adv"><div class="special-icon">副</div><div><h4>副詞 ・ 例文 — Phó từ &amp; Cụm biểu thị</h4></div></div>
+  <div class="special-body">
+    <div class="adverb-grid">
+      <div class="adv-item">
+        <div class="adv-head"><span class="adv-jp">そう ~ない</span><span class="adv-vn">Không đến mức ~ như vậy</span></div>
+        <div class="adv-ex" data-tts="1e6d86f6c7">この<ruby>町<rt>まち</rt></ruby>では<ruby>大<rt>たい</rt></ruby><ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby>は<span class="target">そう</span>起こら<span class="target">ない</span>。<span class="adv-ex-vn">Vụ án nghiêm trọng không xảy ra đến mức đó ở thị trấn này.</span></div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-head"><span class="adv-jp"><ruby>依<rt>い</rt></ruby><ruby>然<rt>ぜん</rt></ruby>として</span><span class="adv-vn">Vẫn nguyên như cũ</span></div>
+        <div class="adv-ex" data-tts="1e212289df"><ruby>犯<rt>はん</rt></ruby><ruby>人<rt>にん</rt></ruby>の<ruby>行<rt>ゆく</rt></ruby><ruby>方<rt>え</rt></ruby>は<span class="target">依然として</span>わからない。<span class="adv-ex-vn">Tung tích tội phạm vẫn nguyên không rõ.</span></div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-head"><span class="adv-jp">まさか</span><span class="adv-vn">Không thể ngờ, đời nào</span></div>
+        <div class="adv-ex" data-tts="568512b057"><span class="target">まさか</span>こんな<ruby>事<rt>じ</rt></ruby><ruby>件<rt>けん</rt></ruby>が<ruby>起<rt>お</rt></ruby>きるとは<ruby>思<rt>おも</rt></ruby>わなかった。<span class="adv-ex-vn">Tôi không thể nào ngờ rằng vụ việc như thế lại xảy ra.</span></div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-head"><span class="adv-jp"><ruby>直<rt>ただ</rt></ruby>ちに</span><span class="adv-vn">Ngay lập tức</span></div>
+        <div class="adv-ex" data-tts="d626c35981">警察は<span class="target">直ちに</span><ruby>現<rt>げん</rt></ruby><ruby>場<rt>ば</rt></ruby>に<ruby>向<rt>む</rt></ruby>かった。<span class="adv-ex-vn">Cảnh sát đã ngay lập tức hướng tới hiện trường.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 — Bài tập tổng hợp 7.2</h4></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 1</span>文脈規定</div>
+      <div class="choice-pool"><strong>選択肢:</strong> 詐欺 / 捜査 / 衝突 / 避難 / 復旧 / 警戒</div>
+      <div class="ex-q"><span class="qnum">(1)</span>オレオレ <span class="blank" data-ans="詐欺">　　　　</span> の<ruby>被<rt>ひ</rt></ruby><ruby>害<rt>がい</rt></ruby>が<ruby>増<rt>ふ</rt></ruby>えている。</div>
+      <div class="ex-q"><span class="qnum">(2)</span>警察が<ruby>現<rt>げん</rt></ruby><ruby>場<rt>ば</rt></ruby>を <span class="blank" data-ans="捜査">　　　　</span> した。</div>
+      <div class="ex-q"><span class="qnum">(3)</span>バイクが<ruby>車<rt>くるま</rt></ruby>と <span class="blank" data-ans="衝突">　　　　</span> した。</div>
+      <div class="ex-q"><span class="qnum">(4)</span><ruby>住<rt>じゅう</rt></ruby><ruby>民<rt>みん</rt></ruby>は<ruby>安<rt>あん</rt></ruby><ruby>全<rt>ぜん</rt></ruby>な<ruby>場<rt>ば</rt></ruby><ruby>所<rt>しょ</rt></ruby>に <span class="blank" data-ans="避難">　　　　</span> した。</div>
+      <div class="ex-q"><span class="qnum">(5)</span>3<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby><ruby>後<rt>ご</rt></ruby>、<ruby>停<rt>てい</rt></ruby><ruby>電<rt>でん</rt></ruby>が <span class="blank" data-ans="復旧">　　　　</span> した。</div>
+      <div class="ex-q"><span class="qnum">(6)</span>市は<ruby>住<rt>じゅう</rt></ruby><ruby>民<rt>みん</rt></ruby>に <span class="blank" data-ans="警戒">　　　　</span> を<ruby>呼<rt>よ</rt></ruby>びかけた。</div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án tổng</button>
+      <div class="answer-box"><strong>Đáp án:</strong> (1) 詐欺 — (2) 捜査 — (3) 衝突 — (4) 避難 — (5) 復旧 — (6) 警戒</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-14.html">← Bài 14</a><a class="mid" href="../tu-vung.html">▦ Danh sách bài</a><a href="bai-16.html">Bài 16 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+
+;
+
+/* ==== Cấu hình audio TTS ==== */
+window.TTS_BASE = window.TTS_BASE || 'audio/';   // đổi thành đường dẫn host MP3 của bạn, ví dụ '/static/n2/audio/'
+(function(){
+  var SUP = ('speechSynthesis' in window);
+  function jtext(el){
+    var c=el.cloneNode(true);
+    c.querySelectorAll('rt, rp, .adv-ex-vn, .tts-btn').forEach(function(n){n.remove();});
+    var s=(c.textContent||'');
+    s=s.replace(/[①-⓿]/g,' ').replace(/^[\s0-9().、\-]+/,'');
+    return s.replace(/\s+/g,' ').trim();
+  }
+  /* giọng dự phòng (khi thiếu file MP3): chọn giọng ja tốt nhất, tránh eSpeak */
+  var jaVoice=null;
+  function rank(v){var n=((v.name||'')+' '+(v.voiceURI||'')).toLowerCase(),s=0;
+    if(/natural|neural|enhanced|premium|wavenet/.test(n))s+=100;
+    if(/google/.test(n))s+=60; if(v.localService===false)s+=10;
+    if(/kyoko|otoya|o-ren|nanami|ayumi|keita|haruka/.test(n))s+=40;
+    if(/espeak|festival/.test(n))s-=200; return s;}
+  function pickVoice(){if(!SUP)return;var vs=(speechSynthesis.getVoices()||[])
+      .filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf('ja')===0;});
+      vs.sort(function(a,b){return rank(b)-rank(a);}); jaVoice=vs[0]||null;}
+  if(SUP){pickVoice();try{speechSynthesis.onvoiceschanged=pickVoice;}catch(e){}}
+  function fallback(el){if(!SUP)return;var t=jtext(el);if(!t)return;
+    speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);
+    u.lang='ja-JP';u.rate=0.95;if(jaVoice)u.voice=jaVoice;speechSynthesis.speak(u);}
+  var curAudio=null,curBtn=null;
+  function stop(){if(curAudio){curAudio.pause();curAudio=null;}if(curBtn){curBtn.classList.remove('playing');curBtn=null;}}
+  function play(btn,el){
+    stop();
+    var id=el.getAttribute('data-tts');
+    if(id){
+      var a=new Audio(window.TTS_BASE+id+'.mp3');
+      curAudio=a;curBtn=btn;btn.classList.add('playing');
+      a.onended=a.onpause=function(){btn.classList.remove('playing');};
+      a.onerror=function(){btn.classList.remove('playing');curAudio=null;fallback(el);};
+      a.play().catch(function(){btn.classList.remove('playing');curAudio=null;fallback(el);});
+    } else { fallback(el); }
+  }
+  document.querySelectorAll('.ex-jp, .adv-ex').forEach(function(el){
+    if(el.querySelector('.tts-btn'))return;
+    var b=document.createElement('button');
+    b.className='tts-btn';b.type='button';b.textContent='🔊';
+    b.setAttribute('aria-label','Nghe câu tiếng Nhật');b.title='Nghe đọc (Google TTS)';
+    b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();play(b,el);});
+    el.insertBefore(b,el.firstChild);
+  });
+})();
+</script>
+</body></html>
