@@ -1,0 +1,97 @@
+<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Bài 1 · Bạn đến từ đâu? — Đọc hiểu N5 — Trí Lữ Nihongo</title><meta name="description" content="Đọc hiểu JLPT N5 — Bài 1: Bạn đến từ đâu?. Trí Lữ Nihongo."><meta name="theme-color" content="#1B3A6B"><link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#FBF6E8;--cream2:#F5EBD4;--paper:#FFFEFB;--ink:#1B3A6B;--ink2:#0F2547;--gold:#B89568;--gold-l:#D4B98C;--gold-d:#8A6E47;--sumi:#8B3A2E;--correct:#2d7d4f;--wrong:#a23b5a;--muted:#5a6a7e;--line:#E5D6B8;--line2:#EFE3C9;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter Tight',-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--jp:'Noto Serif JP',serif;--shadow:0 18px 46px rgba(27,58,107,0.10)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);line-height:1.75;font-family:var(--sans);font-size:15px;-webkit-font-smoothing:antialiased;background:radial-gradient(1200px 600px at 85% -8%,rgba(184,149,104,0.14),transparent 60%),radial-gradient(900px 500px at -5% 5%,rgba(27,58,107,0.06),transparent 55%),var(--cream)}
+.jp{font-family:var(--jp)}
+/* top nav (đồng bộ) */
+.tl-top{position:sticky;top:0;z-index:200;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.92);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--ink);min-width:0}
+.tl-brand img{width:38px;height:38px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--mono);font-size:10px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}.tl-bc a:hover{color:var(--ink)}
+.tl-back{font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--ink);color:var(--cream)}
+.tl-wrap{max-width:920px;margin:0 auto;padding:24px}
+.document{background:var(--paper);border:1px solid rgba(27,58,107,0.16);border-radius:28px;box-shadow:var(--shadow);padding:0 0 36px;margin-bottom:30px;overflow:hidden}
+.lesson-banner{position:relative;overflow:hidden;padding:30px 44px 28px;background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%);color:#fff}
+.lesson-banner::after{content:"読解";position:absolute;right:-8px;bottom:-46px;font-family:var(--jp);font-weight:700;font-size:clamp(7rem,14vw,12rem);color:rgba(255,255,255,0.07);line-height:1;pointer-events:none}
+.lesson-kicker{display:block;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:0.2em;font-weight:600;color:rgba(212,185,140,0.95);margin-bottom:8px}
+.lesson-banner h2{margin:0 0 6px;font-family:var(--serif);font-style:italic;font-size:34px;font-weight:500}
+.lesson-banner .lesson-sub{font-family:var(--jp);font-size:15px;color:rgba(255,255,255,0.9)}
+.doc-body{padding:28px 44px 6px}
+/* reading passage */
+.reading{margin:6px 0 22px;background:linear-gradient(180deg,#fffefb,#fbf5e7);border:1px solid var(--line2);border-left:4px solid var(--gold);border-radius:0 16px 16px 0;padding:24px 28px}
+.reading-jp{font-family:var(--jp);font-size:19px;line-height:2.5;color:#1a2740}
+.reading-jp ruby{ruby-position:over}
+.reading-jp rt{font-size:10px;color:#8a7a55;font-family:var(--sans);font-weight:500;letter-spacing:0}
+.reading-vn{margin-top:18px;padding-top:16px;border-top:1px dashed var(--line);font-size:14.5px;line-height:1.8;color:#3a4658;display:none}
+.reading-vn.shown{display:block}
+.reading-vn p{margin:0 0 8px}
+.rtable{width:100%;border-collapse:collapse;margin:14px 0;font-family:var(--jp);font-size:14px;background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.rtable th{background:linear-gradient(180deg,#1B3A6B,#0F2547);color:#fff;padding:8px 10px;font-weight:600;text-align:left;font-size:13px}
+.rtable td{padding:7px 10px;border-top:1px solid var(--line2);color:#33405a}
+.rtable tr:nth-child(even) td{background:#fbf7ee}
+.rtable .num{text-align:right;font-family:var(--sans);color:var(--gold-d);font-weight:600;white-space:nowrap}
+.rtable .ok{text-align:center;color:var(--correct);font-weight:700}
+.rtable .no{text-align:center;color:#c9bda0}
+.read-toggle{display:inline-flex;align-items:center;gap:6px;margin-top:16px;padding:8px 16px;background:transparent;border:1px dashed var(--gold);border-radius:999px;color:var(--gold-d);font-size:12px;cursor:pointer;font-family:var(--mono);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;transition:all .15s}
+.read-toggle:hover{background:var(--gold);color:#fff;border-style:solid}
+.read-toggle.on{background:var(--ink);border-color:var(--ink);color:#fff}
+/* questions */
+.qsec{margin:8px 0 0}
+.qsec-head{display:flex;align-items:center;gap:12px;margin:24px 0 14px}
+.qsec-head .qbadge{font-family:var(--jp);width:38px;height:38px;flex-shrink:0;border-radius:10px;background:linear-gradient(135deg,var(--ink),#2C5599);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px}
+.qsec-head h3{margin:0;font-family:var(--serif);font-style:italic;font-size:23px;font-weight:500;color:var(--ink)}
+.qsec-head h3 small{display:block;font-family:var(--sans);font-style:normal;font-size:12px;color:var(--muted);letter-spacing:.02em}
+.qcard{margin:14px 0;background:#fff;border:1px solid var(--line2);border-radius:16px;padding:18px 22px;box-shadow:0 8px 20px rgba(27,58,107,0.05)}
+.q-stem{font-family:var(--jp);font-size:16px;line-height:1.9;color:#1a2740}
+.q-stem .qnum{display:inline-block;min-width:24px;font-family:var(--serif);font-weight:600;font-style:italic;color:var(--gold-d);margin-right:4px;font-size:18px}
+.q-stem ruby rt{font-size:9.5px;color:#8a7a55;font-family:var(--sans)}
+.q-stem-vn{font-size:13px;color:var(--muted);font-style:italic;margin:4px 0 0 28px}
+.q-options{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin:14px 0 0}
+.q-opt{padding:11px 14px;background:#fffdf8;border:1px solid var(--line);border-radius:11px;cursor:pointer;transition:all .15s;text-align:left}
+.q-opt .opt-jp{font-family:var(--jp);font-size:15px;color:#33405a;display:flex;align-items:flex-start;gap:7px}
+.q-opt .opt-jp::before{content:attr(data-mark);color:var(--gold-d);font-weight:700;font-family:var(--serif)}
+.q-opt .opt-vn{display:block;font-size:11.5px;color:var(--muted);font-style:italic;margin-top:3px;padding-left:20px}
+.q-opt:hover{background:var(--cream2);border-color:var(--gold)}
+.q-opt.correct{background:linear-gradient(180deg,#e8f5ec,#d6edda);border-color:var(--correct)}
+.q-opt.correct .opt-jp{color:var(--correct);font-weight:700}.q-opt.correct .opt-jp::before{color:var(--correct)}
+.q-opt.correct .opt-vn{color:var(--correct)}
+.q-opt.wrong{background:linear-gradient(180deg,#fbe6ea,#f6d6dc);border-color:var(--wrong)}
+.q-opt.wrong .opt-jp{color:var(--wrong)}.q-opt.wrong .opt-jp::before{color:var(--wrong)}
+.answer-detail{display:none;margin-top:12px;padding:11px 15px;background:#fef9ee;border:1px dashed var(--gold);border-radius:10px;font-size:13px;color:#5a4520;line-height:1.6}
+.answer-detail.shown{display:block}
+.answer-detail strong{color:var(--correct)}
+.answer-detail .ad-jp{font-family:var(--jp)}
+/* pager */
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:920px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px;transition:all .2s}
+.tl-pager a:hover{background:var(--gold);border-color:var(--gold);color:#fff}
+.tl-pager a.mid{background:var(--ink);color:var(--cream);border-color:var(--ink)}
+.tl-pager span.dis{opacity:.3;pointer-events:none;font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;padding:9px 16px}
+/* speaker btn */
+.tl-spk{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;min-width:24px;margin-right:9px;padding:0;border:1px solid var(--gold);background:transparent;color:var(--gold);border-radius:50%;font-size:11px;cursor:pointer;vertical-align:middle;line-height:1;transition:all .15s;flex:none}
+.tl-spk:hover{background:var(--gold);color:#fff}.tl-spk.on{background:var(--ink);border-color:var(--ink);color:#fff}
+@media(max-width:680px){.tl-wrap{padding:16px}.doc-body{padding:20px 18px 6px}.lesson-banner{padding:24px 22px 22px}.lesson-banner h2{font-size:27px}.reading{padding:18px 18px}.reading-jp{font-size:17px;line-height:2.3}.q-options{grid-template-columns:1fr}}
+@media print{.tl-top,.tl-pager,.read-toggle,.tl-spk{display:none}.reading-vn{display:block!important}.answer-detail{display:block!important}}
+</style>
+</head><body><nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n5.html">N5</a> · <a href="../doc-hieu.html">Đọc hiểu</a> · Bài 1</div></div></a><a class="tl-back" href="../doc-hieu.html">← Danh sách bài</a></nav><div class="tl-wrap"><article class="document"><div class="lesson-banner"><span class="lesson-kicker">Warm-up 1 · Bài 1 · Đọc hiểu</span><h2>Bạn đến từ đâu?</h2><div class="lesson-sub">お<ruby>国<rt>くに</rt></ruby>は　どちらですか · ウォーミングアップ 1 · 自己紹介</div></div><div class="doc-body"><div class="reading"><div class="reading-jp"><b>みなさんは　どこから　<ruby>来<rt>き</rt></ruby>ましたか。</b><br><br>【<ruby>例<rt>れい</rt></ruby>】お<ruby>名前<rt>なまえ</rt></ruby>は？　…モームです。お<ruby>国<rt>くに</rt></ruby>は　どちらですか。…イギリスです。ロンドンから　<ruby>来<rt>き</rt></ruby>ました。<br>1. <ruby>初<rt>はじ</rt></ruby>めまして。ワシントンです。アメリカから　<ruby>来<rt>き</rt></ruby>ました。うちは　ニューヨークです。どうぞ　よろしく。<br>2. みなさん、こちらは　ナセルさんです。…ナセルです。エジプトの　カイロから　<ruby>来<rt>き</rt></ruby>ました。よろしく　お<ruby>願<rt>ねが</rt></ruby>いします。<br>3. ホーさんは　<ruby>中国<rt>ちゅうごく</rt></ruby>の　<ruby>方<rt>かた</rt></ruby>ですか。…いいえ、ベトナムの　ハノイから　<ruby>来<rt>き</rt></ruby>ました。</div><button class="read-toggle" data-target="vn-1"><span>訳</span> <span class="lbl">Hiện bản dịch</span></button><div class="reading-vn" id="vn-1"><p><b>Mọi người đến từ đâu?</b></p><p><b>[Ví dụ]</b> Tên bạn là gì? — Tôi là Maugham. Bạn từ nước nào? — Nước Anh. Tôi đến từ London.</p><p><b>1.</b> Rất hân hạnh. Tôi là Washington, đến từ Mỹ, nhà ở New York. Rất mong được giúp đỡ.</p><p><b>2.</b> Mọi người ơi, đây là anh Nasser. — Tôi là Nasser, đến từ Cairo, Ai Cập. Rất mong được giúp đỡ.</p><p><b>3.</b> Anh Hồ là người Trung Quốc à? — Không, tôi đến từ Hà Nội, Việt Nam.</p></div></div><div class="qsec"><div class="qsec-head"><div class="qbadge">問</div><h3>Câu hỏi đọc hiểu<small>Bấm vào đáp án để chấm — đúng xanh, sai đỏ</small></h3></div><div class="qcard"><div class="q-stem"><span class="qnum">1.</span>モームさんは　どこから　<ruby>来<rt>き</rt></ruby>ましたか。</div><div class="q-stem-vn">Maugham đến từ đâu?</div><div class="q-options"><div class="q-opt" data-correct="true"><span class="opt-jp" data-mark="①">ロンドン</span><span class="opt-vn">London (Anh)</span></div><div class="q-opt" data-correct="false"><span class="opt-jp" data-mark="②">ニューヨーク</span><span class="opt-vn">New York</span></div><div class="q-opt" data-correct="false"><span class="opt-jp" data-mark="③">カイロ</span><span class="opt-vn">Cairo</span></div><div class="q-opt" data-correct="false"><span class="opt-jp" data-mark="④">ハノイ</span><span class="opt-vn">Hà Nội</span></div></div><div class="answer-detail"><strong>① </strong>“イギリスです。ロンドンから来ました”.</div></div><div class="qcard"><div class="q-stem"><span class="qnum">2.</span>ワシントンさんの　うちは　どこですか。</div><div class="q-stem-vn">Nhà anh Washington ở đâu?</div><div class="q-options"><div class="q-opt" data-correct="true"><span class="opt-jp" data-mark="①">ニューヨーク</span><span class="opt-vn">New York</span></div><div class="q-opt" data-correct="false"><span class="opt-jp" data-mark="②">ロンドン</span><span class="opt-vn">London</span></div><div class="q-opt" data-correct="false"><span class="opt-jp" data-mark="③">カイロ</span><span class="opt-vn">Cairo</span></div><div class="q-opt" data-correct="false"><span class="opt-jp" data-mark="④">ハノイ</span><span class="opt-vn">Hà Nội</span></div></div><div class="answer-detail"><strong>① </strong>“アメリカから来ました。うちはニューヨークです”.</div></div><div class="qcard"><div class="q-stem"><span class="qnum">3.</span>ナセルさんは　どこから　<ruby>来<rt>き</rt></ruby>ましたか。</div><div class="q-stem-vn">Anh Nasser đến từ đâu?</div><div class="q-options"><div class="q-opt" data-correct="true"><span class="opt-jp" data-mark="①">エジプトのカイロ</span><span class="opt-vn">Cairo, Ai Cập</span></div><div class="q-opt" data-correct="false"><span class="opt-jp" data-mark="②">アメリカ</span><span class="opt-vn">Mỹ</span></div><div class="q-opt" data-correct="false"><span class="opt-jp" data-mark="③">ベトナム</span><span class="opt-vn">Việt Nam</span></div><div class="q-opt" data-correct="false"><span class="opt-jp" data-mark="④">イギリス</span><span class="opt-vn">Anh</span></div></div><div class="answer-detail"><strong>① </strong>“エジプトのカイロから来ました”.</div></div><div class="qcard"><div class="q-stem"><span class="qnum">4.</span>ホーさんは　<ruby>中国人<rt>ちゅうごくじん</rt></ruby>ですか。</div><div class="q-stem-vn">Anh Hồ có phải người Trung Quốc?</div><div class="q-options"><div class="q-opt" data-correct="true"><span class="opt-jp" data-mark="①">いいえ、ベトナム<ruby>人<rt>じん</rt></ruby></span><span class="opt-vn">Không, người Việt Nam (Hà Nội)</span></div><div class="q-opt" data-correct="false"><span class="opt-jp" data-mark="②">はい、<ruby>中国人<rt>ちゅうごくじん</rt></ruby></span><span class="opt-vn">Vâng, người Trung Quốc</span></div><div class="q-opt" data-correct="false"><span class="opt-jp" data-mark="③">アメリカ<ruby>人<rt>じん</rt></ruby></span><span class="opt-vn">Người Mỹ</span></div><div class="q-opt" data-correct="false"><span class="opt-jp" data-mark="④">エジプト<ruby>人<rt>じん</rt></ruby></span><span class="opt-vn">Người Ai Cập</span></div></div><div class="answer-detail"><strong>① </strong>“いいえ、ベトナムのハノイから来ました”.</div></div></div></div></article></div><nav class="tl-pager"><span class="dis">← Bài trước</span><a class="mid" href="../doc-hieu.html">▦ Danh sách bài</a><a href="bai-02.html">Bài 2 →</a></nav>
+<script>
+document.addEventListener('click',function(e){
+  var t=e.target.closest('.read-toggle');
+  if(t){var box=document.getElementById(t.dataset.target);if(box){box.classList.toggle('shown');var on=box.classList.contains('shown');t.classList.toggle('on',on);t.querySelector('.lbl').textContent=on?'Ẩn bản dịch':'Hiện bản dịch';}return;}
+  var opt=e.target.closest('.q-opt');
+  if(opt){var p=opt.parentElement;var ok=opt.dataset.correct==='true';
+    p.querySelectorAll('.q-opt').forEach(function(o){o.classList.remove('correct','wrong');});
+    if(ok){opt.classList.add('correct');}else{opt.classList.add('wrong');var c=p.querySelector('.q-opt[data-correct="true"]');if(c)c.classList.add('correct');}
+    var q=opt.closest('.qcard');var d=q&&q.querySelector('.answer-detail');if(d)d.classList.add('shown');return;}
+});
+(function(){var jv=null;function pick(){try{var v=speechSynthesis.getVoices();jv=v.filter(function(x){return /ja|Japanese|日本/i.test((x.lang||'')+(x.name||''));})[0]||null;}catch(e){}}pick();try{speechSynthesis.onvoiceschanged=pick;}catch(e){}
+function clean(el){var c=el.cloneNode(true);c.querySelectorAll('rt,.tl-spk').forEach(function(n){n.remove();});return (c.textContent||'').replace(/\s+/g,' ').trim();}
+function speak(t,b){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=0.85;if(jv)u.voice=jv;if(b){b.classList.add('on');u.onend=u.onerror=function(){b.classList.remove('on');};}speechSynthesis.speak(u);}catch(e){}}
+function add(el){if(el.dataset.spk)return;el.dataset.spk='1';var t=clean(el);if(!t)return;var b=document.createElement('button');b.type='button';b.className='tl-spk';b.setAttribute('aria-label','Phát âm');b.textContent='🔊';b.addEventListener('click',function(e){e.stopPropagation();e.preventDefault();speak(t,b);});el.insertBefore(b,el.firstChild);}
+document.querySelectorAll('.reading-jp,.q-stem').forEach(add);})();
+</script>
+</body></html>
