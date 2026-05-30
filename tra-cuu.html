@@ -53,6 +53,10 @@ h1{font-family:var(--serif);font-style:italic;font-size:clamp(36px,6vw,56px);lin
 .search-card .kicker{display:flex;align-items:center;font-family:var(--jp);font-size:22px;color:var(--gold)}
 .search-card input,.search-card textarea{flex:1;border:none;outline:none;font-family:var(--serif);font-style:italic;font-size:18px;color:var(--ink);background:transparent;padding:16px 8px;min-width:0;resize:none}
 .search-card input::placeholder,.search-card textarea::placeholder{color:rgba(27,58,107,0.4)}
+.img-upload{margin-top:14px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.img-btn{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;padding:9px 16px;border-radius:999px;background:transparent;border:1px solid rgba(184,149,104,0.5);color:var(--gold);cursor:pointer;font-weight:600;transition:background .15s,color .15s}
+.img-btn:hover{background:var(--gold);color:var(--ink)}
+.img-name{font-family:var(--mono);font-size:11px;color:var(--sumi);opacity:0.85}
 .search-card textarea{font-family:var(--sans);font-style:normal;font-size:15px;min-height:96px;padding:16px 8px;line-height:1.55}
 .search-btn{background:var(--ink);color:var(--cream);border:none;padding:0 22px;border-radius:12px;font-family:var(--mono);font-size:11px;letter-spacing:0.18em;cursor:pointer;transition:all .15s;white-space:nowrap;font-weight:700}
 .search-btn:hover:not(:disabled){background:#0F2545}
@@ -264,6 +268,11 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
       </form>
     </div>
     <p class="note">Dịch tự nhiên, có ghi chú văn hoá + từ vựng quan trọng. Bản dịch được cache để lần sau dùng lại miễn phí.</p>
+    <div class="img-upload">
+      <input id="img-input" type="file" accept="image/*" hidden>
+      <button type="button" id="img-btn" class="img-btn">📷 Tra bằng ảnh</button>
+      <span id="img-name" class="img-name"></span>
+    </div>
     <div id="out-translate"></div>
   </div>
 
@@ -902,6 +911,39 @@ footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(184,149,104,0.
   $('#form-word').addEventListener('submit', (e) => { e.preventDefault(); searchWord($('#q-word').value.trim()); });
   $('#form-grammar').addEventListener('submit', (e) => { e.preventDefault(); searchGrammar($('#q-grammar').value.trim()); });
   $('#form-translate').addEventListener('submit', (e) => { e.preventDefault(); searchTranslate($('#q-translate').value.trim()); });
+
+  // ─────── image lookup (OCR + dịch) ───────
+  function fileToDataURL(file){
+    return new Promise((res, rej) => {
+      const fr = new FileReader();
+      fr.onload = () => res(fr.result);
+      fr.onerror = () => rej(new Error('Không đọc được tệp ảnh.'));
+      fr.readAsDataURL(file);
+    });
+  }
+  async function searchImage(file){
+    if(!file) return;
+    if(!/^image\//.test(file.type)){ setState('#out-translate', 'error', 'Vui lòng chọn tệp ảnh.'); return; }
+    if(file.size > 6*1024*1024){ setState('#out-translate', 'error', 'Ảnh quá lớn (tối đa 6MB). Hãy chụp/cắt nhỏ lại.'); return; }
+    window.scrollTo({top: $('#panel-translate').offsetTop - 20, behavior: 'smooth'});
+    setState('#out-translate', 'loading', 'Đang đọc chữ trong ảnh…');
+    try{
+      const dataUrl = await fileToDataURL(file);
+      const r = await apiCall('/api/image', { image: dataUrl });
+      renderTranslate($('#out-translate'), r.data, r, 'ja->vi');
+      addHistory('translate', '📷 ' + (file.name ? (file.name.length>40?file.name.slice(0,38)+'…':file.name) : 'ảnh'));
+      refreshMe();
+    }catch(err){
+      handleErr('#out-translate', err);
+    }
+  }
+  $('#img-btn').addEventListener('click', () => $('#img-input').click());
+  $('#img-input').addEventListener('change', (e) => {
+    const f = e.target.files && e.target.files[0];
+    $('#img-name').textContent = f ? f.name : '';
+    searchImage(f);
+    e.target.value = '';
+  });
 
   function handleErr(target, err){
     if(err.status === 429){
