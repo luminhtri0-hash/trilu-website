@@ -722,12 +722,14 @@ async function handleImageLookup(req, env) {
   if (img.length > 8_500_000) return err(400, "image too large (max ~6MB)");
 
   // Lookup type decides the output schema: word | grammar | translate (default translate)
-  const type = ["word", "grammar", "translate"].includes(body.type) ? body.type : "translate";
+  const type = ["word", "grammar", "kanji", "translate"].includes(body.type) ? body.type : "translate";
   const prompt =
     type === "word"
       ? IMAGE_OCR_PREFIX + WORD_PROMPT("(từ/cụm từ đọc được trong ảnh)")
       : type === "grammar"
       ? IMAGE_OCR_PREFIX + GRAMMAR_PROMPT("(mẫu ngữ pháp đọc được trong ảnh)")
+      : type === "kanji"
+      ? IMAGE_OCR_PREFIX + KANJI_PROMPT("(chữ Hán đọc được trong ảnh)")
       : IMAGE_PROMPT;
 
   const ctx = await quotaContext(req, env);
