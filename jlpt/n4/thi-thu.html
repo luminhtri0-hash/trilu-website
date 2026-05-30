@@ -1,75 +1,347 @@
-<!DOCTYPE html><html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Thi thử N4 — Đang cập nhật — Trí Lữ Nihongo</title><meta name="description" content="Thi thử JLPT N4 — nội dung đang được biên soạn.">
-<meta name="theme-color" content="#1B3A6B">
-<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
-<style>:root{--cream:#FBF6E8;--ink:#1B3A6B;--gold:#B89568;--sumi:#8B3A2E;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Inter Tight',-apple-system,sans-serif;--mono:'JetBrains Mono',ui-monospace,monospace;--jp:'Noto Serif JP',serif}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:var(--sans);background:var(--cream);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;min-height:100vh}
-@media(min-width:769px){body{padding-right:230px}}
-.wrap{max-width:1100px;margin:0 auto;padding:max(20px,env(safe-area-inset-top)) 24px max(40px,env(safe-area-inset-bottom))}
-.nav-top{display:flex;justify-content:space-between;align-items:center;padding:8px 0 20px;border-bottom:1px solid rgba(184,149,104,0.25);margin-bottom:34px;gap:16px}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;flex:1;min-width:0}
-.brand img{width:44px;height:44px;border-radius:11px;flex-shrink:0}
-.brand-name{font-family:var(--serif);font-style:italic;font-size:20px;line-height:1}
-.brand-jp{font-family:var(--jp);font-size:11px;color:var(--gold);letter-spacing:0.22em;margin-top:4px}
-.back{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.2);border-radius:999px;transition:all .2s;white-space:nowrap;flex-shrink:0}
-.back:hover{background:var(--ink);color:var(--cream)}
-.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:0.22em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
-.eyebrow .jp{font-family:var(--jp);color:var(--gold);letter-spacing:0.3em;margin-left:10px;text-transform:none}
-h1{font-family:var(--serif);font-style:italic;font-size:clamp(38px,7vw,76px);line-height:1.02;margin-bottom:14px;font-weight:400}
-.lede{font-size:17px;color:rgba(27,58,107,0.78);margin-bottom:40px;max-width:680px}
-/* big course banners */
-.courses{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:48px}
-.course{position:relative;display:flex;flex-direction:column;justify-content:flex-end;min-height:188px;padding:24px;border-radius:20px;text-decoration:none;color:inherit;overflow:hidden;border:1px solid rgba(184,149,104,0.35);transition:all .25s}
-.course:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(27,58,107,0.14)}
-.course.jlpt{background:linear-gradient(150deg,#1B3A6B,#0F2547);color:var(--cream);border-color:transparent}
-.course.kaiwa{background:linear-gradient(150deg,#FBF6E8,#F1E5C5)}
-.course-kanji{position:absolute;top:-10px;right:8px;font-family:var(--jp);font-size:120px;line-height:1;font-weight:700;opacity:0.13}
-.course.jlpt .course-kanji{color:var(--gold)}
-.course.kaiwa .course-kanji{color:var(--ink)}
-.course-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:0.24em;text-transform:uppercase;margin-bottom:8px}
-.course.jlpt .course-eyebrow{color:var(--gold-light,#D4B98C)}
-.course.kaiwa .course-eyebrow{color:var(--gold)}
-.course-title{font-family:var(--serif);font-style:italic;font-size:34px;line-height:1.04;margin-bottom:6px}
-.course-sub{font-size:13.5px;opacity:.85;max-width:320px}
-.course-cta{margin-top:14px;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase}
-.sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px}
-.sec-head .num{font-family:var(--mono);font-size:11px;letter-spacing:0.2em;color:var(--gold)}
-.sec-head h2{font-family:var(--serif);font-style:italic;font-size:30px;font-weight:400}
-.sec-head h2 .jp{font-family:var(--jp);font-style:normal;font-size:18px;color:var(--gold);margin-left:8px;letter-spacing:0.18em}
-.mods{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px;margin-bottom:44px}
-.mod{position:relative;display:grid;grid-template-columns:52px 1fr;gap:13px;align-items:center;padding:16px;background:#fff;border:1px solid rgba(184,149,104,0.3);border-radius:15px;text-decoration:none;color:inherit;transition:all .22s}
-.mod:hover{transform:translateY(-2px);border-color:var(--gold);box-shadow:0 6px 16px rgba(27,58,107,0.08)}
-.mod-k{font-family:var(--jp);font-size:32px;color:var(--gold);text-align:center;line-height:1;font-weight:700}
-.mod-t{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.15;margin-bottom:2px}
-.mod-t .jp{font-family:var(--jp);font-style:normal;font-size:12px;color:var(--gold);margin-left:7px;letter-spacing:0.14em}
-.mod-d{font-size:12.5px;color:rgba(27,58,107,0.68);line-height:1.45}
-.mod .badge{position:absolute;top:11px;right:11px;font-family:var(--mono);font-size:8.5px;letter-spacing:0.12em;text-transform:uppercase;padding:3px 7px;border-radius:999px}
-.mod .badge.ok{background:rgba(184,149,104,0.16);color:var(--gold-deep,#8A6E47)}
-.mod .badge.soon{background:rgba(27,58,107,0.08);color:var(--navy-mute,#5A739D)}
-.mod.soon{opacity:.82}
-.f-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:28px;margin-bottom:20px;padding-top:30px;border-top:1px solid rgba(184,149,104,0.25)}
-.f-col h4{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;color:var(--gold);text-transform:uppercase;margin-bottom:12px}
-.f-col a,.f-col p{display:block;padding:4px 0;font-size:13px;color:rgba(27,58,107,0.78);text-decoration:none;line-height:1.5}
-.f-col a:hover{color:var(--ink);text-decoration:underline}
-.f-bot{padding:18px 0;border-top:1px solid rgba(184,149,104,0.25);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-family:var(--mono);font-size:11px;color:rgba(27,58,107,0.55);letter-spacing:0.12em}
-.f-bot em{font-family:var(--serif);font-style:italic;font-size:13px;color:var(--gold);letter-spacing:0;text-transform:none}
-@media(max-width:680px){.courses{grid-template-columns:1fr}body{padding-right:0}.wrap{padding-left:18px;padding-right:18px}h1{font-size:40px}.mods{grid-template-columns:1fr}.course-title{font-size:28px}}
-</style><style>.ph{max-width:620px;margin:6vh auto 0;text-align:center}.ph-k{font-family:var(--jp);font-size:84px;color:var(--gold);opacity:.5;line-height:1}.ph h1{font-size:clamp(34px,6vw,58px);margin:10px 0 14px}.ph p{font-size:16px;color:rgba(27,58,107,0.75);margin-bottom:26px}.ph .cta{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--cream);background:var(--ink);padding:13px 22px;border-radius:999px;text-decoration:none}.ph .cta:hover{background:#0F2547}.ph .alt{display:block;margin-top:14px;font-size:13px;color:var(--gold);text-decoration:none}</style></head><body><div class="wrap">
-<nav class="nav-top"><a class="brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="brand-name">Trí Lữ · Nihongo</div><div class="brand-jp">智 旅 日 本 語</div></div></a><a href="/jlpt.html" class="back">← JLPT</a></nav>
-<div class="ph"><div class="ph-k">模</div>
-<div class="eyebrow" style="justify-content:center">N4 · THI THỬ<span class="jp">模試</span></div>
-<h1><em>Thi thử</em> N4</h1>
-<p>Học phần này đang được biên soạn — sẽ cập nhật trong thời gian tới. Trong lúc chờ, bạn có thể bắt đầu với <strong>Từ vựng</strong> và <strong>Ngữ pháp</strong> đã sẵn sàng.</p>
-<a class="cta" href="/jlpt/n4.html">← Về khóa N4</a>
-<a class="alt" href="/lien-he.html">Đăng ký nhận thông báo khi có bài →</a>
-</div>
-<footer><div class="f-grid">
-<div class="f-col"><h4>HỌC THUẬT</h4><a href="/jlpt.html">JLPT — 5 cấp N5-N1</a><a href="/kaiwa.html">Kaiwa — Hội thoại</a><a href="/eju.html">EJU — Du học thi</a><a href="/luyen-doc.html">Luyện đọc</a></div>
-<div class="f-col"><h4>SỰ NGHIỆP</h4><a href="/du-hoc.html">Du học Nhật Bản</a><a href="/viec-lam.html">Việc làm — TTS · Tokutei</a><a href="/lien-he.html">Tư vấn miễn phí</a></div>
-<div class="f-col"><h4>TÀI NGUYÊN</h4><a href="/sensei.html">Về Trí Lữ</a><a href="/tra-cuu.html">Tra cứu từ điển</a><a href="/tai-lieu.html">Thư viện tài liệu</a><a href="/blog.html">Blog & Tạp chí</a></div>
-<div class="f-col"><h4>LIÊN HỆ</h4><a href="https://zalo.me/0342390667">Zalo · 0342 390 667</a><a href="mailto:hello@trilu.edu.vn">hello@trilu.edu.vn</a><p>P. Cái Khế, TP Cần Thơ</p></div>
-</div><div class="f-bot"><span>© MMXXVI · TRÍ LỮ NIHONGO · TRILU.EDU.VN</span><em>Chinh phục tiếng Nhật — mở cửa tương lai.</em></div></footer>
-</div><script src="/nav.js" defer></script></body></html>
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Thi thử JLPT N4 · Chọn đề — Trí Lữ Nihongo</title>
+  <meta name="description" content="Thi thử JLPT online tại Trí Lữ Nihongo — đề mô phỏng sát thật theo năm và kỳ thi, chấm điểm chuẩn thang 0–180, sửa đề chi tiết và định hướng AI." />
+  <meta name="theme-color" content="#1B3A6B" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../jlpt-study.css" />
+
+  <style>
+    /* ── THI THỬ · picker — extends jlpt-study.css ── */
+    .picker-hero {
+      position: relative;
+      overflow: hidden;
+      isolation: isolate;
+      padding-top: clamp(48px, 7vh, 96px);
+      padding-bottom: clamp(40px, 5vh, 72px);
+    }
+    .ph-wm {
+      position: absolute;
+      right: -4vw; top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--jp);
+      font-weight: 500;
+      font-size: clamp(240px, 30vw, 460px);
+      line-height: 0.74;
+      color: color-mix(in oklab, var(--gold) 14%, transparent);
+      pointer-events: none;
+      user-select: none;
+      z-index: -1;
+    }
+    .ph-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      margin-top: clamp(34px, 5vh, 56px);
+      border: 1px solid var(--ink-15);
+      max-width: 720px;
+    }
+    .ph-stats > div { padding: 20px 26px; flex: 1; min-width: 130px; }
+    .ph-stats > div + div { border-left: 1px solid var(--ink-08); }
+    .phs-lab { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-55); margin-bottom: 8px; }
+    .phs-val { font-family: var(--serif); font-style: italic; font-size: 28px; line-height: 1; color: var(--navy); }
+    .phs-val .u { font-size: 14px; color: var(--gold); }
+
+    /* mock exam cards — bordered grid like lesson-grid */
+    .mock-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--ink-15);
+      border-left: 1px solid var(--ink-15);
+    }
+    @media (max-width: 920px) { .mock-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 580px) { .mock-grid { grid-template-columns: 1fr; } }
+
+    .mock-card {
+      position: relative;
+      overflow: hidden;
+      padding: 30px 30px 26px;
+      border-right: 1px solid var(--ink-15);
+      border-bottom: 1px solid var(--ink-15);
+      background: var(--cream);
+      display: flex;
+      flex-direction: column;
+      min-height: 322px;
+      transition: background .4s ease;
+    }
+    .mock-card:hover { background: var(--cream-2); }
+    .mock-card.is-featured { background: color-mix(in oklab, var(--gold) 6%, var(--cream)); }
+    .mc-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; margin-bottom: 20px; }
+    .mc-level {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 60px;
+      line-height: 0.8;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+    .mc-level .small { display: block; font-family: var(--mono); font-style: normal; font-size: 8.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .mc-badge {
+      font-family: var(--mono);
+      font-size: 8.5px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      white-space: nowrap;
+    }
+    .mc-badge.official { background: var(--navy); color: var(--cream); }
+    .mc-badge.new { background: var(--gold); color: var(--navy-deep); }
+    .mc-badge.done { color: var(--ink-40); border: 1px solid var(--ink-15); }
+    .mc-term { font-family: var(--serif); font-style: italic; font-size: 25px; color: var(--navy); line-height: 1.1; margin: 0 0 4px; }
+    .mc-src { font-family: var(--jp); font-size: 13px; color: var(--ink-55); margin: 0 0 auto; letter-spacing: 0.04em; }
+    .mc-meta {
+      display: flex;
+      gap: 0;
+      margin: 22px 0 20px;
+      border-top: 1px solid var(--ink-08);
+      border-bottom: 1px solid var(--ink-08);
+    }
+    .mc-meta > div { padding: 14px 16px 14px 0; flex: 1; }
+    .mc-meta > div + div { padding-left: 16px; border-left: 1px solid var(--ink-08); }
+    .mcm-lab { font-family: var(--mono); font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); margin-bottom: 6px; }
+    .mcm-val { font-family: var(--serif); font-style: italic; font-size: 20px; line-height: 1; color: var(--navy); }
+    .mcm-val .u { font-size: 12px; color: var(--gold); }
+    .mc-start {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 13px 20px;
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: var(--navy);
+      color: var(--cream);
+      transition: background .3s ease, gap .3s ease;
+    }
+    .mock-card:hover .mc-start { background: var(--navy-deep); }
+    .mc-start .arr { transition: transform .3s ease; color: var(--gold-soft); }
+    .mock-card:hover .mc-start .arr { transform: translateX(4px); }
+    .mc-start.ghost { background: transparent; color: var(--navy); border: 1px solid var(--navy-15); }
+    .mock-card:hover .mc-start.ghost { background: var(--ink-08); }
+    .mc-start.ghost .arr { color: var(--gold); }
+
+    /* score badge on completed cards */
+    .mc-score { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-55); }
+    .mc-score b { font-family: var(--serif); font-style: italic; font-size: 17px; color: var(--navy); letter-spacing: 0; }
+    .mc-score .pass { color: #2d7d4f; }
+    .mc-score .fail { color: var(--sumi); }
+
+    /* how-it-works strip */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--ink-15);
+    }
+    @media (max-width: 820px) { .flow-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 460px) { .flow-grid { grid-template-columns: 1fr; } }
+    .flow-cell { padding: 30px 26px; }
+    .flow-cell + .flow-cell { border-left: 1px solid var(--ink-08); }
+    @media (max-width: 820px) {
+      .flow-cell:nth-child(3) { border-left: 0; border-top: 1px solid var(--ink-08); }
+      .flow-cell:nth-child(4) { border-top: 1px solid var(--ink-08); }
+    }
+    @media (max-width: 460px) {
+      .flow-cell + .flow-cell { border-left: 0; border-top: 1px solid var(--ink-08); }
+    }
+    .flow-n { font-family: var(--serif); font-style: italic; font-size: 30px; color: var(--gold); line-height: 1; margin-bottom: 16px; }
+    .flow-t { font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--navy); margin: 0 0 8px; }
+    .flow-d { font-size: 13px; line-height: 1.55; color: var(--ink-70); margin: 0; }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ NAV ═══════════ -->
+  <nav class="site-nav">
+    <div class="site-nav-in">
+      <div class="nav-left">
+        <span class="nav-crumb">
+          <a href="../n4.html">Khóa N4</a>
+          <span class="sep">·</span>
+          <a href="/jlpt.html">JLPT</a>
+          <span class="sep">·</span>
+          <span class="here">Thi thử</span>
+        </span>
+      </div>
+      <a class="wordmark" href="/">
+        <span class="wordmark-main">Trí Lữ <span class="sep">·</span> Nihongo</span>
+        <span class="wordmark-jp">智 旅 日 本 語</span>
+      </a>
+      <div class="nav-right">
+        <a class="nav-back" href="../n4.html"><span>←</span> Học phần</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page">
+
+    <!-- ═══════════ HERO PICKER ═══════════ -->
+    <section class="section picker-hero">
+      <span class="ph-wm" aria-hidden="true">模試</span>
+      <div class="container">
+        <div class="eyebrow reveal" style="margin-bottom:24px;">
+          <span class="num">模試</span>
+          <span>Thi thử JLPT · Mô phỏng</span>
+          <span class="jp">本番 そっくり</span>
+        </div>
+        <h1 class="display reveal" data-delay="1" style="max-width:15ch;">Thi thử — như&nbsp;thi&nbsp;thật.</h1>
+        <p class="lede reveal" data-delay="2" style="margin-top:28px;">
+          Đề mô phỏng sát đề thật theo từng năm và kỳ thi, bấm giờ y như phòng thi. Nộp bài là có ngay điểm chuẩn thang 0–180, sửa đề chi tiết kèm dịch nghĩa và một bản định hướng cá nhân hoá từ AI.
+        </p>
+
+        <!-- level filter -->
+        <div class="chip-row reveal mt-s" data-delay="3" role="tablist" aria-label="Chọn cấp độ">
+          <button class="chip" type="button" data-lv="all">Tất cả</button>
+          <button class="chip" type="button" data-lv="N5">N5</button>
+          <button class="chip active" type="button" data-lv="N4">N4</button>
+          <button class="chip" type="button" data-lv="N3">N3</button>
+          <button class="chip" type="button" data-lv="N2">N2</button>
+          <button class="chip" type="button" data-lv="N1">N1</button>
+        </div>
+
+        <!-- quick stats -->
+        <div class="ph-stats reveal" data-delay="4">
+          <div>
+            <div class="phs-lab">Đề khả dụng</div>
+            <div class="phs-val">3<span class="u"> đề</span></div>
+          </div>
+          <div>
+            <div class="phs-lab">Đã thi</div>
+            <div class="phs-val">—</div>
+          </div>
+          <div>
+            <div class="phs-lab">Điểm cao nhất</div>
+            <div class="phs-val">—</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ LƯỚI ĐỀ ═══════════ -->
+    <section class="section" style="background:var(--cream-2); padding-top:clamp(40px,5vh,72px);">
+      <div class="container">
+        <div class="eyebrow reveal" style="margin-bottom:28px;">
+          <span class="num">N4</span><span>Đề thi · theo năm &amp; kỳ</span>
+          <span class="jp">過去 問 · 全 3 回</span>
+        </div>
+        <div class="mock-grid reveal" data-delay="1" id="mockGrid"></div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CÁCH HOẠT ĐỘNG ═══════════ -->
+    <section class="section" style="padding-top:clamp(44px,6vh,80px);">
+      <div class="container">
+        <div class="eyebrow reveal" style="margin-bottom:28px;">
+          <span class="num">→</span><span>Một lượt thi diễn ra thế nào</span>
+          <span class="jp">受験 の 流れ</span>
+        </div>
+        <div class="flow-grid reveal" data-delay="1">
+          <div class="flow-cell"><div class="flow-n">01</div><h3 class="flow-t">Bấm giờ</h3><p class="flow-d">Đồng hồ đếm ngược chạy đúng thời lượng thật. Tự nộp khi hết giờ.</p></div>
+          <div class="flow-cell"><div class="flow-n">02</div><h3 class="flow-t">Làm bài</h3><p class="flow-d">Ba phần thi: Ngôn ngữ, Đọc hiểu, Nghe hiểu. Nhảy nhanh giữa các câu.</p></div>
+          <div class="flow-cell"><div class="flow-n">03</div><h3 class="flow-t">Chấm chuẩn</h3><p class="flow-d">Quy đổi thang 0–180 theo từng phần, đối chiếu mốc đỗ tối thiểu.</p></div>
+          <div class="flow-cell"><div class="flow-n">04</div><h3 class="flow-t">Sửa &amp; định hướng</h3><p class="flow-d">Xem lời giải, dịch nghĩa và lộ trình ôn tập do AI gợi ý riêng cho bạn.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="foot">
+      <div class="foot-in">
+        <div class="foot-brand">
+          <div class="wm">Trí Lữ Nihongo</div>
+          <div class="jp">智 旅 日 本 語</div>
+        </div>
+        <div class="foot-tag">Thi thử hôm nay — vững vàng ngày thi thật.</div>
+      </div>
+      <div class="foot-meta">
+        <span>© MMXXVI · Trí Lữ Nihongo · trilu.edu.vn</span>
+        <span>JLPT · Thi thử · 模試</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    var MOCKS = [
+      { lv: "N4", term: "Tháng 12 · 2024", src: "過去問 · đang số hoá", min: 115, q: 120, badge: "soon" },
+      { lv: "N4", term: "Tháng 7 · 2024", src: "過去問 · đang số hoá", min: 115, q: 120, badge: "soon" },
+      { lv: "N4", term: "Tháng 12 · 2023", src: "過去問 · đang số hoá", min: 115, q: 120, badge: "soon" }
+    ];
+
+    var BADGE = {
+      "new":      { cls: "new", label: "Đề mẫu" },
+      "official": { cls: "official", label: "Chính thức" },
+      "soon":     { cls: "done", label: "Sắp có" }
+    };
+
+    var grid = document.getElementById("mockGrid");
+    MOCKS.forEach(function (m) {
+      var b = BADGE[m.badge];
+      var playable = !!m.de;
+      var card = document.createElement(playable ? "a" : "div");
+      card.className = "mock-card" + (m.featured ? " is-featured" : "") + (playable ? "" : " is-soon");
+      if (playable) card.href = "thi-thu/lam-bai.html?de=" + m.de;
+      var footer;
+      if (!playable) {
+        footer =
+          '<div class="mc-meta">' +
+            '<div><div class="mcm-lab">Thời gian</div><div class="mcm-val">' + m.min + '<span class="u"> phút</span></div></div>' +
+            '<div><div class="mcm-lab">Số câu</div><div class="mcm-val">' + m.q + '<span class="u"> câu</span></div></div>' +
+          '</div>' +
+          '<span class="mc-start ghost" style="margin-top:18px;opacity:.55;cursor:default;">Sắp có <span class="arr">·</span></span>';
+      } else if (m.badge === "done") {
+        footer =
+          '<div class="mc-meta">' +
+            '<div><div class="mcm-lab">Thời gian</div><div class="mcm-val">' + m.min + '<span class="u"> phút</span></div></div>' +
+            '<div><div class="mcm-lab">Số câu</div><div class="mcm-val">' + m.q + '<span class="u"> câu</span></div></div>' +
+          '</div>' +
+          '<div style="display:flex;align-items:center;justify-content:space-between;gap:12px;">' +
+            '<span class="mc-score">Lần trước · <b>' + m.score + '</b>/180 · <span class="' + (m.pass ? "pass" : "fail") + '">' + (m.pass ? "Đỗ" : "Trượt") + '</span></span>' +
+          '</div>' +
+          '<span class="mc-start ghost" style="margin-top:18px;">Thi lại <span class="arr">→</span></span>';
+      } else {
+        footer =
+          '<div class="mc-meta">' +
+            '<div><div class="mcm-lab">Thời gian</div><div class="mcm-val">' + m.min + '<span class="u"> phút</span></div></div>' +
+            '<div><div class="mcm-lab">Số câu</div><div class="mcm-val">' + m.q + '<span class="u"> câu</span></div></div>' +
+          '</div>' +
+          '<span class="mc-start">Bắt đầu <span class="arr">→</span></span>';
+      }
+      card.innerHTML =
+        '<div class="mc-top">' +
+          '<div class="mc-level"><span class="small">JLPT</span>' + m.lv + '</div>' +
+          '<span class="mc-badge ' + b.cls + '">' + b.label + '</span>' +
+        '</div>' +
+        '<h3 class="mc-term">' + m.term + '</h3>' +
+        '<p class="mc-src">' + m.src + '</p>' +
+        footer;
+      grid.appendChild(card);
+    });
+
+    // level filter (visual)
+    document.querySelectorAll(".chip").forEach(function (c) {
+      c.addEventListener("click", function () {
+        document.querySelectorAll(".chip").forEach(function (x) { x.classList.remove("active"); });
+        c.classList.add("active");
+      });
+    });
+
+    // reveal
+    (function () {
+      var els = document.querySelectorAll(".reveal:not(.in)");
+      if (!("IntersectionObserver" in window)) { els.forEach(function (el) { el.classList.add("in"); }); return; }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+      }, { threshold: 0.08, rootMargin: "0px 0px -6% 0px" });
+      els.forEach(function (el) { io.observe(el); });
+      setTimeout(function () { els.forEach(function (el) { el.classList.add("in"); }); }, 1600);
+    })();
+  </script>
+</body>
+</html>

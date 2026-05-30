@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Thi thử N3 · Làm bài — Trí Lữ Nihongo</title>
+  <meta name="description" content="Làm bài thi thử JLPT N3 — bấm giờ, chấm điểm chuẩn 0–180, sửa đề chi tiết kèm dịch nghĩa và định hướng AI. Trí Lữ Nihongo." />
+  <meta name="theme-color" content="#0F2547" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+JP:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../jlpt-study.css" />
+
+  <style>
+    /* ════════ THI THỬ · LÀM BÀI — extends jlpt-study.css ════════ */
+    :root { --pass: #2d7d4f; --pass-12: #2d7d4f1f; --pass-30: #2d7d4f4d; --fail: var(--sumi); }
+    .page { padding-top: 0; }
+
+    /* ── EXAM BAR (sticky header) ── */
+    .exam-bar {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 60;
+      background: color-mix(in oklab, var(--cream) 93%, transparent);
+      backdrop-filter: blur(18px) saturate(140%);
+      -webkit-backdrop-filter: blur(18px) saturate(140%);
+      border-bottom: 1px solid var(--gold-30);
+    }
+    .eb-in {
+      max-width: var(--col-wide);
+      margin: 0 auto;
+      padding: 12px var(--pad-x);
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      gap: 20px;
+    }
+    .eb-left { justify-self: start; min-width: 0; }
+    .eb-kick { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+    .eb-title { font-family: var(--serif); font-style: italic; font-size: 21px; color: var(--navy); line-height: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    /* timer */
+    .eb-timer { justify-self: center; text-align: center; }
+    .eb-timer .t-lab { font-family: var(--mono); font-size: 8px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ink-55); margin-bottom: 2px; }
+    .eb-timer .t-val {
+      font-family: var(--mono);
+      font-weight: 600;
+      font-size: clamp(26px, 3.4vw, 38px);
+      letter-spacing: 0.04em;
+      color: var(--navy);
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
+    }
+    .eb-timer.warn .t-val { color: var(--sumi); }
+    .eb-timer.warn .t-lab { color: var(--sumi); }
+    .eb-right { justify-self: end; display: flex; align-items: center; gap: 16px; }
+    .eb-count { font-family: var(--mono); font-size: 9.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-55); text-align: right; white-space: nowrap; }
+    .eb-count b { font-family: var(--serif); font-style: italic; font-size: 18px; color: var(--navy); letter-spacing: 0; }
+    .btn-submit {
+      display: inline-flex; align-items: center; gap: 9px;
+      height: 42px; padding: 0 22px;
+      background: var(--navy); color: var(--cream);
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600;
+      transition: background .3s ease, transform .3s ease;
+      box-shadow: 0 12px 26px -14px rgba(15,37,71,.7);
+    }
+    .btn-submit:hover { background: var(--navy-deep); transform: translateY(-1px); }
+    .btn-submit svg { width: 14px; height: 14px; }
+    /* progress line */
+    .eb-progress { height: 2px; background: var(--ink-08); }
+    .eb-progress .fill { height: 100%; width: 0%; background: var(--gold); transition: width .4s cubic-bezier(.2,.7,.2,1); }
+
+    /* ── QNAV (quick jump) ── */
+    .exam-body { padding-top: 96px; }
+    .qnav-wrap {
+      position: sticky;
+      top: 79px;
+      z-index: 40;
+      background: color-mix(in oklab, var(--cream) 94%, transparent);
+      backdrop-filter: blur(12px) saturate(140%);
+      -webkit-backdrop-filter: blur(12px) saturate(140%);
+      border-bottom: 1px solid var(--ink-08);
+    }
+    .qnav {
+      max-width: var(--col-wide);
+      margin: 0 auto;
+      padding: 11px var(--pad-x);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .qnav::-webkit-scrollbar { display: none; }
+    .qnav-lab { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-40); white-space: nowrap; flex-shrink: 0; }
+    .qn-row { display: flex; gap: 6px; }
+    .qn {
+      width: 30px; height: 30px;
+      flex-shrink: 0;
+      border: 1px solid var(--ink-15);
+      font-family: var(--mono); font-size: 11px; color: var(--ink-55);
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: all .25s ease;
+      font-variant-numeric: tabular-nums;
+    }
+    .qn:hover { border-color: var(--gold); color: var(--navy); }
+    .qn.answered { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+    .qn.current { outline: 2px solid var(--gold); outline-offset: 1px; }
+
+    /* ── QUESTION SECTIONS ── */
+    .qs { max-width: var(--col); margin: 0 auto; padding: 0 var(--pad-x); }
+    .qs-head {
+      padding: clamp(40px, 6vh, 72px) 0 clamp(22px, 3vh, 34px);
+      border-bottom: 1px solid var(--ink-15);
+      margin-bottom: clamp(28px, 4vh, 44px);
+    }
+    .qs-kick { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); display: flex; align-items: baseline; gap: 12px; margin-bottom: 16px; }
+    .qs-title { font-family: var(--serif); font-style: italic; font-size: clamp(30px, 4vw, 48px); color: var(--navy); margin: 0; line-height: 1.04; }
+    .qs-sub { font-size: 14px; color: var(--ink-70); margin: 12px 0 0; max-width: 56ch; }
+
+    /* question card */
+    .q {
+      padding: clamp(26px, 3.5vh, 40px) 0;
+      border-bottom: 1px solid var(--ink-08);
+      scroll-margin-top: 116px;
+    }
+    .q-top { display: flex; align-items: baseline; gap: 16px; margin-bottom: 18px; }
+    .q-num {
+      font-family: var(--serif); font-style: italic; font-size: 30px; color: var(--gold);
+      line-height: 1; flex-shrink: 0; letter-spacing: -0.02em; min-width: 52px;
+    }
+    .q-num .small { font-size: 11px; font-family: var(--mono); font-style: normal; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); display: block; margin-bottom: 4px; }
+    .q-instruct { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-55); padding-top: 6px; }
+    /* passage box (reading) */
+    .q-passage {
+      background: var(--cream-2);
+      border-left: 2px solid var(--gold);
+      padding: 20px 24px;
+      margin: 0 0 22px;
+    }
+    .q-passage p { font-family: var(--jp); font-size: 16px; line-height: 2.0; color: var(--ink-90); margin: 0; }
+    .q-prompt {
+      font-family: var(--jp);
+      font-size: clamp(18px, 2.3vw, 23px);
+      line-height: 2.1;
+      color: var(--ink);
+      margin: 0 0 22px;
+      padding-left: 68px;
+    }
+    .q-prompt .blank { color: var(--sumi); border-bottom: 2px solid var(--gold-50); padding: 0 18px; }
+    .q-prompt .ul { border-bottom: 2px solid var(--gold); }
+    ruby rt { font-family: var(--jp); font-size: 0.5em; color: var(--gold); font-weight: 500; letter-spacing: 0.02em; }
+
+    /* options */
+    .opts { display: grid; gap: 10px; padding-left: 68px; }
+    .opt {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 16px;
+      padding: 15px 20px;
+      border: 1px solid var(--ink-15);
+      background: var(--cream);
+      cursor: pointer;
+      transition: border-color .25s ease, background .25s ease;
+      text-align: left;
+      width: 100%;
+    }
+    .opt:hover { border-color: var(--gold-50); background: var(--cream-2); }
+    .opt-mark {
+      width: 22px; height: 22px; border-radius: 50%;
+      border: 1px solid var(--ink-25);
+      display: inline-flex; align-items: center; justify-content: center;
+      transition: border-color .25s ease;
+      flex-shrink: 0;
+    }
+    .opt-mark::after { content: ""; width: 10px; height: 10px; border-radius: 50%; background: transparent; transition: background .25s ease; }
+    .opt-key { font-family: var(--mono); font-size: 10px; color: var(--ink-40); margin-right: 2px; }
+    .opt-text { font-family: var(--jp); font-size: 17px; color: var(--ink-90); line-height: 1.5; }
+    .opt-text .vn { font-family: var(--serif); font-style: italic; }
+    .opt.selected { border-color: var(--gold); background: var(--gold-12); }
+    .opt.selected .opt-mark { border-color: var(--gold); }
+    .opt.selected .opt-mark::after { background: var(--gold); }
+    .opt.selected .opt-text { color: var(--navy); }
+
+    /* audio player (listening) */
+    .audio {
+      display: flex; align-items: center; gap: 16px;
+      padding: 16px 20px;
+      border: 1px solid var(--ink-15);
+      background: var(--navy-deep);
+      color: var(--cream);
+      margin: 0 0 22px;
+      margin-left: 68px;
+    }
+    .audio-play {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--gold); color: var(--navy-deep);
+      display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+      transition: transform .25s ease, background .25s ease;
+    }
+    .audio-play:hover { transform: scale(1.05); background: var(--gold-soft); }
+    .audio-play svg { width: 16px; height: 16px; }
+    .audio-wave { flex: 1; display: flex; align-items: center; gap: 3px; height: 28px; }
+    .audio-wave span { flex: 1; background: color-mix(in oklab, var(--cream) 32%, transparent); border-radius: 2px; transition: height .3s ease; }
+    .audio-meta { font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-soft); white-space: nowrap; }
+
+    @media (max-width: 620px) {
+      .q-prompt, .opts, .audio { padding-left: 0; margin-left: 0; }
+    }
+
+    /* ── EXAM FOOTER NAV ── */
+    .exam-nav {
+      max-width: var(--col);
+      margin: 0 auto;
+      padding: clamp(28px, 4vh, 44px) var(--pad-x) clamp(48px, 7vh, 80px);
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+    }
+    .exam-nav .en-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 13px 22px; border: 1px solid var(--navy-15);
+      font-family: var(--mono); font-size: 10px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--navy);
+      transition: gap .3s ease, border-color .3s ease, color .3s ease, opacity .3s ease;
+    }
+    .exam-nav .en-btn:hover { gap: 15px; border-color: var(--gold); color: var(--gold); }
+    .exam-nav .en-btn.disabled { opacity: .35; pointer-events: none; }
+    .exam-nav .en-submit { background: var(--gold); color: var(--navy-deep); border-color: var(--gold); }
+    .exam-nav .en-submit:hover { background: var(--navy); color: var(--cream); border-color: var(--navy); }
+
+    /* ════════ RESULT VIEW ════════ */
+    #resultView { display: none; }
+    .res-hero {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: var(--navy-deep); color: var(--cream);
+      padding: clamp(56px, 9vh, 110px) var(--pad-x) clamp(44px, 6vh, 80px);
+    }
+    .res-hero .rh-wm {
+      position: absolute; right: -3vw; top: 50%; transform: translateY(-50%);
+      font-family: var(--jp); font-weight: 500; font-size: clamp(220px, 28vw, 420px);
+      line-height: 0.74; color: color-mix(in oklab, var(--cream) 6%, transparent);
+      pointer-events: none; user-select: none; z-index: -1;
+    }
+    .rh-in { max-width: var(--col); margin: 0 auto; }
+    .rh-kick { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-soft); display: flex; gap: 12px; align-items: baseline; margin-bottom: 26px; }
+    .rh-grid { display: grid; grid-template-columns: auto 1fr; gap: clamp(32px, 6vw, 72px); align-items: center; }
+    @media (max-width: 760px) { .rh-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+    /* gauge */
+    .gauge { position: relative; width: 200px; height: 200px; flex-shrink: 0; }
+    .gauge svg { transform: rotate(-90deg); width: 100%; height: 100%; }
+    .gauge .track { fill: none; stroke: color-mix(in oklab, var(--cream) 14%, transparent); stroke-width: 10; }
+    .gauge .bar { fill: none; stroke: var(--gold); stroke-width: 10; stroke-linecap: round; transition: stroke-dashoffset 1.2s cubic-bezier(.2,.7,.2,1); }
+    .gauge.is-pass .bar { stroke: #5fbf86; }
+    .gauge-mid {
+      position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
+    }
+    .gauge-mid .g-tot { font-family: var(--serif); font-style: italic; font-size: 58px; line-height: 0.9; color: var(--cream); }
+    .gauge-mid .g-of { font-family: var(--mono); font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold-soft); margin-top: 4px; }
+
+    .rh-verdict-lab { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 12px; }
+    .rh-verdict {
+      font-family: var(--serif); font-style: italic; font-weight: 500;
+      font-size: clamp(56px, 9vw, 104px); line-height: 0.92; letter-spacing: -0.02em;
+      margin: 0;
+    }
+    .rh-verdict.pass { color: #6fcf97; }
+    .rh-verdict.fail { color: var(--gold-soft); }
+    .rh-note { font-size: 16px; line-height: 1.55; color: color-mix(in oklab, var(--cream) 80%, transparent); max-width: 46ch; margin: 18px 0 0; }
+    .rh-pct { display: flex; gap: 28px; margin-top: 26px; padding-top: 22px; border-top: 1px solid color-mix(in oklab, var(--cream) 16%, transparent); flex-wrap: wrap; }
+    .rh-pct .p-lab { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: color-mix(in oklab, var(--cream) 55%, transparent); margin-bottom: 6px; }
+    .rh-pct .p-val { font-family: var(--serif); font-style: italic; font-size: 26px; color: var(--gold-soft); line-height: 1; }
+
+    /* scorecard */
+    .scorecard { max-width: var(--col); margin: 0 auto; padding: 0 var(--pad-x); }
+    .sc-rows { border: 1px solid var(--ink-15); }
+    .sc-row {
+      display: grid;
+      grid-template-columns: 240px 1fr auto;
+      gap: clamp(20px, 4vw, 48px);
+      align-items: center;
+      padding: 26px clamp(24px, 3vw, 36px);
+    }
+    .sc-row + .sc-row { border-top: 1px solid var(--ink-08); }
+    .sc-row.total { background: var(--cream-2); }
+    @media (max-width: 720px) { .sc-row { grid-template-columns: 1fr; gap: 14px; } }
+    .scr-name { }
+    .scr-jp { font-family: var(--jp); font-size: 18px; color: var(--navy); }
+    .scr-vn { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--ink-55); margin-top: 4px; }
+    .scr-bar-wrap { position: relative; }
+    .scr-bar { position: relative; height: 10px; background: var(--ink-08); overflow: visible; }
+    .scr-bar .fill { height: 100%; width: 0; transition: width 1s cubic-bezier(.2,.7,.2,1); background: var(--navy); }
+    .scr-bar .fill.pass { background: var(--pass); }
+    .scr-bar .fill.fail { background: var(--fail); }
+    .scr-bar .mark { position: absolute; top: -5px; bottom: -5px; width: 2px; background: var(--gold); }
+    .scr-bar .mark::after { content: "đỗ"; position: absolute; top: -16px; left: 50%; transform: translateX(-50%); font-family: var(--mono); font-size: 7.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); }
+    .scr-meta { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); margin-top: 10px; display: flex; justify-content: space-between; }
+    .scr-score { text-align: right; white-space: nowrap; }
+    .scr-score .v { font-family: var(--serif); font-style: italic; font-size: 38px; color: var(--navy); line-height: 1; }
+    .scr-score .v.total { font-size: 52px; }
+    .scr-score .o { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--gold); }
+    .scr-tag { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.14em; text-transform: uppercase; padding: 3px 8px; margin-top: 8px; display: inline-block; }
+    .scr-tag.pass { background: var(--pass-12); color: var(--pass); }
+    .scr-tag.fail { background: color-mix(in oklab, var(--fail) 10%, transparent); color: var(--fail); }
+
+    /* ── REVIEW ── */
+    .review { max-width: var(--col); margin: 0 auto; padding: 0 var(--pad-x); }
+    .rev-head { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; margin-bottom: clamp(26px, 4vh, 40px); }
+    .rev-filter { display: inline-flex; border: 1px solid var(--ink-15); }
+    .rev-filter button {
+      font-family: var(--mono); font-size: 9px; letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 10px 16px; color: var(--ink-55); transition: all .25s ease;
+    }
+    .rev-filter button + button { border-left: 1px solid var(--ink-15); }
+    .rev-filter button.active { background: var(--navy); color: var(--cream); }
+
+    .rev-item {
+      padding: clamp(24px, 3.5vh, 36px) 0;
+      border-bottom: 1px solid var(--ink-08);
+      border-left: 2px solid transparent;
+      padding-left: clamp(20px, 3vw, 32px);
+      scroll-margin-top: 90px;
+    }
+    .rev-item.correct { border-left-color: var(--pass); }
+    .rev-item.wrong { border-left-color: var(--fail); }
+    .rev-top { display: flex; align-items: baseline; gap: 14px; margin-bottom: 14px; }
+    .rev-num { font-family: var(--serif); font-style: italic; font-size: 24px; line-height: 1; }
+    .rev-item.correct .rev-num { color: var(--pass); }
+    .rev-item.wrong .rev-num { color: var(--fail); }
+    .rev-status { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; padding: 4px 10px; }
+    .rev-status.correct { background: var(--pass-12); color: var(--pass); }
+    .rev-status.wrong { background: color-mix(in oklab, var(--fail) 10%, transparent); color: var(--fail); }
+    .rev-cat { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-40); margin-left: auto; }
+    .rev-prompt { font-family: var(--jp); font-size: 18px; line-height: 1.9; color: var(--ink); margin: 0 0 16px; }
+    .rev-prompt .blank { color: var(--sumi); border-bottom: 2px solid var(--gold-50); padding: 0 14px; }
+    .rev-opts { display: grid; gap: 8px; margin-bottom: 18px; }
+    .rev-opt {
+      display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px;
+      padding: 11px 16px; border: 1px solid var(--ink-08); font-family: var(--jp); font-size: 15px; color: var(--ink-70);
+    }
+    .rev-opt .k { font-family: var(--mono); font-size: 9px; color: var(--ink-40); }
+    .rev-opt .tag { font-family: var(--mono); font-size: 8px; letter-spacing: 0.14em; text-transform: uppercase; }
+    .rev-opt.correct { background: var(--pass-12); border-color: var(--pass-30); color: var(--ink); }
+    .rev-opt.correct .tag { color: var(--pass); }
+    .rev-opt.wrong { background: color-mix(in oklab, var(--fail) 8%, transparent); border-color: color-mix(in oklab, var(--fail) 30%, transparent); color: var(--ink); }
+    .rev-opt.wrong .tag { color: var(--fail); }
+    .rev-explain {
+      display: grid; grid-template-columns: auto 1fr; gap: 16px;
+      background: var(--cream-2); padding: 18px 22px; border-left: 2px solid var(--gold);
+    }
+    .rev-explain .ex-ico { font-family: var(--jp); font-size: 20px; color: var(--gold); line-height: 1.2; }
+    .rev-ex-lab { font-family: var(--mono); font-size: 8.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .rev-ex-text { font-size: 14px; line-height: 1.6; color: var(--ink-90); margin: 0 0 12px; }
+    .rev-ex-text:last-child { margin-bottom: 0; }
+    .rev-trans { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--ink-70); }
+    .rev-trans .lab { font-family: var(--mono); font-style: normal; font-size: 8px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-right: 8px; }
+    .rev-empty { padding: 40px 0; text-align: center; font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--ink-40); }
+
+    /* ── AI CARD ── */
+    .ai-card {
+      position: relative; overflow: hidden; isolation: isolate;
+      background: linear-gradient(165deg, var(--navy-deep), #0a1c3a);
+      color: var(--cream);
+      padding: clamp(32px, 5vw, 56px);
+      border: 1px solid color-mix(in oklab, var(--gold) 30%, transparent);
+    }
+    .ai-card .ai-wm { position: absolute; right: -1vw; bottom: -4vh; font-family: var(--jp); font-weight: 500; font-size: clamp(160px, 20vw, 280px); line-height: .7; color: color-mix(in oklab, var(--gold) 8%, transparent); pointer-events: none; user-select: none; z-index: -1; }
+    .ai-kick { font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold-soft); display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .ai-kick .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 0 0 var(--gold); animation: aiPulse 1.8s infinite; }
+    @keyframes aiPulse { 0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--gold) 60%, transparent); } 70% { box-shadow: 0 0 0 9px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+    .ai-title { font-family: var(--serif); font-style: italic; font-size: clamp(26px, 3.4vw, 40px); color: var(--cream); margin: 0 0 8px; line-height: 1.05; }
+    .ai-title .em { color: var(--gold-soft); }
+    .ai-sub { font-size: 14px; color: color-mix(in oklab, var(--cream) 70%, transparent); margin: 0 0 26px; max-width: 52ch; }
+    .ai-body { display: grid; gap: 18px; }
+    .ai-block { border-top: 1px solid color-mix(in oklab, var(--cream) 14%, transparent); padding-top: 18px; }
+    .ai-block-lab { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 10px; }
+    .ai-block p { font-size: 15px; line-height: 1.62; color: color-mix(in oklab, var(--cream) 88%, transparent); margin: 0; }
+    .ai-focus { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .ai-chip { font-family: var(--mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 12px; border: 1px solid color-mix(in oklab, var(--gold) 50%, transparent); color: var(--gold-soft); }
+    .ai-cta { margin-top: 28px; display: inline-flex; align-items: center; gap: 10px; padding: 13px 24px; background: var(--gold); color: var(--navy-deep); font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; transition: gap .3s ease, background .3s ease; }
+    .ai-cta:hover { gap: 16px; background: var(--gold-soft); }
+    /* loading state */
+    .ai-loading { display: grid; gap: 14px; }
+    .ai-skl { height: 13px; background: linear-gradient(90deg, color-mix(in oklab, var(--cream) 10%, transparent) 25%, color-mix(in oklab, var(--cream) 22%, transparent) 50%, color-mix(in oklab, var(--cream) 10%, transparent) 75%); background-size: 200% 100%; animation: shimmer 1.4s infinite; }
+    .ai-skl.w1 { width: 90%; } .ai-skl.w2 { width: 78%; } .ai-skl.w3 { width: 84%; } .ai-skl.w4 { width: 62%; }
+    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    .ai-loading-note { font-family: var(--mono); font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-soft); margin-top: 4px; display: flex; align-items: center; gap: 10px; }
+
+    @media (prefers-reduced-motion: reduce) { .ai-skl, .ai-kick .dot { animation: none; } }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════ EXAM BAR ═══════════ -->
+  <header class="exam-bar" id="examBar">
+    <div class="eb-in">
+      <div class="eb-left">
+        <div class="eb-kick" id="ebKick">Thi thử · N3 · Đang làm bài</div>
+        <div class="eb-title" id="ebTitle">N3 · Tháng 7 · 2025</div>
+      </div>
+      <div class="eb-timer" id="ebTimer">
+        <div class="t-lab">Còn lại</div>
+        <div class="t-val" id="timer">40:00</div>
+      </div>
+      <div class="eb-right">
+        <div class="eb-count"><b id="answeredBig">0</b> / <span id="totalCount">10</span> câu</div>
+        <button class="btn-submit" id="submitTop" type="button">
+          Nộp bài
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="eb-progress"><div class="fill" id="progFill"></div></div>
+  </header>
+
+  <main class="page">
+
+    <!-- ═══════════ EXAM VIEW ═══════════ -->
+    <div id="examView">
+
+      <!-- quick jump -->
+      <div class="qnav-wrap">
+        <div class="qnav">
+          <span class="qnav-lab">Câu</span>
+          <div class="qn-row" id="qnRow"></div>
+        </div>
+      </div>
+
+      <div class="exam-body" id="sections"></div>
+
+      <!-- bottom nav -->
+      <div class="exam-nav">
+        <button class="en-btn" id="prevBtn" type="button"><span>←</span> Câu trước</button>
+        <button class="en-btn en-submit" id="submitBottom" type="button">Nộp bài &amp; xem điểm</button>
+        <button class="en-btn" id="nextBtn" type="button">Câu sau <span>→</span></button>
+      </div>
+    </div>
+
+    <!-- ═══════════ RESULT VIEW ═══════════ -->
+    <div id="resultView">
+
+      <!-- verdict hero + gauge -->
+      <section class="res-hero">
+        <span class="rh-wm" aria-hidden="true">結果</span>
+        <div class="rh-in">
+          <div class="rh-kick"><span>Kết quả · Thi thử N3</span><span class="jp" style="color:color-mix(in oklab,var(--cream) 55%,transparent);">採点 結果</span></div>
+          <div class="rh-grid">
+            <div class="gauge" id="gauge">
+              <svg viewBox="0 0 120 120">
+                <circle class="track" cx="60" cy="60" r="52"></circle>
+                <circle class="bar" id="gaugeBar" cx="60" cy="60" r="52" stroke-dasharray="326.7" stroke-dashoffset="326.7"></circle>
+              </svg>
+              <div class="gauge-mid">
+                <div class="g-tot" id="gaugeTotal">0</div>
+                <div class="g-of">／ 180 điểm</div>
+              </div>
+            </div>
+            <div>
+              <div class="rh-verdict-lab">Kết luận</div>
+              <h1 class="rh-verdict" id="verdict">—</h1>
+              <p class="rh-note" id="verdictNote"></p>
+              <div class="rh-pct">
+                <div>
+                  <div class="p-lab">So mốc đỗ (95)</div>
+                  <div class="p-val" id="pctPass">—</div>
+                </div>
+                <div>
+                  <div class="p-lab">Số câu đúng</div>
+                  <div class="p-val" id="rawCorrect">—</div>
+                </div>
+                <div>
+                  <div class="p-lab">Thời gian làm</div>
+                  <div class="p-val" id="timeTaken">—</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- scorecard -->
+      <section class="section" style="padding-top:clamp(44px,6vh,80px); padding-bottom:clamp(30px,4vh,52px);">
+        <div class="scorecard">
+          <div class="eyebrow reveal" style="margin-bottom:26px;">
+            <span class="num">点</span><span>Bảng điểm theo phần · chuẩn JLPT</span>
+            <span class="jp">得点 区分</span>
+          </div>
+          <div class="sc-rows" id="scoreRows"></div>
+          <p class="body-sm" style="margin-top:18px; color:var(--ink-55);">
+            Để đỗ JLPT N3: tổng điểm phải đạt <b style="color:var(--navy);">≥ 95/180</b> <em>và</em> mỗi phần phải đạt điểm liệt tối thiểu <b style="color:var(--navy);">≥ 19/60</b>. Vạch <span style="color:var(--gold);">vàng</span> trên mỗi thanh là mốc đỗ của phần đó.
+          </p>
+        </div>
+      </section>
+
+      <!-- AI -->
+      <section class="section" style="padding-top:clamp(20px,3vh,40px); padding-bottom:clamp(30px,4vh,52px);">
+        <div class="scorecard">
+          <div class="ai-card" id="aiCard">
+            <span class="ai-wm" aria-hidden="true">智</span>
+            <div class="ai-kick"><span class="dot"></span><span>Trí Lữ AI · Định hướng cá nhân hoá</span></div>
+            <h2 class="ai-title">Lộ trình ôn tập <span class="em">dành riêng cho bạn.</span></h2>
+            <p class="ai-sub">Phân tích từng phần thi, nhận diện điểm yếu và gợi ý bước đi tiếp theo — dựa trên chính bài làm vừa rồi.</p>
+            <div id="aiContent">
+              <!-- loading state (default) -->
+              <div class="ai-loading" id="aiLoading">
+                <div class="ai-skl w1"></div>
+                <div class="ai-skl w3"></div>
+                <div class="ai-skl w2"></div>
+                <div class="ai-skl w4"></div>
+                <div class="ai-loading-note"><span class="dot" style="width:6px;height:6px;border-radius:50%;background:var(--gold-soft);display:inline-block;"></span> AI đang phân tích bài làm của bạn…</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- review -->
+      <section class="section" style="background:var(--cream-2); padding-top:clamp(44px,6vh,80px);">
+        <div class="review">
+          <div class="rev-head">
+            <div class="eyebrow reveal" style="margin:0;">
+              <span class="num">解説</span><span>Sửa đề · lời giải &amp; dịch nghĩa</span>
+            </div>
+            <div class="rev-filter">
+              <button class="active" id="filterAll" type="button">Tất cả</button>
+              <button id="filterWrong" type="button">Chỉ câu sai</button>
+            </div>
+          </div>
+          <div id="reviewList"></div>
+        </div>
+      </section>
+
+      <!-- result footer actions -->
+      <section class="section" style="padding-top:clamp(40px,5vh,72px);">
+        <div class="scorecard" style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center;">
+          <a class="en-btn en-submit" style="display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border:1px solid var(--gold);background:var(--gold);color:var(--navy-deep);font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;" href="../thi-thu.html">Chọn đề khác <span>→</span></a>
+          <button class="en-btn" style="display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border:1px solid var(--navy-15);font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--navy);" type="button" onclick="location.reload()">Thi lại đề này</button>
+        </div>
+      </section>
+    </div>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="foot">
+      <div class="foot-in">
+        <div class="foot-brand">
+          <div class="wm">Trí Lữ Nihongo</div>
+          <div class="jp">智 旅 日 本 語</div>
+        </div>
+        <div class="foot-tag">Thi thử hôm nay — vững vàng ngày thi thật.</div>
+      </div>
+      <div class="foot-meta">
+        <span>© MMXXVI · Trí Lữ Nihongo · trilu.edu.vn</span>
+        <span>JLPT · N3 · Thi thử · 模試</span>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+  (function(){
+    var de=(new URLSearchParams(location.search).get('de')||'de-mau').replace(/[^a-z0-9-]/gi,'');
+    function load(src,cb){var s=document.createElement('script');s.src=src;s.onload=cb||null;s.onerror=function(){document.getElementById('sections').innerHTML='<p style="padding:40px;font-family:var(--sans);color:var(--sumi)">Không tải được đề « '+de+' ». Vui lòng quay lại trang chọn đề.</p>';};document.body.appendChild(s);}
+    load(de+'.js', function(){ load('lam-bai.engine.js'); });
+  })();
+  </script>
+</body>
+</html>

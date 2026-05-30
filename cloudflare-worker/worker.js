@@ -439,6 +439,38 @@ Quy tắc:
 - Nếu không biết từ này: { "is_known": false, "results": [] }.
 - Chỉ trả JSON, không markdown, không lời dẫn.`;
 
+const KANJI_PROMPT = (q) => `Bạn là từ điển Hán tự (Kanji) Nhật–Việt chuyên sâu cho người Việt.
+
+Người dùng tra MỘT chữ Hán: ${JSON.stringify(q)}
+Nếu input có nhiều chữ, chỉ phân tích chữ Hán đầu tiên.
+
+Trả về **JSON đúng schema** dưới đây, không text nào khác:
+
+{
+  "input": "${q}",
+  "is_known": true | false,
+  "kanji": "桜",
+  "han_viet": "Anh",
+  "han_meaning": "hoa anh đào",
+  "meanings_vi": ["hoa anh đào", "cây anh đào"],
+  "on": "オウ",
+  "kun": "さくら",
+  "strokes": 10,
+  "radical": "木",
+  "radical_name": "mộc (cây)",
+  "jlpt": "N5" | "N4" | "N3" | "N2" | "N1" | null,
+  "mnemonic": "mẹo nhớ ngắn gọn bằng tiếng Việt, tách các bộ phận của chữ",
+  "compounds": [
+    {"word": "桜色", "reading": "さくらいろ", "meaning_vi": "màu hồng anh đào"}
+  ]
+}
+
+Quy tắc:
+- Nếu input không phải chữ Hán hợp lệ: { "input": "${q}", "is_known": false }.
+- on/kun: nhiều âm cách nhau bằng "・"; không có thì để "—".
+- compounds: 4-8 từ ghép thông dụng chứa chữ này, có reading hiragana + nghĩa Việt.
+- Chỉ trả JSON.`;
+
 const GRAMMAR_PROMPT = (q) => `Bạn là từ điển ngữ pháp tiếng Nhật cho người Việt học JLPT.
 
 Mẫu ngữ pháp user tra: ${JSON.stringify(q)}
@@ -583,6 +615,13 @@ async function handleDictLookup(req, env, type) {
     normalized = normalizeQuery(q);
     cacheKey = `grammar:${await sha256Hex(normalized)}`;
     prompt = GRAMMAR_PROMPT(q);
+  } else if (type === "kanji") {
+    const q = (body.query || "").trim();
+    if (!q) return err(400, "missing query");
+    if (q.length > 50) return err(400, "query too long");
+    normalized = normalizeQuery(q);
+    cacheKey = `kanji:${await sha256Hex(normalized)}`;
+    prompt = KANJI_PROMPT(q);
   } else if (type === "translate") {
     const text = (body.text || "").trim();
     const direction = body.direction === "vi->ja" ? "vi->ja" : "ja->vi";
@@ -1300,6 +1339,41 @@ async function handleMe(req, env) {
   });
 }
 
+/* ─────────── Thi thử — định hướng AI (Gemini) ─────────── */
+async function handleThiThuFeedback(req, env) {
+  if (req.method !== "POST") return err(405, "method");
+  let b;
+  try { b = await req.json(); } catch { return err(400, "bad json"); }
+  const level = String(b.level || "JLPT").slice(0, 8);
+  const totalScore = Number(b.totalScore) || 0;
+  const passTotal = Number(b.passTotal) || 0;
+  const passEach = Number(b.passEach) || 0;
+  const passed = !!b.passed;
+  const rawCorrect = Number(b.rawCorrect) || 0;
+  const total = Number(b.total) || 0;
+  const perCat = b.perCat && typeof b.perCat === "object" ? b.perCat : {};
+
+  const prompt =
+    `Bạn là gia sư JLPT của học viện Trí Lữ Nihongo, giọng ấm áp, khích lệ, cụ thể.\n` +
+    `Học viên vừa thi thử ${level}. Kết quả quy về thang 0–180:\n` +
+    `- Tổng điểm: ${totalScore} (mốc đỗ ${passTotal}, điểm liệt mỗi phần ${passEach}/60)\n` +
+    `- Kết luận: ${passed ? "ĐỖ" : "TRƯỢT"} · số câu đúng ${rawCorrect}/${total}\n` +
+    `- Điểm từng phần (scaled/60, lang=Từ vựng·Hán tự·Ngữ pháp, read=Đọc hiểu, listen=Nghe hiểu): ${JSON.stringify(perCat)}\n` +
+    `Viết nhận xét tiếng Việt cá nhân hoá. CHỈ trả về JSON đúng 3 khoá:\n` +
+    `{"diag":"chẩn đoán 2-3 câu, nêu rõ phần mạnh và phần yếu nhất kèm số điểm","plan":"kế hoạch 7 ngày tới 2-3 câu, ưu tiên phần yếu nhất, gợi ý hành động cụ thể mỗi ngày","focus":["2-4 nhãn ngắn các phần/kỹ năng cần ưu tiên"]}`;
+
+  try {
+    const out = await callGemini(env, prompt, { model: env.GEMINI_MODEL || "gemini-2.5-flash" });
+    return json({
+      diag: String(out.diag || ""),
+      plan: String(out.plan || ""),
+      focus: Array.isArray(out.focus) ? out.focus.map((x) => String(x)).slice(0, 4) : [],
+    });
+  } catch (e) {
+    return err(502, "ai: " + (e.message || String(e)).slice(0, 120));
+  }
+}
+
 /* ─────────── router ─────────── */
 
 export default {
@@ -1326,6 +1400,7 @@ export default {
 
       else if (p === "/api/word")      res = await handleDictLookup(req, env, "word");
       else if (p === "/api/grammar")   res = await handleDictLookup(req, env, "grammar");
+      else if (p === "/api/kanji")     res = await handleDictLookup(req, env, "kanji");
       else if (p === "/api/translate") res = await handleDictLookup(req, env, "translate");
       else if (p === "/api/image")     res = await handleImageLookup(req, env);
 
@@ -1341,6 +1416,7 @@ export default {
       else if (p === "/api/srs/state")            res = await handleSrsState(req, env);
       else if (p === "/api/srs/review")           res = await handleSrsReview(req, env);
       else if (p === "/api/leaderboard")          res = await handleLeaderboard(req, env);
+      else if (p === "/api/thi-thu-feedback")     res = await handleThiThuFeedback(req, env);
 
       else res = err(404, "not found");
 
