@@ -248,6 +248,42 @@ async function checkAndBumpBudget(env) {
 
 /* ─────────── Gemini ─────────── */
 
+// Robust JSON parse: Gemini occasionally appends stray characters AFTER the
+// JSON object (common with literary/poetic input), wraps it in ``` fences, or
+// splits output across multiple parts. Plain JSON.parse() throws on those.
+// This extracts the first balanced JSON value and ignores surrounding junk.
+function parseJsonLoose(raw) {
+  if (raw == null) throw new Error("gemini: empty response");
+  // fast path
+  try { return JSON.parse(raw); } catch (_) {}
+  let s = String(raw).trim();
+  // strip ```json … ``` fences if present
+  const fence = s.match(/```(?:json)?\s*([\s\S]*?)```/);
+  if (fence) {
+    try { return JSON.parse(fence[1]); } catch (_) { s = fence[1].trim(); }
+  }
+  // extract first balanced { … } or [ … ], string-aware, drop trailing junk
+  const start = s.search(/[\[{]/);
+  if (start !== -1) {
+    const open = s[start];
+    const close = open === "{" ? "}" : "]";
+    let depth = 0, inStr = false, esc = false;
+    for (let i = start; i < s.length; i++) {
+      const c = s[i];
+      if (esc) { esc = false; continue; }
+      if (c === "\\") { esc = true; continue; }
+      if (c === '"') { inStr = !inStr; continue; }
+      if (inStr) continue;
+      if (c === open) depth++;
+      else if (c === close) {
+        depth--;
+        if (depth === 0) return JSON.parse(s.slice(start, i + 1));
+      }
+    }
+  }
+  throw new Error("gemini: not valid JSON: " + String(raw).slice(0, 200));
+}
+
 async function callGemini(env, prompt, { model } = {}) {
   const m = model || env.GEMINI_MODEL || "gemini-2.5-flash";
   // AI Gateway routes via CF US edges → bypass Hong Kong/region block on Gemini 3.x
@@ -275,16 +311,54 @@ async function callGemini(env, prompt, { model } = {}) {
     throw new Error(`gemini ${r.status}: ${text.slice(0, 200)}`);
   }
   const data = await r.json();
-  const part = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-  if (!part) throw new Error("gemini: empty response");
-  try {
-    return JSON.parse(part);
-  } catch (e) {
-    // sometimes wrapped in ```json … ```
-    const m = part.match(/```(?:json)?\s*([\s\S]*?)```/);
-    if (m) return JSON.parse(m[1]);
-    throw new Error("gemini: not valid JSON: " + part.slice(0, 200));
+  // Join all parts (response is occasionally split across multiple parts)
+  const parts = data?.candidates?.[0]?.content?.parts;
+  const raw = Array.isArray(parts)
+    ? parts.map((p) => (p && p.text ? p.text : "")).join("")
+    : null;
+  if (!raw) throw new Error("gemini: empty response");
+  return parseJsonLoose(raw);
+}
+
+// Vision variant: sends an inline image + prompt, expects JSON back.
+async function callGeminiVision(env, prompt, imageB64, mimeType, { model } = {}) {
+  const m = model || env.GEMINI_MODEL || "gemini-2.5-flash";
+  const base = env.AI_GATEWAY_BASE || "https://generativelanguage.googleapis.com";
+  const url = `${base}/v1beta/models/${m}:generateContent?key=${env.GEMINI_API_KEY}`;
+  const body = {
+    contents: [
+      {
+        role: "user",
+        parts: [
+          { inline_data: { mime_type: mimeType, data: imageB64 } },
+          { text: prompt },
+        ],
+      },
+    ],
+    generationConfig: {
+      temperature: 0.2,
+      topP: 0.9,
+      maxOutputTokens: 65536,
+      responseMimeType: "application/json",
+      thinkingConfig: { thinkingBudget: 8192 },
+    },
+  };
+  const r = await fetch(url, {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(body),
+  });
+  if (!r.ok) {
+    const text = await r.text();
+    throw new Error(`gemini ${r.status}: ${text.slice(0, 200)}`);
   }
+  const data = await r.json();
+  const parts = data?.candidates?.[0]?.content?.parts;
+  const raw = Array.isArray(parts)
+    ? parts.map((p) => (p && p.text ? p.text : "")).join("")
+    : null;
+  if (!raw) throw new Error("gemini: empty response");
+  return parseJsonLoose(raw);
 }
 
 /* ─────────── prompts ─────────── */
@@ -435,6 +509,34 @@ Quy tắc:
 - Chỉ trả JSON.`;
 };
 
+const IMAGE_PROMPT = `Bạn là dịch giả Nhật–Việt, có nền tảng văn học và sư phạm.
+
+Ảnh đính kèm có chứa chữ Nhật (có thể là biển báo, menu, trang sách, ảnh chụp ghi chú…).
+Nhiệm vụ:
+1. Đọc (OCR) toàn bộ chữ Nhật trong ảnh theo đúng thứ tự đọc tự nhiên.
+2. Dịch sang tiếng Việt tự nhiên, không word-by-word.
+
+Trả về **JSON đúng schema** dưới đây, không có text nào khác:
+
+{
+  "source": "toàn bộ chữ Nhật đọc được từ ảnh (giữ nguyên, xuống dòng bằng \\n)",
+  "target": "bản dịch tiếng Việt tự nhiên",
+  "alternatives": ["bản dịch khác nếu có (formal/casual)"],
+  "notes": ["ghi chú về ngữ cảnh, sắc thái, văn hoá nếu cần"],
+  "vocabulary": [
+    {"word": "桜", "reading": "さくら", "meaning_vi": "hoa anh đào"}
+  ],
+  "grammar_notes": [
+    {"pattern": "～ている", "explanation": "diễn tả trạng thái đang tiếp diễn"}
+  ]
+}
+
+Quy tắc:
+- Nếu ảnh KHÔNG có chữ Nhật rõ ràng: đặt source="" và target="Không tìm thấy chữ Nhật trong ảnh.".
+- vocabulary: chỉ 5-10 từ quan trọng nhất.
+- grammar_notes: 1-3 mẫu nếu có, không bắt buộc.
+- Chỉ trả JSON.`;
+
 /* ─────────── dictionary handlers ─────────── */
 
 async function handleDictLookup(req, env, type) {
@@ -522,6 +624,91 @@ async function handleDictLookup(req, env, type) {
   const cacheVal = {
     type,
     query: normalized,
+    result,
+    created_at: Date.now(),
+    hits: 1,
+  };
+  await env.DICT_CACHE.put(cacheKey, JSON.stringify(cacheVal), { expirationTtl: CACHE_TTL });
+
+  return json({
+    ok: true,
+    cached: false,
+    data: result,
+    quota: quotaCheck,
+    user: ctx.user ? { email: ctx.user.email, name: ctx.user.name } : null,
+  });
+}
+
+// Image lookup: OCR + translate a photo containing Japanese text.
+async function handleImageLookup(req, env) {
+  if (req.method !== "POST") return err(405, "method not allowed");
+  let body;
+  try {
+    body = await req.json();
+  } catch {
+    return err(400, "invalid json");
+  }
+
+  let img = (body.image || "").trim();
+  let mime = body.mime || "image/jpeg";
+  if (!img) return err(400, "missing image");
+  // accept data URLs: data:image/png;base64,XXXX
+  const dm = img.match(/^data:([^;]+);base64,(.*)$/s);
+  if (dm) {
+    mime = dm[1];
+    img = dm[2];
+  }
+  if (!/^image\/(jpeg|jpg|png|webp|heic|heif)$/i.test(mime)) {
+    return err(400, "unsupported image type");
+  }
+  // base64 length ≈ bytes × 4/3. ~8.5M chars ≈ 6MB image.
+  if (img.length > 8_500_000) return err(400, "image too large (max ~6MB)");
+
+  const ctx = await quotaContext(req, env);
+  const cacheKey = `image:${await sha256Hex(mime + "|" + img)}`;
+
+  // 1. Cache hit?
+  const cached = await env.DICT_CACHE.get(cacheKey);
+  if (cached) {
+    const obj = JSON.parse(cached);
+    obj.hits = (obj.hits || 0) + 1;
+    env.DICT_CACHE.put(cacheKey, JSON.stringify(obj), { expirationTtl: CACHE_TTL });
+    const quota = await readQuota(env, ctx.who, ctx.limit);
+    return json({
+      ok: true,
+      cached: true,
+      data: obj.result,
+      quota,
+      user: ctx.user ? { email: ctx.user.email, name: ctx.user.name } : null,
+    });
+  }
+
+  // 2. Quota + 3. budget
+  const quotaCheck = await checkAndBumpQuota(env, ctx.who, ctx.limit);
+  if (!quotaCheck.ok) {
+    return err(429, "quota exceeded", {
+      quota: quotaCheck,
+      login_url: ctx.user ? null : "/tra-cuu/login.html",
+    });
+  }
+  const bud = await checkAndBumpBudget(env);
+  if (!bud.ok) {
+    return err(503, "service paused: monthly budget reached", { budget: bud });
+  }
+
+  // 4. Call Gemini vision
+  let result;
+  try {
+    const model = env.GEMINI_MODEL || "gemini-2.5-flash";
+    result = await callGeminiVision(env, IMAGE_PROMPT, img, mime, { model });
+  } catch (e) {
+    return err(502, "upstream error: " + e.message);
+  }
+
+  // 5. Cache
+  const cacheVal = {
+    type: "image",
+    query: cacheKey,
     result,
     created_at: Date.now(),
     hits: 1,
@@ -1022,6 +1209,7 @@ export default {
       else if (p === "/api/word")      res = await handleDictLookup(req, env, "word");
       else if (p === "/api/grammar")   res = await handleDictLookup(req, env, "grammar");
       else if (p === "/api/translate") res = await handleDictLookup(req, env, "translate");
+      else if (p === "/api/image")     res = await handleImageLookup(req, env);
 
       else if (p === "/api/auth/magic-link")      res = await handleMagicLink(req, env);
       else if (p === "/api/auth/verify")          res = await handleVerifyMagic(req, env);

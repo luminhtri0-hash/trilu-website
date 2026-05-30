@@ -22,8 +22,8 @@ COOKIE_DOMAIN            = ".trilu.edu.vn"
 AI_GATEWAY_BASE          = "https://gateway.ai.cloudflare.com/v1/b1c38d8a66c07f34bcc9b671aadb7eb4/trilu-dict/google-ai-studio"
 
 # Models
-GEMINI_MODEL_PRO         = "gemini-3.5-flash"
-GEMINI_MODEL             = "gemini-3.5-flash"
+GEMINI_MODEL_PRO         = "gemini-2.5-flash"
+GEMINI_MODEL             = "gemini-2.5-flash"
 
 # Quotas (bỏ giới hạn để test thoải mái)
 QUOTA_ANON               = "9999"
