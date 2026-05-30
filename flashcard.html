@@ -1459,6 +1459,233 @@ function LeaderboardScreen({ user, onNav, isDesktop }) {
 }
 
 // ============================================================
+// PROFILE / CÁ NHÂN
+// ============================================================
+function EvalSection({ title, items, color, mark }) {
+  if (!items || !items.length) return null;
+  return (
+    <div style={{ marginTop: 18 }}>
+      <Eyebrow size="sm" style={{ color }}>{title}</Eyebrow>
+      <div style={{ marginTop: 10, display: 'flex', flexDirection: 'column', gap: 9 }}>
+        {items.map((t, i) => (
+          <div key={i} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
+            <span style={{ fontFamily: FONT.jp, fontSize: 14, color, lineHeight: 1.45, flexShrink: 0 }}>{mark}</span>
+            <span style={{ fontFamily: FONT.vn, ...TYPO.body.md, color: TRILU.inkSoft, lineHeight: 1.65 }}>{t}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function TeacherEval({ srsStats }) {
+  const [ev, setEv] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const primaryBtn = {
+    marginTop: 18, padding: '11px 20px', cursor: 'pointer',
+    background: TRILU.vermillion, color: TRILU.creamHi, border: 'none', borderRadius: 3,
+    fontFamily: FONT.vn, ...TYPO.title.sm, fontWeight: 600, letterSpacing: '0.01em',
+  };
+  const linkBtn = {
+    background: 'none', border: 'none', cursor: 'pointer', padding: 0,
+    color: TRILU.indigo, fontFamily: FONT.vn, ...TYPO.body.md, fontWeight: 600,
+    textDecoration: 'underline', textUnderlineOffset: '3px',
+  };
+
+  const run = useCallback(async (force) => {
+    setLoading(true); setError(null);
+    try {
+      const j = await api('/api/evaluate', {
+        method: 'POST',
+        body: JSON.stringify({
+          dueToday: srsStats?.due || 0,
+          newToday: srsStats?.new || 0,
+          hardToday: srsStats?.hard || 0,
+          force: !!force,
+        }),
+      });
+      setEv(j.evaluation);
+    } catch (e) {
+      setError(e.message === 'auth required'
+        ? 'Bạn cần đăng nhập để dùng tính năng này.'
+        : 'Không lấy được đánh giá, thử lại sau.');
+    } finally {
+      setLoading(false);
+    }
+  }, [srsStats]);
+
+  return (
+    <div style={{
+      marginTop: 26, padding: '24px 24px 26px', position: 'relative',
+      background: TRILU.creamHi, border: `1px solid ${TRILU.rule}`, borderRadius: 4,
+    }}>
+      <VerticalKanji text="評価" size={13} style={{ position: 'absolute', top: 22, right: 22, letterSpacing: 3, opacity: 0.85 }} />
+      <Eyebrow size="md">Giáo viên đánh giá</Eyebrow>
+      <div style={{ fontFamily: FONT.vnHead, ...TYPO.headline.sm, color: TRILU.ink, marginTop: 8, fontWeight: 600 }}>
+        Nhận xét từ thầy cô AI
+      </div>
+      <div style={{ fontFamily: FONT.vn, ...TYPO.body.sm, color: TRILU.inkMute, marginTop: 6, lineHeight: 1.6, maxWidth: 460 }}>
+        Gemini phân tích tiến độ học của bạn và đưa ra đề xuất cho tuần tới.
+      </div>
+
+      {!ev && !loading && (
+        <button onClick={() => run(false)} style={primaryBtn}>Nhờ giáo viên đánh giá</button>
+      )}
+
+      {loading && (
+        <div style={{ marginTop: 18, display: 'flex', alignItems: 'center', gap: 10, color: TRILU.inkSoft, fontFamily: FONT.vn, ...TYPO.body.md }}>
+          <span style={{ fontFamily: FONT.jp, fontSize: 18, color: TRILU.vermillion }}>筆</span>
+          Thầy cô đang xem bài của bạn…
+        </div>
+      )}
+
+      {error && !loading && (
+        <div style={{ marginTop: 16, color: TRILU.vermillionDeep, fontFamily: FONT.vn, ...TYPO.body.md }}>
+          {error} <button onClick={() => run(false)} style={linkBtn}>Thử lại</button>
+        </div>
+      )}
+
+      {ev && !loading && (
+        <div style={{ marginTop: 18 }}>
+          {ev.level && (
+            <div style={{
+              display: 'inline-block', padding: '4px 12px', borderRadius: 999,
+              background: TRILU.indigo, color: TRILU.creamHi,
+              fontFamily: FONT.vn, ...TYPO.eyebrow.sm,
+            }}>{ev.level}</div>
+          )}
+          {ev.headline && (
+            <div style={{ fontFamily: FONT.vnHead, ...TYPO.headline.sm, color: TRILU.ink, marginTop: 12, fontWeight: 600, lineHeight: 1.35 }}>
+              {ev.headline}
+            </div>
+          )}
+          {ev.summary && (
+            <div style={{ fontFamily: FONT.vn, ...TYPO.body.lg, color: TRILU.inkSoft, marginTop: 10, lineHeight: 1.7 }}>
+              {ev.summary}
+            </div>
+          )}
+          <EvalSection title="Điểm mạnh" items={ev.strengths} color={TRILU.moss} mark="◎" />
+          <EvalSection title="Cần cải thiện" items={ev.improvements} color={TRILU.vermillion} mark="△" />
+          <EvalSection title="Đề xuất cho tuần tới" items={ev.recommendations} color={TRILU.indigo} mark="→" />
+          {ev.encouragement && (
+            <div style={{
+              marginTop: 20, paddingTop: 16, borderTop: `1px solid ${TRILU.rule}`,
+              fontFamily: FONT.vnHead, fontStyle: 'italic', ...TYPO.title.md, color: TRILU.gold, lineHeight: 1.6,
+            }}>
+              「{ev.encouragement}」
+            </div>
+          )}
+          <div><button onClick={() => run(true)} style={{ ...linkBtn, marginTop: 18 }}>Đánh giá lại</button></div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function ProfileScreen({ user, srsStats, onNav, isDesktop }) {
+  const name = user?.name || (user?.email || '').split('@')[0] || 'Học viên';
+  const initial = (user?.name || user?.email || 'M').charAt(0).toUpperCase();
+  const streak = srsStats?.streak || 0;
+  const due = srsStats?.due || 0;
+  const newCards = srsStats?.new || 0;
+  const hard = srsStats?.hard || 0;
+  const week = srsStats?.weekMinutes || [0, 0, 0, 0, 0, 0, 0];
+  const weekTotal = week.reduce((a, b) => a + (b || 0), 0);
+
+  const statItems = [
+    { label: 'Chuỗi ngày', value: streak,   jp: '連', color: TRILU.vermillion },
+    { label: 'Cần ôn',     value: due,      jp: '習', color: TRILU.indigo },
+    { label: 'Thẻ mới',    value: newCards, jp: '新', color: TRILU.moss },
+    { label: 'Thẻ khó',    value: hard,     jp: '難', color: TRILU.gold },
+  ];
+
+  const content = (
+    <>
+      {/* Account */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 18 }}>
+        <div style={{
+          width: 64, height: 64, borderRadius: '50%', flexShrink: 0,
+          background: TRILU.indigo, color: TRILU.creamHi,
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontFamily: FONT.jp, fontSize: 28, fontWeight: 600,
+          border: `2px solid ${TRILU.gold}`,
+        }}>{initial}</div>
+        <div style={{ minWidth: 0 }}>
+          <Eyebrow size="sm">Thành viên Trí Lữ</Eyebrow>
+          <div style={{ fontFamily: FONT.vnHead, ...TYPO.headline.md, color: TRILU.ink, marginTop: 4, fontWeight: 600 }}>
+            {name}
+          </div>
+          {user?.email && (
+            <div style={{ fontFamily: FONT.mono, ...TYPO.meta.md, color: TRILU.inkMute, marginTop: 2, overflow: 'hidden', textOverflow: 'ellipsis' }}>
+              {user.email}
+            </div>
+          )}
+        </div>
+      </div>
+      <InkRule width={48} style={{ marginTop: 20 }} />
+
+      {/* Stats */}
+      <div style={{ marginTop: 24 }}>
+        <Eyebrow size="md">Thống kê học tập</Eyebrow>
+        <div style={{
+          marginTop: 14, display: 'grid',
+          gridTemplateColumns: isDesktop ? 'repeat(4, 1fr)' : 'repeat(2, 1fr)', gap: 12,
+        }}>
+          {statItems.map(s => (
+            <div key={s.label} style={{
+              padding: '16px 16px 14px', background: TRILU.creamHi,
+              border: `1px solid ${TRILU.rule}`, borderRadius: 4, position: 'relative',
+            }}>
+              <span style={{ position: 'absolute', top: 12, right: 12, fontFamily: FONT.jp, fontSize: 15, color: s.color, opacity: 0.8 }}>{s.jp}</span>
+              <div style={{ fontFamily: FONT.mono, fontSize: 30, fontWeight: 700, color: s.color, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>{s.value}</div>
+              <div style={{ fontFamily: FONT.vn, ...TYPO.meta.md, color: TRILU.inkSoft, marginTop: 6 }}>{s.label}</div>
+            </div>
+          ))}
+        </div>
+        <div style={{ fontFamily: FONT.vn, ...TYPO.meta.md, color: TRILU.inkMute, marginTop: 12 }}>
+          Tuần này: {Math.round(weekTotal * 10) / 10} lượt hoạt động được ghi nhận.
+        </div>
+      </div>
+
+      {/* Teacher evaluation */}
+      <TeacherEval srsStats={srsStats} />
+    </>
+  );
+
+  if (isDesktop) {
+    return (
+      <DeskFrame>
+        <DeskRail active="profile" onNav={onNav} streak={streak} />
+        <div style={{ flex: 1, minWidth: 0, padding: '44px 40px 60px', overflow: 'auto' }}>
+          <div style={{ maxWidth: 820 }}>
+            <Eyebrow size="md">Cá nhân</Eyebrow>
+            <div style={{ fontFamily: FONT.jp, ...TYPO.headline.lg, color: TRILU.ink, marginTop: 8, fontWeight: 500 }}>個人</div>
+            <InkRule width={56} style={{ marginTop: 12, marginBottom: 28 }} />
+            {content}
+          </div>
+        </div>
+      </DeskFrame>
+    );
+  }
+
+  return (
+    <div className="app-frame scroll" style={{ ...washiBg(0.4), paddingBottom: 96 }}>
+      <StatusBar/>
+      <div style={{ padding: '12px 24px 0', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <BrandMark size={40} />
+        <Eyebrow size="sm">Cá nhân</Eyebrow>
+      </div>
+      <div style={{ padding: '22px 22px 0' }}>
+        {content}
+      </div>
+      <TabBar active="profile" onNav={onNav} />
+    </div>
+  );
+}
+
+// ============================================================
 // DESKTOP LAYOUTS (≥1024px) — from Claude Design
 // ============================================================
 const DeskCtx = React.createContext({ fluid: true, vw: 1440 });
@@ -2438,6 +2665,8 @@ function App() {
       : <LibraryScreen decks={decks} onNav={setRoute} onOpenDeck={openDeck} />;
   } else if (route === 'stats') {
     screen = <LeaderboardScreen user={user} onNav={setRoute} isDesktop={isDesktop} />;
+  } else if (route === 'profile') {
+    screen = <ProfileScreen user={user} srsStats={srsStats} onNav={setRoute} isDesktop={isDesktop} />;
   } else {
     screen = isDesktop
       ? <DesktopHomeScreen user={user} srsStats={srsStats} decks={decks} onStart={startFromDue} onNav={setRoute} onOpenDeck={openDeck} />
