@@ -318,4 +318,12 @@ document.addEventListener('click', function(e) {
   }
 });
 </script>
+
+<style>.tl-spk{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;margin-right:8px;padding:0;border:1px solid var(--gold,#B89568);background:transparent;color:var(--gold,#B89568);border-radius:50%;font-size:11px;cursor:pointer;vertical-align:middle;line-height:1;transition:all .15s;flex:none}.tl-spk:hover{background:var(--gold,#B89568);color:#fff}.tl-spk.on{background:var(--navy,#1B3A6B);border-color:var(--navy,#1B3A6B);color:#fff}</style>
+<script>(function(){var jv=null;function pick(){try{var v=speechSynthesis.getVoices();jv=v.filter(function(x){return /ja|Japanese|日本/i.test((x.lang||'')+(x.name||''));})[0]||null;}catch(e){}}pick();try{speechSynthesis.onvoiceschanged=pick;}catch(e){}
+function clean(el){var c=el.cloneNode(true);c.querySelectorAll('rt,.tl-spk').forEach(function(n){n.remove();});return (c.textContent||'').replace(/\s+/g,' ').trim();}
+function speak(t,b){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=0.85;if(jv)u.voice=jv;if(b){b.classList.add('on');u.onend=u.onerror=function(){b.classList.remove('on');};}speechSynthesis.speak(u);}catch(e){}}
+function add(el){if(el.dataset.spk)return;el.dataset.spk='1';var t=clean(el);if(!t)return;var b=document.createElement('button');b.type='button';b.className='tl-spk';b.setAttribute('aria-label','Phát âm');b.textContent='🔊';b.addEventListener('click',function(e){e.stopPropagation();e.preventDefault();speak(t,b);});el.insertBefore(b,el.firstChild);}
+document.querySelectorAll('.ex-jp, .ex-q').forEach(add);})();</script>
+
 </body></html>

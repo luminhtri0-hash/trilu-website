@@ -83,6 +83,27 @@ jlpt/n5/
 - Sandbox **không xóa được file** (chỉ ghi đè) — build chạy lại sẽ overwrite, không cần xóa thủ công.
 - Romaji/kana/nghĩa giữ y nguyên từ file gốc, không tự thêm/sửa.
 
-## 7. CÁCH ĐƯA LÊN WEB
+## 7. CÁCH ĐƯA LÊN WEB — CẦN ANH TRI CHẠY 1 LỆNH
 
-Trong `trilu-deploy` đã là git repo. Để live: `git add . && git commit -m "N5 lessons" && git push` → 1–2 phút sau lên trilu.edu.vn. (Chi tiết xem `HUONG-DAN-DAY-WEB.md`.)
+Toàn bộ đã được **commit gộp tại chỗ**: commit `c6a2627` (259 file) — gồm 199 trang bài + hub + trang chọn bài design mới + `jlpt-study.css`.
+
+Cowork KHÔNG push được (sandbox không có credential GitHub, vì bảo mật). Anh Tri mở **Terminal** và chạy:
+
+```
+cd ~/Downloads/trilu-deploy
+git push origin main
+```
+
+- Nếu báo lỗi `index.lock`: chạy `rm -f .git/index.lock` rồi push lại.
+- Sau 1–2 phút → GitHub Pages deploy → xem tại https://www.trilu.edu.vn/jlpt/n5.html
+
+## 8. ĐÃ HOÀN THÀNH (cập nhật 2026-05-30)
+- 199 trang bài Từ vựng + Ngữ pháp N5–N1 (tách riêng từng bài).
+- Hub 5 cấp + 10 trang chọn bài theo **thiết kế Claude Design** (editorial luxury, `jlpt-study.css`).
+- 30 trang placeholder cho 6 học phần còn lại.
+- 4 prompt giao Cowork song song: `PROMPT-A-THI-THU.md`, `PROMPT-B-DOC-HIEU.md`, `PROMPT-C-NGHE-HIEU.md`, `PROMPT-D-KAIWA.md`.
+
+## 9. CÒN LẠI
+- Anh Tri push (lệnh ở mục 7).
+- Phần Thi thử / Đọc hiểu / Nghe hiểu / Kaiwa: giao 4 Cowork song song (xem các file PROMPT).
+- Nâng cấp khung trang bài học (lesson chrome) theo design mới — đợt sau.

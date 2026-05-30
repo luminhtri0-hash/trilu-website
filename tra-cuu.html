@@ -231,6 +231,10 @@ h1{text-align:center;max-width:16ch;margin-left:auto;margin-right:auto;font-size
 .r-card{border-radius:24px;padding:clamp(28px,4vw,44px);box-shadow:0 24px 60px -34px rgba(15,37,71,.3)}
 .chip{border-radius:999px}
 #out-word,#out-grammar,#out-translate{max-width:860px;margin-left:auto;margin-right:auto}
+.doc-row{max-width:760px;margin:0 auto 24px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+.doc-btn{font-family:var(--mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;padding:11px 20px;border-radius:999px;background:transparent;border:1px solid rgba(184,149,104,0.5);color:var(--gold);cursor:pointer;font-weight:600;transition:all .2s}
+.doc-btn:hover{background:var(--gold);color:var(--cream);border-color:var(--gold)}
+.doc-hint{font-family:var(--mono);font-size:10px;letter-spacing:0.1em;color:rgba(27,58,107,0.5)}
 @media(max-width:600px){
   h1{font-size:34px}
   .search-row,#out-word,#out-grammar,#out-translate{max-width:100%}
@@ -307,7 +311,12 @@ h1{text-align:center;max-width:16ch;margin-left:auto;margin-right:auto;font-size
         <button type="submit" class="search-btn">DỊCH →</button>
       </form>
     </div>
-    <p class="note">Dịch tự nhiên, có ghi chú văn hoá + từ vựng quan trọng. Bấm 📷 ở bất kỳ ô nào để tra bằng ảnh. Kết quả được cache để lần sau dùng lại miễn phí.</p>
+    <p class="note">Dịch tự nhiên, có ghi chú văn hoá + từ vựng quan trọng. Bấm 📷 để tra bằng ảnh, hoặc 📄 để dịch file. Kết quả được cache để lần sau dùng lại miễn phí.</p>
+    <div class="doc-row">
+      <input id="doc-input" type="file" accept=".pdf,.docx,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
+      <button type="button" id="doc-btn" class="doc-btn">📄 Dịch file PDF / Word</button>
+      <span class="doc-hint">Tối đa ~3000 ký tự · tự lưu cache</span>
+    </div>
     <input id="img-input" type="file" accept="image/*" hidden>
     <div id="out-translate"></div>
   </div>
@@ -989,6 +998,80 @@ h1{text-align:center;max-width:16ch;margin-left:auto;margin-right:auto;font-size
   $('#img-input').addEventListener('change', (e) => {
     const f = e.target.files && e.target.files[0];
     searchImage(f, imgType);
+    e.target.value = '';
+  });
+
+  // ─────── dịch file PDF / Word (tối đa 3000 ký tự, dùng cache /api/translate) ───────
+  const DOC_LIMIT = 3000;
+  function loadScript(src){
+    return new Promise((res, rej) => {
+      if(document.querySelector('script[data-lib="'+src+'"]')){ res(); return; }
+      const s = document.createElement('script');
+      s.src = src; s.dataset.lib = src;
+      s.onload = () => res();
+      s.onerror = () => rej(new Error('Không tải được thư viện đọc file.'));
+      document.head.appendChild(s);
+    });
+  }
+  async function extractDocText(file){
+    const name = (file.name||'').toLowerCase();
+    if(name.endsWith('.pdf') || file.type === 'application/pdf'){
+      await loadScript('https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js');
+      window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+      const buf = await file.arrayBuffer();
+      const pdf = await window.pdfjsLib.getDocument({data: buf}).promise;
+      let text = '';
+      for(let p = 1; p <= pdf.numPages; p++){
+        const page = await pdf.getPage(p);
+        const c = await page.getTextContent();
+        text += c.items.map(i => i.str).join('') + '\n';
+        if(text.length > DOC_LIMIT + 500) break;
+      }
+      return text;
+    }
+    if(name.endsWith('.docx') || (file.type||'').includes('officedocument.wordprocessingml')){
+      await loadScript('https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js');
+      const buf = await file.arrayBuffer();
+      const r = await window.mammoth.extractRawText({arrayBuffer: buf});
+      return r.value || '';
+    }
+    throw new Error('Chỉ hỗ trợ PDF và Word (.docx).');
+  }
+  async function searchDocTranslate(file){
+    if(!file) return;
+    const tab = $$('.tab').find(t => t.dataset.tab === 'translate');
+    if(tab) tab.click();
+    window.scrollTo({top: $('#panel-translate').offsetTop - 20, behavior: 'smooth'});
+    setState('#out-translate', 'loading', 'Đang đọc file…');
+    try{
+      let text = (await extractDocText(file)).replace(/[ \t]+\n/g, '\n').replace(/\n{3,}/g, '\n\n').trim();
+      if(!text){ setState('#out-translate', 'error', 'Không đọc được chữ trong file (có thể là PDF chụp ảnh/scan).'); return; }
+      let truncated = false;
+      if(text.length > DOC_LIMIT){ text = text.slice(0, DOC_LIMIT); truncated = true; }
+      $('#q-translate').value = text;
+      direction = 'ja->vi';
+      $$('#dir-toggle .dir-btn').forEach(b => b.classList.toggle('active', b.dataset.dir === 'ja->vi'));
+      setState('#out-translate', 'loading', 'Đang dịch file…');
+      const r = await apiCall('/api/translate', {text, direction: 'ja->vi'});
+      renderTranslate($('#out-translate'), r.data, r, 'ja->vi');
+      if(truncated){
+        const n = document.createElement('p');
+        n.className = 'note';
+        n.style.cssText = 'margin-top:14px;text-align:left;color:var(--sumi)';
+        n.textContent = '⚠️ File dài hơn ' + DOC_LIMIT + ' ký tự — đã dịch phần đầu trong giới hạn.';
+        $('#out-translate').appendChild(n);
+      }
+      addHistory('translate', '📄 ' + ((file.name||'file').length > 38 ? (file.name||'file').slice(0,36)+'…' : (file.name||'file')));
+      refreshMe();
+    }catch(err){
+      handleErr('#out-translate', err);
+    }
+  }
+  $('#doc-btn').addEventListener('click', () => $('#doc-input').click());
+  $('#doc-input').addEventListener('change', (e) => {
+    const f = e.target.files && e.target.files[0];
+    if(f && f.size > 15*1024*1024){ setState('#out-translate', 'error', 'File quá lớn (tối đa 15MB).'); e.target.value=''; return; }
+    searchDocTranslate(f);
     e.target.value = '';
   });
 
