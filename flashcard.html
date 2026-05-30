@@ -167,6 +167,64 @@ const TRILU = {
   again: '#A8442D', hard: '#B5824A', good: '#6F7F4E', easy: '#1B3A6B',
 };
 
+// ============================================================
+// TYPOGRAPHY SYSTEM (Claude Design v2 — no-wrap eyebrows, VN+12%)
+// ============================================================
+const FONT = {
+  jp: '"Noto Serif JP", serif',
+  vnHead: '"Cormorant Garamond", "Noto Serif JP", serif',
+  vn: '"Be Vietnam Pro", system-ui, sans-serif',
+  mono: '"Inter Tight", "Be Vietnam Pro", sans-serif',
+};
+const TYPO = {
+  display: {
+    xl: { fontSize: 200, lineHeight: 1,    letterSpacing: '-0.04em' },
+    lg: { fontSize: 120, lineHeight: 1,    letterSpacing: '-0.03em' },
+    md: { fontSize: 96,  lineHeight: 1,    letterSpacing: '-0.02em' },
+    sm: { fontSize: 64,  lineHeight: 1.04, letterSpacing: '-0.01em' },
+  },
+  headline: {
+    lg: { fontSize: 34, lineHeight: 1.2,  letterSpacing: '0.005em' },
+    md: { fontSize: 30, lineHeight: 1.2,  letterSpacing: '0.005em' },
+    sm: { fontSize: 26, lineHeight: 1.22, letterSpacing: '0.005em' },
+    xs: { fontSize: 22, lineHeight: 1.25, letterSpacing: '0.005em' },
+  },
+  title: {
+    lg: { fontSize: 20, lineHeight: 1.3 },
+    md: { fontSize: 18, lineHeight: 1.35 },
+    sm: { fontSize: 16, lineHeight: 1.4 },
+  },
+  body: {
+    lg: { fontSize: 15, lineHeight: 1.6 },
+    md: { fontSize: 14, lineHeight: 1.55 },
+    sm: { fontSize: 13, lineHeight: 1.5 },
+  },
+  meta: {
+    md: { fontSize: 12, lineHeight: 1.45 },
+    sm: { fontSize: 11, lineHeight: 1.45 },
+  },
+  eyebrow: {
+    md: { fontSize: 11, lineHeight: 1, letterSpacing: '0.2em',  textTransform: 'uppercase', whiteSpace: 'nowrap' },
+    sm: { fontSize: 10, lineHeight: 1, letterSpacing: '0.18em', textTransform: 'uppercase', whiteSpace: 'nowrap' },
+  },
+  mono: {
+    md: { fontSize: 12, lineHeight: 1, fontVariantNumeric: 'tabular-nums' },
+    sm: { fontSize: 11, lineHeight: 1, fontVariantNumeric: 'tabular-nums' },
+  },
+};
+const SPACE = { sectionDesktop: 32, sectionMobile: 22, block: 20, inline: 12 };
+
+// Eyebrow label — uppercase + nowrap built in (never wrap 2 dòng)
+function Eyebrow({ children, size = 'sm', color, style = {} }) {
+  return (
+    <div style={{
+      fontFamily: FONT.vn, fontWeight: 600,
+      color: color || TRILU.inkMute,
+      ...TYPO.eyebrow[size], ...style,
+    }}>{children}</div>
+  );
+}
+
 const washiBg = (opacity = 0.35) => ({
   backgroundColor: TRILU.cream,
   backgroundImage:
@@ -252,20 +310,23 @@ function BrandWordmark({ size = 18, align = 'left' }) {
   );
 }
 
-function BrandMark({ size = 44, layout = 'horizontal' }) {
-  if (layout === 'stacked') {
-    return (
-      <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: Math.round(size * 0.22) }}>
-        <BrandBadge size={size} />
-        <BrandWordmark size={Math.round(size * 0.4)} align="center" />
-      </div>
-    );
-  }
-  return (
+function BrandMark({ size = 44, layout = 'horizontal', href = '/' }) {
+  const inner = layout === 'stacked' ? (
+    <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: Math.round(size * 0.22) }}>
+      <BrandBadge size={size} />
+      <BrandWordmark size={Math.round(size * 0.4)} align="center" />
+    </div>
+  ) : (
     <div style={{ display: 'inline-flex', alignItems: 'center', gap: Math.round(size * 0.28) }}>
       <BrandBadge size={size} />
       <BrandWordmark size={Math.round(size * 0.4)} />
     </div>
+  );
+  if (!href) return inner;
+  return (
+    <a href={href} title="Về trang chủ Trí Lữ" style={{ textDecoration: 'none', color: 'inherit', display: 'inline-block' }}>
+      {inner}
+    </a>
   );
 }
 
@@ -334,10 +395,14 @@ function TabBar({ active, onNav }) {
             flex: 1, padding: 0,
           }}>
           <div style={{
-            fontFamily: '"Noto Serif JP", serif', fontSize: 18,
+            fontFamily: FONT.jp, fontSize: 18,
             color: it.id === active ? TRILU.vermillion : TRILU.inkMute,
           }}>{it.icon}</div>
-          <div style={{ fontSize: 9, letterSpacing: 1, textTransform: 'uppercase', fontWeight: it.id === active ? 600 : 400 }}>
+          <div style={{
+            fontFamily: FONT.vn,
+            fontSize: 10, letterSpacing: '0.04em', whiteSpace: 'nowrap',
+            fontWeight: it.id === active ? 600 : 400,
+          }}>
             {it.label}
           </div>
         </button>
@@ -390,61 +455,62 @@ function HomeScreen({ user, srsStats, decks, onStart, onNav, onOpenDeck }) {
           width: 36, height: 36, borderRadius: '50%', cursor: 'pointer',
           background: TRILU.creamHi, border: `1px solid ${TRILU.rule}`,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontFamily: '"Noto Serif JP", serif', fontSize: 14, fontWeight: 600,
+          fontFamily: FONT.jp, fontSize: 15, fontWeight: 600,
           color: TRILU.indigo,
         }}>{userInitial}</button>
       </div>
 
       {/* Greeting */}
-      <div style={{ padding: '24px 24px 0' }}>
+      <div style={{ padding: '22px 24px 0' }}>
+        <Eyebrow size="sm" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          {dateLabel.replace(/^./, c => c.toUpperCase())}
+          <span style={{ fontFamily: FONT.jp, letterSpacing: '0.04em', textTransform: 'none' }}>· {jpDate}</span>
+        </Eyebrow>
         <div style={{
-          fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase',
-        }}>
-          {dateLabel.replace(/^./, c => c.toUpperCase())} · <span style={{ fontFamily: '"Noto Serif JP", serif', letterSpacing: 1 }}>{jpDate}</span>
-        </div>
-        <div style={{
-          fontFamily: '"Noto Serif JP", serif',
-          fontSize: 24, fontWeight: 500, color: TRILU.ink,
-          marginTop: 8, letterSpacing: 0.3,
+          fontFamily: FONT.jp, color: TRILU.ink, marginTop: 10, fontWeight: 500,
+          ...TYPO.headline.sm,
         }}>
           {greeting}{user?.name ? ', ' + user.name : ''}.
         </div>
-        <InkRule width={48} style={{ marginTop: 10 }} />
+        <InkRule width={48} style={{ marginTop: 12 }} />
       </div>
 
       {/* Today hero */}
       <div style={{
-        margin: '24px 20px 0', padding: '22px 22px 20px',
+        margin: '22px 20px 0', padding: '22px 22px 20px',
         background: TRILU.creamHi, border: `1px solid ${TRILU.rule}`,
         borderRadius: 4, position: 'relative',
       }}>
         <VerticalKanji text="本日" style={{ position: 'absolute', top: 18, right: 18 }} />
-        <div style={{ fontSize: 10, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>Hôm nay</div>
+        <Eyebrow size="sm">Hôm nay</Eyebrow>
         <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, marginTop: 14 }}>
           <span style={{
-            fontFamily: '"Noto Serif JP", serif', fontSize: 64, fontWeight: 500,
-            color: TRILU.ink, lineHeight: 1, letterSpacing: -1,
+            fontFamily: FONT.jp, color: TRILU.ink, fontWeight: 500, ...TYPO.display.sm,
           }}>{due}</span>
-          <span style={{ fontSize: 14, color: TRILU.inkSoft, lineHeight: 1.4 }}>
+          <span style={{
+            fontFamily: FONT.vn, color: TRILU.inkSoft, ...TYPO.body.md,
+          }}>
             thẻ cần<br/>ôn tập
           </span>
         </div>
         <div style={{
           marginTop: 18, paddingTop: 14,
           borderTop: `1px dashed ${TRILU.rule}`,
-          display: 'flex', justifyContent: 'space-between',
+          display: 'flex', justifyContent: 'space-between', gap: 10,
         }}>
           <Stat label="Đến hạn" value={Math.max(0, due - newCards)} color={TRILU.indigo} />
           <Stat label="Thẻ mới" value={newCards} color={TRILU.moss} />
           <Stat label="Khó" value={hard} color={TRILU.vermillion} />
         </div>
         <button onClick={onStart} disabled={!due} style={{
-          marginTop: 18, width: '100%', height: 48,
+          marginTop: 20, width: '100%', height: 50,
           background: due ? TRILU.vermillion : TRILU.rule,
           color: '#F8EFD9', border: 'none', borderRadius: 3,
-          fontSize: 14, fontWeight: 600, letterSpacing: 1.5,
+          fontFamily: FONT.vn,
+          fontSize: 13, fontWeight: 600, letterSpacing: '0.14em',
           textTransform: 'uppercase', cursor: due ? 'pointer' : 'not-allowed',
           display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10,
+          whiteSpace: 'nowrap',
         }}>
           {due ? 'Bắt đầu ôn tập' : 'Chưa có thẻ đến hạn'}
           {due > 0 && <svg width="14" height="10" viewBox="0 0 14 10"><path d="M0 5h12M8 1l4 4-4 4" stroke="#F8EFD9" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>}
@@ -452,17 +518,19 @@ function HomeScreen({ user, srsStats, decks, onStart, onNav, onOpenDeck }) {
       </div>
 
       {/* Week */}
-      <div style={{ padding: '24px 24px 0' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-          <div style={{ fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>Tuần này</div>
-          <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 13, color: TRILU.ink }}>
-            <span style={{ color: TRILU.vermillion, fontWeight: 600 }}>{streak}</span>
-            <span style={{ color: TRILU.inkMute, marginLeft: 6, fontFamily: '"Be Vietnam Pro"', fontSize: 11 }}>ngày liên tiếp</span>
+      <div style={{ padding: '22px 24px 0' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 12 }}>
+          <Eyebrow size="md">Tuần này</Eyebrow>
+          <div style={{ whiteSpace: 'nowrap', display: 'flex', alignItems: 'baseline', gap: 6 }}>
+            <span style={{ fontFamily: FONT.mono, color: TRILU.vermillion, fontWeight: 700, ...TYPO.title.sm }}>{streak}</span>
+            <span style={{ fontFamily: FONT.vn, color: TRILU.inkMute, ...TYPO.meta.sm }}>
+              ngày liên tiếp
+            </span>
           </div>
         </div>
-        <div style={{ marginTop: 14, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', height: 56 }}>
+        <div style={{ marginTop: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', height: 56 }}>
           {week.map((v, i) => (
-            <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, width: 28 }}>
+            <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 7, width: 28 }}>
               <div style={{
                 width: 8, height: Math.max(6, v * 5 + 6),
                 background: i === todayIdx ? TRILU.vermillion : (i < todayIdx ? TRILU.ink : TRILU.rule),
@@ -470,8 +538,9 @@ function HomeScreen({ user, srsStats, decks, onStart, onNav, onOpenDeck }) {
                 borderRadius: 1,
               }}/>
               <div style={{
-                fontSize: 10, color: i === todayIdx ? TRILU.ink : TRILU.inkMute,
-                fontWeight: i === todayIdx ? 600 : 400, letterSpacing: 0.5,
+                fontFamily: FONT.vn,
+                fontSize: 11, color: i === todayIdx ? TRILU.ink : TRILU.inkMute,
+                fontWeight: i === todayIdx ? 600 : 400, lineHeight: 1,
               }}>{['T2','T3','T4','T5','T6','T7','CN'][i]}</div>
             </div>
           ))}
@@ -481,12 +550,7 @@ function HomeScreen({ user, srsStats, decks, onStart, onNav, onOpenDeck }) {
       {/* Recent decks */}
       {decks && decks.length > 0 && (
         <div style={{ padding: '22px 24px 0' }}>
-          <div style={{
-            fontSize: 11, letterSpacing: 3, color: TRILU.inkMute,
-            textTransform: 'uppercase', marginBottom: 12,
-          }}>
-            Bộ thẻ đang học
-          </div>
+          <Eyebrow size="md" style={{ marginBottom: 12 }}>Bộ thẻ đang học</Eyebrow>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {decks.slice(0, 3).map(d => (
               <DeckRow key={d.id} deck={d} onClick={() => onOpenDeck && onOpenDeck(d)} />
@@ -502,9 +566,11 @@ function HomeScreen({ user, srsStats, decks, onStart, onNav, onOpenDeck }) {
 
 function Stat({ label, value, color }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-      <span style={{ fontSize: 10, color: TRILU.inkMute, letterSpacing: 1, textTransform: 'uppercase' }}>{label}</span>
-      <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 22, fontWeight: 500, color, lineHeight: 1 }}>{value}</span>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 5, minWidth: 0 }}>
+      <Eyebrow size="sm" style={{ letterSpacing: '0.1em' }}>{label}</Eyebrow>
+      <span style={{
+        fontFamily: FONT.jp, fontWeight: 500, color, ...TYPO.title.lg,
+      }}>{value}</span>
     </div>
   );
 }
@@ -523,23 +589,29 @@ function DeckRow({ deck, onClick }) {
         width: 44, height: 44, flexShrink: 0,
         background: TRILU.cream, border: `1px solid ${TRILU.rule}`,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontFamily: '"Noto Serif JP", serif', fontSize: 24,
+        fontFamily: FONT.jp, fontSize: 24,
         color: accent, fontWeight: 500,
       }}>{deck.kanji}</div>
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{
-            fontSize: 9, letterSpacing: 1.5, fontWeight: 700,
-            color: accent, padding: '2px 6px',
+            fontFamily: FONT.mono,
+            fontSize: 10, letterSpacing: '0.08em', fontWeight: 700,
+            color: accent, padding: '2px 6px', whiteSpace: 'nowrap',
             border: `1px solid ${accent}`, borderRadius: 2,
           }}>{deck.level}</span>
-          <span style={{ fontSize: 14, color: TRILU.ink, fontWeight: 500 }}>{deck.name}</span>
+          <span style={{
+            fontFamily: FONT.vn, color: TRILU.ink, fontWeight: 500,
+            ...TYPO.body.md, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+          }}>{deck.name}</span>
         </div>
-        <div style={{ marginTop: 8, display: 'flex', alignItems: 'center', gap: 10 }}>
+        <div style={{ marginTop: 9, display: 'flex', alignItems: 'center', gap: 10 }}>
           <div style={{ flex: 1, height: 2, background: TRILU.rule, borderRadius: 1, overflow: 'hidden' }}>
             <div style={{ width: `${pct*100}%`, height: '100%', background: accent }}/>
           </div>
-          <span style={{ fontSize: 10, color: TRILU.inkMute, fontVariantNumeric: 'tabular-nums' }}>
+          <span style={{
+            fontFamily: FONT.mono, color: TRILU.inkMute, ...TYPO.mono.sm, whiteSpace: 'nowrap',
+          }}>
             {deck.done}/{deck.total}
           </span>
         </div>
@@ -570,25 +642,34 @@ function LibraryScreen({ decks, onOpenDeck, onNav }) {
     <div className="app-frame scroll" style={{ ...washiBg(0.4), paddingBottom: 96 }}>
       <StatusBar/>
       <div style={{ padding: '16px 24px 0' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div>
-            <div style={{ fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>Thư viện</div>
-            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginTop: 4 }}>
-              <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 28, fontWeight: 500, color: TRILU.ink, letterSpacing: 0.3 }}>Bộ thẻ</span>
-              <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 16, color: TRILU.inkMute, letterSpacing: 2 }}>単語帳</span>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 12 }}>
+          <div style={{ minWidth: 0 }}>
+            <Eyebrow size="md">Thư viện</Eyebrow>
+            <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginTop: 6 }}>
+              <span style={{
+                fontFamily: FONT.jp, fontWeight: 500, color: TRILU.ink, ...TYPO.headline.sm,
+              }}>Bộ thẻ</span>
+              <span style={{
+                fontFamily: FONT.jp, fontSize: 16, color: TRILU.inkMute, letterSpacing: 2,
+              }}>単語帳</span>
             </div>
           </div>
         </div>
         <InkRule width={48} style={{ marginTop: 12 }} />
       </div>
 
-      <div style={{ padding: '20px 24px 0', display: 'flex', gap: 24, borderBottom: `1px solid ${TRILU.rule}`, margin: '20px 0 0' }}>
+      <div style={{
+        padding: '0 24px', display: 'flex', gap: 24,
+        borderBottom: `1px solid ${TRILU.rule}`, margin: '20px 0 0',
+      }}>
         {['JLPT','BJT','Tùy chỉnh'].map(t => (
           <button key={t} onClick={() => setTrack(t)} style={{
             background: 'none', border: 'none', cursor: 'pointer',
             padding: '0 0 12px', position: 'relative',
-            fontSize: 13, fontWeight: track === t ? 600 : 400,
-            color: track === t ? TRILU.ink : TRILU.inkMute, letterSpacing: 0.5,
+            fontFamily: FONT.vn, whiteSpace: 'nowrap',
+            fontSize: 14, fontWeight: track === t ? 600 : 400,
+            color: track === t ? TRILU.ink : TRILU.inkMute,
+            letterSpacing: '0.01em',
           }}>
             {t}
             {track === t && (
@@ -607,18 +688,21 @@ function LibraryScreen({ decks, onOpenDeck, onNav }) {
                 background: active ? TRILU.ink : 'transparent',
                 color: active ? TRILU.creamHi : TRILU.inkSoft,
                 border: `1px solid ${active ? TRILU.ink : TRILU.rule}`,
-                padding: '7px 14px', borderRadius: 100, cursor: 'pointer',
-                fontSize: 12, fontWeight: 600, letterSpacing: 1, flexShrink: 0,
+                padding: '7px 14px', borderRadius: 100, cursor: 'pointer', flexShrink: 0,
+                fontFamily: FONT.mono, fontSize: 12, fontWeight: 600, letterSpacing: '0.06em',
               }}>{l}</button>
             );
           })}
         </div>
       )}
 
-      <div style={{ padding: '14px 24px 8px', display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-        <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase' }}>
+      <div style={{
+        padding: '14px 24px 8px', display: 'flex',
+        justifyContent: 'space-between', alignItems: 'baseline', gap: 12,
+      }}>
+        <Eyebrow size="sm">
           {filtered.length} bộ thẻ {track === 'JLPT' ? `· ${level}` : ''}
-        </div>
+        </Eyebrow>
       </div>
 
       <div style={{ padding: '0 20px' }}>
@@ -654,7 +738,7 @@ function DeckCard({ deck, onClick }) {
         border: `1px solid ${complete ? TRILU.moss : TRILU.rule}`,
         borderRadius: 3,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontFamily: '"Noto Serif JP", serif', fontSize: 28,
+        fontFamily: FONT.jp, fontSize: 28,
         color: complete ? TRILU.creamHi : TRILU.ink, fontWeight: 500,
       }}>
         {deck.kanji}
@@ -667,17 +751,23 @@ function DeckCard({ deck, onClick }) {
         )}
       </div>
       <div style={{ flex: 1, minWidth: 0 }}>
-        <div style={{ fontSize: 14, color: TRILU.ink, fontWeight: 500, letterSpacing: 0.2 }}>{deck.name}</div>
-        <div style={{ fontSize: 11, color: TRILU.inkMute, marginTop: 2, letterSpacing: 0.3 }}>{deck.sub}</div>
+        <div style={{
+          fontFamily: FONT.vn, color: TRILU.ink, fontWeight: 500,
+          ...TYPO.body.md, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+        }}>{deck.name}</div>
+        <div style={{
+          fontFamily: FONT.vn, color: TRILU.inkMute, marginTop: 3,
+          ...TYPO.meta.sm, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+        }}>{deck.sub}</div>
         <div style={{ marginTop: 10, display: 'flex', alignItems: 'center', gap: 10 }}>
           <div style={{ flex: 1, height: 2, background: TRILU.rule, overflow: 'hidden' }}>
             <div style={{ width: `${pct * 100}%`, height: '100%', background: complete ? TRILU.moss : TRILU.ink, opacity: complete ? 1 : 0.8 }}/>
           </div>
           <span style={{
-            fontFamily: '"Noto Serif JP", serif', fontSize: 11,
+            fontFamily: complete ? FONT.jp : FONT.mono,
             color: complete ? TRILU.moss : TRILU.inkSoft,
-            fontVariantNumeric: 'tabular-nums', letterSpacing: 0.5,
-            minWidth: 44, textAlign: 'right',
+            ...TYPO.mono.sm, letterSpacing: complete ? '0.04em' : 0,
+            minWidth: 44, textAlign: 'right', whiteSpace: 'nowrap',
           }}>
             {complete ? '完了' : `${deck.done}/${deck.total}`}
           </span>
@@ -777,7 +867,7 @@ function StudyScreen({ session, onExit, onRate, onShowMenu }) {
       <div className="app-frame" style={{ ...washiBg(0.4), display:'grid', placeItems:'center' }}>
         <div style={{ textAlign:'center', padding: 40 }}>
           <BrandBadge size={64}/>
-          <div style={{ marginTop: 24, fontFamily:'"Noto Serif JP", serif', fontSize: 20, color: TRILU.ink }}>Đang tải thẻ…</div>
+          <div style={{ marginTop: 24, fontFamily: FONT.jp, fontSize: 20, color: TRILU.ink }}>Đang tải thẻ…</div>
         </div>
       </div>
     );
@@ -811,11 +901,13 @@ function StudyScreen({ session, onExit, onRate, onShowMenu }) {
               }}/>
             ))}
           </div>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-            <span style={{ fontSize: 10, letterSpacing: 2, color: TRILU.inkMute, textTransform: 'uppercase' }}>
-              {session.deckLabel || 'Phiên ôn tập'}
-            </span>
-            <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 11, color: TRILU.ink, fontVariantNumeric: 'tabular-nums' }}>
+          <div style={{
+            display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 10,
+          }}>
+            <Eyebrow size="sm">{session.deckLabel || 'Phiên ôn tập'}</Eyebrow>
+            <span style={{
+              fontFamily: FONT.mono, color: TRILU.ink, ...TYPO.mono.md, whiteSpace: 'nowrap',
+            }}>
               {String(current + 1).padStart(2,'0')} <span style={{ color: TRILU.inkMute }}>/ {total}</span>
             </span>
           </div>
@@ -852,9 +944,9 @@ function StudyScreen({ session, onExit, onRate, onShowMenu }) {
             <Hanko text={card.word[0] || '智'} size={28} style={{ position: 'absolute', top: 16, left: 16, opacity: 0.92 }} />
             <VerticalKanji text={'第' + (current + 1).toString().padStart(2,'0')} style={{ position: 'absolute', top: 18, right: 18, letterSpacing: 2 }} />
             <CardFront card={card} onPlayAudio={(e)=>{ e.stopPropagation(); playAudio(card.word); }} />
-            <div style={{ position: 'absolute', bottom: 18, left: 0, right: 0, textAlign: 'center', fontSize: 10, letterSpacing: 2, color: TRILU.inkMute, textTransform: 'uppercase' }}>
-              Chạm để xem nghĩa
-            </div>
+            <Eyebrow size="sm" style={{
+              position: 'absolute', bottom: 18, left: 0, right: 0, textAlign: 'center',
+            }}>Chạm để xem nghĩa</Eyebrow>
           </div>
           <div className="flip-face back" style={{
             background: TRILU.creamHi, border: `1px solid ${TRILU.rule}`,
@@ -862,9 +954,9 @@ function StudyScreen({ session, onExit, onRate, onShowMenu }) {
             overflow: 'hidden',
           }}>
             <CardBack card={card} onPlayAudio={(text, e)=>{ e?.stopPropagation?.(); playAudio(text); }} />
-            <div style={{ position: 'absolute', bottom: 18, left: 0, right: 0, textAlign: 'center', fontSize: 10, letterSpacing: 2, color: TRILU.inkMute, textTransform: 'uppercase' }}>
-              Chạm để gập lại
-            </div>
+            <Eyebrow size="sm" style={{
+              position: 'absolute', bottom: 18, left: 0, right: 0, textAlign: 'center',
+            }}>Chạm để gập lại</Eyebrow>
           </div>
         </div>
       </div>
@@ -898,22 +990,19 @@ function CardFront({ card, onPlayAudio }) {
     }}>
       {card.reading && (
         <div style={{
-          fontFamily: '"Noto Serif JP", serif',
-          fontSize: 14, letterSpacing: 8, color: TRILU.inkSoft, marginBottom: 6,
+          fontFamily: FONT.jp,
+          fontSize: 15, letterSpacing: 8, color: TRILU.inkSoft, marginBottom: 8,
         }}>{card.reading}</div>
       )}
       <div style={{
-        fontFamily: '"Noto Serif JP", serif',
-        fontSize: card.word.length > 4 ? 80 : 140,
-        fontWeight: 500, color: TRILU.ink, lineHeight: 1, letterSpacing: -2,
+        fontFamily: FONT.jp,
+        fontWeight: 500, color: TRILU.ink,
+        ...(card.word.length > 4 ? TYPO.display.md : TYPO.display.lg),
       }}>{card.word}</div>
       <InkRule width={64} style={{ marginTop: 28 }} />
-      <div style={{
-        marginTop: 18, fontSize: 11, color: TRILU.inkMute,
-        letterSpacing: 2.5, textTransform: 'uppercase',
-      }}>
+      <Eyebrow size="md" style={{ marginTop: 18 }}>
         {card.pos || 'Từ vựng'}
-      </div>
+      </Eyebrow>
       <button onClick={onPlayAudio} aria-label="Phát âm" style={{
         position:'absolute', top: 18, right: 60,
         width: 36, height: 36, border: `1px solid ${TRILU.rule}`,
@@ -941,13 +1030,19 @@ function CardBack({ card, onPlayAudio }) {
         display: 'flex', alignItems: 'baseline', gap: 14,
         paddingBottom: 16, borderBottom: `1px solid ${TRILU.rule}`,
       }}>
-        <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 40, color: TRILU.ink, lineHeight: 1 }}>{card.word}</div>
-        <div style={{ display: 'flex', flexDirection: 'column' }}>
+        <div style={{ fontFamily: FONT.jp, fontSize: 46, color: TRILU.ink, lineHeight: 1.3 }}>{card.word}</div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
           {card.reading && (
-            <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 14, color: TRILU.inkSoft, letterSpacing: 2 }}>{card.reading}</span>
+            <span style={{
+              fontFamily: FONT.jp, fontSize: 15,
+              color: TRILU.inkSoft, letterSpacing: 2, lineHeight: 1,
+            }}>{card.reading}</span>
           )}
           {card.romaji && (
-            <span style={{ fontSize: 11, color: TRILU.inkMute, letterSpacing: 1, fontStyle: 'italic', marginTop: 2 }}>{card.romaji}</span>
+            <span style={{
+              fontFamily: FONT.vn, color: TRILU.inkMute,
+              fontStyle: 'italic', ...TYPO.meta.md, lineHeight: 1,
+            }}>{card.romaji}</span>
           )}
         </div>
         <button onClick={(e)=>onPlayAudio(card.word, e)} aria-label="Phát âm" style={{
@@ -965,19 +1060,20 @@ function CardBack({ card, onPlayAudio }) {
 
       {card.hanViet && (
         <div style={{ marginTop: 14 }}>
-          <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase', marginBottom: 4 }}>Hán Việt</div>
-          <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: 18, color: TRILU.indigo, fontWeight: 600, letterSpacing: 0.5 }}>
+          <Eyebrow size="sm" style={{ marginBottom: 5 }}>Hán Việt</Eyebrow>
+          <div style={{
+            fontFamily: FONT.vnHead, color: TRILU.indigo, fontWeight: 600,
+            ...TYPO.title.md, letterSpacing: '0.02em',
+          }}>
             {card.hanViet}
           </div>
         </div>
       )}
 
       <div style={{ marginTop: 18 }}>
-        <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase', marginBottom: 6 }}>Nghĩa</div>
+        <Eyebrow size="sm" style={{ marginBottom: 7 }}>Nghĩa</Eyebrow>
         <div style={{
-          fontFamily: '"Noto Serif JP", serif',
-          fontSize: 20, color: TRILU.ink, fontWeight: 500,
-          lineHeight: 1.4, letterSpacing: 0.3,
+          fontFamily: FONT.jp, color: TRILU.ink, fontWeight: 500, ...TYPO.headline.xs,
         }}>
           {card.meaning || 'Đang tải nghĩa…'}
         </div>
@@ -992,9 +1088,11 @@ function CardBack({ card, onPlayAudio }) {
         }}>
           <div style={{
             display:'flex', justifyContent:'space-between', alignItems:'baseline',
-            marginBottom: 8,
+            marginBottom: 9, gap: 8,
           }}>
-            <div style={{ fontSize: 9, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase' }}>例文 · Ví dụ</div>
+            <Eyebrow size="sm">
+              <span style={{ fontFamily: FONT.jp, letterSpacing: '0.04em' }}>例文</span> · Ví dụ
+            </Eyebrow>
             <button onClick={(e)=>onPlayAudio(example.ja, e)} aria-label="Phát âm câu" style={{
               width: 24, height: 24, border: `1px solid ${TRILU.rule}`,
               background: TRILU.creamHi, borderRadius: 2, cursor: 'pointer',
@@ -1007,13 +1105,14 @@ function CardBack({ card, onPlayAudio }) {
             </button>
           </div>
           <div style={{
-            fontFamily: '"Noto Serif JP", serif',
-            fontSize: 17, color: TRILU.ink, lineHeight: 1.5,
+            fontFamily: FONT.jp, color: TRILU.ink, fontSize: 19, lineHeight: 1.5,
           }}>
             {example.furigana ? renderRuby(example.furigana) : example.ja}
           </div>
           {example.vi && (
-            <div style={{ marginTop: 8, fontSize: 13, color: TRILU.inkSoft, lineHeight: 1.4 }}>
+            <div style={{
+              marginTop: 9, fontFamily: FONT.vn, color: TRILU.inkSoft, ...TYPO.body.md,
+            }}>
               {example.vi}
             </div>
           )}
@@ -1024,9 +1123,9 @@ function CardBack({ card, onPlayAudio }) {
         <div style={{ marginTop: 16, display: 'flex', gap: 6, flexWrap: 'wrap' }}>
           {card.tags.map(t => (
             <span key={t} style={{
-              fontFamily: '"Noto Serif JP", serif', fontSize: 10,
-              padding: '3px 8px', border: `1px solid ${TRILU.rule}`,
-              color: TRILU.inkSoft, letterSpacing: 1, borderRadius: 2,
+              fontFamily: FONT.jp, fontSize: 11,
+              padding: '4px 9px', border: `1px solid ${TRILU.rule}`,
+              color: TRILU.inkSoft, letterSpacing: 1, borderRadius: 2, whiteSpace: 'nowrap',
             }}>{t}</span>
           ))}
         </div>
@@ -1041,13 +1140,15 @@ function RateBtn({ label, sub, color, kbd, onClick }) {
       background: TRILU.creamHi,
       border: `1px solid ${color}`, borderTop: `2px solid ${color}`,
       borderRadius: 3, padding: '12px 4px 10px',
-      display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 3,
+      display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4,
       cursor: 'pointer', position: 'relative',
     }}>
-      <span style={{ fontSize: 13, fontWeight: 600, color: TRILU.ink, letterSpacing: 0.5 }}>{label}</span>
       <span style={{
-        fontSize: 10, color, fontFamily: '"Noto Serif JP", serif',
-        fontVariantNumeric: 'tabular-nums', letterSpacing: 0.5,
+        fontFamily: FONT.vn, fontSize: 14, fontWeight: 600, color: TRILU.ink,
+        letterSpacing: '0.01em', whiteSpace: 'nowrap',
+      }}>{label}</span>
+      <span style={{
+        fontFamily: FONT.mono, color, ...TYPO.mono.sm, letterSpacing: '0.02em', whiteSpace: 'nowrap',
       }}>{sub}</span>
       {kbd && <span className="kbd" style={{ position: 'absolute', top: -8, right: 4 }}>{kbd}</span>}
     </button>
@@ -1063,7 +1164,9 @@ function SummaryScreen({ summary, onContinue, onNav }) {
       <StatusBar/>
       <div style={{ flex: 1, display:'flex', flexDirection:'column', alignItems:'center', justifyContent:'center', textAlign:'center' }}>
         <BrandBadge size={72}/>
-        <div style={{ marginTop: 24, fontFamily: '"Noto Serif JP", serif', fontSize: 26, color: TRILU.ink }}>
+        <div style={{
+          marginTop: 24, fontFamily: FONT.jp, color: TRILU.ink, fontWeight: 500, ...TYPO.headline.sm,
+        }}>
           Hoàn thành phiên ôn tập
         </div>
         <InkRule width={64} style={{ marginTop: 14 }}/>
@@ -1140,8 +1243,10 @@ function LessonPicker({ deckGroup, onPickLesson, onBack }) {
           <svg width="14" height="14" viewBox="0 0 14 14"><path d="M9 2L3 7l6 5" stroke={TRILU.ink} strokeWidth="1.4" fill="none" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </button>
         <div>
-          <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase' }}>Chọn bài</div>
-          <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 20, color: TRILU.ink, marginTop: 4, letterSpacing: 0.3 }}>
+          <Eyebrow size="sm">Chọn bài</Eyebrow>
+          <div style={{
+            fontFamily: FONT.jp, color: TRILU.ink, marginTop: 6, fontWeight: 500, ...TYPO.title.lg,
+          }}>
             {deckGroup.label}
           </div>
         </div>
@@ -1319,10 +1424,11 @@ function LeaderboardScreen({ user, onNav, isDesktop }) {
       <DeskFrame>
         <DeskRail active="stats" onNav={onNav} streak={0} />
         <div style={{ flex: 1, minWidth: 0, padding: '48px 48px 48px', overflow: 'auto', maxWidth: 960, margin: '0 auto', width: '100%' }}>
-          <div style={{ fontSize: 12, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>
-            Bảng xếp hạng · <span style={{ fontFamily: '"Noto Serif JP", serif', letterSpacing: 1 }}>{cur.jp}</span>
-          </div>
-          <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 40, fontWeight: 500, color: TRILU.ink, marginTop: 10 }}>
+          <Eyebrow size="md" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+            Bảng xếp hạng
+            <span style={{ fontFamily: FONT.jp, letterSpacing: '0.04em', textTransform: 'none' }}>· {cur.jp}</span>
+          </Eyebrow>
+          <div style={{ fontFamily: FONT.jp, color: TRILU.ink, marginTop: 12, fontWeight: 500, ...TYPO.headline.lg }}>
             {cur.label}
           </div>
           <InkRule width={64} style={{ marginTop: 14, marginBottom: 32 }} />
@@ -1337,10 +1443,10 @@ function LeaderboardScreen({ user, onNav, isDesktop }) {
     <div className="app-frame scroll" style={{ ...washiBg(0.4), paddingBottom: 96 }}>
       <StatusBar/>
       <div style={{ padding: '18px 24px 0' }}>
-        <div style={{ fontSize: 12, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>Bảng xếp hạng</div>
-        <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginTop: 6 }}>
-          <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 30, fontWeight: 500, color: TRILU.ink }}>Tiến độ</span>
-          <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 16, color: TRILU.inkMute, letterSpacing: 2 }}>{cur.jp}</span>
+        <Eyebrow size="md">Bảng xếp hạng</Eyebrow>
+        <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginTop: 8 }}>
+          <span style={{ fontFamily: FONT.jp, color: TRILU.ink, fontWeight: 500, ...TYPO.headline.sm }}>Tiến độ</span>
+          <span style={{ fontFamily: FONT.jp, fontSize: 16, color: TRILU.inkMute, letterSpacing: 2 }}>{cur.jp}</span>
         </div>
         <InkRule width={52} style={{ marginTop: 14 }} />
       </div>
@@ -1381,7 +1487,7 @@ function DeskFrame({ children }) {
       width: '100%', minHeight: '100vh',
       display: 'flex', overflow: 'hidden',
       ...washiBg(0.4), color: TRILU.ink,
-      fontFamily: '"Be Vietnam Pro", system-ui, sans-serif',
+      fontFamily: FONT.vn,
       fontFeatureSettings: '"ss01"',
     }}>{children}</div>
   );
@@ -1403,7 +1509,7 @@ function DeskNavItem({ item, active, onClick, compact }) {
       <div style={{
         width: 34, height: 34, flexShrink: 0,
         display: 'flex', alignItems: 'center', justifyContent: 'center',
-        fontFamily: '"Noto Serif JP", serif', fontSize: 20,
+        fontFamily: FONT.jp, fontSize: 20,
         color: active ? TRILU.indigo : TRILU.inkMute,
         background: active ? TRILU.cream : 'transparent',
         border: active ? `1px solid ${TRILU.rule}` : '1px solid transparent',
@@ -1411,7 +1517,7 @@ function DeskNavItem({ item, active, onClick, compact }) {
       }}>{item.icon}</div>
       {!compact && (
         <span style={{
-          fontSize: 14, letterSpacing: 0.3,
+          fontFamily: FONT.vn, ...TYPO.body.md, letterSpacing: '0.01em', whiteSpace: 'nowrap',
           color: active ? TRILU.ink : TRILU.inkSoft,
           fontWeight: active ? 600 : 400,
         }}>{item.label}</span>
@@ -1439,13 +1545,16 @@ function DeskRail({ active, onNav, streak, extra }) {
       <div style={{ flex: 1 }} />
       <div style={{
         margin: '0 24px', paddingTop: 18, borderTop: `1px solid ${TRILU.rule}`,
-        display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between',
+        display: 'flex', alignItems: 'flex-end', justifyContent: 'space-between', gap: 10,
       }}>
         <div>
-          <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase' }}>Chuỗi ngày</div>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginTop: 4 }}>
-            <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 30, fontWeight: 600, color: TRILU.vermillion, lineHeight: 1 }}>{streak || 0}</span>
-            <span style={{ fontSize: 12, color: TRILU.inkSoft }}>ngày</span>
+          <Eyebrow size="sm">Chuỗi ngày</Eyebrow>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 6, marginTop: 6 }}>
+            <span style={{
+              fontFamily: FONT.mono, fontSize: 30, fontWeight: 700,
+              color: TRILU.vermillion, lineHeight: 1, fontVariantNumeric: 'tabular-nums',
+            }}>{streak || 0}</span>
+            <span style={{ fontFamily: FONT.vn, color: TRILU.inkSoft, ...TYPO.meta.md }}>ngày</span>
           </div>
         </div>
         <VerticalKanji text="五月" size={13} style={{ letterSpacing: 2, opacity: 0.8 }} />
@@ -1471,8 +1580,11 @@ function ProgressRing({ pct, size = 56, stroke = 4, color = TRILU.indigo, track 
 
 function SectionLabel({ children, right }) {
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 14 }}>
-      <div style={{ fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>{children}</div>
+    <div style={{
+      display: 'flex', justifyContent: 'space-between', alignItems: 'baseline',
+      marginBottom: 14, gap: 12,
+    }}>
+      <Eyebrow size="md">{children}</Eyebrow>
       {right}
     </div>
   );
@@ -1480,14 +1592,17 @@ function SectionLabel({ children, right }) {
 
 function DeskStat({ label, value, color }) {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-      <span style={{ fontSize: 10, color: TRILU.inkMute, letterSpacing: 1.5, textTransform: 'uppercase' }}>{label}</span>
-      <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 30, fontWeight: 500, color, lineHeight: 1 }}>{value}</span>
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
+      <Eyebrow size="sm" style={{ letterSpacing: '0.1em' }}>{label}</Eyebrow>
+      <span style={{
+        fontFamily: FONT.jp, fontSize: 30, fontWeight: 500, color, lineHeight: 1,
+      }}>{value}</span>
     </div>
   );
 }
 
 function DeckMini({ d, onClick }) {
+  const accent = d.accent || TRILU.indigo;
   return (
     <button onClick={onClick} style={{
       display: 'flex', alignItems: 'center', gap: 16,
@@ -1496,18 +1611,26 @@ function DeckMini({ d, onClick }) {
       cursor: 'pointer', width: '100%', textAlign: 'left',
       fontFamily: 'inherit',
     }}>
-      <ProgressRing pct={d.total ? d.done/d.total : 0} size={56} color={d.accent || TRILU.indigo}>
-        <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 22, color: d.accent || TRILU.indigo, fontWeight: 500 }}>{d.kanji}</span>
+      <ProgressRing pct={d.total ? d.done/d.total : 0} size={56} color={accent}>
+        <span style={{
+          fontFamily: FONT.jp, fontSize: 22, color: accent, fontWeight: 500,
+        }}>{d.kanji}</span>
       </ProgressRing>
       <div style={{ flex: 1, minWidth: 0 }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <span style={{
-            fontSize: 9, fontWeight: 700, letterSpacing: 1, color: d.accent || TRILU.indigo,
-            padding: '2px 6px', border: `1px solid ${d.accent || TRILU.indigo}`, borderRadius: 2,
+            fontFamily: FONT.mono, fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', color: accent,
+            padding: '2px 6px', border: `1px solid ${accent}`, borderRadius: 2, whiteSpace: 'nowrap',
           }}>{d.level}</span>
-          <span style={{ fontSize: 14, color: TRILU.ink, fontWeight: 500 }}>{d.name}</span>
+          <span style={{
+            fontFamily: FONT.vn, color: TRILU.ink, fontWeight: 500, ...TYPO.body.md,
+            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+          }}>{d.name}</span>
         </div>
-        <div style={{ marginTop: 8, fontSize: 11, color: TRILU.inkMute, fontVariantNumeric: 'tabular-nums' }}>
+        <div style={{
+          marginTop: 8, fontFamily: FONT.mono, color: TRILU.inkMute,
+          ...TYPO.mono.sm, whiteSpace: 'nowrap',
+        }}>
           {d.total ? Math.round(d.done/d.total*100) : 0}% · {d.done.toLocaleString()}/{d.total.toLocaleString()} thẻ
         </div>
       </div>
@@ -1551,24 +1674,30 @@ function DesktopHomeScreen({ user, srsStats, decks, onStart, onNav, onOpenDeck }
       <DeskRail active="home" onNav={onNav} streak={streak} />
       {/* center */}
       <div style={{ flex: 1, minWidth: 0, padding: '44px 40px 40px', overflow: 'auto' }}>
-        <div style={{ fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>
-          {dateLabel.replace(/^./, c => c.toUpperCase())} · <span style={{ fontFamily: '"Noto Serif JP", serif', letterSpacing: 1 }}>{jpDate}</span>
-        </div>
-        <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 34, fontWeight: 500, color: TRILU.ink, marginTop: 8, letterSpacing: 0.3 }}>
+        <Eyebrow size="md" style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
+          {dateLabel.replace(/^./, c => c.toUpperCase())}
+          <span style={{ fontFamily: FONT.jp, letterSpacing: '0.04em', textTransform: 'none' }}>· {jpDate}</span>
+        </Eyebrow>
+        <div style={{
+          fontFamily: FONT.jp, color: TRILU.ink, marginTop: 10, fontWeight: 500, ...TYPO.headline.lg,
+        }}>
           {greeting}, {userName}.
         </div>
         <InkRule width={56} style={{ marginTop: 12 }} />
         {/* Today hero */}
         <div style={{
-          marginTop: 28, padding: '32px 34px', position: 'relative',
+          marginTop: 32, padding: '32px 34px', position: 'relative',
           background: TRILU.creamHi, border: `1px solid ${TRILU.rule}`, borderRadius: 4,
         }}>
           <VerticalKanji text="本日" size={14} style={{ position: 'absolute', top: 26, right: 28, letterSpacing: 3 }} />
-          <div style={{ fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>Hôm nay</div>
+          <Eyebrow size="md">Hôm nay</Eyebrow>
           <div style={{ display: 'flex', alignItems: 'flex-end', gap: 36, marginTop: 16, flexWrap: 'wrap' }}>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 16 }}>
-              <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 96, fontWeight: 500, color: TRILU.ink, lineHeight: 0.9, letterSpacing: -2 }}>{due}</span>
-              <span style={{ fontSize: 16, color: TRILU.inkSoft, lineHeight: 1.4 }}>thẻ cần<br/>ôn tập</span>
+              <span style={{
+                fontFamily: FONT.jp, fontWeight: 500,
+                color: TRILU.ink, ...TYPO.display.md,
+              }}>{due}</span>
+              <span style={{ fontFamily: FONT.vn, color: TRILU.inkSoft, ...TYPO.body.lg }}>thẻ cần<br/>ôn tập</span>
             </div>
             <div style={{ flex: 1, minWidth: 220, display: 'flex', gap: 28, paddingBottom: 8 }}>
               <DeskStat label="Đến hạn" value={Math.max(0, due - newCards)} color={TRILU.indigo} />
@@ -1579,7 +1708,8 @@ function DesktopHomeScreen({ user, srsStats, decks, onStart, onNav, onOpenDeck }
           <button onClick={onStart} disabled={!due} style={{
             marginTop: 26, height: 52, padding: '0 38px',
             background: due ? TRILU.vermillion : TRILU.rule, color: '#F8EFD9', border: 'none', borderRadius: 3,
-            fontSize: 14, fontWeight: 600, letterSpacing: 1.5, textTransform: 'uppercase',
+            fontFamily: FONT.vn, fontSize: 13, fontWeight: 600, letterSpacing: '0.14em',
+            textTransform: 'uppercase', whiteSpace: 'nowrap',
             cursor: due ? 'pointer' : 'not-allowed', display: 'inline-flex', alignItems: 'center', gap: 12,
           }}>
             {due ? 'Bắt đầu ôn tập' : 'Chưa có thẻ đến hạn'}
@@ -1589,8 +1719,8 @@ function DesktopHomeScreen({ user, srsStats, decks, onStart, onNav, onOpenDeck }
         {/* week chart */}
         <div style={{ marginTop: 32 }}>
           <SectionLabel right={
-            <span style={{ fontSize: 12, color: TRILU.inkSoft }}>
-              Chuỗi <span style={{ fontFamily: '"Noto Serif JP", serif', color: TRILU.vermillion, fontWeight: 600 }}>{streak}</span> ngày
+            <span style={{ fontFamily: FONT.vn, color: TRILU.inkSoft, ...TYPO.meta.md, whiteSpace: 'nowrap' }}>
+              Chuỗi <span style={{ fontFamily: FONT.mono, color: TRILU.vermillion, fontWeight: 700 }}>{streak}</span> ngày
             </span>
           }>Tuần này</SectionLabel>
           <div style={{
@@ -1606,7 +1736,7 @@ function DesktopHomeScreen({ user, srsStats, decks, onStart, onNav, onOpenDeck }
                   opacity: i === todayIdx ? 1 : (i < todayIdx ? 0.72 : 1), borderRadius: 2,
                 }}/>
                 <span style={{
-                  fontSize: 11, color: i === todayIdx ? TRILU.ink : TRILU.inkMute,
+                  fontFamily: FONT.vn, fontSize: 11, color: i === todayIdx ? TRILU.ink : TRILU.inkMute,
                   fontWeight: i === todayIdx ? 600 : 400,
                 }}>{['T2','T3','T4','T5','T6','T7','CN'][i]}</span>
               </div>
@@ -1658,21 +1788,21 @@ function DesktopLibraryScreen({ decks, onNav, onOpenDeck, srsStats }) {
 
   const filterPanel = (
     <div style={{ margin: '24px 24px 0', paddingTop: 24, borderTop: `1px solid ${TRILU.rule}` }}>
-      <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase', marginBottom: 12 }}>Chương trình</div>
+      <Eyebrow size="sm" style={{ marginBottom: 12 }}>Chương trình</Eyebrow>
       <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
         {['JLPT','BJT','Tùy chỉnh'].map(t => (
           <button key={t} onClick={() => setTrack(t)} style={{
             textAlign: 'left', padding: '9px 12px', borderRadius: 3, cursor: 'pointer',
             background: track === t ? TRILU.creamHi : 'transparent',
             border: `1px solid ${track === t ? TRILU.rule : 'transparent'}`,
-            fontFamily: 'inherit', fontSize: 13,
+            fontFamily: FONT.vn, ...TYPO.body.sm, whiteSpace: 'nowrap',
             color: track === t ? TRILU.ink : TRILU.inkSoft, fontWeight: track === t ? 600 : 400,
           }}>{t}</button>
         ))}
       </div>
       {(TRACK_LEVELS[track] || []).length > 1 && (
         <>
-          <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase', margin: '22px 0 12px' }}>Cấp độ</div>
+          <Eyebrow size="sm" style={{ margin: '22px 0 12px' }}>Cấp độ</Eyebrow>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
             {TRACK_LEVELS[track].map(l => {
               const active = l === level;
@@ -1680,7 +1810,7 @@ function DesktopLibraryScreen({ decks, onNav, onOpenDeck, srsStats }) {
                 <button key={l} onClick={() => setLevel(l)} style={{
                   background: active ? TRILU.ink : 'transparent', color: active ? TRILU.creamHi : TRILU.inkSoft,
                   border: `1px solid ${active ? TRILU.ink : TRILU.rule}`, padding: '7px 14px', borderRadius: 100,
-                  cursor: 'pointer', fontSize: 12, fontWeight: 600, letterSpacing: 1, fontFamily: 'inherit',
+                  cursor: 'pointer', fontFamily: FONT.mono, fontSize: 12, fontWeight: 600, letterSpacing: '0.06em',
                 }}>{l}</button>
               );
             })}
@@ -1706,14 +1836,22 @@ function DesktopLibraryScreen({ decks, onNav, onOpenDeck, srsStats }) {
               <circle cx="6" cy="6" r="4.5" stroke={TRILU.inkMute} strokeWidth="1.3"/>
               <path d="M9.5 9.5 L12.5 12.5" stroke={TRILU.inkMute} strokeWidth="1.3" strokeLinecap="round"/>
             </svg>
-            <span style={{ fontSize: 14, color: TRILU.inkMute }}>Tìm bộ thẻ, từ vựng, kanji…</span>
+            <span style={{
+              fontFamily: FONT.vn, color: TRILU.inkMute, ...TYPO.body.md, whiteSpace: 'nowrap',
+            }}>Tìm bộ thẻ, từ vựng, kanji…</span>
           </div>
         </div>
         <div style={{ flex: 1, padding: '32px 40px', overflow: 'auto' }}>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: 14 }}>
-            <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 30, fontWeight: 500, color: TRILU.ink }}>Bộ thẻ</span>
-            <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 18, color: TRILU.inkMute, letterSpacing: 3 }}>単語帳</span>
-            <span style={{ marginLeft: 8, fontSize: 12, color: TRILU.inkMute }}>{track} {track === 'JLPT' ? `· ${level}` : ''} · {filtered.length} bộ thẻ</span>
+          <div style={{ display: 'flex', alignItems: 'baseline', gap: 14, flexWrap: 'wrap' }}>
+            <span style={{
+              fontFamily: FONT.jp, fontWeight: 500, color: TRILU.ink, ...TYPO.headline.md,
+            }}>Bộ thẻ</span>
+            <span style={{
+              fontFamily: FONT.jp, fontSize: 18, color: TRILU.inkMute, letterSpacing: 3,
+            }}>単語帳</span>
+            <Eyebrow size="sm" style={{ marginLeft: 8 }}>
+              {track} {track === 'JLPT' ? `· ${level}` : ''} · {filtered.length} bộ thẻ
+            </Eyebrow>
           </div>
           <InkRule width={56} style={{ marginTop: 12 }} />
           <div style={{ marginTop: 24, display: 'grid', gridTemplateColumns: `repeat(${cols}, 1fr)`, gap: 16 }}>
@@ -1749,23 +1887,31 @@ function DeckGridCardDesk({ deck, onClick }) {
           background: complete ? TRILU.moss : TRILU.cream,
           border: `1px solid ${complete ? TRILU.moss : TRILU.rule}`,
           display: 'flex', alignItems: 'center', justifyContent: 'center',
-          fontFamily: '"Noto Serif JP", serif', fontSize: 40,
+          fontFamily: FONT.jp, fontSize: 40,
           color: complete ? TRILU.creamHi : TRILU.ink, fontWeight: 500,
         }}>{deck.kanji}</div>
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontSize: 15, fontWeight: 600, color: TRILU.ink, letterSpacing: 0.2 }}>{deck.name}</div>
-          <div style={{ fontSize: 12, color: TRILU.inkMute, marginTop: 3 }}>{deck.sub}</div>
+          <div style={{
+            fontFamily: FONT.vn, fontWeight: 600, color: TRILU.ink, ...TYPO.body.lg,
+            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+          }}>{deck.name}</div>
+          <div style={{
+            fontFamily: FONT.vn, color: TRILU.inkMute, marginTop: 3, ...TYPO.meta.md,
+            overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+          }}>{deck.sub}</div>
         </div>
       </div>
       <div style={{ flex: 1 }} />
       <div style={{ marginTop: 18 }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 7 }}>
-          <span style={{ fontSize: 11, color: TRILU.inkMute, fontVariantNumeric: 'tabular-nums' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: 7, gap: 8 }}>
+          <span style={{
+            fontFamily: FONT.mono, color: TRILU.inkMute, ...TYPO.mono.sm, whiteSpace: 'nowrap',
+          }}>
             {complete ? 'Đã hoàn thành' : `${deck.done.toLocaleString()}/${deck.total.toLocaleString()} thẻ`}
           </span>
           <span style={{
-            fontFamily: '"Noto Serif JP", serif', fontSize: 12,
-            color: complete ? TRILU.moss : TRILU.inkSoft, fontVariantNumeric: 'tabular-nums',
+            fontFamily: FONT.mono, ...TYPO.mono.sm,
+            color: complete ? TRILU.moss : TRILU.inkSoft, fontWeight: 700, whiteSpace: 'nowrap',
           }}>{Math.round(pct*100)}%</span>
         </div>
         <div style={{ height: 3, background: TRILU.rule, borderRadius: 2, overflow: 'hidden' }}>
@@ -1804,7 +1950,7 @@ function DesktopStudyScreen({ session, onExit, onRate, onShowMenu, playAudio }) 
         <div style={{ flex: 1, display: 'grid', placeItems: 'center' }}>
           <div style={{ textAlign: 'center' }}>
             <BrandBadge size={72}/>
-            <div style={{ marginTop: 24, fontFamily:'"Noto Serif JP", serif', fontSize: 22, color: TRILU.ink }}>Đang tải thẻ…</div>
+            <div style={{ marginTop: 24, fontFamily: FONT.jp, fontSize: 22, color: TRILU.ink }}>Đang tải thẻ…</div>
           </div>
         </div>
       </DeskFrame>
@@ -1825,9 +1971,7 @@ function DesktopStudyScreen({ session, onExit, onRate, onShowMenu, playAudio }) 
         }}>
           <BrandMark size={34} />
           <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <span style={{ fontSize: 12, letterSpacing: 2, color: TRILU.inkMute, textTransform: 'uppercase' }}>
-              {session.deckLabel || 'Phiên ôn tập'}
-            </span>
+            <Eyebrow size="sm">{session.deckLabel || 'Phiên ôn tập'}</Eyebrow>
             <div style={{ width: 1, height: 20, background: TRILU.rule }} />
             <button onClick={onShowMenu} style={{
               width: 36, height: 36, border: `1px solid ${TRILU.rule}`, background: 'transparent',
@@ -1850,12 +1994,15 @@ function DesktopStudyScreen({ session, onExit, onRate, onShowMenu, playAudio }) 
         <div style={{ flex: 1, display: 'flex', minHeight: 0 }}>
           {/* left: session */}
           <div style={{ width: 280, flexShrink: 0, borderRight: `1px solid ${TRILU.rule}`, padding: '32px 28px', display: 'flex', flexDirection: 'column' }}>
-            <div style={{ fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>Phiên ôn tập</div>
+            <Eyebrow size="md">Phiên ôn tập</Eyebrow>
             <div style={{ display: 'flex', alignItems: 'baseline', gap: 8, marginTop: 12 }}>
-              <span style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 48, fontWeight: 500, color: TRILU.ink, lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>
+              <span style={{
+                fontFamily: FONT.mono, fontSize: 48, fontWeight: 700, color: TRILU.ink,
+                lineHeight: 1, fontVariantNumeric: 'tabular-nums',
+              }}>
                 {String(current + 1).padStart(2,'0')}
               </span>
-              <span style={{ fontSize: 18, color: TRILU.inkMute }}>/ {total}</span>
+              <span style={{ fontFamily: FONT.vn, color: TRILU.inkMute, ...TYPO.title.md }}>/ {total}</span>
             </div>
             <div style={{ marginTop: 24, display: 'flex', flexDirection: 'column', gap: 4 }}>
               {Array.from({ length: total }).map((_, i) => (
@@ -1881,24 +2028,41 @@ function DesktopStudyScreen({ session, onExit, onRate, onShowMenu, playAudio }) 
               {!flipped ? (
                 <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: 40, textAlign: 'center' }}>
                   {card.reading && (
-                    <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 18, letterSpacing: 10, color: TRILU.inkSoft, marginBottom: 8 }}>{card.reading}</div>
+                    <div style={{
+                      fontFamily: FONT.jp, fontSize: 18, letterSpacing: 10,
+                      color: TRILU.inkSoft, marginBottom: 8,
+                    }}>{card.reading}</div>
                   )}
-                  <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: card.word.length > 4 ? 120 : 200, fontWeight: 500, color: TRILU.ink, lineHeight: 1, letterSpacing: -4 }}>{card.word}</div>
+                  <div style={{
+                    fontFamily: FONT.jp, fontWeight: 500, color: TRILU.ink,
+                    ...(card.word.length > 4 ? TYPO.display.lg : TYPO.display.xl),
+                  }}>{card.word}</div>
                   <InkRule width={80} style={{ marginTop: 32 }} />
-                  <div style={{ marginTop: 18, fontSize: 12, color: TRILU.inkMute, letterSpacing: 2.5, textTransform: 'uppercase' }}>{card.pos || 'Từ vựng'}</div>
+                  <Eyebrow size="md" style={{ marginTop: 18 }}>{card.pos || 'Từ vựng'}</Eyebrow>
                 </div>
               ) : (
                 <div style={{ position: 'absolute', inset: 0, display: 'flex', padding: '54px 48px 48px', gap: 40 }}>
                   <div style={{ width: 240, flexShrink: 0, display: 'flex', flexDirection: 'column' }}>
                     {card.reading && (
-                      <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 18, letterSpacing: 6, color: TRILU.inkSoft }}>{card.reading}</div>
+                      <div style={{
+                        fontFamily: FONT.jp, fontSize: 18, letterSpacing: 6, color: TRILU.inkSoft,
+                      }}>{card.reading}</div>
                     )}
-                    <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 92, fontWeight: 500, color: TRILU.ink, lineHeight: 1, marginTop: 4 }}>{card.word}</div>
-                    {card.romaji && <div style={{ fontSize: 13, color: TRILU.inkMute, fontStyle: 'italic', marginTop: 8 }}>{card.romaji}</div>}
+                    <div style={{
+                      fontFamily: FONT.jp, fontWeight: 500, color: TRILU.ink,
+                      ...TYPO.display.md, marginTop: 4,
+                    }}>{card.word}</div>
+                    {card.romaji && <div style={{
+                      fontFamily: FONT.vn, color: TRILU.inkMute,
+                      fontStyle: 'italic', marginTop: 8, ...TYPO.meta.md,
+                    }}>{card.romaji}</div>}
                     {card.hanViet && (
                       <div style={{ marginTop: 16 }}>
-                        <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase', marginBottom: 4 }}>Hán Việt</div>
-                        <div style={{ fontFamily: '"Cormorant Garamond", serif', fontSize: 18, color: TRILU.indigo, fontWeight: 600 }}>{card.hanViet}</div>
+                        <Eyebrow size="sm" style={{ marginBottom: 5 }}>Hán Việt</Eyebrow>
+                        <div style={{
+                          fontFamily: FONT.vnHead, color: TRILU.indigo, fontWeight: 600,
+                          ...TYPO.title.md, letterSpacing: '0.02em',
+                        }}>{card.hanViet}</div>
                       </div>
                     )}
                     <button onClick={(e)=>{e.stopPropagation(); playAudio(card.word);}} style={{
@@ -1912,25 +2076,34 @@ function DesktopStudyScreen({ session, onExit, onRate, onShowMenu, playAudio }) 
                     </button>
                   </div>
                   <div style={{ flex: 1, minWidth: 0, display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ fontSize: 10, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase' }}>Nghĩa</div>
-                    <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 26, color: TRILU.ink, fontWeight: 500, marginTop: 6, lineHeight: 1.4 }}>
+                    <Eyebrow size="sm">Nghĩa</Eyebrow>
+                    <div style={{
+                      fontFamily: FONT.jp, color: TRILU.ink, fontWeight: 500,
+                      marginTop: 7, ...TYPO.headline.sm,
+                    }}>
                       {card.meaning || 'Đang tải nghĩa…'}
                     </div>
                     {example && (
                       <div style={{ marginTop: 22, padding: '18px 20px', background: TRILU.cream, borderLeft: `2px solid ${TRILU.vermillion}` }}>
-                        <div style={{ fontSize: 9, letterSpacing: 2.5, color: TRILU.inkMute, textTransform: 'uppercase', marginBottom: 8 }}>例文 · Ví dụ</div>
-                        <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 20, color: TRILU.ink, lineHeight: 1.5 }}>
+                        <Eyebrow size="sm" style={{ marginBottom: 9 }}>
+                          <span style={{ fontFamily: FONT.jp, letterSpacing: '0.04em' }}>例文</span> · Ví dụ
+                        </Eyebrow>
+                        <div style={{
+                          fontFamily: FONT.jp, fontSize: 20, color: TRILU.ink, lineHeight: 1.5,
+                        }}>
                           {example.furigana ? renderRuby(example.furigana) : example.ja}
                         </div>
-                        {example.vi && <div style={{ fontSize: 13, color: TRILU.inkSoft, marginTop: 8 }}>{example.vi}</div>}
+                        {example.vi && <div style={{
+                          fontFamily: FONT.vn, color: TRILU.inkSoft, marginTop: 9, ...TYPO.body.md,
+                        }}>{example.vi}</div>}
                       </div>
                     )}
                     {(card.tags || []).length > 0 && (
                       <div style={{ marginTop: 'auto', paddingTop: 18, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                         {card.tags.map(t => (
                           <span key={t} style={{
-                            fontFamily: '"Noto Serif JP", serif', fontSize: 11, padding: '4px 10px',
-                            border: `1px solid ${TRILU.rule}`, color: TRILU.inkSoft, letterSpacing: 1, borderRadius: 2,
+                            fontFamily: FONT.jp, fontSize: 11, padding: '4px 10px',
+                            border: `1px solid ${TRILU.rule}`, color: TRILU.inkSoft, letterSpacing: 1, borderRadius: 2, whiteSpace: 'nowrap',
                           }}>{t}</span>
                         ))}
                       </div>
@@ -1938,10 +2111,9 @@ function DesktopStudyScreen({ session, onExit, onRate, onShowMenu, playAudio }) 
                   </div>
                 </div>
               )}
-              <div style={{
+              <Eyebrow size="sm" style={{
                 position: 'absolute', bottom: 18, left: 0, right: 0, textAlign: 'center',
-                fontSize: 10, letterSpacing: 2, color: TRILU.inkMute, textTransform: 'uppercase',
-              }}>{flipped ? 'Space — gập lại' : 'Space hoặc nhấp — xem nghĩa'}</div>
+              }}>{flipped ? 'Space — gập lại' : 'Space hoặc nhấp — xem nghĩa'}</Eyebrow>
             </div>
             {/* rating */}
             <div style={{
@@ -1959,7 +2131,7 @@ function DesktopStudyScreen({ session, onExit, onRate, onShowMenu, playAudio }) 
           {/* right: shortcuts */}
           {showShortcuts && (
             <div style={{ width: 280, flexShrink: 0, borderLeft: `1px solid ${TRILU.rule}`, padding: '32px 28px', display: 'flex', flexDirection: 'column' }}>
-              <div style={{ fontSize: 11, letterSpacing: 3, color: TRILU.inkMute, textTransform: 'uppercase' }}>Phím tắt</div>
+              <Eyebrow size="md">Phím tắt</Eyebrow>
               <div style={{ marginTop: 16, display: 'flex', flexDirection: 'column', gap: 10 }}>
                 <Shortcut keys={['Space']} label="Lật thẻ" />
                 <Shortcut keys={['1','2','3','4']} label="Đánh giá" />
@@ -1980,24 +2152,32 @@ function RateWide({ num, label, interval, desc, color, onClick }) {
       borderRadius: 3, padding: '14px 12px 12px', cursor: 'pointer', textAlign: 'left',
       fontFamily: 'inherit', position: 'relative',
     }}>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <span style={{ fontSize: 15, fontWeight: 600, color: TRILU.ink }}>{label}</span>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+        <span style={{
+          fontFamily: FONT.vn, fontWeight: 600, color: TRILU.ink, ...TYPO.title.sm, whiteSpace: 'nowrap',
+        }}>{label}</span>
         <kbd style={{
           width: 20, height: 20, display: 'inline-flex', alignItems: 'center', justifyContent: 'center',
           background: TRILU.cream, border: `1px solid ${TRILU.rule}`, borderRadius: 3,
-          fontSize: 11, color: TRILU.inkSoft, fontFamily: 'inherit',
+          fontFamily: FONT.mono, fontSize: 11, color: TRILU.inkSoft,
         }}>{num}</kbd>
       </div>
-      <div style={{ fontFamily: '"Noto Serif JP", serif', fontSize: 14, color, marginTop: 6, fontVariantNumeric: 'tabular-nums' }}>{interval}</div>
-      <div style={{ fontSize: 11, color: TRILU.inkMute, marginTop: 2 }}>{desc}</div>
+      <div style={{
+        fontFamily: FONT.mono, color, marginTop: 6, ...TYPO.mono.md, whiteSpace: 'nowrap',
+      }}>{interval}</div>
+      <div style={{
+        fontFamily: FONT.vn, color: TRILU.inkMute, marginTop: 2, ...TYPO.meta.sm,
+      }}>{desc}</div>
     </button>
   );
 }
 
 function Shortcut({ keys, label }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-      <span style={{ fontSize: 13, color: TRILU.inkSoft }}>{label}</span>
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8 }}>
+      <span style={{
+        fontFamily: FONT.vn, color: TRILU.inkSoft, ...TYPO.body.sm,
+      }}>{label}</span>
       <div style={{ display: 'flex', gap: 4 }}>
         {keys.map(k => (
           <kbd key={k} style={{
@@ -2005,7 +2185,7 @@ function Shortcut({ keys, label }) {
             alignItems: 'center', justifyContent: 'center',
             background: TRILU.cream, border: `1px solid ${TRILU.rule}`,
             borderBottomWidth: 2, borderRadius: 4,
-            fontSize: 12, fontFamily: 'inherit', color: TRILU.ink,
+            fontFamily: FONT.mono, fontSize: 12, color: TRILU.ink,
           }}>{k}</kbd>
         ))}
       </div>
