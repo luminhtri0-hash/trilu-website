@@ -1,5 +1,5 @@
-// Trí Lữ Nihongo Service Worker v4
-const CACHE = 'trilu-v4';
+// Trí Lữ Nihongo Service Worker v5
+const CACHE = 'trilu-v5';
 const APP_SHELL = ['/icon-32.png','/icon-180.png','/icon-192.png','/icon-512.png','/manifest.json','/nav.js','/offline.html'];
 
 self.addEventListener('install', e => {
