@@ -59,9 +59,9 @@ input[type=email]:focus{border-color:var(--ink);background:#fff}
   </a>
   <div class="eyebrow">Đăng nhập</div>
   <h1><em>Tra nhiều hơn,<br>nhớ lâu hơn.</em></h1>
-  <p class="lede">Đăng nhập để có <strong>100 lượt tra/ngày</strong> (khách 10 lượt/ngày). Lịch sử của bạn được lưu để xem lại.</p>
+  <p class="lede">Đăng nhập để lưu tiến độ flashcard, đồng bộ thẻ ghi nhớ giữa các thiết bị, và có 100 lượt tra/ngày.</p>
 
-  <a class="btn btn-google" href="/api/auth/google">
+  <a class="btn btn-google" id="googleBtn" href="https://trilu-dict-api.luminhtri0.workers.dev/api/auth/google">
     <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"><path d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84c-.21 1.13-.84 2.08-1.79 2.72v2.27h2.9c1.7-1.56 2.69-3.87 2.69-6.63z" fill="#4285F4"/><path d="M9 18c2.43 0 4.46-.81 5.95-2.18l-2.9-2.27c-.81.54-1.84.86-3.05.86-2.34 0-4.32-1.58-5.03-3.7H.96v2.34A9 9 0 0 0 9 18z" fill="#34A853"/><path d="M3.97 10.71A5.41 5.41 0 0 1 3.68 9c0-.6.1-1.17.29-1.71V4.95H.96A9 9 0 0 0 0 9c0 1.45.35 2.82.96 4.05l3.01-2.34z" fill="#FBBC05"/><path d="M9 3.58c1.32 0 2.5.45 3.44 1.35l2.58-2.58A9 9 0 0 0 9 0 9 9 0 0 0 .96 4.95L3.97 7.3C4.68 5.17 6.66 3.58 9 3.58z" fill="#EA4335"/></svg>
     Tiếp tục với Google
   </a>
@@ -81,6 +81,15 @@ input[type=email]:focus{border-color:var(--ink);background:#fff}
   <a href="/tra-cuu.html" class="back">← Quay lại tra cứu (khách)</a>
 </div>
 <script>
+// Worker API base — workers.dev URL trực tiếp vì Cloudflare proxy của trilu.edu.vn chưa active
+const API_BASE = 'https://trilu-dict-api.luminhtri0.workers.dev';
+
+// Pass through next param if any (vd /tra-cuu/login.html?next=/flashcard.html)
+const params = new URLSearchParams(location.search);
+const next = params.get('next') || '/tra-cuu.html';
+const googleBtn = document.getElementById('googleBtn');
+googleBtn.href = API_BASE + '/api/auth/google?next=' + encodeURIComponent(next);
+
 async function submitMagic(e){
   e.preventDefault();
   const email = document.getElementById('email').value.trim();
@@ -91,10 +100,10 @@ async function submitMagic(e){
   btn.textContent = 'Đang gửi…';
   status.innerHTML = '';
   try{
-    const r = await fetch('/api/auth/magic-link', {
+    const r = await fetch(API_BASE + '/api/auth/magic-link', {
       method: 'POST',
       headers: {'content-type':'application/json'},
-      body: JSON.stringify({email})
+      body: JSON.stringify({email, next})
     });
     const data = await r.json();
     if(r.ok){

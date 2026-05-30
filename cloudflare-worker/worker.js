@@ -136,12 +136,23 @@ function setCookie(name, value, opts = {}) {
   return s;
 }
 
-function clearCookie(name, env) {
-  return setCookie(name, "", {
-    Domain: env.COOKIE_DOMAIN,
+function clearCookie(name, env, req) {
+  const opts = {
     "Max-Age": 0,
     Expires: "Thu, 01 Jan 1970 00:00:00 GMT",
-  });
+  };
+  const d = cookieDomain(req, env);
+  if (d) opts.Domain = d;
+  return setCookie(name, "", opts);
+}
+
+/* Cookie domain helper: dùng .trilu.edu.vn khi hostname khớp,
+   ngược lại (workers.dev) trả về undefined → cookie default current host. */
+function cookieDomain(req, env) {
+  const host = req ? new URL(req.url).hostname : "";
+  const cd = (env.COOKIE_DOMAIN || "").replace(/^\./, "");
+  if (cd && (host === cd || host.endsWith("." + cd))) return env.COOKIE_DOMAIN;
+  return undefined;
 }
 
 /* ─────────── session / user helpers ─────────── */
@@ -737,7 +748,9 @@ async function handleMagicLink(req, env) {
   const payload = { email, expires_at: Date.now() + MAGIC_TTL * 1000 };
   await env.MAGIC.put(`magic:${token}`, JSON.stringify(payload), { expirationTtl: MAGIC_TTL });
 
-  const origin = env.ALLOWED_ORIGIN || "https://trilu.edu.vn";
+  // Dùng request origin để hoạt động được với cả workers.dev URL và custom domain
+  // (Cloudflare proxy của trilu.edu.vn có thể chưa active)
+  const origin = new URL(req.url).origin;
   const link = `${origin}/api/auth/verify?token=${token}`;
   const subject = "Trí Lữ · Đăng nhập tra cứu từ điển";
   const text = `Chào bạn,\n\nClick đường dẫn dưới đây để đăng nhập vào Trí Lữ Nihongo (link hết hạn sau 15 phút):\n\n${link}\n\nNếu bạn không yêu cầu đăng nhập, vui lòng bỏ qua email này.\n\n— Trí Lữ Nihongo · trilu.edu.vn`;
@@ -795,13 +808,15 @@ async function handleVerifyMagic(req, env) {
     providerId: payload.email,
   });
   const sessionToken = await createSession(env, userId);
-  const cookie = setCookie(SESSION_COOKIE, sessionToken, {
-    Domain: env.COOKIE_DOMAIN,
-    "Max-Age": SESSION_TTL,
-  });
-  return redirect("/tra-cuu.html?login=ok", {
-    headers: { "set-cookie": cookie },
-  });
+  // SameSite=None để cookie gửi được trong cross-site fetch (trilu.edu.vn → workers.dev)
+  const cookieOpts = { "Max-Age": SESSION_TTL, SameSite: "None" };
+  const cd = cookieDomain(req, env);
+  if (cd) cookieOpts.Domain = cd;
+  const cookie = setCookie(SESSION_COOKIE, sessionToken, cookieOpts);
+  const siteOrigin = env.ALLOWED_ORIGIN || "https://trilu.edu.vn";
+  const res = redirect(`${siteOrigin}/flashcard.html?login=ok`);
+  res.headers.append("set-cookie", cookie);
+  return res;
 }
 
 function errPage(message) {
@@ -819,15 +834,27 @@ function errPage(message) {
 
 /* ─────────── auth: Google OAuth ─────────── */
 
+/* Stateless OAuth state: state = base64url(`${nonce}.${ts}.${sig}`)
+   - Không dùng cookie (tránh bug SameSite + cross-domain)
+   - sig = HMAC(JWT_SECRET, `${nonce}.${ts}`)
+   - Verify: re-compute HMAC + check ts trong khoảng OAUTH_STATE_TTL */
+function b64urlEncode(s) {
+  return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+}
+function b64urlDecode(s) {
+  s = s.replace(/-/g, "+").replace(/_/g, "/");
+  while (s.length % 4) s += "=";
+  return atob(s);
+}
+
 async function handleGoogleStart(req, env) {
-  const state = randomHex(16);
-  const sig = await hmacHex(env.JWT_SECRET, state);
-  const stateCookie = setCookie("oauth_state", `${state}.${sig}`, {
-    Domain: env.COOKIE_DOMAIN,
-    "Max-Age": OAUTH_STATE_TTL,
-    SameSite: "Lax",
-  });
-  const origin = env.ALLOWED_ORIGIN || "https://trilu.edu.vn";
+  const nonce = randomHex(12);
+  const ts = String(Date.now());
+  const sig = await hmacHex(env.JWT_SECRET, `${nonce}.${ts}`);
+  const state = b64urlEncode(`${nonce}.${ts}.${sig}`);
+  // Dùng request origin để hoạt động được với cả workers.dev URL và custom domain
+  // (Cloudflare proxy của trilu.edu.vn có thể chưa active)
+  const origin = new URL(req.url).origin;
   const params = new URLSearchParams({
     client_id: env.GOOGLE_CLIENT_ID,
     redirect_uri: `${origin}/api/auth/google/callback`,
@@ -837,9 +864,7 @@ async function handleGoogleStart(req, env) {
     access_type: "online",
     prompt: "select_account",
   });
-  return redirect(`https://accounts.google.com/o/oauth2/v2/auth?${params}`, {
-    headers: { "set-cookie": stateCookie },
-  });
+  return redirect(`https://accounts.google.com/o/oauth2/v2/auth?${params}`);
 }
 
 async function handleGoogleCallback(req, env) {
@@ -848,14 +873,24 @@ async function handleGoogleCallback(req, env) {
   const state = url.searchParams.get("state");
   if (!code || !state) return errPage("Thiếu code/state từ Google.");
 
-  const cookies = parseCookies(req);
-  const stateCookie = cookies.oauth_state || "";
-  const [savedState, savedSig] = stateCookie.split(".");
-  if (savedState !== state) return errPage("State không khớp (có thể là CSRF).");
-  const expectSig = await hmacHex(env.JWT_SECRET, state);
-  if (expectSig !== savedSig) return errPage("State bị giả mạo.");
+  // Verify stateless state (HMAC + timestamp)
+  let nonce, ts, sig;
+  try {
+    [nonce, ts, sig] = b64urlDecode(state).split(".");
+  } catch {
+    return errPage("State không hợp lệ.");
+  }
+  if (!nonce || !ts || !sig) return errPage("State không đầy đủ.");
+  const expectSig = await hmacHex(env.JWT_SECRET, `${nonce}.${ts}`);
+  if (expectSig !== sig) return errPage("State bị giả mạo (HMAC fail).");
+  const age = Date.now() - parseInt(ts, 10);
+  if (!isFinite(age) || age < 0 || age > OAUTH_STATE_TTL * 1000) {
+    return errPage("State đã hết hạn (>10 phút).");
+  }
 
-  const origin = env.ALLOWED_ORIGIN || "https://trilu.edu.vn";
+  // Dùng request origin để hoạt động được với cả workers.dev URL và custom domain
+  // (Cloudflare proxy của trilu.edu.vn có thể chưa active)
+  const origin = new URL(req.url).origin;
   // exchange code
   const tokenRes = await fetch("https://oauth2.googleapis.com/token", {
     method: "POST",
@@ -890,18 +925,16 @@ async function handleGoogleCallback(req, env) {
     providerId: info.sub,
   });
   const sessionToken = await createSession(env, userId);
-  const cookie = setCookie(SESSION_COOKIE, sessionToken, {
-    Domain: env.COOKIE_DOMAIN,
-    "Max-Age": SESSION_TTL,
-  });
-  // also clear oauth_state
-  const clearState = setCookie("oauth_state", "", {
-    Domain: env.COOKIE_DOMAIN,
-    "Max-Age": 0,
-  });
-  const res = redirect("/tra-cuu.html?login=ok");
+  const cd2 = cookieDomain(req, env);
+  // SameSite=None để cookie gửi được trong cross-site fetch (trilu.edu.vn → workers.dev)
+  const sessOpts = { "Max-Age": SESSION_TTL, SameSite: "None" };
+  if (cd2) sessOpts.Domain = cd2;
+  const cookie = setCookie(SESSION_COOKIE, sessionToken, sessOpts);
+  // Redirect về site chính (ALLOWED_ORIGIN) thay vì relative URL,
+  // vì callback có thể chạy trên workers.dev — relative sẽ 404.
+  const siteOrigin = env.ALLOWED_ORIGIN || "https://trilu.edu.vn";
+  const res = redirect(`${siteOrigin}/flashcard.html?login=ok`);
   res.headers.append("set-cookie", cookie);
-  res.headers.append("set-cookie", clearState);
   return res;
 }
 
@@ -1105,25 +1138,41 @@ async function handleSrsReview(req, env) {
   const next = srsNextInterval(prev, rating);
   await env.USERS.put(key, JSON.stringify(next));
 
-  // Update meta (streak, weekMinutes)
+  // Update meta (streak, weekMinutes, today/week counts cho leaderboard)
   const metaKey = `srs:${userId}:_meta`;
   const meta = (await env.USERS.get(metaKey, { type: "json" })) || {
     streak: 0, lastStudyDay: null, weekMinutes: [0,0,0,0,0,0,0],
+    todayKey: null, todayReviews: 0, weekKey: null, weekReviews: 0,
   };
   const todayKey = new Date().toISOString().slice(0, 10);
+  const weekKey = isoWeekKey(new Date());
   if (meta.lastStudyDay !== todayKey) {
-    // Check if yesterday → continue streak
     const y = new Date(); y.setDate(y.getDate() - 1);
     const ykey = y.toISOString().slice(0, 10);
     if (meta.lastStudyDay === ykey) meta.streak = (meta.streak || 0) + 1;
     else meta.streak = 1;
     meta.lastStudyDay = todayKey;
   }
-  // Bump today's minute (decorative — 1 review ≈ 0.1 min)
-  const dow = (new Date().getDay() + 6) % 7; // Mon=0
+  // Reset today/week counters khi sang ngày/tuần mới
+  if (meta.todayKey !== todayKey) { meta.todayKey = todayKey; meta.todayReviews = 0; }
+  if (meta.weekKey !== weekKey) { meta.weekKey = weekKey; meta.weekReviews = 0; }
+  meta.todayReviews = (meta.todayReviews || 0) + 1;
+  meta.weekReviews = (meta.weekReviews || 0) + 1;
+  const dow = (new Date().getDay() + 6) % 7;
   if (!meta.weekMinutes) meta.weekMinutes = [0,0,0,0,0,0,0];
   meta.weekMinutes[dow] = (meta.weekMinutes[dow] || 0) + 0.1;
   await env.USERS.put(metaKey, JSON.stringify(meta));
+
+  // Update leaderboards (fire-and-forget acceptable)
+  try {
+    const u = sess.user;
+    const entry = { userId, name: u.name || (u.email || '').split('@')[0], picture: u.picture || null };
+    await Promise.all([
+      updateLeaderboard(env, "streak",            { ...entry, value: meta.streak }),
+      updateLeaderboard(env, `today:${todayKey}`, { ...entry, value: meta.todayReviews }),
+      updateLeaderboard(env, `week:${weekKey}`,   { ...entry, value: meta.weekReviews }),
+    ]);
+  } catch (e) { /* leaderboard update không critical */ }
 
   return json({
     ok: true,
@@ -1134,6 +1183,59 @@ async function handleSrsReview(req, env) {
       ease: next.e,
       reps: next.reps,
     },
+  });
+}
+
+/* ─────────── Leaderboard ─────────── */
+function isoWeekKey(d) {
+  const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
+  const day = date.getUTCDay() || 7;
+  date.setUTCDate(date.getUTCDate() + 4 - day);
+  const yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
+  const week = Math.ceil((((date - yearStart) / 86400000) + 1) / 7);
+  return `${date.getUTCFullYear()}-W${String(week).padStart(2, "0")}`;
+}
+
+async function updateLeaderboard(env, type, entry) {
+  const key = `lb:${type}`;
+  const arr = (await env.USERS.get(key, { type: "json" })) || [];
+  const filtered = arr.filter(e => e.userId !== entry.userId);
+  filtered.push({ ...entry, ts: Date.now() });
+  filtered.sort((a, b) => (b.value || 0) - (a.value || 0));
+  const top = filtered.slice(0, 50);
+  // TTL: today = 2 ngày, week = 14 ngày, streak = không expire
+  const opts = type.startsWith("today:") ? { expirationTtl: 60 * 60 * 24 * 2 }
+             : type.startsWith("week:")  ? { expirationTtl: 60 * 60 * 24 * 14 }
+             : undefined;
+  await env.USERS.put(key, JSON.stringify(top), opts);
+}
+
+async function handleLeaderboard(req, env) {
+  const url = new URL(req.url);
+  const type = url.searchParams.get("type") || "streak";
+  let key;
+  if (type === "streak") key = "lb:streak";
+  else if (type === "today") key = "lb:today:" + new Date().toISOString().slice(0, 10);
+  else if (type === "week")  key = "lb:week:" + isoWeekKey(new Date());
+  else return err(400, "invalid type");
+
+  const arr = (await env.USERS.get(key, { type: "json" })) || [];
+
+  // Tìm vị trí user hiện tại trong full list (nếu logged in)
+  const sess = await getSession(req, env);
+  let myRank = null;
+  if (sess) {
+    const idx = arr.findIndex(e => e.userId === sess.user.id);
+    if (idx >= 0) myRank = { rank: idx + 1, value: arr[idx].value };
+  }
+
+  // Trả top 20 + thông tin của tôi
+  return json({
+    ok: true,
+    type,
+    top: arr.slice(0, 20),
+    myRank,
+    generatedAt: Date.now(),
   });
 }
 
@@ -1222,6 +1324,7 @@ export default {
 
       else if (p === "/api/srs/state")            res = await handleSrsState(req, env);
       else if (p === "/api/srs/review")           res = await handleSrsReview(req, env);
+      else if (p === "/api/leaderboard")          res = await handleLeaderboard(req, env);
 
       else res = err(404, "not found");
 
