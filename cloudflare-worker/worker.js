@@ -520,6 +520,13 @@ Quy tắc:
 - Chỉ trả JSON.`;
 };
 
+// Prepended to WORD_PROMPT/GRAMMAR_PROMPT when the input is an image instead of text.
+const IMAGE_OCR_PREFIX = `Bạn nhận một ẢNH có chứa chữ Nhật. BƯỚC 1: đọc (OCR) từ/cụm từ/mẫu ngữ pháp tiếng Nhật chính trong ảnh. BƯỚC 2: xử lý đúng theo yêu cầu bên dưới, COI nội dung đọc được từ ảnh là input thực tế cần tra. Ở mọi field "input", hãy điền chính nội dung tiếng Nhật bạn đọc được từ ảnh (KHÔNG dùng chuỗi mô tả đặt trong ngoặc đơn). Nếu ảnh không có chữ Nhật rõ ràng, trả về is_known=false và mảng kết quả rỗng.
+
+──────────
+
+`;
+
 const IMAGE_PROMPT = `Bạn là dịch giả Nhật–Việt, có nền tảng văn học và sư phạm.
 
 Ảnh đính kèm có chứa chữ Nhật (có thể là biển báo, menu, trang sách, ảnh chụp ghi chú…).
@@ -675,8 +682,17 @@ async function handleImageLookup(req, env) {
   // base64 length ≈ bytes × 4/3. ~8.5M chars ≈ 6MB image.
   if (img.length > 8_500_000) return err(400, "image too large (max ~6MB)");
 
+  // Lookup type decides the output schema: word | grammar | translate (default translate)
+  const type = ["word", "grammar", "translate"].includes(body.type) ? body.type : "translate";
+  const prompt =
+    type === "word"
+      ? IMAGE_OCR_PREFIX + WORD_PROMPT("(từ/cụm từ đọc được trong ảnh)")
+      : type === "grammar"
+      ? IMAGE_OCR_PREFIX + GRAMMAR_PROMPT("(mẫu ngữ pháp đọc được trong ảnh)")
+      : IMAGE_PROMPT;
+
   const ctx = await quotaContext(req, env);
-  const cacheKey = `image:${await sha256Hex(mime + "|" + img)}`;
+  const cacheKey = `image:${type}:${await sha256Hex(mime + "|" + img)}`;
 
   // 1. Cache hit?
   const cached = await env.DICT_CACHE.get(cacheKey);
@@ -711,7 +727,7 @@ async function handleImageLookup(req, env) {
   let result;
   try {
     const model = env.GEMINI_MODEL || "gemini-2.5-flash";
-    result = await callGeminiVision(env, IMAGE_PROMPT, img, mime, { model });
+    result = await callGeminiVision(env, prompt, img, mime, { model });
   } catch (e) {
     return err(502, "upstream error: " + e.message);
   }
