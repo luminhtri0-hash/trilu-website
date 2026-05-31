@@ -808,7 +808,27 @@ h1{font-size:clamp(34px,4.6vw,58px)}
   }
 
   // ─────── render: WORD ───────
+  // Tương thích ngược: schema cache CŨ (phẳng: word/meanings/readings) → schema MỚI (results[])
+  function normWordData(d){
+    if(!d || Array.isArray(d.results)) return d;
+    if(d.word || d.kanji){
+      const rd = (Array.isArray(d.readings) && d.readings[0]) ? (d.readings[0].kana || d.readings[0].hiragana || d.readings[0]) : (d.reading_hiragana || '');
+      const examples = (d.examples||[]).map(e => ({ ja: e.ja||'', ja_ruby: e.ja_ruby || e.ja_with_furigana || '', furigana: e.furigana||'', vi: e.vi||'' }));
+      const meanings_vi = (d.meanings||[]).map(m => typeof m==='string' ? m : (m.vi || m.meaning_vi || '')).filter(Boolean);
+      return { input: d.kanji||d.word||'', is_known:true, results:[{
+        kanji: d.kanji||d.word||null,
+        reading_hiragana: typeof rd==='string' ? rd : (rd.kana||''),
+        reading_romaji: d.romaji || d.reading_romaji || '',
+        word_class: d.pos ? (Array.isArray(d.pos)?d.pos:[d.pos]) : (d.word_class||[]),
+        jlpt: d.jlpt||null, common: d.common,
+        meanings_vi, meanings_en: d.meanings_en||[], examples,
+        related: d.related||[], kanji_breakdown: d.kanji_breakdown||[]
+      }], note: d.note||null };
+    }
+    return d;
+  }
   function renderWord(out, data, meta){
+    data = normWordData(data);
     if(!data || !data.is_known || !data.results || !data.results.length){
       out.innerHTML = `<div class="state error">Chưa tìm thấy "${escapeHtml(data?.input||'')}". Thử cách đọc khác hoặc gõ bằng kanji/kana.</div>`;
       return;

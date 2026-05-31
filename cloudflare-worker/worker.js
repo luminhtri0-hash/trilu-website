@@ -607,14 +607,14 @@ async function handleDictLookup(req, env, type) {
     if (!q) return err(400, "missing query");
     if (q.length > 200) return err(400, "query too long");
     normalized = normalizeQuery(q);
-    cacheKey = `word:${await sha256Hex(normalized)}`;
+    cacheKey = `word:v2:${await sha256Hex(normalized)}`;
     prompt = WORD_PROMPT(q);
   } else if (type === "grammar") {
     const q = (body.query || "").trim();
     if (!q) return err(400, "missing query");
     if (q.length > 200) return err(400, "query too long");
     normalized = normalizeQuery(q);
-    cacheKey = `grammar:${await sha256Hex(normalized)}`;
+    cacheKey = `grammar:v2:${await sha256Hex(normalized)}`;
     prompt = GRAMMAR_PROMPT(q);
   } else if (type === "kanji") {
     const q = (body.query || "").trim();
