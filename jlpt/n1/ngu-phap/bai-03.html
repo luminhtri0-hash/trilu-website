@@ -425,9 +425,19 @@ window.TTS_CONFIG = window.TTS_CONFIG || {
 })();
 </script>
 
-<style>.tl-spk{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;margin-right:8px;padding:0;border:1px solid var(--gold,#B89568);background:transparent;color:var(--gold,#B89568);border-radius:50%;font-size:11px;cursor:pointer;vertical-align:middle;line-height:1;transition:all .15s;flex:none}.tl-spk:hover{background:var(--gold,#B89568);color:#fff}.tl-spk.on{background:var(--navy,#1B3A6B);border-color:var(--navy,#1B3A6B);color:#fff}</style>
+<style>.tl-spk{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;margin-right:8px;padding:0;border:1px solid var(--gold,#B89568);background:transparent;color:var(--gold,#B89568);border-radius:50%;font-size:11px;cursor:pointer;vertical-align:middle;line-height:1;transition:all .15s;flex:none}.tl-spk:hover{background:var(--gold,#B89568);color:#fff}.tl-spk.on{background:var(--navy,#1B3A6B);border-color:var(--navy,#1B3A6B);color:#fff}
+#tlAudioReopen{position:fixed;right:14px;bottom:14px;z-index:60;display:none;align-items:center;gap:6px;padding:9px 15px;border-radius:999px;border:1px solid #B89568;background:#1B3A6B;color:#FBF6E8;font-size:12px;cursor:pointer;box-shadow:0 6px 18px rgba(27,58,107,.28)}
+#tlAudioClose{margin-left:auto;width:26px;height:26px;min-width:26px;border-radius:50%;border:1px solid rgba(184,149,104,.55);background:transparent;color:#B89568;cursor:pointer;font-size:13px;line-height:1;flex:none}
+#tlAudioClose:hover{background:#B89568;color:#fff}</style>
 <script>(function(){
 var native=!!document.getElementById('ttsBar');
+if(native){var bar=document.getElementById('ttsBar');if(bar&&!bar.dataset.closable){bar.dataset.closable='1';
+  var x=document.createElement('button');x.type='button';x.id='tlAudioClose';x.textContent='✕';x.setAttribute('aria-label','Đóng thanh âm thanh');
+  var ro=document.createElement('button');ro.type='button';ro.id='tlAudioReopen';ro.innerHTML='🔊 Âm thanh';ro.setAttribute('aria-label','Mở thanh âm thanh');
+  x.addEventListener('click',function(){bar.style.display='none';ro.style.display='inline-flex';try{localStorage.setItem('tl_tts_closed','1');}catch(e){}});
+  ro.addEventListener('click',function(){bar.style.display='';ro.style.display='none';try{localStorage.removeItem('tl_tts_closed');}catch(e){}});
+  bar.appendChild(x);document.body.appendChild(ro);
+  try{if(localStorage.getItem('tl_tts_closed')==='1'){bar.style.display='none';ro.style.display='inline-flex';}}catch(e){}}}
 if(!native){var st=document.createElement('style');st.textContent='.tts-btn{display:none!important}';(document.head||document.documentElement).appendChild(st);}
 var jv=null;function pick(){try{var V=speechSynthesis.getVoices();function f(re){return V.filter(function(v){return /ja|JP|日本/i.test(v.lang)&&re.test(v.name);})[0];}jv=f(/Google/i)||f(/Kyoko/i)||f(/Otoya/i)||f(/Nanami|Ayumi|Keita|Haruka|Microsoft/i)||V.filter(function(v){return /ja|JP|日本/i.test((v.lang||'')+(v.name||''));})[0]||null;}catch(e){}}pick();try{speechSynthesis.onvoiceschanged=pick;}catch(e){}
 function clean(el){var c=el.cloneNode(true);c.querySelectorAll('rt,rp,.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn').forEach(function(n){n.remove();});return (c.textContent||'').replace(/\s+/g,' ').trim();}
