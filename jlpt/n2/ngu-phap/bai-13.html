@@ -1,0 +1,358 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 13 · Biến đổi đi kèm — Ngữ pháp N2 — Trí Lữ Nihongo</title>
+<meta name="description" content="Ngữ pháp N2 — Bài 13: Biến đổi đi kèm. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa; --paper-2:#fff8f0;
+  --ink:#1e2430; --muted:#5f6470;
+  --accent:#2d5e3e; --accent-dark:#1a4128;
+  --accent-2:#9b7a38; --accent-3:#c7ab70;
+  --line:#dfcfbb; --line-2:#eadfce;
+  --green:#2d5e3e; --teal:#2d6e7a;
+  --plum:#6a4a8a; --terra:#b56b3f;
+  --rose:#a23b5a; --navy:#1a4a6e;
+  --correct:#2d5e3e; --wrong:#a23b5a;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{ margin:0; color:var(--ink); background:radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),radial-gradient(circle at 85% 14%, rgba(45,94,62,0.08), transparent 22%),linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%); font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif; line-height:1.7; font-size:14px; -webkit-font-smoothing:antialiased; }
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+.cover{ position:relative; overflow:hidden; background:radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),linear-gradient(135deg, #1a4128 0%, #2d5e3e 36%, #14321f 100%); color:#fff; border-radius:30px; box-shadow:var(--shadow); padding:60px 64px 50px; margin-bottom:26px; }
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+.toc-panel{ margin:0 0 34px; background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96)); border:1px solid rgba(155,122,56,0.20); border-radius:24px; box-shadow:var(--shadow); padding:28px 30px; }
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:12px 14px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(45,94,62,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item-number{ display:inline-block; min-width:32px; padding:2px 7px; margin-right:7px; border-radius:7px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:10.5px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:12.5px; font-family:"Noto Serif CJK JP",serif; }
+.toc-item-summary{ display:block; margin-top:4px; color:var(--muted); font-size:11.5px; line-height:1.4; }
+
+.document{ background:var(--paper); border:1px solid rgba(155,122,56,0.16); border-radius:28px; box-shadow:var(--shadow); padding:0 0 36px; margin-bottom:36px; overflow:hidden; }
+.lesson-banner{ position:relative; overflow:hidden; padding:26px 40px 24px; background:radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%), linear-gradient(135deg, #1a4128 0%, #2d5e3e 50%, #14321f 100%); color:#fff; }
+.lesson-banner::after{ content:"文法"; position:absolute; right:-10px; bottom:-50px; font-family:"Noto Serif CJK JP",serif; font-weight:900; font-size:clamp(6rem, 12vw, 10rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:6px; }
+.lesson-banner h2{ margin:0 0 5px; font-family:"Noto Serif CJK JP",serif; font-size:26px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:13px; color:rgba(255,255,255,0.82); }
+.doc-body{ padding:24px 40px 8px; }
+
+.grammar-card{ margin:20px 0; background:#fff; border:1px solid var(--line-2); border-radius:18px; overflow:hidden; box-shadow:0 8px 22px rgba(60,38,19,0.05); }
+.gc-head{ display:flex; align-items:center; gap:12px; padding:14px 20px; background:linear-gradient(90deg, rgba(45,94,62,0.06), rgba(199,171,112,0.05)); border-bottom:2px solid var(--accent); }
+.gc-num{ flex-shrink:0; width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg, var(--accent) 0%, #4a8a5e 100%); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:16px; font-family:"EB Garamond",serif; box-shadow:0 4px 10px rgba(45,94,62,0.25); }
+.gc-title{ font-family:"Noto Serif CJK JP",serif; font-size:19px; font-weight:700; color:var(--accent); flex:1; }
+.gc-title .gc-meaning{ display:block; font-family:Inter,sans-serif; font-size:12.5px; color:var(--accent-2); font-style:italic; font-weight:600; margin-top:2px; }
+.gc-body{ padding:16px 20px; }
+
+.gc-section{ margin-bottom:14px; }
+.gc-section:last-child{ margin-bottom:0; }
+.gc-label{ display:inline-block; font-size:10px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color:#fff; padding:3px 9px; border-radius:5px; margin-bottom:6px; }
+.gc-label.lbl-struct{ background:var(--green); }
+.gc-label.lbl-explain{ background:var(--navy); }
+.gc-label.lbl-example{ background:var(--accent-2); }
+.gc-label.lbl-note{ background:var(--terra); }
+.gc-label.lbl-compare{ background:var(--plum); }
+
+.struct-box{ background:linear-gradient(180deg, #f3f9ed, #e7f2dc); border:1px solid #c8dab1; border-left:4px solid var(--green); border-radius:10px; padding:10px 14px; font-family:"Noto Serif CJK JP",serif; font-size:14px; color:#2c4a2d; line-height:1.75; }
+.struct-box code{ background:rgba(45,94,62,0.10); padding:1px 5px; border-radius:4px; font-family:"Noto Serif CJK JP",serif; color:var(--green); font-weight:700; }
+
+.explain-box{ background:linear-gradient(180deg, #f4f8fc, #e8f0f8); border:1px solid #c4d8e8; border-left:4px solid var(--navy); border-radius:10px; padding:10px 14px; font-size:13px; line-height:1.65; color:#1f3a4f; }
+.explain-box strong{ color:var(--navy); }
+
+.examples-list{ display:flex; flex-direction:column; gap:8px; }
+.ex-box{ background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent-2); padding:11px 14px; border-radius:0 10px 10px 0; }
+.ex-jp{ font-size:14.5px; color:#222; margin-bottom:6px; line-height:1.9; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn, .q-vn{ font-size:13px; color:#6e5230; font-style:italic; line-height:1.5; padding-top:6px; border-top:1px dotted #e2d4b8; margin-top:5px; }
+.ex-vn.collapsed, .q-vn.collapsed{ display:none; }
+
+.vn-toggle{ display:inline-flex; align-items:center; gap:4px; margin-top:3px; padding:2px 10px; background:transparent; border:1px dashed #b08850; border-radius:999px; color:#6e5230; font-size:10px; cursor:pointer; transition:all 0.15s; font-family:inherit; font-weight:600; letter-spacing:0.04em; }
+.vn-toggle:hover{ background:#fff5e8; border-style:solid; border-color:#9b7a38; }
+.vn-toggle::before{ content:"訳"; font-family:"Noto Serif CJK JP",serif; font-size:10px; margin-right:2px; color:#9b7a38; }
+.vn-toggle.shown{ background:#fff5e8; border-style:solid; border-color:#9b7a38; color:#4a3010; }
+
+.compare-box{ background:linear-gradient(180deg, #f9f3fb, #ecdef2); border:1px solid #d8c4e6; border-left:4px solid var(--plum); border-radius:10px; padding:10px 14px; font-size:12.5px; line-height:1.65; color:#3f2a52; }
+.compare-box .cmp-item{ margin:5px 0; padding-left:13px; position:relative; }
+.compare-box .cmp-item::before{ content:"◆"; position:absolute; left:0; color:var(--plum); }
+.compare-box .cmp-jp{ font-family:"Noto Serif CJK JP",serif; font-weight:700; color:var(--plum); }
+
+.exercise-block{ margin:14px 0 4px; background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%); border:1px solid #e7d7be; border-radius:14px; overflow:hidden; box-shadow:0 4px 10px rgba(60,38,19,0.04); }
+.exercise-banner{ display:flex; align-items:center; gap:10px; padding:10px 18px; background:linear-gradient(90deg, var(--rose) 0%, #c14e6e 100%); color:#fff; }
+.exercise-icon{ width:30px; height:30px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:8px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:12px; font-family:"Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:14px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:10.5px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:1px; }
+.exercise-body{ padding:12px 18px; }
+.ex-q{ padding:8px 0; border-bottom:1px dotted #eadfce; }
+.ex-q:last-child{ border-bottom:none; }
+.q-stem{ font-size:13.5px; line-height:1.8; font-family:"Noto Serif CJK JP",serif; color:#222; }
+.q-stem .qnum{ display:inline-block; min-width:20px; font-weight:800; color:var(--rose); margin-right:3px; font-family:"EB Garamond",sans-serif; font-size:14px; }
+.q-options{ display:grid; grid-template-columns:repeat(2, 1fr); gap:5px; margin:6px 0 0 22px; }
+.q-opt{ padding:5px 10px; background:#fff; border:1px solid #e0d3b8; border-radius:7px; cursor:pointer; font-family:"Noto Serif CJK JP",serif; font-size:13px; transition:all 0.15s; display:flex; align-items:center; gap:5px; color:#4a3a20; }
+.q-opt::before{ content:attr(data-mark); color:var(--rose); font-weight:800; font-family:"EB Garamond",sans-serif; min-width:18px; }
+.q-opt:hover{ background:#fff5e8; border-color:#b08850; }
+.q-opt.correct{ background:linear-gradient(180deg, #e8f5e8, #d4edd4); border-color:var(--correct); color:var(--correct); font-weight:700; }
+.q-opt.correct::before{ color:var(--correct); }
+.q-opt.correct::after{ content:"✓"; margin-left:auto; color:var(--correct); font-weight:800; }
+.q-opt.wrong{ background:linear-gradient(180deg, #fce4e6, #f8d7da); border-color:var(--wrong); color:var(--wrong); }
+.q-opt.wrong::before{ color:var(--wrong); }
+.q-opt.wrong::after{ content:"✗"; margin-left:auto; color:var(--wrong); font-weight:800; }
+.q-foot{ display:flex; align-items:center; gap:8px; margin-top:5px; margin-left:22px; flex-wrap:wrap; }
+.answer-detail{ display:none; padding:5px 11px; background:#fef9ee; border:1px dashed #c7ab70; border-radius:7px; font-size:11.5px; color:#5a4520; margin-top:5px; margin-left:22px; line-height:1.5; }
+.answer-detail.shown{ display:block; }
+.answer-detail strong{ color:var(--accent); }
+
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+/* Simpler v2 format used in lessons 11-26 */
+.lesson{ background:var(--paper); border:1px solid rgba(155,122,56,0.16); border-radius:28px; box-shadow:var(--shadow); padding:0 0 36px; margin-bottom:36px; overflow:hidden; }
+.lesson .grammar-card{ margin:18px 40px; }
+.grammar-card .gc-head .gc-num{ display:flex; flex-shrink:0; width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg, var(--accent) 0%, #4a8a5e 100%); color:#fff; align-items:center; justify-content:center; font-weight:800; font-size:13px; font-family:"EB Garamond",serif; box-shadow:0 4px 10px rgba(45,94,62,0.25); }
+.grammar-card .gc-head h3.gc-jp{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; color:var(--accent); flex:1; line-height:1.3; }
+.grammar-card .gc-head .gc-meaning{ display:block; font-family:Inter,sans-serif; font-size:12.5px; color:var(--accent-2); font-style:italic; font-weight:600; margin-top:2px; }
+.lesson .grammar-card > .struct-box,
+.lesson .grammar-card > .explain,
+.lesson .grammar-card > .ex-box,
+.lesson .grammar-card > .compare-box,
+.lesson .grammar-card > .exercises{ margin:10px 20px; }
+.lesson .grammar-card .explain{ background:linear-gradient(180deg, #f4f8fc, #e8f0f8); border:1px solid #c4d8e8; border-left:4px solid var(--navy); border-radius:10px; padding:10px 14px; font-size:13px; line-height:1.65; color:#1f3a4f; }
+.lesson .grammar-card .explain strong{ color:var(--navy); }
+.compare-box .compare-title{ font-weight:800; font-family:"Noto Serif CJK JP",serif; color:var(--plum); margin-bottom:6px; font-size:13px; }
+.compare-box .compare-row{ margin:4px 0; padding-left:13px; position:relative; display:block; }
+.compare-box .compare-row::before{ content:"◆"; position:absolute; left:0; color:var(--plum); }
+.compare-box .compare-row .cmp-jp{ font-family:"Noto Serif CJK JP",serif; font-weight:700; color:var(--plum); margin-right:6px; }
+.compare-box .compare-row .cmp-vn{ color:#3f2a52; }
+.exercises{ background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%); border:1px solid #e7d7be; border-radius:14px; padding:12px 18px; box-shadow:0 4px 10px rgba(60,38,19,0.04); }
+.exercises .ex-title{ display:inline-block; padding:5px 14px; background:linear-gradient(90deg, var(--rose) 0%, #c14e6e 100%); color:#fff; border-radius:8px; font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:13px; margin-bottom:10px; }
+
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 8px; }
+  .lesson-banner{ padding:20px 20px 18px; }
+  .gc-body{ padding:14px 16px; }
+  .q-options{ grid-template-columns:1fr; }
+}
+@media print {
+  body{ background:#fff; font-size:12px; }
+  .page-shell{ padding:0; max-width:none; }
+  .cover, .toc-panel{ page-break-after:always; box-shadow:none; }
+  .document{ page-break-before:always; box-shadow:none; }
+  .vn-toggle{ display:none; }
+  .ex-vn, .q-vn{ display:block !important; }
+  .answer-detail{ display:block !important; }
+}
+
+
+.tts-btn{cursor:pointer;border:1px solid rgba(45,110,122,.35);background:rgba(95,163,178,.12);
+  border-radius:6px;font-size:.85em;line-height:1;margin-right:7px;padding:2px 6px;opacity:.78;
+  transition:.15s;vertical-align:middle;-webkit-user-select:none;user-select:none;}
+.tts-btn:hover{opacity:1;transform:scale(1.08);background:rgba(95,163,178,.25);}
+.tts-btn.playing{opacity:1;background:#2d6e7a;border-color:#2d6e7a;color:#fff;}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:500;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.93);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:36px;height:36px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.16em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n2.html">N2</a> · <a href="../ngu-phap.html">Ngữ pháp</a> · Bài 13</div></div></a><a class="tl-back" href="../ngu-phap.html">← Danh sách bài</a></nav>
+<div class="page-shell">
+
+<article class="lesson">
+<div class="lesson-banner"><span class="lesson-kicker">13課 — Bài 13 · 伴う変化</span><h2>Biến đổi đi kèm</h2><div class="lesson-sub">3 mẫu: ～につれて / ～にしたがって / ～ば～ほど</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">13.1</span><h3 class="gc-jp">～につれて / ～につれ</h3><span class="gc-meaning">cùng với, theo... mà</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [V<sub>る</sub> / N] + につれて(につれ)</div>
+<div class="explain"><strong>Giải thích:</strong> Diễn tả hai biến đổi xảy ra <em>song song, dần dần</em> — vế A biến đổi thì vế B cũng biến đổi theo. Văn viết, trang trọng. Hai vế đều là biến đổi tự nhiên, không phải hành động có ý chí.</div>
+
+<div class="ex-box"><div class="ex-jp" data-tts="e36091f41b">① <ruby>年齢<rt>ねんれい</rt></ruby>を<ruby>重<rt>かさ</rt></ruby>ねる<span class="target">につれて</span>、<ruby>体力<rt>たいりょく</rt></ruby>が<ruby>衰<rt>おとろ</rt></ruby>えてきた。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Cùng với việc tuổi tác tăng lên, thể lực cũng suy giảm.</div></div>
+
+<div class="ex-box"><div class="ex-jp" data-tts="1ba282efaf">② <ruby>都市化<rt>としか</rt></ruby>が<ruby>進<rt>すす</rt></ruby>む<span class="target">につれ</span>、<ruby>自然環境<rt>しぜんかんきょう</rt></ruby>が<ruby>失<rt>うしな</rt></ruby>われていく。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Cùng với sự phát triển đô thị hóa, môi trường tự nhiên dần mất đi.</div></div>
+
+<div class="ex-box"><div class="ex-jp" data-tts="a1e1337500">③ <ruby>経験<rt>けいけん</rt></ruby>を<ruby>積<rt>つ</rt></ruby>む<span class="target">につれて</span>、<ruby>仕事<rt>しごと</rt></ruby>が<ruby>面白<rt>おもしろ</rt></ruby>くなってきた。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Cùng với việc tích lũy kinh nghiệm, công việc trở nên thú vị hơn.</div></div>
+
+<div class="compare-box"><div class="compare-title">So sánh: ～につれて vs ～にしたがって vs ～とともに</div><div class="compare-row"><span class="cmp-jp">につれて</span><span class="cmp-vn">Hai biến đổi <em>dần dần, song song</em>. Không có ý chí.</span></div><div class="compare-row"><span class="cmp-jp">にしたがって</span><span class="cmp-vn">Tương tự nhưng cũng dùng cho "tuân theo" quy định.</span></div><div class="compare-row"><span class="cmp-jp">とともに</span><span class="cmp-vn">"Cùng với" — bao gồm cả ý "đồng thời/song hành".</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 13.1</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>時代<rt>じだい</rt></ruby>が<ruby>変<rt>か</rt></ruby>わる（____）、<ruby>働<rt>はたら</rt></ruby>き<ruby>方<rt>かた</rt></ruby>も<ruby>多様化<rt>たようか</rt></ruby>している。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">につれて</span><span class="q-opt" data-mark="②" data-correct="false">ように</span><span class="q-opt" data-mark="③" data-correct="false">あまり</span><span class="q-opt" data-mark="④" data-correct="false">ばかりに</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Cùng với việc thời đại thay đổi, cách thức làm việc cũng đa dạng hóa.</div><div class="answer-detail"><strong>Đáp án: ① につれて</strong> — Hai biến đổi tự nhiên song song → につれて.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>気温<rt>きおん</rt></ruby>が<ruby>上昇<rt>じょうしょう</rt></ruby>する（____）、<ruby>氷河<rt>ひょうが</rt></ruby>が<ruby>溶<rt>と</rt></ruby>けていく。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">うえに</span><span class="q-opt" data-mark="②" data-correct="false">ことから</span><span class="q-opt" data-mark="③" data-correct="true">につれ</span><span class="q-opt" data-mark="④" data-correct="false">かわりに</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Cùng với việc nhiệt độ tăng, các sông băng đang tan chảy.</div><div class="answer-detail"><strong>Đáp án: ③ につれ</strong> — Biến đổi khí hậu + biến đổi tự nhiên → につれ.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>子供<rt>こども</rt></ruby>の<ruby>成長<rt>せいちょう</rt></ruby>（____）、<ruby>親<rt>おや</rt></ruby>の<ruby>悩<rt>なや</rt></ruby>みも<ruby>変<rt>か</rt></ruby>わってくる。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">に対して</span><span class="q-opt" data-mark="②" data-correct="true">につれて</span><span class="q-opt" data-mark="③" data-correct="false">に応じて</span><span class="q-opt" data-mark="④" data-correct="false">に基づいて</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Theo sự trưởng thành của con, nỗi lo của cha mẹ cũng thay đổi.</div><div class="answer-detail"><strong>Đáp án: ② につれて</strong> — N+につれて = "cùng với N (biến đổi)". Hai vế cùng biến đổi tự nhiên.</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">13.2</span><h3 class="gc-jp">～にしたがって / ～にしたがい</h3><span class="gc-meaning">theo, tuân theo</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [V<sub>る</sub> / N] + にしたがって(にしたがい)</div>
+<div class="explain"><strong>Giải thích:</strong> Hai nghĩa: (1) Hai biến đổi song hành (như につれて). (2) "Tuân theo, làm theo" quy định, mệnh lệnh, kế hoạch. Văn viết trang trọng.</div>
+
+<div class="ex-box"><div class="ex-jp" data-tts="bec473e057">① <ruby>経済<rt>けいざい</rt></ruby>が<ruby>発展<rt>はってん</rt></ruby>する<span class="target">にしたがって</span>、<ruby>都市部<rt>としぶ</rt></ruby>の<ruby>人口<rt>じんこう</rt></ruby>が<ruby>増加<rt>ぞうか</rt></ruby>した。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Cùng với việc kinh tế phát triển, dân số khu vực đô thị tăng lên.</div></div>
+
+<div class="ex-box"><div class="ex-jp" data-tts="e4bda080c5">② <ruby>取扱<rt>とりあつか</rt></ruby>い<ruby>説明書<rt>せつめいしょ</rt></ruby><span class="target">にしたがって</span>、<ruby>機械<rt>きかい</rt></ruby>を<ruby>操作<rt>そうさ</rt></ruby>してください。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Hãy vận hành máy theo hướng dẫn sử dụng.</div></div>
+
+<div class="ex-box"><div class="ex-jp" data-tts="019b78ca90">③ <ruby>指示<rt>しじ</rt></ruby><span class="target">にしたがい</span>、<ruby>避難<rt>ひなん</rt></ruby><ruby>経路<rt>けいろ</rt></ruby>を<ruby>確認<rt>かくにん</rt></ruby>した。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Tôi đã xác nhận lối thoát hiểm theo chỉ thị.</div></div>
+
+<div class="compare-box"><div class="compare-title">Hai nghĩa của にしたがって</div><div class="compare-row"><span class="cmp-jp">Vる+にしたがって</span><span class="cmp-vn">Hai biến đổi song hành (= につれて).</span></div><div class="compare-row"><span class="cmp-jp">N+にしたがって</span><span class="cmp-vn">"Tuân theo N" (quy định, hướng dẫn, mệnh lệnh).</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 13.2</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span>ルール（____）、<ruby>競技<rt>きょうぎ</rt></ruby>を<ruby>進<rt>すす</rt></ruby>めます。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">につれて</span><span class="q-opt" data-mark="②" data-correct="true">にしたがって</span><span class="q-opt" data-mark="③" data-correct="false">のうえで</span><span class="q-opt" data-mark="④" data-correct="false">ばかりに</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Tiến hành thi đấu theo luật.</div><div class="answer-detail"><strong>Đáp án: ② にしたがって</strong> — "Tuân theo N" (luật) → にしたがって. につれて chỉ dùng cho biến đổi.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>技術<rt>ぎじゅつ</rt></ruby>が<ruby>進歩<rt>しんぽ</rt></ruby>する（____）、<ruby>生活<rt>せいかつ</rt></ruby>が<ruby>便利<rt>べんり</rt></ruby>になった。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">にしたがって</span><span class="q-opt" data-mark="②" data-correct="false">に対して</span><span class="q-opt" data-mark="③" data-correct="false">にもかかわらず</span><span class="q-opt" data-mark="④" data-correct="false">として</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Cùng với sự tiến bộ của công nghệ, cuộc sống trở nên tiện lợi.</div><div class="answer-detail"><strong>Đáp án: ① にしたがって</strong> — Vる+にしたがって = "cùng với việc V" (biến đổi).</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>会社<rt>かいしゃ</rt></ruby>の<ruby>方針<rt>ほうしん</rt></ruby>（____）、<ruby>新<rt>あたら</rt></ruby>しい<ruby>制度<rt>せいど</rt></ruby>を<ruby>導入<rt>どうにゅう</rt></ruby>した。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">に対し</span><span class="q-opt" data-mark="②" data-correct="false">に反して</span><span class="q-opt" data-mark="③" data-correct="true">にしたがい</span><span class="q-opt" data-mark="④" data-correct="false">に基づいて</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Theo phương châm của công ty, đã đưa vào áp dụng chế độ mới.</div><div class="answer-detail"><strong>Đáp án: ③ にしたがい</strong> — "Tuân theo N (phương châm)". に基づいて (dựa trên) cũng gần nhưng にしたがい tự nhiên hơn ở đây.</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">13.3</span><h3 class="gc-jp">～ば～ほど</h3><span class="gc-meaning">càng... càng...</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [V<sub>ば</sub>] V<sub>る</sub> + ほど　／　[いA<sub>ければ</sub>] いA<sub>い</sub> + ほど　／　[なA<sub>なら</sub>] なA<sub>な</sub> + ほど</div>
+<div class="explain"><strong>Giải thích:</strong> Diễn tả khi mức độ ở vế trước tăng thì vế sau cũng tăng theo. Lặp lại từ chính ở hai dạng (giả định + nguyên thể).</div>
+
+<div class="ex-box"><div class="ex-jp" data-tts="31a49c5144">① <ruby>考<rt>かんが</rt></ruby>えれば<ruby>考<rt>かんが</rt></ruby>える<span class="target">ほど</span>、<ruby>答<rt>こた</rt></ruby>えが<ruby>分<rt>わ</rt></ruby>からなくなる。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Càng suy nghĩ, càng không hiểu ra đáp án.</div></div>
+
+<div class="ex-box"><div class="ex-jp" data-tts="f0a5c8cb57">② <ruby>練習<rt>れんしゅう</rt></ruby>すれ<span class="target">ば</span>する<span class="target">ほど</span>、<ruby>上達<rt>じょうたつ</rt></ruby>するものだ。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Càng luyện tập càng tiến bộ.</div></div>
+
+<div class="ex-box"><div class="ex-jp" data-tts="33bbbad359">③ <ruby>高<rt>たか</rt></ruby>けれ<span class="target">ば</span><ruby>高<rt>たか</rt></ruby>い<span class="target">ほど</span>、<ruby>品質<rt>ひんしつ</rt></ruby>がいいとは<ruby>限<rt>かぎ</rt></ruby>らない。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Không hẳn càng đắt thì chất lượng càng tốt.</div></div>
+
+<div class="compare-box"><div class="compare-title">Lưu ý chia dạng</div><div class="compare-row"><span class="cmp-jp">V</span><span class="cmp-vn">行けば+行く+ほど (đi càng nhiều càng...)</span></div><div class="compare-row"><span class="cmp-jp">いA</span><span class="cmp-vn">高ければ+高い+ほど (càng cao càng...)</span></div><div class="compare-row"><span class="cmp-jp">なA / N</span><span class="cmp-vn">便利なら(ば)+便利な+ほど (càng tiện lợi càng...)</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 13.3</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>知<rt>し</rt></ruby>れば<ruby>知<rt>し</rt></ruby>る（____）、<ruby>彼<rt>かれ</rt></ruby>のすごさが<ruby>分<rt>わ</rt></ruby>かる。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">あまり</span><span class="q-opt" data-mark="②" data-correct="false">うえ</span><span class="q-opt" data-mark="③" data-correct="true">ほど</span><span class="q-opt" data-mark="④" data-correct="false">ばかり</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Càng biết về anh ấy càng hiểu sự xuất sắc của anh.</div><div class="answer-detail"><strong>Đáp án: ③ ほど</strong> — V<sub>ば</sub>+V<sub>る</sub>+ほど = "càng... càng...".</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>近<rt>ちか</rt></ruby>けれ（____）<ruby>近<rt>ちか</rt></ruby>い<ruby>方<rt>ほう</rt></ruby>が<ruby>便利<rt>べんり</rt></ruby>だ。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">ば〜ほど</span><span class="q-opt" data-mark="②" data-correct="false">ながら</span><span class="q-opt" data-mark="③" data-correct="false">のうち</span><span class="q-opt" data-mark="④" data-correct="false">につれて</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Càng gần càng tiện.</div><div class="answer-detail"><strong>Đáp án: ① ば〜ほど</strong> — Cấu trúc iA: 近ければ+近い+ほど.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>条件<rt>じょうけん</rt></ruby>が<ruby>厳<rt>きび</rt></ruby>しい（____）、<ruby>応募者<rt>おうぼしゃ</rt></ruby>は<ruby>減<rt>へ</rt></ruby>る。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">ぐらい</span><span class="q-opt" data-mark="②" data-correct="false">あまり</span><span class="q-opt" data-mark="③" data-correct="true">ほど</span><span class="q-opt" data-mark="④" data-correct="false">ばかり</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Càng nghiêm ngặt về điều kiện thì số người ứng tuyển càng giảm.</div><div class="answer-detail"><strong>Đáp án: ③ ほど</strong> — "Càng X càng Y" → ほど. (厳しければ rút gọn trong câu.)</div></div>
+</div></div>
+
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-12.html">← Bài 12</a><a class="mid" href="../ngu-phap.html">▦ Danh sách bài</a><a href="bai-14.html">Bài 14 →</a></nav>
+<script>
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('vn-toggle')) {
+    const sibling = e.target.nextElementSibling;
+    if (sibling && (sibling.classList.contains('ex-vn') || sibling.classList.contains('q-vn'))) {
+      sibling.classList.toggle('collapsed');
+      const isHidden = sibling.classList.contains('collapsed');
+      e.target.textContent = isHidden ? 'Xem dịch' : 'Ẩn dịch';
+      e.target.classList.toggle('shown', !isHidden);
+    }
+    return;
+  }
+  if (e.target.classList.contains('q-opt')) {
+    const opt = e.target;
+    const parent = opt.parentElement;
+    const isCorrect = opt.dataset.correct === 'true';
+    parent.querySelectorAll('.q-opt').forEach(o => { o.classList.remove('correct','wrong'); });
+    if (isCorrect) opt.classList.add('correct');
+    else { opt.classList.add('wrong'); const correctOpt = parent.querySelector('.q-opt[data-correct="true"]'); if (correctOpt) correctOpt.classList.add('correct'); }
+    const question = opt.closest('.ex-q');
+    const detail = question && question.querySelector('.answer-detail');
+    if (detail) detail.classList.add('shown');
+    return;
+  }
+});
+
+;
+
+/* ==== Cấu hình audio TTS ==== */
+window.TTS_BASE = window.TTS_BASE || 'audio/';   // đổi thành đường dẫn host MP3 của bạn, ví dụ '/static/n2/audio/'
+(function(){
+  var SUP = ('speechSynthesis' in window);
+  function jtext(el){
+    var c=el.cloneNode(true);
+    c.querySelectorAll('rt, rp, .adv-ex-vn, .tts-btn').forEach(function(n){n.remove();});
+    var s=(c.textContent||'');
+    s=s.replace(/[①-⓿]/g,' ').replace(/^[\s0-9().、\-]+/,'');
+    return s.replace(/\s+/g,' ').trim();
+  }
+  /* giọng dự phòng (khi thiếu file MP3): chọn giọng ja tốt nhất, tránh eSpeak */
+  var jaVoice=null;
+  function rank(v){var n=((v.name||'')+' '+(v.voiceURI||'')).toLowerCase(),s=0;
+    if(/natural|neural|enhanced|premium|wavenet/.test(n))s+=100;
+    if(/google/.test(n))s+=60; if(v.localService===false)s+=10;
+    if(/kyoko|otoya|o-ren|nanami|ayumi|keita|haruka/.test(n))s+=40;
+    if(/espeak|festival/.test(n))s-=200; return s;}
+  function pickVoice(){if(!SUP)return;var vs=(speechSynthesis.getVoices()||[])
+      .filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf('ja')===0;});
+      vs.sort(function(a,b){return rank(b)-rank(a);}); jaVoice=vs[0]||null;}
+  if(SUP){pickVoice();try{speechSynthesis.onvoiceschanged=pickVoice;}catch(e){}}
+  function fallback(el){if(!SUP)return;var t=jtext(el);if(!t)return;
+    speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);
+    u.lang='ja-JP';u.rate=0.95;if(jaVoice)u.voice=jaVoice;speechSynthesis.speak(u);}
+  var curAudio=null,curBtn=null;
+  function stop(){if(curAudio){curAudio.pause();curAudio=null;}if(curBtn){curBtn.classList.remove('playing');curBtn=null;}}
+  function play(btn,el){
+    stop();
+    var id=el.getAttribute('data-tts');
+    if(id){
+      var a=new Audio(window.TTS_BASE+id+'.mp3');
+      curAudio=a;curBtn=btn;btn.classList.add('playing');
+      a.onended=a.onpause=function(){btn.classList.remove('playing');};
+      a.onerror=function(){btn.classList.remove('playing');curAudio=null;fallback(el);};
+      a.play().catch(function(){btn.classList.remove('playing');curAudio=null;fallback(el);});
+    } else { fallback(el); }
+  }
+  document.querySelectorAll('.ex-jp, .adv-ex').forEach(function(el){
+    if(el.querySelector('.tts-btn'))return;
+    var b=document.createElement('button');
+    b.className='tts-btn';b.type='button';b.textContent='🔊';
+    b.setAttribute('aria-label','Nghe câu tiếng Nhật');b.title='Nghe đọc (Google TTS)';
+    b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();play(b,el);});
+    el.insertBefore(b,el.firstChild);
+  });
+})();
+</script>
+
+<style>.tl-spk{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;margin-right:8px;padding:0;border:1px solid var(--gold,#B89568);background:transparent;color:var(--gold,#B89568);border-radius:50%;font-size:11px;cursor:pointer;vertical-align:middle;line-height:1;transition:all .15s;flex:none}.tl-spk:hover{background:var(--gold,#B89568);color:#fff}.tl-spk.on{background:var(--navy,#1B3A6B);border-color:var(--navy,#1B3A6B);color:#fff}</style>
+<script>(function(){
+if(document.getElementById('ttsBar'))return;
+var st=document.createElement('style');st.textContent='.tts-btn{display:none!important}';(document.head||document.documentElement).appendChild(st);
+var jv=null;function pick(){try{var V=speechSynthesis.getVoices();function f(re){return V.filter(function(v){return /ja|JP|日本/i.test(v.lang)&&re.test(v.name);})[0];}jv=f(/Google/i)||f(/Kyoko/i)||f(/Otoya/i)||f(/Nanami|Ayumi|Keita|Haruka|Microsoft/i)||V.filter(function(v){return /ja|JP|日本/i.test((v.lang||'')+(v.name||''));})[0]||null;}catch(e){}}pick();try{speechSynthesis.onvoiceschanged=pick;}catch(e){}
+function clean(el){var c=el.cloneNode(true);c.querySelectorAll('rt,rp,.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn').forEach(function(n){n.remove();});return (c.textContent||'').replace(/\s+/g,' ').trim();}
+function speak(t,b){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=0.9;if(jv)u.voice=jv;if(b){b.classList.add('on');u.onend=u.onerror=function(){b.classList.remove('on');};}speechSynthesis.speak(u);}catch(e){}}
+function add(el){if(el.dataset.spk)return;el.dataset.spk='1';el.querySelectorAll('.tts-btn').forEach(function(n){n.remove();});var t=clean(el);if(!t||!/[぀-ヿ一-龯]/.test(t))return;var b=document.createElement('button');b.type='button';b.className='tl-spk';b.setAttribute('aria-label','Phat am');b.textContent='🔊';b.addEventListener('click',function(e){e.stopPropagation();e.preventDefault();speak(t,b);});el.insertBefore(b,el.firstChild);}
+function run(){document.querySelectorAll('[data-tts], .ex-jp, .ex-q').forEach(add);}
+if(document.readyState!=='loading'){setTimeout(run,40);}else{document.addEventListener('DOMContentLoaded',function(){setTimeout(run,40);});}
+window.addEventListener('load',function(){setTimeout(run,120);});})();</script>
+
+</body></html>

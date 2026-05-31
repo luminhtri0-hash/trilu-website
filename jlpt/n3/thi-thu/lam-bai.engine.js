@@ -19,8 +19,24 @@
 
   /* ---------- build flat index map per section ---------- */
   // global question number = position in Q (1-based)
-  var byCat = { lang: [], read: [], listen: [] };
-  Q.forEach(function (q, i) { byCat[q.cat].push(i); });
+  var byCat = {};
+  E.sections.forEach(function (s) { byCat[s.id] = []; });
+  Q.forEach(function (q, i) { if (!byCat[q.cat]) byCat[q.cat] = []; byCat[q.cat].push(i); });
+
+  // Cấu hình phần thi đọc từ dữ liệu (N1/N2/N3 = 3 phần ×60; N4/N5 = 2 phần: 120 + 60)
+  var SECIDS = E.sections.map(function (s) { return s.id; });
+  var MAXTOTAL = E.sections.reduce(function (t, s) { return t + (s.max || 60); }, 0) || 180;
+  function secMeta(id) {
+    var s = null;
+    for (var i = 0; i < E.sections.length; i++) { if (E.sections[i].id === id) { s = E.sections[i]; break; } }
+    var c = CAT[id] || {};
+    return {
+      name: (s && s.title) || c.name || id,
+      jp: c.jp || (s && s.kick) || "",
+      max: (s && s.max) || 60,
+      pass: (s && s.pass) || E.meta.passEach || 19
+    };
+  }
 
   /* ════════ RENDER EXAM ════════ */
   var sectionsEl = document.getElementById("sections");
@@ -57,7 +73,6 @@
         return '<button class="opt" type="button" data-q="' + gi + '" data-o="' + oi + '">' +
                  '<span class="opt-mark"></span>' +
                  '<span class="opt-text"><span class="opt-key">' + LETTER[oi] + '</span>' + o.jp +
-                   (o.vn ? ' <span class="vn" style="color:var(--ink-55);font-size:.82em;">— ' + o.vn + '</span>' : '') +
                  '</span>' +
                '</button>';
       }).join("");
@@ -186,18 +201,22 @@
     submitted = true;
     clearInterval(tick);
 
-    /* score per category */
-    var cats = ["lang", "read", "listen"];
+    /* score per section (trọng số điểm/câu + thang riêng từng phần) */
+    var cats = SECIDS;
     var perCat = {};
     var rawCorrect = 0;
     cats.forEach(function (c) {
       var idxs = byCat[c];
-      if (!idxs.length) return;
-      var correct = 0;
-      idxs.forEach(function (gi) { if (answers[gi] === Q[gi].answer) correct++; });
+      if (!idxs || !idxs.length) return;
+      var meta = secMeta(c);
+      var correct = 0, got = 0, max = 0;
+      idxs.forEach(function (gi) {
+        var p = Q[gi].pts || 1; max += p;
+        if (answers[gi] === Q[gi].answer) { correct++; got += p; }
+      });
       rawCorrect += correct;
-      var scaled = Math.round(correct / idxs.length * 60);
-      perCat[c] = { correct: correct, total: idxs.length, scaled: scaled, pass: scaled >= E.meta.passEach };
+      var scaled = max ? Math.round(got / max * meta.max) : 0;
+      perCat[c] = { correct: correct, total: idxs.length, scaled: scaled, max: meta.max, passMark: meta.pass, pass: scaled >= meta.pass };
     });
     var totalScore = cats.reduce(function (s, c) { return s + (perCat[c] ? perCat[c].scaled : 0); }, 0);
     var allSectionsPass = cats.every(function (c) { return !perCat[c] || perCat[c].pass; });
@@ -226,7 +245,7 @@
   function renderResult(r) {
     // gauge
     var C = 2 * Math.PI * 52; // 326.7
-    var frac = Math.min(r.totalScore / 180, 1);
+    var frac = Math.min(r.totalScore / MAXTOTAL, 1);
     var bar = document.getElementById("gaugeBar");
     bar.setAttribute("stroke-dasharray", C.toFixed(1));
     bar.setAttribute("stroke-dashoffset", C.toFixed(1));
@@ -240,9 +259,9 @@
     v.textContent = r.passed ? "ĐỖ" : "TRƯỢT";
     v.className = "rh-verdict " + (r.passed ? "pass" : "fail");
     document.getElementById("verdictNote").textContent = r.passed
-      ? "Chúc mừng! Bạn đã vượt mốc đỗ N3 ở cả tổng điểm lẫn từng phần. Hãy giữ phong độ và thử sức với đề khó hơn."
+      ? ("Chúc mừng! Bạn đã vượt mốc đỗ " + E.meta.level + " ở cả tổng điểm lẫn từng phần. Hãy giữ phong độ và thử sức với đề khó hơn.")
       : (r.totalScore >= E.meta.passTotal
-          ? "Tổng điểm đã đủ, nhưng có phần chưa đạt điểm liệt tối thiểu (19/60). Tập trung gỡ đúng phần yếu là sẽ đỗ."
+          ? "Tổng điểm đã đủ, nhưng có phần chưa đạt điểm liệt tối thiểu. Tập trung gỡ đúng phần yếu là sẽ đỗ."
           : "Chưa đạt mốc đỗ lần này. Đừng nản — bảng phân tích bên dưới chỉ rõ phần cần ưu tiên ôn.");
     document.getElementById("pctPass").textContent = r.pctPass + "%";
     document.getElementById("rawCorrect").textContent = r.rawCorrect + "/" + TOTAL;
@@ -250,20 +269,21 @@
 
     // scorecard rows
     var rowsEl = document.getElementById("scoreRows");
-    var cats = ["lang", "read", "listen"];
+    var cats = SECIDS;
     var html = "";
     cats.forEach(function (c) {
       var p = r.perCat[c]; if (!p) return;
-      var markPct = (E.meta.passEach / 60 * 100);
-      var fillPct = (p.scaled / 60 * 100);
+      var meta = secMeta(c);
+      var markPct = (p.passMark / p.max * 100);
+      var fillPct = (p.scaled / p.max * 100);
       html +=
         '<div class="sc-row">' +
-          '<div class="scr-name"><div class="scr-jp">' + CAT[c].jp + '</div><div class="scr-vn">' + CAT[c].name + '</div></div>' +
+          '<div class="scr-name"><div class="scr-jp">' + meta.jp + '</div><div class="scr-vn">' + meta.name + '</div></div>' +
           '<div class="scr-bar-wrap">' +
             '<div class="scr-bar"><div class="fill ' + (p.pass ? "pass" : "fail") + '" data-w="' + fillPct + '"></div><div class="mark" style="left:' + markPct + '%;"></div></div>' +
-            '<div class="scr-meta"><span>0</span><span>điểm liệt ' + E.meta.passEach + '</span><span>60</span></div>' +
+            '<div class="scr-meta"><span>0</span><span>điểm liệt ' + p.passMark + '</span><span>' + p.max + '</span></div>' +
           '</div>' +
-          '<div class="scr-score"><span class="v">' + p.scaled + '</span><span class="o"> / 60</span>' +
+          '<div class="scr-score"><span class="v">' + p.scaled + '</span><span class="o"> / ' + p.max + '</span>' +
             '<div class="scr-tag ' + (p.pass ? "pass" : "fail") + '">' + (p.pass ? "Đạt" : "Chưa đạt") + '</div>' +
           '</div>' +
         '</div>';
@@ -273,10 +293,10 @@
       '<div class="sc-row total">' +
         '<div class="scr-name"><div class="scr-jp">総合得点</div><div class="scr-vn">Tổng điểm · mốc đỗ ' + E.meta.passTotal + '</div></div>' +
         '<div class="scr-bar-wrap">' +
-          '<div class="scr-bar"><div class="fill ' + (r.passed ? "pass" : "fail") + '" data-w="' + (r.totalScore / 180 * 100) + '"></div><div class="mark" style="left:' + (E.meta.passTotal / 180 * 100) + '%;"></div></div>' +
-          '<div class="scr-meta"><span>0</span><span>mốc đỗ ' + E.meta.passTotal + '</span><span>180</span></div>' +
+          '<div class="scr-bar"><div class="fill ' + (r.passed ? "pass" : "fail") + '" data-w="' + (r.totalScore / MAXTOTAL * 100) + '"></div><div class="mark" style="left:' + (E.meta.passTotal / MAXTOTAL * 100) + '%;"></div></div>' +
+          '<div class="scr-meta"><span>0</span><span>mốc đỗ ' + E.meta.passTotal + '</span><span>' + MAXTOTAL + '</span></div>' +
         '</div>' +
-        '<div class="scr-score"><span class="v total">' + r.totalScore + '</span><span class="o"> / 180</span>' +
+        '<div class="scr-score"><span class="v total">' + r.totalScore + '</span><span class="o"> / ' + MAXTOTAL + '</span>' +
           '<div class="scr-tag ' + (r.passed ? "pass" : "fail") + '">' + (r.passed ? "ĐỖ" : "TRƯỢT") + '</div>' +
         '</div>' +
       '</div>';
@@ -313,7 +333,7 @@
           '<div class="rev-top">' +
             '<span class="rev-num">' + pad(n) + '</span>' +
             '<span class="rev-status ' + (isCorrect ? "correct" : "wrong") + '">' + (isCorrect ? "Đúng" : (picked === undefined ? "Bỏ trống" : "Sai")) + '</span>' +
-            '<span class="rev-cat">' + CAT[q.cat].name + '</span>' +
+            '<span class="rev-cat">' + secMeta(q.cat).name + '</span>' +
           '</div>' +
           (q.passage ? '<div class="q-passage" style="margin-bottom:16px;"><p>' + q.passage + '</p></div>' : "") +
           '<div class="rev-prompt">' + stripInstruct(q.prompt) + '</div>' +
@@ -388,7 +408,7 @@
 
   function fillAI(r, ai) {
     ai = ai || null;
-    var cats = ["lang", "read", "listen"];
+    var cats = SECIDS;
     // weakest section by scaled score
     var weakest = null;
     cats.forEach(function (c) {
@@ -402,8 +422,8 @@
     });
 
     var diag = ai && ai.diag ? ai.diag : (r.passed
-      ? "Bài làm cho thấy nền tảng N3 của bạn đã vững: tổng " + r.totalScore + "/180, vượt mốc đỗ " + E.meta.passTotal + ". Điểm mạnh rõ nhất là phần " + CAT[strongest].name + "."
-      : "Tổng điểm lần này là " + r.totalScore + "/180" + (r.totalScore >= E.meta.passTotal ? ", đủ mốc nhưng vướng điểm liệt ở một phần" : ", còn cách mốc đỗ " + (E.meta.passTotal - r.totalScore) + " điểm") + ". Phần cần ưu tiên nhất là " + CAT[weakest].name + " (" + r.perCat[weakest].scaled + "/60).");
+      ? "Bài làm cho thấy nền tảng " + E.meta.level + " của bạn đã vững: tổng " + r.totalScore + "/" + MAXTOTAL + ", vượt mốc đỗ " + E.meta.passTotal + ". Điểm mạnh rõ nhất là phần " + secMeta(strongest).name + "."
+      : "Tổng điểm lần này là " + r.totalScore + "/" + MAXTOTAL + (r.totalScore >= E.meta.passTotal ? ", đủ mốc nhưng vướng điểm liệt ở một phần" : ", còn cách mốc đỗ " + (E.meta.passTotal - r.totalScore) + " điểm") + ". Phần cần ưu tiên nhất là " + secMeta(weakest).name + " (" + r.perCat[weakest].scaled + "/" + r.perCat[weakest].max + ").");
 
     var plan = ai && ai.plan ? ai.plan : (weakest === "lang"
       ? "Mỗi ngày dành 20 phút ôn 15 từ vựng N3 theo chủ đề và 2 mẫu ngữ pháp, làm lại ngay phần ‘Sửa đề’ phía dưới để ghi nhớ lỗi sai."
@@ -413,7 +433,7 @@
 
     var focusChips = [];
     cats.forEach(function (c) {
-      if (r.perCat[c] && !r.perCat[c].pass) focusChips.push(CAT[c].name);
+      if (r.perCat[c] && !r.perCat[c].pass) focusChips.push(secMeta(c).name);
     });
     if (ai && ai.focus && ai.focus.length) focusChips = ai.focus.slice(0,4);
     if (!focusChips.length) focusChips.push("Duy trì phong độ", "Thử đề khó hơn");
