@@ -513,30 +513,32 @@ Quy tắc:
 - examples 2-4 câu thực tế. PHẢI có ja_ruby format {kanji|reading} cho TỪNG nhóm kanji trong ja.
 - Chỉ trả JSON.`;
 
-const TRANSLATE_PROMPT = (text, direction) => {
-  const dirHuman = direction === "vi->ja" ? "Việt → Nhật" : "Nhật → Việt";
-  return `Bạn là dịch giả chuyên Nhật–Việt, có nền tảng văn học và sư phạm.
+const TRANSLATE_PROMPT = (text) => `Bạn là dịch giả chuyên Nhật–Việt, có nền tảng văn học và sư phạm.
 
-Hướng dịch: ${dirHuman}
-Văn bản cần dịch:
+Văn bản cần dịch (GIỮ NGUYÊN cách xuống dòng):
 """
 ${text}
 """
 
+BƯỚC 1: Tự nhận diện văn bản trên là tiếng NHẬT hay tiếng VIỆT (bỏ qua mọi gợi ý hướng dịch khác).
+BƯỚC 2: Nếu là tiếng Nhật → dịch sang tiếng Việt. Nếu là tiếng Việt → dịch sang tiếng Nhật.
+QUAN TRỌNG: Giữ ĐÚNG cấu trúc xuống dòng của bản gốc — gốc có bao nhiêu dòng thì bản dịch cũng phải xuống dòng tương ứng (dùng ký tự \\n giữa các dòng).
+
 Trả về **JSON đúng schema** dưới đây, không có text nào khác:
 
 {
-  "source": "văn bản gốc",
-  "target": "bản dịch chính (tự nhiên, không word-by-word)",
+  "source": "văn bản gốc (giữ nguyên xuống dòng \\n)",
+  "source_lang": "ja" | "vi",
+  "target_lang": "vi" | "ja",
+  "target": "bản dịch chính tự nhiên, GIỮ xuống dòng \\n giống bản gốc",
   "alternatives": [
-    "bản dịch khác (formal hơn, hoặc casual hơn)"
+    "bản dịch khác (formal hơn, hoặc casual hơn) — cũng giữ xuống dòng"
   ],
   "notes": [
     "ghi chú về sắc thái, từ chọn, văn hoá nếu cần"
   ],
   "vocabulary": [
-    {"word": "孤独", "reading": "こどく", "meaning_vi": "cô độc"},
-    {"word": "感じる", "reading": "かんじる", "meaning_vi": "cảm thấy"}
+    {"word": "孤独", "reading": "こどく", "meaning_vi": "cô độc"}
   ],
   "grammar_notes": [
     {"pattern": "～ている", "explanation": "diễn tả trạng thái đang tiếp diễn"}
@@ -544,13 +546,12 @@ Trả về **JSON đúng schema** dưới đây, không có text nào khác:
 }
 
 Quy tắc:
-- Dịch tự nhiên như người bản xứ viết, không cứng nhắc.
+- Dịch tự nhiên như người bản xứ viết, không cứng nhắc, không word-by-word.
 - Nhật → Việt: dùng đại từ phù hợp (tôi/anh/bạn…), tránh "ngôi thứ nhất số ít" kiểu Google.
-- Việt → Nhật: mặc định dùng です・ます (lịch sự). Nếu source casual rõ thì dùng casual.
-- vocabulary: chỉ liệt kê 5-10 từ quan trọng nhất, không phải tất cả.
+- Việt → Nhật: mặc định dùng です・ます (lịch sự); nếu source suồng sã rõ thì dùng casual.
+- vocabulary: chỉ 5-10 từ quan trọng nhất.
 - grammar_notes: 1-3 pattern nếu có, không bắt buộc.
 - Chỉ trả JSON.`;
-};
 
 // Prepended to WORD_PROMPT/GRAMMAR_PROMPT when the input is an image instead of text.
 const IMAGE_OCR_PREFIX = `Bạn nhận một ẢNH có chứa chữ Nhật. BƯỚC 1: đọc (OCR) từ/cụm từ/mẫu ngữ pháp tiếng Nhật chính trong ảnh. BƯỚC 2: xử lý đúng theo yêu cầu bên dưới, COI nội dung đọc được từ ảnh là input thực tế cần tra. Ở mọi field "input", hãy điền chính nội dung tiếng Nhật bạn đọc được từ ảnh (KHÔNG dùng chuỗi mô tả đặt trong ngoặc đơn). Nếu ảnh không có chữ Nhật rõ ràng, trả về is_known=false và mảng kết quả rỗng.
@@ -624,12 +625,12 @@ async function handleDictLookup(req, env, type) {
     prompt = KANJI_PROMPT(q);
   } else if (type === "translate") {
     const text = (body.text || "").trim();
-    const direction = body.direction === "vi->ja" ? "vi->ja" : "ja->vi";
     if (!text) return err(400, "missing text");
     if (text.length > 3000) return err(400, "text too long (max 3000 chars)");
-    normalized = `${direction}|${text.normalize("NFKC")}`;
+    // Auto-detect ngôn ngữ trong prompt → cache theo nội dung, không theo hướng
+    normalized = text.normalize("NFKC");
     cacheKey = `translate:${await sha256Hex(normalized)}`;
-    prompt = TRANSLATE_PROMPT(text, direction);
+    prompt = TRANSLATE_PROMPT(text);
   } else {
     return err(400, "unknown type");
   }
