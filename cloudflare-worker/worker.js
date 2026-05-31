@@ -1005,6 +1005,47 @@ async function handleLogout(req, env) {
   });
 }
 
+/* ─────────── Furigana (Gemini) ─────────── */
+async function handleFurigana(req, env) {
+  if (req.method !== "POST") return err(405, "method not allowed");
+  let body; try { body = await req.json(); } catch { return err(400, "invalid json"); }
+  let texts = Array.isArray(body.texts) ? body.texts : (body.text ? [body.text] : []);
+  texts = texts.map((t) => String(t || "").trim()).filter(Boolean).slice(0, 60);
+  if (!texts.length) return err(400, "missing text");
+
+  const out = new Array(texts.length).fill(null);
+  const need = [];
+  for (let i = 0; i < texts.length; i++) {
+    const k = `furi:${await sha256Hex(texts[i])}`;
+    const c = await env.DICT_CACHE.get(k);
+    if (c != null) out[i] = c; else need.push({ i, t: texts[i], k });
+  }
+  if (need.length) {
+    const bud = await checkAndBumpBudget(env);
+    if (bud.ok) {
+      const list = need.map((n, j) => `${j + 1}. ${n.t}`).join("\n");
+      const prompt =
+        'Bạn la cong cu them furigana tieng Nhat. Voi MOI cau duoi day, boc MOI cum Han tu (kanji) bang the <ruby>漢字<rt>かな</rt></ruby> voi cach doc hiragana DUNG theo ngu canh. Giu NGUYEN hiragana, katakana, dau cau va moi ky tu khac; KHONG them/bot noi dung; KHONG giai thich. ' +
+        'Tra ve JSON dung dang {"ruby":["...","..."]} voi mang theo DUNG thu tu va so luong cau, moi phan tu la chuoi HTML cau da them ruby.\n\nCac cau:\n' + list;
+      try {
+        const g = await callGemini(env, prompt, { model: env.GEMINI_MODEL });
+        const arr = (g && Array.isArray(g.ruby)) ? g.ruby : [];
+        for (let j = 0; j < need.length; j++) {
+          let r = arr[j] != null ? String(arr[j]) : "";
+          r = r.replace(/<script[\s\S]*?<\/script>/gi, "");
+          if (r) { out[need[j].i] = r; await env.DICT_CACHE.put(need[j].k, r, { expirationTtl: CACHE_TTL }); }
+          else out[need[j].i] = need[j].t;
+        }
+      } catch (e) {
+        for (const n of need) if (out[n.i] == null) out[n.i] = n.t;
+      }
+    } else {
+      for (const n of need) out[n.i] = n.t;
+    }
+  }
+  return json({ ruby: out });
+}
+
 /* ─────────── Google Cloud TTS proxy ─────────── */
 // High-quality Japanese voice: ja-JP-Neural2-B (Studio-grade WaveNet)
 // Cost: ~$16/1M chars for Neural2 — extremely cheap with cache.
@@ -1414,6 +1455,7 @@ export default {
       else if (p === "/api/auth/logout")          res = await handleLogout(req, env);
       else if (p === "/api/me")                   res = await handleMe(req, env);
       else if (p === "/api/tts")                  res = await handleTTS(req, env);
+      else if (p === "/api/furigana")             res = await handleFurigana(req, env);
       else if (p === "/api/admin/stats")          res = await handleAdminStats(req, env);
 
       else if (p === "/api/srs/state")            res = await handleSrsState(req, env);

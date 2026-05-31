@@ -520,7 +520,8 @@ document.querySelectorAll('.blank').forEach(function(b){
 <style>#ttsBar{display:none!important}
 .tts-btn,.tl-spk{display:inline-flex!important;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;margin-right:7px;padding:0;border:1px solid var(--gold,#B89568)!important;background:transparent;color:var(--gold,#B89568);border-radius:50%;font-size:11px;cursor:pointer;vertical-align:middle;line-height:1;flex:none;box-shadow:none}
 .tts-btn:hover,.tl-spk:hover{background:var(--gold,#B89568);color:#fff}
-.tts-btn.on,.tts-btn.playing,.tl-spk.on{background:var(--navy,#1B3A6B);border-color:var(--navy,#1B3A6B)!important;color:#fff}</style>
+.tts-btn.on,.tts-btn.playing,.tl-spk.on{background:var(--navy,#1B3A6B);border-color:var(--navy,#1B3A6B)!important;color:#fff}
+.ex-jp rt,.ex-q rt{font-size:.6em;color:var(--gold-d,#8A6E47);font-weight:400}</style>
 <script>(function(){
 var jv=null;function pick(){try{var V=speechSynthesis.getVoices();function f(re){return V.filter(function(v){return /ja|JP|日本/i.test(v.lang)&&re.test(v.name);})[0];}jv=f(/Google/i)||f(/Kyoko/i)||f(/Otoya/i)||f(/Microsoft|Nanami|Ayumi|Keita|Haruka/i)||V.filter(function(v){return /ja|JP|日本/i.test((v.lang||'')+(v.name||''));})[0]||null;}catch(e){}}pick();try{speechSynthesis.onvoiceschanged=pick;}catch(e){}
 function sfb(t,b,done){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=0.9;if(jv)u.voice=jv;u.onend=u.onerror=function(){done&&done();};speechSynthesis.speak(u);}catch(e){done&&done();}}
@@ -528,11 +529,13 @@ function ext(txt,b,done){var srcs=['https://api.streamelements.com/kappa/v2/spee
 window.__tlGtts=gplay;
 function clean(el){var c=el.cloneNode(true);c.querySelectorAll('rt,rp,.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn,.vn,.hanviet,.kreading,.kmean,.ana-syn,.ana-ant,.ana-nuance').forEach(function(n){n.remove();});return (c.textContent||'').replace(/\s+/g,' ').trim();}
 function jaText(btn){var node=btn;for(var i=0;i<4&&node.parentElement;i++){node=node.parentElement;var t=clean(node);if(/[぀-ヿ一-龯]/.test(t))return t;}return '';}
-document.addEventListener('click',function(e){var btn=e.target&&e.target.closest&&e.target.closest('.tts-btn');if(!btn)return;e.preventDefault();e.stopPropagation();if(typeof e.stopImmediatePropagation==='function')e.stopImmediatePropagation();gplay(jaText(btn),btn);},true);
+document.addEventListener('click',function(e){var btn=e.target&&e.target.closest&&e.target.closest('.tts-btn, .tl-spk');if(!btn)return;e.preventDefault();e.stopPropagation();if(typeof e.stopImmediatePropagation==='function')e.stopImmediatePropagation();gplay(jaText(btn),btn);},true);
 function nativeNear(el){if(el.querySelector('.tts-btn'))return true;var p=el.parentElement;if(p){for(var c=p.firstElementChild;c;c=c.nextElementSibling){if(c.classList&&c.classList.contains('tts-btn'))return true;}}return false;}
-function add(el){if(el.dataset.spk)return;el.dataset.spk='1';if(nativeNear(el))return;var t=clean(el);if(!t||!/[぀-ヿ一-龯]/.test(t))return;var b=document.createElement('button');b.type='button';b.className='tl-spk';b.setAttribute('aria-label','Phat am');b.textContent='🔊';b.addEventListener('click',function(e){e.stopPropagation();e.preventDefault();gplay(t,b);});el.insertBefore(b,el.firstChild);}
+function add(el){if(el.dataset.spk)return;el.dataset.spk='1';if(nativeNear(el))return;var t=clean(el);if(!t||!/[぀-ヿ一-龯]/.test(t))return;var b=document.createElement('button');b.type='button';b.className='tl-spk';b.setAttribute('aria-label','Phat am');b.textContent='🔊';el.insertBefore(b,el.firstChild);}
 function run(){document.querySelectorAll('[data-tts], .ex-jp, .ex-q').forEach(add);}
-if(document.readyState!=='loading'){setTimeout(run,50);}else{document.addEventListener('DOMContentLoaded',function(){setTimeout(run,50);});}
-window.addEventListener('load',function(){setTimeout(run,160);});})();</script>
+function furiPass(){var els=[].slice.call(document.querySelectorAll('.ex-jp, .ex-q, .jp'));var jobs=[];els.forEach(function(el){if(el.dataset.furi)return;if(el.querySelector('ruby'))return;var c=el.cloneNode(true);c.querySelectorAll('.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn').forEach(function(n){n.remove();});var t=(c.textContent||'').replace(/\s+/g,' ').trim();if(!t||t.length<6||!/[一-龯]/.test(t))return;el.dataset.furi='1';jobs.push({el:el,t:t});});if(!jobs.length)return;try{fetch('/api/furigana',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({texts:jobs.map(function(j){return j.t;})})}).then(function(r){return r.ok?r.json():null;}).then(function(d){if(!d||!d.ruby)return;jobs.forEach(function(j,idx){var ru=d.ruby[idx];if(!ru||ru.indexOf('<ruby')<0)return;var btn=j.el.querySelector('.tl-spk,.tts-btn');j.el.innerHTML=(btn?btn.outerHTML:'')+ru;});}).catch(function(){});}catch(e){}}
+function go(){run();furiPass();}
+if(document.readyState!=='loading'){setTimeout(go,50);}else{document.addEventListener('DOMContentLoaded',function(){setTimeout(go,50);});}
+window.addEventListener('load',function(){setTimeout(go,160);});})();</script>
 
 </body></html>
