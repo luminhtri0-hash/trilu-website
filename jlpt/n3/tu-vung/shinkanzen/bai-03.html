@@ -1,0 +1,614 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 3 · 毎日の生活 — Từ vựng N3 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N3 — Bài 3: 毎日の生活. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#6e1831;
+  --accent-dark:#4f0f24;
+  --accent-2:#9b7a38;
+  --accent-3:#c7ab70;
+  --line:#dfcfbb;
+  --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(110,24,49,0.08), transparent 22%),
+    linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+/* ============ COVER ============ */
+.cover{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 36%, #3a0f1b 100%);
+  color:#fff; border-radius:30px; box-shadow:var(--shadow);
+  padding:60px 64px 50px; margin-bottom:26px;
+}
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+/* ============ TOC ============ */
+.toc-panel{
+  margin:0 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96));
+  border:1px solid rgba(155,122,56,0.20);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:14px 16px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(110,24,49,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item.disabled{ opacity:0.45; pointer-events:none; }
+.toc-item-number{ display:inline-block; min-width:34px; padding:2px 8px; margin-right:8px; border-radius:8px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:11px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:13.5px; }
+.toc-item-summary{ display:block; margin-top:5px; color:var(--muted); font-size:12px; line-height:1.45; font-family:"Noto Serif CJK JP",serif; }
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(155,122,56,0.16);
+  border-radius:28px; box-shadow:var(--shadow);
+  padding:0 0 40px; margin-bottom:40px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  padding:30px 44px 28px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 50%, #3a0f1b 100%);
+  color:#fff;
+}
+.lesson-banner::after{
+  content:"語彙"; position:absolute; right:-10px; bottom:-50px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:8px; }
+.lesson-banner h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:30px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:14px; color:rgba(255,255,255,0.82); }
+
+.doc-body{ padding:30px 44px 10px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #57132a 0%, #6e1831 52%, #7f3b52 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark); position:absolute; right:18px; top:50%; transform:translateY(-50%);
+  font-family:"Noto Serif CJK JP",serif; font-size:60px; line-height:1; color:rgba(255,255,255,0.12); font-weight:700;
+}
+.section-kicker{ display:block; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:rgba(255,255,255,0.78); }
+.section-head h3{
+  margin:0; padding:0; border:none; color:#fff; background:none;
+  font-family:"Noto Serif CJK JP",serif; font-size:24px; line-height:1.2; font-weight:700;
+}
+.section-head .section-vn{ display:block; margin-top:4px; font-size:13px; font-style:italic; color:rgba(255,255,255,0.82); font-family:Inter,sans-serif; }
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{ margin:16px 0 24px; }
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff; border:1px solid var(--line-2);
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 26px rgba(60,38,19,0.05);
+  font-size:13.5px;
+}
+thead th{
+  background:linear-gradient(180deg, #fcf5ea 0%, #f2e3cf 100%);
+  color:var(--accent); font-weight:800;
+  padding:13px 14px; text-align:left; font-size:13px;
+  border-bottom:1px solid var(--line-2);
+}
+thead th:not(:last-child){ border-right:1px solid var(--line-2); }
+tbody td{
+  padding:18px 14px; vertical-align:top;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+}
+tbody td:last-child{ border-right:none; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody tr:nth-child(even) td{ background:#fffaf4; }
+
+.col-stt{ width:5%; text-align:center; font-weight:800; color:var(--accent); font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:18px; }
+.col-vocab{ width:22%; }
+.col-explain{ width:30%; }
+.col-example{ width:43%; }
+
+.vocab-wrapper{ display:flex; flex-direction:column; gap:4px; }
+.vocab-kanji{ font-size:26px; font-weight:700; color:#222; font-family:"Noto Serif CJK JP","Yu Mincho",serif; line-height:1.15; }
+.vocab-kanji ruby{ ruby-position:over; ruby-align:center; }
+.vocab-kanji rt{ font-size:11px; color:#888; font-family:sans-serif; font-weight:500; }
+.vocab-hanviet{ font-size:11px; color:var(--accent-2); font-weight:800; letter-spacing:1.2px; margin-top:4px; }
+.vocab-pos{ display:inline-block; font-size:10.5px; color:#fff; background:var(--green); padding:2px 8px; border-radius:4px; font-weight:600; letter-spacing:0.05em; margin-top:6px; align-self:flex-start; }
+.vocab-pos.pos-na{ background:var(--terra); }
+.vocab-pos.pos-i{ background:var(--teal); }
+.vocab-pos.pos-adv{ background:var(--plum); }
+.vocab-pos.pos-suru{ background:#8a4a6a; }
+.vocab-pos.pos-katakana{ background:var(--accent-2); }
+.vocab-meaning{ font-size:14px; color:var(--accent); font-weight:700; margin-top:8px; line-height:1.5; }
+
+/* Explain box */
+.kanji-break{ background:linear-gradient(180deg, #fffdf9, #fbf3e8); border:1px solid #e7d7be; border-left:4px solid var(--accent-2); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.65; color:#3b3320; }
+.kanji-break .kchar{ font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; color:var(--accent); margin-right:4px; }
+.kanji-break .kreading{ color:var(--accent-2); font-weight:700; font-size:11.5px; letter-spacing:0.05em; }
+.kanji-break .kmean{ color:#5f4830; }
+.kanji-break .combine{ margin-top:8px; padding-top:8px; border-top:1px dashed #d8c8ad; font-style:italic; color:#6e5230; }
+.kanji-break .combine strong{ font-style:normal; color:var(--accent); }
+.katakana-origin{ background:linear-gradient(180deg, #fff5f8, #faeaf0); border:1px solid #f0d8e2; border-left:4px solid #b13e6a; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#5a3a4a; }
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{ background:linear-gradient(180deg, #f7faf2, #ecf2e2); border:1px solid #d8e2c8; border-left:4px solid var(--green); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#3e5a3a; }
+.wago-note strong{ color:var(--green); }
+
+/* Example box */
+.ex-box{ background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent); padding:13px 16px; border-radius:0 12px 12px 0; }
+.ex-jp{ font-size:15px; color:#222; margin-bottom:8px; line-height:1.95; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn{ font-size:13.5px; color:#6e5230; font-style:italic; line-height:1.55; padding-top:6px; border-top:1px dotted #e2d4b8; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:30px 0 24px;
+  padding:0;
+  background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+  border:1px solid #e7d7be;
+  border-radius:22px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(60,38,19,0.05);
+}
+.exercise-banner{
+  display:flex; align-items:center; gap:14px;
+  padding:18px 24px;
+  background:linear-gradient(90deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff;
+}
+.exercise-icon{ width:42px; height:42px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"EB Garamond","Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:11.5px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:2px; letter-spacing:0.04em; }
+.exercise-body{ padding:22px 26px; }
+
+.exercise{ background:#fff; border:1px solid #ecdec3; border-radius:14px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 14px rgba(60,38,19,0.04); }
+.exercise:last-child{ margin-bottom:0; }
+.exercise-title{ font-weight:700; color:var(--accent); margin-bottom:12px; font-size:14px; display:flex; align-items:center; gap:10px; padding-bottom:10px; border-bottom:1px dashed #e7d7be; }
+.exercise-title .ex-no{ background:var(--accent-2); color:#fff; padding:3px 10px; border-radius:6px; font-size:11.5px; letter-spacing:0.08em; }
+.choice-pool{ background:linear-gradient(180deg, #fff7e8, #f7e4c1); border:1px dashed var(--accent-2); border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:14px; font-family:"Noto Serif CJK JP",serif; color:#674c1b; }
+.choice-pool strong{ color:var(--accent); }
+
+.ex-q{ padding:9px 0; border-bottom:1px dotted #eadfce; font-size:14px; line-height:1.85; font-family:"Noto Serif CJK JP",serif; }
+.ex-q:last-child{ border-bottom:none; }
+.ex-q .qnum{ display:inline-block; min-width:24px; font-weight:700; color:var(--accent); margin-right:4px; font-family:"EB Garamond",sans-serif; font-size:14.5px; }
+.ex-q .blank{ display:inline-block; min-width:90px; border-bottom:1.5px solid #b08850; padding:0 8px; margin:0 3px; text-align:center; color:transparent; cursor:pointer; transition:all .15s; }
+.ex-q .blank:hover{ background:rgba(199,171,112,0.12); }
+.ex-q .blank.shown{ color:var(--accent); font-weight:700; border-bottom-color:var(--accent); background:rgba(199,171,112,0.15); }
+
+.multi-choice{ display:block; margin:4px 0 4px 30px; font-size:13.5px; color:#444; }
+.multi-choice .opt-num{ color:var(--accent-2); font-weight:700; margin-right:6px; }
+.match-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin-top:12px; }
+.match-col{ background:#fffaf2; border:1px solid #ecdec3; border-radius:12px; padding:14px; }
+.match-col h5{ margin:0 0 10px; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; }
+.match-item{ padding:7px 10px; font-size:14px; border-radius:6px; }
+.match-item.jp{ font-family:"Noto Serif CJK JP",serif; }
+.match-item .mlabel{ display:inline-block; min-width:24px; font-weight:800; color:var(--accent-2); }
+
+.answer-toggle{
+  display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+  padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:13px; cursor:pointer; transition:all 0.2s; font-family:inherit;
+  box-shadow:0 6px 14px rgba(110,24,49,0.18);
+}
+.answer-toggle:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(110,24,49,0.28); }
+.answer-toggle::before{ content:"鍵"; font-family:"Noto Serif CJK JP",serif; margin-right:4px; }
+.answer-box{ display:none; margin-top:14px; padding:14px 16px; background:linear-gradient(180deg, #fffbef, #f8eed4); border:1px solid #d9bb88; border-left:4px solid var(--accent-2); border-radius:10px; font-size:13.5px; line-height:1.7; color:#5a4520; }
+.answer-box strong{ color:var(--accent); }
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  table.vocab-table{ min-width:880px; }
+  .table-shell{ overflow-x:auto; }
+  .match-grid{ grid-template-columns:1fr; }
+}
+
+/* === @page: dùng A4 LANDSCAPE cho bài học để có chỗ cho 4 cột === */
+@media print {
+  /* Cover + TOC: portrait */
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  /* Trang bài học: landscape (rộng hơn để 4 cột vừa) */
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+
+  /* === RESET cơ bản === */
+  html, body{ background:#fff !important; }
+  body{ font-size:11px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; }
+
+  /* === COVER === */
+  .cover{ page-break-after:always; break-after:page; box-shadow:none; border-radius:18px; padding:42px 38px; }
+  .cover-title{ font-size:36px; }
+  .cover-mark{ font-size:11rem !important; }
+
+  /* === TOC === */
+  .toc-panel{ page-break-after:always; break-after:page; box-shadow:none; }
+  .toc-grid{ grid-template-columns:repeat(3, 1fr) !important; }
+  .toc-item{ page-break-inside:avoid !important; break-inside:avoid !important; }
+
+  /* === Mỗi BÀI bắt sang trang mới === */
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:16px 18px 12px !important; }
+
+  /* === GỠ BỎ rào cản min-width === */
+  /* QUAN TRỌNG: ghi đè responsive rule khiến bảng tràn ngang */
+  .table-shell{ overflow:visible !important; overflow-x:visible !important; margin:8px 0 14px !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; box-shadow:none !important; table-layout:fixed !important; }
+
+  /* === KHÔNG cắt giữa khối === */
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:18px 22px !important; }
+  .lesson-banner h2{ font-size:22px !important; }
+  .section-head{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:10px 16px !important; margin:10px 0 8px !important; }
+  .section-head h3{ font-size:18px !important; }
+  .section-head::after{ font-size:36px !important; }
+  .exercise-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:12px 18px !important; }
+  .exercise-banner h4{ font-size:14px !important; }
+  .exercise-block{ page-break-inside:auto; margin:14px 0 !important; }
+  .exercise-body{ padding:14px 16px !important; }
+  .exercise{ page-break-inside:avoid !important; break-inside:avoid !important; padding:12px 14px !important; margin-bottom:10px !important; }
+  .footer-card{ page-break-inside:avoid; break-inside:avoid; }
+
+  /* === BẢNG TỪ VỰNG === */
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table tbody{ display:table-row-group; }
+  table.vocab-table thead th{ padding:8px 8px !important; font-size:11px !important; }
+  /* Mỗi tr (= 1 từ vựng) giữ nguyên trên 1 trang */
+  table.vocab-table tr{ page-break-inside:avoid !important; break-inside:avoid !important; page-break-after:auto; }
+  table.vocab-table tbody td{ padding:10px 8px !important; font-size:11px !important; }
+
+  /* === Co cell content nhỏ lại cho vừa khổ === */
+  .vocab-wrapper{ gap:2px !important; }
+  .vocab-kanji{ font-size:18px !important; line-height:1.1 !important; }
+  .vocab-kanji rt{ font-size:9px !important; }
+  .vocab-hanviet{ font-size:9.5px !important; letter-spacing:0.8px !important; margin-top:2px !important; }
+  .vocab-pos{ font-size:8.5px !important; padding:1px 5px !important; margin-top:3px !important; }
+  .vocab-meaning{ font-size:11px !important; margin-top:4px !important; line-height:1.35 !important; }
+
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:7px 9px !important; font-size:10.5px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important; break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:14px !important; }
+  .kanji-break .kreading{ font-size:9.5px !important; }
+  .kanji-break .combine{ margin-top:5px !important; padding-top:5px !important; }
+
+  .ex-box{ padding:8px 10px !important; page-break-inside:avoid !important; break-inside:avoid !important; }
+  .ex-jp{ font-size:12px !important; line-height:1.75 !important; margin-bottom:5px !important; }
+  .ex-jp rt{ font-size:8px !important; }
+  .ex-vn{ font-size:10.5px !important; line-height:1.45 !important; padding-top:4px !important; }
+
+  /* === BÀI TẬP === */
+  .ex-q{ page-break-inside:avoid; break-inside:avoid; font-size:11.5px !important; line-height:1.7 !important; padding:6px 0 !important; }
+  .choice-pool{ font-size:11.5px !important; padding:7px 11px !important; }
+  .multi-choice{ font-size:11px !important; }
+  .answer-toggle{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; break-inside:avoid; font-size:11px !important; padding:10px 12px !important; }
+  .match-grid{ grid-template-columns:1fr 1fr !important; }
+  .match-item{ font-size:11px !important; padding:4px 6px !important; }
+}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:200;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.92);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:38px;height:38px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.18em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}.tl-bc a:hover{color:var(--tl-ink)}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-wrap{max-width:1000px;margin:0 auto;padding:24px}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px;transition:all .2s}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3;pointer-events:none}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n3.html">N3</a> · <a href="../shinkanzen.html">Từ vựng</a> · Bài 3</div></div></a><a class="tl-back" href="../shinkanzen.html">← Danh sách bài</a></nav>
+<div class="tl-wrap">
+<article class="document" id="lesson-3">
+<div class="lesson-banner">
+  <span class="lesson-kicker">Bài 03 — 生活 1</span>
+  <h2>毎日の生活</h2>
+  <div class="lesson-sub">Sinh hoạt 1: Việc nhà &amp; nhịp sinh hoạt hằng ngày (28 từ)</div>
+</div>
+<div class="doc-body">
+
+<div class="section-head" data-mark="家"><span class="section-kicker">Phần 3-1 · 14 từ</span><h3>家事</h3><span class="section-vn">Việc nhà</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">1</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>食<rt>しょっ</rt></ruby><ruby>器<rt>き</rt></ruby></span><span class="vocab-hanviet">THỰC KHÍ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Bát đĩa, đồ ăn uống</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">食</span><span class="kreading">THỰC · しょく / た(べる)</span> — <span class="kmean">ăn</span></div><div><span class="kchar">器</span><span class="kreading">KHÍ · き / うつわ</span> — <span class="kmean">đồ chứa, vật dụng</span></div><div class="combine"><strong>Ghép:</strong> "Đồ dùng để ăn" → <strong>bát đĩa, đồ ăn uống</strong>. Cùng chữ 器 với 容器 (hộp đựng), 武器 (vũ khí).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>夕<rt>ゆう</rt></ruby><ruby>食<rt>しょく</rt></ruby>の<ruby>後<rt>あと</rt></ruby>、<ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby>で<span class="target"><ruby>食<rt>しょっ</rt></ruby><ruby>器<rt>き</rt></ruby></span>を<ruby>洗<rt>あら</rt></ruby>います。</div><div class="ex-vn">Sau bữa tối, cả nhà cùng nhau rửa bát đĩa.</div></div></td></tr>
+
+<tr><td class="col-stt">2</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>汚<rt>よご</rt></ruby>れ</span><span class="vocab-hanviet">Ô</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Vết bẩn</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">汚</span><span class="kreading">Ô · よご(れる) / きたな(い)</span> — <span class="kmean">bẩn, ô uế</span></div><div class="combine"><strong>Ghép:</strong> Danh từ hóa từ động từ 汚れる (bị bẩn) → <strong>vết bẩn</strong>. Cụm: 汚れが付く (dính bẩn), 汚れが落ちる (sạch vết bẩn).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">シャツに<ruby>付<rt>つ</rt></ruby>いた<span class="target"><ruby>汚<rt>よご</rt></ruby>れ</span>がなかなか<ruby>落<rt>お</rt></ruby>ちません。</div><div class="ex-vn">Vết bẩn dính trên áo mãi không sạch được.</div></div></td></tr>
+
+<tr><td class="col-stt">3</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>洗<rt>せん</rt></ruby><ruby>剤<rt>ざい</rt></ruby></span><span class="vocab-hanviet">TẨY TỄ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Nước rửa, bột giặt, chất tẩy rửa</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">洗</span><span class="kreading">TẨY · せん / あら(う)</span> — <span class="kmean">rửa</span></div><div><span class="kchar">剤</span><span class="kreading">TỄ · ざい</span> — <span class="kmean">chất, thuốc</span></div><div class="combine"><strong>Ghép:</strong> "Chất để rửa" → <strong>chất tẩy rửa</strong>. Cùng chữ 剤 với 薬剤 (dược phẩm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>洗<rt>せん</rt></ruby><ruby>剤<rt>ざい</rt></ruby></span>がなくなったので、スーパーで<ruby>買<rt>か</rt></ruby>ってきました。</div><div class="ex-vn">Hết nước rửa nên tôi đã mua ở siêu thị.</div></div></td></tr>
+
+<tr><td class="col-stt">4</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>汚<rt>よご</rt></ruby>す</span><span class="vocab-hanviet">Ô</span><span class="vocab-pos">Động từ tha động</span><span class="vocab-meaning">Làm bẩn</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">汚</span><span class="kreading">Ô · よご(す)</span> — <span class="kmean">bẩn</span></div><div class="combine"><strong>Cặp tha-tự:</strong> 汚す (tha - làm cho cái gì bẩn) ↔ 汚れる (tự - bị bẩn). Ví dụ: 服を汚す (làm bẩn áo) vs 服が汚れる (áo bị bẩn).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>子<rt>こ</rt></ruby><ruby>供<rt>ども</rt></ruby>が<ruby>遊<rt>あそ</rt></ruby>んで、<ruby>新<rt>あたら</rt></ruby>しい<ruby>服<rt>ふく</rt></ruby>を<span class="target"><ruby>汚<rt>よご</rt></ruby>して</span>しまいました。</div><div class="ex-vn">Trẻ con chơi đùa làm bẩn cái áo mới mất rồi.</div></div></td></tr>
+
+<tr><td class="col-stt">5</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>畳<rt>たた</rt></ruby>む</span><span class="vocab-hanviet">ĐIỆP</span><span class="vocab-pos">Động từ</span><span class="vocab-meaning">Gấp (quần áo, giấy, bản đồ...)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">畳</span><span class="kreading">ĐIỆP · たた(む) / じょう</span> — <span class="kmean">chiếu tatami, xếp chồng</span></div><div class="combine"><strong>Cách dùng:</strong> Aを畳む = gấp A. Dùng cho vật mỏng có thể gấp được. Đọc khác: 畳 (たたみ) = chiếu tatami.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">きれいに<ruby>洗<rt>あら</rt></ruby>った<ruby>服<rt>ふく</rt></ruby>を<span class="target"><ruby>畳<rt>たた</rt></ruby>んで</span>、<ruby>引<rt>ひ</rt></ruby>き<ruby>出<rt>だ</rt></ruby>しにしまいました。</div><div class="ex-vn">Tôi gấp quần áo đã giặt sạch rồi cất vào ngăn kéo.</div></div></td></tr>
+
+<tr><td class="col-stt">6</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">しまう</span><span class="vocab-hanviet">(và-go)</span><span class="vocab-pos">Động từ</span><span class="vocab-meaning">Cất gọn vào chỗ; ~てしまう: hoàn thành/đáng tiếc</span></div></td><td class="col-explain"><div class="wago-note"><strong>Từ thuần Nhật:</strong> Kanji ít dùng 「仕舞う」. Hai nghĩa: ① Cất vật vào vị trí (本をしまう). ② Trợ động từ ~てしまう = đã làm xong/đã lỡ làm. Đây là nghĩa ① — dọn dẹp cất gọn.</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>使<rt>つか</rt></ruby>った<ruby>道<rt>どう</rt></ruby><ruby>具<rt>ぐ</rt></ruby>は<ruby>元<rt>もと</rt></ruby>の<ruby>場<rt>ば</rt></ruby><ruby>所<rt>しょ</rt></ruby>に<span class="target">しまって</span>ください。</div><div class="ex-vn">Sau khi dùng xong, hãy cất dụng cụ về vị trí cũ.</div></div></td></tr>
+
+<tr><td class="col-stt">7</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>掃<rt>そう</rt></ruby><ruby>除<rt>じ</rt></ruby><ruby>機<rt>き</rt></ruby> / アイロン</span><span class="vocab-hanviet">TẢO TRỪ CƠ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Máy hút bụi / bàn ủi (をかける)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">掃</span><span class="kreading">TẢO · そう</span> — <span class="kmean">quét</span></div><div><span class="kchar">除</span><span class="kreading">TRỪ · じょ</span> — <span class="kmean">loại bỏ</span></div><div><span class="kchar">機</span><span class="kreading">CƠ · き</span> — <span class="kmean">máy móc</span></div><div class="combine"><strong>Ghép:</strong> "Máy quét loại bỏ bụi" → <strong>máy hút bụi</strong>. アイロン từ tiếng Anh "iron". Cụm: 掃除機/アイロンをかける.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>週<rt>しゅう</rt></ruby><ruby>末<rt>まつ</rt></ruby>は<span class="target"><ruby>掃<rt>そう</rt></ruby><ruby>除<rt>じ</rt></ruby><ruby>機<rt>き</rt></ruby></span>をかけて、シャツに<span class="target">アイロン</span>をかけます。</div><div class="ex-vn">Cuối tuần tôi hút bụi nhà và ủi áo.</div></div></td></tr>
+
+<tr><td class="col-stt">8</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>家<rt>か</rt></ruby><ruby>具<rt>ぐ</rt></ruby></span><span class="vocab-hanviet">GIA CỤ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Đồ nội thất, bàn ghế tủ giường</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">家</span><span class="kreading">GIA · か / いえ</span> — <span class="kmean">nhà</span></div><div><span class="kchar">具</span><span class="kreading">CỤ · ぐ</span> — <span class="kmean">dụng cụ</span></div><div class="combine"><strong>Ghép:</strong> "Dụng cụ trong nhà" → <strong>đồ nội thất</strong>. Cùng chữ 具 với 道具 (dụng cụ), 文具 (văn phòng phẩm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>引<rt>ひ</rt></ruby>っ<ruby>越<rt>こ</rt></ruby>しのために、<ruby>新<rt>あたら</rt></ruby>しい<span class="target"><ruby>家<rt>か</rt></ruby><ruby>具<rt>ぐ</rt></ruby></span>を<ruby>買<rt>か</rt></ruby>いました。</div><div class="ex-vn">Để chuyển nhà, tôi đã mua đồ nội thất mới.</div></div></td></tr>
+
+<tr><td class="col-stt">9</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>動<rt>うご</rt></ruby>かす</span><span class="vocab-hanviet">ĐỘNG</span><span class="vocab-pos">Động từ tha động</span><span class="vocab-meaning">Di chuyển, làm cho cái gì chuyển động</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">動</span><span class="kreading">ĐỘNG · どう / うご(く)</span> — <span class="kmean">chuyển động</span></div><div class="combine"><strong>Cặp tha-tự:</strong> 動かす (tha - làm di chuyển) ↔ 動く (tự - tự di chuyển). Ví dụ: 机を動かす (di chuyển bàn) vs 机が動く (bàn tự di chuyển).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>重<rt>おも</rt></ruby>いテーブルを<ruby>一<rt>ひと</rt></ruby><ruby>人<rt>り</rt></ruby>で<span class="target"><ruby>動<rt>うご</rt></ruby>かす</span>のは<ruby>大<rt>たい</rt></ruby><ruby>変<rt>へん</rt></ruby>です。</div><div class="ex-vn">Một mình di chuyển cái bàn nặng thì vất vả lắm.</div></div></td></tr>
+
+<tr><td class="col-stt">10</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>床<rt>ゆか</rt></ruby></span><span class="vocab-hanviet">SÀNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Sàn nhà</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">床</span><span class="kreading">SÀNG · ゆか / とこ / しょう</span> — <span class="kmean">sàn nhà; giường</span></div><div class="combine"><strong>Hai cách đọc:</strong> ゆか = sàn nhà / とこ = giường nằm (床に就く = đi ngủ). Trong văn nói thường ゆか.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>毎<rt>まい</rt></ruby><ruby>朝<rt>あさ</rt></ruby>、<span class="target"><ruby>床<rt>ゆか</rt></ruby></span>に<ruby>掃<rt>そう</rt></ruby><ruby>除<rt>じ</rt></ruby><ruby>機<rt>き</rt></ruby>をかけてからコーヒーを<ruby>飲<rt>の</rt></ruby>みます。</div><div class="ex-vn">Mỗi sáng tôi hút bụi sàn nhà rồi mới uống cà phê.</div></div></td></tr>
+
+<tr><td class="col-stt">11</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>拭<rt>ふ</rt></ruby>く</span><span class="vocab-hanviet">THỨC</span><span class="vocab-pos">Động từ</span><span class="vocab-meaning">Lau, chùi</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">拭</span><span class="kreading">THỨC · ふ(く)</span> — <span class="kmean">lau chùi</span></div><div class="combine"><strong>Cách dùng:</strong> Aを拭く = lau A. Khác 洗う (rửa bằng nước), 拭く dùng khăn/giẻ. Cụm: 涙を拭く (lau nước mắt), 汗を拭く (lau mồ hôi).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>食<rt>しょく</rt></ruby><ruby>事<rt>じ</rt></ruby>の<ruby>後<rt>あと</rt></ruby>はテーブルを<span class="target"><ruby>拭<rt>ふ</rt></ruby>く</span><ruby>習<rt>しゅう</rt></ruby><ruby>慣<rt>かん</rt></ruby>があります。</div><div class="ex-vn">Tôi có thói quen lau bàn sau bữa ăn.</div></div></td></tr>
+
+<tr><td class="col-stt">12</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>調<rt>ちょう</rt></ruby><ruby>子<rt>し</rt></ruby></span><span class="vocab-hanviet">ĐIỀU TỬ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Tình trạng (máy móc, sức khỏe)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">調</span><span class="kreading">ĐIỀU · ちょう / しら(べる)</span> — <span class="kmean">điều chỉnh, kiểm tra</span></div><div><span class="kchar">子</span><span class="kreading">TỬ · し / こ</span> — <span class="kmean">~ (hậu tố)</span></div><div class="combine"><strong>Cụm thường gặp:</strong> 調子がいい (tình trạng tốt), 調子が悪い (có vấn đề). Dùng cho máy móc, sức khỏe, hiệu suất.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">パソコンの<span class="target"><ruby>調<rt>ちょう</rt></ruby><ruby>子<rt>し</rt></ruby></span>が<ruby>悪<rt>わる</rt></ruby>いので、<ruby>修<rt>しゅう</rt></ruby><ruby>理<rt>り</rt></ruby>に<ruby>出<rt>だ</rt></ruby>すつもりです。</div><div class="ex-vn">Máy tính có vấn đề nên tôi định mang đi sửa.</div></div></td></tr>
+
+<tr><td class="col-stt">13</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>修<rt>しゅう</rt></ruby><ruby>理<rt>り</rt></ruby></span><span class="vocab-hanviet">TU LÝ</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Sửa chữa (đồ hỏng)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">修</span><span class="kreading">TU · しゅう / おさ(める)</span> — <span class="kmean">sửa, tu sửa</span></div><div><span class="kchar">理</span><span class="kreading">LÝ · り</span> — <span class="kmean">lý lẽ, sắp đặt</span></div><div class="combine"><strong>Ghép:</strong> "Sửa + sắp đặt lại" → <strong>sửa chữa</strong>. Cụm: 修理に出す (mang đi sửa). Cùng chữ 修 với 研修 (tu nghiệp).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>壊<rt>こわ</rt></ruby>れた<ruby>時<rt>と</rt></ruby><ruby>計<rt>けい</rt></ruby>を<span class="target"><ruby>修<rt>しゅう</rt></ruby><ruby>理<rt>り</rt></ruby></span>してもらいました。</div><div class="ex-vn">Tôi đã được sửa cho cái đồng hồ bị hỏng.</div></div></td></tr>
+
+<tr><td class="col-stt">14</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">リサイクル / <ruby>面<rt>めん</rt></ruby><ruby>倒<rt>どう</rt></ruby><ruby>臭<rt>くさ</rt></ruby>い</span><span class="vocab-hanviet">DIỆN ĐẢO XÚ</span><span class="vocab-pos pos-katakana">Danh / Tính từ -i</span><span class="vocab-meaning">Tái chế / Phiền phức, ngại làm</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>リサイクル:</strong> Từ tiếng Anh <em>"recycle"</em>. Cụm: リサイクルに出す (đem đi tái chế).<br/><br/><strong>面倒臭い:</strong> 面倒 (DIỆN ĐẢO - phiền phức) + 臭い (suffix XÚ - tạo cảm giác "có mùi ~", ở đây = đậm chất phiền) → <strong>cực kỳ ngại làm</strong>.</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>古<rt>ふる</rt></ruby>い<ruby>新<rt>しん</rt></ruby><ruby>聞<rt>ぶん</rt></ruby>は<span class="target">リサイクル</span>に<ruby>出<rt>だ</rt></ruby>します。<ruby>自<rt>じ</rt></ruby><ruby>炊<rt>すい</rt></ruby>は<span class="target"><ruby>面<rt>めん</rt></ruby><ruby>倒<rt>どう</rt></ruby><ruby>臭<rt>くさ</rt></ruby>い</span>から、よくコンビニ<ruby>弁<rt>べん</rt></ruby><ruby>当<rt>とう</rt></ruby>を<ruby>買<rt>か</rt></ruby>います。</div><div class="ex-vn">Báo cũ thì đem đi tái chế. Tự nấu phiền quá nên tôi hay mua cơm hộp konbini.</div></div></td></tr>
+
+</tbody></table></div>
+
+<!-- Exercise A: after 3-1 -->
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 A — Ôn luyện cụm Việc nhà</h4><span class="ex-subtitle">Hai dạng câu hỏi sau khi học 14 từ ở mục 3-1</span></div></div>
+  <div class="exercise-body">
+
+  <div class="exercise">
+    <div class="exercise-title"><span class="ex-no">問題 A1</span>文脈規定 — Điền từ thích hợp</div>
+    <div class="choice-pool"><strong>選択肢:</strong> 洗剤 / 汚れ / 家具 / 修理 / 調子 / 面倒臭い</div>
+    <div class="ex-q"><span class="qnum">(1)</span>このシャツの <span class="blank" data-ans="汚れ">　　　　</span> はどんな洗剤でも落ちない。</div>
+    <div class="ex-q"><span class="qnum">(2)</span><span class="blank" data-ans="洗剤">　　　　</span> を入れすぎると、よくない。</div>
+    <div class="ex-q"><span class="qnum">(3)</span>引っ越しのときは、重い <span class="blank" data-ans="家具">　　　　</span> を運ぶのが大変だ。</div>
+    <div class="ex-q"><span class="qnum">(4)</span>テレビの <span class="blank" data-ans="調子">　　　　</span> が悪くて、画面が時々消える。</div>
+    <div class="ex-q"><span class="qnum">(5)</span>毎日掃除するのは <span class="blank" data-ans="面倒臭い">　　　　</span> から、週に1回だけにしている。</div>
+    <div class="ex-q"><span class="qnum">(6)</span>古い時計を <span class="blank" data-ans="修理">　　　　</span> に出した。</div>
+    <p style="font-size:12px;color:var(--muted);margin:10px 0 0;font-style:italic;">💡 Bấm vào chỗ trống để hiện đáp án.</p>
+    <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+    <div class="answer-box"><strong>Đáp án:</strong> (1) 汚れ — (2) 洗剤 — (3) 家具 — (4) 調子 — (5) 面倒臭い — (6) 修理</div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-title"><span class="ex-no">問題 A2</span>マッチング — Ghép từ với nghĩa</div>
+    <div class="match-grid">
+      <div class="match-col"><h5>Cột A — Tiếng Nhật</h5>
+        <div class="match-item jp"><span class="mlabel">A1.</span>食器 (しょっき)</div>
+        <div class="match-item jp"><span class="mlabel">A2.</span>畳む (たたむ)</div>
+        <div class="match-item jp"><span class="mlabel">A3.</span>しまう</div>
+        <div class="match-item jp"><span class="mlabel">A4.</span>動かす</div>
+        <div class="match-item jp"><span class="mlabel">A5.</span>床 (ゆか)</div>
+        <div class="match-item jp"><span class="mlabel">A6.</span>拭く (ふく)</div>
+      </div>
+      <div class="match-col"><h5>Cột B — Tiếng Việt</h5>
+        <div class="match-item"><span class="mlabel">B1.</span>Cất gọn vào chỗ</div>
+        <div class="match-item"><span class="mlabel">B2.</span>Sàn nhà</div>
+        <div class="match-item"><span class="mlabel">B3.</span>Bát đĩa</div>
+        <div class="match-item"><span class="mlabel">B4.</span>Lau, chùi</div>
+        <div class="match-item"><span class="mlabel">B5.</span>Di chuyển (vật)</div>
+        <div class="match-item"><span class="mlabel">B6.</span>Gấp (quần áo)</div>
+      </div>
+    </div>
+    <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+    <div class="answer-box"><strong>Đáp án:</strong> A1→B3 ・ A2→B6 ・ A3→B1 ・ A4→B5 ・ A5→B2 ・ A6→B4</div>
+  </div>
+
+  </div>
+</div>
+
+<div class="section-head" data-mark="朝"><span class="section-kicker">Phần 3-2 · 14 từ</span><h3>起きてから寝るまで</h3><span class="section-vn">Từ lúc thức dậy đến khi đi ngủ</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">15</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>目<rt>め</rt></ruby>が<ruby>覚<rt>さ</rt></ruby>める</span><span class="vocab-hanviet">MỤC GIÁC</span><span class="vocab-pos">Cụm động từ</span><span class="vocab-meaning">Thức giấc, tỉnh ngủ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">目</span><span class="kreading">MỤC · め / もく</span> — <span class="kmean">mắt</span></div><div><span class="kchar">覚</span><span class="kreading">GIÁC · さ(める) / かく</span> — <span class="kmean">tỉnh, nhận thức</span></div><div class="combine"><strong>Ghép:</strong> "Mắt tỉnh ra" → <strong>tỉnh giấc</strong>. Khác 起きる (đứng dậy khỏi giường) — 目が覚める chỉ tỉnh ngủ (mở mắt), chưa nhất thiết đã ngồi dậy.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>朝<rt>あさ</rt></ruby>6<ruby>時<rt>じ</rt></ruby>に<ruby>自<rt>し</rt></ruby><ruby>然<rt>ぜん</rt></ruby>に<span class="target"><ruby>目<rt>め</rt></ruby>が<ruby>覚<rt>さ</rt></ruby>めました</span>。</div><div class="ex-vn">Tôi tự nhiên tỉnh giấc lúc 6 giờ sáng.</div></div></td></tr>
+
+<tr><td class="col-stt">16</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">あくび / <ruby>涙<rt>なみだ</rt></ruby></span><span class="vocab-hanviet">LỆ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Cái ngáp / Nước mắt (が出る)</span></div></td><td class="col-explain"><div class="wago-note"><strong>あくび:</strong> Từ và-go, kanji ít dùng 「欠伸」. Mô tả động tác ngáp khi buồn ngủ/chán.<br/><br/><strong>涙 (LỆ - なみだ):</strong> Nước mắt. Cụm: 涙が出る (chảy nước mắt - tự nhiên), 涙を流す (rơi nước mắt - khóc).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>退<rt>たい</rt></ruby><ruby>屈<rt>くつ</rt></ruby>な<ruby>会<rt>かい</rt></ruby><ruby>議<rt>ぎ</rt></ruby><ruby>中<rt>ちゅう</rt></ruby>、<span class="target">あくび</span>が<ruby>止<rt>と</rt></ruby>まらず、<span class="target"><ruby>涙<rt>なみだ</rt></ruby></span>まで<ruby>出<rt>で</rt></ruby>てきた。</div><div class="ex-vn">Trong cuộc họp chán, tôi không ngừng ngáp, đến nỗi nước mắt cũng chảy ra.</div></div></td></tr>
+
+<tr><td class="col-stt">17</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>睡<rt>すい</rt></ruby><ruby>眠<rt>みん</rt></ruby></span><span class="vocab-hanviet">THỤY MIÊN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Giấc ngủ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">睡</span><span class="kreading">THỤY · すい</span> — <span class="kmean">ngủ</span></div><div><span class="kchar">眠</span><span class="kreading">MIÊN · みん / ねむ(る)</span> — <span class="kmean">ngủ</span></div><div class="combine"><strong>Ghép:</strong> Hai chữ cùng nghĩa "ngủ" → <strong>giấc ngủ (trang trọng)</strong>. Cụm: 睡眠が足りない (thiếu ngủ), 睡眠時間 (thời gian ngủ).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>健<rt>けん</rt></ruby><ruby>康<rt>こう</rt></ruby>のために、<ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby>7<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>の<span class="target"><ruby>睡<rt>すい</rt></ruby><ruby>眠<rt>みん</rt></ruby></span>が<ruby>必<rt>ひつ</rt></ruby><ruby>要<rt>よう</rt></ruby>です。</div><div class="ex-vn">Vì sức khỏe, mỗi ngày cần 7 tiếng ngủ.</div></div></td></tr>
+
+<tr><td class="col-stt">18</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>朝<rt>ちょう</rt></ruby><ruby>食<rt>しょく</rt></ruby></span><span class="vocab-hanviet">TRIỀU THỰC</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Bữa sáng (trang trọng hơn 朝ご飯)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">朝</span><span class="kreading">TRIỀU · ちょう / あさ</span> — <span class="kmean">sáng</span></div><div><span class="kchar">食</span><span class="kreading">THỰC · しょく</span> — <span class="kmean">ăn</span></div><div class="combine"><strong>Ghép:</strong> "Bữa ăn sáng" → <strong>điểm tâm</strong>. Cụm: 朝食を取る/食べる. Bộ ba: 朝食・昼食・夕食 (sáng-trưa-tối).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>忙<rt>いそが</rt></ruby>しい<ruby>朝<rt>あさ</rt></ruby>でも、しっかり<span class="target"><ruby>朝<rt>ちょう</rt></ruby><ruby>食<rt>しょく</rt></ruby></span>を<ruby>取<rt>と</rt></ruby>るようにしています。</div><div class="ex-vn">Dù sáng có bận thế nào, tôi vẫn cố ăn sáng đầy đủ.</div></div></td></tr>
+
+<tr><td class="col-stt">19</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>化<rt>け</rt></ruby><ruby>粧<rt>しょう</rt></ruby></span><span class="vocab-hanviet">HÓA TRANG</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Trang điểm</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">化</span><span class="kreading">HÓA · か / け / ば(ける)</span> — <span class="kmean">biến hóa</span></div><div><span class="kchar">粧</span><span class="kreading">TRANG · しょう</span> — <span class="kmean">trang sức, tô điểm</span></div><div class="combine"><strong>Ghép:</strong> "Biến hóa + tô điểm" → <strong>trang điểm</strong>. Cụm: 化粧をする/落とす (làm/tẩy trang). 化粧品 (mỹ phẩm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">うちの<ruby>母<rt>はは</rt></ruby>は<ruby>出<rt>で</rt></ruby>かける<ruby>前<rt>まえ</rt></ruby>に<ruby>必<rt>かなら</rt></ruby>ず<span class="target"><ruby>化<rt>け</rt></ruby><ruby>粧<rt>しょう</rt></ruby></span>をします。</div><div class="ex-vn">Mẹ tôi nhất định trang điểm trước khi ra ngoài.</div></div></td></tr>
+
+<tr><td class="col-stt">20</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">えさをやる / <ruby>可<rt>かわ</rt></ruby><ruby>愛<rt>い</rt></ruby>がる</span><span class="vocab-hanviet">KHẢ ÁI</span><span class="vocab-pos">Cụm động từ</span><span class="vocab-meaning">Cho ăn (thú) / Cưng chiều</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">えさ</span><span class="kreading">餌 (NHĨ - ít dùng kanji)</span> — <span class="kmean">thức ăn cho thú vật</span></div><div><span class="kchar">可愛</span><span class="kreading">かわい(い)</span> — <span class="kmean">đáng yêu</span></div><div class="combine"><strong>Ghép:</strong> やる = cho (đối tượng thấp hơn). 可愛がる = "thấy đáng yêu" + 〜がる (cảm xúc) → <strong>cưng chiều, yêu thương</strong>.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>毎<rt>まい</rt></ruby><ruby>朝<rt>あさ</rt></ruby><ruby>犬<rt>いぬ</rt></ruby>に<span class="target">えさをやって</span>、たくさん<span class="target"><ruby>可<rt>かわ</rt></ruby><ruby>愛<rt>い</rt></ruby>がって</span>から、<ruby>家<rt>いえ</rt></ruby>を<ruby>出<rt>で</rt></ruby>ます。</div><div class="ex-vn">Mỗi sáng cho chó ăn rồi cưng nựng thật nhiều mới ra khỏi nhà.</div></div></td></tr>
+
+<tr><td class="col-stt">21</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>定<rt>てい</rt></ruby><ruby>期<rt>き</rt></ruby></span><span class="vocab-hanviet">ĐỊNH KỲ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Vé tháng (tàu, xe)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">定</span><span class="kreading">ĐỊNH · てい</span> — <span class="kmean">cố định</span></div><div><span class="kchar">期</span><span class="kreading">KỲ · き</span> — <span class="kmean">kỳ hạn, thời kỳ</span></div><div class="combine"><strong>Ghép:</strong> "Kỳ cố định" → <strong>vé tháng/quý đi tàu xe</strong>. Gốc đầy đủ: 定期券 (ĐỊNH KỲ KHOÁN - định kỳ + vé). Cùng chữ với 期間 (kỳ gian), 学期 (học kỳ).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>定<rt>てい</rt></ruby><ruby>期<rt>き</rt></ruby></span>を<ruby>忘<rt>わす</rt></ruby>れて、<ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby><ruby>切<rt>きっ</rt></ruby><ruby>符<rt>ぷ</rt></ruby>を<ruby>買<rt>か</rt></ruby>うことになった。</div><div class="ex-vn">Tôi quên vé tháng nên phải mua vé từng ngày.</div></div></td></tr>
+
+<tr><td class="col-stt">22</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>遅<rt>ち</rt></ruby><ruby>刻<rt>こく</rt></ruby></span><span class="vocab-hanviet">TRÌ KHẮC</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Đến muộn, trễ giờ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">遅</span><span class="kreading">TRÌ · ち / おく(れる)</span> — <span class="kmean">trễ, chậm</span></div><div><span class="kchar">刻</span><span class="kreading">KHẮC · こく</span> — <span class="kmean">giờ khắc, thời điểm</span></div><div class="combine"><strong>Ghép:</strong> "Trễ giờ" → <strong>đi muộn</strong>. Cụm: 〜に遅刻する = trễ buổi/giờ ~. Trái nghĩa: 早く来る (đến sớm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>寝<rt>ね</rt></ruby><ruby>坊<rt>ぼう</rt></ruby>して、<ruby>会<rt>かい</rt></ruby><ruby>議<rt>ぎ</rt></ruby>に<span class="target"><ruby>遅<rt>ち</rt></ruby><ruby>刻<rt>こく</rt></ruby></span>してしまった。</div><div class="ex-vn">Tôi ngủ quên nên đã trễ giờ họp mất rồi.</div></div></td></tr>
+
+<tr><td class="col-stt">23</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>電<rt>でん</rt></ruby><ruby>池<rt>ち</rt></ruby>が<ruby>切<rt>き</rt></ruby>れる</span><span class="vocab-hanviet">ĐIỆN TRÌ</span><span class="vocab-pos">Cụm động từ</span><span class="vocab-meaning">Hết pin</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">電</span><span class="kreading">ĐIỆN · でん</span> — <span class="kmean">điện</span></div><div><span class="kchar">池</span><span class="kreading">TRÌ · ち / いけ</span> — <span class="kmean">ao, bể chứa</span></div><div class="combine"><strong>Ghép:</strong> "Bể chứa điện" → <strong>pin (cục)</strong>. 切れる ở đây = hết, cạn (không phải "cắt"). Cụm tương tự: ガソリンが切れる (hết xăng).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>携<rt>けい</rt></ruby><ruby>帯<rt>たい</rt></ruby>の<span class="target"><ruby>電<rt>でん</rt></ruby><ruby>池<rt>ち</rt></ruby></span>が<span class="target"><ruby>切<rt>き</rt></ruby>れて</span>、<ruby>連<rt>れん</rt></ruby><ruby>絡<rt>らく</rt></ruby>できなかった。</div><div class="ex-vn">Điện thoại di động hết pin nên tôi không liên lạc được.</div></div></td></tr>
+
+<tr><td class="col-stt">24</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>退<rt>たい</rt></ruby><ruby>屈<rt>くつ</rt></ruby></span><span class="vocab-hanviet">THỐI KHUẤT</span><span class="vocab-pos pos-na">Tính từ -na</span><span class="vocab-meaning">Chán, nhàm chán</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">退</span><span class="kreading">THỐI · たい</span> — <span class="kmean">thoái lui, lùi</span></div><div><span class="kchar">屈</span><span class="kreading">KHUẤT · くつ</span> — <span class="kmean">uốn cong, gò bó</span></div><div class="combine"><strong>Ghép:</strong> "Lùi lại + bị gò bó" → <strong>chán nản, buồn tẻ</strong>. Cụm: 退屈な仕事 (việc chán), 退屈する (cảm thấy chán).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>雨<rt>あめ</rt></ruby>の<ruby>日<rt>ひ</rt></ruby>は<ruby>家<rt>いえ</rt></ruby>にいるしかなくて、<span class="target"><ruby>退<rt>たい</rt></ruby><ruby>屈<rt>くつ</rt></ruby></span>です。</div><div class="ex-vn">Ngày mưa chỉ ở nhà thôi, chán quá.</div></div></td></tr>
+
+<tr><td class="col-stt">25</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>帰<rt>き</rt></ruby><ruby>宅<rt>たく</rt></ruby></span><span class="vocab-hanviet">QUY TRẠCH</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Về nhà (trang trọng)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">帰</span><span class="kreading">QUY · き / かえ(る)</span> — <span class="kmean">về</span></div><div><span class="kchar">宅</span><span class="kreading">TRẠCH · たく</span> — <span class="kmean">nhà</span></div><div class="combine"><strong>Ghép:</strong> "Về nhà" → <strong>帰宅</strong>. Trang trọng hơn 家に帰る, thường dùng trong văn viết, báo cáo. Cùng chữ 宅 với 自宅 (nhà riêng), お宅 (nhà ngài).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>が<ruby>終<rt>お</rt></ruby>わって、<ruby>夜<rt>よる</rt></ruby>10<ruby>時<rt>じ</rt></ruby>に<span class="target"><ruby>帰<rt>き</rt></ruby><ruby>宅<rt>たく</rt></ruby></span>した。</div><div class="ex-vn">Xong việc, tôi về tới nhà lúc 10 giờ tối.</div></div></td></tr>
+
+<tr><td class="col-stt">26</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>文<rt>もん</rt></ruby><ruby>句<rt>く</rt></ruby></span><span class="vocab-hanviet">VĂN CÚ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Lời phàn nàn, lời cằn nhằn</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">文</span><span class="kreading">VĂN · もん / ぶん</span> — <span class="kmean">chữ, câu văn</span></div><div><span class="kchar">句</span><span class="kreading">CÚ · く</span> — <span class="kmean">câu, đoạn</span></div><div class="combine"><strong>Ghép:</strong> "Câu chữ" — nguyên nghĩa "lời nói" — đặc biệt là <strong>lời than phiền</strong>. Cụm: 文句を言う/言われる (nói/bị phàn nàn).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>妻<rt>つま</rt></ruby>に<ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby><span class="target"><ruby>文<rt>もん</rt></ruby><ruby>句<rt>く</rt></ruby></span>を<ruby>言<rt>い</rt></ruby>われて、<ruby>本<rt>ほん</rt></ruby><ruby>当<rt>とう</rt></ruby>に<ruby>疲<rt>つか</rt></ruby>れた。</div><div class="ex-vn">Bị vợ phàn nàn mỗi ngày, tôi thật sự mệt mỏi.</div></div></td></tr>
+
+<tr><td class="col-stt">27</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>疲<rt>つか</rt></ruby>れ</span><span class="vocab-hanviet">BỊ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Sự mệt mỏi</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">疲</span><span class="kreading">BỊ · ひ / つか(れる)</span> — <span class="kmean">mệt mỏi</span></div><div class="combine"><strong>Danh từ hóa:</strong> Từ động từ 疲れる (bị mệt) → 疲れ (sự mệt mỏi). Cụm: 疲れが取れる/取れない (hết/không hết mệt), 疲れが溜まる (mệt tích tụ).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>一<rt>ひと</rt></ruby><ruby>晩<rt>ばん</rt></ruby><ruby>寝<rt>ね</rt></ruby>ても、<span class="target"><ruby>疲<rt>つか</rt></ruby>れ</span>が<ruby>取<rt>と</rt></ruby>れない。</div><div class="ex-vn">Ngủ cả một đêm rồi mà vẫn không hết mệt.</div></div></td></tr>
+
+<tr><td class="col-stt">28</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>毛<rt>もう</rt></ruby><ruby>布<rt>ふ</rt></ruby></span><span class="vocab-hanviet">MAO BỐ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Chăn (mền)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">毛</span><span class="kreading">MAO · もう / け</span> — <span class="kmean">lông</span></div><div><span class="kchar">布</span><span class="kreading">BỐ · ふ / ぬの</span> — <span class="kmean">vải</span></div><div class="combine"><strong>Ghép:</strong> "Vải lông" → <strong>chăn dày (mềm như lông)</strong>. Cụm: 毛布をかける = đắp chăn. Cùng chữ 布 với 財布 (cái ví), 布団 (chăn nệm Nhật).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>寒<rt>さむ</rt></ruby>い<ruby>夜<rt>よる</rt></ruby>は<span class="target"><ruby>毛<rt>もう</rt></ruby><ruby>布<rt>ふ</rt></ruby></span>をかけて<ruby>寝<rt>ね</rt></ruby>ます。</div><div class="ex-vn">Đêm lạnh tôi đắp chăn ngủ.</div></div></td></tr>
+
+</tbody></table></div>
+
+<!-- Exercise B: after 3-2 -->
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 B — Ôn luyện cụm Sinh hoạt hằng ngày</h4><span class="ex-subtitle">Hai dạng câu hỏi sau khi học 14 từ ở mục 3-2</span></div></div>
+  <div class="exercise-body">
+
+  <div class="exercise">
+    <div class="exercise-title"><span class="ex-no">問題 B1</span>言い換え類義 — Chọn từ có nghĩa gần nhất</div>
+    <div class="ex-q"><span class="qnum">(1)</span><ruby>朝<rt>あさ</rt></ruby>6<ruby>時<rt>じ</rt></ruby>に<ruby>自<rt>し</rt></ruby><ruby>然<rt>ぜん</rt></ruby>に<ruby>目<rt>め</rt></ruby>が<ruby>覚<rt>さ</rt></ruby>めました。
+      <span class="multi-choice"><span class="opt-num">①</span>遅刻しました <span class="opt-num">②</span>起きました <span class="opt-num">③</span>帰宅しました <span class="opt-num">④</span>退屈しました</span>
+    </div>
+    <div class="ex-q"><span class="qnum">(2)</span><ruby>毎<rt>まい</rt></ruby><ruby>晩<rt>ばん</rt></ruby>5<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>しか<ruby>寝<rt>ね</rt></ruby>られない。
+      <span class="multi-choice"><span class="opt-num">①</span>睡眠が足りない <span class="opt-num">②</span>朝食を取る <span class="opt-num">③</span>化粧をする <span class="opt-num">④</span>定期がない</span>
+    </div>
+    <div class="ex-q"><span class="qnum">(3)</span><ruby>夜<rt>よる</rt></ruby><ruby>遅<rt>おそ</rt></ruby>く<ruby>家<rt>いえ</rt></ruby>に<ruby>戻<rt>もど</rt></ruby>ってきました。
+      <span class="multi-choice"><span class="opt-num">①</span>遅刻しました <span class="opt-num">②</span>退屈しました <span class="opt-num">③</span>帰宅しました <span class="opt-num">④</span>動かしました</span>
+    </div>
+    <div class="ex-q"><span class="qnum">(4)</span>この<ruby>仕<rt>し</rt></ruby><ruby>事<rt>ごと</rt></ruby>はつまらないし、<ruby>同<rt>おな</rt></ruby>じことの<ruby>繰<rt>く</rt></ruby>り<ruby>返<rt>かえ</rt></ruby>しだ。
+      <span class="multi-choice"><span class="opt-num">①</span>面倒臭い <span class="opt-num">②</span>退屈な <span class="opt-num">③</span>遅刻 <span class="opt-num">④</span>可愛い</span>
+    </div>
+    <div class="ex-q"><span class="qnum">(5)</span>うちの<ruby>祖<rt>そ</rt></ruby><ruby>父<rt>ふ</rt></ruby>は<ruby>孫<rt>まご</rt></ruby>をとても<ruby>大<rt>たい</rt></ruby><ruby>切<rt>せつ</rt></ruby>にしています。
+      <span class="multi-choice"><span class="opt-num">①</span>可愛がっています <span class="opt-num">②</span>化粧しています <span class="opt-num">③</span>修理しています <span class="opt-num">④</span>動かしています</span>
+    </div>
+    <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+    <div class="answer-box"><strong>Đáp án:</strong> (1) ② 起きました — (2) ① 睡眠が足りない — (3) ③ 帰宅しました — (4) ② 退屈な — (5) ① 可愛がっています</div>
+  </div>
+
+  <div class="exercise">
+    <div class="exercise-title"><span class="ex-no">問題 B2</span>用法 — Chọn câu sử dụng từ đúng nhất</div>
+    <div class="ex-q"><span class="qnum">(1)</span><strong>定期</strong>
+      <div class="multi-choice"><span class="opt-num">①</span>毎日<ruby>定<rt>てい</rt></ruby><ruby>期<rt>き</rt></ruby>に運動している。</div>
+      <div class="multi-choice"><span class="opt-num">②</span>電車の<ruby>定<rt>てい</rt></ruby><ruby>期<rt>き</rt></ruby>を3か月分買った。</div>
+      <div class="multi-choice"><span class="opt-num">③</span>この本は<ruby>定<rt>てい</rt></ruby><ruby>期<rt>き</rt></ruby>に厚い。</div>
+      <div class="multi-choice"><span class="opt-num">④</span>窓を<ruby>定<rt>てい</rt></ruby><ruby>期<rt>き</rt></ruby>に開けた。</div>
+    </div>
+    <div class="ex-q"><span class="qnum">(2)</span><strong>文句</strong>
+      <div class="multi-choice"><span class="opt-num">①</span>あの店の料理に<ruby>文<rt>もん</rt></ruby><ruby>句<rt>く</rt></ruby>を言ったら、店長が謝ってくれた。</div>
+      <div class="multi-choice"><span class="opt-num">②</span><ruby>窓<rt>まど</rt></ruby>が<ruby>文<rt>もん</rt></ruby><ruby>句<rt>く</rt></ruby>に大きい。</div>
+      <div class="multi-choice"><span class="opt-num">③</span>食べ物が<ruby>文<rt>もん</rt></ruby><ruby>句<rt>く</rt></ruby>です。</div>
+      <div class="multi-choice"><span class="opt-num">④</span>雨が<ruby>文<rt>もん</rt></ruby><ruby>句<rt>く</rt></ruby>に降っている。</div>
+    </div>
+    <div class="ex-q"><span class="qnum">(3)</span><strong>毛布</strong>
+      <div class="multi-choice"><span class="opt-num">①</span><ruby>毛<rt>もう</rt></ruby><ruby>布<rt>ふ</rt></ruby>でテーブルを拭いた。</div>
+      <div class="multi-choice"><span class="opt-num">②</span><ruby>毛<rt>もう</rt></ruby><ruby>布<rt>ふ</rt></ruby>でご飯を食べた。</div>
+      <div class="multi-choice"><span class="opt-num">③</span>寒い夜、<ruby>子<rt>こ</rt></ruby><ruby>供<rt>ども</rt></ruby>に<ruby>毛<rt>もう</rt></ruby><ruby>布<rt>ふ</rt></ruby>をかけてあげた。</div>
+      <div class="multi-choice"><span class="opt-num">④</span><ruby>毛<rt>もう</rt></ruby><ruby>布<rt>ふ</rt></ruby>を窓に開けた。</div>
+    </div>
+    <div class="ex-q"><span class="qnum">(4)</span><strong>あくび</strong>
+      <div class="multi-choice"><span class="opt-num">①</span><ruby>食<rt>た</rt></ruby>べ<ruby>物<rt>もの</rt></ruby>があくびする。</div>
+      <div class="multi-choice"><span class="opt-num">②</span><ruby>眠<rt>ねむ</rt></ruby>くて、あくびが出てきた。</div>
+      <div class="multi-choice"><span class="opt-num">③</span><ruby>雨<rt>あめ</rt></ruby>があくびに降っている。</div>
+      <div class="multi-choice"><span class="opt-num">④</span><ruby>窓<rt>まど</rt></ruby>をあくびに開けた。</div>
+    </div>
+    <div class="ex-q"><span class="qnum">(5)</span><strong>遅刻</strong>
+      <div class="multi-choice"><span class="opt-num">①</span>本が遅刻した。</div>
+      <div class="multi-choice"><span class="opt-num">②</span>窓が遅刻した。</div>
+      <div class="multi-choice"><span class="opt-num">③</span>朝寝坊して、学校に<ruby>遅<rt>ち</rt></ruby><ruby>刻<rt>こく</rt></ruby>した。</div>
+      <div class="multi-choice"><span class="opt-num">④</span>料理が遅刻した。</div>
+    </div>
+    <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+    <div class="answer-box"><strong>Đáp án:</strong> (1) ② — (2) ① — (3) ③ — (4) ② — (5) ③</div>
+  </div>
+
+  </div>
+</div>
+
+</div>
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-02.html">← Bài 2</a><a class="mid" href="../shinkanzen.html">▦ Danh sách bài</a><a href="bai-04.html">Bài 4 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+</script>
+
+<style>#ttsBar{display:none!important}
+.tts-btn,.tl-spk{display:inline-flex!important;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;margin-right:7px;padding:0;border:1px solid var(--gold,#B89568)!important;background:transparent;color:var(--gold,#B89568);border-radius:50%;font-size:11px;cursor:pointer;vertical-align:middle;line-height:1;flex:none;box-shadow:none}
+.tts-btn:hover,.tl-spk:hover{background:var(--gold,#B89568);color:#fff}
+.tts-btn.on,.tts-btn.playing,.tl-spk.on{background:var(--navy,#1B3A6B);border-color:var(--navy,#1B3A6B)!important;color:#fff}
+.ex-jp rt,.ex-q rt,.jp rt{font-size:.6em;color:var(--gold-d,#8A6E47);font-weight:400}</style>
+<script>(function(){
+var jv=null;function pick(){try{var V=speechSynthesis.getVoices();function f(re){return V.filter(function(v){return /ja|JP|日本/i.test(v.lang)&&re.test(v.name);})[0];}jv=f(/Google/i)||f(/Kyoko/i)||f(/Otoya/i)||f(/Microsoft|Nanami|Ayumi|Keita|Haruka/i)||V.filter(function(v){return /ja|JP|日本/i.test((v.lang||'')+(v.name||''));})[0]||null;}catch(e){}}pick();try{speechSynthesis.onvoiceschanged=pick;}catch(e){}
+function sfb(t,b,done){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=0.9;if(jv)u.voice=jv;u.onend=u.onerror=function(){done&&done();};speechSynthesis.speak(u);}catch(e){done&&done();}}
+var TLW='https://trilu-dict-api.luminhtri0.workers.dev';function ext(txt,b,done){var srcs=['https://api.streamelements.com/kappa/v2/speech?voice=Mizuki&text='+encodeURIComponent(txt),'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=ja&q='+encodeURIComponent(txt)];(function tryi(i){if(i>=srcs.length){return sfb(txt,b,done);}var a=new Audio(srcs[i]);window.__tlA=a;a.onended=done;a.onerror=function(){tryi(i+1);};var pr=a.play();if(pr&&pr.catch)pr.catch(function(){tryi(i+1);});})(0);}function ttsTry(url,txt,b,done,fail){try{fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({text:txt})}).then(function(r){if(!r.ok)throw 0;return r.blob();}).then(function(bl){var a=new Audio(URL.createObjectURL(bl));window.__tlA=a;a.onended=done;a.onerror=fail;var pr=a.play();if(pr&&pr.catch)pr.catch(fail);}).catch(fail);}catch(e){fail();}}function gplay(t,b){if(!t)return;var txt=(''+t).replace(/<[^>]*>/g,'').replace(/^[\s①-⑳ 0-9.\)、。]+/,'').slice(0,200);if(!txt)txt=(''+t).replace(/<[^>]*>/g,'').slice(0,200);if(b&&b.classList)b.classList.add('on');var done=function(){if(b&&b.classList){b.classList.remove('on');b.classList.remove('playing');}};if(window.__tlA){try{window.__tlA.pause();}catch(e){}}ttsTry('/api/tts',txt,b,done,function(){ttsTry(TLW+'/api/tts',txt,b,done,function(){ext(txt,b,done);});});}
+function furiFetch(url,texts){return fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({texts:texts})}).then(function(r){if(!r.ok)throw 0;return r.json();});}
+window.__tlGtts=gplay;
+function clean(el){var c=el.cloneNode(true);c.querySelectorAll('rt,rp,.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn,.vn,.hanviet,.kreading,.kmean,.ana-syn,.ana-ant,.ana-nuance').forEach(function(n){n.remove();});return (c.textContent||'').replace(/\s+/g,' ').trim();}
+function jaText(btn){var node=btn;for(var i=0;i<4&&node.parentElement;i++){node=node.parentElement;var t=clean(node);if(/[぀-ヿ一-龯]/.test(t))return t;}return '';}
+document.addEventListener('click',function(e){var btn=e.target&&e.target.closest&&e.target.closest('.tts-btn, .tl-spk');if(!btn)return;e.preventDefault();e.stopPropagation();if(typeof e.stopImmediatePropagation==='function')e.stopImmediatePropagation();gplay(jaText(btn),btn);},true);
+function nativeNear(el){if(el.querySelector('.tts-btn'))return true;var p=el.parentElement;if(p){for(var c=p.firstElementChild;c;c=c.nextElementSibling){if(c.classList&&c.classList.contains('tts-btn'))return true;}}return false;}
+function add(el){if(el.dataset.spk)return;el.dataset.spk='1';if(nativeNear(el))return;var t=clean(el);if(!t||!/[぀-ヿ一-龯]/.test(t))return;var b=document.createElement('button');b.type='button';b.className='tl-spk';b.setAttribute('aria-label','Phat am');b.textContent='🔊';el.insertBefore(b,el.firstChild);}
+function run(){document.querySelectorAll('[data-tts], .ex-jp, .ex-q').forEach(add);}
+function furiPass(){var els=[].slice.call(document.querySelectorAll('.ex-jp, .ex-q, .jp'));var jobs=[];els.forEach(function(el){if(el.dataset.furi)return;if(el.querySelector('ruby'))return;var c=el.cloneNode(true);c.querySelectorAll('.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn').forEach(function(n){n.remove();});var t=(c.textContent||'').replace(/\s+/g,' ').trim();if(!t||t.length<6||!/[一-龯]/.test(t))return;el.dataset.furi='1';jobs.push({el:el,t:t});});if(!jobs.length)return;var texts=jobs.map(function(j){return j.t;});function apply(d){if(!d||!d.ruby)return;jobs.forEach(function(j,idx){var ru=d.ruby[idx];if(!ru||ru.indexOf('<ruby')<0)return;var btn=j.el.querySelector('.tl-spk,.tts-btn');j.el.innerHTML=(btn?btn.outerHTML:'')+ru;});}furiFetch('/api/furigana',texts).then(apply).catch(function(){furiFetch(TLW+'/api/furigana',texts).then(apply).catch(function(){});});}
+function go(){run();furiPass();}
+if(document.readyState!=='loading'){setTimeout(go,50);}else{document.addEventListener('DOMContentLoaded',function(){setTimeout(go,50);});}
+window.addEventListener('load',function(){setTimeout(go,160);});})();</script>
+
+</body></html>

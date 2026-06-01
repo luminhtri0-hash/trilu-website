@@ -1,0 +1,430 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 2 · Phạm vi: khởi điểm — kết thúc — Ngữ pháp N1 — Trí Lữ Nihongo</title>
+<meta name="description" content="Ngữ pháp N1 — Bài 2: Phạm vi: khởi điểm — kết thúc. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa; --paper-2:#fff8f0;
+  --ink:#1e2430; --muted:#5f6470;
+  --accent:#4f0f24; --accent-dark:#3a0a1c;
+  --accent-2:#9b7a38; --accent-3:#c7ab70;
+  --line:#dfcfbb; --line-2:#eadfce;
+  --green:#2d5e3e; --teal:#2d6e7a;
+  --plum:#6a4a8a; --terra:#b56b3f;
+  --rose:#a23b5a; --navy:#1a4a6e;
+  --correct:#2d5e3e; --wrong:#a23b5a;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{ margin:0; color:var(--ink); background:radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),radial-gradient(circle at 85% 14%, rgba(79,15,36,0.10), transparent 22%),linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%); font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif; line-height:1.7; font-size:16.5px; -webkit-font-smoothing:antialiased; }
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+.cover{ position:relative; overflow:hidden; background:radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),linear-gradient(135deg, #3a0a1c 0%, #4f0f24 36%, #240612 100%); color:#fff; border-radius:30px; box-shadow:var(--shadow); padding:60px 64px 50px; margin-bottom:26px; }
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:13px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:18.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:15.5px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:15px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+.toc-panel{ margin:0 0 34px; background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96)); border:1px solid rgba(155,122,56,0.20); border-radius:24px; box-shadow:var(--shadow); padding:28px 30px; }
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:13px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:16px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:12px 14px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(79,15,36,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item-number{ display:inline-block; min-width:32px; padding:2px 7px; margin-right:7px; border-radius:7px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:12.5px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:15px; font-family:"Noto Serif CJK JP",serif; }
+.toc-item-summary{ display:block; margin-top:4px; color:var(--muted); font-size:13.5px; line-height:1.4; }
+
+.lesson{ background:var(--paper); border:1px solid rgba(155,122,56,0.16); border-radius:28px; box-shadow:var(--shadow); padding:0 0 36px; margin-bottom:36px; overflow:hidden; }
+.lesson-banner{ position:relative; overflow:hidden; padding:26px 40px 24px; background:radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%), linear-gradient(135deg, #3a0a1c 0%, #4f0f24 50%, #240612 100%); color:#fff; }
+.lesson-banner::after{ content:"文法"; position:absolute; right:-10px; bottom:-50px; font-family:"Noto Serif CJK JP",serif; font-weight:900; font-size:clamp(6rem, 12vw, 10rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.lesson-kicker{ display:block; font-size:13px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:6px; }
+.lesson-banner h2{ margin:0 0 5px; font-family:"Noto Serif CJK JP",serif; font-size:26px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:15.5px; color:rgba(255,255,255,0.82); }
+
+.grammar-card{ margin:20px 40px; background:#fff; border:1px solid var(--line-2); border-radius:18px; overflow:hidden; box-shadow:0 8px 22px rgba(60,38,19,0.05); padding-bottom:12px; }
+.gc-head{ display:flex; align-items:center; gap:12px; padding:14px 20px; background:linear-gradient(90deg, rgba(79,15,36,0.06), rgba(199,171,112,0.05)); border-bottom:2px solid var(--accent); }
+.gc-num{ flex-shrink:0; width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg, var(--accent) 0%, #8a2d49 100%); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15.5px; font-family:"EB Garamond",serif; box-shadow:0 4px 10px rgba(79,15,36,0.25); }
+.gc-head h3.gc-jp{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:19.5px; font-weight:700; color:var(--accent); flex:1; line-height:1.3; }
+.gc-head .gc-meaning{ display:block; font-family:Inter,sans-serif; font-size:15px; color:var(--accent-2); font-style:italic; font-weight:600; margin-top:2px; }
+
+.struct-box{ margin:10px 20px; background:linear-gradient(180deg, #f3f9ed, #e7f2dc); border:1px solid #c8dab1; border-left:4px solid var(--green); border-radius:10px; padding:10px 14px; font-family:"Noto Serif CJK JP",serif; font-size:16.5px; color:#2c4a2d; line-height:1.75; }
+.struct-box strong{ color:var(--green); }
+
+.explain{ margin:10px 20px; background:linear-gradient(180deg, #f4f8fc, #e8f0f8); border:1px solid #c4d8e8; border-left:4px solid var(--navy); border-radius:10px; padding:10px 14px; font-size:15.5px; line-height:1.65; color:#1f3a4f; }
+.explain strong{ color:var(--navy); }
+
+.ex-box{ margin:10px 20px; background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent-2); padding:11px 14px; border-radius:0 10px 10px 0; }
+.ex-jp{ font-size:17px; color:#222; margin-bottom:6px; line-height:1.9; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:12px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn, .q-vn{ font-size:15.5px; color:#6e5230; font-style:italic; line-height:1.5; padding-top:6px; border-top:1px dotted #e2d4b8; margin-top:5px; }
+.ex-vn.collapsed, .q-vn.collapsed{ display:none; }
+
+.vn-toggle{ display:inline-flex; align-items:center; gap:4px; margin-top:3px; padding:2px 10px; background:transparent; border:1px dashed #b08850; border-radius:999px; color:#6e5230; font-size:12px; cursor:pointer; transition:all 0.15s; font-family:inherit; font-weight:600; letter-spacing:0.04em; }
+.vn-toggle:hover{ background:#fff5e8; border-style:solid; border-color:#9b7a38; }
+.vn-toggle::before{ content:"訳"; font-family:"Noto Serif CJK JP",serif; font-size:12px; margin-right:2px; color:#9b7a38; }
+.vn-toggle.shown{ background:#fff5e8; border-style:solid; border-color:#9b7a38; color:#4a3010; }
+
+.compare-box{ margin:10px 20px; background:linear-gradient(180deg, #f9f3fb, #ecdef2); border:1px solid #d8c4e6; border-left:4px solid var(--plum); border-radius:10px; padding:10px 14px; font-size:15px; line-height:1.65; color:#3f2a52; }
+.compare-box .compare-title{ font-weight:800; font-family:"Noto Serif CJK JP",serif; color:var(--plum); margin-bottom:6px; font-size:15.5px; }
+.compare-box .compare-row{ margin:4px 0; padding-left:13px; position:relative; display:block; }
+.compare-box .compare-row::before{ content:"◆"; position:absolute; left:0; color:var(--plum); }
+.compare-box .compare-row .cmp-jp{ font-family:"Noto Serif CJK JP",serif; font-weight:700; color:var(--plum); margin-right:6px; }
+.compare-box .compare-row .cmp-vn{ color:#3f2a52; }
+
+.exercises{ margin:12px 20px; background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%); border:1px solid #e7d7be; border-radius:14px; padding:12px 18px; box-shadow:0 4px 10px rgba(60,38,19,0.04); }
+.exercises .ex-title{ display:inline-block; padding:5px 14px; background:linear-gradient(90deg, var(--rose) 0%, #c14e6e 100%); color:#fff; border-radius:8px; font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:15.5px; margin-bottom:10px; }
+.ex-q{ padding:8px 0; border-bottom:1px dotted #eadfce; }
+.ex-q:last-child{ border-bottom:none; }
+.q-stem{ font-size:16px; line-height:1.8; font-family:"Noto Serif CJK JP",serif; color:#222; }
+.q-stem .qnum{ display:inline-block; min-width:20px; font-weight:800; color:var(--rose); margin-right:3px; font-family:"EB Garamond",sans-serif; font-size:16.5px; }
+.q-options{ display:grid; grid-template-columns:repeat(2, 1fr); gap:5px; margin:6px 0 0 22px; }
+.q-opt{ padding:5px 10px; background:#fff; border:1px solid #e0d3b8; border-radius:7px; cursor:pointer; font-family:"Noto Serif CJK JP",serif; font-size:15.5px; transition:all 0.15s; display:flex; align-items:center; gap:5px; color:#4a3a20; }
+.q-opt::before{ content:attr(data-mark); color:var(--rose); font-weight:800; font-family:"EB Garamond",sans-serif; min-width:18px; }
+.q-opt:hover{ background:#fff5e8; border-color:#b08850; }
+.q-opt.correct{ background:linear-gradient(180deg, #e8f5e8, #d4edd4); border-color:var(--correct); color:var(--correct); font-weight:700; }
+.q-opt.correct::before{ color:var(--correct); }
+.q-opt.correct::after{ content:"✓"; margin-left:auto; color:var(--correct); font-weight:800; }
+.q-opt.wrong{ background:linear-gradient(180deg, #fce4e6, #f8d7da); border-color:var(--wrong); color:var(--wrong); }
+.q-opt.wrong::before{ color:var(--wrong); }
+.q-opt.wrong::after{ content:"✗"; margin-left:auto; color:var(--wrong); font-weight:800; }
+.q-foot{ display:flex; align-items:center; gap:8px; margin-top:5px; margin-left:22px; flex-wrap:wrap; }
+.answer-detail{ display:none; padding:5px 11px; background:#fef9ee; border:1px dashed #c7ab70; border-radius:7px; font-size:13.5px; color:#5a4520; margin-top:5px; margin-left:22px; line-height:1.5; }
+.answer-detail.shown{ display:block; }
+.answer-detail strong{ color:var(--accent); }
+
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:15.5px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .lesson-banner{ padding:20px 20px 18px; }
+  .grammar-card{ margin:14px 18px; }
+  .q-options{ grid-template-columns:1fr; }
+}
+@media print {
+  body{ background:#fff; font-size:14px; }
+  .page-shell{ padding:0; max-width:none; }
+  .cover, .toc-panel{ page-break-after:always; box-shadow:none; }
+  .lesson{ page-break-before:always; box-shadow:none; }
+  .vn-toggle{ display:none; }
+  .ex-vn, .q-vn{ display:block !important; }
+  .answer-detail{ display:block !important; }
+}
+
+
+#ttsBar{position:fixed;top:12px;right:12px;z-index:99999;background:rgba(255,255,255,0.97);border:1px solid var(--line,#cbd5dc);border-radius:14px;box-shadow:0 10px 30px rgba(20,30,50,0.18);padding:9px 14px;font-size:13px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;max-width:min(94vw,680px);font-family:Inter,"Segoe UI",sans-serif;color:#23303f;}
+#ttsBar .tts-title{font-weight:800;color:var(--accent,#1b3a5a);white-space:nowrap;}
+#ttsBar label{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+#ttsBar select{font-size:12.5px;max-width:230px;padding:2px 4px;border:1px solid var(--line,#cbd5dc);border-radius:7px;}
+#ttsBar input[type=range]{width:92px;vertical-align:middle;accent-color:var(--accent,#1b3a5a);}
+#ttsBar #ttsRateVal{min-width:30px;color:var(--accent,#1b3a5a);}
+#ttsBar .tts-hint{color:#b4533a;font-size:12px;flex-basis:100%;}
+.tts-btn{display:inline-flex;align-items:center;justify-content:center;margin-left:7px;width:23px;height:23px;border:none;border-radius:50%;background:var(--accent,#1b3a5a);color:#fff;font-size:12px;line-height:1;cursor:pointer;vertical-align:middle;padding:0;opacity:.82;transition:transform .12s ease,opacity .12s ease;-webkit-print-color-adjust:exact;}
+.tts-btn:hover{opacity:1;transform:scale(1.14);}
+.tts-btn.playing{background:var(--green,#2d7d46);animation:ttspulse .85s infinite;}
+.tts-btn.loading{background:#b08400;}
+@keyframes ttspulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(45,125,70,.5);}50%{opacity:.55;box-shadow:0 0 0 5px rgba(45,125,70,0);}}
+@media print{#ttsBar,.tts-btn{display:none!important;}}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:500;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.93);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:36px;height:36px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.16em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n1.html">N1</a> · <a href="../shinkanzen.html">Ngữ pháp</a> · Bài 2</div></div></a><a class="tl-back" href="../shinkanzen.html">← Danh sách bài</a></nav>
+<div class="page-shell">
+<div id="ttsBar">
+  <span class="tts-title">🎧 日本語 Audio</span>
+  <label>Nguồn
+    <select id="ttsProvider">
+      <option value="auto">Giọng máy (mặc định)</option>
+      <option value="voicevox">VOICEVOX (free)</option>
+      <option value="google">Google Neural2</option>
+      <option value="azure">Azure Nanami</option>
+    </select>
+  </label>
+  <label id="ttsVoiceWrap">Giọng <select id="ttsVoice"></select></label>
+  <label>Tốc độ <input id="ttsRate" type="range" min="0.5" max="1.4" step="0.05" value="0.95"><b id="ttsRateVal">0.95</b></label>
+  <span id="ttsHint" class="tts-hint"></span>
+</div>
+<article class="lesson" id="lesson-2">
+<div class="lesson-banner"><span class="lesson-kicker">2課 — Bài 2 · 範囲</span><h2>Phạm vi: khởi điểm — kết thúc</h2><div class="lesson-sub">3 mẫu: ～を皮切りに / ～を限りに・を最後に / ～をもって</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">2.1</span><h3 class="gc-jp">～を<ruby>皮切<rt>かわき</rt></ruby>りに / ～を皮切りとして</h3><span class="gc-meaning">lấy ~ làm điểm khởi đầu</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [N] + を皮切りに(として)</div>
+<div class="explain"><strong>Giải thích:</strong> Bắt đầu từ N, một loạt sự việc/sự kiện diễn ra mở rộng theo. Văn trang trọng, văn báo chí, kinh doanh. Vế sau thường mang tính phát triển, lan rộng.</div>
+
+<div class="ex-box"><div class="ex-jp">① <ruby>東京公演<rt>とうきょうこうえん</rt></ruby><span class="target">を皮切りに</span>、<ruby>全国<rt>ぜんこく</rt></ruby><ruby>十都市<rt>じっとし</rt></ruby>でツアーが<ruby>開催<rt>かいさい</rt></ruby>される。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Mở màn bằng buổi diễn ở Tokyo, tour lưu diễn sẽ được tổ chức ở 10 thành phố trên toàn quốc.</div></div>
+
+<div class="ex-box"><div class="ex-jp">② <ruby>新製品<rt>しんせいひん</rt></ruby>のスマートフォン<span class="target">を皮切りに</span>、<ruby>関連商品<rt>かんれんしょうひん</rt></ruby>を<ruby>順次<rt>じゅんじ</rt></ruby><ruby>展開<rt>てんかい</rt></ruby>していく<ruby>予定<rt>よてい</rt></ruby>だ。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Mở đầu bằng dòng smartphone mới, các sản phẩm liên quan sẽ được tung ra lần lượt.</div></div>
+
+<div class="ex-box"><div class="ex-jp">③ A<ruby>銀行<rt>ぎんこう</rt></ruby>の<ruby>破綻<rt>はたん</rt></ruby><span class="target">を皮切りとして</span>、<ruby>金融危機<rt>きんゆうきき</rt></ruby>が<ruby>世界<rt>せかい</rt></ruby>に<ruby>広<rt>ひろ</rt></ruby>がった。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Bắt đầu từ sự sụp đổ của ngân hàng A, khủng hoảng tài chính lan ra toàn thế giới.</div></div>
+
+<div class="compare-box"><div class="compare-title">Lưu ý</div><div class="compare-row"><span class="cmp-jp">を皮切りに</span><span class="cmp-vn">Khởi điểm tích cực (mở rộng, phát triển) hoặc tiêu cực (lan rộng).</span></div><div class="compare-row"><span class="cmp-jp">から始まる</span><span class="cmp-vn">Bình thường, "bắt đầu từ". Không có sắc thái lan rộng.</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 2.1</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>大阪支店<rt>おおさかしてん</rt></ruby>の<ruby>開設<rt>かいせつ</rt></ruby>（____）、<ruby>全国<rt>ぜんこく</rt></ruby>に<ruby>営業網<rt>えいぎょうもう</rt></ruby>を<ruby>広<rt>ひろ</rt></ruby>げる<ruby>計画<rt>けいかく</rt></ruby>だ。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">を皮切りに</span><span class="q-opt" data-mark="②" data-correct="false">を限りに</span><span class="q-opt" data-mark="③" data-correct="false">をもって</span><span class="q-opt" data-mark="④" data-correct="false">につけ</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Khởi đầu bằng việc thành lập chi nhánh Osaka, công ty dự định mở rộng mạng lưới kinh doanh toàn quốc.</div><div class="answer-detail"><strong>Đáp án: ① を皮切りに</strong> — Khởi điểm + mở rộng → を皮切りに.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>初日<rt>しょにち</rt></ruby>の<ruby>公演<rt>こうえん</rt></ruby>（____）、この<ruby>劇団<rt>げきだん</rt></ruby>は<ruby>世界<rt>せかい</rt></ruby><ruby>各国<rt>かっこく</rt></ruby>を<ruby>巡<rt>めぐ</rt></ruby>る<ruby>予定<rt>よてい</rt></ruby>だ。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">をもって</span><span class="q-opt" data-mark="②" data-correct="true">を皮切りに</span><span class="q-opt" data-mark="③" data-correct="false">を限りに</span><span class="q-opt" data-mark="④" data-correct="false">に至るまで</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Mở đầu bằng buổi diễn ngày đầu tiên, đoàn kịch dự định lưu diễn khắp các nước trên thế giới.</div><div class="answer-detail"><strong>Đáp án: ② を皮切りに</strong> — Khởi điểm tour lưu diễn → を皮切りに.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>大企業<rt>だいきぎょう</rt></ruby>のリストラ<ruby>発表<rt>はっぴょう</rt></ruby>（____）、<ruby>業界全体<rt>ぎょうかいぜんたい</rt></ruby>に<ruby>人員整理<rt>じんいんせいり</rt></ruby>の<ruby>波<rt>なみ</rt></ruby>が<ruby>広<rt>ひろ</rt></ruby>がった。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">を限りに</span><span class="q-opt" data-mark="②" data-correct="false">に至るまで</span><span class="q-opt" data-mark="③" data-correct="true">を皮切りに</span><span class="q-opt" data-mark="④" data-correct="false">に応じて</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Bắt đầu từ thông báo cắt giảm nhân sự của tập đoàn lớn, làn sóng tái cấu trúc đã lan rộng trong toàn ngành.</div><div class="answer-detail"><strong>Đáp án: ③ を皮切りに</strong> — Khởi điểm + làn sóng lan rộng → を皮切りに.</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">2.2</span><h3 class="gc-jp">～を<ruby>限<rt>かぎ</rt></ruby>りに / ～を<ruby>最後<rt>さいご</rt></ruby>に</h3><span class="gc-meaning">lấy ~ làm điểm kết thúc, kể từ ~ thì không nữa</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [N (thời điểm)] + を限りに / を最後に</div>
+<div class="explain"><strong>Giải thích:</strong> Tuyên bố kết thúc tại thời điểm N — "từ ~ trở đi không còn nữa". Văn trang trọng, văn nghi lễ, văn báo chí. Cảm xúc thường mang sắc thái chia tay, từ giã.</div>
+
+<div class="ex-box"><div class="ex-jp">① <ruby>今日<rt>きょう</rt></ruby><span class="target">を限りに</span>、<ruby>禁煙<rt>きんえん</rt></ruby>することにした。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Tôi đã quyết định kể từ hôm nay là sẽ bỏ thuốc lá.</div></div>
+
+<div class="ex-box"><div class="ex-jp">② <ruby>本日<rt>ほんじつ</rt></ruby>の<ruby>公演<rt>こうえん</rt></ruby><span class="target">を最後に</span>、<ruby>長年<rt>ながねん</rt></ruby><ruby>愛<rt>あい</rt></ruby>された<ruby>劇場<rt>げきじょう</rt></ruby>が<ruby>閉館<rt>へいかん</rt></ruby>します。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Buổi diễn hôm nay sẽ là buổi cuối cùng, nhà hát được yêu mến nhiều năm sẽ đóng cửa.</div></div>
+
+<div class="ex-box"><div class="ex-jp">③ <ruby>今年度<rt>こんねんど</rt></ruby><span class="target">を限りに</span>、<ruby>当社<rt>とうしゃ</rt></ruby>はこの<ruby>商品<rt>しょうひん</rt></ruby>の<ruby>製造<rt>せいぞう</rt></ruby>を<ruby>終了<rt>しゅうりょう</rt></ruby>いたします。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Kể từ hết năm tài chính này, công ty chúng tôi sẽ ngừng sản xuất sản phẩm này.</div></div>
+
+<div class="compare-box"><div class="compare-title">を限りに vs を皮切りに</div><div class="compare-row"><span class="cmp-jp">を皮切りに</span><span class="cmp-vn">"Khởi điểm" → mở rộng/lan rộng.</span></div><div class="compare-row"><span class="cmp-jp">を限りに / を最後に</span><span class="cmp-vn">"Điểm cuối" → kết thúc/chia tay.</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 2.2</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>今月末<rt>こんげつまつ</rt></ruby>（____）、<ruby>当店<rt>とうてん</rt></ruby>は<ruby>閉店<rt>へいてん</rt></ruby>させていただきます。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">を皮切りに</span><span class="q-opt" data-mark="②" data-correct="true">をもって</span><span class="q-opt" data-mark="③" data-correct="false">につき</span><span class="q-opt" data-mark="④" data-correct="false">に応じて</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Cửa hàng chúng tôi xin được đóng cửa vào cuối tháng này.</div><div class="answer-detail"><strong>Đáp án: ② をもって</strong> — Thông báo trang trọng kết thúc → をもって. を限りに cũng đúng nhưng をもって trang trọng hơn.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span>この<ruby>試合<rt>しあい</rt></ruby>（____）、<ruby>引退<rt>いんたい</rt></ruby>することを<ruby>決<rt>き</rt></ruby>めました。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">を最後に</span><span class="q-opt" data-mark="②" data-correct="false">を皮切りに</span><span class="q-opt" data-mark="③" data-correct="false">に至るまで</span><span class="q-opt" data-mark="④" data-correct="false">をめぐって</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Tôi đã quyết định lấy trận này làm trận đấu cuối rồi sẽ giải nghệ.</div><div class="answer-detail"><strong>Đáp án: ① を最後に</strong> — "Trận cuối" → を最後に.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span><ruby>今日<rt>きょう</rt></ruby>（____）、ダイエットを<ruby>始<rt>はじ</rt></ruby>める。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">を最後に</span><span class="q-opt" data-mark="②" data-correct="true">を限りに</span><span class="q-opt" data-mark="③" data-correct="false">を皮切りに</span><span class="q-opt" data-mark="④" data-correct="false">に至るまで</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Hôm nay sẽ là ngày cuối — tôi sẽ bắt đầu giảm cân.</div><div class="answer-detail"><strong>Đáp án: ② を限りに</strong> — "Kể từ hôm nay không nữa" → を限りに. を最後に thường dùng cho sự kiện trang trọng.</div></div>
+</div></div>
+
+<div class="grammar-card"><div class="gc-head"><span class="gc-num">2.3</span><h3 class="gc-jp">～をもって</h3><span class="gc-meaning">bằng ~, lấy ~ làm (rất trang trọng)</span></div>
+<div class="struct-box"><strong>Cấu trúc:</strong> [N] + をもって</div>
+<div class="explain"><strong>Giải thích:</strong> Hai nghĩa chính: (1) Thời điểm kết thúc — "tính đến ~". (2) Phương tiện/điều kiện — "bằng ~", "với tư cách ~". Rất trang trọng, văn thông cáo, văn bản chính thức.</div>
+
+<div class="ex-box"><div class="ex-jp">① <ruby>本日<rt>ほんじつ</rt></ruby><ruby>正午<rt>しょうご</rt></ruby><span class="target">をもって</span>、<ruby>受付<rt>うけつけ</rt></ruby>を<ruby>締<rt>し</rt></ruby>め<ruby>切<rt>き</rt></ruby>らせていただきます。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Tính đến 12 giờ trưa hôm nay, chúng tôi xin được đóng quầy tiếp nhận.</div></div>
+
+<div class="ex-box"><div class="ex-jp">② <ruby>誠意<rt>せいい</rt></ruby><span class="target">をもって</span>お<ruby>客様<rt>きゃくさま</rt></ruby>に<ruby>対応<rt>たいおう</rt></ruby>することが<ruby>重要<rt>じゅうよう</rt></ruby>です。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Việc đối ứng khách hàng bằng sự chân thành là điều quan trọng.</div></div>
+
+<div class="ex-box"><div class="ex-jp">③ <ruby>厳正<rt>げんせい</rt></ruby>な<ruby>抽選<rt>ちゅうせん</rt></ruby><span class="target">をもって</span><ruby>当選者<rt>とうせんしゃ</rt></ruby>を<ruby>決定<rt>けってい</rt></ruby>いたします。</div><button class="vn-toggle">Xem dịch</button><div class="ex-vn collapsed">Người trúng giải sẽ được xác định bằng cách bốc thăm nghiêm minh.</div></div>
+
+<div class="compare-box"><div class="compare-title">2 nghĩa của をもって</div><div class="compare-row"><span class="cmp-jp">thời điểm</span><span class="cmp-vn">本日をもって、退職いたします。 (Tính đến hôm nay tôi từ chức.)</span></div><div class="compare-row"><span class="cmp-jp">phương tiện</span><span class="cmp-vn">努力をもって、克服する。 (Vượt qua bằng nỗ lực.)</span></div></div>
+
+<div class="exercises"><div class="ex-title">Bài tập 2.3</div>
+<div class="ex-q"><div class="q-stem"><span class="qnum">1.</span><ruby>長年<rt>ながねん</rt></ruby>の<ruby>経験<rt>けいけん</rt></ruby>（____）、この<ruby>難題<rt>なんだい</rt></ruby>を<ruby>解決<rt>かいけつ</rt></ruby>した。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="true">をもって</span><span class="q-opt" data-mark="②" data-correct="false">を限りに</span><span class="q-opt" data-mark="③" data-correct="false">を皮切りに</span><span class="q-opt" data-mark="④" data-correct="false">に応じて</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Tôi đã giải quyết được vấn đề khó khăn bằng kinh nghiệm nhiều năm.</div><div class="answer-detail"><strong>Đáp án: ① をもって</strong> — Phương tiện trang trọng → をもって.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">2.</span><ruby>本日<rt>ほんじつ</rt></ruby>の<ruby>会議<rt>かいぎ</rt></ruby>（____）、プロジェクトを<ruby>正式<rt>せいしき</rt></ruby>に<ruby>開始<rt>かいし</rt></ruby>いたします。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">を限りに</span><span class="q-opt" data-mark="②" data-correct="true">をもって</span><span class="q-opt" data-mark="③" data-correct="false">に至るまで</span><span class="q-opt" data-mark="④" data-correct="false">をめぐって</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Tính từ cuộc họp hôm nay, dự án sẽ chính thức khởi động.</div><div class="answer-detail"><strong>Đáp án: ② をもって</strong> — Thời điểm khởi động trang trọng → をもって.</div></div>
+
+<div class="ex-q"><div class="q-stem"><span class="qnum">3.</span>このイベントは<ruby>三月末日<rt>さんがつまつじつ</rt></ruby>（____）<ruby>終了<rt>しゅうりょう</rt></ruby>させていただきます。</div><div class="q-options"><span class="q-opt" data-mark="①" data-correct="false">に至るまで</span><span class="q-opt" data-mark="②" data-correct="false">を皮切りに</span><span class="q-opt" data-mark="③" data-correct="true">をもって</span><span class="q-opt" data-mark="④" data-correct="false">につけ</span></div><div class="q-foot"><button class="vn-toggle">Xem dịch</button></div><div class="q-vn collapsed">Sự kiện này xin được kết thúc tính đến ngày cuối tháng 3.</div><div class="answer-detail"><strong>Đáp án: ③ をもって</strong> — Thông báo kết thúc trang trọng → をもって.</div></div>
+</div></div>
+
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-01.html">← Bài 1</a><a class="mid" href="../shinkanzen.html">▦ Danh sách bài</a><a href="bai-03.html">Bài 3 →</a></nav>
+<script>
+document.addEventListener('click', function(e) {
+  if (e.target.classList.contains('vn-toggle')) {
+    const sibling = e.target.nextElementSibling;
+    if (sibling && (sibling.classList.contains('ex-vn') || sibling.classList.contains('q-vn'))) {
+      sibling.classList.toggle('collapsed');
+      const isHidden = sibling.classList.contains('collapsed');
+      e.target.textContent = isHidden ? 'Xem dịch' : 'Ẩn dịch';
+      e.target.classList.toggle('shown', !isHidden);
+    }
+    return;
+  }
+  if (e.target.classList.contains('q-opt')) {
+    const opt = e.target;
+    const parent = opt.parentElement;
+    const isCorrect = opt.dataset.correct === 'true';
+    parent.querySelectorAll('.q-opt').forEach(o => { o.classList.remove('correct','wrong'); });
+    if (isCorrect) opt.classList.add('correct');
+    else { opt.classList.add('wrong'); const correctOpt = parent.querySelector('.q-opt[data-correct="true"]'); if (correctOpt) correctOpt.classList.add('correct'); }
+    const question = opt.closest('.ex-q');
+    const detail = question && question.querySelector('.answer-detail');
+    if (detail) detail.classList.add('shown');
+    return;
+  }
+});
+
+;
+
+/* ============================================================
+   CONFIG GIỌNG ĐỌC — sửa ở đây để bật giọng neural chất lượng cao.
+   Đổi provider bằng menu "Nguồn" trên thanh, hoặc đặt mặc định bên dưới.
+   • VOICEVOX (miễn phí, tự nhiên): đặt voicevoxUrl tới server VOICEVOX của bạn.
+   • Google Cloud TTS (Neural2): nên dùng proxy để giấu key →
+       googleEndpoint = 'https://your-proxy/synthesize'  (proxy nhận {text} trả {audioContent})
+       hoặc test nhanh: googleApiKey = 'KEY' (KHÔNG để key thật trên web công khai!)
+   • Azure: azureKey + azureRegion (giọng ja-JP-NanamiNeural). Có thể cần proxy do CORS.
+   ============================================================ */
+window.TTS_CONFIG = window.TTS_CONFIG || {
+  voicevoxUrl   : 'http://localhost:50021', voicevoxSpeaker: 3,   // 3 = ずんだもん; đổi tùy ý
+  googleEndpoint: '',  googleApiKey: '',  googleVoice: 'ja-JP-Neural2-B',
+  azureEndpoint : '',  azureKey: '',  azureRegion: 'japaneast', azureVoice: 'ja-JP-NanamiNeural'
+};
+(function(){
+  var synth = ('speechSynthesis' in window) ? window.speechSynthesis : null;
+  var bar=document.getElementById('ttsBar'),
+      provSel=document.getElementById('ttsProvider'),
+      voiceWrap=document.getElementById('ttsVoiceWrap'),
+      sel=document.getElementById('ttsVoice'),
+      rate=document.getElementById('ttsRate'),
+      rateVal=document.getElementById('ttsRateVal'),
+      hint=document.getElementById('ttsHint'),
+      voices=[], saved={}, cur=null, cache={}, audio=new Audio();
+  try{ saved=JSON.parse(localStorage.getItem('ttsPref')||'{}'); }catch(e){}
+  if(saved.provider) provSel.value=saved.provider;
+  if(saved.rate){ rate.value=saved.rate; rateVal.textContent=saved.rate; }
+
+  /* ---------- giọng máy (Web Speech) ---------- */
+  function isJa(v){ return /ja(-|_|$)/i.test(v.lang)||/japan|japanese|日本/i.test(v.name); }
+  function score(v){ var n=(v.name||'').toLowerCase(),s=0;
+    if(/natural/.test(n))s+=120; if(/google/.test(n))s+=80; if(/online|server|neural/.test(n))s+=50;
+    if(/nanami|keita|ayumi|haruka|sayaka|ichiro|mizuki/.test(n))s+=45;
+    if(/enhanced|premium|plus/.test(n))s+=30; if(/kyoko|o-?ren|otoya|hattori/.test(n))s+=18;
+    if(/compact|eloquence|espeak|fallback/.test(n))s-=60; if(v.localService===false)s+=15; return s; }
+  function fillVoices(){
+    if(!synth) return; voices=synth.getVoices().filter(isJa).sort(function(a,b){return score(b)-score(a);});
+    sel.innerHTML='';
+    if(!voices.length){ var o=document.createElement('option'); o.value=''; o.textContent='(máy chưa có giọng Nhật)'; sel.appendChild(o); return; }
+    voices.forEach(function(v){ var o=document.createElement('option'); o.value=v.name;
+      o.textContent=v.name.replace(/Microsoft |Google /,'')+' · '+v.lang+(/natural/i.test(v.name)?' ★':''); sel.appendChild(o); });
+    if(saved.voice && voices.some(function(v){return v.name===saved.voice;})) sel.value=saved.voice; else sel.value=voices[0].name;
+  }
+  if(synth){ fillVoices(); if(synth.onvoiceschanged!==undefined) synth.onvoiceschanged=fillVoices; }
+
+  function updateUI(){
+    var p=provSel.value;
+    voiceWrap.style.display = (p==='auto') ? '' : 'none';
+    if(p==='auto'){
+      var best=voices[0];
+      hint.textContent = (best && /natural|google/i.test(best.name)) ? ''
+        : '💡 Giọng máy nghe chưa hay? Mở bằng Microsoft Edge (giọng "Natural" Nanami) hoặc chọn nguồn VOICEVOX/Google/Azure ở trên.';
+    } else if(p==='voicevox'){ hint.textContent = TTS_CONFIG.voicevoxUrl ? '' : '⚠ Chưa đặt voicevoxUrl trong CONFIG.'; }
+    else if(p==='google'){ hint.textContent = (TTS_CONFIG.googleEndpoint||TTS_CONFIG.googleApiKey) ? '' : '⚠ Chưa đặt googleEndpoint/googleApiKey trong CONFIG.'; }
+    else if(p==='azure'){ hint.textContent = (TTS_CONFIG.azureEndpoint||TTS_CONFIG.azureKey) ? '' : '⚠ Chưa đặt azureKey/azureRegion trong CONFIG.'; }
+  }
+  function persist(){ try{ localStorage.setItem('ttsPref',JSON.stringify({provider:provSel.value,voice:sel.value,rate:rate.value})); }catch(e){} }
+  provSel.addEventListener('change',function(){ stopAll(); updateUI(); persist(); });
+  rate.addEventListener('input',function(){ rateVal.textContent=parseFloat(rate.value).toFixed(2); persist(); });
+  sel.addEventListener('change',persist);
+  updateUI();
+
+  function textOf(el){ var c=el.cloneNode(true); c.querySelectorAll('rt').forEach(function(r){r.remove();}); return c.textContent.replace(/\s+/g,'').trim(); }
+  function getRate(){ return parseFloat(rate.value)||1; }
+
+  /* ---------- adapter API ---------- */
+  async function fetchVoicevox(text){
+    var C=TTS_CONFIG, base=C.voicevoxUrl.replace(/\/$/,'');
+    var q=await fetch(base+'/audio_query?speaker='+C.voicevoxSpeaker+'&text='+encodeURIComponent(text),{method:'POST'});
+    var query=await q.json(); query.speedScale=getRate();
+    var s=await fetch(base+'/synthesis?speaker='+C.voicevoxSpeaker,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(query)});
+    return URL.createObjectURL(await s.blob());
+  }
+  async function fetchGoogle(text){
+    var C=TTS_CONFIG, body={input:{text:text},voice:{languageCode:'ja-JP',name:C.googleVoice},audioConfig:{audioEncoding:'MP3',speakingRate:getRate()}};
+    var url = C.googleEndpoint || ('https://texttospeech.googleapis.com/v1/text:synthesize?key='+C.googleApiKey);
+    var r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    var j=await r.json(); return 'data:audio/mp3;base64,'+j.audioContent;
+  }
+  async function fetchAzure(text){
+    var C=TTS_CONFIG;
+    var ssml='<speak version="1.0" xml:lang="ja-JP"><voice name="'+C.azureVoice+'"><prosody rate="'+Math.round((getRate()-1)*100)+'%">'+text+'</prosody></voice></speak>';
+    var url=C.azureEndpoint || ('https://'+C.azureRegion+'.tts.speech.microsoft.com/cognitiveservices/v1');
+    var h={'Content-Type':'application/ssml+xml','X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3'};
+    if(C.azureKey) h['Ocp-Apim-Subscription-Key']=C.azureKey;
+    var r=await fetch(url,{method:'POST',headers:h,body:ssml});
+    return URL.createObjectURL(await r.blob());
+  }
+  function apiFetch(text){
+    var p=provSel.value, key=p+'|'+getRate()+'|'+text;
+    if(cache[key]) return Promise.resolve(cache[key]);
+    var fn = p==='voicevox'?fetchVoicevox : p==='google'?fetchGoogle : fetchAzure;
+    return fn(text).then(function(src){ cache[key]=src; return src; });
+  }
+
+  /* ---------- điều khiển phát ---------- */
+  function stopAll(){ if(synth) synth.cancel(); audio.pause(); document.querySelectorAll('.tts-btn.playing,.tts-btn.loading').forEach(function(b){b.classList.remove('playing','loading');}); cur=null; }
+  function deviceSpeak(el,btn){
+    if(!synth){ hint.textContent='Trình duyệt không hỗ trợ đọc; hãy chọn nguồn API.'; return; }
+    var u=new SpeechSynthesisUtterance(textOf(el)); u.lang='ja-JP';
+    var v=voices.find(function(x){return x.name===sel.value;}); if(v) u.voice=v; u.rate=getRate();
+    u.onend=u.onerror=function(){ btn.classList.remove('playing'); if(cur===btn)cur=null; };
+    btn.classList.add('playing'); cur=btn; synth.speak(u);
+  }
+  function play(el,btn){
+    var wasCur=(cur===btn); stopAll(); if(wasCur) return;
+    var p=provSel.value;
+    if(p==='auto'){ deviceSpeak(el,btn); return; }
+    btn.classList.add('loading'); cur=btn;
+    apiFetch(textOf(el)).then(function(src){
+      btn.classList.remove('loading'); btn.classList.add('playing');
+      audio.src=src; audio.playbackRate=1; audio.onended=function(){ btn.classList.remove('playing'); if(cur===btn)cur=null; };
+      return audio.play();
+    }).catch(function(e){ console.warn('TTS API lỗi → dùng giọng máy:',e); btn.classList.remove('loading'); deviceSpeak(el,btn); });
+  }
+
+  document.querySelectorAll('.jp, .ex-jp').forEach(function(el){
+    if(el.closest('.main-header')||el.closest('.cover')||el.closest('#ttsBar')) return;
+    if(textOf(el).length<2) return;
+    var b=document.createElement('button'); b.className='tts-btn'; b.type='button'; b.title='Nghe đọc (tiếng Nhật)'; b.textContent='🔊';
+    b.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); play(el,b); });
+    el.insertAdjacentElement('afterend',b);
+  });
+})();
+</script>
+
+<style>#ttsBar{display:none!important}
+.tts-btn,.tl-spk{display:inline-flex!important;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;margin-right:7px;padding:0;border:1px solid var(--gold,#B89568)!important;background:transparent;color:var(--gold,#B89568);border-radius:50%;font-size:11px;cursor:pointer;vertical-align:middle;line-height:1;flex:none;box-shadow:none}
+.tts-btn:hover,.tl-spk:hover{background:var(--gold,#B89568);color:#fff}
+.tts-btn.on,.tts-btn.playing,.tl-spk.on{background:var(--navy,#1B3A6B);border-color:var(--navy,#1B3A6B)!important;color:#fff}
+.ex-jp rt,.ex-q rt,.jp rt{font-size:.6em;color:var(--gold-d,#8A6E47);font-weight:400}</style>
+<script>(function(){
+var jv=null;function pick(){try{var V=speechSynthesis.getVoices();function f(re){return V.filter(function(v){return /ja|JP|日本/i.test(v.lang)&&re.test(v.name);})[0];}jv=f(/Google/i)||f(/Kyoko/i)||f(/Otoya/i)||f(/Microsoft|Nanami|Ayumi|Keita|Haruka/i)||V.filter(function(v){return /ja|JP|日本/i.test((v.lang||'')+(v.name||''));})[0]||null;}catch(e){}}pick();try{speechSynthesis.onvoiceschanged=pick;}catch(e){}
+function sfb(t,b,done){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=0.9;if(jv)u.voice=jv;u.onend=u.onerror=function(){done&&done();};speechSynthesis.speak(u);}catch(e){done&&done();}}
+var TLW='https://trilu-dict-api.luminhtri0.workers.dev';function ext(txt,b,done){var srcs=['https://api.streamelements.com/kappa/v2/speech?voice=Mizuki&text='+encodeURIComponent(txt),'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=ja&q='+encodeURIComponent(txt)];(function tryi(i){if(i>=srcs.length){return sfb(txt,b,done);}var a=new Audio(srcs[i]);window.__tlA=a;a.onended=done;a.onerror=function(){tryi(i+1);};var pr=a.play();if(pr&&pr.catch)pr.catch(function(){tryi(i+1);});})(0);}function ttsTry(url,txt,b,done,fail){try{fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({text:txt})}).then(function(r){if(!r.ok)throw 0;return r.blob();}).then(function(bl){var a=new Audio(URL.createObjectURL(bl));window.__tlA=a;a.onended=done;a.onerror=fail;var pr=a.play();if(pr&&pr.catch)pr.catch(fail);}).catch(fail);}catch(e){fail();}}function gplay(t,b){if(!t)return;var txt=(''+t).replace(/<[^>]*>/g,'').replace(/^[\s①-⑳ 0-9.\)、。]+/,'').slice(0,200);if(!txt)txt=(''+t).replace(/<[^>]*>/g,'').slice(0,200);if(b&&b.classList)b.classList.add('on');var done=function(){if(b&&b.classList){b.classList.remove('on');b.classList.remove('playing');}};if(window.__tlA){try{window.__tlA.pause();}catch(e){}}ttsTry('/api/tts',txt,b,done,function(){ttsTry(TLW+'/api/tts',txt,b,done,function(){ext(txt,b,done);});});}
+function furiFetch(url,texts){return fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({texts:texts})}).then(function(r){if(!r.ok)throw 0;return r.json();});}
+window.__tlGtts=gplay;
+function clean(el){var c=el.cloneNode(true);c.querySelectorAll('rt,rp,.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn,.vn,.hanviet,.kreading,.kmean,.ana-syn,.ana-ant,.ana-nuance').forEach(function(n){n.remove();});return (c.textContent||'').replace(/\s+/g,' ').trim();}
+function jaText(btn){var node=btn;for(var i=0;i<4&&node.parentElement;i++){node=node.parentElement;var t=clean(node);if(/[぀-ヿ一-龯]/.test(t))return t;}return '';}
+document.addEventListener('click',function(e){var btn=e.target&&e.target.closest&&e.target.closest('.tts-btn, .tl-spk');if(!btn)return;e.preventDefault();e.stopPropagation();if(typeof e.stopImmediatePropagation==='function')e.stopImmediatePropagation();gplay(jaText(btn),btn);},true);
+function nativeNear(el){if(el.querySelector('.tts-btn'))return true;var p=el.parentElement;if(p){for(var c=p.firstElementChild;c;c=c.nextElementSibling){if(c.classList&&c.classList.contains('tts-btn'))return true;}}return false;}
+function add(el){if(el.dataset.spk)return;el.dataset.spk='1';if(nativeNear(el))return;var t=clean(el);if(!t||!/[぀-ヿ一-龯]/.test(t))return;var b=document.createElement('button');b.type='button';b.className='tl-spk';b.setAttribute('aria-label','Phat am');b.textContent='🔊';el.insertBefore(b,el.firstChild);}
+function run(){document.querySelectorAll('[data-tts], .ex-jp, .ex-q').forEach(add);}
+function furiPass(){var els=[].slice.call(document.querySelectorAll('.ex-jp, .ex-q, .jp'));var jobs=[];els.forEach(function(el){if(el.dataset.furi)return;if(el.querySelector('ruby'))return;var c=el.cloneNode(true);c.querySelectorAll('.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn').forEach(function(n){n.remove();});var t=(c.textContent||'').replace(/\s+/g,' ').trim();if(!t||t.length<6||!/[一-龯]/.test(t))return;el.dataset.furi='1';jobs.push({el:el,t:t});});if(!jobs.length)return;var texts=jobs.map(function(j){return j.t;});function apply(d){if(!d||!d.ruby)return;jobs.forEach(function(j,idx){var ru=d.ruby[idx];if(!ru||ru.indexOf('<ruby')<0)return;var btn=j.el.querySelector('.tl-spk,.tts-btn');j.el.innerHTML=(btn?btn.outerHTML:'')+ru;});}furiFetch('/api/furigana',texts).then(apply).catch(function(){furiFetch(TLW+'/api/furigana',texts).then(apply).catch(function(){});});}
+function go(){run();furiPass();}
+if(document.readyState!=='loading'){setTimeout(go,50);}else{document.addEventListener('DOMContentLoaded',function(){setTimeout(go,50);});}
+window.addEventListener('load',function(){setTimeout(go,160);});})();</script>
+
+</body></html>

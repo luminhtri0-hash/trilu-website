@@ -1,0 +1,1165 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 8 · Truyền thông & Báo chí — Từ vựng N1 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N1 — Bài 8: Truyền thông & Báo chí. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#1b3a5a;
+  --accent-dark:#0f2740;
+  --accent-2:#2d6e7a;
+  --accent-3:#5fa3b2;
+  --line:#bcd3da;
+  --line-2:#dde9ee;
+  --callout:#f0f6f8;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --gold:#c9a449;
+  --gold-deep:#8a6d22;
+  --shadow:0 18px 46px rgba(15,39,64,0.10);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(45,110,122,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(27,58,90,0.08), transparent 22%),
+    linear-gradient(180deg, #eef4f6 0%, #e7eef2 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:16.5px;
+  -webkit-font-smoothing:antialiased;
+  padding:24px 12px;
+  min-height:100vh;
+}
+.page-shell{
+  max-width:1180px; margin:0 auto;
+  background:var(--paper);
+  border:1px solid var(--line-2);
+  border-radius:24px;
+  padding:36px 32px 48px;
+  box-shadow:var(--shadow);
+}
+
+/* ============ HEADER (cover) ============ */
+.main-header{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(95,163,178,0.24), transparent 16%),
+    linear-gradient(135deg, #0f2740 0%, #1b3a5a 36%, #082030 100%);
+  color:#fff; border-radius:22px; box-shadow:var(--shadow);
+  padding:40px 40px 36px; margin-bottom:30px; text-align:center;
+}
+.main-header::after{
+  content:"語彙"; position:absolute; right:-12px; bottom:-50px;
+  font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.main-header .badge{
+  display:inline-block; padding:8px 18px; border-radius:999px;
+  background:rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.20);
+  color:#cfe5ec; letter-spacing:0.18em; font-size:13px; font-weight:700; text-transform:uppercase;
+}
+.main-header h1{
+  font-family:"EB Garamond","Noto Serif CJK JP",serif;
+  font-weight:700; font-size:42px; line-height:1.1; letter-spacing:-0.01em;
+  margin:18px 0 8px; color:#fff;
+}
+.main-header h1 .jp{ color:var(--accent-3); font-family:"Noto Serif CJK JP",serif; }
+.main-header .subtitle{
+  margin:0 auto; max-width:780px;
+  color:rgba(255,255,255,0.85); font-size:17px; font-style:italic;
+}
+
+/* ============ TOC ============ */
+.toc{
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(240,246,248,0.96));
+  border:1px solid rgba(45,110,122,0.20);
+  border-radius:22px; box-shadow:var(--shadow);
+  padding:26px 28px; margin-bottom:32px;
+}
+.toc h2{
+  margin:0 0 14px; padding:0;
+  font-family:"EB Garamond","Noto Serif CJK JP",serif;
+  font-size:28px; line-height:1.1; color:var(--accent); font-weight:700;
+  border:none;
+}
+.toc-chapter{ margin:18px 0; }
+.toc-chapter-title{
+  display:flex; align-items:center; gap:12px;
+  padding:11px 16px; margin-bottom:10px;
+  background:linear-gradient(90deg, #1b3a5a, #2d6e7a);
+  color:#fff; border-radius:12px;
+  font-family:"Noto Serif CJK JP",serif;
+  font-weight:700; font-size:19px;
+}
+.toc-chapter-title::before{
+  content:""; width:9px; height:9px; border-radius:50%;
+  background:var(--accent-3); flex-shrink:0;
+}
+.toc-items{
+  list-style:none; padding-left:8px; margin:0;
+  display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px;
+}
+.toc-items li{ margin:0; }
+.toc-items a{
+  display:block; padding:11px 14px;
+  text-decoration:none; color:inherit;
+  background:linear-gradient(180deg, #fffefd 0%, #f0f6f8 100%);
+  border:1px solid var(--line-2); border-radius:12px;
+  font-weight:600; color:var(--accent); font-size:16px;
+  transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease;
+  border-left:3px solid transparent;
+}
+.toc-items a:hover{
+  transform:translateY(-2px);
+  border-color:rgba(27,58,90,0.40); border-left-color:var(--accent-2);
+  box-shadow:0 12px 24px rgba(15,39,64,0.06);
+}
+
+/* ============ CHAPTER CARD ============ */
+.chapter-card{
+  position:relative; overflow:hidden;
+  background:linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  border-radius:22px; box-shadow:var(--shadow);
+  padding:32px 40px 28px; margin:50px 0 22px;
+  color:#fff;
+}
+.chapter-card::after{
+  content:""; position:absolute; right:-80px; top:-90px;
+  width:240px; height:240px; border-radius:50%;
+  background:radial-gradient(circle, rgba(95,163,178,0.45) 0%, rgba(95,163,178,0.08) 48%, transparent 68%);
+  pointer-events:none;
+}
+.chapter-card h2{
+  margin:0 0 6px;
+  font-family:"Noto Serif CJK JP",serif; font-size:30px; font-weight:700; color:#fff;
+  letter-spacing:0; position:relative; z-index:1;
+}
+.chapter-card h2 .num{ color:var(--accent-3); margin-right:6px; }
+.chapter-card .ch-sub{
+  font-size:16.5px; color:rgba(255,255,255,0.82); font-style:italic;
+  position:relative; z-index:1;
+}
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(45,110,122,0.16);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:0 0 32px; margin-bottom:36px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  display:flex; align-items:center; gap:14px;
+  padding:24px 36px 22px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(95,163,178,0.28), transparent 26%),
+    linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  color:#fff;
+}
+.lesson-banner .lesson-no{
+  flex-shrink:0;
+  width:46px; height:46px; border-radius:50%;
+  background:linear-gradient(135deg, var(--accent-3) 0%, var(--accent-2) 100%);
+  color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-weight:800; font-size:16.5px;
+  box-shadow:0 6px 14px rgba(45,110,122,0.30);
+  font-family:"EB Garamond",serif;
+}
+.lesson-banner h3{
+  margin:0; flex:1;
+  font-family:"Noto Serif CJK JP",serif; font-size:22px; font-weight:700; color:#fff;
+}
+.lesson-banner h3 .vn{
+  display:block; margin-top:3px;
+  font-family:Inter,sans-serif; font-size:15.5px; font-weight:500;
+  color:rgba(255,255,255,0.82); font-style:italic;
+}
+.doc-body{ padding:24px 32px 12px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 16px;
+  padding:14px 22px 14px 20px;
+  border-radius:18px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #154366 0%, #1b3a5a 52%, #2d6e7a 100%);
+  color:#fff; font-weight:700;
+}
+.section-head::before{
+  content:attr(data-mark); margin-right:10px;
+  font-size:19.5px;
+}
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{
+  margin:14px 0 22px;
+  border:1px solid var(--line-2); border-radius:18px; overflow:hidden;
+  background:#fff; box-shadow:0 10px 26px rgba(15,39,64,0.05);
+}
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff;
+  font-size:16px;
+}
+table.vocab-table thead{
+  background:linear-gradient(180deg, #eaf3f6 0%, #cee2e8 100%);
+  color:var(--accent);
+}
+table.vocab-table thead th{
+  padding:13px 14px; text-align:left;
+  font-weight:800; font-size:15px; letter-spacing:0.02em;
+  border-bottom:1px solid var(--line-2);
+  border-right:1px solid var(--line-2);
+}
+table.vocab-table thead th:last-child{ border-right:none; }
+table.vocab-table tbody td{
+  padding:16px 14px; vertical-align:top;
+  border-bottom:1px solid var(--line-2);
+  border-right:1px solid var(--line-2);
+  line-height:1.65;
+}
+table.vocab-table tbody td:last-child{ border-right:none; }
+table.vocab-table tbody tr:last-child td{ border-bottom:none; }
+table.vocab-table tbody tr:nth-child(even) td{ background:#f7fbfc; }
+table.vocab-table tbody tr:hover td{ background:#ecf5f7; }
+
+.kanji-cell{
+  font-family:"Noto Serif CJK JP","Yu Mincho",serif;
+  font-size:22px; font-weight:700; color:#222;
+  line-height:1.2;
+  white-space:nowrap;
+}
+.kanji-cell ruby{ ruby-position:over; ruby-align:center; }
+.kanji-cell rt{
+  font-size:12.5px; color:#7a8590;
+  font-family:Inter,sans-serif; font-weight:500;
+}
+.hanviet{
+  display:block; margin-top:6px;
+  font-size:13px; color:var(--accent-2); font-weight:800;
+  letter-spacing:1.2px;
+  font-family:Inter,sans-serif;
+  white-space:normal;
+}
+.pos{
+  display:inline-block;
+  padding:3px 9px; border-radius:6px;
+  background:var(--green); color:#fff;
+  font-size:12.5px; font-weight:700; letter-spacing:0.05em;
+  font-family:Inter,sans-serif;
+}
+.meaning{
+  color:var(--accent); font-size:16.5px; font-weight:700; line-height:1.5;
+  font-family:Inter,sans-serif;
+}
+.example{
+  font-family:"Noto Serif CJK JP",serif;
+  background:linear-gradient(180deg, #fefdfa, #f3eddb);
+  border-left:4px solid var(--accent);
+  padding:11px 14px; border-radius:0 12px 12px 0;
+  font-size:16px; line-height:1.9;
+}
+.example .jp{
+  display:block; color:#222; font-weight:500; margin-bottom:6px;
+}
+.example .vn{
+  display:block; padding-top:6px; border-top:1px dotted #cee2e8;
+  color:#4a5560; font-style:italic; font-family:Inter,sans-serif;
+  font-size:15px; line-height:1.55;
+}
+
+/* ============ ANALYSIS CELL ============ */
+.analysis-cell{
+  background:linear-gradient(180deg, #fcfffe, #f3f9fa);
+  font-size:15px; line-height:1.6;
+}
+.kanji-break{
+  background:#fff;
+  border:1px solid #cee2e8;
+  border-left:3px solid var(--accent-2);
+  border-radius:10px;
+  padding:10px 12px;
+}
+.kanji-break > div{
+  margin:2px 0;
+  font-family:"Noto Serif CJK JP",serif;
+  color:#1f3a4a;
+}
+.kanji-break .kchar{
+  font-family:"Noto Serif CJK JP","Yu Mincho",serif;
+  font-weight:700; font-size:18.5px;
+  color:var(--accent); margin-right:6px;
+}
+.kanji-break .kreading{
+  color:var(--accent-2);
+  font-family:Inter,sans-serif;
+  font-weight:700; font-size:12.5px;
+  letter-spacing:0.06em;
+}
+.kanji-break .kmean{
+  color:#2d4a5a;
+  font-family:Inter,sans-serif;
+  font-size:14px;
+}
+.ana-combine{
+  margin-top:8px; padding:8px 10px;
+  background:linear-gradient(180deg, #fffbef, #f8eed4);
+  border-left:3px dashed var(--accent-2);
+  border-radius:0 10px 10px 0;
+  color:#5a4520; font-size:13.5px; line-height:1.6;
+  font-family:Inter,sans-serif;
+}
+.ana-combine strong{ color:var(--accent); }
+.ana-syn{ color:var(--green); font-weight:600; }
+.ana-ant{ color:#b13e3e; font-weight:600; }
+.ana-nuance{ color:var(--plum); font-style:italic; }
+.katakana-origin{
+  background:linear-gradient(180deg, #fff5f8, #faeaf0);
+  border:1px solid #f0d8e2;
+  border-left:3px solid #b13e6a;
+  border-radius:10px;
+  padding:10px 12px;
+  font-size:15px; color:#5a3a4a; line-height:1.6;
+}
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{
+  background:linear-gradient(180deg, #f7faf2, #ecf2e2);
+  border:1px solid #d8e2c8;
+  border-left:3px solid var(--green);
+  border-radius:10px;
+  padding:10px 12px;
+  font-size:15px; color:#3e5a3a; line-height:1.6;
+}
+.wago-note strong{ color:var(--green); }
+
+/* ============ SPECIAL BLOCKS (Cấu tạo từ + Phó từ) ============ */
+.special-block{
+  margin:22px 0;
+  background:linear-gradient(180deg, #fffdfa, #f7fbfc);
+  border:1px solid #cee2e8;
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 8px 20px rgba(15,39,64,0.05);
+}
+.special-banner{
+  padding:14px 22px;
+  background:linear-gradient(90deg, #2d6e7a 0%, #5fa3b2 100%);
+  color:#fff;
+  font-family:"Noto Serif CJK JP",serif;
+  font-weight:700; font-size:19px;
+  letter-spacing:0.02em;
+}
+.special-banner.adv{
+  background:linear-gradient(90deg, #6a4a8a 0%, #8a6daf 100%);
+}
+.special-body{ padding:18px 22px; }
+
+/* Word formation grid */
+.word-formation-grid{
+  display:grid; grid-template-columns:repeat(2, 1fr); gap:12px;
+}
+.wf-item{
+  background:#fff;
+  border:1px solid #d4e3e8;
+  border-left:4px solid var(--accent-3);
+  border-radius:10px;
+  padding:11px 14px;
+  font-size:15.5px;
+}
+.wf-item .pattern{
+  font-family:"Noto Serif CJK JP",serif;
+  font-weight:700; font-size:17.5px;
+  color:var(--accent); margin-bottom:4px;
+}
+.wf-item .desc{ color:#3a4a55; margin-bottom:4px; }
+.wf-item .ex{
+  color:var(--muted); font-style:italic; font-size:14px;
+  font-family:Inter,sans-serif;
+}
+
+/* Adverb grid */
+.adverb-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+.adv-item{
+  background:#fff;
+  border:1px solid #d8d0e4;
+  border-left:3px solid #6a4a8a;
+  border-radius:10px;
+  padding:12px 16px;
+  font-size:16.5px;
+}
+.adv-item .adv-word{
+  font-family:"Noto Serif CJK JP",serif;
+  font-weight:700; font-size:18.5px;
+  color:#4a3070;
+}
+.adv-item .adv-meaning{ color:var(--muted); font-style:italic; font-size:15px; }
+.adv-item .adv-ex{
+  margin-top:6px;
+  padding:7px 11px;
+  background:#faf7fd;
+  border-left:2px solid #c8b8e0;
+  border-radius:0 8px 8px 0;
+  font-size:15.5px;
+  font-family:"Noto Serif CJK JP",serif;
+}
+.adv-item .adv-ex .jp{ color:var(--accent); display:inline; }
+.adv-item .adv-ex .vn{
+  display:block; margin-top:4px; padding-top:4px;
+  border-top:1px dotted #d8d0e4;
+  color:#5a5070; font-style:italic; font-size:13.5px;
+  font-family:Inter,sans-serif;
+}
+.adv-item .adv-synonyms{
+  margin-top:8px;
+  padding:7px 11px;
+  background:linear-gradient(180deg, #f5edff, #ede0ff);
+  border-left:3px dashed #8a6daf;
+  border-radius:0 8px 8px 0;
+  font-size:14px; color:#4a2a7a; line-height:1.6;
+  font-family:Inter,sans-serif;
+}
+.adv-item .adv-synonyms strong{ color:#5a1a8a; font-weight:bold; }
+.adv-item .adv-synonyms .syn-jp{
+  font-family:"Noto Serif CJK JP",serif;
+  color:#3a1a6a; font-weight:600;
+}
+.adv-item .adv-synonyms .syn-vn{ color:#6a4a8a; font-style:italic; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:28px 0 22px;
+  background:linear-gradient(180deg, #fefdfa 0%, #f3eddb 100%);
+  border:1px solid #d9c9a8;
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(15,39,64,0.05);
+}
+.exercise-block h4{
+  margin:0;
+  padding:16px 22px;
+  background:linear-gradient(90deg, var(--accent) 0%, var(--accent-2) 100%);
+  color:#fff;
+  font-family:"Noto Serif CJK JP",serif;
+  font-size:18.5px; font-weight:700;
+  border:none;
+}
+.exercise-block ol{
+  margin:0; padding:18px 22px 18px 44px;
+}
+.exercise-block li{
+  margin:9px 0; line-height:1.75;
+  font-family:"Noto Serif CJK JP",serif;
+}
+.blank{
+  display:inline-block; min-width:80px;
+  padding:0 8px;
+  background:#fff7e8;
+  border-bottom:2px solid var(--accent-2);
+  color:var(--accent); font-weight:700; text-align:center;
+  cursor:pointer; transition:all .15s;
+  border-radius:4px 4px 0 0;
+}
+.blank:hover{ background:#fae7c0; }
+.blank.shown{
+  background:var(--accent-2); color:#fff;
+  border-bottom-color:var(--accent);
+}
+.answer-btn{
+  margin-top:12px; padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:15.5px; cursor:pointer;
+  box-shadow:0 6px 14px rgba(27,58,90,0.18);
+  transition:all 0.2s; font-family:inherit;
+}
+.answer-btn:hover{
+  transform:translateY(-1px);
+  box-shadow:0 8px 20px rgba(27,58,90,0.28);
+}
+.answer-box{
+  display:none; margin:14px 22px 22px;
+  padding:14px 16px;
+  background:linear-gradient(180deg, #fffbef, #f8eed4);
+  border:1px solid #d9bb88;
+  border-left:4px solid var(--accent-2);
+  border-radius:10px;
+  font-size:16px; line-height:1.7; color:#5a4520;
+}
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{
+  margin-top:34px; padding:24px 28px;
+  background:linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  color:rgba(255,255,255,0.85);
+  border-radius:18px; text-align:center; font-size:15.5px;
+  box-shadow:var(--shadow);
+}
+.footer-card strong{ color:var(--accent-3); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px){
+  .page-shell{ padding:22px 16px 36px; }
+  .main-header{ padding:32px 24px 28px; }
+  .main-header h1{ font-size:30px; }
+  .toc-items{ grid-template-columns:1fr; }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  .chapter-card{ padding:24px 26px 22px; }
+  table.vocab-table{ font-size:15px; min-width:840px; }
+  .table-shell{ overflow-x:auto; }
+  .kanji-cell{ font-size:19.5px; }
+  .word-formation-grid{ grid-template-columns:1fr; }
+}
+
+@media print{
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+  html, body{ background:#fff !important; }
+  body{ font-size:13px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; padding:0; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; box-shadow:none; border:none; }
+  .main-header{ page-break-after:always; break-after:page; padding:34px 30px; box-shadow:none; border-radius:14px; }
+  .main-header h1{ font-size:30px; }
+  .toc{ page-break-after:always; break-after:page; box-shadow:none; }
+  .chapter-card{ page-break-before:always; break-before:page; box-shadow:none; }
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:14px 16px 10px !important; }
+  .table-shell{ overflow:visible !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; table-layout:fixed !important; box-shadow:none !important; }
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:16px 20px !important; }
+  .lesson-banner h3{ font-size:19.5px !important; }
+  .section-head{ page-break-after:avoid !important; padding:9px 16px !important; margin:10px 0 8px !important; }
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table thead th{ padding:7px 7px !important; font-size:12.5px !important; }
+  table.vocab-table tr{ page-break-inside:avoid !important; }
+  table.vocab-table tbody td{ padding:9px 7px !important; font-size:12.5px !important; }
+  .kanji-cell{ font-size:19px !important; line-height:1.15 !important; }
+  .kanji-cell rt{ font-size:10.5px !important; }
+  .hanviet{ font-size:11px !important; letter-spacing:0.8px !important; margin-top:3px !important; }
+  .pos{ font-size:10.5px !important; padding:2px 6px !important; }
+  .meaning{ font-size:13px !important; line-height:1.35 !important; }
+  .example{ padding:7px 9px !important; font-size:12.5px !important; line-height:1.7 !important; }
+  .analysis-cell{ font-size:12.5px !important; }
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:6px 8px !important; font-size:12px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:15.5px !important; }
+  .kanji-break .kreading{ font-size:10.5px !important; }
+  .ana-combine{ padding:5px 8px !important; font-size:11px !important; margin-top:5px !important; }
+  .special-block, .exercise-block, .wf-item, .adv-item{ page-break-inside:avoid !important; }
+  .word-formation-grid{ grid-template-columns:1fr 1fr !important; gap:8px !important; }
+  .wf-item{ padding:7px 9px !important; }
+  .wf-item .pattern{ font-size:15.5px !important; }
+  .wf-item .desc, .wf-item .ex{ font-size:12.5px !important; }
+  .adv-item{ padding:8px 12px !important; }
+  .adv-item .adv-word{ font-size:15.5px !important; }
+  .adv-item .adv-meaning{ font-size:12.5px !important; }
+  .adv-item .adv-ex{ font-size:12.5px !important; padding:5px 8px !important; }
+  .adv-item .adv-synonyms{ font-size:12px !important; padding:5px 8px !important; }
+  .answer-btn{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; font-size:12.5px !important; padding:9px 11px !important; margin:10px 14px 14px !important; }
+  .footer-card{ page-break-inside:avoid; box-shadow:none; }
+}
+
+  /* ---- Word formation: example list with furigana & VN meaning ---- */
+  .wf-item .ex-list-wrapper{ margin-top:6px; }
+  .ex-list{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:5px;
+  }
+  .ex-item{
+    display:flex; flex-wrap:wrap; align-items:baseline; gap:6px;
+    padding:5px 9px;
+    background:linear-gradient(180deg, #fcfffe, #eef7f9);
+    border:1px solid #d8e7ec;
+    border-left:3px solid #5fa3b2;
+    border-radius:6px;
+    font-size:15.5px;
+    line-height:1.5;
+  }
+  .ex-item ruby{
+    font-family:"Noto Serif CJK JP","Yu Mincho",serif;
+    font-weight:700; color:#1b3a5a; font-size:17px;
+    ruby-position:over; ruby-align:center;
+  }
+  .ex-item rt{
+    font-size:11px; color:#5fa3b2;
+    font-family:Inter,sans-serif; font-weight:600;
+  }
+  .ex-item .ex-vn{
+    color:#5f6470; font-style:italic; font-size:13.5px;
+    font-family:Inter,sans-serif;
+  }
+  .ex-item .ex-jp{
+    font-family:"Noto Serif CJK JP",serif;
+    font-weight:700; color:#1b3a5a; font-size:17px;
+  }
+  @media print {
+    .ex-item{ padding:3px 6px !important; font-size:12.5px !important; gap:4px !important; }
+    .ex-item ruby{ font-size:13.5px !important; }
+    .ex-item rt{ font-size:9.5px !important; }
+    .ex-item .ex-vn{ font-size:11px !important; }
+    .ex-list{ gap:3px !important; }
+  }
+
+
+#ttsBar{position:fixed;top:12px;right:12px;z-index:99999;background:rgba(255,255,255,0.97);border:1px solid var(--line,#cbd5dc);border-radius:14px;box-shadow:0 10px 30px rgba(20,30,50,0.18);padding:9px 14px;font-size:13px;display:flex;gap:14px;align-items:center;flex-wrap:wrap;max-width:min(94vw,680px);font-family:Inter,"Segoe UI",sans-serif;color:#23303f;}
+#ttsBar .tts-title{font-weight:800;color:var(--accent,#1b3a5a);white-space:nowrap;}
+#ttsBar label{display:flex;align-items:center;gap:6px;white-space:nowrap;}
+#ttsBar select{font-size:12.5px;max-width:230px;padding:2px 4px;border:1px solid var(--line,#cbd5dc);border-radius:7px;}
+#ttsBar input[type=range]{width:92px;vertical-align:middle;accent-color:var(--accent,#1b3a5a);}
+#ttsBar #ttsRateVal{min-width:30px;color:var(--accent,#1b3a5a);}
+#ttsBar .tts-hint{color:#b4533a;font-size:12px;flex-basis:100%;}
+.tts-btn{display:inline-flex;align-items:center;justify-content:center;margin-left:7px;width:23px;height:23px;border:none;border-radius:50%;background:var(--accent,#1b3a5a);color:#fff;font-size:12px;line-height:1;cursor:pointer;vertical-align:middle;padding:0;opacity:.82;transition:transform .12s ease,opacity .12s ease;-webkit-print-color-adjust:exact;}
+.tts-btn:hover{opacity:1;transform:scale(1.14);}
+.tts-btn.playing{background:var(--green,#2d7d46);animation:ttspulse .85s infinite;}
+.tts-btn.loading{background:#b08400;}
+@keyframes ttspulse{0%,100%{opacity:1;box-shadow:0 0 0 0 rgba(45,125,70,.5);}50%{opacity:.55;box-shadow:0 0 0 5px rgba(45,125,70,0);}}
+@media print{#ttsBar,.tts-btn{display:none!important;}}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:500;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.93);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:36px;height:36px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.16em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n1.html">N1</a> · <a href="../shinkanzen.html">Từ vựng</a> · Bài 8</div></div></a><a class="tl-back" href="../shinkanzen.html">← Danh sách bài</a></nav>
+<div class="page-shell">
+<div id="ttsBar">
+  <span class="tts-title">🎧 日本語 Audio</span>
+  <label>Nguồn
+    <select id="ttsProvider">
+      <option value="auto">Giọng máy (mặc định)</option>
+      <option value="voicevox">VOICEVOX (free)</option>
+      <option value="google">Google Neural2</option>
+      <option value="azure">Azure Nanami</option>
+    </select>
+  </label>
+  <label id="ttsVoiceWrap">Giọng <select id="ttsVoice"></select></label>
+  <label>Tốc độ <input id="ttsRate" type="range" min="0.5" max="1.4" step="0.05" value="0.95"><b id="ttsRateVal">0.95</b></label>
+  <span id="ttsHint" class="tts-hint"></span>
+</div>
+<article class="document" id="lesson-6-1">
+  <div class="lesson-banner">
+    <div class="lesson-no">6.1</div>
+    <h3>メディア
+      <span class="vn">Truyền thông &amp; Báo chí</span>
+    </h3>
+  </div>
+  <div class="doc-body">
+
+    <div class="section-head" data-mark="📖">Bảng từ vựng (語彙)</div>
+    <div class="table-shell">
+      <table class="vocab-table">
+        <thead>
+          <tr><th style="width:14%">Từ</th><th style="width:7%">Loại</th><th style="width:18%">Nghĩa</th><th style="width:31%">Phân tích / Nguồn gốc</th><th>Ví dụ</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="kanji-cell"><ruby>報道<rt>ほうどう</rt></ruby><span class="hanviet">Báo đạo</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">đưa tin, báo chí</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">報</span><span class="kreading">BÁO · ほう</span> — <span class="kmean">báo, thông báo</span></div><div><span class="kchar">道</span><span class="kreading">ĐẠO · どう</span> — <span class="kmean">đường, đạo</span></div><div class="ana-combine"><strong>Ghép:</strong> Đường đưa tin → báo chí.<br><span class="ana-syn">≈ ニュース, ジャーナリズム</span> · <span class="ana-nuance">Cụm: 報道機関, 報道の自由.</span></div></div></td>
+            <td class="example"><span class="jp">公正な報道こそ、民主主義の根幹である。</span><span class="vn">Báo chí công bằng chính là gốc rễ của nền dân chủ.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>放送<rt>ほうそう</rt></ruby><span class="hanviet">Phóng tống</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">phát sóng</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">放</span><span class="kreading">PHÓNG · ほう</span> — <span class="kmean">thả, phát</span></div><div><span class="kchar">送</span><span class="kreading">TỐNG · そう</span> — <span class="kmean">gửi</span></div><div class="ana-combine"><strong>Ghép:</strong> Thả + gửi đi → phát sóng.<br><span class="ana-syn">≈ ブロードキャスト, オンエア</span> · <span class="ana-nuance">Cụm: 生放送 (live), 再放送, 放送局.</span></div></div></td>
+            <td class="example"><span class="jp">生放送ならではの緊張感が、視聴者にも伝わってきた。</span><span class="vn">Sự căng thẳng đặc trưng của phát sóng trực tiếp đã truyền đến khán giả.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>記事<rt>きじ</rt></ruby><span class="hanviet">Ký sự</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">bài báo</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">記</span><span class="kreading">KÝ · き</span> — <span class="kmean">ghi</span></div><div><span class="kchar">事</span><span class="kreading">SỰ · じ</span> — <span class="kmean">việc</span></div><div class="ana-combine"><strong>Ghép:</strong> Ghi chép sự việc → bài báo.<br><span class="ana-syn">≈ アーティクル, レポート</span> · <span class="ana-nuance">Cụm: 記事を書く, 一面記事 (bài trang nhất).</span></div></div></td>
+            <td class="example"><span class="jp">この記事は、徹底した取材に基づいて執筆されたものだ。</span><span class="vn">Bài báo này được viết dựa trên việc thu thập thông tin triệt để.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>取材<rt>しゅざい</rt></ruby><span class="hanviet">Thủ tài</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">phỏng vấn, thu thập tin</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">取</span><span class="kreading">THỦ · しゅ</span> — <span class="kmean">lấy</span></div><div><span class="kchar">材</span><span class="kreading">TÀI · ざい</span> — <span class="kmean">tài liệu</span></div><div class="ana-combine"><strong>Ghép:</strong> Lấy tài liệu → thu thập tin.<br><span class="ana-syn">≈ リサーチ, インタビュー</span> · <span class="ana-nuance">Cụm: 取材活動, 現場取材.</span></div></div></td>
+            <td class="example"><span class="jp">取材を重ねた末、ようやく真相が見えてきた。</span><span class="vn">Sau nhiều lần phỏng vấn, sự thật cuối cùng cũng dần hé lộ.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>編集<rt>へんしゅう</rt></ruby><span class="hanviet">Biên tập</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">biên tập</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">編</span><span class="kreading">BIÊN · へん</span> — <span class="kmean">biên soạn</span></div><div><span class="kchar">集</span><span class="kreading">TẬP · しゅう</span> — <span class="kmean">tập hợp</span></div><div class="ana-combine"><strong>Ghép:</strong> Biên + tập → biên tập.<br><span class="ana-syn">≈ エディット, 編纂</span> · <span class="ana-nuance">Cụm: 編集長, 編集部, 編集者.</span></div></div></td>
+            <td class="example"><span class="jp">編集の腕次第で、記事の印象は大きく変わる。</span><span class="vn">Tài năng biên tập có thể làm ấn tượng bài báo thay đổi đáng kể.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>出版<rt>しゅっぱん</rt></ruby><span class="hanviet">Xuất bản</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">xuất bản</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">出</span><span class="kreading">XUẤT · しゅつ/しゅっ</span> — <span class="kmean">ra</span></div><div><span class="kchar">版</span><span class="kreading">BẢN · はん/ぱん</span> — <span class="kmean">bản in</span></div><div class="ana-combine"><strong>Ghép:</strong> Ra bản in → xuất bản.<br><span class="ana-syn">≈ 刊行, パブリッシュ</span> · <span class="ana-nuance">Cụm: 出版社, 自費出版.</span></div></div></td>
+            <td class="example"><span class="jp">この本の出版は、社会に大きな波紋を呼んだ。</span><span class="vn">Việc xuất bản cuốn sách này đã gây ra dư âm lớn trong xã hội.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>掲載<rt>けいさい</rt></ruby><span class="hanviet">Yết tải</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">đăng tải</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">掲</span><span class="kreading">YẾT · けい</span> — <span class="kmean">treo, dán</span></div><div><span class="kchar">載</span><span class="kreading">TẢI · さい</span> — <span class="kmean">đăng tải</span></div><div class="ana-combine"><strong>Ghép:</strong> Treo + đăng → đăng tải.<br><span class="ana-syn">≈ 記載, 載せる</span> · <span class="ana-nuance">Trang trọng. Báo chí, sách. Cụm: 掲載許可.</span></div></div></td>
+            <td class="example"><span class="jp">記事の掲載をめぐって、編集部内で激論が交わされた。</span><span class="vn">Xoay quanh việc đăng bài, ban biên tập đã tranh luận quyết liệt.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>報じる<rt>ほうじる</rt></ruby><span class="hanviet">Báo</span></td>
+            <td><span class="pos">他動</span></td>
+            <td class="meaning">đưa tin, báo cáo</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">報</span><span class="kreading">BÁO · ほう</span> — <span class="kmean">báo</span></div><div class="ana-combine"><strong>Ghép:</strong> Đưa tin (tha động từ).<br><span class="ana-syn">≈ 報道する, 知らせる, 伝える</span> · <span class="ana-nuance">Văn viết. 一斉に報じる (đồng loạt đưa tin).</span></div></div></td>
+            <td class="example"><span class="jp">各社が一斉にこのニュースを大きく報じた。</span><span class="vn">Các báo đồng loạt đưa tin lớn về sự kiện này.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>世論<rt>よろん</rt></ruby><span class="hanviet">Thế luận</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">dư luận</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">世</span><span class="kreading">THẾ · せ/よ</span> — <span class="kmean">thế gian</span></div><div><span class="kchar">論</span><span class="kreading">LUẬN · ろん</span> — <span class="kmean">luận</span></div><div class="ana-combine"><strong>Ghép:</strong> Luận của thế gian → dư luận.<br><span class="ana-syn">≈ 輿論, パブリックオピニオン</span> · <span class="ana-nuance">Đọc よろん (cũng có cách đọc cũ せろん). Cụm: 世論調査.</span></div></div></td>
+            <td class="example"><span class="jp">世論の動向次第で、政策は容易に左右される。</span><span class="vn">Tùy chiều hướng của dư luận, chính sách có thể dễ dàng thay đổi.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>言論<rt>げんろん</rt></ruby><span class="hanviet">Ngôn luận</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">ngôn luận</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">言</span><span class="kreading">NGÔN · げん</span> — <span class="kmean">ngôn, lời</span></div><div><span class="kchar">論</span><span class="kreading">LUẬN · ろん</span> — <span class="kmean">luận</span></div><div class="ana-combine"><strong>Ghép:</strong> Lời + luận → ngôn luận.<br><span class="ana-syn">≈ 発言, 言説</span> · <span class="ana-nuance">Cụm: 言論の自由 (tự do ngôn luận), 言論統制.</span></div></div></td>
+            <td class="example"><span class="jp">言論の自由は、民主社会の礎である。</span><span class="vn">Tự do ngôn luận là nền tảng của xã hội dân chủ.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>検閲<rt>けんえつ</rt></ruby><span class="hanviet">Kiểm duyệt</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">kiểm duyệt</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">検</span><span class="kreading">KIỂM · けん</span> — <span class="kmean">kiểm tra</span></div><div><span class="kchar">閲</span><span class="kreading">DUYỆT · えつ</span> — <span class="kmean">duyệt, xem xét</span></div><div class="ana-combine"><strong>Ghép:</strong> Kiểm + duyệt → kiểm duyệt.<br><span class="ana-syn">≈ チェック, 検査</span> · <span class="ana-nuance">Mang sắc thái tiêu cực (do nhà nước/chính quyền).</span></div></div></td>
+            <td class="example"><span class="jp">独裁政権下では、出版物はすべて検閲を受ける。</span><span class="vn">Dưới chính quyền độc tài, mọi xuất bản phẩm đều bị kiểm duyệt.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>偏向<rt>へんこう</rt></ruby><span class="hanviet">Thiên hướng</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">thiên lệch (báo chí)</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">偏</span><span class="kreading">THIÊN · へん</span> — <span class="kmean">lệch</span></div><div><span class="kchar">向</span><span class="kreading">HƯỚNG · こう</span> — <span class="kmean">hướng</span></div><div class="ana-combine"><strong>Ghép:</strong> Lệch hướng → thiên lệch.<br><span class="ana-syn">≈ 片寄り, バイアス</span> · <span class="ana-ant">⇔ 中立, 公正</span> · <span class="ana-nuance">Phê phán báo chí: 偏向報道.</span></div></div></td>
+            <td class="example"><span class="jp">偏向報道は、社会に深刻な分断をもたらしかねない。</span><span class="vn">Báo chí thiên lệch có thể gây chia rẽ nghiêm trọng trong xã hội.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>暴露<rt>ばくろ</rt></ruby><span class="hanviet">Bộc lộ</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">tiết lộ, phơi bày</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">暴</span><span class="kreading">BẠO · ばく/ぼう</span> — <span class="kmean">phơi bày, hung bạo</span></div><div><span class="kchar">露</span><span class="kreading">LỘ · ろ</span> — <span class="kmean">sương, hiện lộ</span></div><div class="ana-combine"><strong>Ghép:</strong> Phơi bày lộ → tiết lộ.<br><span class="ana-syn">≈ ばらす, 露呈, リーク</span> · <span class="ana-nuance">Cụm: 暴露本 (sách phơi bày).</span></div></div></td>
+            <td class="example"><span class="jp">内部告発によって、長年の不正が暴露された。</span><span class="vn">Nhờ tố giác nội bộ, sai phạm nhiều năm đã bị phơi bày.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>誇張<rt>こちょう</rt></ruby><span class="hanviet">Khoa trương</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">phóng đại</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">誇</span><span class="kreading">KHOA · こ</span> — <span class="kmean">khoe</span></div><div><span class="kchar">張</span><span class="kreading">TRƯƠNG · ちょう</span> — <span class="kmean">căng, mở rộng</span></div><div class="ana-combine"><strong>Ghép:</strong> Khoe + phóng đại → phóng đại.<br><span class="ana-syn">≈ 大袈裟, オーバー</span> · <span class="ana-ant">⇔ 控えめ, 抑制</span> · <span class="ana-nuance">Mang sắc thái tiêu cực.</span></div></div></td>
+            <td class="example"><span class="jp">事実を誇張するような報道は厳に慎むべきだ。</span><span class="vn">Cần tránh nghiêm khắc cách đưa tin phóng đại sự thật.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>歪曲<rt>わいきょく</rt></ruby><span class="hanviet">Oai khúc</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">bóp méo, xuyên tạc</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">歪</span><span class="kreading">OAI · わい</span> — <span class="kmean">méo, vẹo</span></div><div><span class="kchar">曲</span><span class="kreading">KHÚC · きょく</span> — <span class="kmean">cong</span></div><div class="ana-combine"><strong>Ghép:</strong> Méo + cong → bóp méo.<br><span class="ana-syn">≈ ねじ曲げ, 改ざん</span> · <span class="ana-ant">⇔ 正確, 公正</span> · <span class="ana-nuance">Mạnh hơn 誇張. Cụm: 事実歪曲.</span></div></div></td>
+            <td class="example"><span class="jp">事実を歪曲する記事には、徹底的に抗議すべきだ。</span><span class="vn">Cần phản đối quyết liệt những bài báo bóp méo sự thật.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>記者<rt>きしゃ</rt></ruby><span class="hanviet">Ký giả</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">phóng viên, ký giả</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">記</span><span class="kreading">KÝ · き</span> — <span class="kmean">ghi</span></div><div><span class="kchar">者</span><span class="kreading">GIẢ · しゃ</span> — <span class="kmean">người</span></div><div class="ana-combine"><strong>Ghép:</strong> Người ghi chép → phóng viên.<br><span class="ana-syn">≈ ジャーナリスト, レポーター</span> · <span class="ana-nuance">Cụm: 記者会見, 新聞記者.</span></div></div></td>
+            <td class="example"><span class="jp">記者会見では、鋭い質問が飛び交った。</span><span class="vn">Tại buổi họp báo, các câu hỏi sắc bén liên tục được đặt ra.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>視聴率<rt>しちょうりつ</rt></ruby><span class="hanviet">Thị thính suất</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">tỷ suất người xem</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">視</span><span class="kreading">THỊ · し</span> — <span class="kmean">nhìn</span></div><div><span class="kchar">聴</span><span class="kreading">THÍNH · ちょう</span> — <span class="kmean">nghe</span></div><div><span class="kchar">率</span><span class="kreading">SUẤT · りつ</span> — <span class="kmean">tỷ lệ</span></div><div class="ana-combine"><strong>Ghép:</strong> Tỷ lệ nhìn + nghe → rating truyền hình.<br><span class="ana-syn">≈ レーティング</span> · <span class="ana-nuance">Cụm: 視聴率至上主義, 高視聴率.</span></div></div></td>
+            <td class="example"><span class="jp">視聴率至上主義に陥った番組制作には、批判の声が上がっている。</span><span class="vn">Có tiếng phê phán việc làm chương trình chạy theo tỷ suất khán giả.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>発信<rt>はっしん</rt></ruby><span class="hanviet">Phát tín</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">truyền đi (tin tức)</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">発</span><span class="kreading">PHÁT · はつ/はっ</span> — <span class="kmean">phát</span></div><div><span class="kchar">信</span><span class="kreading">TÍN · しん</span> — <span class="kmean">tin</span></div><div class="ana-combine"><strong>Ghép:</strong> Phát + tin → truyền đi thông tin.<br><span class="ana-syn">≈ 送信, 発する</span> · <span class="ana-ant">⇔ 受信</span> · <span class="ana-nuance">Cụm: 情報発信, 発信者.</span></div></div></td>
+            <td class="example"><span class="jp">SNSを通じて、誰もが情報を発信できる時代となった。</span><span class="vn">Đã đến thời đại mà ai cũng có thể phát đi thông tin qua mạng xã hội.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>炎上<rt>えんじょう</rt></ruby><span class="hanviet">Viêm thượng</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">"bùng cháy" (bị tấn công mạng)</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">炎</span><span class="kreading">VIÊM · えん</span> — <span class="kmean">lửa</span></div><div><span class="kchar">上</span><span class="kreading">THƯỢNG · じょう</span> — <span class="kmean">lên</span></div><div class="ana-combine"><strong>Ghép:</strong> Lửa cháy lên → 'bị tấn công mạng dữ dội'.<br><span class="ana-syn">≈ バッシング, 大炎上</span> · <span class="ana-nuance">Từ lóng mạng. Cụm: 炎上商法 (chiêu trò gây tranh cãi).</span></div></div></td>
+            <td class="example"><span class="jp">配慮を欠いた発言が、ネット上で大炎上した。</span><span class="vn">Phát ngôn thiếu cẩn trọng đã bị tấn công dữ dội trên mạng.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>拡散<rt>かくさん</rt></ruby><span class="hanviet">Khoách tán</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">lan truyền</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">拡</span><span class="kreading">KHOÁCH · かく</span> — <span class="kmean">mở rộng</span></div><div><span class="kchar">散</span><span class="kreading">TÁN · さん</span> — <span class="kmean">tan, rải</span></div><div class="ana-combine"><strong>Ghép:</strong> Mở rộng + rải → lan tỏa.<br><span class="ana-syn">≈ 広まる, 流布, シェア</span> · <span class="ana-ant">⇔ 収束, 沈静化</span> · <span class="ana-nuance">Cụm: SNSで拡散する, 拡散希望.</span></div></div></td>
+            <td class="example"><span class="jp">デマが瞬く間にネット上で拡散した。</span><span class="vn">Tin đồn đã lan truyền chớp nhoáng trên mạng.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>世間<rt>せけん</rt></ruby><span class="hanviet">Thế gian</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">thế gian, xã hội nói chung</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">世</span><span class="kreading">THẾ · せ</span> — <span class="kmean">đời</span></div><div><span class="kchar">間</span><span class="kreading">GIAN · けん</span> — <span class="kmean">khoảng, gian</span></div><div class="ana-combine"><strong>Ghép:</strong> Khoảng giữa đời → thế gian.<br><span class="ana-syn">≈ 社会, 世の中, 巷</span> · <span class="ana-nuance">Khái niệm văn hóa Nhật: 世間体 (sĩ diện với xã hội), 世間知らず (non nớt).</span></div></div></td>
+            <td class="example"><span class="jp">世間の目を欺くような行為は、決して許されない。</span><span class="vn">Hành vi lừa gạt mắt thế gian tuyệt nhiên không thể tha thứ.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>注目<rt>ちゅうもく</rt></ruby><span class="hanviet">Chú mục</span></td>
+            <td><span class="pos">名・する</span></td>
+            <td class="meaning">chú ý, dõi theo</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">注</span><span class="kreading">CHÚ · ちゅう</span> — <span class="kmean">đổ, tập trung</span></div><div><span class="kchar">目</span><span class="kreading">MỤC · もく</span> — <span class="kmean">mắt</span></div><div class="ana-combine"><strong>Ghép:</strong> Đổ mắt vào → chú ý.<br><span class="ana-syn">≈ 注視, 関心</span> · <span class="ana-ant">⇔ 無視, 黙殺</span> · <span class="ana-nuance">Cụm: 注目を集める, 注目株.</span></div></div></td>
+            <td class="example"><span class="jp">この事件は、社会的に大きな注目を集めている。</span><span class="vn">Vụ việc này đang thu hút sự chú ý lớn từ xã hội.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>論調<rt>ろんちょう</rt></ruby><span class="hanviet">Luận điệu</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">luận điệu, giọng văn báo</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">論</span><span class="kreading">LUẬN · ろん</span> — <span class="kmean">luận</span></div><div><span class="kchar">調</span><span class="kreading">ĐIỆU · ちょう</span> — <span class="kmean">điệu, giọng</span></div><div class="ana-combine"><strong>Ghép:</strong> Giọng luận → luận điệu báo.<br><span class="ana-syn">≈ 論旨, トーン</span> · <span class="ana-nuance">Cụm: 批判的論調, 慎重な論調.</span></div></div></td>
+            <td class="example"><span class="jp">同じ事件でも、新聞各社の論調は大きく異なる。</span><span class="vn">Cùng một vụ việc, nhưng luận điệu của các báo khác nhau rõ rệt.</span></td>
+          </tr>
+          <tr>
+            <td class="kanji-cell"><ruby>速報<rt>そくほう</rt></ruby><span class="hanviet">Tốc báo</span></td>
+            <td><span class="pos">名</span></td>
+            <td class="meaning">tin nóng, tin nhanh</td>
+            
+            <td class="analysis-cell"><div class="kanji-break"><div><span class="kchar">速</span><span class="kreading">TỐC · そく</span> — <span class="kmean">nhanh</span></div><div><span class="kchar">報</span><span class="kreading">BÁO · ほう</span> — <span class="kmean">báo</span></div><div class="ana-combine"><strong>Ghép:</strong> Tin nhanh → tin nóng.<br><span class="ana-syn">≈ ニュース速報, ブレーキング</span> · <span class="ana-nuance">Cụm: 地震速報, 選挙速報.</span></div></div></td>
+            <td class="example"><span class="jp">地震速報がスマホに次々と通知された。</span><span class="vn">Tin báo động động đất liên tiếp hiện lên điện thoại.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 語形成 -->
+    <div class="special-block">
+      <div class="special-banner">🔤 語形成 — Cấu tạo từ N1</div>
+      <div class="special-body">
+        <div class="word-formation-grid">
+          <div class="wf-item">
+            <div class="pattern">〜報 (〜ほう)</div>
+            <div class="desc">"Tin tức, thông báo"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>報道<rt>ほうどう</rt></ruby> <span class="ex-vn">(đưa tin, báo chí)</span></div><div class="ex-item"><ruby>情報<rt>じょうほう</rt></ruby> <span class="ex-vn">(thông tin)</span></div><div class="ex-item"><ruby>速報<rt>そくほう</rt></ruby> <span class="ex-vn">(tin nóng)</span></div><div class="ex-item"><ruby>予報<rt>よほう</rt></ruby> <span class="ex-vn">(dự báo)</span></div><div class="ex-item"><ruby>通報<rt>つうほう</rt></ruby> <span class="ex-vn">(thông báo, báo cáo)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">〜論 (〜ろん)</div>
+            <div class="desc">"Luận, ngôn luận"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>世論<rt>よろん</rt></ruby> <span class="ex-vn">(dư luận)</span></div><div class="ex-item"><ruby>言論<rt>げんろん</rt></ruby> <span class="ex-vn">(ngôn luận)</span></div><div class="ex-item"><ruby>論調<rt>ろんちょう</rt></ruby> <span class="ex-vn">(luận điệu)</span></div><div class="ex-item"><ruby>評論<rt>ひょうろん</rt></ruby> <span class="ex-vn">(phê bình)</span></div><div class="ex-item"><ruby>社論<rt>しゃろん</rt></ruby> <span class="ex-vn">(xã luận)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">〜閲 (〜えつ)</div>
+            <div class="desc">"Kiểm tra"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>検閲<rt>けんえつ</rt></ruby> <span class="ex-vn">(kiểm duyệt)</span></div><div class="ex-item"><ruby>閲覧<rt>えつらん</rt></ruby> <span class="ex-vn">(xem, duyệt (sách))</span></div><div class="ex-item"><ruby>閲読<rt>えつどく</rt></ruby> <span class="ex-vn">(đọc duyệt)</span></div><div class="ex-item"><ruby>査閲<rt>さえつ</rt></ruby> <span class="ex-vn">(kiểm tra)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">〜散 (〜さん)</div>
+            <div class="desc">"Phân tán, lan rộng"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>拡散<rt>かくさん</rt></ruby> <span class="ex-vn">(lan truyền)</span></div><div class="ex-item"><ruby>分散<rt>ぶんさん</rt></ruby> <span class="ex-vn">(phân tán)</span></div><div class="ex-item"><ruby>離散<rt>りさん</rt></ruby> <span class="ex-vn">(ly tán)</span></div><div class="ex-item"><ruby>解散<rt>かいさん</rt></ruby> <span class="ex-vn">(giải tán)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">〜載 (〜さい)</div>
+            <div class="desc">"Đăng, chứa"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>掲載<rt>けいさい</rt></ruby> <span class="ex-vn">(đăng tải)</span></div><div class="ex-item"><ruby>連載<rt>れんさい</rt></ruby> <span class="ex-vn">(đăng nhiều kỳ)</span></div><div class="ex-item"><ruby>記載<rt>きさい</rt></ruby> <span class="ex-vn">(ghi chép)</span></div><div class="ex-item"><ruby>収載<rt>しゅうさい</rt></ruby> <span class="ex-vn">(thu thập đăng)</span></div></div></div>
+          </div>
+          <div class="wf-item">
+            <div class="pattern">〜信 (〜しん)</div>
+            <div class="desc">"Tin tức, truyền"</div>
+            <div class="ex-list-wrapper"><div class="ex-list"><div class="ex-item"><ruby>発信<rt>はっしん</rt></ruby> <span class="ex-vn">(truyền đi)</span></div><div class="ex-item"><ruby>受信<rt>じゅしん</rt></ruby> <span class="ex-vn">(nhận tín hiệu)</span></div><div class="ex-item"><ruby>通信<rt>つうしん</rt></ruby> <span class="ex-vn">(thông tin liên lạc)</span></div><div class="ex-item"><ruby>配信<rt>はいしん</rt></ruby> <span class="ex-vn">(phát sóng/phát trực tuyến)</span></div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 副詞 -->
+    <div class="special-block">
+      <div class="special-banner adv">🌟 副詞・例文 — Phó từ N1</div>
+      <div class="special-body">
+        <div class="adverb-grid">
+          <div class="adv-item">
+            <div><span class="adv-word">一斉に (いっせいに)</span> <span class="adv-meaning">— Đồng loạt</span></div>
+            <div class="adv-ex"><span class="jp">各社が一斉に同じニュースを報じた。</span><span class="vn">Các báo đồng loạt đưa cùng một tin.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (đồng loạt):</strong> <span class="syn-jp">一気に</span> <span class="syn-vn">(cùng lúc)</span> · <span class="syn-jp">揃って</span> <span class="syn-vn">(đồng loạt)</span> · <span class="syn-jp">同時に</span> <span class="syn-vn">(cùng lúc)</span> · <span class="syn-jp">一様に</span> <span class="syn-vn">(đồng đều)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">瞬く間に (またたくまに)</span> <span class="adv-meaning">— Trong nháy mắt</span></div>
+            <div class="adv-ex"><span class="jp">そのデマは瞬く間に世界中に拡散した。</span><span class="vn">Tin đồn đó lan ra toàn thế giới chỉ trong nháy mắt.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (trong nháy mắt):</strong> <span class="syn-jp">あっという間に</span> <span class="syn-vn">(trong tích tắc)</span> · <span class="syn-jp">一瞬で</span> <span class="syn-vn">(trong giây lát)</span> · <span class="syn-jp">見る間に</span> <span class="syn-vn">(trong tầm mắt)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">頻りに (しきりに)</span> <span class="adv-meaning">— Liên tục, không ngừng</span></div>
+            <div class="adv-ex"><span class="jp">記者たちはしきりに質問を浴びせた。</span><span class="vn">Các phóng viên liên tục tung ra câu hỏi.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (liên tục):</strong> <span class="syn-jp">しょっちゅう</span> <span class="syn-vn">(luôn luôn)</span> · <span class="syn-jp">絶え間なく</span> <span class="syn-vn">(không ngừng)</span> · <span class="syn-jp">何度も</span> <span class="syn-vn">(nhiều lần)</span> · <span class="syn-jp">頻繁に</span> <span class="syn-vn">(thường xuyên)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">必ずしも〜ない</span> <span class="adv-meaning">— Không hẳn là</span></div>
+            <div class="adv-ex"><span class="jp">報道された内容が必ずしも事実とは限らない。</span><span class="vn">Nội dung được đưa tin không hẳn là sự thật.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (không hẳn):</strong> <span class="syn-jp">必然的に〜ない</span> <span class="syn-vn">(không tất yếu)</span> · <span class="syn-jp">一概に〜ない</span> <span class="syn-vn">(không chung chung)</span> · <span class="syn-jp">一様に〜ない</span> <span class="syn-vn">(không đồng nhất)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">むやみに</span> <span class="adv-meaning">— Một cách bừa bãi</span></div>
+            <div class="adv-ex"><span class="jp">未確認情報をむやみに拡散すべきではない。</span><span class="vn">Không nên lan truyền bừa bãi thông tin chưa được xác nhận.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (bừa bãi):</strong> <span class="syn-jp">やたらに</span> <span class="syn-vn">(tùy tiện)</span> · <span class="syn-jp">みだりに</span> <span class="syn-vn">(bừa)</span> · <span class="syn-jp">無闇に</span> <span class="syn-vn">(viết kanji)</span> · <span class="syn-jp">やみくもに</span> <span class="syn-vn">(mò mẫm)</span></div></div>
+          <div class="adv-item">
+            <div><span class="adv-word">概して (がいして)</span> <span class="adv-meaning">— Nói chung là</span></div>
+            <div class="adv-ex"><span class="jp">概して、若年層はSNSを情報源としている。</span><span class="vn">Nói chung, lớp trẻ lấy mạng xã hội làm nguồn tin.</span></div>
+          <div class="adv-synonyms"><strong>≈ Phó từ cùng nghĩa (nói chung):</strong> <span class="syn-jp">一般に</span> <span class="syn-vn">(thường lệ)</span> · <span class="syn-jp">総じて</span> <span class="syn-vn">(gộp lại)</span> · <span class="syn-jp">大体</span> <span class="syn-vn">(đại khái)</span> · <span class="syn-jp">おおむね</span> <span class="syn-vn">(cơ bản)</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 練習 -->
+    <div class="exercise-block">
+      <h4>📝 練習問題 — Bài tập</h4>
+      <p style="font-size:16.5px;color:#3a2412;"><strong>Câu 1.</strong> Điền từ thích hợp (報道／世論／拡散／炎上／取材).</p>
+      <ol>
+        <li>公正な <span class="blank" data-ans="報道">　　　　</span> こそ、民主主義社会の根幹である。</li>
+        <li>政策は <span class="blank" data-ans="世論">　　　　</span> の動向次第で、容易に左右されることがある。</li>
+        <li>無神経な発言が、瞬く間に <span class="blank" data-ans="炎上">　　　　</span> を招いた。</li>
+        <li>デマは確認されないままネット上で <span class="blank" data-ans="拡散">　　　　</span> されていった。</li>
+        <li>真相を解明すべく、徹底的な <span class="blank" data-ans="取材">　　　　</span> が行われた。</li>
+      </ol>
+      <button class="answer-btn" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box">
+        ① 報道　② 世論　③ 炎上　④ 拡散　⑤ 取材
+      </div>
+
+      <p style="margin-top:18px;font-size:16.5px;color:#3a2412;"><strong>Câu 2.</strong> Chọn nghĩa gần nhất.</p>
+      <ol>
+        <li>「歪曲」とほぼ同じ意味は？　a) 正確に伝える　b) ねじ曲げる　c) 削除する → <span class="blank" data-ans="b">　　　　</span></li>
+        <li>「暴露」とほぼ同じなのは？　a) 隠す　b) 明るみに出す　c) 否定する → <span class="blank" data-ans="b">　　　　</span></li>
+        <li>「誇張」⇔ ？　a) 控えめに表現する　b) 拡散する　c) 編集する → <span class="blank" data-ans="a">　　　　</span></li>
+      </ol>
+      <button class="answer-btn" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box">
+        ① b) ねじ曲げる　② b) 明るみに出す　③ a) 控えめに表現する
+      </div>
+    </div>
+
+  </div>
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-07.html">← Bài 7</a><a class="mid" href="../shinkanzen.html">▦ Danh sách bài</a><a href="bai-09.html">Bài 9 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+
+;
+
+/* ============================================================
+   CONFIG GIỌNG ĐỌC — sửa ở đây để bật giọng neural chất lượng cao.
+   Đổi provider bằng menu "Nguồn" trên thanh, hoặc đặt mặc định bên dưới.
+   • VOICEVOX (miễn phí, tự nhiên): đặt voicevoxUrl tới server VOICEVOX của bạn.
+   • Google Cloud TTS (Neural2): nên dùng proxy để giấu key →
+       googleEndpoint = 'https://your-proxy/synthesize'  (proxy nhận {text} trả {audioContent})
+       hoặc test nhanh: googleApiKey = 'KEY' (KHÔNG để key thật trên web công khai!)
+   • Azure: azureKey + azureRegion (giọng ja-JP-NanamiNeural). Có thể cần proxy do CORS.
+   ============================================================ */
+window.TTS_CONFIG = window.TTS_CONFIG || {
+  voicevoxUrl   : 'http://localhost:50021', voicevoxSpeaker: 3,   // 3 = ずんだもん; đổi tùy ý
+  googleEndpoint: '',  googleApiKey: '',  googleVoice: 'ja-JP-Neural2-B',
+  azureEndpoint : '',  azureKey: '',  azureRegion: 'japaneast', azureVoice: 'ja-JP-NanamiNeural'
+};
+(function(){
+  var synth = ('speechSynthesis' in window) ? window.speechSynthesis : null;
+  var bar=document.getElementById('ttsBar'),
+      provSel=document.getElementById('ttsProvider'),
+      voiceWrap=document.getElementById('ttsVoiceWrap'),
+      sel=document.getElementById('ttsVoice'),
+      rate=document.getElementById('ttsRate'),
+      rateVal=document.getElementById('ttsRateVal'),
+      hint=document.getElementById('ttsHint'),
+      voices=[], saved={}, cur=null, cache={}, audio=new Audio();
+  try{ saved=JSON.parse(localStorage.getItem('ttsPref')||'{}'); }catch(e){}
+  if(saved.provider) provSel.value=saved.provider;
+  if(saved.rate){ rate.value=saved.rate; rateVal.textContent=saved.rate; }
+
+  /* ---------- giọng máy (Web Speech) ---------- */
+  function isJa(v){ return /ja(-|_|$)/i.test(v.lang)||/japan|japanese|日本/i.test(v.name); }
+  function score(v){ var n=(v.name||'').toLowerCase(),s=0;
+    if(/natural/.test(n))s+=120; if(/google/.test(n))s+=80; if(/online|server|neural/.test(n))s+=50;
+    if(/nanami|keita|ayumi|haruka|sayaka|ichiro|mizuki/.test(n))s+=45;
+    if(/enhanced|premium|plus/.test(n))s+=30; if(/kyoko|o-?ren|otoya|hattori/.test(n))s+=18;
+    if(/compact|eloquence|espeak|fallback/.test(n))s-=60; if(v.localService===false)s+=15; return s; }
+  function fillVoices(){
+    if(!synth) return; voices=synth.getVoices().filter(isJa).sort(function(a,b){return score(b)-score(a);});
+    sel.innerHTML='';
+    if(!voices.length){ var o=document.createElement('option'); o.value=''; o.textContent='(máy chưa có giọng Nhật)'; sel.appendChild(o); return; }
+    voices.forEach(function(v){ var o=document.createElement('option'); o.value=v.name;
+      o.textContent=v.name.replace(/Microsoft |Google /,'')+' · '+v.lang+(/natural/i.test(v.name)?' ★':''); sel.appendChild(o); });
+    if(saved.voice && voices.some(function(v){return v.name===saved.voice;})) sel.value=saved.voice; else sel.value=voices[0].name;
+  }
+  if(synth){ fillVoices(); if(synth.onvoiceschanged!==undefined) synth.onvoiceschanged=fillVoices; }
+
+  function updateUI(){
+    var p=provSel.value;
+    voiceWrap.style.display = (p==='auto') ? '' : 'none';
+    if(p==='auto'){
+      var best=voices[0];
+      hint.textContent = (best && /natural|google/i.test(best.name)) ? ''
+        : '💡 Giọng máy nghe chưa hay? Mở bằng Microsoft Edge (giọng "Natural" Nanami) hoặc chọn nguồn VOICEVOX/Google/Azure ở trên.';
+    } else if(p==='voicevox'){ hint.textContent = TTS_CONFIG.voicevoxUrl ? '' : '⚠ Chưa đặt voicevoxUrl trong CONFIG.'; }
+    else if(p==='google'){ hint.textContent = (TTS_CONFIG.googleEndpoint||TTS_CONFIG.googleApiKey) ? '' : '⚠ Chưa đặt googleEndpoint/googleApiKey trong CONFIG.'; }
+    else if(p==='azure'){ hint.textContent = (TTS_CONFIG.azureEndpoint||TTS_CONFIG.azureKey) ? '' : '⚠ Chưa đặt azureKey/azureRegion trong CONFIG.'; }
+  }
+  function persist(){ try{ localStorage.setItem('ttsPref',JSON.stringify({provider:provSel.value,voice:sel.value,rate:rate.value})); }catch(e){} }
+  provSel.addEventListener('change',function(){ stopAll(); updateUI(); persist(); });
+  rate.addEventListener('input',function(){ rateVal.textContent=parseFloat(rate.value).toFixed(2); persist(); });
+  sel.addEventListener('change',persist);
+  updateUI();
+
+  function textOf(el){ var c=el.cloneNode(true); c.querySelectorAll('rt').forEach(function(r){r.remove();}); return c.textContent.replace(/\s+/g,'').trim(); }
+  function getRate(){ return parseFloat(rate.value)||1; }
+
+  /* ---------- adapter API ---------- */
+  async function fetchVoicevox(text){
+    var C=TTS_CONFIG, base=C.voicevoxUrl.replace(/\/$/,'');
+    var q=await fetch(base+'/audio_query?speaker='+C.voicevoxSpeaker+'&text='+encodeURIComponent(text),{method:'POST'});
+    var query=await q.json(); query.speedScale=getRate();
+    var s=await fetch(base+'/synthesis?speaker='+C.voicevoxSpeaker,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(query)});
+    return URL.createObjectURL(await s.blob());
+  }
+  async function fetchGoogle(text){
+    var C=TTS_CONFIG, body={input:{text:text},voice:{languageCode:'ja-JP',name:C.googleVoice},audioConfig:{audioEncoding:'MP3',speakingRate:getRate()}};
+    var url = C.googleEndpoint || ('https://texttospeech.googleapis.com/v1/text:synthesize?key='+C.googleApiKey);
+    var r=await fetch(url,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    var j=await r.json(); return 'data:audio/mp3;base64,'+j.audioContent;
+  }
+  async function fetchAzure(text){
+    var C=TTS_CONFIG;
+    var ssml='<speak version="1.0" xml:lang="ja-JP"><voice name="'+C.azureVoice+'"><prosody rate="'+Math.round((getRate()-1)*100)+'%">'+text+'</prosody></voice></speak>';
+    var url=C.azureEndpoint || ('https://'+C.azureRegion+'.tts.speech.microsoft.com/cognitiveservices/v1');
+    var h={'Content-Type':'application/ssml+xml','X-Microsoft-OutputFormat':'audio-24khz-48kbitrate-mono-mp3'};
+    if(C.azureKey) h['Ocp-Apim-Subscription-Key']=C.azureKey;
+    var r=await fetch(url,{method:'POST',headers:h,body:ssml});
+    return URL.createObjectURL(await r.blob());
+  }
+  function apiFetch(text){
+    var p=provSel.value, key=p+'|'+getRate()+'|'+text;
+    if(cache[key]) return Promise.resolve(cache[key]);
+    var fn = p==='voicevox'?fetchVoicevox : p==='google'?fetchGoogle : fetchAzure;
+    return fn(text).then(function(src){ cache[key]=src; return src; });
+  }
+
+  /* ---------- điều khiển phát ---------- */
+  function stopAll(){ if(synth) synth.cancel(); audio.pause(); document.querySelectorAll('.tts-btn.playing,.tts-btn.loading').forEach(function(b){b.classList.remove('playing','loading');}); cur=null; }
+  function deviceSpeak(el,btn){
+    if(!synth){ hint.textContent='Trình duyệt không hỗ trợ đọc; hãy chọn nguồn API.'; return; }
+    var u=new SpeechSynthesisUtterance(textOf(el)); u.lang='ja-JP';
+    var v=voices.find(function(x){return x.name===sel.value;}); if(v) u.voice=v; u.rate=getRate();
+    u.onend=u.onerror=function(){ btn.classList.remove('playing'); if(cur===btn)cur=null; };
+    btn.classList.add('playing'); cur=btn; synth.speak(u);
+  }
+  function play(el,btn){
+    var wasCur=(cur===btn); stopAll(); if(wasCur) return;
+    var p=provSel.value;
+    if(p==='auto'){ deviceSpeak(el,btn); return; }
+    btn.classList.add('loading'); cur=btn;
+    apiFetch(textOf(el)).then(function(src){
+      btn.classList.remove('loading'); btn.classList.add('playing');
+      audio.src=src; audio.playbackRate=1; audio.onended=function(){ btn.classList.remove('playing'); if(cur===btn)cur=null; };
+      return audio.play();
+    }).catch(function(e){ console.warn('TTS API lỗi → dùng giọng máy:',e); btn.classList.remove('loading'); deviceSpeak(el,btn); });
+  }
+
+  document.querySelectorAll('.jp, .ex-jp').forEach(function(el){
+    if(el.closest('.main-header')||el.closest('.cover')||el.closest('#ttsBar')) return;
+    if(textOf(el).length<2) return;
+    var b=document.createElement('button'); b.className='tts-btn'; b.type='button'; b.title='Nghe đọc (tiếng Nhật)'; b.textContent='🔊';
+    b.addEventListener('click',function(e){ e.preventDefault(); e.stopPropagation(); play(el,b); });
+    el.insertAdjacentElement('afterend',b);
+  });
+})();
+</script>
+
+<style>#ttsBar{display:none!important}
+.tts-btn,.tl-spk{display:inline-flex!important;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;margin-right:7px;padding:0;border:1px solid var(--gold,#B89568)!important;background:transparent;color:var(--gold,#B89568);border-radius:50%;font-size:11px;cursor:pointer;vertical-align:middle;line-height:1;flex:none;box-shadow:none}
+.tts-btn:hover,.tl-spk:hover{background:var(--gold,#B89568);color:#fff}
+.tts-btn.on,.tts-btn.playing,.tl-spk.on{background:var(--navy,#1B3A6B);border-color:var(--navy,#1B3A6B)!important;color:#fff}
+.ex-jp rt,.ex-q rt,.jp rt{font-size:.6em;color:var(--gold-d,#8A6E47);font-weight:400}</style>
+<script>(function(){
+var jv=null;function pick(){try{var V=speechSynthesis.getVoices();function f(re){return V.filter(function(v){return /ja|JP|日本/i.test(v.lang)&&re.test(v.name);})[0];}jv=f(/Google/i)||f(/Kyoko/i)||f(/Otoya/i)||f(/Microsoft|Nanami|Ayumi|Keita|Haruka/i)||V.filter(function(v){return /ja|JP|日本/i.test((v.lang||'')+(v.name||''));})[0]||null;}catch(e){}}pick();try{speechSynthesis.onvoiceschanged=pick;}catch(e){}
+function sfb(t,b,done){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=0.9;if(jv)u.voice=jv;u.onend=u.onerror=function(){done&&done();};speechSynthesis.speak(u);}catch(e){done&&done();}}
+var TLW='https://trilu-dict-api.luminhtri0.workers.dev';function ext(txt,b,done){var srcs=['https://api.streamelements.com/kappa/v2/speech?voice=Mizuki&text='+encodeURIComponent(txt),'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=ja&q='+encodeURIComponent(txt)];(function tryi(i){if(i>=srcs.length){return sfb(txt,b,done);}var a=new Audio(srcs[i]);window.__tlA=a;a.onended=done;a.onerror=function(){tryi(i+1);};var pr=a.play();if(pr&&pr.catch)pr.catch(function(){tryi(i+1);});})(0);}function ttsTry(url,txt,b,done,fail){try{fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({text:txt})}).then(function(r){if(!r.ok)throw 0;return r.blob();}).then(function(bl){var a=new Audio(URL.createObjectURL(bl));window.__tlA=a;a.onended=done;a.onerror=fail;var pr=a.play();if(pr&&pr.catch)pr.catch(fail);}).catch(fail);}catch(e){fail();}}function gplay(t,b){if(!t)return;var txt=(''+t).replace(/<[^>]*>/g,'').replace(/^[\s①-⑳ 0-9.\)、。]+/,'').slice(0,200);if(!txt)txt=(''+t).replace(/<[^>]*>/g,'').slice(0,200);if(b&&b.classList)b.classList.add('on');var done=function(){if(b&&b.classList){b.classList.remove('on');b.classList.remove('playing');}};if(window.__tlA){try{window.__tlA.pause();}catch(e){}}ttsTry('/api/tts',txt,b,done,function(){ttsTry(TLW+'/api/tts',txt,b,done,function(){ext(txt,b,done);});});}
+function furiFetch(url,texts){return fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({texts:texts})}).then(function(r){if(!r.ok)throw 0;return r.json();});}
+window.__tlGtts=gplay;
+function clean(el){var c=el.cloneNode(true);c.querySelectorAll('rt,rp,.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn,.vn,.hanviet,.kreading,.kmean,.ana-syn,.ana-ant,.ana-nuance').forEach(function(n){n.remove();});return (c.textContent||'').replace(/\s+/g,' ').trim();}
+function jaText(btn){var node=btn;for(var i=0;i<4&&node.parentElement;i++){node=node.parentElement;var t=clean(node);if(/[぀-ヿ一-龯]/.test(t))return t;}return '';}
+document.addEventListener('click',function(e){var btn=e.target&&e.target.closest&&e.target.closest('.tts-btn, .tl-spk');if(!btn)return;e.preventDefault();e.stopPropagation();if(typeof e.stopImmediatePropagation==='function')e.stopImmediatePropagation();gplay(jaText(btn),btn);},true);
+function nativeNear(el){if(el.querySelector('.tts-btn'))return true;var p=el.parentElement;if(p){for(var c=p.firstElementChild;c;c=c.nextElementSibling){if(c.classList&&c.classList.contains('tts-btn'))return true;}}return false;}
+function add(el){if(el.dataset.spk)return;el.dataset.spk='1';if(nativeNear(el))return;var t=clean(el);if(!t||!/[぀-ヿ一-龯]/.test(t))return;var b=document.createElement('button');b.type='button';b.className='tl-spk';b.setAttribute('aria-label','Phat am');b.textContent='🔊';el.insertBefore(b,el.firstChild);}
+function run(){document.querySelectorAll('[data-tts], .ex-jp, .ex-q').forEach(add);}
+function furiPass(){var els=[].slice.call(document.querySelectorAll('.ex-jp, .ex-q, .jp'));var jobs=[];els.forEach(function(el){if(el.dataset.furi)return;if(el.querySelector('ruby'))return;var c=el.cloneNode(true);c.querySelectorAll('.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn').forEach(function(n){n.remove();});var t=(c.textContent||'').replace(/\s+/g,' ').trim();if(!t||t.length<6||!/[一-龯]/.test(t))return;el.dataset.furi='1';jobs.push({el:el,t:t});});if(!jobs.length)return;var texts=jobs.map(function(j){return j.t;});function apply(d){if(!d||!d.ruby)return;jobs.forEach(function(j,idx){var ru=d.ruby[idx];if(!ru||ru.indexOf('<ruby')<0)return;var btn=j.el.querySelector('.tl-spk,.tts-btn');j.el.innerHTML=(btn?btn.outerHTML:'')+ru;});}furiFetch('/api/furigana',texts).then(apply).catch(function(){furiFetch(TLW+'/api/furigana',texts).then(apply).catch(function(){});});}
+function go(){run();furiPass();}
+if(document.readyState!=='loading'){setTimeout(go,50);}else{document.addEventListener('DOMContentLoaded',function(){setTimeout(go,50);});}
+window.addEventListener('load',function(){setTimeout(go,160);});})();</script>
+
+</body></html>

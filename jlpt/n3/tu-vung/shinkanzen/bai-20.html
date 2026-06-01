@@ -1,0 +1,534 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 20 · Numbers &amp; amounts — Từ vựng N3 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N3 — Bài 20: Numbers &amp; amounts. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#6e1831;
+  --accent-dark:#4f0f24;
+  --accent-2:#9b7a38;
+  --accent-3:#c7ab70;
+  --line:#dfcfbb;
+  --line-2:#eadfce;
+  --callout:#fcf6ee;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --shadow:0 18px 46px rgba(60, 38, 19, 0.08);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(155,122,56,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(110,24,49,0.08), transparent 22%),
+    linear-gradient(180deg, #f6efe8 0%, #f1ebe4 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+/* ============ COVER ============ */
+.cover{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(199,171,112,0.24), transparent 16%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 36%, #3a0f1b 100%);
+  color:#fff; border-radius:30px; box-shadow:var(--shadow);
+  padding:60px 64px 50px; margin-bottom:26px;
+}
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(199,171,112,0.52) 0%, rgba(199,171,112,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(199,171,112,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+/* ============ TOC ============ */
+.toc-panel{
+  margin:0 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(252,246,238,0.96));
+  border:1px solid rgba(155,122,56,0.20);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:14px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:14px 16px; background:linear-gradient(180deg, #fffefd 0%, #fcf6ee 100%); border:1px solid var(--line-2); border-radius:14px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(110,24,49,0.40); box-shadow:0 12px 24px rgba(60,38,19,0.06); }
+.toc-item.disabled{ opacity:0.45; pointer-events:none; }
+.toc-item-number{ display:inline-block; min-width:34px; padding:2px 8px; margin-right:8px; border-radius:8px; background:linear-gradient(180deg, var(--accent-2), #7f642d); color:#fff; font-weight:800; font-size:11px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:13.5px; }
+.toc-item-summary{ display:block; margin-top:5px; color:var(--muted); font-size:12px; line-height:1.45; font-family:"Noto Serif CJK JP",serif; }
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(155,122,56,0.16);
+  border-radius:28px; box-shadow:var(--shadow);
+  padding:0 0 40px; margin-bottom:40px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  padding:30px 44px 28px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(199,171,112,0.28), transparent 26%),
+    linear-gradient(135deg, #4f0f24 0%, #6e1831 50%, #3a0f1b 100%);
+  color:#fff;
+}
+.lesson-banner::after{
+  content:"語彙"; position:absolute; right:-10px; bottom:-50px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:8px; }
+.lesson-banner h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:30px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:14px; color:rgba(255,255,255,0.82); }
+
+.doc-body{ padding:30px 44px 10px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #57132a 0%, #6e1831 52%, #7f3b52 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark); position:absolute; right:18px; top:50%; transform:translateY(-50%);
+  font-family:"Noto Serif CJK JP",serif; font-size:60px; line-height:1; color:rgba(255,255,255,0.12); font-weight:700;
+}
+.section-kicker{ display:block; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:rgba(255,255,255,0.78); }
+.section-head h3{
+  margin:0; padding:0; border:none; color:#fff; background:none;
+  font-family:"Noto Serif CJK JP",serif; font-size:24px; line-height:1.2; font-weight:700;
+}
+.section-head .section-vn{ display:block; margin-top:4px; font-size:13px; font-style:italic; color:rgba(255,255,255,0.82); font-family:Inter,sans-serif; }
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{ margin:16px 0 24px; }
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff; border:1px solid var(--line-2);
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 26px rgba(60,38,19,0.05);
+  font-size:13.5px;
+}
+thead th{
+  background:linear-gradient(180deg, #fcf5ea 0%, #f2e3cf 100%);
+  color:var(--accent); font-weight:800;
+  padding:13px 14px; text-align:left; font-size:13px;
+  border-bottom:1px solid var(--line-2);
+}
+thead th:not(:last-child){ border-right:1px solid var(--line-2); }
+tbody td{
+  padding:18px 14px; vertical-align:top;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+}
+tbody td:last-child{ border-right:none; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody tr:nth-child(even) td{ background:#fffaf4; }
+
+.col-stt{ width:5%; text-align:center; font-weight:800; color:var(--accent); font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:18px; }
+.col-vocab{ width:22%; }
+.col-explain{ width:30%; }
+.col-example{ width:43%; }
+
+.vocab-wrapper{ display:flex; flex-direction:column; gap:4px; }
+.vocab-kanji{ font-size:26px; font-weight:700; color:#222; font-family:"Noto Serif CJK JP","Yu Mincho",serif; line-height:1.15; }
+.vocab-kanji ruby{ ruby-position:over; ruby-align:center; }
+.vocab-kanji rt{ font-size:11px; color:#888; font-family:sans-serif; font-weight:500; }
+.vocab-hanviet{ font-size:11px; color:var(--accent-2); font-weight:800; letter-spacing:1.2px; margin-top:4px; }
+.vocab-pos{ display:inline-block; font-size:10.5px; color:#fff; background:var(--green); padding:2px 8px; border-radius:4px; font-weight:600; letter-spacing:0.05em; margin-top:6px; align-self:flex-start; }
+.vocab-pos.pos-na{ background:var(--terra); }
+.vocab-pos.pos-i{ background:var(--teal); }
+.vocab-pos.pos-adv{ background:var(--plum); }
+.vocab-pos.pos-suru{ background:#8a4a6a; }
+.vocab-pos.pos-katakana{ background:var(--accent-2); }
+.vocab-meaning{ font-size:14px; color:var(--accent); font-weight:700; margin-top:8px; line-height:1.5; }
+
+/* Explain box */
+.kanji-break{ background:linear-gradient(180deg, #fffdf9, #fbf3e8); border:1px solid #e7d7be; border-left:4px solid var(--accent-2); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.65; color:#3b3320; }
+.kanji-break .kchar{ font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; color:var(--accent); margin-right:4px; }
+.kanji-break .kreading{ color:var(--accent-2); font-weight:700; font-size:11.5px; letter-spacing:0.05em; }
+.kanji-break .kmean{ color:#5f4830; }
+.kanji-break .combine{ margin-top:8px; padding-top:8px; border-top:1px dashed #d8c8ad; font-style:italic; color:#6e5230; }
+.kanji-break .combine strong{ font-style:normal; color:var(--accent); }
+.katakana-origin{ background:linear-gradient(180deg, #fff5f8, #faeaf0); border:1px solid #f0d8e2; border-left:4px solid #b13e6a; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#5a3a4a; }
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{ background:linear-gradient(180deg, #f7faf2, #ecf2e2); border:1px solid #d8e2c8; border-left:4px solid var(--green); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#3e5a3a; }
+.wago-note strong{ color:var(--green); }
+
+/* Example box */
+.ex-box{ background:linear-gradient(180deg, #fffdfa, #fbf3e8); border-left:4px solid var(--accent); padding:13px 16px; border-radius:0 12px 12px 0; }
+.ex-jp{ font-size:15px; color:#222; margin-bottom:8px; line-height:1.95; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(199,171,112,0.25); padding:0 3px; border-radius:3px; }
+.ex-vn{ font-size:13.5px; color:#6e5230; font-style:italic; line-height:1.55; padding-top:6px; border-top:1px dotted #e2d4b8; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:30px 0 24px;
+  padding:0;
+  background:linear-gradient(180deg, #fffdf9 0%, #fbf3e8 100%);
+  border:1px solid #e7d7be;
+  border-radius:22px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(60,38,19,0.05);
+}
+.exercise-banner{
+  display:flex; align-items:center; gap:14px;
+  padding:18px 24px;
+  background:linear-gradient(90deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff;
+}
+.exercise-icon{ width:42px; height:42px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"EB Garamond","Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:11.5px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:2px; letter-spacing:0.04em; }
+.exercise-body{ padding:22px 26px; }
+
+.exercise{ background:#fff; border:1px solid #ecdec3; border-radius:14px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 14px rgba(60,38,19,0.04); }
+.exercise:last-child{ margin-bottom:0; }
+.exercise-title{ font-weight:700; color:var(--accent); margin-bottom:12px; font-size:14px; display:flex; align-items:center; gap:10px; padding-bottom:10px; border-bottom:1px dashed #e7d7be; }
+.exercise-title .ex-no{ background:var(--accent-2); color:#fff; padding:3px 10px; border-radius:6px; font-size:11.5px; letter-spacing:0.08em; }
+.choice-pool{ background:linear-gradient(180deg, #fff7e8, #f7e4c1); border:1px dashed var(--accent-2); border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:14px; font-family:"Noto Serif CJK JP",serif; color:#674c1b; }
+.choice-pool strong{ color:var(--accent); }
+
+.ex-q{ padding:9px 0; border-bottom:1px dotted #eadfce; font-size:14px; line-height:1.85; font-family:"Noto Serif CJK JP",serif; }
+.ex-q:last-child{ border-bottom:none; }
+.ex-q .qnum{ display:inline-block; min-width:24px; font-weight:700; color:var(--accent); margin-right:4px; font-family:"EB Garamond",sans-serif; font-size:14.5px; }
+.ex-q .blank{ display:inline-block; min-width:90px; border-bottom:1.5px solid #b08850; padding:0 8px; margin:0 3px; text-align:center; color:transparent; cursor:pointer; transition:all .15s; }
+.ex-q .blank:hover{ background:rgba(199,171,112,0.12); }
+.ex-q .blank.shown{ color:var(--accent); font-weight:700; border-bottom-color:var(--accent); background:rgba(199,171,112,0.15); }
+
+.multi-choice{ display:block; margin:4px 0 4px 30px; font-size:13.5px; color:#444; }
+.multi-choice .opt-num{ color:var(--accent-2); font-weight:700; margin-right:6px; }
+.match-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin-top:12px; }
+.match-col{ background:#fffaf2; border:1px solid #ecdec3; border-radius:12px; padding:14px; }
+.match-col h5{ margin:0 0 10px; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; }
+.match-item{ padding:7px 10px; font-size:14px; border-radius:6px; }
+.match-item.jp{ font-family:"Noto Serif CJK JP",serif; }
+.match-item .mlabel{ display:inline-block; min-width:24px; font-weight:800; color:var(--accent-2); }
+
+.answer-toggle{
+  display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+  padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, #8a2d49 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:13px; cursor:pointer; transition:all 0.2s; font-family:inherit;
+  box-shadow:0 6px 14px rgba(110,24,49,0.18);
+}
+.answer-toggle:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(110,24,49,0.28); }
+.answer-toggle::before{ content:"鍵"; font-family:"Noto Serif CJK JP",serif; margin-right:4px; }
+.answer-box{ display:none; margin-top:14px; padding:14px 16px; background:linear-gradient(180deg, #fffbef, #f8eed4); border:1px solid #d9bb88; border-left:4px solid var(--accent-2); border-radius:10px; font-size:13.5px; line-height:1.7; color:#5a4520; }
+.answer-box strong{ color:var(--accent); }
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  table.vocab-table{ min-width:880px; }
+  .table-shell{ overflow-x:auto; }
+  .match-grid{ grid-template-columns:1fr; }
+}
+
+/* === @page: dùng A4 LANDSCAPE cho bài học để có chỗ cho 4 cột === */
+@media print {
+  /* Cover + TOC: portrait */
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  /* Trang bài học: landscape (rộng hơn để 4 cột vừa) */
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+
+  /* === RESET cơ bản === */
+  html, body{ background:#fff !important; }
+  body{ font-size:11px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; }
+
+  /* === COVER === */
+  .cover{ page-break-after:always; break-after:page; box-shadow:none; border-radius:18px; padding:42px 38px; }
+  .cover-title{ font-size:36px; }
+  .cover-mark{ font-size:11rem !important; }
+
+  /* === TOC === */
+  .toc-panel{ page-break-after:always; break-after:page; box-shadow:none; }
+  .toc-grid{ grid-template-columns:repeat(3, 1fr) !important; }
+  .toc-item{ page-break-inside:avoid !important; break-inside:avoid !important; }
+
+  /* === Mỗi BÀI bắt sang trang mới === */
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:16px 18px 12px !important; }
+
+  /* === GỠ BỎ rào cản min-width === */
+  /* QUAN TRỌNG: ghi đè responsive rule khiến bảng tràn ngang */
+  .table-shell{ overflow:visible !important; overflow-x:visible !important; margin:8px 0 14px !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; box-shadow:none !important; table-layout:fixed !important; }
+
+  /* === KHÔNG cắt giữa khối === */
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:18px 22px !important; }
+  .lesson-banner h2{ font-size:22px !important; }
+  .section-head{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:10px 16px !important; margin:10px 0 8px !important; }
+  .section-head h3{ font-size:18px !important; }
+  .section-head::after{ font-size:36px !important; }
+  .exercise-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:12px 18px !important; }
+  .exercise-banner h4{ font-size:14px !important; }
+  .exercise-block{ page-break-inside:auto; margin:14px 0 !important; }
+  .exercise-body{ padding:14px 16px !important; }
+  .exercise{ page-break-inside:avoid !important; break-inside:avoid !important; padding:12px 14px !important; margin-bottom:10px !important; }
+  .footer-card{ page-break-inside:avoid; break-inside:avoid; }
+
+  /* === BẢNG TỪ VỰNG === */
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table tbody{ display:table-row-group; }
+  table.vocab-table thead th{ padding:8px 8px !important; font-size:11px !important; }
+  /* Mỗi tr (= 1 từ vựng) giữ nguyên trên 1 trang */
+  table.vocab-table tr{ page-break-inside:avoid !important; break-inside:avoid !important; page-break-after:auto; }
+  table.vocab-table tbody td{ padding:10px 8px !important; font-size:11px !important; }
+
+  /* === Co cell content nhỏ lại cho vừa khổ === */
+  .vocab-wrapper{ gap:2px !important; }
+  .vocab-kanji{ font-size:18px !important; line-height:1.1 !important; }
+  .vocab-kanji rt{ font-size:9px !important; }
+  .vocab-hanviet{ font-size:9.5px !important; letter-spacing:0.8px !important; margin-top:2px !important; }
+  .vocab-pos{ font-size:8.5px !important; padding:1px 5px !important; margin-top:3px !important; }
+  .vocab-meaning{ font-size:11px !important; margin-top:4px !important; line-height:1.35 !important; }
+
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:7px 9px !important; font-size:10.5px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important; break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:14px !important; }
+  .kanji-break .kreading{ font-size:9.5px !important; }
+  .kanji-break .combine{ margin-top:5px !important; padding-top:5px !important; }
+
+  .ex-box{ padding:8px 10px !important; page-break-inside:avoid !important; break-inside:avoid !important; }
+  .ex-jp{ font-size:12px !important; line-height:1.75 !important; margin-bottom:5px !important; }
+  .ex-jp rt{ font-size:8px !important; }
+  .ex-vn{ font-size:10.5px !important; line-height:1.45 !important; padding-top:4px !important; }
+
+  /* === BÀI TẬP === */
+  .ex-q{ page-break-inside:avoid; break-inside:avoid; font-size:11.5px !important; line-height:1.7 !important; padding:6px 0 !important; }
+  .choice-pool{ font-size:11.5px !important; padding:7px 11px !important; }
+  .multi-choice{ font-size:11px !important; }
+  .answer-toggle{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; break-inside:avoid; font-size:11px !important; padding:10px 12px !important; }
+  .match-grid{ grid-template-columns:1fr 1fr !important; }
+  .match-item{ font-size:11px !important; padding:4px 6px !important; }
+}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:200;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.92);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:38px;height:38px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.18em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}.tl-bc a:hover{color:var(--tl-ink)}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;transition:all .2s;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-wrap{max-width:1000px;margin:0 auto;padding:24px}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px;transition:all .2s}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3;pointer-events:none}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n3.html">N3</a> · <a href="../shinkanzen.html">Từ vựng</a> · Bài 20</div></div></a><a class="tl-back" href="../shinkanzen.html">← Danh sách bài</a></nav>
+<div class="tl-wrap">
+<article class="document" id="lesson-20">
+<div class="lesson-banner">
+  <span class="lesson-kicker">Bài 20 — 数と量</span>
+  <h2>数と量 (Số lượng và Đo lường)</h2>
+  <div class="lesson-sub">Biến động số lượng, đo đạc và phân phối số liệu (20 từ vựng)</div>
+</div>
+<div class="doc-body">
+
+<div class="section-head" data-mark="数"><span class="section-kicker">Phần 20-1 · 10 từ</span><h3>数と量(1)</h3><span class="section-vn">Biến động và đếm đạc</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">1</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>増<rt>ふ</rt></ruby>やす / <ruby>減<rt>へ</rt></ruby>らす</span><span class="vocab-hanviet">TĂNG / GIẢM</span><span class="vocab-pos">Động từ tha động</span><span class="vocab-meaning">Làm tăng / Làm giảm</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">増</span><span class="kreading">TĂNG · ぞう / ふ(やす)</span> — <span class="kmean">tăng</span></div><div><span class="kchar">減</span><span class="kreading">GIẢM · げん / へ(らす)</span> — <span class="kmean">giảm</span></div><div class="combine"><strong>Cặp tha-tự:</strong> 増やす (tha) / 増える (tự) ↔ 減らす (tha) / 減る (tự). Đã học 減る. Cụm: 数を増やす, 量を減らす.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">スタッフを<span class="target"><ruby>増<rt>ふ</rt></ruby>やす</span><ruby>必<rt>ひつ</rt></ruby><ruby>要<rt>よう</rt></ruby>がある。</div><div class="ex-vn">Cần phải tăng thêm nhân viên.</div></div></td></tr>
+
+<tr><td class="col-stt">2</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>増<rt>ふ</rt></ruby>える / <ruby>減<rt>へ</rt></ruby>る / <ruby>増<rt>ま</rt></ruby>す</span><span class="vocab-hanviet">TĂNG / GIẢM</span><span class="vocab-pos">Động từ tự động</span><span class="vocab-meaning">Tự tăng / Tự giảm</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">増</span><span class="kreading">TĂNG · ふ(える) / ま(す)</span> — <span class="kmean">tăng tự nhiên</span></div><div class="combine"><strong>Phân biệt:</strong> 増える (số đếm tăng - 人数が増える). 増す (mức độ tăng - 水位が増す). Hai cách đọc cùng nghĩa nhưng khác sắc thái.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>町<rt>まち</rt></ruby>の<ruby>人<rt>じん</rt></ruby><ruby>口<rt>こう</rt></ruby>は<span class="target"><ruby>増<rt>ふ</rt></ruby>えて</span>いる。</div><div class="ex-vn">Dân số thị trấn này đang tăng lên.</div></div></td></tr>
+
+<tr><td class="col-stt">3</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>倍<rt>ばい</rt></ruby></span><span class="vocab-hanviet">BỘI</span><span class="vocab-pos">Đơn vị</span><span class="vocab-meaning">Gấp ~ lần</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">倍</span><span class="kreading">BỘI · ばい</span> — <span class="kmean">gấp lần</span></div><div class="combine"><strong>Cách dùng:</strong> 2倍 (gấp đôi), 3倍 (gấp 3), 半分 (一半 - một nửa). Cụm: 値段が3倍になる.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>商<rt>しょう</rt></ruby><ruby>品<rt>ひん</rt></ruby>の<ruby>値<rt>ね</rt></ruby><ruby>段<rt>だん</rt></ruby>は10<ruby>年<rt>ねん</rt></ruby><ruby>前<rt>まえ</rt></ruby>の3<span class="target"><ruby>倍<rt>ばい</rt></ruby></span>になった。</div><div class="ex-vn">Giá sản phẩm này đã tăng gấp 3 lần so với 10 năm trước.</div></div></td></tr>
+
+<tr><td class="col-stt">4</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>余<rt>あま</rt></ruby>る / <ruby>不<rt>ふ</rt></ruby><ruby>足<rt>そく</rt></ruby></span><span class="vocab-hanviet">DƯ / BẤT TÚC</span><span class="vocab-pos">Động từ / Danh + する</span><span class="vocab-meaning">Dư thừa / Thiếu hụt</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">余</span><span class="kreading">DƯ · よ / あま(る)</span> — <span class="kmean">dư, thừa</span></div><div><span class="kchar">不足</span><span class="kreading">ふそく</span> — <span class="kmean">không đủ, thiếu</span></div><div class="combine"><strong>Cặp đối:</strong> 余る (dư thừa) ↔ 不足する (thiếu hụt). Cụm: 食べ物が余る, 水が不足する.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">パーティーで<ruby>料<rt>りょう</rt></ruby><ruby>理<rt>り</rt></ruby>が<span class="target"><ruby>余<rt>あま</rt></ruby>って</span>しまった。</div><div class="ex-vn">Trong buổi tiệc, thức ăn bị dư thừa.</div></div></td></tr>
+
+<tr><td class="col-stt">5</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>余<rt>よ</rt></ruby><ruby>裕<rt>ゆう</rt></ruby></span><span class="vocab-hanviet">DƯ DUNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Dư dả, có dư</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">余</span><span class="kreading">DƯ · よ</span> — <span class="kmean">dư</span></div><div><span class="kchar">裕</span><span class="kreading">DUNG · ゆう</span> — <span class="kmean">khoan dung</span></div><div class="combine"><strong>Cụm:</strong> 余裕がある (có dư), 余裕がない (không có dư). Dùng cho thời gian, tiền bạc, tinh thần.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">お<ruby>金<rt>かね</rt></ruby>に<span class="target"><ruby>余<rt>よ</rt></ruby><ruby>裕<rt>ゆう</rt></ruby></span>があれば、<ruby>旅<rt>りょ</rt></ruby><ruby>行<rt>こう</rt></ruby>に<ruby>行<rt>い</rt></ruby>きたい。</div><div class="ex-vn">Nếu có dư tiền, tôi muốn đi du lịch.</div></div></td></tr>
+
+<tr><td class="col-stt">6</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>人<rt>にん</rt></ruby><ruby>数<rt>ずう</rt></ruby> / <ruby>個<rt>こ</rt></ruby><ruby>数<rt>すう</rt></ruby> / <ruby>回<rt>かい</rt></ruby><ruby>数<rt>すう</rt></ruby> / <ruby>台<rt>だい</rt></ruby><ruby>数<rt>すう</rt></ruby></span><span class="vocab-hanviet">NHÂN SỐ / CÁ SỐ / HỒI SỐ / ĐÀI SỐ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Số người / Số đồ / Số lần / Số máy móc</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">数</span><span class="kreading">SỐ · すう / かず</span> — <span class="kmean">số</span></div><div class="combine"><strong>Cấu trúc:</strong> [Đơn vị đếm] + 数 = số đếm. 人数 (số người), 個数 (số đồ vật), 回数 (số lần), 台数 (số xe/máy).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">パーティーの<span class="target"><ruby>人<rt>にん</rt></ruby><ruby>数<rt>ずう</rt></ruby></span>を<ruby>数<rt>かぞ</rt></ruby>えてください。</div><div class="ex-vn">Vui lòng đếm số người tham dự buổi tiệc.</div></div></td></tr>
+
+<tr><td class="col-stt">7</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>距<rt>きょ</rt></ruby><ruby>離<rt>り</rt></ruby> / <ruby>面<rt>めん</rt></ruby><ruby>積<rt>せき</rt></ruby></span><span class="vocab-hanviet">CỰ LY / DIỆN TÍCH</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Khoảng cách / Diện tích</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">距離</span><span class="kreading">きょり</span> — <span class="kmean">khoảng cách</span></div><div><span class="kchar">面積</span><span class="kreading">めんせき</span> — <span class="kmean">diện tích bề mặt</span></div><div class="combine"><strong>Đã học 距離 (bài 5).</strong> 面積を測る (đo diện tích). Đơn vị: 平方メートル (m²), 坪 (tsubo ≈ 3.3m² - đơn vị Nhật).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>家<rt>いえ</rt></ruby>の<span class="target"><ruby>面<rt>めん</rt></ruby><ruby>積<rt>せき</rt></ruby></span>はどのぐらいですか。</div><div class="ex-vn">Diện tích ngôi nhà này khoảng bao nhiêu?</div></div></td></tr>
+
+<tr><td class="col-stt">8</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>測<rt>はか</rt></ruby>る / <ruby>量<rt>はか</rt></ruby>る</span><span class="vocab-hanviet">TRẮC / LƯỢNG</span><span class="vocab-pos">Động từ tha động</span><span class="vocab-meaning">Đo (chiều dài, thời gian) / Cân</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">測</span><span class="kreading">TRẮC · そく / はか(る)</span> — <span class="kmean">đo</span></div><div><span class="kchar">量</span><span class="kreading">LƯỢNG · りょう / はか(る)</span> — <span class="kmean">đo lượng, cân</span></div><div class="combine"><strong>Phân biệt cùng đọc はかる:</strong> 測る (đo khoảng cách, thời gian). 量る (đo trọng lượng, dung tích). 計る (đo thời gian, đếm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>箱<rt>はこ</rt></ruby>の<ruby>重<rt>おも</rt></ruby>さを<span class="target"><ruby>量<rt>はか</rt></ruby>って</span>ください。</div><div class="ex-vn">Vui lòng cân trọng lượng cái hộp này.</div></div></td></tr>
+
+<tr><td class="col-stt">9</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>記<rt>き</rt></ruby><ruby>録<rt>ろく</rt></ruby> / <ruby>取<rt>と</rt></ruby>る</span><span class="vocab-hanviet">KÝ LỤC / THỦ</span><span class="vocab-pos">Danh + Động từ</span><span class="vocab-meaning">Kỷ lục, ghi chép</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">記録</span><span class="kreading">きろく</span> — <span class="kmean">kỷ lục, ghi chép</span></div><div class="combine"><strong>Đã học 記録</strong> (bài 8 - thể thao). Ở đây nghĩa "ghi chép lại số liệu". Cụm: データの記録を取る (ghi lại dữ liệu).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby>の<ruby>体<rt>たい</rt></ruby><ruby>重<rt>じゅう</rt></ruby>の<span class="target"><ruby>記<rt>き</rt></ruby><ruby>録<rt>ろく</rt></ruby></span>を<span class="target"><ruby>取<rt>と</rt></ruby>って</span>いる。</div><div class="ex-vn">Tôi ghi chép lại cân nặng mỗi ngày.</div></div></td></tr>
+
+<tr><td class="col-stt">10</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>重<rt>おも</rt></ruby>さ</span><span class="vocab-hanviet">TRỌNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Trọng lượng, sức nặng</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">重</span><span class="kreading">TRỌNG · じゅう / おも(い)</span> — <span class="kmean">nặng</span></div><div class="combine"><strong>Danh từ hóa:</strong> Tính từ 重い (nặng) + さ → 重さ (trọng lượng). Tương tự: 長さ (chiều dài), 高さ (chiều cao), 広さ (diện tích).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>荷<rt>に</rt></ruby><ruby>物<rt>もつ</rt></ruby>の<span class="target"><ruby>重<rt>おも</rt></ruby>さ</span>は5キロです。</div><div class="ex-vn">Trọng lượng của hành lý này là 5 kg.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 A — Ôn luyện cụm Đo đếm</h4><span class="ex-subtitle">Một dạng câu hỏi sau khi học 10 từ ở mục 20-1</span></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 A1</span>文脈規定 — Điền từ vào chỗ trống</div>
+      <div class="choice-pool"><strong>選択肢:</strong> 増やす / 余る / 不足 / 余裕 / 距離 / 測る</div>
+      <div class="ex-q"><span class="qnum">(1)</span>スタッフを <span class="blank" data-ans="増やす">　　　　</span> <ruby>必<rt>ひつ</rt></ruby><ruby>要<rt>よう</rt></ruby>がある。</div>
+      <div class="ex-q"><span class="qnum">(2)</span>パーティーで<ruby>料<rt>りょう</rt></ruby><ruby>理<rt>り</rt></ruby>が <span class="blank" data-ans="余る">　　　　</span>。</div>
+      <div class="ex-q"><span class="qnum">(3)</span>お<ruby>金<rt>かね</rt></ruby>に <span class="blank" data-ans="余裕">　　　　</span> がない。</div>
+      <div class="ex-q"><span class="qnum">(4)</span><ruby>水<rt>みず</rt></ruby>が <span class="blank" data-ans="不足">　　　　</span> している。</div>
+      <div class="ex-q"><span class="qnum">(5)</span>2<ruby>点<rt>てん</rt></ruby>の<ruby>間<rt>あいだ</rt></ruby>の <span class="blank" data-ans="距離">　　　　</span> を<ruby>計<rt>けい</rt></ruby><ruby>算<rt>さん</rt></ruby>する。</div>
+      <div class="ex-q"><span class="qnum">(6)</span>この<ruby>道<rt>みち</rt></ruby>の<ruby>長<rt>なが</rt></ruby>さを <span class="blank" data-ans="測る">　　　　</span>。</div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> (1) 増やす — (2) 余る — (3) 余裕 — (4) 不足 — (5) 距離 — (6) 測る</div>
+    </div>
+  </div>
+</div>
+
+<div class="section-head" data-mark="量"><span class="section-kicker">Phần 20-2 · 10 từ</span><h3>数と量(2)</h3><span class="section-vn">Mức độ và phân phối số liệu</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ &amp; Dịch nghĩa</th></tr></thead><tbody>
+
+<tr><td class="col-stt">11</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>大<rt>たい</rt></ruby><ruby>量<rt>りょう</rt></ruby> / <ruby>少<rt>しょう</rt></ruby><ruby>量<rt>りょう</rt></ruby></span><span class="vocab-hanviet">ĐẠI LƯỢNG / THIỂU LƯỢNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Lượng lớn / Lượng ít</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">量</span><span class="kreading">LƯỢNG · りょう</span> — <span class="kmean">lượng</span></div><div class="combine"><strong>Cặp đối:</strong> 大量 (lượng nhiều) ↔ 少量 (lượng ít). Dùng cho chất lỏng, chất rắn không đếm được.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>大<rt>たい</rt></ruby><ruby>量<rt>りょう</rt></ruby></span>の<ruby>水<rt>みず</rt></ruby>を<ruby>飲<rt>の</rt></ruby>むと<ruby>健<rt>けん</rt></ruby><ruby>康<rt>こう</rt></ruby>にいい。</div><div class="ex-vn">Uống nhiều nước thì tốt cho sức khỏe.</div></div></td></tr>
+
+<tr><td class="col-stt">12</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>多<rt>た</rt></ruby><ruby>数<rt>すう</rt></ruby> / <ruby>少<rt>しょう</rt></ruby><ruby>数<rt>すう</rt></ruby></span><span class="vocab-hanviet">ĐA SỐ / THIỂU SỐ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Đa số / Thiểu số (số người)</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">数</span><span class="kreading">SỐ · すう</span> — <span class="kmean">số</span></div><div class="combine"><strong>Phân biệt với 大量/少量:</strong> 多数/少数 dùng cho "người" hoặc "số đếm được". 大量/少量 dùng cho khối lượng, dung tích.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>多<rt>た</rt></ruby><ruby>数<rt>すう</rt></ruby></span>の<ruby>人<rt>ひと</rt></ruby>がこの<ruby>意<rt>い</rt></ruby><ruby>見<rt>けん</rt></ruby>に<ruby>賛<rt>さん</rt></ruby><ruby>成<rt>せい</rt></ruby>している。</div><div class="ex-vn">Đa số mọi người đồng ý với ý kiến này.</div></div></td></tr>
+
+<tr><td class="col-stt">13</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">マイナス / プラス</span><span class="vocab-hanviet">(katakana)</span><span class="vocab-pos pos-katakana">Danh từ</span><span class="vocab-meaning">Âm (dưới 0) / Dương (trên 0)</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Nguồn gốc:</strong> マイナス (minus), プラス (plus). Dùng cho nhiệt độ (マイナス10度 - âm 10 độ), tài khoản, đánh giá. Đồng nghĩa kanji: 負 (ふ - âm), 正 (せい - dương).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><ruby>北<rt>きた</rt></ruby><ruby>海<rt>かい</rt></ruby><ruby>道<rt>どう</rt></ruby>の<ruby>気<rt>き</rt></ruby><ruby>温<rt>おん</rt></ruby>は<span class="target">マイナス</span>10<ruby>度<rt>ど</rt></ruby>まで<ruby>下<rt>さ</rt></ruby>がった。</div><div class="ex-vn">Nhiệt độ Hokkaido đã hạ xuống âm 10 độ.</div></div></td></tr>
+
+<tr><td class="col-stt">14</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">レベル</span><span class="vocab-hanviet">(katakana)</span><span class="vocab-pos pos-katakana">Danh từ</span><span class="vocab-meaning">Mức độ, đẳng cấp</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Nguồn gốc:</strong> Từ tiếng Anh <em>"level"</em>. Cụm: レベルが上がる (lên trình), レベルが高い (trình độ cao). Đồng nghĩa Nhật: 水準 (すいじゅん - tiêu chuẩn).</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">この<ruby>授<rt>じゅ</rt></ruby><ruby>業<rt>ぎょう</rt></ruby>の<span class="target">レベル</span>が<ruby>高<rt>たか</rt></ruby>すぎて、ついていけない。</div><div class="ex-vn">Cấp độ giờ học này cao quá, tôi không theo nổi.</div></div></td></tr>
+
+<tr><td class="col-stt">15</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>最<rt>さい</rt></ruby><ruby>大<rt>だい</rt></ruby> / <ruby>最<rt>さい</rt></ruby><ruby>小<rt>しょう</rt></ruby></span><span class="vocab-hanviet">TỐI ĐẠI / TỐI TIỂU</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Lớn nhất / Nhỏ nhất</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">最</span><span class="kreading">TỐI · さい / もっと(も)</span> — <span class="kmean">nhất</span></div><div class="combine"><strong>Bộ "tối+":</strong> 最大 (lớn nhất), 最小 (nhỏ nhất), 最高 (cao nhất), 最低 (thấp nhất). Dùng cho kích cỡ, nhiệt độ, mức độ.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">このTシャツの<span class="target"><ruby>最<rt>さい</rt></ruby><ruby>大<rt>だい</rt></ruby></span>サイズはXLです。</div><div class="ex-vn">Size lớn nhất của áo thun này là XL.</div></div></td></tr>
+
+<tr><td class="col-stt">16</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>最<rt>さい</rt></ruby><ruby>高<rt>こう</rt></ruby> / <ruby>最<rt>さい</rt></ruby><ruby>低<rt>てい</rt></ruby> / <ruby>平<rt>へい</rt></ruby><ruby>均<rt>きん</rt></ruby></span><span class="vocab-hanviet">TỐI CAO / TỐI ĐỂ / BÌNH QUÂN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Cao nhất / Thấp nhất / Trung bình</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">平均</span><span class="kreading">へいきん</span> — <span class="kmean">trung bình</span></div><div class="combine"><strong>Bộ 3 thống kê:</strong> 最高 / 最低 / 平均. Cụm: 最高気温 (nhiệt độ cao nhất), 平均年齢 (tuổi trung bình).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">今<ruby>日<rt>きょう</rt></ruby>の<span class="target"><ruby>最<rt>さい</rt></ruby><ruby>高<rt>こう</rt></ruby></span><ruby>気<rt>き</rt></ruby><ruby>温<rt>おん</rt></ruby>は35<ruby>度<rt>ど</rt></ruby>、<span class="target"><ruby>最<rt>さい</rt></ruby><ruby>低<rt>てい</rt></ruby></span>は20<ruby>度<rt>ど</rt></ruby>でした。</div><div class="ex-vn">Nhiệt độ cao nhất hôm nay là 35°C, thấp nhất là 20°C.</div></div></td></tr>
+
+<tr><td class="col-stt">17</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">たっぷり / <ruby>少<rt>しょう</rt></ruby><ruby>々<rt>しょう</rt></ruby></span><span class="vocab-hanviet">THIỂU THIỂU</span><span class="vocab-pos pos-adv">Trạng từ</span><span class="vocab-meaning">Đầy đặn, dồi dào / Một chút</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">少々</span><span class="kreading">しょうしょう</span> — <span class="kmean">một chút (trang trọng)</span></div><div class="combine"><strong>Cặp đối:</strong> たっぷり (và-go: dồi dào, đầy đặn) ↔ 少々 (một chút). Dùng cho nguyên liệu nấu ăn, thời gian.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">スープに<ruby>塩<rt>しお</rt></ruby>を<span class="target"><ruby>少<rt>しょう</rt></ruby><ruby>々<rt>しょう</rt></ruby></span><ruby>加<rt>くわ</rt></ruby>えてください。</div><div class="ex-vn">Vui lòng thêm một chút muối vào canh.</div></div></td></tr>
+
+<tr><td class="col-stt">18</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>加<rt>くわ</rt></ruby>える</span><span class="vocab-hanviet">GIA</span><span class="vocab-pos">Động từ tha động</span><span class="vocab-meaning">Thêm vào, cộng thêm</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">加</span><span class="kreading">GIA · か / くわ(える)</span> — <span class="kmean">thêm</span></div><div class="combine"><strong>Cụm:</strong> 塩を加える (thêm muối), メンバーを加える (thêm thành viên). Khác 増やす (làm tăng số lượng). Cùng chữ 加: 参加 (tham gia), 追加 (bổ sung).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">スープに<ruby>砂<rt>さ</rt></ruby><ruby>糖<rt>とう</rt></ruby>を<span class="target"><ruby>加<rt>くわ</rt></ruby>えて</span>味を<ruby>調<rt>ちょう</rt></ruby><ruby>整<rt>せい</rt></ruby>する。</div><div class="ex-vn">Tôi thêm đường vào canh để điều chỉnh vị.</div></div></td></tr>
+
+<tr><td class="col-stt">19</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">すべて / <ruby>全<rt>ぜん</rt></ruby><ruby>員<rt>いん</rt></ruby></span><span class="vocab-hanviet">TOÀN VIÊN</span><span class="vocab-pos">Danh / Trạng từ</span><span class="vocab-meaning">Tất cả / Toàn bộ mọi người</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">全員</span><span class="kreading">ぜんいん</span> — <span class="kmean">toàn bộ thành viên</span></div><div class="combine"><strong>Phân biệt:</strong> すべて - tất cả (vật, việc, người). 全員 - toàn bộ người. みんな (đời thường - mọi người).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp">クラスの<span class="target"><ruby>全<rt>ぜん</rt></ruby><ruby>員<rt>いん</rt></ruby></span>が<ruby>合<rt>ごう</rt></ruby><ruby>格<rt>かく</rt></ruby>した。</div><div class="ex-vn">Toàn bộ học sinh trong lớp đều đậu.</div></div></td></tr>
+
+<tr><td class="col-stt">20</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>合<rt>ごう</rt></ruby><ruby>計<rt>けい</rt></ruby> / <ruby>計<rt>けい</rt></ruby><ruby>算<rt>さん</rt></ruby></span><span class="vocab-hanviet">HỢP KẾ / KẾ TOÁN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Tổng cộng / Tính toán</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">合計</span><span class="kreading">ごうけい</span> — <span class="kmean">tổng cộng</span></div><div><span class="kchar">計算</span><span class="kreading">けいさん</span> — <span class="kmean">tính toán</span></div><div class="combine"><strong>Cụm:</strong> 合計を出す (tính ra tổng), 計算を間違える (tính nhầm).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp"><span class="target"><ruby>合<rt>ごう</rt></ruby><ruby>計<rt>けい</rt></ruby></span>はいくらですか。</div><div class="ex-vn">Tổng cộng là bao nhiêu?</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 B — Ôn luyện cụm Mức độ &amp; Phân phối</h4><span class="ex-subtitle">Một dạng câu hỏi sau khi học 10 từ ở mục 20-2</span></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 B1</span>マッチング — Ghép từ với nghĩa</div>
+      <div class="match-grid">
+        <div class="match-col"><h5>Cột A — Tiếng Nhật</h5>
+          <div class="match-item jp"><span class="mlabel">A1.</span>大量 (たいりょう)</div>
+          <div class="match-item jp"><span class="mlabel">A2.</span>レベル</div>
+          <div class="match-item jp"><span class="mlabel">A3.</span>平均 (へいきん)</div>
+          <div class="match-item jp"><span class="mlabel">A4.</span>加える</div>
+          <div class="match-item jp"><span class="mlabel">A5.</span>全員 (ぜんいん)</div>
+          <div class="match-item jp"><span class="mlabel">A6.</span>合計 (ごうけい)</div>
+        </div>
+        <div class="match-col"><h5>Cột B — Tiếng Việt</h5>
+          <div class="match-item"><span class="mlabel">B1.</span>Tổng cộng</div>
+          <div class="match-item"><span class="mlabel">B2.</span>Cấp độ, mức độ</div>
+          <div class="match-item"><span class="mlabel">B3.</span>Lượng lớn</div>
+          <div class="match-item"><span class="mlabel">B4.</span>Toàn bộ mọi người</div>
+          <div class="match-item"><span class="mlabel">B5.</span>Trung bình</div>
+          <div class="match-item"><span class="mlabel">B6.</span>Thêm vào</div>
+        </div>
+      </div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án</button>
+      <div class="answer-box"><strong>Đáp án:</strong> A1→B3 ・ A2→B2 ・ A3→B5 ・ A4→B6 ・ A5→B4 ・ A6→B1</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-19.html">← Bài 19</a><a class="mid" href="../shinkanzen.html">▦ Danh sách bài</a><a href="bai-21.html">Bài 21 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+</script>
+
+<style>#ttsBar{display:none!important}
+.tts-btn,.tl-spk{display:inline-flex!important;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;margin-right:7px;padding:0;border:1px solid var(--gold,#B89568)!important;background:transparent;color:var(--gold,#B89568);border-radius:50%;font-size:11px;cursor:pointer;vertical-align:middle;line-height:1;flex:none;box-shadow:none}
+.tts-btn:hover,.tl-spk:hover{background:var(--gold,#B89568);color:#fff}
+.tts-btn.on,.tts-btn.playing,.tl-spk.on{background:var(--navy,#1B3A6B);border-color:var(--navy,#1B3A6B)!important;color:#fff}
+.ex-jp rt,.ex-q rt,.jp rt{font-size:.6em;color:var(--gold-d,#8A6E47);font-weight:400}</style>
+<script>(function(){
+var jv=null;function pick(){try{var V=speechSynthesis.getVoices();function f(re){return V.filter(function(v){return /ja|JP|日本/i.test(v.lang)&&re.test(v.name);})[0];}jv=f(/Google/i)||f(/Kyoko/i)||f(/Otoya/i)||f(/Microsoft|Nanami|Ayumi|Keita|Haruka/i)||V.filter(function(v){return /ja|JP|日本/i.test((v.lang||'')+(v.name||''));})[0]||null;}catch(e){}}pick();try{speechSynthesis.onvoiceschanged=pick;}catch(e){}
+function sfb(t,b,done){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=0.9;if(jv)u.voice=jv;u.onend=u.onerror=function(){done&&done();};speechSynthesis.speak(u);}catch(e){done&&done();}}
+var TLW='https://trilu-dict-api.luminhtri0.workers.dev';function ext(txt,b,done){var srcs=['https://api.streamelements.com/kappa/v2/speech?voice=Mizuki&text='+encodeURIComponent(txt),'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=ja&q='+encodeURIComponent(txt)];(function tryi(i){if(i>=srcs.length){return sfb(txt,b,done);}var a=new Audio(srcs[i]);window.__tlA=a;a.onended=done;a.onerror=function(){tryi(i+1);};var pr=a.play();if(pr&&pr.catch)pr.catch(function(){tryi(i+1);});})(0);}function ttsTry(url,txt,b,done,fail){try{fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({text:txt})}).then(function(r){if(!r.ok)throw 0;return r.blob();}).then(function(bl){var a=new Audio(URL.createObjectURL(bl));window.__tlA=a;a.onended=done;a.onerror=fail;var pr=a.play();if(pr&&pr.catch)pr.catch(fail);}).catch(fail);}catch(e){fail();}}function gplay(t,b){if(!t)return;var txt=(''+t).replace(/<[^>]*>/g,'').replace(/^[\s①-⑳ 0-9.\)、。]+/,'').slice(0,200);if(!txt)txt=(''+t).replace(/<[^>]*>/g,'').slice(0,200);if(b&&b.classList)b.classList.add('on');var done=function(){if(b&&b.classList){b.classList.remove('on');b.classList.remove('playing');}};if(window.__tlA){try{window.__tlA.pause();}catch(e){}}ttsTry('/api/tts',txt,b,done,function(){ttsTry(TLW+'/api/tts',txt,b,done,function(){ext(txt,b,done);});});}
+function furiFetch(url,texts){return fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({texts:texts})}).then(function(r){if(!r.ok)throw 0;return r.json();});}
+window.__tlGtts=gplay;
+function clean(el){var c=el.cloneNode(true);c.querySelectorAll('rt,rp,.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn,.vn,.hanviet,.kreading,.kmean,.ana-syn,.ana-ant,.ana-nuance').forEach(function(n){n.remove();});return (c.textContent||'').replace(/\s+/g,' ').trim();}
+function jaText(btn){var node=btn;for(var i=0;i<4&&node.parentElement;i++){node=node.parentElement;var t=clean(node);if(/[぀-ヿ一-龯]/.test(t))return t;}return '';}
+document.addEventListener('click',function(e){var btn=e.target&&e.target.closest&&e.target.closest('.tts-btn, .tl-spk');if(!btn)return;e.preventDefault();e.stopPropagation();if(typeof e.stopImmediatePropagation==='function')e.stopImmediatePropagation();gplay(jaText(btn),btn);},true);
+function nativeNear(el){if(el.querySelector('.tts-btn'))return true;var p=el.parentElement;if(p){for(var c=p.firstElementChild;c;c=c.nextElementSibling){if(c.classList&&c.classList.contains('tts-btn'))return true;}}return false;}
+function add(el){if(el.dataset.spk)return;el.dataset.spk='1';if(nativeNear(el))return;var t=clean(el);if(!t||!/[぀-ヿ一-龯]/.test(t))return;var b=document.createElement('button');b.type='button';b.className='tl-spk';b.setAttribute('aria-label','Phat am');b.textContent='🔊';el.insertBefore(b,el.firstChild);}
+function run(){document.querySelectorAll('[data-tts], .ex-jp, .ex-q').forEach(add);}
+function furiPass(){var els=[].slice.call(document.querySelectorAll('.ex-jp, .ex-q, .jp'));var jobs=[];els.forEach(function(el){if(el.dataset.furi)return;if(el.querySelector('ruby'))return;var c=el.cloneNode(true);c.querySelectorAll('.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn').forEach(function(n){n.remove();});var t=(c.textContent||'').replace(/\s+/g,' ').trim();if(!t||t.length<6||!/[一-龯]/.test(t))return;el.dataset.furi='1';jobs.push({el:el,t:t});});if(!jobs.length)return;var texts=jobs.map(function(j){return j.t;});function apply(d){if(!d||!d.ruby)return;jobs.forEach(function(j,idx){var ru=d.ruby[idx];if(!ru||ru.indexOf('<ruby')<0)return;var btn=j.el.querySelector('.tl-spk,.tts-btn');j.el.innerHTML=(btn?btn.outerHTML:'')+ru;});}furiFetch('/api/furigana',texts).then(apply).catch(function(){furiFetch(TLW+'/api/furigana',texts).then(apply).catch(function(){});});}
+function go(){run();furiPass();}
+if(document.readyState!=='loading'){setTimeout(go,50);}else{document.addEventListener('DOMContentLoaded',function(){setTimeout(go,50);});}
+window.addEventListener('load',function(){setTimeout(go,160);});})();</script>
+
+</body></html>

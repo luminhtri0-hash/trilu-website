@@ -1,0 +1,657 @@
+<!DOCTYPE html><html lang="vi"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Bài 8 · Du lịch & Giao thông — Từ vựng N2 — Trí Lữ Nihongo</title>
+<meta name="description" content="Từ vựng N2 — Bài 8: Du lịch & Giao thông. Trí Lữ Nihongo.">
+<link rel="icon" type="image/png" sizes="32x32" href="/icon-32.png"><link rel="apple-touch-icon" sizes="180x180" href="/icon-180.png"><link rel="manifest" href="/manifest.json">
+
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter+Tight:wght@400;500&family=JetBrains+Mono:wght@500;600&family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+@page { size: A4; margin: 15mm 14mm 16mm 14mm; }
+:root{
+  --paper:#fffdfa;
+  --paper-2:#fff8f0;
+  --surface:#f7f0e8;
+  --surface-2:#f2e5d8;
+  --ink:#1e2430;
+  --muted:#5f6470;
+  --accent:#1b3a5a;
+  --accent-dark:#0f2740;
+  --accent-2:#2d6e7a;
+  --accent-3:#5fa3b2;
+  --line:#bcd3da;
+  --line-2:#dde9ee;
+  --callout:#f0f6f8;
+  --green:#2d5e3e;
+  --teal:#2d6e7a;
+  --plum:#6a4a8a;
+  --terra:#b56b3f;
+  --shadow:0 18px 46px rgba(15, 39, 64, 0.10);
+}
+*{box-sizing:border-box}
+html{ scroll-behavior:smooth; }
+body{
+  margin:0; color:var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(45,110,122,0.08), transparent 26%),
+    radial-gradient(circle at 85% 14%, rgba(27,58,90,0.08), transparent 22%),
+    linear-gradient(180deg, #eef4f6 0%, #e7eef2 100%);
+  font-family: Inter, "Noto Sans CJK JP", "Segoe UI", sans-serif;
+  line-height:1.7; font-size:14px;
+  -webkit-font-smoothing:antialiased;
+}
+.page-shell{ max-width:1200px; margin:0 auto; padding:30px 24px 76px; }
+
+/* ============ COVER ============ */
+.cover{
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 18%, rgba(255,255,255,0.09), transparent 22%),
+    radial-gradient(circle at 88% 20%, rgba(95,163,178,0.24), transparent 16%),
+    linear-gradient(135deg, #0f2740 0%, #1b3a5a 36%, #082030 100%);
+  color:#fff; border-radius:30px; box-shadow:var(--shadow);
+  padding:60px 64px 50px; margin-bottom:26px;
+}
+.cover::before{ content:""; position:absolute; inset:18px; border:1px solid rgba(255,255,255,0.12); border-radius:22px; }
+.cover::after{ content:""; position:absolute; right:-80px; top:-90px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, rgba(95,163,178,0.52) 0%, rgba(95,163,178,0.08) 48%, transparent 68%); }
+.cover-mark{ position:absolute; right:-12px; bottom:-50px; font-family:"Noto Serif CJK JP","Yu Mincho",serif; font-weight:900; font-size:clamp(8rem,17vw,16rem); letter-spacing:-0.05em; color:rgba(255,255,255,0.07); line-height:1; pointer-events:none; }
+.cover-badge{ display:inline-flex; align-items:center; gap:10px; padding:10px 16px; border:1px solid rgba(255,255,255,0.16); border-radius:999px; background:rgba(255,255,255,0.08); letter-spacing:0.16em; text-transform:uppercase; font-size:11px; font-weight:700; position:relative; z-index:1; }
+.cover-badge .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent-3); box-shadow:0 0 0 5px rgba(95,163,178,0.14); }
+.cover-title{ position:relative; z-index:1; margin:26px 0 12px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-weight:700; font-size:50px; line-height:1.05; letter-spacing:-0.02em; max-width:20ch; }
+.cover-jp{ position:relative; z-index:1; font-family:"Noto Serif CJK JP",serif; font-size:22px; color:rgba(255,255,255,0.85); margin-bottom:14px; }
+.cover-subtitle{ position:relative; z-index:1; max-width:780px; font-size:15.5px; color:rgba(255,255,255,0.88); margin:0 0 26px; }
+.metric-row{ position:relative; z-index:1; display:flex; flex-wrap:wrap; gap:12px; margin:22px 0 30px; }
+.metric-chip{ padding:10px 16px; border-radius:999px; border:1px solid rgba(255,255,255,0.16); background:rgba(255,255,255,0.08); color:#fff; font-size:13px; font-weight:600; }
+.cover-meta{ position:relative; z-index:1; margin-top:24px; padding-top:18px; border-top:1px solid rgba(255,255,255,0.18); display:flex; justify-content:space-between; gap:24px; font-size:12.5px; color:rgba(255,255,255,0.78); flex-wrap:wrap; }
+
+/* ============ TOC ============ */
+.toc-panel{
+  margin:0 0 34px;
+  background:linear-gradient(180deg, rgba(255,253,250,0.96), rgba(240,246,248,0.96));
+  border:1px solid rgba(45,110,122,0.20);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:28px 30px;
+}
+.panel-overline{ display:block; margin-bottom:8px; text-transform:uppercase; letter-spacing:0.18em; font-size:11px; font-weight:700; color:var(--accent-2); }
+.toc-title{ margin:0 0 6px; font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:30px; line-height:1.1; color:var(--accent); }
+.toc-subtitle{ margin:0 0 20px; color:var(--muted); font-size:13.5px; }
+.toc-chapter{ margin-bottom:20px; }
+.toc-chapter-head{ display:flex; align-items:center; gap:12px; padding:12px 16px; margin-bottom:10px; background:linear-gradient(90deg, #1b3a5a, #2d6e7a); color:#fff; border-radius:12px; }
+.toc-chapter-num{ font-family:"Noto Serif CJK JP",serif; font-weight:900; font-size:22px; opacity:0.85; }
+.toc-chapter-title{ font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:16px; }
+.toc-chapter-title .vn{ font-style:italic; font-size:13px; opacity:0.85; margin-left:8px; font-family:Inter,sans-serif; font-weight:500; }
+.toc-grid{ display:grid; grid-template-columns:repeat(3, minmax(0,1fr)); gap:12px; padding-left:8px; }
+.toc-item{ display:block; text-decoration:none; color:inherit; padding:12px 14px; background:linear-gradient(180deg, #fffefd 0%, #f0f6f8 100%); border:1px solid var(--line-2); border-radius:12px; transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease; }
+.toc-item:hover{ transform:translateY(-2px); border-color:rgba(27,58,90,0.40); box-shadow:0 12px 24px rgba(15,39,64,0.06); }
+.toc-item-number{ display:inline-block; min-width:30px; padding:2px 7px; margin-right:6px; border-radius:7px; background:linear-gradient(180deg, var(--accent-2), #1f5560); color:#fff; font-weight:800; font-size:10.5px; text-align:center; vertical-align:middle; }
+.toc-item-title{ display:inline; font-weight:700; color:var(--accent); font-size:13px; }
+.toc-item-summary{ display:block; margin-top:4px; color:var(--muted); font-size:11.5px; line-height:1.45; font-family:"Noto Serif CJK JP",serif; }
+
+/* ============ CHAPTER HEADER ============ */
+.chapter-card{
+  position:relative; overflow:hidden;
+  background:linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  border-radius:24px; box-shadow:var(--shadow);
+  padding:34px 44px 30px; margin:50px 0 20px;
+  color:#fff;
+}
+.chapter-card::after{
+  content:attr(data-mark); position:absolute; right:0; bottom:-40px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(8rem, 16vw, 13rem); color:rgba(255,255,255,0.08); line-height:1;
+}
+.chapter-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(95,163,178,0.95); margin-bottom:10px; }
+.chapter-card h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:34px; font-weight:700; }
+.chapter-card .chapter-sub{ font-size:14.5px; color:rgba(255,255,255,0.82); position:relative; z-index:1; }
+
+/* ============ DOCUMENT (Lesson) ============ */
+.document{
+  background:var(--paper);
+  border:1px solid rgba(45,110,122,0.16);
+  border-radius:28px; box-shadow:var(--shadow);
+  padding:0 0 40px; margin-bottom:40px; overflow:hidden;
+}
+.lesson-banner{
+  position:relative; overflow:hidden;
+  padding:30px 44px 28px;
+  background:
+    radial-gradient(circle at 88% 30%, rgba(95,163,178,0.28), transparent 26%),
+    linear-gradient(135deg, #0f2740 0%, #1b3a5a 50%, #082030 100%);
+  color:#fff;
+}
+.lesson-banner::after{
+  content:"語彙"; position:absolute; right:-10px; bottom:-50px;
+  font-family:"Noto Serif CJK JP",serif; font-weight:900;
+  font-size:clamp(7rem, 14vw, 12rem); color:rgba(255,255,255,0.07); line-height:1; pointer-events:none;
+}
+.lesson-kicker{ display:block; font-size:11px; text-transform:uppercase; letter-spacing:0.2em; font-weight:700; color:rgba(255,255,255,0.74); margin-bottom:8px; }
+.lesson-banner h2{ margin:0 0 6px; font-family:"Noto Serif CJK JP",serif; font-size:28px; font-weight:700; }
+.lesson-banner .lesson-sub{ font-size:14px; color:rgba(255,255,255,0.82); }
+
+.doc-body{ padding:30px 44px 10px; }
+
+/* ============ SECTION HEAD ============ */
+.section-head{
+  position:relative; overflow:hidden;
+  margin:18px 0 18px;
+  padding:18px 24px 18px 22px;
+  border-radius:22px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.08), transparent 36%),
+    linear-gradient(135deg, #154366 0%, #1b3a5a 52%, #2d6e7a 100%);
+  color:#fff;
+}
+.section-head::after{
+  content:attr(data-mark); position:absolute; right:18px; top:50%; transform:translateY(-50%);
+  font-family:"Noto Serif CJK JP",serif; font-size:60px; line-height:1; color:rgba(255,255,255,0.12); font-weight:700;
+}
+.section-kicker{ display:block; margin-bottom:6px; font-size:11px; text-transform:uppercase; letter-spacing:0.18em; font-weight:700; color:rgba(255,255,255,0.78); }
+.section-head h3{
+  margin:0; padding:0; border:none; color:#fff; background:none;
+  font-family:"Noto Serif CJK JP",serif; font-size:22px; line-height:1.2; font-weight:700;
+}
+.section-head .section-vn{ display:block; margin-top:4px; font-size:13px; font-style:italic; color:rgba(255,255,255,0.82); font-family:Inter,sans-serif; }
+
+/* ============ VOCAB TABLE ============ */
+.table-shell{ margin:16px 0 24px; }
+table.vocab-table{
+  width:100%; border-collapse:separate; border-spacing:0;
+  background:#fff; border:1px solid var(--line-2);
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 10px 26px rgba(15,39,64,0.05);
+  font-size:13.5px;
+}
+thead th{
+  background:linear-gradient(180deg, #eaf3f6 0%, #cee2e8 100%);
+  color:var(--accent); font-weight:800;
+  padding:13px 14px; text-align:left; font-size:13px;
+  border-bottom:1px solid var(--line-2);
+}
+thead th:not(:last-child){ border-right:1px solid var(--line-2); }
+tbody td{
+  padding:18px 14px; vertical-align:top;
+  border-right:1px solid var(--line-2);
+  border-bottom:1px solid var(--line-2);
+}
+tbody td:last-child{ border-right:none; }
+tbody tr:last-child td{ border-bottom:none; }
+tbody tr:nth-child(even) td{ background:#f7fbfc; }
+
+.col-stt{ width:5%; text-align:center; font-weight:800; color:var(--accent); font-family:"EB Garamond","Noto Serif CJK JP",serif; font-size:18px; }
+.col-vocab{ width:22%; }
+.col-explain{ width:30%; }
+.col-example{ width:43%; }
+
+.vocab-wrapper{ display:flex; flex-direction:column; gap:4px; }
+.vocab-kanji{ font-size:24px; font-weight:700; color:#222; font-family:"Noto Serif CJK JP","Yu Mincho",serif; line-height:1.15; }
+.vocab-kanji ruby{ ruby-position:over; ruby-align:center; }
+.vocab-kanji rt{ font-size:11px; color:#888; font-family:sans-serif; font-weight:500; }
+.vocab-hanviet{ font-size:11px; color:var(--accent-2); font-weight:800; letter-spacing:1.2px; margin-top:4px; }
+.vocab-pos{ display:inline-block; font-size:10.5px; color:#fff; background:var(--green); padding:2px 8px; border-radius:4px; font-weight:600; letter-spacing:0.05em; margin-top:6px; align-self:flex-start; }
+.vocab-pos.pos-na{ background:var(--terra); }
+.vocab-pos.pos-i{ background:var(--teal); }
+.vocab-pos.pos-adv{ background:var(--plum); }
+.vocab-pos.pos-suru{ background:#8a4a6a; }
+.vocab-pos.pos-katakana{ background:var(--accent-2); }
+.vocab-meaning{ font-size:14px; color:var(--accent); font-weight:700; margin-top:8px; line-height:1.5; }
+
+/* Explain box */
+.kanji-break{ background:linear-gradient(180deg, #f7fbfc, #e8f1f4); border:1px solid #cee2e8; border-left:4px solid var(--accent-2); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.65; color:#1f3a4a; }
+.kanji-break .kchar{ font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; color:var(--accent); margin-right:4px; }
+.kanji-break .kreading{ color:var(--accent-2); font-weight:700; font-size:11.5px; letter-spacing:0.05em; }
+.kanji-break .kmean{ color:#2d4a5a; }
+.kanji-break .combine{ margin-top:8px; padding-top:8px; border-top:1px dashed #b3cdd5; font-style:italic; color:#2d5560; }
+.kanji-break .combine strong{ font-style:normal; color:var(--accent); }
+.katakana-origin{ background:linear-gradient(180deg, #fff5f8, #faeaf0); border:1px solid #f0d8e2; border-left:4px solid #b13e6a; border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#5a3a4a; }
+.katakana-origin strong{ color:#b13e6a; }
+.wago-note{ background:linear-gradient(180deg, #f7faf2, #ecf2e2); border:1px solid #d8e2c8; border-left:4px solid var(--green); border-radius:12px; padding:12px 14px; font-size:13px; line-height:1.6; color:#3e5a3a; }
+.wago-note strong{ color:var(--green); }
+
+/* Example box */
+.ex-box{ background:linear-gradient(180deg, #fefdfa, #f3eddb); border-left:4px solid var(--accent); padding:13px 16px; border-radius:0 12px 12px 0; }
+.ex-jp{ font-size:14.5px; color:#222; margin-bottom:8px; line-height:1.95; font-family:"Noto Serif CJK JP",serif; }
+.ex-jp ruby{ ruby-position:over; ruby-align:center; }
+.ex-jp rt{ font-size:10px; color:#888; font-family:sans-serif; }
+.ex-jp .target{ color:var(--accent); font-weight:700; background:rgba(95,163,178,0.20); padding:0 3px; border-radius:3px; }
+.ex-vn{ font-size:13px; color:#4a5560; font-style:italic; line-height:1.55; padding-top:6px; border-top:1px dotted #cee2e8; }
+
+/* ============ WORD FORMATION & ADVERB BLOCKS ============ */
+.special-block{
+  margin:24px 0;
+  background:linear-gradient(180deg, #fffdfa, #f7fbfc);
+  border:1px solid #cee2e8;
+  border-radius:18px; overflow:hidden;
+  box-shadow:0 8px 20px rgba(15,39,64,0.05);
+}
+.special-banner{
+  display:flex; align-items:center; gap:12px;
+  padding:14px 22px;
+  background:linear-gradient(90deg, #2d6e7a 0%, #5fa3b2 100%);
+  color:#fff;
+}
+.special-banner.adv{ background:linear-gradient(90deg, #6a4a8a 0%, #8a6daf 100%); }
+.special-icon{ width:36px; height:36px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"Noto Serif CJK JP",serif; }
+.special-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:16px; font-weight:700; }
+.special-banner .sp-subtitle{ display:block; font-size:11px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:1px; letter-spacing:0.04em; }
+.special-body{ padding:18px 22px; }
+
+.word-formation-grid{ display:grid; grid-template-columns:repeat(2, 1fr); gap:12px; }
+.wf-item{ background:#fff; border:1px solid #d4e3e8; border-radius:10px; padding:12px 14px; }
+.wf-pattern{ font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:17px; color:var(--accent); margin-bottom:6px; }
+.wf-pattern .ptype{ font-size:11px; color:var(--accent-2); margin-left:6px; font-weight:600; }
+.wf-examples{ font-size:13px; line-height:1.7; color:#333; font-family:"Noto Serif CJK JP",serif; }
+.wf-examples .wfx{ display:inline-block; margin-right:8px; }
+.wf-examples .wfx-jp{ font-weight:600; color:var(--accent-dark); }
+.wf-examples .wfx-vn{ font-style:italic; color:#5f6470; font-family:Inter,sans-serif; font-size:11.5px; }
+
+.adverb-grid{ display:grid; grid-template-columns:1fr; gap:10px; }
+.adv-item{ background:#fff; border:1px solid #d8d0e4; border-radius:10px; padding:13px 16px; border-left:3px solid #6a4a8a; }
+.adv-head{ display:flex; align-items:baseline; gap:10px; margin-bottom:5px; }
+.adv-jp{ font-family:"Noto Serif CJK JP",serif; font-weight:700; font-size:16px; color:#4a3070; }
+.adv-vn{ font-size:12.5px; color:var(--muted); font-style:italic; }
+.adv-ex{ font-size:13px; line-height:1.75; color:#333; font-family:"Noto Serif CJK JP",serif; padding:6px 10px; background:#faf7fd; border-radius:6px; margin-top:4px; }
+.adv-ex .adv-ex-vn{ display:block; font-size:11.5px; color:#5a5070; font-style:italic; font-family:Inter,sans-serif; margin-top:3px; padding-top:3px; border-top:1px dotted #d8d0e4; }
+
+/* ============ EXERCISE BLOCK ============ */
+.exercise-block{
+  margin:30px 0 24px;
+  padding:0;
+  background:linear-gradient(180deg, #fefdfa 0%, #f3eddb 100%);
+  border:1px solid #d9c9a8;
+  border-radius:22px; overflow:hidden;
+  box-shadow:0 10px 24px rgba(15,39,64,0.05);
+}
+.exercise-banner{
+  display:flex; align-items:center; gap:14px;
+  padding:18px 24px;
+  background:linear-gradient(90deg, var(--accent) 0%, #2d6e7a 100%);
+  color:#fff;
+}
+.exercise-icon{ width:42px; height:42px; flex-shrink:0; background:rgba(255,255,255,0.18); border:1px solid rgba(255,255,255,0.3); color:#fff; border-radius:12px; display:flex; align-items:center; justify-content:center; font-weight:800; font-size:14px; font-family:"EB Garamond","Noto Serif CJK JP",serif; }
+.exercise-banner h4{ margin:0; font-family:"Noto Serif CJK JP",serif; font-size:18px; font-weight:700; }
+.exercise-banner .ex-subtitle{ display:block; font-size:11.5px; color:rgba(255,255,255,0.82); font-weight:500; font-style:italic; margin-top:2px; letter-spacing:0.04em; }
+.exercise-body{ padding:22px 26px; }
+
+.exercise{ background:#fff; border:1px solid #d9c9a8; border-radius:14px; padding:18px 20px; margin-bottom:16px; box-shadow:0 6px 14px rgba(15,39,64,0.04); }
+.exercise:last-child{ margin-bottom:0; }
+.exercise-title{ font-weight:700; color:var(--accent); margin-bottom:12px; font-size:14px; display:flex; align-items:center; gap:10px; padding-bottom:10px; border-bottom:1px dashed #d9c9a8; }
+.exercise-title .ex-no{ background:var(--accent-2); color:#fff; padding:3px 10px; border-radius:6px; font-size:11.5px; letter-spacing:0.08em; }
+.choice-pool{ background:linear-gradient(180deg, #fff7e8, #f7e4c1); border:1px dashed #b08850; border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:14px; font-family:"Noto Serif CJK JP",serif; color:#674c1b; }
+.choice-pool strong{ color:var(--accent); }
+
+.ex-q{ padding:9px 0; border-bottom:1px dotted #e8dcc0; font-size:14px; line-height:1.85; font-family:"Noto Serif CJK JP",serif; }
+.ex-q:last-child{ border-bottom:none; }
+.ex-q .qnum{ display:inline-block; min-width:24px; font-weight:700; color:var(--accent); margin-right:4px; font-family:"EB Garamond",sans-serif; font-size:14.5px; }
+.ex-q .blank{ display:inline-block; min-width:90px; border-bottom:1.5px solid #b08850; padding:0 8px; margin:0 3px; text-align:center; color:transparent; cursor:pointer; transition:all .15s; }
+.ex-q .blank:hover{ background:rgba(95,163,178,0.12); }
+.ex-q .blank.shown{ color:var(--accent); font-weight:700; border-bottom-color:var(--accent); background:rgba(95,163,178,0.15); }
+
+.multi-choice{ display:block; margin:4px 0 4px 30px; font-size:13.5px; color:#444; }
+.multi-choice .opt-num{ color:var(--accent-2); font-weight:700; margin-right:6px; }
+.match-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px 24px; margin-top:12px; }
+.match-col{ background:#f7fbfc; border:1px solid #cee2e8; border-radius:12px; padding:14px; }
+.match-col h5{ margin:0 0 10px; font-size:11px; color:var(--accent); text-transform:uppercase; letter-spacing:0.12em; font-weight:800; }
+.match-item{ padding:7px 10px; font-size:14px; border-radius:6px; }
+.match-item.jp{ font-family:"Noto Serif CJK JP",serif; }
+.match-item .mlabel{ display:inline-block; min-width:24px; font-weight:800; color:var(--accent-2); }
+
+.answer-toggle{
+  display:inline-flex; align-items:center; gap:6px; margin-top:14px;
+  padding:9px 22px;
+  background:linear-gradient(135deg, var(--accent) 0%, #2d6e7a 100%);
+  color:#fff; border:none; border-radius:999px;
+  font-weight:700; font-size:13px; cursor:pointer; transition:all 0.2s; font-family:inherit;
+  box-shadow:0 6px 14px rgba(27,58,90,0.18);
+}
+.answer-toggle:hover{ transform:translateY(-1px); box-shadow:0 8px 20px rgba(27,58,90,0.28); }
+.answer-toggle::before{ content:"鍵"; font-family:"Noto Serif CJK JP",serif; margin-right:4px; }
+.answer-box{ display:none; margin-top:14px; padding:14px 16px; background:linear-gradient(180deg, #fffbef, #f8eed4); border:1px solid #d9bb88; border-left:4px solid var(--accent-2); border-radius:10px; font-size:13.5px; line-height:1.7; color:#5a4520; }
+.answer-box strong{ color:var(--accent); }
+.answer-box.show{ display:block; }
+
+/* ============ FOOTER ============ */
+.footer-card{ margin-top:30px; padding:24px 28px; text-align:center; color:var(--muted); font-size:13px; border-top:1px solid var(--line-2); }
+.footer-card strong{ color:var(--accent); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 960px) {
+  .page-shell{ padding:18px 14px 42px; }
+  .cover{ padding:42px 28px 36px; }
+  .cover-title{ font-size:34px; }
+  .toc-grid{ grid-template-columns:repeat(2,1fr); }
+  .doc-body{ padding:20px 18px 10px; }
+  .lesson-banner{ padding:22px 22px 20px; }
+  .chapter-card{ padding:24px 28px 22px; }
+  table.vocab-table{ min-width:880px; }
+  .table-shell{ overflow-x:auto; }
+  .match-grid{ grid-template-columns:1fr; }
+  .word-formation-grid{ grid-template-columns:1fr; }
+}
+
+@media print {
+  @page { size: A4 portrait; margin: 12mm 10mm; }
+  @page lesson { size: A4 landscape; margin: 10mm 12mm; }
+  .document { page: lesson; }
+  html, body{ background:#fff !important; }
+  body{ font-size:11px; -webkit-print-color-adjust:exact; print-color-adjust:exact; color-adjust:exact; }
+  .page-shell{ padding:0 !important; max-width:none !important; margin:0 !important; }
+  .cover{ page-break-after:always; break-after:page; box-shadow:none; border-radius:18px; padding:42px 38px; }
+  .cover-title{ font-size:36px; }
+  .cover-mark{ font-size:11rem !important; }
+  .toc-panel{ page-break-after:always; break-after:page; box-shadow:none; }
+  .toc-grid{ grid-template-columns:repeat(3, 1fr) !important; }
+  .toc-item{ page-break-inside:avoid !important; break-inside:avoid !important; }
+  .chapter-card{ page-break-before:always; break-before:page; box-shadow:none; }
+  .document{ page-break-before:always; break-before:page; box-shadow:none; border-radius:0; border:none; }
+  .doc-body{ padding:16px 18px 12px !important; }
+  .table-shell{ overflow:visible !important; overflow-x:visible !important; margin:8px 0 14px !important; }
+  table.vocab-table{ min-width:0 !important; width:100% !important; box-shadow:none !important; table-layout:fixed !important; }
+  .lesson-banner{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:18px 22px !important; }
+  .lesson-banner h2{ font-size:22px !important; }
+  .section-head{ page-break-after:avoid !important; break-after:avoid-page !important; page-break-inside:avoid; break-inside:avoid; padding:10px 16px !important; margin:10px 0 8px !important; }
+  .section-head h3{ font-size:18px !important; }
+  .section-head::after{ font-size:36px !important; }
+  .exercise-banner{ page-break-after:avoid !important; break-after:avoid-page !important; padding:12px 18px !important; }
+  .exercise-banner h4{ font-size:14px !important; }
+  .exercise-block{ page-break-inside:auto; margin:14px 0 !important; }
+  .exercise-body{ padding:14px 16px !important; }
+  .exercise{ page-break-inside:avoid !important; break-inside:avoid !important; padding:12px 14px !important; margin-bottom:10px !important; }
+  .special-block{ page-break-inside:avoid !important; break-inside:avoid !important; }
+  .footer-card{ page-break-inside:avoid; break-inside:avoid; }
+  table.vocab-table thead{ display:table-header-group; }
+  table.vocab-table tbody{ display:table-row-group; }
+  table.vocab-table thead th{ padding:8px 8px !important; font-size:11px !important; }
+  table.vocab-table tr{ page-break-inside:avoid !important; break-inside:avoid !important; page-break-after:auto; }
+  table.vocab-table tbody td{ padding:10px 8px !important; font-size:11px !important; }
+  .vocab-wrapper{ gap:2px !important; }
+  .vocab-kanji{ font-size:17px !important; line-height:1.1 !important; }
+  .vocab-kanji rt{ font-size:9px !important; }
+  .vocab-hanviet{ font-size:9.5px !important; letter-spacing:0.8px !important; margin-top:2px !important; }
+  .vocab-pos{ font-size:8.5px !important; padding:1px 5px !important; margin-top:3px !important; }
+  .vocab-meaning{ font-size:11px !important; margin-top:4px !important; line-height:1.35 !important; }
+  .kanji-break, .wago-note, .katakana-origin{
+    padding:7px 9px !important; font-size:10.5px !important; line-height:1.5 !important;
+    page-break-inside:avoid !important; break-inside:avoid !important;
+  }
+  .kanji-break .kchar{ font-size:14px !important; }
+  .kanji-break .kreading{ font-size:9.5px !important; }
+  .kanji-break .combine{ margin-top:5px !important; padding-top:5px !important; }
+  .ex-box{ padding:8px 10px !important; page-break-inside:avoid !important; break-inside:avoid !important; }
+  .ex-jp{ font-size:11.5px !important; line-height:1.75 !important; margin-bottom:5px !important; }
+  .ex-jp rt{ font-size:8px !important; }
+  .ex-vn{ font-size:10.5px !important; line-height:1.45 !important; padding-top:4px !important; }
+  .ex-q{ page-break-inside:avoid; break-inside:avoid; font-size:11.5px !important; line-height:1.7 !important; padding:6px 0 !important; }
+  .choice-pool{ font-size:11.5px !important; padding:7px 11px !important; }
+  .multi-choice{ font-size:11px !important; }
+  .answer-toggle{ display:none !important; }
+  .answer-box{ display:block !important; page-break-inside:avoid; break-inside:avoid; font-size:11px !important; padding:10px 12px !important; }
+  .match-grid{ grid-template-columns:1fr 1fr !important; }
+  .match-item{ font-size:11px !important; padding:4px 6px !important; }
+  .word-formation-grid{ grid-template-columns:1fr 1fr !important; gap:8px !important; }
+  .wf-item{ padding:8px 10px !important; }
+  .wf-pattern{ font-size:13px !important; }
+  .wf-examples{ font-size:10.5px !important; }
+  .adv-jp{ font-size:13px !important; }
+  .adv-vn{ font-size:11px !important; }
+  .adv-ex{ font-size:10.5px !important; padding:4px 8px !important; }
+}
+
+
+.tts-btn{cursor:pointer;border:1px solid rgba(45,110,122,.35);background:rgba(95,163,178,.12);
+  border-radius:6px;font-size:.85em;line-height:1;margin-right:7px;padding:2px 6px;opacity:.78;
+  transition:.15s;vertical-align:middle;-webkit-user-select:none;user-select:none;}
+.tts-btn:hover{opacity:1;transform:scale(1.08);background:rgba(95,163,178,.25);}
+.tts-btn.playing{opacity:1;background:#2d6e7a;border-color:#2d6e7a;color:#fff;}
+</style>
+<style>
+:root{--tl-cream:#FBF6E8;--tl-ink:#1B3A6B;--tl-gold:#B89568;--tl-serif:'Cormorant Garamond',Georgia,serif;--tl-mono:'JetBrains Mono',ui-monospace,monospace}
+.tl-top{position:sticky;top:0;z-index:500;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 20px;background:rgba(251,246,232,0.93);backdrop-filter:blur(14px) saturate(160%);border-bottom:1px solid rgba(184,149,104,0.3)}
+.tl-brand{display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--tl-ink);min-width:0}
+.tl-brand img{width:36px;height:36px;border-radius:10px;flex-shrink:0}
+.tl-bn{font-family:var(--tl-serif);font-style:italic;font-size:18px;line-height:1}
+.tl-bc{font-family:var(--tl-mono);font-size:10px;letter-spacing:0.16em;color:var(--tl-gold);text-transform:uppercase;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tl-bc a{color:inherit;text-decoration:none}
+.tl-back{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:8px 14px;border:1px solid rgba(27,58,107,0.25);border-radius:999px;white-space:nowrap;flex-shrink:0}
+.tl-back:hover{background:var(--tl-ink);color:var(--tl-cream)}
+.tl-pager{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1000px;margin:8px auto 48px;padding:18px 24px;border-top:1px solid rgba(184,149,104,0.3)}
+.tl-pager a{font-family:var(--tl-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:var(--tl-ink);text-decoration:none;padding:9px 16px;border:1px solid rgba(27,58,107,0.22);border-radius:999px}
+.tl-pager a:hover{background:var(--tl-gold);border-color:var(--tl-gold);color:#fff}
+.tl-pager a.mid{background:var(--tl-ink);color:var(--tl-cream);border-color:var(--tl-ink)}
+.tl-pager span.dis{opacity:.3}
+@media print{.tl-top,.tl-pager{display:none}}
+</style>
+<style>:root{--paper:#FFFEFB!important;--paper-2:#FBF6E8!important;--surface:#F5EBD4!important;--surface-2:#EFE0C4!important;--callout:#FBF6E8!important;--accent:#1B3A6B!important;--accent-dark:#0F2547!important;--green:#1B3A6B!important;--navy:#1B3A6B!important;--accent-2:#B89568!important;--accent-3:#D4B98C!important;--teal:#8A6E47!important;--plum:#6a4a8a!important;--terra:#8A6E47!important;--line:#E5D6B8!important;--line-2:#EFE3C9!important;--correct:#2d7d4f!important;--wrong:#a23b5a!important;--gold:#B89568!important}
+.lesson-banner{background:linear-gradient(135deg,#1B3A6B 0%,#0F2547 100%)!important;color:#fff!important}
+.lesson-banner .lesson-sub,.lesson-banner .lesson-kicker,.lesson-banner .lesson-no{color:rgba(255,255,255,0.88)!important}
+.gc-num{background:linear-gradient(135deg,#1B3A6B,#2C5599)!important}
+.gc-label,.lbl-struct,.lbl-explain,.lbl-example{background:#B89568!important;color:#fff!important}</style>
+</head>
+<body>
+<nav class="tl-top"><a class="tl-brand" href="/"><img src="/icon-180.png" alt="Trí Lữ"><div><div class="tl-bn">Trí Lữ · Nihongo</div><div class="tl-bc"><a href="/jlpt.html">JLPT</a> · <a href="/jlpt/n2.html">N2</a> · <a href="../shinkanzen.html">Từ vựng</a> · Bài 8</div></div></a><a class="tl-back" href="../shinkanzen.html">← Danh sách bài</a></nav>
+<div class="page-shell">
+
+<article class="document" id="lesson-4-1">
+<div class="lesson-banner">
+  <span class="lesson-kicker">1課 — 旅行 ・ 交通</span>
+  <h2>Du lịch &amp; Giao thông</h2>
+  <div class="lesson-sub">旅行, 観光, 交通機関, 鉄道 (24 từ chủ đề)</div>
+</div>
+<div class="doc-body">
+
+<div class="section-head" data-mark="旅"><span class="section-kicker">4-1 · Từ vựng du lịch · 24 từ</span><h3>旅行 ・ 観光 ・ 交通</h3><span class="section-vn">Du lịch, tham quan và giao thông</span></div>
+<div class="table-shell"><table class="vocab-table"><thead><tr><th class="col-stt">STT</th><th class="col-vocab">Từ vựng</th><th class="col-explain">Phân tích / Nguồn gốc</th><th class="col-example">Câu ví dụ N2 &amp; Dịch</th></tr></thead><tbody>
+
+<tr><td class="col-stt">1</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>日<rt>にっ</rt></ruby><ruby>程<rt>てい</rt></ruby> / プラン / <ruby>座<rt>ざ</rt></ruby><ruby>席<rt>せき</rt></ruby></span><span class="vocab-hanviet">NHẬT TRÌNH / TỌA TỊCH</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Lịch trình / Plan / Chỗ ngồi</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">日程</span><span class="kreading">にってい</span> — <span class="kmean">lịch trình (đã học N2)</span></div><div><span class="kchar">座席</span><span class="kreading">ざせき</span> — <span class="kmean">ghế, chỗ ngồi</span></div><div class="combine"><strong>Cụm:</strong> 日程を決める (quyết định lịch trình), 座席を指定する (chọn chỗ ngồi).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="70bd794852">ハワイ<ruby>旅<rt>りょ</rt></ruby><ruby>行<rt>こう</rt></ruby>の<span class="target"><ruby>日<rt>にっ</rt></ruby><ruby>程<rt>てい</rt></ruby></span>を<ruby>家<rt>か</rt></ruby><ruby>族<rt>ぞく</rt></ruby>と<ruby>話<rt>はな</rt></ruby>し<ruby>合<rt>あ</rt></ruby>って<ruby>決<rt>き</rt></ruby>めた。</div><div class="ex-vn">Tôi đã bàn bạc với gia đình để quyết định lịch trình du lịch Hawaii.</div></div></td></tr>
+
+<tr><td class="col-stt">2</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>往<rt>おう</rt></ruby><ruby>復<rt>ふく</rt></ruby> / <ruby>片<rt>かた</rt></ruby><ruby>道<rt>みち</rt></ruby> / <ruby>航<rt>こう</rt></ruby><ruby>空<rt>くう</rt></ruby><ruby>券<rt>けん</rt></ruby></span><span class="vocab-hanviet">VÃNG PHỤC / PHIẾN ĐẠO / HÀNG KHÔNG QUYỂN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Khứ hồi / Một chiều / Vé máy bay</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">往復</span><span class="kreading">おうふく</span> — <span class="kmean">đi và về</span></div><div><span class="kchar">片道</span><span class="kreading">かたみち</span> — <span class="kmean">một chiều</span></div><div class="combine"><strong>Cặp đối:</strong> 往復 ↔ 片道. Cụm: 往復チケット (vé khứ hồi).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="2355e688e9"><span class="target"><ruby>往<rt>おう</rt></ruby><ruby>復<rt>ふく</rt></ruby></span>の<span class="target"><ruby>航<rt>こう</rt></ruby><ruby>空<rt>くう</rt></ruby><ruby>券<rt>けん</rt></ruby></span>のほうが<span class="target"><ruby>片<rt>かた</rt></ruby><ruby>道<rt>みち</rt></ruby></span>を<ruby>二<rt>に</rt></ruby><ruby>枚<rt>まい</rt></ruby><ruby>買<rt>か</rt></ruby>うよりも<ruby>安<rt>やす</rt></ruby>い。</div><div class="ex-vn">Vé máy bay khứ hồi thì rẻ hơn so với mua hai vé một chiều.</div></div></td></tr>
+
+<tr><td class="col-stt">3</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>免<rt>めん</rt></ruby><ruby>税<rt>ぜい</rt></ruby><ruby>店<rt>てん</rt></ruby></span><span class="vocab-hanviet">MIỄN THUẾ ĐIẾM</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Cửa hàng miễn thuế</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">免税</span><span class="kreading">めんぜい</span> — <span class="kmean">miễn thuế</span></div><div class="combine"><strong>Cụm:</strong> 免税店でお土産を買う (mua quà ở cửa hàng miễn thuế). 免税品 (hàng miễn thuế).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="0686ab9a22"><ruby>空<rt>くう</rt></ruby><ruby>港<rt>こう</rt></ruby>の<span class="target"><ruby>免<rt>めん</rt></ruby><ruby>税<rt>ぜい</rt></ruby><ruby>店<rt>てん</rt></ruby></span>で<ruby>化<rt>け</rt></ruby><ruby>粧<rt>しょう</rt></ruby><ruby>品<rt>ひん</rt></ruby>をまとめ<ruby>買<rt>が</rt></ruby>いした。</div><div class="ex-vn">Tôi đã mua gộp mỹ phẩm tại cửa hàng miễn thuế ở sân bay.</div></div></td></tr>
+
+<tr><td class="col-stt">4</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>団<rt>だん</rt></ruby><ruby>体<rt>たい</rt></ruby> / <ruby>個<rt>こ</rt></ruby><ruby>人<rt>じん</rt></ruby> / <ruby>宿<rt>しゅく</rt></ruby><ruby>泊<rt>はく</rt></ruby></span><span class="vocab-hanviet">ĐOÀN THỂ / CÁ NHÂN / TÚC BẠC</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Đoàn / Cá nhân / Lưu trú qua đêm</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">団体</span><span class="kreading">だんたい</span> — <span class="kmean">đoàn thể</span></div><div><span class="kchar">宿泊</span><span class="kreading">しゅくはく</span> — <span class="kmean">lưu trú, ở trọ</span></div><div class="combine"><strong>Cụm:</strong> 団体旅行 / 個人旅行 (du lịch đoàn / cá nhân), 宿泊 / 日帰り / 二泊三日.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="190cf2cc67"><span class="target"><ruby>団<rt>だん</rt></ruby><ruby>体<rt>たい</rt></ruby></span><ruby>旅<rt>りょ</rt></ruby><ruby>行<rt>こう</rt></ruby>は<ruby>安<rt>やす</rt></ruby>くて<ruby>便<rt>べん</rt></ruby><ruby>利<rt>り</rt></ruby>だが、<ruby>自<rt>じ</rt></ruby><ruby>由<rt>ゆう</rt></ruby><ruby>行<rt>こう</rt></ruby><ruby>動<rt>どう</rt></ruby>ができないという<ruby>欠<rt>けっ</rt></ruby><ruby>点<rt>てん</rt></ruby>がある。</div><div class="ex-vn">Du lịch theo đoàn rẻ và tiện nhưng có nhược điểm là không thể tự do hành động.</div></div></td></tr>
+
+<tr><td class="col-stt">5</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>別<rt>べっ</rt></ruby><ruby>荘<rt>そう</rt></ruby> / <ruby>滞<rt>たい</rt></ruby><ruby>在<rt>ざい</rt></ruby></span><span class="vocab-hanviet">BIỆT TRANG / TRỆ TẠI</span><span class="vocab-pos">Danh + Suru</span><span class="vocab-meaning">Biệt thự / Tạm trú, lưu lại</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">別荘</span><span class="kreading">べっそう</span> — <span class="kmean">biệt thự (nghỉ dưỡng)</span></div><div><span class="kchar">滞在</span><span class="kreading">たいざい</span> — <span class="kmean">lưu trú dài hạn</span></div><div class="combine"><strong>Cụm:</strong> 別荘に滞在する (lưu trú tại biệt thự). 滞在 dài hạn hơn 宿泊.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="e0dbe7fad8"><ruby>夏<rt>なつ</rt></ruby><ruby>休<rt>やす</rt></ruby>みは、<ruby>軽<rt>かる</rt></ruby><ruby>井<rt>い</rt></ruby><ruby>沢<rt>ざわ</rt></ruby>の<span class="target"><ruby>別<rt>べっ</rt></ruby><ruby>荘<rt>そう</rt></ruby></span>で<ruby>一<rt>いっ</rt></ruby><ruby>週<rt>しゅう</rt></ruby><ruby>間<rt>かん</rt></ruby><span class="target"><ruby>滞<rt>たい</rt></ruby><ruby>在<rt>ざい</rt></ruby></span>する<ruby>予<rt>よ</rt></ruby><ruby>定<rt>てい</rt></ruby>だ。</div><div class="ex-vn">Kỳ nghỉ hè tôi dự định lưu trú một tuần tại biệt thự ở Karuizawa.</div></div></td></tr>
+
+<tr><td class="col-stt">6</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>税<rt>ぜい</rt></ruby><ruby>関<rt>かん</rt></ruby> / パスポート / <ruby>通<rt>つう</rt></ruby><ruby>訳<rt>やく</rt></ruby></span><span class="vocab-hanviet">THUẾ QUAN / THÔNG DỊCH</span><span class="vocab-pos">Danh + Suru</span><span class="vocab-meaning">Hải quan / Hộ chiếu / Phiên dịch</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">税関</span><span class="kreading">ぜいかん</span> — <span class="kmean">hải quan</span></div><div><span class="kchar">通訳</span><span class="kreading">つうやく</span> — <span class="kmean">thông dịch (miệng)</span></div><div class="combine"><strong>Phân biệt:</strong> 通訳 (dịch miệng), 翻訳 (dịch viết). Cụm: 税関を通る (qua hải quan).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="fc3177c8d5"><ruby>海<rt>かい</rt></ruby><ruby>外<rt>がい</rt></ruby><ruby>出<rt>しゅっ</rt></ruby><ruby>張<rt>ちょう</rt></ruby>のとき、<span class="target"><ruby>通<rt>つう</rt></ruby><ruby>訳<rt>やく</rt></ruby></span>を<ruby>頼<rt>たの</rt></ruby>むことにした。</div><div class="ex-vn">Khi đi công tác nước ngoài, tôi đã quyết định nhờ phiên dịch.</div></div></td></tr>
+
+<tr><td class="col-stt">7</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>待<rt>ま</rt></ruby>ち<ruby>合<rt>あ</rt></ruby>わせる / <ruby>見<rt>み</rt></ruby><ruby>送<rt>おく</rt></ruby>る / <ruby>出<rt>で</rt></ruby><ruby>迎<rt>むか</rt></ruby>える</span><span class="vocab-hanviet">ĐÃI HỢP / KIẾN TỐNG / XUẤT NGHINH</span><span class="vocab-pos">Động từ</span><span class="vocab-meaning">Hẹn gặp / Tiễn / Đón</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">待ち合わせる</span><span class="kreading">まちあわせる</span> — <span class="kmean">hẹn nhau ở đâu đó</span></div><div class="combine"><strong>Cặp đối:</strong> 見送る (tiễn ai đi) ↔ 出迎える (đón ai về). 待ち合わせ thường ở 駅 (ga), カフェ.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="e9d2268d56"><ruby>友<rt>とも</rt></ruby><ruby>達<rt>だち</rt></ruby>を<ruby>空<rt>くう</rt></ruby><ruby>港<rt>こう</rt></ruby>で<span class="target"><ruby>出<rt>で</rt></ruby><ruby>迎<rt>むか</rt></ruby>えて</span>、<ruby>家<rt>いえ</rt></ruby>まで<ruby>連<rt>つ</rt></ruby>れて<ruby>帰<rt>かえ</rt></ruby>った。</div><div class="ex-vn">Tôi đã ra sân bay đón bạn và đưa về tận nhà.</div></div></td></tr>
+
+<tr><td class="col-stt">8</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>城<rt>しろ</rt></ruby> / <ruby>跡<rt>あと</rt></ruby> / <ruby>広<rt>ひろ</rt></ruby><ruby>場<rt>ば</rt></ruby></span><span class="vocab-hanviet">THÀNH / TÍCH / QUẢNG TRƯỜNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Lâu đài / Di tích / Quảng trường</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">城</span><span class="kreading">THÀNH · じょう / しろ</span> — <span class="kmean">thành lũy</span></div><div><span class="kchar">跡</span><span class="kreading">TÍCH · せき / あと</span> — <span class="kmean">dấu vết, di tích</span></div><div class="combine"><strong>Cụm:</strong> 城の跡 (di tích thành cổ), 広場 (quảng trường). Nhật có 名古屋城, 大阪城, 姫路城 nổi tiếng.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="c92bbeb690"><ruby>京<rt>きょう</rt></ruby><ruby>都<rt>と</rt></ruby><ruby>旅<rt>りょ</rt></ruby><ruby>行<rt>こう</rt></ruby>で<ruby>有<rt>ゆう</rt></ruby><ruby>名<rt>めい</rt></ruby>な<span class="target"><ruby>城<rt>しろ</rt></ruby></span>の<span class="target"><ruby>跡<rt>あと</rt></ruby></span>を<ruby>見<rt>み</rt></ruby><ruby>学<rt>がく</rt></ruby>してきた。</div><div class="ex-vn">Đi du lịch Kyoto, tôi đã tham quan di tích lâu đài nổi tiếng.</div></div></td></tr>
+
+<tr><td class="col-stt">9</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>名<rt>めい</rt></ruby><ruby>所<rt>しょ</rt></ruby> / <ruby>回<rt>まわ</rt></ruby>る / <ruby>巡<rt>めぐ</rt></ruby>る</span><span class="vocab-hanviet">DANH SỞ / HỒI / TUẦN</span><span class="vocab-pos">Danh + Động từ</span><span class="vocab-meaning">Danh thắng / Dạo quanh / Tham quan vòng</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">名所</span><span class="kreading">めいしょ</span> — <span class="kmean">danh lam thắng cảnh</span></div><div><span class="kchar">巡</span><span class="kreading">TUẦN · じゅん / めぐ(る)</span> — <span class="kmean">tuần hoàn, đi quanh</span></div><div class="combine"><strong>Cụm:</strong> 名所を回る (dạo qua danh thắng), 名所を巡る (tham quan vòng các danh thắng). 巡る trang trọng hơn.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="bd6a5b0ae5">バスツアーで<ruby>市<rt>し</rt></ruby><ruby>内<rt>ない</rt></ruby>の<span class="target"><ruby>名<rt>めい</rt></ruby><ruby>所<rt>しょ</rt></ruby></span>を<span class="target"><ruby>巡<rt>めぐ</rt></ruby>った</span>。</div><div class="ex-vn">Trên tour xe buýt, tôi đã đi tham quan các danh thắng trong thành phố.</div></div></td></tr>
+
+<tr><td class="col-stt">10</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>首<rt>しゅ</rt></ruby><ruby>都<rt>と</rt></ruby> / <ruby>都<rt>と</rt></ruby><ruby>心<rt>しん</rt></ruby> / <ruby>地<rt>ち</rt></ruby><ruby>方<rt>ほう</rt></ruby></span><span class="vocab-hanviet">THỦ ĐÔ / ĐÔ TÂM / ĐỊA PHƯƠNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Thủ đô / Trung tâm TP / Địa phương</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">首都</span><span class="kreading">しゅと</span> — <span class="kmean">thủ đô</span></div><div><span class="kchar">都心</span><span class="kreading">としん</span> — <span class="kmean">trung tâm thành phố</span></div><div class="combine"><strong>Phân biệt 都市:</strong> 首都 (thủ đô đất nước - Tokyo). 都心 (trung tâm thành phố - 新宿, 渋谷). 地方 (vùng quê).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="a08c5bed8d"><span class="target"><ruby>都<rt>と</rt></ruby><ruby>心<rt>しん</rt></ruby></span>の<ruby>家<rt>か</rt></ruby><ruby>賃<rt>ちん</rt></ruby>は<span class="target"><ruby>地<rt>ち</rt></ruby><ruby>方<rt>ほう</rt></ruby></span>と<ruby>比<rt>くら</rt></ruby>べてはるかに<ruby>高<rt>たか</rt></ruby>い。</div><div class="ex-vn">Giá thuê nhà ở trung tâm thành phố cao hơn nhiều so với địa phương.</div></div></td></tr>
+
+<tr><td class="col-stt">11</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>活<rt>かっ</rt></ruby><ruby>気<rt>き</rt></ruby> / <ruby>混<rt>こん</rt></ruby><ruby>雑<rt>ざつ</rt></ruby> / <ruby>大<rt>おお</rt></ruby><ruby>通<rt>どお</rt></ruby>り</span><span class="vocab-hanviet">HOẠT KHÍ / HỖN TẠP / ĐẠI THÔNG</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Sức sống / Tắc nghẽn / Đại lộ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">活気</span><span class="kreading">かっき</span> — <span class="kmean">sức sống, sôi động</span></div><div><span class="kchar">混雑</span><span class="kreading">こんざつ</span> — <span class="kmean">đông đúc, tắc</span></div><div class="combine"><strong>Cụm:</strong> 活気のある町 (thành phố sôi động), 混雑した大通り (đại lộ đông đúc).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="712d081694">この<ruby>町<rt>まち</rt></ruby>は<ruby>朝<rt>あさ</rt></ruby>から<ruby>晩<rt>ばん</rt></ruby>まで<span class="target"><ruby>活<rt>かっ</rt></ruby><ruby>気<rt>き</rt></ruby></span>に<ruby>満<rt>み</rt></ruby>ちている。</div><div class="ex-vn">Thị trấn này tràn đầy sức sống từ sáng tới tối.</div></div></td></tr>
+
+<tr><td class="col-stt">12</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>沿<rt>ぞ</rt></ruby>い / <ruby>交<rt>こう</rt></ruby><ruby>通<rt>つう</rt></ruby><ruby>機<rt>き</rt></ruby><ruby>関<rt>かん</rt></ruby></span><span class="vocab-hanviet">DIỄN / GIAO THÔNG CƠ QUAN</span><span class="vocab-pos">Hậu tố / Danh từ</span><span class="vocab-meaning">Dọc theo / Phương tiện giao thông</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">沿</span><span class="kreading">DIỄN · ぞ(い) / えん</span> — <span class="kmean">dọc theo</span></div><div class="combine"><strong>Cấu trúc:</strong> Danh từ + 沿い = dọc theo. 川沿いの道 (đường dọc sông), 線路沿い (dọc đường tàu).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="edf098f18a">この<ruby>町<rt>まち</rt></ruby>は<span class="target"><ruby>交<rt>こう</rt></ruby><ruby>通<rt>つう</rt></ruby><ruby>機<rt>き</rt></ruby><ruby>関<rt>かん</rt></ruby></span>が<ruby>発<rt>はっ</rt></ruby><ruby>達<rt>たつ</rt></ruby>していて、<ruby>移<rt>い</rt></ruby><ruby>動<rt>どう</rt></ruby>が<ruby>非<rt>ひ</rt></ruby><ruby>常<rt>じょう</rt></ruby>に<ruby>便<rt>べん</rt></ruby><ruby>利<rt>り</rt></ruby>だ。</div><div class="ex-vn">Thành phố này có hệ thống phương tiện giao thông phát triển nên việc di chuyển rất tiện lợi.</div></div></td></tr>
+
+<tr><td class="col-stt">13</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>鉄<rt>てつ</rt></ruby><ruby>道<rt>どう</rt></ruby> / <ruby>高<rt>こう</rt></ruby><ruby>速<rt>そく</rt></ruby> / モノレール</span><span class="vocab-hanviet">THIẾT ĐẠO / CAO TỐC</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Đường sắt / Cao tốc / Đường ray đơn</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">鉄道</span><span class="kreading">てつどう</span> — <span class="kmean">đường sắt</span></div><div class="combine"><strong>Hệ thống giao thông Nhật:</strong> 鉄道 (đường sắt - JR), 高速バス (xe khách đường dài), モノレール (đường ray đơn - sân bay Haneda).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="b1b8256c0a"><ruby>日<rt>に</rt></ruby><ruby>本<rt>ほん</rt></ruby>の<span class="target"><ruby>鉄<rt>てつ</rt></ruby><ruby>道<rt>どう</rt></ruby></span>は<ruby>正<rt>せい</rt></ruby><ruby>確<rt>かく</rt></ruby>さで<ruby>世<rt>せ</rt></ruby><ruby>界<rt>かい</rt></ruby><ruby>的<rt>てき</rt></ruby>に<ruby>評<rt>ひょう</rt></ruby><ruby>価<rt>か</rt></ruby>されている。</div><div class="ex-vn">Đường sắt Nhật được đánh giá cao trên thế giới về tính chính xác.</div></div></td></tr>
+
+<tr><td class="col-stt">14</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>停<rt>てい</rt></ruby><ruby>留<rt>りゅう</rt></ruby><ruby>所<rt>じょ</rt></ruby> / <ruby>道<rt>みち</rt></ruby>に<ruby>迷<rt>まよ</rt></ruby>う</span><span class="vocab-hanviet">ĐÌNH LƯU SỞ / ĐẠO MÊ</span><span class="vocab-pos">Danh / Cụm động</span><span class="vocab-meaning">Bến xe buýt / Lạc đường</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">停留所</span><span class="kreading">ていりゅうじょ</span> — <span class="kmean">bến/trạm xe buýt</span></div><div class="combine"><strong>Phân biệt:</strong> バス停 (đời thường) = 停留所 (trang trọng). 道に迷う (lạc đường - đã học).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="62410e002d">バス<span class="target"><ruby>停<rt>てい</rt></ruby><ruby>留<rt>りゅう</rt></ruby><ruby>所<rt>じょ</rt></ruby></span>に<ruby>着<rt>つ</rt></ruby>くまで、<ruby>道<rt>みち</rt></ruby>に<ruby>迷<rt>まよ</rt></ruby>って30<ruby>分<rt>ぷん</rt></ruby>もかかった。</div><div class="ex-vn">Tôi đã lạc đường mất tới 30 phút mới đến được bến xe buýt.</div></div></td></tr>
+
+<tr><td class="col-stt">15</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>発<rt>はっ</rt></ruby><ruby>車<rt>しゃ</rt></ruby> / <ruby>停<rt>てい</rt></ruby><ruby>車<rt>しゃ</rt></ruby> / <ruby>乗<rt>じょう</rt></ruby><ruby>車<rt>しゃ</rt></ruby> / <ruby>下<rt>げ</rt></ruby><ruby>車<rt>しゃ</rt></ruby></span><span class="vocab-hanviet">PHÁT XA / ĐÌNH XA / THỪA XA / HẠ XA</span><span class="vocab-pos pos-suru">Danh + する</span><span class="vocab-meaning">Khởi hành / Dừng xe / Lên xe / Xuống xe</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">発車</span><span class="kreading">はっしゃ</span> — <span class="kmean">tàu khởi hành</span></div><div><span class="kchar">下車</span><span class="kreading">げしゃ</span> — <span class="kmean">xuống xe</span></div><div class="combine"><strong>Cặp:</strong> 発車 ↔ 停車 (khởi hành / dừng), 乗車 ↔ 下車 (lên / xuống). Dùng cho tàu xe trang trọng.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="b58ae4186a"><ruby>新<rt>しん</rt></ruby><ruby>幹<rt>かん</rt></ruby><ruby>線<rt>せん</rt></ruby>の<span class="target"><ruby>発<rt>はっ</rt></ruby><ruby>車<rt>しゃ</rt></ruby></span><ruby>時<rt>じ</rt></ruby><ruby>刻<rt>こく</rt></ruby>は<ruby>分<rt>ふん</rt></ruby><ruby>単<rt>たん</rt></ruby><ruby>位<rt>い</rt></ruby>で<ruby>正<rt>せい</rt></ruby><ruby>確<rt>かく</rt></ruby>だ。</div><div class="ex-vn">Giờ khởi hành của Shinkansen chính xác đến từng phút.</div></div></td></tr>
+
+<tr><td class="col-stt">16</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>通<rt>つう</rt></ruby><ruby>学<rt>がく</rt></ruby> / <ruby>通<rt>つう</rt></ruby><ruby>勤<rt>きん</rt></ruby> / <ruby>線<rt>せん</rt></ruby><ruby>路<rt>ろ</rt></ruby> / ホーム</span><span class="vocab-hanviet">THÔNG HỌC / THÔNG CẦN / TUYẾN LỘ</span><span class="vocab-pos">Danh + Suru</span><span class="vocab-meaning">Đi học / Đi làm / Đường ray / Sân ga</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">線路</span><span class="kreading">せんろ</span> — <span class="kmean">đường ray</span></div><div class="combine"><strong>Cụm:</strong> 通学/通勤する (đã học N3). 線路を渡る (qua đường ray), ホームで待つ (đợi trên sân ga).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="9b3bcfdc9f"><ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby>1<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>かけて<span class="target"><ruby>通<rt>つう</rt></ruby><ruby>勤<rt>きん</rt></ruby></span>するのは、<ruby>体<rt>たい</rt></ruby><ruby>力<rt>りょく</rt></ruby><ruby>的<rt>てき</rt></ruby>にきつい。</div><div class="ex-vn">Đi làm mỗi ngày mất 1 tiếng quả là vất vả về thể chất.</div></div></td></tr>
+
+<tr><td class="col-stt">17</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>踏<rt>ふみ</rt></ruby><ruby>切<rt>きり</rt></ruby> / <ruby>横<rt>おう</rt></ruby><ruby>断<rt>だん</rt></ruby></span><span class="vocab-hanviet">ĐẠP THIẾT / HOÀNH ĐOẠN</span><span class="vocab-pos pos-suru">Danh + Suru</span><span class="vocab-meaning">Đường ray có thanh chắn / Băng qua</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">踏切</span><span class="kreading">ふみきり</span> — <span class="kmean">điểm cắt ngang đường ray</span></div><div><span class="kchar">横断</span><span class="kreading">おうだん</span> — <span class="kmean">băng qua</span></div><div class="combine"><strong>Cụm:</strong> 踏切を横断する (băng qua điểm cắt đường ray). 踏切が鳴る (chuông đường ray reo).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="93ab8b4011"><span class="target"><ruby>踏<rt>ふみ</rt></ruby><ruby>切<rt>きり</rt></ruby></span>では、<ruby>電<rt>でん</rt></ruby><ruby>車<rt>しゃ</rt></ruby>が<ruby>通<rt>とお</rt></ruby>るまで<ruby>絶<rt>ぜっ</rt></ruby><ruby>対<rt>たい</rt></ruby>に<ruby>渡<rt>わた</rt></ruby>ってはいけない。</div><div class="ex-vn">Tại điểm cắt đường ray, tuyệt đối không được băng qua cho đến khi tàu chạy hết.</div></div></td></tr>
+
+<tr><td class="col-stt">18</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>定<rt>てい</rt></ruby><ruby>期<rt>き</rt></ruby><ruby>券<rt>けん</rt></ruby> / <ruby>回<rt>かい</rt></ruby><ruby>数<rt>すう</rt></ruby><ruby>券<rt>けん</rt></ruby></span><span class="vocab-hanviet">ĐỊNH KỲ / HỒI SỐ QUYỂN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Vé tháng / Tập vé nhiều lần</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">定期券</span><span class="kreading">ていきけん</span> — <span class="kmean">vé định kỳ (tháng/3tháng/6tháng)</span></div><div class="combine"><strong>Vé tàu Nhật:</strong> 定期券 (tiết kiệm cho đi làm/học), 回数券 (11 vé giá 10), IC カード (Suica, Pasmo).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="6fd31482c5">6か<ruby>月<rt>げつ</rt></ruby><span class="target"><ruby>定<rt>てい</rt></ruby><ruby>期<rt>き</rt></ruby><ruby>券<rt>けん</rt></ruby></span>を<ruby>買<rt>か</rt></ruby>うと、1か<ruby>月<rt>げつ</rt></ruby><ruby>分<rt>ぶん</rt></ruby>近<ruby>く<rt></rt></ruby><ruby>得<rt>とく</rt></ruby>する。</div><div class="ex-vn">Mua vé tháng kỳ hạn 6 tháng thì lợi gần một tháng tiền.</div></div></td></tr>
+
+<tr><td class="col-stt">19</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>上<rt>のぼ</rt></ruby>り / <ruby>下<rt>くだ</rt></ruby>り</span><span class="vocab-hanviet">THƯỢNG / HẠ</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Tàu đi trung tâm / Tàu đi tỉnh</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">上り</span><span class="kreading">のぼり</span> — <span class="kmean">tàu đi về thủ đô/trung tâm</span></div><div><span class="kchar">下り</span><span class="kreading">くだり</span> — <span class="kmean">tàu rời thủ đô/trung tâm</span></div><div class="combine"><strong>Quy ước Nhật:</strong> 上り = tàu hướng về Tokyo. 下り = tàu rời Tokyo về địa phương.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="59ea6b74bc"><ruby>朝<rt>あさ</rt></ruby>のラッシュアワーは、<span class="target"><ruby>上<rt>のぼ</rt></ruby>り</span><ruby>電<rt>でん</rt></ruby><ruby>車<rt>しゃ</rt></ruby>が<ruby>特<rt>とく</rt></ruby>に<ruby>混<rt>こ</rt></ruby>む。</div><div class="ex-vn">Vào giờ cao điểm buổi sáng, tàu hướng về trung tâm đặc biệt đông.</div></div></td></tr>
+
+<tr><td class="col-stt">20</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji">ラッシュアワー / <ruby>避<rt>さ</rt></ruby>ける</span><span class="vocab-hanviet">TỴ</span><span class="vocab-pos">Danh + Động từ</span><span class="vocab-meaning">Giờ cao điểm / Tránh</span></div></td><td class="col-explain"><div class="katakana-origin"><strong>Nguồn gốc:</strong> ラッシュアワー (rush hour). Cụm: ひどいラッシュアワーを避ける (tránh giờ cao điểm khủng khiếp). 避ける đã học N2.</div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="ab59521b4e"><span class="target">ラッシュアワー</span>を<span class="target"><ruby>避<rt>さ</rt></ruby>ける</span>ために、<ruby>朝<rt>あさ</rt></ruby>5<ruby>時<rt>じ</rt></ruby>に<ruby>家<rt>いえ</rt></ruby>を<ruby>出<rt>で</rt></ruby>るようにしている。</div><div class="ex-vn">Để tránh giờ cao điểm, tôi luôn cố gắng ra khỏi nhà từ 5 giờ sáng.</div></div></td></tr>
+
+<tr><td class="col-stt">21</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>乗<rt>じょう</rt></ruby><ruby>客<rt>きゃく</rt></ruby> / <ruby>定<rt>てい</rt></ruby><ruby>員<rt>いん</rt></ruby> / <ruby>超<rt>こ</rt></ruby>える</span><span class="vocab-hanviet">THỪA KHÁCH / ĐỊNH VIÊN / SIÊU</span><span class="vocab-pos">Danh + Động từ</span><span class="vocab-meaning">Hành khách / Sức chứa / Vượt quá</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">乗客</span><span class="kreading">じょうきゃく</span> — <span class="kmean">hành khách</span></div><div><span class="kchar">定員</span><span class="kreading">ていいん</span> — <span class="kmean">sức chứa quy định</span></div><div class="combine"><strong>Cụm:</strong> 乗客が定員を超える (lượng khách vượt sức chứa).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="9d67ab3623"><span class="target"><ruby>乗<rt>じょう</rt></ruby><ruby>客<rt>きゃく</rt></ruby></span>が<span class="target"><ruby>定<rt>てい</rt></ruby><ruby>員<rt>いん</rt></ruby></span>を<span class="target"><ruby>超<rt>こ</rt></ruby>えて</span>、<ruby>電<rt>でん</rt></ruby><ruby>車<rt>しゃ</rt></ruby>のドアが<ruby>閉<rt>し</rt></ruby>まらなかった。</div><div class="ex-vn">Lượng hành khách vượt sức chứa khiến cửa tàu không đóng được.</div></div></td></tr>
+
+<tr><td class="col-stt">22</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>発<rt>た</rt></ruby>つ / <ruby>到<rt>とう</rt></ruby><ruby>着<rt>ちゃく</rt></ruby></span><span class="vocab-hanviet">PHÁT / ĐẾN TRƯỚC</span><span class="vocab-pos">Động từ / Suru</span><span class="vocab-meaning">Xuất phát / Đến nơi</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">発</span><span class="kreading">PHÁT · はつ / た(つ)</span> — <span class="kmean">xuất phát</span></div><div><span class="kchar">到着</span><span class="kreading">とうちゃく</span> — <span class="kmean">đến nơi</span></div><div class="combine"><strong>Cụm:</strong> 出発する ・ 発つ (xuất phát), 到着する ・ 着く (đến nơi). 東京発香港経由ロンドン行き (đi từ Tokyo qua Hồng Kông đến London).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="bb51b35a28"><ruby>飛<rt>ひ</rt></ruby><ruby>行<rt>こう</rt></ruby><ruby>機<rt>き</rt></ruby>が<ruby>無<rt>ぶ</rt></ruby><ruby>事<rt>じ</rt></ruby>に<span class="target"><ruby>到<rt>とう</rt></ruby><ruby>着<rt>ちゃく</rt></ruby></span>したと<ruby>聞<rt>き</rt></ruby>いて、ほっとした。</div><div class="ex-vn">Tôi đã thở phào khi nghe máy bay đã đến nơi an toàn.</div></div></td></tr>
+
+<tr><td class="col-stt">23</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>信<rt>しん</rt></ruby><ruby>号<rt>ごう</rt></ruby> / <ruby>無<rt>む</rt></ruby><ruby>視<rt>し</rt></ruby></span><span class="vocab-hanviet">TÍN HIỆU / VÔ THỊ</span><span class="vocab-pos">Danh + Suru</span><span class="vocab-meaning">Đèn tín hiệu / Phớt lờ</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">無視</span><span class="kreading">むし</span> — <span class="kmean">phớt lờ (đã học N3)</span></div><div class="combine"><strong>Cụm:</strong> 信号を無視する (vượt đèn đỏ - đã học N3). Lưu ý dùng trong văn cảnh giao thông.</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="08e0879c98"><span class="target"><ruby>信<rt>しん</rt></ruby><ruby>号<rt>ごう</rt></ruby></span>を<span class="target"><ruby>無<rt>む</rt></ruby><ruby>視<rt>し</rt></ruby></span>した<ruby>運<rt>うん</rt></ruby><ruby>転<rt>てん</rt></ruby><ruby>手<rt>しゅ</rt></ruby>が、<ruby>大<rt>たい</rt></ruby><ruby>事<rt>じ</rt></ruby><ruby>故<rt>こ</rt></ruby>を<ruby>引<rt>ひ</rt></ruby>き<ruby>起<rt>お</rt></ruby>こした。</div><div class="ex-vn">Tài xế phớt lờ đèn giao thông đã gây ra tai nạn nghiêm trọng.</div></div></td></tr>
+
+<tr><td class="col-stt">24</td><td class="col-vocab"><div class="vocab-wrapper"><span class="vocab-kanji"><ruby>売<rt>ばい</rt></ruby><ruby>店<rt>てん</rt></ruby> / <ruby>便<rt>べん</rt></ruby></span><span class="vocab-hanviet">BÁN ĐIẾM / TIỆN</span><span class="vocab-pos">Danh từ</span><span class="vocab-meaning">Cửa hàng (ga, sân bay) / Sự tiện lợi</span></div></td><td class="col-explain"><div class="kanji-break"><div><span class="kchar">売店</span><span class="kreading">ばいてん</span> — <span class="kmean">cửa hàng nhỏ trong nhà ga, sân bay</span></div><div class="combine"><strong>Cụm:</strong> 交通の便がいい (giao thông thuận tiện). 便 còn nghĩa "chuyến" (バス便, 航空便).</div></div></td><td class="col-example"><div class="ex-box"><div class="ex-jp" data-tts="6c5f54ada9">この<ruby>町<rt>まち</rt></ruby>は<ruby>交<rt>こう</rt></ruby><ruby>通<rt>つう</rt></ruby>の<span class="target"><ruby>便<rt>べん</rt></ruby></span>がよく、<ruby>住<rt>す</rt></ruby>みやすい。</div><div class="ex-vn">Thị trấn này giao thông thuận tiện nên dễ sống.</div></div></td></tr>
+
+</tbody></table></div>
+
+<div class="special-block">
+  <div class="special-banner"><div class="special-icon">語</div><div><h4>語形成 — Cấu tạo từ</h4></div></div>
+  <div class="special-body">
+    <div class="word-formation-grid">
+      <div class="wf-item">
+        <div class="wf-pattern">~<ruby>券<rt>けん</rt></ruby> <span class="ptype">"vé"</span></div>
+        <div class="wf-examples"><span class="wfx"><span class="wfx-jp"><ruby>航<rt>こう</rt></ruby><ruby>空<rt>くう</rt></ruby><ruby>券<rt>けん</rt></ruby></span> <span class="wfx-vn">(vé máy bay)</span></span><span class="wfx"><span class="wfx-jp"><ruby>定<rt>てい</rt></ruby><ruby>期<rt>き</rt></ruby><ruby>券<rt>けん</rt></ruby></span> <span class="wfx-vn">(vé tháng)</span></span><span class="wfx"><span class="wfx-jp"><ruby>回<rt>かい</rt></ruby><ruby>数<rt>すう</rt></ruby><ruby>券<rt>けん</rt></ruby></span> <span class="wfx-vn">(vé tập)</span></span></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-pattern">~<ruby>沿<rt>ぞ</rt></ruby>い <span class="ptype">"dọc theo"</span></div>
+        <div class="wf-examples"><span class="wfx"><span class="wfx-jp"><ruby>川<rt>かわ</rt></ruby><ruby>沿<rt>ぞ</rt></ruby>い</span> <span class="wfx-vn">(dọc sông)</span></span><span class="wfx"><span class="wfx-jp"><ruby>線<rt>せん</rt></ruby><ruby>路<rt>ろ</rt></ruby><ruby>沿<rt>ぞ</rt></ruby>い</span> <span class="wfx-vn">(dọc đường ray)</span></span></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-pattern">~<ruby>機<rt>き</rt></ruby><ruby>関<rt>かん</rt></ruby> <span class="ptype">"cơ quan, hệ thống"</span></div>
+        <div class="wf-examples"><span class="wfx"><span class="wfx-jp"><ruby>交<rt>こう</rt></ruby><ruby>通<rt>つう</rt></ruby><ruby>機<rt>き</rt></ruby><ruby>関<rt>かん</rt></ruby></span> <span class="wfx-vn">(giao thông)</span></span><span class="wfx"><span class="wfx-jp"><ruby>教<rt>きょう</rt></ruby><ruby>育<rt>いく</rt></ruby><ruby>機<rt>き</rt></ruby><ruby>関<rt>かん</rt></ruby></span> <span class="wfx-vn">(giáo dục)</span></span></div>
+      </div>
+      <div class="wf-item">
+        <div class="wf-pattern">~<ruby>発<rt>はつ</rt></ruby> / ~<ruby>行<rt>い</rt></ruby>き <span class="ptype">"xuất phát từ / đi đến"</span></div>
+        <div class="wf-examples"><span class="wfx"><span class="wfx-jp"><ruby>東<rt>とう</rt></ruby><ruby>京<rt>きょう</rt></ruby><ruby>発<rt>はつ</rt></ruby></span> <span class="wfx-vn">(xuất phát Tokyo)</span></span><span class="wfx"><span class="wfx-jp">ロンドン<ruby>行<rt>い</rt></ruby>き</span> <span class="wfx-vn">(đi London)</span></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="special-block">
+  <div class="special-banner adv"><div class="special-icon">副</div><div><h4>副詞 ・ 例文 — Phó từ &amp; Cụm biểu thị</h4></div></div>
+  <div class="special-body">
+    <div class="adverb-grid">
+      <div class="adv-item">
+        <div class="adv-head"><span class="adv-jp"><ruby>中<rt>なか</rt></ruby>でも</span><span class="adv-vn">Đặc biệt là, nổi bật là</span></div>
+        <div class="adv-ex" data-tts="4d62b1f2af">アジア<ruby>諸<rt>しょ</rt></ruby><ruby>国<rt>こく</rt></ruby>の<ruby>中<rt>なか</rt></ruby>でも、<span class="target">中でも</span>タイは<ruby>観<rt>かん</rt></ruby><ruby>光<rt>こう</rt></ruby><ruby>地<rt>ち</rt></ruby>として<ruby>人<rt>にん</rt></ruby><ruby>気<rt>き</rt></ruby>が<ruby>高<rt>たか</rt></ruby>い。<span class="adv-ex-vn">Trong các nước châu Á, đặc biệt là Thái Lan rất được ưa chuộng làm điểm du lịch.</span></div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-head"><span class="adv-jp"><ruby>既<rt>すで</rt></ruby>に</span><span class="adv-vn">Đã... rồi (trước rồi)</span></div>
+        <div class="adv-ex" data-tts="f9cb6c1251"><ruby>駅<rt>えき</rt></ruby>に<ruby>着<rt>つ</rt></ruby>いた<ruby>時<rt>とき</rt></ruby>、<ruby>電<rt>でん</rt></ruby><ruby>車<rt>しゃ</rt></ruby>は<span class="target">既に</span><ruby>出<rt>しゅっ</rt></ruby><ruby>発<rt>ぱつ</rt></ruby>してしまっていた。<span class="adv-ex-vn">Khi tôi đến ga thì tàu đã khởi hành mất rồi.</span></div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-head"><span class="adv-jp"><ruby>何<rt>なん</rt></ruby>とか</span><span class="adv-vn">Bằng cách nào đó, cuối cùng cũng</span></div>
+        <div class="adv-ex" data-tts="f07c3f93f1">タクシーで<span class="target">何とか</span><ruby>会<rt>かい</rt></ruby><ruby>議<rt>ぎ</rt></ruby>に<ruby>間<rt>ま</rt></ruby>に<ruby>合<rt>あ</rt></ruby>った。<span class="adv-ex-vn">Bằng cách bắt taxi, cuối cùng tôi cũng kịp giờ họp.</span></div>
+      </div>
+      <div class="adv-item">
+        <div class="adv-head"><span class="adv-jp">たった</span><span class="adv-vn">Chỉ vỏn vẹn</span></div>
+        <div class="adv-ex" data-tts="540ae50bbd">3<ruby>泊<rt>ぱく</rt></ruby>5<ruby>日<rt>か</rt></ruby>の<ruby>旅<rt>たび</rt></ruby>で、<span class="target">たった</span>2<ruby>万<rt>まん</rt></ruby><ruby>円<rt>えん</rt></ruby>しかかからなかった。<span class="adv-ex-vn">Chuyến đi 5 ngày 3 đêm mà chỉ vỏn vẹn tốn 2 vạn yên.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="exercise-block">
+  <div class="exercise-banner"><div class="exercise-icon">練</div><div><h4>練習 — Bài tập tổng hợp 4.1</h4></div></div>
+  <div class="exercise-body">
+    <div class="exercise">
+      <div class="exercise-title"><span class="ex-no">問題 1</span>文脈規定</div>
+      <div class="choice-pool"><strong>選択肢:</strong> 往復 / 滞在 / 出迎え / 通勤 / 信号 / 到着</div>
+      <div class="ex-q"><span class="qnum">(1)</span><ruby>毎<rt>まい</rt></ruby><ruby>日<rt>にち</rt></ruby>1<ruby>時<rt>じ</rt></ruby><ruby>間<rt>かん</rt></ruby>かけて <span class="blank" data-ans="通勤">　　　　</span> している。</div>
+      <div class="ex-q"><span class="qnum">(2)</span> <span class="blank" data-ans="信号">　　　　</span> を<ruby>無<rt>む</rt></ruby><ruby>視<rt>し</rt></ruby>すると<ruby>大<rt>たい</rt></ruby><ruby>事<rt>じ</rt></ruby><ruby>故<rt>こ</rt></ruby>になる。</div>
+      <div class="ex-q"><span class="qnum">(3)</span> <span class="blank" data-ans="往復">　　　　</span> チケットのほうが<ruby>安<rt>やす</rt></ruby>い。</div>
+      <div class="ex-q"><span class="qnum">(4)</span><ruby>友<rt>とも</rt></ruby><ruby>達<rt>だち</rt></ruby>を<ruby>空<rt>くう</rt></ruby><ruby>港<rt>こう</rt></ruby>に <span class="blank" data-ans="出迎え">　　　　</span> に<ruby>行<rt>い</rt></ruby>く。</div>
+      <div class="ex-q"><span class="qnum">(5)</span><ruby>無<rt>ぶ</rt></ruby><ruby>事<rt>じ</rt></ruby>に<ruby>目<rt>もく</rt></ruby><ruby>的<rt>てき</rt></ruby><ruby>地<rt>ち</rt></ruby>に <span class="blank" data-ans="到着">　　　　</span> した。</div>
+      <div class="ex-q"><span class="qnum">(6)</span><ruby>軽<rt>かる</rt></ruby><ruby>井<rt>い</rt></ruby><ruby>沢<rt>ざわ</rt></ruby>の<ruby>別<rt>べっ</rt></ruby><ruby>荘<rt>そう</rt></ruby>で<ruby>一<rt>いっ</rt></ruby><ruby>週<rt>しゅう</rt></ruby><ruby>間<rt>かん</rt></ruby> <span class="blank" data-ans="滞在">　　　　</span> する。</div>
+      <button class="answer-toggle" onclick="toggleAns(this)">Hiện đáp án tổng</button>
+      <div class="answer-box"><strong>Đáp án:</strong> (1) 通勤 — (2) 信号 — (3) 往復 — (4) 出迎え — (5) 到着 — (6) 滞在</div>
+    </div>
+  </div>
+</div>
+
+</div>
+</article>
+</div>
+<nav class="tl-pager"><a href="bai-07.html">← Bài 7</a><a class="mid" href="../shinkanzen.html">▦ Danh sách bài</a><a href="bai-09.html">Bài 9 →</a></nav>
+<script>
+function toggleAns(btn){
+  var box = btn.nextElementSibling;
+  if (box && box.classList.contains('answer-box')){
+    box.classList.toggle('show');
+    btn.textContent = box.classList.contains('show') ? 'Ẩn đáp án' : 'Hiện đáp án';
+  }
+}
+document.querySelectorAll('.blank').forEach(function(b){
+  b.title = 'Bấm để hiện đáp án';
+  b.addEventListener('click', function(){
+    if (this.classList.contains('shown')){
+      this.classList.remove('shown');
+      this.textContent = '　　　　';
+    } else {
+      this.classList.add('shown');
+      this.textContent = this.dataset.ans;
+    }
+  });
+});
+
+;
+
+/* ==== Cấu hình audio TTS ==== */
+window.TTS_BASE = window.TTS_BASE || 'audio/';   // đổi thành đường dẫn host MP3 của bạn, ví dụ '/static/n2/audio/'
+(function(){
+  var SUP = ('speechSynthesis' in window);
+  function jtext(el){
+    var c=el.cloneNode(true);
+    c.querySelectorAll('rt, rp, .adv-ex-vn, .tts-btn').forEach(function(n){n.remove();});
+    var s=(c.textContent||'');
+    s=s.replace(/[①-⓿]/g,' ').replace(/^[\s0-9().、\-]+/,'');
+    return s.replace(/\s+/g,' ').trim();
+  }
+  /* giọng dự phòng (khi thiếu file MP3): chọn giọng ja tốt nhất, tránh eSpeak */
+  var jaVoice=null;
+  function rank(v){var n=((v.name||'')+' '+(v.voiceURI||'')).toLowerCase(),s=0;
+    if(/natural|neural|enhanced|premium|wavenet/.test(n))s+=100;
+    if(/google/.test(n))s+=60; if(v.localService===false)s+=10;
+    if(/kyoko|otoya|o-ren|nanami|ayumi|keita|haruka/.test(n))s+=40;
+    if(/espeak|festival/.test(n))s-=200; return s;}
+  function pickVoice(){if(!SUP)return;var vs=(speechSynthesis.getVoices()||[])
+      .filter(function(v){return v.lang&&v.lang.toLowerCase().indexOf('ja')===0;});
+      vs.sort(function(a,b){return rank(b)-rank(a);}); jaVoice=vs[0]||null;}
+  if(SUP){pickVoice();try{speechSynthesis.onvoiceschanged=pickVoice;}catch(e){}}
+  function fallback(el){if(!SUP)return;var t=jtext(el);if(!t)return;
+    speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);
+    u.lang='ja-JP';u.rate=0.95;if(jaVoice)u.voice=jaVoice;speechSynthesis.speak(u);}
+  var curAudio=null,curBtn=null;
+  function stop(){if(curAudio){curAudio.pause();curAudio=null;}if(curBtn){curBtn.classList.remove('playing');curBtn=null;}}
+  function play(btn,el){
+    stop();
+    var id=el.getAttribute('data-tts');
+    if(id){
+      var a=new Audio(window.TTS_BASE+id+'.mp3');
+      curAudio=a;curBtn=btn;btn.classList.add('playing');
+      a.onended=a.onpause=function(){btn.classList.remove('playing');};
+      a.onerror=function(){btn.classList.remove('playing');curAudio=null;fallback(el);};
+      a.play().catch(function(){btn.classList.remove('playing');curAudio=null;fallback(el);});
+    } else { fallback(el); }
+  }
+  document.querySelectorAll('.ex-jp, .adv-ex').forEach(function(el){
+    if(el.querySelector('.tts-btn'))return;
+    var b=document.createElement('button');
+    b.className='tts-btn';b.type='button';b.textContent='🔊';
+    b.setAttribute('aria-label','Nghe câu tiếng Nhật');b.title='Nghe đọc (Google TTS)';
+    b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();play(b,el);});
+    el.insertBefore(b,el.firstChild);
+  });
+})();
+</script>
+
+<style>#ttsBar{display:none!important}
+.tts-btn,.tl-spk{display:inline-flex!important;align-items:center;justify-content:center;width:22px;height:22px;min-width:22px;margin-right:7px;padding:0;border:1px solid var(--gold,#B89568)!important;background:transparent;color:var(--gold,#B89568);border-radius:50%;font-size:11px;cursor:pointer;vertical-align:middle;line-height:1;flex:none;box-shadow:none}
+.tts-btn:hover,.tl-spk:hover{background:var(--gold,#B89568);color:#fff}
+.tts-btn.on,.tts-btn.playing,.tl-spk.on{background:var(--navy,#1B3A6B);border-color:var(--navy,#1B3A6B)!important;color:#fff}
+.ex-jp rt,.ex-q rt,.jp rt{font-size:.6em;color:var(--gold-d,#8A6E47);font-weight:400}</style>
+<script>(function(){
+var jv=null;function pick(){try{var V=speechSynthesis.getVoices();function f(re){return V.filter(function(v){return /ja|JP|日本/i.test(v.lang)&&re.test(v.name);})[0];}jv=f(/Google/i)||f(/Kyoko/i)||f(/Otoya/i)||f(/Microsoft|Nanami|Ayumi|Keita|Haruka/i)||V.filter(function(v){return /ja|JP|日本/i.test((v.lang||'')+(v.name||''));})[0]||null;}catch(e){}}pick();try{speechSynthesis.onvoiceschanged=pick;}catch(e){}
+function sfb(t,b,done){try{speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(t);u.lang='ja-JP';u.rate=0.9;if(jv)u.voice=jv;u.onend=u.onerror=function(){done&&done();};speechSynthesis.speak(u);}catch(e){done&&done();}}
+var TLW='https://trilu-dict-api.luminhtri0.workers.dev';function ext(txt,b,done){var srcs=['https://api.streamelements.com/kappa/v2/speech?voice=Mizuki&text='+encodeURIComponent(txt),'https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=ja&q='+encodeURIComponent(txt)];(function tryi(i){if(i>=srcs.length){return sfb(txt,b,done);}var a=new Audio(srcs[i]);window.__tlA=a;a.onended=done;a.onerror=function(){tryi(i+1);};var pr=a.play();if(pr&&pr.catch)pr.catch(function(){tryi(i+1);});})(0);}function ttsTry(url,txt,b,done,fail){try{fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({text:txt})}).then(function(r){if(!r.ok)throw 0;return r.blob();}).then(function(bl){var a=new Audio(URL.createObjectURL(bl));window.__tlA=a;a.onended=done;a.onerror=fail;var pr=a.play();if(pr&&pr.catch)pr.catch(fail);}).catch(fail);}catch(e){fail();}}function gplay(t,b){if(!t)return;var txt=(''+t).replace(/<[^>]*>/g,'').replace(/^[\s①-⑳ 0-9.\)、。]+/,'').slice(0,200);if(!txt)txt=(''+t).replace(/<[^>]*>/g,'').slice(0,200);if(b&&b.classList)b.classList.add('on');var done=function(){if(b&&b.classList){b.classList.remove('on');b.classList.remove('playing');}};if(window.__tlA){try{window.__tlA.pause();}catch(e){}}ttsTry('/api/tts',txt,b,done,function(){ttsTry(TLW+'/api/tts',txt,b,done,function(){ext(txt,b,done);});});}
+function furiFetch(url,texts){return fetch(url,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({texts:texts})}).then(function(r){if(!r.ok)throw 0;return r.json();});}
+window.__tlGtts=gplay;
+function clean(el){var c=el.cloneNode(true);c.querySelectorAll('rt,rp,.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn,.vn,.hanviet,.kreading,.kmean,.ana-syn,.ana-ant,.ana-nuance').forEach(function(n){n.remove();});return (c.textContent||'').replace(/\s+/g,' ').trim();}
+function jaText(btn){var node=btn;for(var i=0;i<4&&node.parentElement;i++){node=node.parentElement;var t=clean(node);if(/[぀-ヿ一-龯]/.test(t))return t;}return '';}
+document.addEventListener('click',function(e){var btn=e.target&&e.target.closest&&e.target.closest('.tts-btn, .tl-spk');if(!btn)return;e.preventDefault();e.stopPropagation();if(typeof e.stopImmediatePropagation==='function')e.stopImmediatePropagation();gplay(jaText(btn),btn);},true);
+function nativeNear(el){if(el.querySelector('.tts-btn'))return true;var p=el.parentElement;if(p){for(var c=p.firstElementChild;c;c=c.nextElementSibling){if(c.classList&&c.classList.contains('tts-btn'))return true;}}return false;}
+function add(el){if(el.dataset.spk)return;el.dataset.spk='1';if(nativeNear(el))return;var t=clean(el);if(!t||!/[぀-ヿ一-龯]/.test(t))return;var b=document.createElement('button');b.type='button';b.className='tl-spk';b.setAttribute('aria-label','Phat am');b.textContent='🔊';el.insertBefore(b,el.firstChild);}
+function run(){document.querySelectorAll('[data-tts], .ex-jp, .ex-q').forEach(add);}
+function furiPass(){var els=[].slice.call(document.querySelectorAll('.ex-jp, .ex-q, .jp'));var jobs=[];els.forEach(function(el){if(el.dataset.furi)return;if(el.querySelector('ruby'))return;var c=el.cloneNode(true);c.querySelectorAll('.tl-spk,.tts-btn,.ex-vn,.q-vn,.adv-ex-vn,.vocab-ex-vn').forEach(function(n){n.remove();});var t=(c.textContent||'').replace(/\s+/g,' ').trim();if(!t||t.length<6||!/[一-龯]/.test(t))return;el.dataset.furi='1';jobs.push({el:el,t:t});});if(!jobs.length)return;var texts=jobs.map(function(j){return j.t;});function apply(d){if(!d||!d.ruby)return;jobs.forEach(function(j,idx){var ru=d.ruby[idx];if(!ru||ru.indexOf('<ruby')<0)return;var btn=j.el.querySelector('.tl-spk,.tts-btn');j.el.innerHTML=(btn?btn.outerHTML:'')+ru;});}furiFetch('/api/furigana',texts).then(apply).catch(function(){furiFetch(TLW+'/api/furigana',texts).then(apply).catch(function(){});});}
+function go(){run();furiPass();}
+if(document.readyState!=='loading'){setTimeout(go,50);}else{document.addEventListener('DOMContentLoaded',function(){setTimeout(go,50);});}
+window.addEventListener('load',function(){setTimeout(go,160);});})();</script>
+
+</body></html>
